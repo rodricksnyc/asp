@@ -14,7 +14,10 @@
 		});
 	});
 
-
+// $(".nav-link.active").siblings().find('.fal').css("color" , "c7482e");
+//
+//
+// $(".nav-link.active").nextAll().css("color" , "c7482e");
 
 	//Menu On Hover
 
@@ -38,10 +41,40 @@
 
   })(jQuery);
 
+	var resizeText = function () {
+	// Standard height, for which the body font size is correct
+	var preferredFontSize = 50; // %
+	var preferredSize = 1024 * 768;
+
+	var currentSize = $(window).width() * $(window).height();
+	var scalePercentage = Math.sqrt(currentSize) / Math.sqrt(preferredSize);
+	var newFontSize = preferredFontSize * scalePercentage + 2;
+	$(".navbar-brand img").css("width", newFontSize + '%');
+};
+
+// var resizeText2 = function () {
+//
+// var preferredFontSize2 = 60;
+// var preferredSize2 = 1024 * 768;
+//
+// var currentSize2 = $(window).width() * $(window).height();
+// var scalePercentage2 = Math.sqrt(currentSize2) / Math.sqrt(preferredSize2);
+// var newFontSize2 = preferredFontSize2 * scalePercentage2  + 30;
+// $(".projects h3").css("font-size", newFontSize2 + '%');
+// };
+
+$(window).bind('resize', function() {
+	resizeText();
+}).trigger('resize');
+
+// $(window).bind('resize2', function() {
+// 	resizeText2();
+// }).trigger('resize2');
+
 
 jQuery(function($) {
  var path = window.location.href; // because the 'href' property of the DOM element is the absolute path
- $('ul a').each(function() {
+ $('li a').each(function() {
   if (this.href === path) {
    $(this).addClass('active');
   }

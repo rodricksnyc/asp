@@ -6,19 +6,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Westat's WesDaX</title>
 
-	<link href="css/westat.base.css" rel="stylesheet">
-	<!-- <link href="css/westat.desktop.css" rel="stylesheet">
+	<!-- <link href="css/westat.base.css" rel="stylesheet">
+	<link href="css/westat.desktop.css" rel="stylesheet">
 	<link href="css/westat.tablet.landscape.css" rel="stylesheet">
 	<link href="css/westat.tablet.portrait.css" rel="stylesheet">
 	<link href="css/westat.phone.landscape.css" rel="stylesheet">
-	<link href="css/westat.phone.portrait.css" rel="stylesheet"> -->
+	<link href="css/westat.phone.portrait.css" rel="stylesheet">
 	<link href="css/jquery.css" rel="stylesheet">
 	<link href="css/westat.look.css" rel="stylesheet" title="look">
-	<link href="css/wesdax.css" rel="stylesheet">
+	<link href="css/wesdax.css" rel="stylesheet"> -->
 	<link href="css/custom.css" rel="stylesheet">
 
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome-pro/css/all.min.css">
 	<link rel="stylesheet" href="css/styles.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:600&display=swap" rel="stylesheet">
@@ -31,49 +32,110 @@
 
 	<div class="container-fluid">
 
+
 		<div class="navigation-wrap bg-light start-header start-style">
 
 			<div class="row">
 				<div class="col-12">
+
+
 					<nav class="navbar navbar-expand-md navbar-light">
 
+
+
 						<div class="navbar-collapse collapse order-1 order-md-0 dual-collapse2" id="navbarSupportedContent">
+ 						<!-- <div class="projects">
+
+
+								<i class="fal fa-angle-left"></i>
+								<i class="fas fa-circle"><p class="initials">PN</p></i>
+								<h3>Project Name</h3>
+
+						</div> -->
+
 							<ul class="navbar-nav ml-auto py-4 py-md-0">
+
+								<li class="projects">
+
+
+										<i class="fal fa-angle-left"></i>
+										<i class="fas fa-circle"><p class="initials">PN</p></i>
+										<h3>Project Name</h3>
+
+								</li>
+
 
 								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
 									<a class="nav-link active" href="default.html">Welcome</a>
+									<i class="fal fa-door-open"></i>
 								</li>
 								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
 									<a class="nav-link" href="about.html">About</a>
+									<i class="fal fa-info-circle"></i>
 								</li>
 								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-									<a class="nav-link" href="#">Analysis</a>
-								</li>
-								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Reports</a>
+									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+										<p class="down">Analysis</p>
+									</a>
+									<i class="fal fa-chart-bar"></i>
 									<div class="dropdown-menu">
 										<a class="dropdown-item" href="#">Action</a>
 										<a class="dropdown-item" href="#">Another action</a>
-										<a class="dropdown-item" href="#">Something else here</a>
+										<a class="dropdown-item" href="#">Another action</a>
 										<a class="dropdown-item" href="#">Another action</a>
 									</div>
 								</li>
 								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+
+									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+										<p class="down">Reports</p>
+									</a>
+									<i class="fal fa-clipboard-list"></i>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="#">Action</a>
+										<a class="dropdown-item" href="#">Another action</a>
+										<a class="dropdown-item" href="#">Another action</a>
+										<a class="dropdown-item" href="#">Another action</a>
+									</div>
+								</li>
+								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+
 									<a class="nav-link" href="#">Documents</a>
+									<i class="fal fa-file-alt"></i>
 								</li>
 
 							</ul>
+
+
+							<ul class="navbar-nav ml-auto nav-flex-icons">
+
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<h6 class="user">{{USER}}</h6>
+
+									</a>
+									<div class="dropdown-menu dropdown-menu-right dropdown-unique" aria-labelledby="navbarDropdownMenuLink">
+										<a class="dropdown-item" href="#">Action</a>
+										<a class="dropdown-item" href="#">Another action</a>
+										<a class="dropdown-item" href="#">Something else here</a>
+									</div>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link signOut">
+										<i class="fal fa-sign-out-alt"></i>
+									</a>
+								</li>
+							</ul>
 						</div>
 
-
-						<a class="navbar-brand" href="https://themeforest.net/user/ig_design/portfolio" target="_blank">
-							<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/logo.svg" alt="">
+						<a class="navbar-brand" href="default.html" target="_blank">
+							<img src="images/WesDax_logo.svg" alt="WesDax Logo">
 						</a>
+
 
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="navbar-toggler-icon"></span>
 						</button>
-
 
 					</nav>
 				</div>
@@ -102,5 +164,7 @@
 	<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
 	<script src="js/westat.js" type="text/javascript"></script>
 	<script src="js/index.js"></script>
+
+
 </body>
 </html>
