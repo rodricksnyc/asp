@@ -14,10 +14,7 @@
 		});
 	});
 
-// $(".nav-link.active").siblings().find('.fal').css("color" , "c7482e");
-//
-//
-// $(".nav-link.active").nextAll().css("color" , "c7482e");
+
 
 	//Menu On Hover
 
@@ -40,6 +37,25 @@
 
 
   })(jQuery);
+
+
+	$(".accordions .mb-0 a").click(function (){
+
+		if($('.nested').hasClass('show')) {
+			  $(".accordions .panel-header").css("background" , "#eef6fc");
+		}
+
+		else {
+			  $(".accordions .panel-header").css("background" , "#deedf8");
+		}
+
+
+});
+
+
+$(window).on('load',function(){
+		 $('#myModal').modal('show');
+ });
 
 	var resizeText = function () {
 	// Standard height, for which the body font size is correct
@@ -70,6 +86,17 @@ $(window).bind('resize', function() {
 // $(window).bind('resize2', function() {
 // 	resizeText2();
 // }).trigger('resize2');
+
+//
+// $('.panel-collapse').on('show.bs.collapse', function () {
+// 	 $(this).siblings('.panel-heading').addClass('active');
+//  });
+//
+//  $('.panel-collapse').on('hide.bs.collapse', function () {
+// 	 $(this).siblings('.panel-heading').removeClass('active');
+//  });
+
+
 
 
 jQuery(function($) {

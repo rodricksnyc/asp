@@ -14,12 +14,13 @@
 	<link href="css/westat.phone.portrait.css" rel="stylesheet">
 	<link href="css/jquery.css" rel="stylesheet">
 	<link href="css/westat.look.css" rel="stylesheet" title="look">
-	<link href="css/wesdax.css" rel="stylesheet"> -->
-	<link href="css/custom.css" rel="stylesheet">
+	<link href="css/wesdax.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet"> -->
 
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="font-awesome-pro/css/all.min.css">
+		<link rel="stylesheet" type="text/css" href="font/css/all.min.css">
 	<link rel="stylesheet" href="css/styles.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:600&display=swap" rel="stylesheet">
@@ -27,44 +28,22 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
 
 </head>
-
 <body>
-
+	  <a href="#themaincontent" id="skiptocontent" tabindex="1" aria-hidden="false">skip to main content</a>
 	<div class="container-fluid">
-
-
 		<div class="navigation-wrap bg-light start-header start-style">
 
 			<div class="row">
 				<div class="col-12">
-
-
 					<nav class="navbar navbar-expand-md navbar-light">
-
-
-
 						<div class="navbar-collapse collapse order-1 order-md-0 dual-collapse2" id="navbarSupportedContent">
- 						<!-- <div class="projects">
-
-
-								<i class="fal fa-angle-left"></i>
-								<i class="fas fa-circle"><p class="initials">PN</p></i>
-								<h3>Project Name</h3>
-
-						</div> -->
-
 							<ul class="navbar-nav ml-auto py-4 py-md-0">
 
 								<li class="projects">
-
-
-										<i class="fal fa-angle-left"></i>
-										<i class="fas fa-circle"><p class="initials">PN</p></i>
-										<h3>Project Name</h3>
-
+									<i class="fal fa-angle-left"></i>
+									<i class="fas fa-circle"><p class="initials">PN</p></i>
+									<h3>Project Name</h3>
 								</li>
-
-
 								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
 									<a class="nav-link active" href="default.html">Welcome</a>
 									<i class="fal fa-door-open"></i>
@@ -74,7 +53,7 @@
 									<i class="fal fa-info-circle"></i>
 								</li>
 								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+									<a class="nav-link dropdown-toggle" tabindex="0" data-toggle="dropdown" href="analysis.html" role="button" aria-haspopup="true" aria-expanded="false">
 										<p class="down">Analysis</p>
 									</a>
 									<i class="fal fa-chart-bar"></i>
@@ -87,7 +66,7 @@
 								</li>
 								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
 
-									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="reports.html" role="button" aria-haspopup="true" aria-expanded="false">
 										<p class="down">Reports</p>
 									</a>
 									<i class="fal fa-clipboard-list"></i>
@@ -100,12 +79,10 @@
 								</li>
 								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
 
-									<a class="nav-link" href="#">Documents</a>
+									<a class="nav-link" href="documents.html">Documents</a>
 									<i class="fal fa-file-alt"></i>
 								</li>
-
 							</ul>
-
 
 							<ul class="navbar-nav ml-auto nav-flex-icons">
 
@@ -131,8 +108,6 @@
 						<a class="navbar-brand" href="default.html" target="_blank">
 							<img src="images/WesDax_logo.svg" alt="WesDax Logo">
 						</a>
-
-
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="navbar-toggler-icon"></span>
 						</button>
@@ -142,6 +117,317 @@
 			</div>
 
 		</div>
+
+		<div class="content-spacer"></div>
+		<div class="row">
+			<div class="col-12">
+				<div id="slideOut">
+					<div class="selectProject">&ndash; Select a Project &ndash;</div>
+					<div id="accordion">
+						<div class="panel">
+							<div class="panel-header" id="acs">
+								<h5 class="mb-0">
+									<a role="button" data-toggle="collapse" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+										ACS-PUMS
+									</a>
+								</h5>
+							</div>
+							<div id="collapse-1" class="collapse" data-parent="#accordion" aria-labelledby="acs">
+								<div class="panel-body">
+									<div id="accordion-1" class="accordions">
+										<div class="card-body">
+											<h5>
+												<a href="RptList.aspx?ScreenID=15037" title="ACS-PUMS – Welcome" role="menuitem" tabindex="0">Welcome</a>
+											</h5>
+										</div>
+
+										<div class="panel">
+											<div class="panel-header" id="acs-dataset">
+												<h5 class="mb-0">
+													<a class="collapsed" role="button" data-toggle="collapse" href="#collapse-1-2" aria-expanded="false" aria-controls="collapse-1-2">
+														Select a dataset for queries
+													</a>
+												</h5>
+											</div>
+											<div id="collapse-1-2" class="collapse nested" data-parent="#accordion-1" aria-labelledby="acs-dataset">
+												<div class="card-body">
+													<ul class="accordion-items" role="menu" aria-hidden="false">
+														<li>
+															<a href="Dim.aspx?ScreenID=15035" title="ACS-PUMS – Household 2015" role="menuitem" tabindex="0">Household 2015</a>
+														</li>
+														<li>
+															<a href="Dim.aspx?ScreenID=15036" title="ACS-PUMS – Person 2015" role="menuitem" tabindex="0">Person 2015</a>
+
+														</li>
+														<li>
+															<a href="Dim.aspx?ScreenID=15056" title="ACS-PUMS – Household 2016" role="menuitem" tabindex="0">Household 2016</a>
+
+														</li>
+														<li>
+															<a href="Dim.aspx?ScreenID=15057" title="ACS-PUMS – Person 2016" role="menuitem" tabindex="0">Person 2016</a>
+
+														</li>
+														<li>
+															<a href="Dim.aspx?ScreenID=15144" title="ACS-PUMS – Household 2017" role="menuitem" tabindex="0">Household 2017</a>
+
+														</li>
+														<li>
+															<a href="Dim.aspx?ScreenID=15145" title="ACS-PUMS – Person 2017" role="menuitem" tabindex="0">Person 2017</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+						<!-- newone -->
+
+						<div class="panel">
+							<div class="panel-header" id="brfss">
+								<h5 class="mb-0">
+									<a role="button" data-toggle="collapse" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+										BRFSS
+									</a>
+								</h5>
+							</div>
+							<div id="collapse-2" class="collapse" data-parent="#accordion" aria-labelledby="brfss">
+								<div class="panel-body">
+									<div id="accordion-2" class="accordions">
+										<div class="card-body">
+											<h5>
+												<a href="RptList.aspx?ScreenID=47" title="BRFSS – Welcome" role="menuitem" tabindex="0">Welcome</a>
+											</h5>
+										</div>
+										<div class="card-body">
+											<h5>
+												<a href="RptList.aspx?ScreenID=48" title="BRFSS – Documents" role="menuitem" tabindex="0">Documents</a>
+											</h5>
+										</div>
+
+										<div class="card-body">
+											<h5>
+												<a href="RptList.aspx?ScreenID=14778" title="BRFSS – About the Data" role="menuitem" tabindex="0">About the Data</a>
+											</h5>
+										</div>
+
+										<div class="card-body">
+											<h5>
+												<a href="ReqFltr.aspx?ScreenID=14777&amp;tabID=24" title="BRFSS – Create a query" role="menuitem" tabindex="0">Create a query</a>
+											</h5>
+										</div>
+
+
+										<div class="panel">
+											<div class="panel-header" id="brfss-reports">
+												<h5 class="mb-0">
+													<a class="collapsed" role="button" data-toggle="collapse" href="#collapse-2-1" aria-expanded="false" aria-controls="collapse-2-1">
+														Customized Reports
+													</a>
+												</h5>
+											</div>
+											<div id="collapse-2-1" class="collapse nested" data-parent="#accordion-1" aria-labelledby="brfss-reports">
+												<div class="card-body">
+
+													<ul class="accordion-items" role="menu" aria-hidden="false">
+														<li>
+															<a href="RptList.aspx?ScreenID=14782" title="BRFSS – Run Distributions &amp; Summary Statistics" role="menuitem" tabindex="0">Run Distributions &amp; Summary Statistics</a>
+
+														</li>
+														<li>
+															<a href="RptList.aspx?ScreenID=14783" title="BRFSS – Run a Regression" role="menuitem" tabindex="0">Run a Regression</a>
+
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<!-- newone -->
+
+						<div class="panel">
+							<div class="panel-header" id="ccd">
+								<h5 class="mb-0">
+									<a role="button" data-toggle="collapse" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+										CCD
+									</a>
+								</h5>
+							</div>
+							<div id="collapse-3" class="collapse" data-parent="#accordion" aria-labelledby="ccd">
+								<div class="panel-body">
+									<div id="accordion-3" class="accordions">
+										<div class="card-body">
+											<h5>
+												<a href="RptList.aspx?ScreenID=15041" title="CCD – Welcome" role="menuitem" tabindex="0">Welcome</a>
+											</h5>
+										</div>
+
+										<div class="panel">
+											<div class="panel-header" id="ccd-dataset">
+												<h5 class="mb-0">
+													<a class="collapsed" role="button" data-toggle="collapse" href="#collapse-3-1" aria-expanded="false" aria-controls="collapse-3-1">
+														Select a dataset for queries
+													</a>
+												</h5>
+											</div>
+											<div id="collapse-3-1" class="collapse nested" data-parent="#accordion-3" aria-labelledby="ccd-dataset">
+												<div class="card-body">
+													<ul class="accordion-items" role="menu" aria-hidden="false">
+
+														<li>
+															<a href="Dim.aspx?ScreenID=15042" title="CCD – CCD 2014-15" role="menuitem" tabindex="0">CCD 2014-15</a>
+
+														</li>
+														<li>
+															<a href="Dim.aspx?ScreenID=15061" title="CCD – CCD 2015-16" role="menuitem" tabindex="0">CCD 2015-16</a>
+
+														</li>
+														<li>
+															<a href="Dim.aspx?ScreenID=15140" title="CCD – CCD 2016-17" role="menuitem" tabindex="0">CCD 2016-17</a>
+
+														</li>
+
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+
+						<!-- newone -->
+
+
+						<div class="panel">
+							<div class="panel-header" id="cps">
+								<h5 class="mb-0">
+									<a role="button" data-toggle="collapse" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+										CPS
+									</a>
+								</h5>
+							</div>
+							<div id="collapse-4" class="collapse" data-parent="#accordion" aria-labelledby="cps">
+								<div class="panel-body">
+									<div id="accordion-4" class="accordions">
+										<div class="card-body">
+											<h5>
+												<a href="RptList.aspx?ScreenID=15043" title="CPS – Welcome" role="menuitem" tabindex="0">Welcome</a>
+											</h5>
+										</div>
+
+										<div class="panel">
+											<div class="panel-header" id="cps-dataset">
+												<h5 class="mb-0">
+													<a class="collapsed" role="button" data-toggle="collapse" href="#collapse-4-1" aria-expanded="false" aria-controls="collapse-4-1">
+														Select a dataset for queries
+													</a>
+												</h5>
+											</div>
+											<div id="collapse-4-1" class="collapse nested" data-parent="#accordion-4" aria-labelledby="cps-dataset">
+												<div class="card-body">
+													<ul class="accordion-items" role="menu" aria-hidden="false">
+
+														<li>
+															<a href="Dim.aspx?ScreenID=15045" title="CPS – Household 2016" role="menuitem" tabindex="0">Household 2016</a>
+
+														</li>
+														<li>
+															<a href="Dim.aspx?ScreenID=15046" title="CPS – Person 2016" role="menuitem" tabindex="0">Person 2016</a>
+
+														</li>
+														<li>
+															<a href="Dim.aspx?ScreenID=15047" title="CPS – Family 2016" role="menuitem" tabindex="0">Family 2016</a>
+
+														</li>
+														<li>
+															<a href="Dim.aspx?ScreenID=15058" title="CPS – Household 2017" role="menuitem" tabindex="0">Household 2017</a>
+
+														</li>
+														<li>
+															<a href="Dim.aspx?ScreenID=15059" title="CPS – Person 2017" role="menuitem" tabindex="0">Person 2017</a>
+
+														</li>
+														<li>
+															<a href="Dim.aspx?ScreenID=15060" title="CPS – Family 2017" role="menuitem" tabindex="0">Family 2017</a>
+
+														</li>
+														<li>
+															<a href="Dim.aspx?ScreenID=15142" title="CPS – Household 2018" role="menuitem" tabindex="0">Household 2018</a>
+
+														</li>
+														<li>
+															<a href="Dim.aspx?ScreenID=15143" title="CPS – Person 2018" role="menuitem" tabindex="0">Person 2018</a>
+
+														</li>
+														<li>
+															<a href="Dim.aspx?ScreenID=15141" title="CPS – Family 2018" role="menuitem" tabindex="0">Family 2018</a>
+
+														</li>
+
+
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+
+
+
+
+
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container" id="themaincontent">
+
+			<div class="modal" tabindex="2" role="dialog" id="myModal">
+			  <div class="modal-dialog" role="document" id="themaincontent">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title">Welcome to WesDax</h5>
+
+			      </div>
+			      <div class="modal-body">
+			        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+							<div class="row">
+							<div class="col-lg-1"><i class="fal fa-atom-alt"></i></div>
+							<div class="col-lg-11"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p></div>
+							</div>
+							<div class="row">
+							<div class="col-lg-1"><i class="fal fa-chart-line"></i></div>
+							<div class="col-lg-11"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p></div>
+							</div>
+							<div class="row">
+							<div class="col-lg-1"><i class="fal fa-chart-network"></i></div>
+							<div class="col-lg-11"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p></div>
+							</div>
+
+			      </div>
+			      <div class="modal-footer">
+							<a href="https://www.wesdax.com/"><p class="orange">Learn More at WesDax.com  <i class="fal fa-external-link"></i></p></a>
+			      </div>
+			    </div>
+			  </div>
+			</div>
 
 	</div>
 
