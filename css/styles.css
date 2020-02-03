@@ -64,7 +64,8 @@ body{
   margin:0;
   height:100%;
   top:0;
-  overflow: auto;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .showSlideOut {
@@ -116,7 +117,50 @@ body{
   margin-bottom:0rem;
 }
 
+#slideOutRight .modal-body {
+    position: relative;
+    -ms-flex: 1 1 auto;
+    flex: 0;
+    padding: 1rem;
+}
 
+#slideOutRight .fal.fa-trash-alt.orange {
+  padding-left: 115%;
+}
+
+#slideOutRight .modal-body .fal {
+  font-weight:500;
+}
+
+#slideOutRight form {
+  padding:1rem .8rem 0rem .8rem;
+}
+
+#slideOutRight label {
+    display: inline-block;
+    margin-bottom: 0rem;
+}
+
+#slideOutRight .modal-header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: .5rem 1rem 0rem 1rem;
+    border-bottom: none;
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+}
+
+#slideOutRight .form-control {
+  margin-bottom:2em;
+}
+
+.startHidden {
+  display:none;
+}
 
 p.smaller {
   font-size:14px;
