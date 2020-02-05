@@ -48,15 +48,16 @@
 		<div class="content-spacer2"></div>
 
 		<div class="row">
-			<div class="col-9">
+			<div class="col-lg-9 col-md-12">
 				<div class="optionPicker">
 					<div class="optional-line"><p class="smaller">OPTIONAL</p></div>
 					<nav class="optionPicker-nav">
 						<a href="#years" data-type="years" class="NavItem NavItem--is-active">Year(s)</a>
 						<a href="#topics" data-type="topics" class="NavItem">Topic(s)</a>
+						<a href="#stats" data-type="stats" class="NavItem">Statistical Outputs</a>
 						<a href="#data" data-type="data" class="NavItem">Subset Data</a>
 						<a href="#marks" data-type="marks" class="NavItem">Benchmarks</a>
-						<a href="#stats" data-type="stats" class="NavItem">Statistical Outputs</a>
+
 
 					</nav>
 
@@ -122,7 +123,15 @@
 				</div>
 
 			</div>
-		</div>
+
+			<div class="col-lg-3 col-md-12">
+				<div class="appendOptions">
+
+				</div>
+			</div>
+
+
+			</div>
 
 
 		<div class="backdropShadow"></div>
