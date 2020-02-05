@@ -221,6 +221,11 @@ a:hover {
   height:10vh
 }
 
+.content-spacer2 {
+  height:10vh
+}
+
+
 .accordions {
   background: #eef6fc;
   padding-top: .5em;
@@ -444,6 +449,7 @@ ul.bullet li {
   max-width: 6rem;
 }
 
+
 .grayBubble {
   background: #f1f2f2;
   display: -webkit-flex;
@@ -513,14 +519,38 @@ a:focus {
 #one:focus {
   outline: none;
 }
+
+#slideOutLeft .projects {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #eeeeee;
+    /* width: 15%; */
+    height: 61px;
+    position: relative;
+    height: auto;
+    left: 0;
+    padding: 0em;
+    padding: .8em 0em .8em 1em;
+    padding-right: 1em;
+}
+
+#slideOutLeft .across {
+  padding-top: 0em;
+
+}
+
+
 /* analysis page */
 
 .optionPicker-nav {
-  display: -webkit-box;
   display: flex;
-  flex-wrap: wrap;
-  -webkit-box-align: end;
   align-items: flex-end;
+  justify-content: flex-end;
+  width: 60%;
+  left: 36%;
+  position: relative;
+  padding-top: 2em;
 }
 
 .hidden {
@@ -533,59 +563,44 @@ a:focus {
 }
 
 .analysis .down {
-    margin-top: 0px;
-    margin-bottom: 0rem;
+  margin-top: 0px;
+  margin-bottom: 0rem;
 }
 
-/* .optionList {
-  display: -webkit-box;
-  display: flex;
-  flex-wrap: wrap;
-  -webkit-box-pack: center;
-  justify-content: center;
-}
 
-.option,
-.option-moreCTA {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  align-items: center;
-}
-
-.option {
-  -webkit-box-flex: 0;
-  flex: 0 1 10em;
-  min-height: 15em;
-}
-
-.option-desc {
-  margin: 5px 0;
-  font-size: 0.8em;
-  -webkit-box-flex: 1;
-  flex: 1;
-  text-align: center;
-} */
-
-/*
-Everything below this is just visual sugar, Darlin' */
 .optionPicker {
-
   margin: 0em 1em;
+  position:relative;
 }
 
-.optionList {
+.optional-line {
+  position:absolute;
+  right:0;
+  top:0;
+}
+
+
+.optionListWindow {
   margin: 0;
   padding: 2em;
-  border-radius: 0 0 10px 10px;
-  border-bottom: 4px solid #eee;
+  border-radius:0;
+  background: white;
+  -webkit-box-shadow: 0px 6px 11px 1px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0px 6px 11px 1px rgba(0,0,0,0.1);
+  box-shadow: 0px 6px 11px 1px rgba(0,0,0,0.1);
+  position:relative;
+  z-index:1
+}
+
+.white-right-border {
+  position:absolute;
+  top:0;
+  width: 60%;
+  left: 36%;
+  height:10px;
   background: white;
 }
+
 .optionList li {
   list-style: none;
 }
@@ -654,33 +669,130 @@ Everything below this is just visual sugar, Darlin' */
 
 /* Navigation */
 .NavItem {
-  padding: .8rem;
-  background: #eef6fc;
-  font-size: 1.1em;
-  font-weight: 600;
+  padding: .6rem .2rem;
+  background: #deedf8;
+  font-size: 16px;
+  font-weight: 500;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
+
   color: black;
+
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.1);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+
+
+  max-width: 11rem;
+  margin-left: 5px;
+  border-radius: 4px;
+  margin-bottom: -8px;
+  /* overflow: hidden; */
+  position: relative;
+  z-index: 1;
+  height:3rem;
 }
 
-.NavItem:first-of-type {
-  border-radius: 10px 0 0 0;
-}
+.optionPicker-nav .NavItem--is-active {
 
-.NavItem:last-of-type {
-  border-radius: 0 10px 0 0;
 }
 
 .NavItem--is-active {
-  padding-top: 1.1rem;
   background: white;
-  font-size: 1.2em;
   color: #07477d;
+  font-weight: 600;
+  z-index: 2;
+  margin-bottom: 0px;
+  padding: .6rem .2rem;
+  /* box-shadow: unset; */
+  height: 2.5rem;
+
 }
+
+
+.NavItem--is-active:after{
+  display: block;
+  background-color: white;
+  width: 100%;
+  height: 15px;
+  content: " ";
+  position: absolute;
+  top: 100%;
+  right: 0;
+}
+
+
+
 .NavItem--is-active, .NavItem--is-active:first-of-type, .NavItem--is-active:last-of-type {
-  border-radius: 10px 10px 0 0;
+  border-radius: 0;
 }
+
+/* checkboxes */
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #07477d !important
+}
+
+.custom-checkbox .custom-control-input:checked:focus ~ .custom-control-label::before {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 255, 0, 0.25)
+}
+.custom-checkbox .custom-control-input:focus ~ .custom-control-label::before {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 0, 0, 0.25)
+}
+.custom-checkbox .custom-control-input:active ~ .custom-control-label::before {
+  background-color: #C8FFC8;
+}
+.custom-control-label::before {
+  position: absolute;
+  top: .1rem;
+  left: -1.5rem;
+  display: block;
+  width: 1.2rem;
+  height: 1.2rem;
+  pointer-events: none;
+  content: "";
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: white;
+  border: 1px solid black;
+
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f00c";
+  background-image: none !important;
+  color: white;
+  font-weight: 900;
+}
+
+.custom-control-label::after {
+  position: absolute;
+  top: 0.05rem;
+  left: -1.4rem;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  content: "";
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+.custom-control-label {
+  position: relative;
+  margin-bottom: 0;
+  padding-left: .5em;
+}
+
+.custom-control {
+  position: relative;
+  display: block;
+  min-height: 1.5rem;
+  padding-left: 1.5rem;
+  margin-bottom: 1em;
+}
+
 
 /* footer classes */
 

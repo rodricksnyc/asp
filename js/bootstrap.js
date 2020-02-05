@@ -2193,6 +2193,9 @@
       };
 
       _proto._hideModal = function _hideModal() {
+
+  
+
         var _this7 = this;
 
         this._element.style.display = 'none';

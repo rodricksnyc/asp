@@ -18,10 +18,6 @@ $(document).ready(function () {
 
   })
 
-  $('.option[data-type="trip"]').addClass('hidden');
-
-
-
 
 
   $('.dropdown-submenu a.test').on("click", function(e){
@@ -69,13 +65,29 @@ $(".accordions .mb-0 a").click(function (){
 
 });
 
-if($('body').hasClass('welcome')) {
+
+
+
+if($('body').hasClass('initial')) {
 	$( "#slideOutLeft" ).css('left', '0')
 }
 
 
+
+
+if($('body').hasClass('initial')) {
+$('#slideOutLeft .projects').hide()
+
+}
+
+else {
+  $('#slideOutLeft .projects').show();
+  $('#slideOutLeft .selectProject').hide()
+}
+
+
 $('#slideOutLeft').on('click', function() {
-	if($('body').hasClass('welcome')) {
+	if($('body').hasClass('initial')) {
 	$('#myModal').hide();
 	$('body').removeClass('modal-open');
 	$('.modal-backdrop.show').hide();
@@ -84,13 +96,14 @@ $('#slideOutLeft').on('click', function() {
 
 
 $(window).on('load',function(){
-if($('body').hasClass('welcome')) {
+if($('body').hasClass('initial')) {
 	$('#myModal').modal('show');
 
 }
 });
 
 $('.listOptions').click(function() {
+
 $('.backdropShadow').fadeOut();
 	$( "#slideOutLeft" ).animate({
 		left: "-400",
@@ -98,6 +111,18 @@ $('.backdropShadow').fadeOut();
 
 	});
 })
+
+$('.close-project').click(function(e) {
+e.stopPropagation()
+$('.backdropShadow').fadeOut();
+	$( "#slideOutLeft" ).animate({
+		left: "-400",
+	}, 800, function() {
+
+	});
+})
+
+
 
 
 $('.projects').click(function() {
@@ -108,6 +133,9 @@ $('.projects').click(function() {
 
 	});
 });
+
+
+
 
 
 $('#one').on('click', function() {
@@ -181,8 +209,19 @@ $('#one').keyup(function (e) {
 	}
 });
 
+if($('.navbar-nav li .dropdown-menu .dropdown-item').is('.active')) {
+  $(this).find('.nav-item').css('background', 'red')
+}
 
-jQuery(function($) {
+// $('.navbar-nav li .dropdown-menu .dropdown-item').on('click',function(){
+//
+//    $(this).closest('.nav-link').addClass('active');
+// });
+
+
+
+
+
 	var path = window.location.href;
 	$('.navbar-nav li a').each(function() {
 		if (this.href === path) {
@@ -193,6 +232,19 @@ jQuery(function($) {
 		}
 
 	});
-});
+
+
+
+  $('.navbar-nav li .dropdown-menu .dropdown-item').each(function() {
+    if (this.href === path) {
+      $(this).parent().siblings('a').addClass('active');
+      // $(this).removeClass('active');
+    }
+    else {
+      $(this).removeClass('active');
+    }
+
+  });
+
 
 })

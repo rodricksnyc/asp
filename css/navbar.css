@@ -197,7 +197,7 @@ p {
   padding: 0em;
   padding: .8em 0em .8em 2em;
   padding-right: 4em;
-
+  margin-top: -4px;
 }
 
 .signOut {
@@ -235,6 +235,20 @@ p {
 
 }
 
+.dropdown-menu .active {
+    border-bottom: none;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.dropdown-item:hover, .dropdown-item:hover {
+background-color: #FFD6CD;
+
+}
 
 .bg-light {
   background-color: #fff !important;
@@ -427,7 +441,7 @@ p {
 
   .navbar-brand {
     display: inline-block;
-    padding-top: 0rem;
+    padding-top: .2rem;
     padding-bottom: 0.3125rem;
     margin-right: 12%;
     font-size: 1.25rem;
