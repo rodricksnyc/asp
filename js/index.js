@@ -20,11 +20,11 @@ $(document).ready(function () {
 
 
 
-  $('.dropdown-submenu a.test').on("click", function(e){
-    $(this).next('ul').toggle();
-    e.stopPropagation();
-    e.preventDefault();
-  });
+  // $('.dropdown-submenu a.test').on("click", function(e){
+  //   $(this).next('ul').toggle();
+  //   e.stopPropagation();
+  //   e.preventDefault();
+  // });
 
 
 
@@ -65,15 +65,25 @@ $(".accordions .mb-0 a").click(function (){
 
 });
 
+//levels
+
+// $('#level1').html('First Level &#9662;')
+// $('#level2').html('Second Level &#9662')
+// $('#level3').html('Third Level &#9662')
+
+//levels object
+
+
+var levels = $('<div class="btn-group"><button type="button" class="btn btn-light dropdown-toggle" id="level3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-caret-down"></i></button><div class="dropdown-menu"><button class="dropdown-item" type="button">Something else here</button><button class="dropdown-item submenu" type="button">Actions in a submenu</button><div class="dropdown-menu"><button class="dropdown-item" type="button">Action</button><button class="dropdown-item" type="button">Another action</button><button class="dropdown-item" type="button">Something else</button></div><button class="dropdown-item" type="button">Another action</button><button class="dropdown-item" type="button">Something else here</button></div></div>')
+// $(levels).appendTo('.levels');
+
+
 
 
 
 if($('body').hasClass('initial')) {
 	$( "#slideOutLeft" ).css('left', '0')
 }
-
-
-
 
 if($('body').hasClass('initial')) {
 $('#slideOutLeft .projects').hide()
@@ -86,13 +96,13 @@ else {
 }
 
 
-$('#slideOutLeft').on('click', function() {
-	if($('body').hasClass('initial')) {
-	$('#myModal').hide();
-	$('body').removeClass('modal-open');
-	$('.modal-backdrop.show').hide();
-}
-})
+// $('#slideOutLeft').on('click', function() {
+// 	if($('body').hasClass('initial')) {
+// 	$('#myModal').hide();
+// 	$('body').removeClass('modal-open');
+// 	$('.modal-backdrop.show').hide();
+// }
+// })
 
 
 $(window).on('load',function(){
@@ -212,13 +222,6 @@ $('#one').keyup(function (e) {
 if($('.navbar-nav li .dropdown-menu .dropdown-item').is('.active')) {
   $(this).find('.nav-item').css('background', 'red')
 }
-
-// $('.navbar-nav li .dropdown-menu .dropdown-item').on('click',function(){
-//
-//    $(this).closest('.nav-link').addClass('active');
-// });
-
-
 
 
 

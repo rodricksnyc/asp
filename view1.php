@@ -36,28 +36,63 @@
 		</div>
 
 		<div class="row">
-			<div class="col-lg-3">
+
+				<div id="levels">
+
+					<!-- <div id="root"></div> -->
+					<div class="btn-group">
+
+				    <button type="button" id="level1" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">First Level<i class="fas fa-caret-down"></i></button>
+
+				    <div class="dropdown-menu">
+				      <button class="dropdown-item" type="button">Something else here</button>
+				      <button class="dropdown-item submenu" type="button">Actions in a submenu</button>
+				      <div class="dropdown-menu">
+				        <button class="dropdown-item" type="button">Action</button>
+				        <button class="dropdown-item" type="button">Another action</button>
+				        <button class="dropdown-item" type="button">Something else</button>
+				      </div>
+				      <button class="dropdown-item" type="button">Another action</button>
+				      <button class="dropdown-item" type="button">Something else here</button>
+				    </div>
+
+				  </div>
 
 
 			</div>
 
-			<div class="col-lg-2 col-lg-offset-3">
+
+			<div class="col-lg-3 ml-auto">
+				<div class="tours">
+					<p class="smallest">ON THIS PAGE</p>
+					<div class="slider">
+  <input type="range">
+</div>
+					<!-- <input type="range" id="density" min="0" step="0.01" max="1000" value="1.22"> -->
+				</div>
 			</div>
-		</div>
+
+	</div>
 
 		<div class="content-spacer2"></div>
 
 		<div class="row">
 			<div class="col-lg-9 col-md-12">
 				<div class="optionPicker">
-					<div class="optional-line"><p class="smaller">OPTIONAL</p></div>
+
+						<div class="optional-line"><p class="smallest">OPTIONAL</p></div>
+						<div class="getResults">
+							<button type="button" class="btn btn-success">
+							<i class="fas fa-calculator"></i>&nbsp;Results
+							</button>
+						</div>
+
 					<nav class="optionPicker-nav">
 						<a href="#years" data-type="years" class="NavItem NavItem--is-active">Year(s)</a>
 						<a href="#topics" data-type="topics" class="NavItem">Topic(s)</a>
 						<a href="#stats" data-type="stats" class="NavItem">Statistical Outputs</a>
 						<a href="#data" data-type="data" class="NavItem">Subset Data</a>
 						<a href="#marks" data-type="marks" class="NavItem">Benchmarks</a>
-
 
 					</nav>
 
@@ -162,7 +197,13 @@
 
 
 	<script src="js/westat.js" type="text/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="js/bootstrap.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+	<script src="https://unpkg.com/react@15/dist/react.js"></script>
+	 <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+	<!-- <script src="js/react-components.js"></script> -->
 	<script src="js/index.js"></script>
 
 	<script>
@@ -174,6 +215,86 @@
 	$('.option[data-type="stats"]').addClass('hidden');
 
 	</script>
+
+	<!-- <script type="text/babel">
+	window.onload = function()
+
+	{
+
+	           class Dropdown extends React.Component {
+	             constructor(props) {
+	               super(props);
+
+	               this.state = {
+	                 open: false,
+	                 selected: this.props.initial || -1
+	               };
+	             }
+
+	             toggleDropdown() {
+	               this.setState({
+	                 active: !this.state.active
+	               });
+	             }
+
+	             handleClick(i) {
+	               this.setState({
+	                 selected: i
+	               });
+	             }
+
+	             renderOptions() {
+	               if (!this.props.options) {
+	                 return;
+	               }
+
+	               return this.props.options.map((option, i) => {
+	                 return (
+	                   <li
+	                     onClick={evt => this.handleClick(i)}
+	                     key={i}
+	                     className={"dropdown__list-item " + (i === this.state.selected ? 'dropdown__list-item--active' : '')}
+	                   >
+	                     {option}
+	                   </li>
+	                 );
+	               });
+	             }
+
+	             render() {
+	               return (
+	                 <div className="dropdown">
+	                   <div
+	                     onClick={() => this.toggleDropdown()}
+	                     className="dropdown__toggle dropdown__list-item"
+	                   >
+	                     {this.props.title}
+	                     <i className="fa fa-angle-down" aria-hidden="true"></i>
+	                   </div>
+	                   <ul className={"dropdown__list " + (this.state.active ? 'dropdown__list--active' : '')}>{this.renderOptions()}</ul>
+	                 </div>
+	               );
+	             }
+	           }
+
+	           Dropdown.propTypes = {
+	             title: React.PropTypes.string,
+	             options: React.PropTypes.array,
+
+	           };
+
+	           const options = ['Apple', 'Orange', 'Pear', 'Mango'];
+
+
+	           ReactDOM.render(<Dropdown title="Dropdown Menu" options={options} />,
+
+
+
+						 document.getElementById('levels'));
+
+	            };
+
+							</script> -->
 
 
 </body>
