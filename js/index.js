@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+
+//nav items under the main tab panel in analysis page
+
   $('.NavItem').click(function(evt) {
     evt.preventDefault();
     evt.stopPropagation();
@@ -8,7 +11,6 @@ $(document).ready(function () {
         allNavItems = $('.NavItem'),
         activeClass = 'NavItem--is-active';
 
-    // Highlight the correct nav item
     allNavItems.removeClass(activeClass);
     navItem.addClass(activeClass);
 
@@ -20,13 +22,8 @@ $(document).ready(function () {
 
 
 
-  // $('.dropdown-submenu a.test').on("click", function(e){
-  //   $(this).next('ul').toggle();
-  //   e.stopPropagation();
-  //   e.preventDefault();
-  // });
 
-
+//hover for dropdown items in main navbar
 
 const $dropdown = $(".nav-item");
 const $dropdownToggle = $(".dropdown-toggle");
@@ -65,6 +62,13 @@ $(".accordions .mb-0 a").click(function (){
 
 });
 
+
+if($('body').hasClass('analysis')) {
+$('#navbarDropdownMenuAnalysis .down').html('Analysis on Demand');
+$('.down:after').css('content' , 'none ');
+}
+
+
 //levels
 
 // $('#level1').html('First Level &#9662;')
@@ -79,7 +83,7 @@ var levels = $('<div class="btn-group"><button type="button" class="btn btn-ligh
 
 
 
-
+//projects slider
 
 if($('body').hasClass('initial')) {
 	$( "#slideOutLeft" ).css('left', '0')
@@ -94,6 +98,16 @@ else {
   $('#slideOutLeft .projects').show();
   $('#slideOutLeft .selectProject').hide()
 }
+
+
+$('.projects').on('mouseenter', function() {
+	$('.projects').css('cursor', 'grab')
+})
+
+$('.projects').on('mouseleave', function() {
+	$('.projects').css('cursor', 'pointer')
+})
+
 
 
 // $('#slideOutLeft').on('click', function() {
@@ -133,8 +147,6 @@ $('.backdropShadow').fadeOut();
 })
 
 
-
-
 $('.projects').click(function() {
 	$('.backdropShadow').fadeIn()
 	$( "#slideOutLeft" ).animate({
@@ -145,8 +157,7 @@ $('.projects').click(function() {
 });
 
 
-
-
+//zip case slider
 
 $('#one').on('click', function() {
 		$('.backdropShadow').fadeIn()
@@ -164,17 +175,7 @@ $('#close').on('click', function() {
 
 
 
-$('.projects').on('mouseenter', function() {
-	$('.projects').css('cursor', 'grab')
-})
-
-$('.projects').on('mouseleave', function() {
-	$('.projects').css('cursor', 'pointer')
-})
-
-
-
-
+//scale logo
 
 var resizeText = function () {
 
@@ -187,10 +188,127 @@ var resizeText = function () {
 	$(".navbar-brand img").css("width", newFontSize + '%');
 };
 
+
+var resizeText2 = function () {
+
+	var preferredFontSize2 = 50; // %
+	var preferredSize2 = 1024 * 768;
+
+	var currentSize2 = $(window).width() * $(window).height();
+	var scalePercentage2 = Math.sqrt(currentSize2) / Math.sqrt(preferredSize2);
+	var newFontSize2 = preferredFontSize2 * scalePercentage2 + 2;
+	// $(".nav-item a").css("font-size", newFontSize2 + '%');
+  // $(".nav-item .down").css("font-size", newFontSize2 + '%');
+}
+
+
+
+$(window).bind('resize', function() {
+	resizeText2();
+}).trigger('resize');
+
+
+
 $(window).bind('resize', function() {
 	resizeText();
 }).trigger('resize');
 
+
+// $('input[type="checkbox"]').click(function(){
+//   if($(this).is(':checked')){
+//      var val = $(this).val();
+//      $('.hidden-filters > ul').append('<li>'+val+'</li>');
+//   }
+// });
+
+// $(':checkbox').on('click', function() {
+//   var value = $('label').val();
+//   $('.filter-attr-list').append(`<li class="results selected"> ${value} <div class="removeTag"><i class="fal fa-times ml-1"></i></div></li>`);
+//   $('.filter-attr-list.search-list').removeClass('hidden');
+//   $('.input-operators').removeClass('hidden');
+//
+//   // if($('.tag').length >= 1) {
+//   //   $('input[type="text"]').val('');
+//   //
+//   // }
+// })
+//
+//
+// $('.filter-attr-list li').on('click', function() {
+//   $(this).toggleClass('selected')
+// })
+//
+//
+// $('.tag').on('click', '.removeTag', function() {
+//   console.log("hi there")
+//   $(this).closest('.results').remove();
+// })
+
+//
+// $("input:checkbox").click(function() {
+//     var output = "";
+//     $("input:checked").each(function() {
+//       output += $(this).val() + " ";
+//     });
+//     $(".filter-attr-list").val(output.trim());
+//   });
+
+
+// var $checkboxes;
+//
+// function storeuser() {
+//     var users = $checkboxes.map(function() {
+//         if(this.checked) return this.id;
+//     }).get().join('');
+//     $('.filter-attr-list').html(`<li class="results selected"> ${users} <i class="fal fa-times ml-1"></i></div></li>`);
+// }
+//
+// $(function() {
+//     $checkboxes = $('input:checkbox').change(storeuser);
+// });
+
+
+$(":checkbox[data-year]").on('change' , function() {
+
+    var years = $(this).attr('id');
+
+    $('.filter-attr-list').append(`<li class="results selected"> ${years} <div class="removeTag"><i class="fal fa-times ml-1"></i></div></li>`);
+
+
+
+});
+
+		$('.filter-attr-list').on('click', '.removeTag', function() {
+			console.log("hi there")
+			$(this).closest('.results').remove();
+		})
+
+
+   //  $("input[name=year]").change(function() {
+   //    updateAllChecked();
+   //  });
+   //
+   //  $("input[name=addall]").change(function() {
+   //    if (this.checked) {
+   //      $("input[name=year]").prop('checked', true).change();
+   //    } else {
+   //      $("input[name=year]").prop('checked', false).change();
+   //    }
+   //  });
+   //
+   //  function updateAllChecked() {
+   // $('.filter-attr-list').text('');
+   //
+   //    $("input[name=year]").each(function() {
+   //      if (this.checked) {
+   //        let old_text = $('.filter-attr-list').text() ? $('.filter-attr-list').text() + ' ' : '';
+   //         $('.filter-attr-list').text(old_text + $(this).val());
+   //
+   //      }
+   //    })
+   //  }
+
+//move zip case tab on window shrink
 
 $(window).scroll(function () {
 	var distanceY = window.pageYOffset || document.documentElement.scrollTop;
@@ -219,11 +337,9 @@ $('#one').keyup(function (e) {
 	}
 });
 
-if($('.navbar-nav li .dropdown-menu .dropdown-item').is('.active')) {
-  $(this).find('.nav-item').css('background', 'red')
-}
 
 
+//make the nav item have active line on current page
 
 	var path = window.location.href;
 	$('.navbar-nav li a').each(function() {
@@ -236,7 +352,7 @@ if($('.navbar-nav li .dropdown-menu .dropdown-item').is('.active')) {
 
 	});
 
-
+//make the nav item children have active line on current page
 
   $('.navbar-nav li .dropdown-menu .dropdown-item').each(function() {
     if (this.href === path) {

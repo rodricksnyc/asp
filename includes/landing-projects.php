@@ -28,7 +28,7 @@
               <h5>
                 <!--**Tsigereda, I am using the # instead of the path to the new screen view for demo purposes only- but I left the correct href below that is currently being used on the site to switch screen views -->
 
-                <a class="listOptions" href="index.php" title="ACS-PUMS – Welcome" role="menuitem" tabindex="0">Welcome</a>
+                <a class="listOptions" href="../index.php" title="ACS-PUMS – Welcome" role="menuitem" tabindex="0">Welcome</a>
                 <!-- <a class="listOptions" href="RptList.aspx?ScreenID=15037" title="ACS-PUMS – Welcome" role="menuitem" tabindex="0">Welcome</a> -->
               </h5>
             </div>
@@ -36,7 +36,7 @@
             <div class="card-body">
               <h5>
 
-                <a class="listOptions" href="view1.php" title="ACS-PUMS – Welcome" role="menuitem" tabindex="0">Analysis on Demand</a>
+                <a class="listOptions" href="../view1.php" title="ACS-PUMS – Welcome" role="menuitem" tabindex="0">Analysis on Demand</a>
 
               </h5>
             </div>
@@ -107,7 +107,7 @@
           <div id="accordion-2" class="accordions">
             <div class="card-body">
               <h5>
-                <a class="listOptions" href="index.php" title="BRFSS – Welcome" role="menuitem" tabindex="0">Welcome</a>
+                <a class="listOptions" href="../index.php" title="BRFSS – Welcome" role="menuitem" tabindex="0">Welcome</a>
 
                 <!-- <a class="listOptions" href="RptList.aspx?ScreenID=47" title="BRFSS – Welcome" role="menuitem" tabindex="0">Welcome</a> -->
               </h5>
@@ -121,14 +121,14 @@
 
             <div class="card-body">
               <h5>
-                <a class="listOptions" href="about.php" title="BRFSS – About the Data" role="menuitem" tabindex="0">About the Data</a>
+                <a class="listOptions" href="../about.php" title="BRFSS – About the Data" role="menuitem" tabindex="0">About the Data</a>
                 <!-- <a class="listOptions" href="RptList.aspx?ScreenID=14778" title="BRFSS – About the Data" role="menuitem" tabindex="0">About the Data</a> -->
               </h5>
             </div>
 
             <div class="card-body">
               <h5>
-                <a class="listOptions" href="view1.php" title="BRFSS – Create a query" role="menuitem" tabindex="0">Analysis on Demand</a>
+                <a class="listOptions" href="../view1.php" title="BRFSS – Create a query" role="menuitem" tabindex="0">Analysis on Demand</a>
 
               </h5>
             </div>
@@ -182,7 +182,7 @@
           <div id="accordion-3" class="accordions">
             <div class="card-body">
               <h5>
-                <a class="listOptions" href="index.php" title="CCD – Welcome" role="menuitem" tabindex="0">Welcome</a>
+                <a class="listOptions" href="../index.php" title="CCD – Welcome" role="menuitem" tabindex="0">Welcome</a>
 
                 <!-- <a class="listOptions" href="RptList.aspx?ScreenID=15041" title="CCD – Welcome" role="menuitem" tabindex="0">Welcome</a> -->
               </h5>
@@ -192,7 +192,7 @@
               <h5>
 
 
-                <a class="listOptions" href="view1.php" title="CCD – Welcome" role="menuitem" tabindex="0">Analysis on Demand</a>
+                <a class="listOptions" href="../view1.php" title="CCD – Welcome" role="menuitem" tabindex="0">Analysis on Demand</a>
 
               </h5>
             </div>
@@ -250,7 +250,7 @@
           <div id="accordion-4" class="accordions">
             <div class="card-body">
               <h5>
-                <a class="listOptions" href="index.php" title="CPS – Welcome" role="menuitem" tabindex="0">Welcome</a>
+                <a class="listOptions" href="../index.php" title="CPS – Welcome" role="menuitem" tabindex="0">Welcome</a>
 
                 <!-- <a class="listOptions" href="RptList.aspx?ScreenID=15043" title="CPS – Welcome" role="menuitem" tabindex="0">Welcome</a> -->
               </h5>
@@ -259,7 +259,7 @@
             <div class="card-body">
               <h5>
 
-                <a class="listOptions" href="view1.php" title="CPS – Welcome" role="menuitem" tabindex="0">Analysis on Demand</a>
+                <a class="listOptions" href="../view1.php" title="CPS – Welcome" role="menuitem" tabindex="0">Analysis on Demand</a>
 
               </h5>
             </div>
