@@ -7,6 +7,7 @@
 </head>
 
 
+
 <body class="analysis">
 	<a href="#themaincontent" id="skiptocontent" tabindex="1" aria-hidden="false">skip to main content</a>
 	<div class="container-fluid">
@@ -62,17 +63,18 @@
 			</div>
 
 
-			<div class="col-lg-3 ml-auto">
+			<div class="col-lg-4 ml-auto">
 				<div class="tours">
 					<p class="smallest">ON THIS PAGE</p>
-					<div class="slider">
-  <input type="range">
-</div>
-					<!-- <input type="range" id="density" min="0" step="0.01" max="1000" value="1.22"> -->
+
+						<input type="range" min="0" value="100" max="100">
+						<p class="blue">Hover Tooltips</p>
+
+
 				</div>
 			</div>
 
-	</div>
+		</div>
 
 		<div class="content-spacer2"></div>
 

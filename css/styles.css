@@ -899,24 +899,25 @@ border-radius: 1rem;
   align-items: center;
       height: 2em;
 }
-.slider {
-  width: 200px;
-  margin: 100px auto;
+
+.tours p.smallest {
+  margin-bottom:0em !important;
 }
 
 input[type="range"] {
   -webkit-appearance: none;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   width: 100%;
-  height: 20px;
+  height: 10px;
   margin: 0;
   border: none;
-  padding: 1px 2px;
+  padding: 0px;
   border-radius: 14px;
-  background: #232528;
+  background: #07477d;
   box-shadow: inset 0 1px 0 0 #0d0e0f, inset 0 -1px 0 0 #3a3d42;
   -webkit-box-shadow: inset 0 1px 0 0 #0d0e0f, inset 0 -1px 0 0 #3a3d42;
-  outline: none; /* no focus outline */
+  outline: none;
+  max-width:40px;
 }
 
 input[type="range"]::-moz-range-track {
@@ -926,7 +927,7 @@ input[type="range"]::-moz-range-track {
 
 input[type="range"]::-ms-track {
   border: inherit;
-  color: transparent; /* don't drawn vertical reference line */
+  color: transparent;
   background: transparent;
 }
 
@@ -939,24 +940,23 @@ input[type="range"]::-ms-tooltip {
   display: none;
 }
 
-/* thumb */
+
 
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 40px;
-  height: 18px;
+  width: 25px;
+  height: 25px;
   border: none;
-  border-radius: 12px;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #529de1), color-stop(100%, #245e8f)); /* android <= 2.2 */
-  background-image: -webkit-linear-gradient(top , #529de1 0, #245e8f 100%); /* older mobile safari and android > 2.2 */;
-  background-image: linear-gradient(to bottom, #529de1 0, #245e8f 100%); /* W3C */
+  border-radius: 50%;
+  background: rgb(107,177,227);
+  background: radial-gradient(circle, rgba(107,177,227,1) 0%, rgba(55,148,217,0.9402135854341737) 100%);
 }
 input[type="range"]::-moz-range-thumb {
   width: 40px;
   height: 18px;
   border: none;
   border-radius: 12px;
-  background-image: linear-gradient(to bottom, #529de1 0, #245e8f 100%); /* W3C */
+  background-image: linear-gradient(to bottom, #529de1 0, #245e8f 100%);
 }
 
 input[type="range"]::-ms-thumb {
@@ -964,9 +964,17 @@ input[type="range"]::-ms-thumb {
   height: 18px;
   border-radius: 12px;
   border: 0;
-  background-image: linear-gradient(to bottom, #529de1 0, #245e8f 100%); /* W3C */
+  background-image: linear-gradient(to bottom, #529de1 0, #245e8f 100%);
 }
 
+
+.blue {
+  color:#07477d
+}
+
+.tours p {
+  margin-bottom:0rem;
+}
 /* .dropdown {
   position: relative;
   background: #fafafa;
