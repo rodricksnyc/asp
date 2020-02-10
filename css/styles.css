@@ -261,6 +261,47 @@ a:hover {
   font-size: 15px !important;
 }
 
+.accordions .panel-header:hover h5 a {
+  color: #c7482e;
+  font-size: 15px !important;
+}
+
+
+/* .accordions li:hover > a:before {
+  content:'';
+  position:absolute;
+  background-color: #c7482e;
+  width:5px;
+  height:70%;
+  bottom:0;
+  left:30px;
+} */
+ /* .card-body .accordion-items li:hover a {
+    color: #c7482e;
+    font-size: 15px !important;
+}
+
+ .card-body .accordion-items li:hover a:before {
+  content:'';
+  position:absolute;
+  background-color: #c7482e;
+  width:5px;
+      height: 110%;
+      bottom: 0;
+      left: 30px;
+} */
+
+.accordions .panel-header:hover h5 a:before {
+  content:'';
+  position:absolute;
+  background-color: #c7482e;
+  width:5px;
+      height: 110%;
+      bottom: 0;
+      left: -10px;
+}
+
+
 .card-body:hover h5 a:before {
   content:'';
   position:absolute;
@@ -673,7 +714,7 @@ p.smallest {
 }
 
 .append {
-  margin-top:2.5em;
+  margin-top:2em;
 
 }
 
@@ -682,13 +723,23 @@ p.smallest {
   margin-right:4em;
 }
 
-
+.grayLayer {
+  background: rgb(115,115,115);
+  background: linear-gradient(90deg, rgba(115,115,115,0.6615021008403361) 0%, rgba(115,115,115,0.6615021008403361) 100%);
+  position: absolute;
+      width: 100%;
+      height: 94%;
+      top: 6%;
+      bottom: 0%;
+}
 
 .appendOptions {
   background: white;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
-  padding:.5em 1em;
-  height:100%;
+  /* padding:.5em 1em; */
+  /* background: rgb(167,167,167);
+  background: linear-gradient(90deg, rgba(167,167,167,0.700717787114846) 0%, rgba(167,167,167,0.7035189075630253) 100%); */
+  height:auto;
   border-radius:1rem;
   position:relative;
   margin-right:4em;
@@ -701,12 +752,94 @@ p.smallest {
   padding: .5em 0em;
   border-radius: 5px;
 
-  position: absolute;
-  z-index: 999;
+  /* position: absolute;
+  z-index: 3;
   left: 0;
   right: 0;
-  top: -3%;
+  top: -3%; */
 
+}
+
+#search .clearfix label {
+  position: relative;
+}
+
+.evenSmaller {
+  font-size:10px;
+}
+
+.topics, .stats, .benchmarks, .data, .analysis-topic {
+  padding-left:1em;
+  padding-right:1em;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.15), 0px 0px 10px rgba(0,0,0,.1);
+  margin-bottom: 1em;
+  margin-top:1em;
+  border-radius: 1rem;
+  padding: .3em;
+  position: relative;
+}
+
+.topics p {
+  font-size:13px;
+  margin-bottom: .5rem !important;
+  margin-top: 0rem !important;
+}
+.analysis-topic p {
+  font-size:13px;
+  margin-bottom: .5rem !important;
+  margin-top: 0rem !important;
+}
+.stats p {
+  font-size:13px;
+  margin-bottom: .5rem !important;
+  margin-top: 0rem !important;
+}
+.benchmarks p {
+  font-size:13px;
+  margin-bottom: .5rem !important;
+  margin-top: 0rem !important;
+}
+
+.topics .row {
+  margin-bottom: 2em;
+}
+
+.analysis-topic .row {
+  margin-bottom: 2em;
+}
+
+.stats .row {
+  margin-bottom: 2em;
+}
+
+.data .row {
+  margin-bottom: 2em;
+}
+
+.benchmarks .row {
+  margin-bottom: 2em;
+}
+
+.data p {
+  font-size:13px;
+  margin-bottom: .5rem !important;
+  margin-top: 0rem !important;
+}
+
+.topics .fal{
+    color: #07477d;
+}
+
+.topics .far{
+    color: #07477d;
+}
+
+.analysis-topic .fal{
+    color: #07477d;
+}
+
+.analysis-topic .far{
+    color: #07477d;
 }
 
 .appendOptions p.smallest {
@@ -717,9 +850,12 @@ p.smallest {
   text-align: left;
   padding-left: .5em;
   font-weight: 600;
-  height: 8px;
+  /* height: 8px; */
 }
-
+.mostSmall {
+  font-size:11px;
+  margin-top:.5em;
+}
 
 .filter-attr-list {
   display: flex;
@@ -729,6 +865,7 @@ p.smallest {
   align-items: center;
   margin: 0;
   padding: 0;
+  height: 25px;
 }
 
 .filter-attr-list li.results {

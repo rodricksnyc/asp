@@ -131,120 +131,223 @@
 
 						<div class="option" data-type="topics">
 
-							<p>S;S;S;S;S;S;S;S;S;S;  </p>
+							<div class="col-lg-6 col-md-6">
 
-						</div>
+								<p class="strong text-center">Browse</p>
 
-						<div class="option" data-type="data">
+							<div id="search">
+								<div class="clearfix">
 
-							<p>ed OIRIOHGERHO-0234987438977942378933443T344T34T34T3443T43T4T34T3T43TT34T4798ut  </p>
+									<script type="text/javascript">
+									//<![CDATA[
+									$(document).ready(function () {
+										var txtbox = $('#ctl00_HeaderContentPlaceHolder_Search1_txtSearchText');
+										if (txtbox.val() != 'Enter Keywords') {
+											txtbox.removeClass('searchTxt-default');
+										}
+										txtbox.keypress(function (event) {
+											if (event.which == 13) {
+												//alert("enter button is pressed");
+												$('#ctl00_HeaderContentPlaceHolder_Search1_imgbtnSearch').click();
+												//event.preventDefault();
+											}
+										}).focus(function (event) {
 
-						</div>
+											//alert("txtbox.val()=" + txtbox.val());
+											if (txtbox.val() == 'Enter Keywords') {
+												txtbox.val('');
+												txtbox.removeClass('searchTxt-default');
+											}
+											else {
+												txtbox.select();
+											}
+										}).blur(function (event) {
+											//alert("txtbox.val()=" + txtbox.val());
+											if (txtbox.val() == '') {
+												txtbox.val('Enter Keywords');
+												txtbox.addClass('searchTxt-default');
+											}
+										});
+									});
+									//]]>
+								</script>
+								<fieldset>
+									<legend class="hide"></legend>
+									<label for="ctl00_HeaderContentPlaceHolder_Search1_txtSearchText" id="ctl00_HeaderContentPlaceHolder_Search1_lblSearch" class="hiddenOffScreen"><i class="fal fa-search f-16"></i></label>
+									<input name="ctl00$HeaderContentPlaceHolder$Search1$txtSearchText" type="text" value="Search" maxlength="40" id="ctl00_HeaderContentPlaceHolder_Search1_txtSearchText" class="searchTxt searchTxt-default">
+									<input type="image" name="ctl00$HeaderContentPlaceHolder$Search1$imgbtnSearch" id="ctl00_HeaderContentPlaceHolder_Search1_imgbtnSearch" title="Search" class="searchBt" text="Search" src="../Images/searchBt.png" alt="Search" style="border-width:0px;">
+								</fieldset>
 
-						<div class="option" data-type="marks">
-
-							<p>983458Y9534879543789ROHIGE48Y9Y8934TY89 </p>
-
-						</div>
-
-						<div class="option" data-type="stats">
-
-							<p>OIHDFGOHIGERHIOU </p>
-
+							</div>
 						</div>
 
 					</div>
 
+					</div>
 
+					<div class="option" data-type="data">
+
+						<p>ed OIRIOHGERHO-0234987438977942378933443T344T34T34T3443T43T4T34T3T43TT34T4798ut  </p>
+
+					</div>
+
+					<div class="option" data-type="marks">
+
+						<p>983458Y9534879543789ROHIGE48Y9Y8934TY89 </p>
+
+					</div>
+
+					<div class="option" data-type="stats">
+
+						<p>OIHDFGOHIGERHIOU </p>
+
+					</div>
 
 				</div>
 
-			</div>
-
-			<div class="col-lg-3 col-md-12 append">
-
-
-
-				<p class="blue text-center">Query Summary</p>
-				<div class="appendOptions">
-
-					<div class="lightBlueBack">
-
-						<ul class="filter-attr-list">
-								<p>Year(s):</p>
-
-						</ul>
-					</div>
-
-					<p class="text-center smallest">DRAG AND DROP TOPICS IN DESIRED ORDER</p>
-
-					</div>
-				</div>
 
 
 			</div>
 
-
-			<div class="backdropShadow"></div>
 		</div>
 
+		<div class="col-lg-3 col-md-12 append">
+			<p class="blue text-center">Query Summary</p>
+			<div class="appendOptions">
+				<div class="grayLayer"></div>
 
-		<?php include("footer/main.php"); ?>
+				<div class="lightBlueBack">
+					<ul class="filter-attr-list">
+						<p>Year(s):</p>
+					</ul>
+				</div>
+				<p class="text-center mostSmall">&ndash;DRAG AND DROP TOPICS IN DESIRED ORDER&ndash;</p>
 
+				<div class="topics">
 
-
-		<script
-		src="https://code.jquery.com/jquery-3.4.1.min.js"
-		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-		crossorigin="anonymous"></script>
-		<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
-
-
-		<script src="js/jquery.js" type="text/javascript"></script>
-		<script src="js/migrate.js" type="text/javascript"></script>
-
-		<script src="js/slick.js" type="text/javascript"></script>
-		<script src="js/cookie.js" type="text/javascript"></script>
-		<script src="js/responsiveTabs.js" type="text/javascript"></script>
-		<script src="js/onmediaquery.js" type="text/javascript"></script>
-		<script src="js/ui.js" type="text/javascript"></script>
-
-		<script src="js/nhis.js" type="text/javascript"></script>
-
-
-		<script src="js/westat.js" type="text/javascript"></script>
-		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-		<script src="js/bootstrap.js"></script>
-
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
-		<script src="https://unpkg.com/react@15/dist/react.js"></script>
-		<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
-		<!-- <script src="js/react-components.js"></script> -->
-		<script src="js/index.js"></script>
-
-		<script>
+					<div class="container">
+						<div class="row">
+							<p><i class="far fa-bars"></i>&nbsp;Row Topic()&nbsp;<i class="fal fa-info-circle"></i> <span class="evenSmaller">no limit</span></p>
+						</div>
+						<div class="row">
+							<p><i class="fal fa-line-columns"></i>&nbsp;Column Topic&nbsp;<i class="fal fa-info-circle"></i> <span class="evenSmaller">limit 1</span></p>
+						</div>
+						<div class="row">
+							<p><i class="fal fa-layer-group"></i></i>&nbsp;Layer Topic&nbsp;<i class="fal fa-info-circle"></i> <span class="evenSmaller">limit 1</span></p>
+						</div>
+					</div>
+				</div>
 
 
-		$('.option[data-type="topics"]').addClass('hidden');
-		$('.option[data-type="data"]').addClass('hidden');
-		$('.option[data-type="marks"]').addClass('hidden');
-		$('.option[data-type="stats"]').addClass('hidden');
+				<!-- <div class="grayLayer"> -->
+				<div class="analysis-topic">
+					<div class="container">
+						<div class="row">
+							<p><i class="fal fa-chart-bar"></i>&nbsp;Analysis Topic&nbsp;<i class="fal fa-info-circle"></i> <span class="evenSmaller">limit 1</span></p>
+						</div>
+					</div>
+				</div>
+				<!-- </div> -->
 
-		</script>
+				<!-- <div class="grayLayer"> -->
+				<div class="stats">
+					<div class="container">
+						<div class="row">
+							<p>Statistical Output</p>
+						</div>
+					</div>
+				</div>
+				<!-- </div> -->
 
-		<!-- <script type="text/babel">
-		window.onload = function()
 
-		{
+				<p class="text-center mostSmall">OPTIONAL FILTERS</p>
 
-		class Dropdown extends React.Component {
-		constructor(props) {
-		super(props);
+				<!-- <div class="grayLayer"> -->
+				<div class="data">
+					<div class="container">
+						<div class="row">
+							<p>Subset Data</p>
+						</div>
+					</div>
+				</div>
+				<!-- </div> -->
 
-		this.state = {
-		open: false,
-		selected: this.props.initial || -1
-	};
+				<!-- <div class="grayLayer"> -->
+				<div class="benchmarks">
+					<div class="container">
+						<div class="row">
+							<p>Benchmarks</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- </div> -->
+		</div>
+	</div>
+
+
+	<div class="backdropShadow"></div>
+</div>
+
+
+<?php include("footer/main.php"); ?>
+
+
+
+<script
+src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous"></script>
+<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+
+
+<script src="js/jquery.js" type="text/javascript"></script>
+<script src="js/migrate.js" type="text/javascript"></script>
+
+<script src="js/slick.js" type="text/javascript"></script>
+<script src="js/cookie.js" type="text/javascript"></script>
+<script src="js/responsiveTabs.js" type="text/javascript"></script>
+<script src="js/onmediaquery.js" type="text/javascript"></script>
+<script src="js/ui.js" type="text/javascript"></script>
+
+<script src="js/nhis.js" type="text/javascript"></script>
+
+
+<script src="js/westat.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="js/bootstrap.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+<script src="https://unpkg.com/react@15/dist/react.js"></script>
+<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+<!-- <script src="js/react-components.js"></script> -->
+<script src="js/index.js"></script>
+
+<script>
+
+
+$('.option[data-type="topics"]').addClass('hidden');
+$('.option[data-type="data"]').addClass('hidden');
+$('.option[data-type="marks"]').addClass('hidden');
+$('.option[data-type="stats"]').addClass('hidden');
+
+</script>
+
+<!-- <script type="text/babel">
+window.onload = function()
+
+{
+
+class Dropdown extends React.Component {
+constructor(props) {
+super(props);
+
+this.state = {
+open: false,
+selected: this.props.initial || -1
+};
 }
 
 toggleDropdown() {
