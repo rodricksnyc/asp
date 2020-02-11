@@ -1,7 +1,4 @@
 
-
-
-
 .start-header {
   opacity: 1;
   transform: translateY(0);
@@ -292,12 +289,12 @@ background-color: #FFD6CD;
   transform: translate3d(0, 0px, 0);
 }
 .dropdown-menu {
-  padding: 10px!important;
+  padding: 10px 0px 10px 0px !important;
   margin: 0;
   font-size: 13px;
   letter-spacing: 1px;
   color: #07477d;
-  background-color: #fcfaff;
+  background-color: white;
   border: none;
   border-radius: 3px;
   box-shadow: 0 5px 10px 0 rgba(138, 155, 165, 0.15);
@@ -316,7 +313,7 @@ background-color: #FFD6CD;
 .dropdown-item:hover,
 .dropdown-item:focus {
   color: #c7482e !important;
-  background-color:  #FFD6CD;
+  background-color:  #faede9;
 }
 
 

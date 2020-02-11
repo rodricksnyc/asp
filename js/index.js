@@ -55,7 +55,7 @@ $(window).on("load resize", function() {
 var dropdownButton = $(".btn-group .dropdown-menu")
 
 dropdownButton.on('mouseleave', function() {
-  console.log("rlgubeirbgiruebeirbuiubiu")
+
   dropdownButton.removeClass('show');
   // $('.dropdown-menu').addClass('show')
 })
@@ -63,7 +63,47 @@ dropdownButton.on('mouseleave', function() {
 
 
 //acordions for levels under Variables
+$('.toggle').on('mouseenter', function(){
+      $(this).addClass('highlighted');
+})
+
+// $('.inner').on('mouseenter', function(){
+//       $(this).addClass('border');
+// })
+
+$('.toggle').on('mouseleave', function(){
+      $(this).removeClass('highlighted');
+})
+
+
+
 $('.toggle').click(function(e) {
+  	e.preventDefault();
+    e.stopPropagation()
+    $('.toggle').addClass('plus-sign');
+
+    var $this = $(this);
+
+    if ($this.next().hasClass('show')) {
+        $this.next().removeClass('show');
+        $this.next().slideUp(350);
+
+        $this.removeClass('minus-sign');
+        $(this).removeClass('highlighted');
+
+    } else {
+        $this.parent().parent().find('li .inner').removeClass('show');
+        $this.parent().parent().find('li .inner').slideUp(350);
+        $this.next().toggleClass('show');
+        $this.next().slideToggle(350);
+        $this.addClass('minus-sign');
+        $(this).addClass('highlighted');
+
+
+    }
+});
+
+$('.toggleInner').click(function(e) {
   	e.preventDefault();
 
     var $this = $(this);
@@ -71,17 +111,33 @@ $('.toggle').click(function(e) {
     if ($this.next().hasClass('show')) {
         $this.next().removeClass('show');
         $this.next().slideUp(350);
+
+        $this.removeClass('change_sign');
+
     } else {
         $this.parent().parent().find('li .inner').removeClass('show');
         $this.parent().parent().find('li .inner').slideUp(350);
         $this.next().toggleClass('show');
         $this.next().slideToggle(350);
+        $this.addClass('change_sign');
+
     }
 });
 
-// $('a.toggle').on('mouseenter', function (){
-//   $('ul.inner.show li').addClass('special');
-// })
+
+$('.nestedToggle').on('mouseenter', function(e) {
+  e.stopPropagation()
+  $(this).css('background', '#faede9')
+})
+
+$('.nestedToggle').on('mouseleave', function(e) {
+  e.stopPropagation()
+  $(this).css('background', 'transparent')
+})
+
+
+
+
 
 
 
