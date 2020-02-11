@@ -9,7 +9,7 @@
 
 <body class="analysis">
 	<a href="#themaincontent" id="skiptocontent" tabindex="1" aria-hidden="false">skip to main content</a>
-	<div class="container-fluid">
+	<div class="container-fluid view1">
 
 
 		<div class="navigation-wrap bg-light start-header start-style">
@@ -45,18 +45,19 @@
 					<button type="button" id="level1" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">First Level<i class="fas fa-caret-down"></i></button>
 
 					<div class="dropdown-menu">
-						<button class="dropdown-item" type="button">Something else here</button>
-						<button class="dropdown-item submenu" type="button">Actions in a submenu</button>
+						<button class="dropdown-item" type="button">{{Data View 1}}</button>
+						<button class="dropdown-item submenu" type="button">{{Data View 2}}</button>
 						<div class="dropdown-menu">
-							<button class="dropdown-item" type="button">Action</button>
-							<button class="dropdown-item" type="button">Another action</button>
-							<button class="dropdown-item" type="button">Something else</button>
+							<button class="dropdown-item" type="button">{{Data View A}}</button>
+							<button class="dropdown-item" type="button">{{Data View B}}</button>
+							<button class="dropdown-item" type="button">{{Data View C}}</button>
 						</div>
-						<button class="dropdown-item" type="button">Another action</button>
-						<button class="dropdown-item" type="button">Something else here</button>
+						<button class="dropdown-item" type="button">{{Data View 3}}</button>
+						<button class="dropdown-item" type="button">{{Data View 4}}</button>
 					</div>
 
 				</div>
+
 
 
 			</div>
@@ -81,113 +82,115 @@
 			<div class="col-lg-9 col-md-12">
 				<div class="optionPicker">
 
-					<div class="optional-line"><p class="smallest">OPTIONAL</p></div>
+					<div class="optional-line">
+						<p class="smallest">OPTIONAL</p>
+					</div>
 					<div class="getResults">
-						<button type="button" class="btn btn-success">
+						<a onclick="return true;" id="ctl00_Tab1_lnkGetData" title="View your query results" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$Tab1$lnkGetData&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))"><button type="button" class="btn btn-success">
 							<i class="fas fa-calculator"></i>&nbsp;Results
 						</button>
+					</a>
+				</div>
+
+				<nav class="optionPicker-nav" id="queryTabs">
+					<a href="#years" data-type="years" class="NavItem" id="topicsBtn" id="ctl00_Tab1_lvwTab_ctrl0_lnkbtnTab" title="Year" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$Tab1$lvwTab$ctrl0$lnkbtnTab&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">Year(s)</a>
+					<a href="#topics" data-type="topics" class="NavItem" id="topicsBtn" id="ctl00_Tab1_lvwTab_ctrl1_lnkbtnTab" title="Select topic(s) of interest" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$Tab1$lvwTab$ctrl1$lnkbtnTab&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">Topic(s)</a>
+
+					<a href="#stats" data-type="stats" class="NavItem" id="ctl00_Tab1_lvwTab2_ctrl1_lnkbtnTab" title="Select statistical options" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$Tab1$lvwTab2$ctrl1$lnkbtnTab&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">Statistical Outputs</a>
+					<a href="#data" data-type="data" class="NavItem">Subset Data</a>
+					<a href="#marks" data-type="marks" class="NavItem">Benchmarks</a>
+
+				</nav>
+
+				<div class="optionListWindow">
+
+					<div class="option" data-type="years">
+
+						<p>ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit</p>
+
+						<center><p class="smaller">*this is a required field</p></center>
+
+						<form method="post" id="years">
+
+
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" name="addall" class="custom-control-input" id="allYears">
+								<label class="custom-control-label" for="allYears">Include all years</label>
+							</div>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" name="year" data-year="2016" value="2016" class="custom-control-input" id="2016">
+								<label class="custom-control-label" for="2016">2016</label>
+							</div>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" name="year" data-year="2015" value="2015" class="custom-control-input" id="2015">
+								<label class="custom-control-label" for="2015">2015</label>
+							</div>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" name="year" data-year="2014" value="2014" class="custom-control-input" id="2014">
+								<label class="custom-control-label" for="2014">2014</label>
+							</div>
+
+						</form>
+
 					</div>
 
-					<nav class="optionPicker-nav">
-						<a href="#years" data-type="years" class="NavItem NavItem--is-active">Year(s)</a>
-						<a href="#topics" data-type="topics" class="NavItem">Topic(s)</a>
-						<a href="#stats" data-type="stats" class="NavItem">Statistical Outputs</a>
-						<a href="#data" data-type="data" class="NavItem">Subset Data</a>
-						<a href="#marks" data-type="marks" class="NavItem">Benchmarks</a>
-
-					</nav>
-
-					<div class="optionListWindow">
-
-						<div class="option" data-type="years">
-
-							<p>ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit</p>
-
-							<center><p class="smaller">*this is a required field</p></center>
-
-							<form method="post" id="years">
-
-
-								<div class="custom-control custom-checkbox">
-									<input type="checkbox" name="addall" class="custom-control-input" id="allYears">
-									<label class="custom-control-label" for="allYears">Include all years</label>
-								</div>
-								<div class="custom-control custom-checkbox">
-									<input type="checkbox" name="year" data-year="2016" value="2016" class="custom-control-input" id="2016">
-									<label class="custom-control-label" for="2016">2016</label>
-								</div>
-								<div class="custom-control custom-checkbox">
-									<input type="checkbox" name="year" data-year="2015" value="2015" class="custom-control-input" id="2015">
-									<label class="custom-control-label" for="2015">2015</label>
-								</div>
-								<div class="custom-control custom-checkbox">
-									<input type="checkbox" name="year" data-year="2014" value="2014" class="custom-control-input" id="2014">
-									<label class="custom-control-label" for="2014">2014</label>
-								</div>
-
-							</form>
-
-						</div>
-
-						<div class="option" data-type="topics">
+					<div class="option" data-type="topics">
+						<div class="row">
 
 							<div class="col-lg-6 col-md-6">
 
 								<p class="strong text-center">Browse</p>
 
-							<div id="search">
-								<div class="clearfix">
+								<div id="search">
+									<div class="clearfix">
 
-									<script type="text/javascript">
-									//<![CDATA[
-									$(document).ready(function () {
-										var txtbox = $('#ctl00_HeaderContentPlaceHolder_Search1_txtSearchText');
-										if (txtbox.val() != 'Enter Keywords') {
-											txtbox.removeClass('searchTxt-default');
-										}
-										txtbox.keypress(function (event) {
-											if (event.which == 13) {
-												//alert("enter button is pressed");
-												$('#ctl00_HeaderContentPlaceHolder_Search1_imgbtnSearch').click();
-												//event.preventDefault();
-											}
-										}).focus(function (event) {
+										<fieldset>
+											<legend class="hidden"></legend>
+											<label for="ctl00_HeaderContentPlaceHolder_Search1_txtSearchText" id="ctl00_HeaderContentPlaceHolder_Search1_lblSearch" class="hiddenOffScreen">
+												<i class="fal fa-search searchBar"></i>
+											</label>
+											<input name="ctl00$HeaderContentPlaceHolder$Search1$txtSearchText" type="text" value="Search" id="ctl00_HeaderContentPlaceHolder_Search1_txtSearchText" class="searchTopics searchTxt-default">
 
-											//alert("txtbox.val()=" + txtbox.val());
-											if (txtbox.val() == 'Enter Keywords') {
-												txtbox.val('');
-												txtbox.removeClass('searchTxt-default');
-											}
-											else {
-												txtbox.select();
-											}
-										}).blur(function (event) {
-											//alert("txtbox.val()=" + txtbox.val());
-											if (txtbox.val() == '') {
-												txtbox.val('Enter Keywords');
-												txtbox.addClass('searchTxt-default');
-											}
-										});
-									});
-									//]]>
-								</script>
-								<fieldset>
-									<legend class="hide"></legend>
-									<label for="ctl00_HeaderContentPlaceHolder_Search1_txtSearchText" id="ctl00_HeaderContentPlaceHolder_Search1_lblSearch" class="hiddenOffScreen"><i class="fal fa-search f-16"></i></label>
-									<input name="ctl00$HeaderContentPlaceHolder$Search1$txtSearchText" type="text" value="Search" maxlength="40" id="ctl00_HeaderContentPlaceHolder_Search1_txtSearchText" class="searchTxt searchTxt-default">
-									<input type="image" name="ctl00$HeaderContentPlaceHolder$Search1$imgbtnSearch" id="ctl00_HeaderContentPlaceHolder_Search1_imgbtnSearch" title="Search" class="searchBt" text="Search" src="../Images/searchBt.png" alt="Search" style="border-width:0px;">
-								</fieldset>
+										</fieldset>
+
+									</div>
+								</div>
+
+							</div>
+
+							<div class="col-lg-6 col-md-6">
+								<p class="strong text-center">Select</p>
+
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-lg-6 col-md-6">
+
+								<div class="row variables">
+									<div class="col-lg-6 col-md-6 categoricalHeader padding-0">
+										<div class="heading"><p class="text-center">Categorical Variables</p></div>
+
+									</div>
+
+
+
+
+									<div class="col-lg-6 col-md-6 continuousHeader padding-0">
+										<div class="heading"><p class="text-center">Continuous Variables</p></div>
+									</div>
+
+								</div>
 
 							</div>
 						</div>
 
 					</div>
 
-					</div>
 
 					<div class="option" data-type="data">
 
-						<p>ed OIRIOHGERHO-0234987438977942378933443T344T34T34T3443T43T4T34T3T43TT34T4798ut  </p>
+						<p>ed OIRIOHGERHO-0234987438977942378933443T344T34T34T3443T43T4T34T3T43TT34T4798ut</p>
 
 					</div>
 
@@ -325,15 +328,40 @@ crossorigin="anonymous"></script>
 <!-- <script src="js/react-components.js"></script> -->
 <script src="js/index.js"></script>
 
-<script>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function () {
+	var txtbox = $('#ctl00_HeaderContentPlaceHolder_Search1_txtSearchText');
+	if (txtbox.val() != 'Enter Keywords') {
+		txtbox.removeClass('searchTxt-default');
+	}
+	txtbox.keypress(function (event) {
+		if (event.which == 13) {
+			//alert("enter button is pressed");
+			$('#ctl00_HeaderContentPlaceHolder_Search1_imgbtnSearch').click();
+			//event.preventDefault();
+		}
+	}).focus(function (event) {
 
-
-$('.option[data-type="topics"]').addClass('hidden');
-$('.option[data-type="data"]').addClass('hidden');
-$('.option[data-type="marks"]').addClass('hidden');
-$('.option[data-type="stats"]').addClass('hidden');
-
+		//alert("txtbox.val()=" + txtbox.val());
+		if (txtbox.val() == 'Enter Keywords') {
+			txtbox.val('');
+			txtbox.removeClass('searchTxt-default');
+		}
+		else {
+			txtbox.select();
+		}
+	}).blur(function (event) {
+		//alert("txtbox.val()=" + txtbox.val());
+		if (txtbox.val() == '') {
+			txtbox.val('Enter Keywords');
+			txtbox.addClass('searchTxt-default');
+		}
+	});
+});
+//]]>
 </script>
+
 
 <!-- <script type="text/babel">
 window.onload = function()

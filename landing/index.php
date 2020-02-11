@@ -55,7 +55,7 @@
 
 		<div id="themaincontent">
 
-			<div class="modal" tabindex="2" role="dialog" id="myModal">
+			<div class="modal" tabindex="2" role="dialog" id="myModal" data-keyboard="false" data-backdrop="static">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">

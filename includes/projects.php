@@ -36,7 +36,16 @@
             <div class="card-body">
               <h5>
 
-                <a class="listOptions" href="view1.php" title="ACS-PUMS – Welcome" role="menuitem" tabindex="0">Analysis on Demand</a>
+                <a class="listOptions" href="../about.php" title="ACS-PUMS – About" role="menuitem" tabindex="0">About</a>
+
+              </h5>
+            </div>
+
+
+            <div class="card-body">
+              <h5>
+
+                <a class="listOptions" href="../view1.php" title="ACS-PUMS – Analysis on Demand" role="menuitem" tabindex="0">Analysis on Demand</a>
 
               </h5>
             </div>

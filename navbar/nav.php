@@ -10,7 +10,7 @@
         <h3>Project Name</h3>
       </li>
       <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-        <a class="nav-link" href="index.php">Welcome</a>
+        <a class="nav-link active" href="index.php">Welcome</a>
         <i class="fal fa-door-open"></i>
       </li>
       <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
@@ -18,34 +18,35 @@
         <i class="fal fa-info-circle"></i>
       </li>
       <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-        <a class="nav-link dropdown-toggle" tabindex="0" href="analysis.html" id="navbarDropdownMenuAnalysis" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" tabindex="0" id="navbarDropdownMenuAnalysis" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <p class="down">Analysis</p>
         </a>
         <i class="fal fa-chart-bar"></i>
         <div class="dropdown-menu" id="analysis" aria-labelledby="navbarDropdownMenuAnalysis">
-          <a class="dropdown-item" href="view1.php">Years</a>
-          <a class="dropdown-item" href="view2.php">Topics</a>
-          <a class="dropdown-item" href="view3.php">Subset Data</a>
-          <a class="dropdown-item" href="view4.php">Benchmarks</a>
-          <a class="dropdown-item" href="view4.php">Statistical Outputs</a>
+          <a class="dropdown-item" href="view1.php">{{Data View 1}}</a>
+          <a class="dropdown-item" href="view2.php">{{Data View 2}}</a>
+          <a class="dropdown-item" href="view3.php">{{Data View 3}}</a>
+          <a class="dropdown-item" href="view4.php">{{Data View 4}}</a>
+          <a class="dropdown-item" href="view4.php">{{Data View 5}}</a>
         </div>
       </li>
       <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
 
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="reports.html" role="button" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
           <p class="down">Reports</p>
         </a>
         <i class="fal fa-clipboard-list"></i>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">{{Report View 1}}</a>
+          <a class="dropdown-item" href="#">{{Report View 2}}</a>
+          <a class="dropdown-item" href="#">{{Report View 3}}</a>
+          <a class="dropdown-item" href="#">{{Report View 4}}</a>
+          <a class="dropdown-item" href="#">{{Report View 5}}</a>
         </div>
       </li>
       <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
 
-        <a class="nav-link" href="documents.html">Documents</a>
+        <a class="nav-link" href="documents.php">Documents</a>
         <i class="fal fa-file-alt"></i>
       </li>
     </ul>

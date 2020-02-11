@@ -25,22 +25,22 @@ $(document).ready(function () {
 
 //hover for dropdown items in main navbar
 
-const $dropdown = $(".nav-item");
-const $dropdownToggle = $(".dropdown-toggle");
-const $dropdownMenu = $(".dropdown-menu");
-const showClass = "show";
+var $dropdown = $(".navbar-nav .nav-item");
+var $dropdownToggle = $(".dropdown-toggle");
+var $dropdownMenu = $(".dropdown-menu");
+var showClass = "show";
 
 $(window).on("load resize", function() {
   if (this.matchMedia("(min-width: 768px)").matches) {
     $dropdown.hover(
       function() {
-        const $this = $(this);
+        var $this = $(this);
         $this.addClass(showClass);
         $this.find($dropdownToggle).attr("aria-expanded", "true");
         $this.find($dropdownMenu).addClass(showClass);
       },
       function() {
-        const $this = $(this);
+        var $this = $(this);
         $this.removeClass(showClass);
         $this.find($dropdownToggle).attr("aria-expanded", "false");
         $this.find($dropdownMenu).removeClass(showClass);
@@ -50,6 +50,39 @@ $(window).on("load resize", function() {
     $dropdown.off("mouseenter mouseleave");
   }
 });
+
+
+var dropdownButton = $(".btn-group .dropdown-menu")
+
+dropdownButton.on('mouseleave', function() {
+  console.log("rlgubeirbgiruebeirbuiubiu")
+  dropdownButton.removeClass('show');
+  // $('.dropdown-menu').addClass('show')
+})
+
+
+
+//acordions for levels under Variables
+$('.toggle').click(function(e) {
+  	e.preventDefault();
+
+    var $this = $(this);
+
+    if ($this.next().hasClass('show')) {
+        $this.next().removeClass('show');
+        $this.next().slideUp(350);
+    } else {
+        $this.parent().parent().find('li .inner').removeClass('show');
+        $this.parent().parent().find('li .inner').slideUp(350);
+        $this.next().toggleClass('show');
+        $this.next().slideToggle(350);
+    }
+});
+
+// $('a.toggle').on('mouseenter', function (){
+//   $('ul.inner.show li').addClass('special');
+// })
+
 
 
 $(".accordions .mb-0 a").click(function (){
@@ -69,6 +102,33 @@ $('.down:after').css('content' , 'none ');
 }
 
 
+
+  // if($('.container-fluid').hasClass('view1')) {
+  //   console.log("A")
+
+    $('a[data-type="years"]').addClass('NavItem--is-active');
+    $('a[data-type="topics"]').removeClass('NavItem--is-active')
+    $('.option[data-type="topics"]').addClass('hidden');
+    $('.option[data-type="data"]').addClass('hidden');
+    $('.option[data-type="marks"]').addClass('hidden');
+    $('.option[data-type="stats"]').addClass('hidden');
+  // }
+
+  // if($('.container-fluid').hasClass('view2')) {
+  //     console.log("B")
+    // $('a[data-type="years"]').removeClass('NavItem--is-active')
+    // $('a[data-type="topics"]').addClass('NavItem--is-active')
+    // $('.option[data-type="years"]').addClass('hidden');
+    // $('.option[data-type="data"]').addClass('hidden');
+    // $('.option[data-type="marks"]').addClass('hidden');
+    // $('.option[data-type="stats"]').addClass('hidden');
+  // }
+
+
+
+
+
+
 //levels
 
 // $('#level1').html('First Level &#9662;')
@@ -76,6 +136,8 @@ $('.down:after').css('content' , 'none ');
 // $('#level3').html('Third Level &#9662')
 
 //levels object
+
+
 
 
 var levels = $('<div class="btn-group"><button type="button" class="btn btn-light dropdown-toggle" id="level3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-caret-down"></i></button><div class="dropdown-menu"><button class="dropdown-item" type="button">Something else here</button><button class="dropdown-item submenu" type="button">Actions in a submenu</button><div class="dropdown-menu"><button class="dropdown-item" type="button">Action</button><button class="dropdown-item" type="button">Another action</button><button class="dropdown-item" type="button">Something else</button></div><button class="dropdown-item" type="button">Another action</button><button class="dropdown-item" type="button">Something else here</button></div></div>')
