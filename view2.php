@@ -56,6 +56,40 @@
 					</div>
 
 				</div>
+				<div class="btn-group">
+					<button type="button" id="level2" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Second Level<i class="fas fa-caret-down"></i></button>
+
+					<div class="dropdown-menu">
+						<button class="dropdown-item" type="button">{{Data View 1}}</button>
+						<button class="dropdown-item submenu" type="button">{{Data View 2}}</button>
+						<div class="dropdown-menu">
+							<button class="dropdown-item" type="button">{{Data View A}}</button>
+							<button class="dropdown-item" type="button">{{Data View B}}</button>
+							<button class="dropdown-item" type="button">{{Data View C}}</button>
+						</div>
+						<button class="dropdown-item" type="button">{{Data View 3}}</button>
+						<button class="dropdown-item" type="button">{{Data View 4}}</button>
+					</div>
+
+				</div>
+				<div class="btn-group">
+					<button type="button" id="level3" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Third Level<i class="fas fa-caret-down"></i></button>
+
+					<div class="dropdown-menu">
+						<button class="dropdown-item" type="button">{{Data View 1}}</button>
+						<button class="dropdown-item submenu" type="button">{{Data View 2}}</button>
+						<div class="dropdown-menu">
+							<button class="dropdown-item" type="button">{{Data View A}}</button>
+							<button class="dropdown-item" type="button">{{Data View B}}</button>
+							<button class="dropdown-item" type="button">{{Data View C}}</button>
+						</div>
+						<button class="dropdown-item" type="button">{{Data View 3}}</button>
+						<button class="dropdown-item" type="button">{{Data View 4}}</button>
+					</div>
+
+				</div>
+
+
 
 
 
@@ -107,21 +141,19 @@
 							<center><p class="smaller">*this is a required field</p></center>
 
 							<form method="post" id="years">
-
-
-								<div class="custom-control custom-checkbox">
+								<div class="allYears custom-control custom-checkbox">
 									<input type="checkbox" name="addall" class="custom-control-input" id="allYears">
 									<label class="custom-control-label" for="allYears">Include all years</label>
 								</div>
-								<div class="custom-control custom-checkbox">
+								<div class="years custom-control custom-checkbox">
 									<input type="checkbox" name="year" data-year="2016" value="2016" class="custom-control-input" id="2016">
 									<label class="custom-control-label" for="2016">2016</label>
 								</div>
-								<div class="custom-control custom-checkbox">
+								<div class="years custom-control custom-checkbox">
 									<input type="checkbox" name="year" data-year="2015" value="2015" class="custom-control-input" id="2015">
 									<label class="custom-control-label" for="2015">2015</label>
 								</div>
-								<div class="custom-control custom-checkbox">
+								<div class="years custom-control custom-checkbox">
 									<input type="checkbox" name="year" data-year="2014" value="2014" class="custom-control-input" id="2014">
 									<label class="custom-control-label" for="2014">2014</label>
 								</div>
@@ -165,53 +197,60 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-lg-6 col-md-6">
-
-									<div class="row variables">
+								<div class="col-lg-6 col-md-6 variables">
+									<div class="row">
 										<div class="col-lg-6 col-md-6 categoricalHeader padding-0">
-											<div class="heading"><p class="text-center">Categorical Variables</p></div>
+											<div class="heading"><p class="text-center">Table Variables</p></div>
+										</div>
+										<div class="col-lg-6 col-md-6 continuousHeader padding-0">
+											<div class="heading"><p class="text-center">Analysis Variables</p></div>
+										</div>
+									</div>
 
+
+									<div class="row">
+										<div class="col-lg-12 col-md-12 categoricalHeader padding-0">
 											<ul class="accordion">
-												<li>
-													<a class="toggle" href="#">Item 1</a>
+												<li class="level1">
+													<a class="toggle" href="#">General Health</a>
 													<ul class="inner">
-														<li class="areas">Option 1</li>
-														<li class="areas">Option 2</li>
-														<li class="areas">Option 3</li>
+														<li class="areas">COPD</li>
+														<li class="areas">Diabetes</li>
+														<li class="areas">Heart Attack</li>
 													</ul>
 												</li>
 
-												<li>
-													<a class="toggle" href="#">Item 2</a>
+												<li class"level1">
+													<a class="toggle" href="#">Health Behaviors</a>
 													<ul class="inner">
-														<li class="areas">Option 1</li>
-														<li class="areas">Option 2</li>
-														<li class="areas">Option 3</li>
+														<li class="areas">Exercised in the past month?</li>
+														<li class="areas">How many hours do you sleep</li>
+														<li class="areas">How long has it been since you smoked?</li>
 													</ul>
 												</li>
 
-												<li>
-													<a class="toggle" href="#">Item 3</a>
+												<li class="level1">
+													<a class="toggle" href="#">Administrative Information</a>
 													<ul class="inner">
-															<li class="areas">Option 3</li>
-														<li class="areas">Option 3</li>
+														<li class="areas">File Month</li>
+														<li class="areas">Interview Month</li>
 
 
-														<li class="nestedToggle">
-															<a href="#" class="toggleInner">Open Inner</a>
-															<div class="inner">
+														<li class="level2 nestedToggle">
+															<a href="#" class="innerToggle">Level 2</a>
+															<div class="innerNested">
 																<ul>
-																<li class="areas">Level 3</li>
-															</ul>
+																	<li class="areas">Level 3</li>
+																</ul>
 															</div>
 														</li>
 
-														<li class="nestedToggle">
-															<a href="#" class="toggleInner">Open Inner #2</a>
-															<div class="inner">
+														<li class="level2 nestedToggle">
+															<a href="#" class="innerToggle">Level 2</a>
+															<div class="innerNested">
 																<ul>
-																<li class="areas">Level 3</li>
-															</ul>
+																	<li class="areas">Level 3</li>
+																</ul>
 															</div>
 														</li>
 
@@ -221,34 +260,30 @@
 
 											</ul>
 										</div>
-
-
-										<div class="col-lg-6 col-md-6 continuousHeader padding-0">
-											<div class="heading"><p class="text-center">Continuous Variables</p></div>
-										</div>
-
 									</div>
 
 								</div>
-							</div>
 
+							</div>
 						</div>
+
+
 
 						<div class="option" data-type="data">
 
-							<p>ed OIRIOHGERHO-0234987438977942378933443T344T34T34T3443T43T4T34T3T43TT34T4798ut  </p>
+							<p>SUBSET DATA</p>
 
 						</div>
 
 						<div class="option" data-type="marks">
 
-							<p>983458Y9534879543789ROHIGE48Y9Y8934TY89 </p>
+							<p>BENCHMARKS</p>
 
 						</div>
 
 						<div class="option" data-type="stats">
 
-							<p>OIHDFGOHIGERHIOU </p>
+							<p>STATISTICAL OUTPUTS</p>
 
 						</div>
 
@@ -266,9 +301,13 @@
 					<div class="grayLayer"></div>
 
 					<div class="lightBlueBack">
+
 						<ul class="filter-attr-list">
 							<p>Year(s):</p>
+
+
 						</ul>
+
 					</div>
 					<p class="text-center mostSmall">&ndash;DRAG AND DROP TOPICS IN DESIRED ORDER&ndash;</p>
 
