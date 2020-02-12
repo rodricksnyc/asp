@@ -57,87 +57,61 @@ $(document).ready(function () {
   dropdownButton.on('mouseleave', function() {
 
     dropdownButton.removeClass('show');
-    // $('.dropdown-menu').addClass('show')
+
   })
 
 
-
-  //acordions for levels under Variables
-  $('.toggle').on('mouseenter', function(){
-    $(this).addClass('highlighted');
-  })
-
-
-  $('.toggle').on('mouseleave', function(){
-    $(this).removeClass('highlighted');
-  })
 
 
 
   $('.toggle').click(function(e) {
     e.preventDefault();
     e.stopPropagation()
-    $('.toggle').addClass('plus-sign');
+
 
     var $this = $(this);
+      // $this.addClass('plus-sign');
+      // $this.addClass('highlighted');
 
     if ($this.next().hasClass('show')) {
       $this.next().removeClass('show');
       $this.next().slideUp(350);
 
       $this.removeClass('minus-sign');
-      $(this).removeClass('highlighted');
 
-    } else {
+      $this.removeClass('highlighted');
+
+      // $this.removeClass('highlighted');
+      $this.parent().parent().find('li .inner').css('border-left', 'none')
+
+    }
+
+    else {
+
       $this.parent().parent().find('li .inner').removeClass('show');
+
+
       $this.parent().parent().find('li .inner').slideUp(350);
       $this.next().toggleClass('show');
       $this.next().slideToggle(350);
       $this.addClass('minus-sign');
-      $(this).addClass('highlighted');
+      $this.addClass('highlighted');
 
-
-    }
-  });
-
-  $('.innerToggle').click(function(e) {
-    e.preventDefault();
-    e.stopPropagation()
-    $('.innerToggle').addClass('plus-sign');
-
-    var $this = $(this);
-
-    if ($this.next().hasClass('show')) {
-      $this.next().removeClass('show');
-      $this.next().slideUp(350);
-
-      $this.removeClass('minus-sign');
-
-
-    } else {
-      $this.parent().parent().find('li .innerNested').removeClass('show');
-      $this.parent().parent().find('li .innerNested').slideUp(350);
-      $this.next().toggleClass('show');
-      $this.next().slideToggle(350);
-      $this.addClass('minus-sign');
-      // $(this).addClass('highlighted');
-      $('.innerNested').addClass('noBackground')
+      $this.parent().parent().find('li .inner').css('border-left', '2px solid #c7482e')
 
     }
   });
 
 
-  $('.nestedToggle').on('mouseenter', function(e) {
-    $('.innerNested').addClass('noBackground')
-    $(this).css('background', '#faede9')
-    // $(this).addClass('highlighted');
-  })
 
-  $('.nestedToggle').on('mouseleave', function(e) {
-    $('.innerNested').removeClass('noBackground')
-    $(this).css('background', 'transparent');
-    // $(this).removeClass('highlighted');
-  })
+
+
+
+
+
+
+
+
 
 
 
@@ -308,67 +282,70 @@ $(document).ready(function () {
 
   $(":checkbox[data-year]").change(function (e) {
 
-    $('.filter-attr-list').html('');
+    var saveYear = $('.saveYear')
+    $('.filter-attr-list').empty().append(saveYear)
 
     $('.years :checkbox:checked').each(function (ind, ele) {
 
-
-      var value = $(ele).val();
-      $('.filter-attr-list').append(`<li class="results selected">${value} <div class="removeTag"><i class="fal fa-times ml-1"></i></div></li>`);
-
-
-      // if (this.checked == true)  {
-      //
-      //   $('.filter-attr-list').addClass('selects');
-      //   console.log('bitch')
-      //
-      // }
+      if (this.checked == true)  {
+        var value = $(ele).val()
+        $('.filter-attr-list').append(`<li data-year="${value}" class="results selected">${value} <div class="removeTag"><i class="fal fa-times ml-1"></i></div></li>`);
+      }
 
 
+
+
+      $('.filter-attr-list').on('click', '.removeTag', function() {
+        console.log("hi there")
+        $(this).closest('.results').remove();
+
+
+
+        // $('.years :checkbox:checked').prop('checked', false);
+
+      })
 
     });
-
-
-    // $('.filter-attr-list').each(function() {
-    //   if ($(this).html()=="") {
-    //
-    //     $('.filter-attr-list').removeClass('selects');
-    //   }
-    // });
-
-
-    $('.filter-attr-list').on('click', '.removeTag', function() {
-      console.log("hi there")
-      $(this).closest('.results').remove();
-    })
-
-
 
   })
 
 
 
-   $("input[name=addall]").click(function() {
-     if (this.checked) {
-       $("input[name=year]").prop('checked', true).change();
-     } else {
-       $("input[name=year]").prop('checked', false).change();
-     }
-   });
-
-   function updateAllChecked() {
-     $('.years :checkbox:checked').each(function (ind, ele) {
 
 
-       var value = $(ele).val();
-       $('.filter-attr-list').append(`<li class="results selected"> ${value} <div class="removeTag"><i class="fal fa-times ml-1"></i></div></li>`);
+  $("input[name=addall]").click(function() {
+    if (this.checked) {
+      $("input[name=year]").prop('checked', true).change();
+      $("input[name=addall]").prop('checked', true).change();
+    }
 
+    else  {
+      $("input[name=year]").prop('checked', false).change();
+      $("input[name=addall]").prop('checked', false).change();
+    }
+  });
 
 
 
-     });
+  function updateAllChecked() {
+    $('.years :checkbox:checked').each(function (ind, ele) {
 
-   }
+      var value = $(ele).val();
+      $('.filter-attr-list').append(`<li class="results selected"> ${value} <div class="removeTag"><i class="fal fa-times ml-1"></i></div></li>`);
+
+    });
+
+
+  }
+
+  updateAllChecked()
+
+  $("input[name=year]").click(function() {
+    console.log("sdubbuisvdvbduisvdsbuiubibuiiubiuvyivy")
+    $("input[name=addall]").prop('checked', false);
+});
+
+
 
   //move zip case tab on window shrink
 

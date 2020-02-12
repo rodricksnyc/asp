@@ -303,7 +303,7 @@
 					<div class="lightBlueBack">
 
 						<ul class="filter-attr-list">
-							<p>Year(s):</p>
+							<p class="saveYear">Year(s):</p>
 
 
 						</ul>

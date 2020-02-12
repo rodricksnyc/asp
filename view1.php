@@ -39,6 +39,7 @@
 
 			<div id="levels">
 
+				<!-- <div id="root"></div> -->
 				<div class="btn-group">
 					<button type="button" id="level1" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">First Level<i class="fas fa-caret-down"></i></button>
 
@@ -71,6 +72,25 @@
 					</div>
 
 				</div>
+				<div class="btn-group">
+					<button type="button" id="level3" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Third Level<i class="fas fa-caret-down"></i></button>
+
+					<div class="dropdown-menu">
+						<button class="dropdown-item" type="button">{{Data View 1}}</button>
+						<button class="dropdown-item submenu" type="button">{{Data View 2}}</button>
+						<div class="dropdown-menu">
+							<button class="dropdown-item" type="button">{{Data View A}}</button>
+							<button class="dropdown-item" type="button">{{Data View B}}</button>
+							<button class="dropdown-item" type="button">{{Data View C}}</button>
+						</div>
+						<button class="dropdown-item" type="button">{{Data View 3}}</button>
+						<button class="dropdown-item" type="button">{{Data View 4}}</button>
+					</div>
+
+				</div>
+
+
+
 
 
 
@@ -121,21 +141,19 @@
 							<center><p class="smaller">*this is a required field</p></center>
 
 							<form method="post" id="years">
-
-
-								<div class="custom-control custom-checkbox">
+								<div class="allYears custom-control custom-checkbox">
 									<input type="checkbox" name="addall" class="custom-control-input" id="allYears">
 									<label class="custom-control-label" for="allYears">Include all years</label>
 								</div>
-								<div class="custom-control custom-checkbox">
+								<div class="years custom-control custom-checkbox">
 									<input type="checkbox" name="year" data-year="2016" value="2016" class="custom-control-input" id="2016">
 									<label class="custom-control-label" for="2016">2016</label>
 								</div>
-								<div class="custom-control custom-checkbox">
+								<div class="years custom-control custom-checkbox">
 									<input type="checkbox" name="year" data-year="2015" value="2015" class="custom-control-input" id="2015">
 									<label class="custom-control-label" for="2015">2015</label>
 								</div>
-								<div class="custom-control custom-checkbox">
+								<div class="years custom-control custom-checkbox">
 									<input type="checkbox" name="year" data-year="2014" value="2014" class="custom-control-input" id="2014">
 									<label class="custom-control-label" for="2014">2014</label>
 								</div>
@@ -194,44 +212,82 @@
 										<div class="col-lg-12 col-md-12 categoricalHeader padding-0">
 											<ul class="accordion">
 												<li class="level1">
-													<a class="toggle" href="#">General Health</a>
+													<a class="toggle" href="#">Level 1 Topic</a>
 													<ul class="inner">
-														<li class="areas">COPD</li>
-														<li class="areas">Diabetes</li>
-														<li class="areas">Heart Attack</li>
-													</ul>
-												</li>
-
-												<li class"level1">
-													<a class="toggle" href="#">Health Behaviors</a>
-													<ul class="inner">
-														<li class="areas">Exercised in the past month?</li>
-														<li class="areas">How many hours do you sleep</li>
-														<li class="areas">How long has it been since you smoked?</li>
+														<li class="areas">Level 1 Areas</li>
+														<li class="areas">Level 1 Areas</li>
+														<li class="areas">Level 1 Areas</li>
 													</ul>
 												</li>
 
 												<li class="level1">
-													<a class="toggle" href="#">Administrative Information</a>
+													<a class="toggle" href="#">Level 1 Topic</a>
 													<ul class="inner">
-														<li class="areas">File Month</li>
-														<li class="areas">Interview Month</li>
+														<li class="areas">Level 1 Areas</li>
+														<li class="areas">Level 1 Areas</li>
+														<li class="areas">Level 1 Areas</li>
+													</ul>
+												</li>
 
-
-														<li class="level2 nestedToggle">
-															<a href="#" class="innerToggle">Level 2</a>
-															<div class="innerNested">
+												<li class="level1">
+													<a class="toggle" href="#">Level 1 Topic</a>
+													<ul class="inner">
+														<li class="areas">Level 1 Areas</li>
+														<li class="areas">Level 1 Areas</li>
+														<li class="level2">
+															<a href="#" class="toggle">Level 2 Topic</a>
+															<div class="inner">
 																<ul>
-																	<li class="areas">Level 3</li>
+																	<li class="areas">Level 2 Areas</li>
+																	<li class="areas">Level 2 Areas</li>
+																	<li class="areas">Level 2 Areas</li>
+																	<li class="areas">Level 2 Areas</li>
 																</ul>
 															</div>
 														</li>
 
-														<li class="level2 nestedToggle">
-															<a href="#" class="innerToggle">Level 2</a>
-															<div class="innerNested">
+														<li class="level2">
+															<a href="#" class="toggle">Level 2 Topic</a>
+															<div class="inner">
 																<ul>
-																	<li class="areas">Level 3</li>
+																	<li class="areas">Level 2 Areas</li>
+																	<li class="areas">Level 2 Areas</li>
+
+																	<li class="level3">
+																		<a href="#" class="toggle">Level 3 Topic</a>
+																		<div class="inner">
+																			<ul>
+																				<li class="areas">Level 3 Areas</li>
+																				<li class="areas">Level 3 Areas</li>
+																				<li class="areas">Level 3 Areas</li>
+																				<li class="areas">Level 3 Areas</li>
+
+																				<li class="level4">
+																					<a href="#" class="toggle">Level 4 Topic</a>
+																					<div class="inner">
+																						<ul>
+																							<li class="areas">Level 4 Areas</li>
+																							<li class="areas">Level 4 Areas</li>
+																							<li class="areas">Level 4 Areas</li>
+																							<li class="areas">Level 4 Areas</li>
+
+																							<li class="level5">
+																								<a href="#" class="toggle">Level 5 Topic</a>
+																								<div class="inner">
+																									<ul>
+																										<li class="areas">Level 5 Areas</li>
+																										<li class="areas">Level 5 Areas</li>
+																										<li class="areas">Level 5 Areas</li>
+																										<li class="areas">Level 5 Areas</li>
+																									</ul>
+																								</div>
+																							</li>
+																						</ul>
+																					</div>
+																				</li>
+																			</ul>
+																		</div>
+																	</li>
 																</ul>
 															</div>
 														</li>
@@ -283,9 +339,13 @@
 					<div class="grayLayer"></div>
 
 					<div class="lightBlueBack">
+
 						<ul class="filter-attr-list">
-							<p>Year(s):</p>
+							<p class="saveYear">Year(s):</p>
+
+
 						</ul>
+
 					</div>
 					<p class="text-center mostSmall">&ndash;DRAG AND DROP TOPICS IN DESIRED ORDER&ndash;</p>
 

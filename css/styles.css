@@ -873,7 +873,7 @@ p.smallest {
   align-items: center;
   margin: 0;
   padding: 0;
-  height: 25px;
+  height: auto;
 }
 
 .filter-attr-list li.results {
@@ -1316,21 +1316,21 @@ input[type="range"]::-ms-thumb {
 }
 
 
-.categoricalHeader ul li:hover a.toggle:before {
+.categoricalHeader li:hover a.toggle:before {
   font-family: "Font Awesome 5 Pro";
   content: "\f055";
   margin-left: -20px;
   margin-right: 5px;
 }
 
-.categoricalHeader ul li:hover a.toggle.minus-sign:before {
+ .categoricalHeader li:hover a.toggle.minus-sign:before {
   font-family: "Font Awesome 5 Pro";
   content: "\f056";
   margin-left: -20px;
   margin-right: 5px;
 }
 
-.inner li:hover:before {
+/* .inner li:hover ul:before {
       content: '';
       position: absolute;
       background-color: #c7482e;
@@ -1338,13 +1338,13 @@ input[type="range"]::-ms-thumb {
       height: 100%;
       bottom: 0;
       left: 15px;
-}
+} */
 
 
-.inner li.nestedToggle:hover:before {
+/* .inner li.nestedToggle:hover:before {
       content: none;
 
-}
+} */
 
 .inner li {
   margin: .5em 0em 0em 0em !important;
@@ -1357,7 +1357,7 @@ input[type="range"]::-ms-thumb {
   position:relative;
 }
 
-.inner a {
+.inner li a {
   width: 100%;
   background: transparent;
   color: #07477d;
@@ -1381,19 +1381,19 @@ input[type="range"]::-ms-thumb {
   font-weight:100;
 }
 
- li.level2:hover a.innerToggle:before {
+ /* li.level1:hover a.innerToggle:before {
   font-family: "Font Awesome 5 Pro";
   content: "\f055";
   margin-left: -20px;
   margin-right: 5px;
 }
 
- li.level2:hover a.innerToggle.minus-sign:before {
+ li.level1:hover a.innerToggle.minus-sign:before {
   font-family: "Font Awesome 5 Pro";
   content: "\f056";
   margin-left: -20px;
   margin-right: 5px;
-}
+} */
 
 
 .nestedToggle:hover a {
