@@ -1216,7 +1216,7 @@ input[type="range"]::-ms-thumb {
   border-radius: 1rem;
   position: relative;
   margin-top: .5em;
-  min-height: 16em;
+  /* min-height: 16em; */
 }
 .categoricalHeader {
   padding:.5em;
@@ -1253,158 +1253,449 @@ input[type="range"]::-ms-thumb {
 
 /* level topics */
 
+.accordion {
+  padding-left: 0px;
+  padding-right: 5px;
+  padding-top: .5em;
+}
 
-/*
-.categoricalHeader ul {
+.accordion ul {
   list-style: none;
   padding: 0;
 }
-.categoricalHeader ul .inner {
+ul .inner {
   padding-left: 1em;
   overflow: hidden;
   display: none;
-  position:relative;
+}
+.inner li {
+  margin: .2em 0;
+  padding-left: 2em;
+  font-size:14px;
+  border-radius:1rem;
+  color:#07477d;
 }
 
-.categoricalHeader ul .innerNested {
-  padding-left: 1em;
-  overflow: hidden;
-  display: none;
-  position:relative;
+.inner li:hover {
+  margin: .2em 0;
+  padding-left: 2em;
+  font-size:14px;
+  border-radius:1rem;
+  /* color:#c7482e; */
+}
+
+/* .inner  li:hover li .nestedBlock a {
+  color:#07477d;
+}
+
+
+.inner  li:hover {
+  color:#c7482e;
 }
 
 
 
-.categoricalHeader ul li {
-  margin: .50em 0em .50em .25em;
+.inner .nestedBlock a:hover {
+  color:#c7482e;
+} */
+
+
+.nestedBlock a {
+  padding:.3em 0em;
+  font-size:14px;
+  border-radius:1rem;
+  padding-left:2em;
 }
-.categoricalHeader ul li a.toggle {
+ul.accordion li {
+  margin: .6em 0;
+  /* font-size: 14px; */
   width: 100%;
   display: block;
-  background: transparent;
-  color: #07477d;
-  padding:0px 0px 0px 25px;
-  font-size: 14px !important;
+  border-radius:1rem;
+}
+
+ul.accordion li:hover {
+  margin: .6em 0;
+  /* font-size: 14px; */
+  width: 100%;
+  display: block;
+  border-radius:1rem;
+}
+ul li a.toggle {
+  width: 100% ;
+  display: block;
+  background: none;
+  color:#07477d;
+  padding: 0em;
+  font-size: 14px;
+  transition: background .3s ease;
+  padding-left: 2em;
+  letter-spacing: 0.01em;
+}
+
+
+
+ul li a.toggle:hover {
+  width: 100% ;
+  display: block;
+  background-color: #faede9;
+  color:#c7482e !important;
+  padding: 0em;
+  padding-left: 2em;
+  border-radius:1rem;
+  font-size: 14px;
+  font-weight:500;
+  border-radius:1rem;
+  letter-spacing: 0.001em;
+}
+
+ul li a.toggle.parent{
+  width: 100% ;
+  display: block;
+  border-radius:1rem;
+  padding: 0em;
+  padding-left: 2em;
+  border-radius:1rem;
+  font-size: 14px;
   font-weight:100;
+  /* margin-left: 2px; */
 }
 
-.categoricalHeader ul li:hover a.toggle {
-  width: 100%;
+ul li a.toggle.parent:hover {
+  width: 100% ;
   display: block;
+  background-color: #faede9;
   color:#c7482e !important;
-
-  background-color: #faede9 !important;
-  font-size: 14px !important;
-  padding:0px 0px 0px 25px;
-  font-weight:600;
-} */
-
-/* .inner li:hover {
-
-  color:#c7482e !important;
-
-  background-color: #faede9 !important;
-  font-size: 14px !important;
-  padding:0px 0px 0px 25px;
-  font-weight:600 !important;
-  border-radius: 1rem;
+  padding: 0em;
+  padding-left: 2em;
+  border-radius:1rem;
+  font-size: 14px;
+  font-weight:500;
+  /* margin-left: 2px; */
+  border-radius:1rem;
 }
 
-.highlighted {
-  width: 100%;
-  display: block;
 
+ul li a.toggle.child1{
+  width: 100% ;
+
+  border-radius:1rem;
+  padding: 0em;
+  padding-left: 2em;
+  border-radius:1rem;
+  font-size: 14px;
+  font-weight:100;
+  margin-left: 0px;
+}
+
+ul li a.toggle.child1:hover {
+  width: 100% ;
+
+  background-color: #faede9;
   color:#c7482e !important;
-
-  background-color: #faede9 !important;
-  font-size: 14px !important;
-  padding:0px 0px 0px 25px;
-  font-weight:600;
+  padding: 0em;
+  padding-left: 2em;
+  border-radius:1rem;
+  font-size: 14px;
+  font-weight:500;
+  margin-left: 0px;
+  border-radius:1rem;
 }
 
-.noBackground {
-  background-color: transparent !important;
+
+ul li a.toggle.parent.activeState{
+  background-color: #faede9;
+  border-radius:1rem;
+  font-size: 14px;
+  color:#c7482e;
+  padding: 0em;
+  padding-left: 2em;
+  border-radius:1rem;
+  font-size: 14px;
+  font-weight:500;
+  margin-left: 2px;
+  border-radius:1rem;
+    letter-spacing: 0.01em;
 }
 
-.addOrange > a{
-    width: 100%;
-    display: block;
-    color: #c7482e !important;
-    background-color: #faede9 !important;
-    font-size: 14px !important;
-    padding: 0px 0px 0px 25px;
-    font-weight: 600 !important;
-    border-radius: 1rem;
-} */
+ul li a.toggle.parent:hover:before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f055";
+  margin-left: -20px;
+  margin-right: 8px;
+  color:#c7482e;
+  font-size: 12px;
+}
+
+ul li a.toggle.child1:hover:before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f055";
+  margin-left: -20px;
+  margin-right: 8px;
+  color:#c7482e;
+  font-size: 12px;
+}
+
+ul li a.toggle.child2:hover:before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f055";
+  margin-left: -20px;
+  margin-right: 8px;
+  color:#c7482e;
+  font-size: 12px;
+}
+ul li a.toggle.child3:hover:before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f055";
+  margin-left: -20px;
+  margin-right: 8px;
+  color:#c7482e;
+  font-size: 12px;
+}
+
+ul li a.toggle.child4:hover:before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f055";
+  margin-left: -20px;
+  margin-right: 8px;
+  color:#c7482e;
+  font-size: 12px;
+}
+
+ul li a.toggle.child5:hover:before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f055";
+  margin-left: -20px;
+  margin-right: 8px;
+  color:#c7482e;
+  font-size: 12px;
+}
+
+ul li a.toggle.child6:hover:before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f055";
+  margin-left: -20px;
+  margin-right: 8px;
+  color:#c7482e;
+  font-size: 12px;
+}
+
+ul li a.toggle.child7:hover:before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f055";
+  margin-left: -20px;
+  margin-right: 8px;
+  color:#c7482e;
+  font-size: 12px;
+}
 
 
 
-
-/* .categoricalHeader li:hover a.toggle:before {
+ul li a.toggle.parent.activeState:before{
   font-family: "Font Awesome 5 Pro";
   content: "\f055";
   margin-left: -20px;
   margin-right: 5px;
+  color:#c7482e;
+  font-size: 12px;
 }
 
-.categoricalHeader ul li a.toggle.minus-sign:before {
+ul li a.toggle.parent.activeState.minus-sign:before {
   font-family: "Font Awesome 5 Pro";
   content: "\f056";
   margin-left: -20px;
   margin-right: 5px;
-} */
-
-
-
-/* .inner li {
-  margin: .5em 0em 0em 0em !important;
-  font-size: 14px;
-  color: #07477d;
-  border: 1px solid transparent;
-  border-left-width: 5px;
-  font-size: 14px !important;
-  padding:0px 0px 0px 25px;
-  position:relative;
-}
-
-.inner li a {
-  width: 100%;
-  background: transparent;
-  color: #07477d;
-  font-size: 14px !important;
-  font-weight:100;
-
-  padding:0px 0px 0px 0px;
-  font-size: 14px !important;
-  font-weight:100;
-}
-
-.inner a.innerToggle {
-  width: 100%;
-  background: transparent;
-  color: #07477d;
-  font-size: 14px !important;
-  font-weight:100;
-
-  padding:0px 0px 0px 0px;
-  font-size: 14px !important;
-  font-weight:100;
-} */
-
-
-
-
-
-/* .categoricalHeader ul.inner.show li a.toggle {
-  margin: .5em 0em 0em 0em !important;
-} */
-
-/* .categoricalHeader ul.inner.show li:hover a.toggle {
   color:#c7482e;
+  font-size: 12px;
+}
 
-  font-size: 14px !important;
-  padding:0px 0px 0px 25px;
-} */
+
+ul li a.toggle.child1.activeState{
+  background-color: #faede9;
+  border-radius:1rem;
+  font-size: 14px;
+  color:#c7482e;
+  font-weight:500;
+  border-radius:1rem;
+  letter-spacing: 0.01em;
+}
+
+ul li a.toggle.child1.activeState:before{
+  font-family: "Font Awesome 5 Pro";
+  content: "\f055";
+  margin-left: -20px;
+  margin-right: 5px;
+  color:#c7482e;
+  font-size: 12px;
+}
+
+ul li a.toggle.child1.activeState.minus-sign:before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f056";
+  margin-left: -20px;
+  margin-right: 8px;
+  color:#c7482e;
+  font-size: 12px;
+}
+
+ul li a.toggle.child2.activeState:before{
+  font-family: "Font Awesome 5 Pro";
+  content: "\f055";
+  margin-left: -20px;
+  margin-right: 5px;
+  color:#c7482e;
+  font-size: 12px;
+}
+
+ul li a.toggle.child2.activeState.minus-sign:before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f056";
+  margin-left: -20px;
+  margin-right: 8px;
+  color:#c7482e;
+  font-size: 12px;
+}
+ul li a.toggle.child3.activeState:before{
+  font-family: "Font Awesome 5 Pro";
+  content: "\f055";
+  margin-left: -20px;
+  margin-right: 5px;
+  color:#c7482e;
+  font-size: 12px;
+}
+
+ul li a.toggle.child3.activeState.minus-sign:before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f056";
+  margin-left: -20px;
+  margin-right: 8px;
+  color:#c7482e;
+  font-size: 12px;
+}
+
+ul li a.toggle.child4.activeState:before{
+  font-family: "Font Awesome 5 Pro";
+  content: "\f055";
+  margin-left: -20px;
+  margin-right: 5px;
+  color:#c7482e;
+  font-size: 12px;
+}
+
+ul li a.toggle.child4.activeState.minus-sign:before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f056";
+  margin-left: -20px;
+  margin-right: 8px;
+  color:#c7482e;
+  font-size: 12px;
+}
+
+ul li a.toggle.child5.activeState:before{
+  font-family: "Font Awesome 5 Pro";
+  content: "\f055";
+  margin-left: -20px;
+  margin-right: 5px;
+  color:#c7482e;
+  font-size: 12px;
+}
+
+ul li a.toggle.child5.activeState.minus-sign:before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f056";
+  margin-left: -20px;
+  margin-right: 8px;
+  color:#c7482e;
+  font-size: 12px;
+}
+
+ul li a.toggle.child6.activeState:before{
+  font-family: "Font Awesome 5 Pro";
+  content: "\f055";
+  margin-left: -20px;
+  margin-right: 5px;
+  color:#c7482e;
+  font-size: 12px;
+}
+
+ul li a.toggle.child6.activeState.minus-sign:before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f056";
+  margin-left: -20px;
+  margin-right: 8px;
+  color:#c7482e;
+  font-size: 12px;
+}
+
+ul li a.toggle.child7.activeState:before{
+  font-family: "Font Awesome 5 Pro";
+  content: "\f055";
+  margin-left: -20px;
+  margin-right: 5px;
+  color:#c7482e;
+  font-size: 12px;
+}
+
+ul li a.toggle.child7.activeState.minus-sign:before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f056";
+  margin-left: -20px;
+  margin-right: 8px;
+  color:#c7482e;
+  font-size: 12px;
+}
+
+
+
+ul li a.toggle.child2.activeState{
+  background-color: #faede9;
+  border-radius:1rem;
+  font-size: 14px;
+  color:#c7482e;
+  font-weight:500;
+  border-radius:1rem;
+
+}
+ul li a.toggle.child3.activeState{
+  background-color: #faede9;
+  border-radius:1rem;
+  font-size: 14px;
+  color:#c7482e;
+  font-weight:500;
+  border-radius:1rem;
+}
+
+ul li a.toggle.child4.activeState{
+  background-color: #faede9;
+  border-radius:1rem;
+  font-size: 14px;
+  color:#c7482e;
+  font-weight:500;
+  border-radius:1rem;
+}
+
+ul li a.toggle.child5.activeState{
+  background-color: #faede9;
+  border-radius:1rem;
+  font-size: 14px;
+  color:#c7482e;
+  font-weight:500;
+  border-radius:1rem;
+}
+
+ul li a.toggle.child6.activeState{
+  background-color: #faede9;
+  border-radius:1rem;
+  font-size: 14px;
+  color:#c7482e;
+  font-weight:500;
+  border-radius:1rem;
+}
+
+.nestedBlock {
+  display: flex;
+  flex-direction: column;
+}
 
 
 /* footer classes */

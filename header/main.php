@@ -25,6 +25,7 @@
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/footer.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">

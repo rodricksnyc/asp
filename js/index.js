@@ -61,95 +61,85 @@ $(document).ready(function () {
   })
 
 
-  // $('.accordion li').mouseenter(function(e) {
-  //   e.stopPropagation()
-  //   $('a' , this).css('background', '#faede9')
-  //   $('a', this).css('border-radius', '1rem')
-  //   $('a', this).css('color' , '#c7482e')
-  //
-  // })
-  //
-  // $('.accordion li').mouseleave(function(e) {
-  //   e.stopPropagation()
-  //   $('a' , this).css('background', 'transparent')
-  //   $('a', this).css('border-radius', '0rem')
-  //   $('a', this).css('color' , '#07477d')
-  //
-  // })
-  //
-  //
-  // $('.toggle').click(function(e) {
-  //   e.preventDefault();
-  //
-  //
-  //   var $this = $(this);
-  //
-  //
-  //   $(this).parent().addClass('activeClass')
-  //
-  //   // if ($('li').hasClass('activeClass')) {
-  //   //   $(this).next().parent().addClass('addOrange');
-  //   //   $(this).next().parent().addClass('minus-sign');
-  //   // }
-  //   //
-  //   //
-  //   // else if (!$('li').hasClass('activeClass')) {
-  //   //   $(this).next().parent().removeClass('addOrange');
-  //   //   $(this).next().parent().removeClass('minus-sign');
-  //   // }
-  //
-  //     // $this.addClass('minus-sign');
-  //
-  //   if ($this.next().hasClass('show')) {
-  //     $this.next().removeClass('show');
-  //     $this.next().slideUp(350);
-  //
-  //     // $this.next().removeClass('minus-sign');
-  //     // $this.next().parent().removeClass('minus-sign');
-  //     //
-  //     //   $this.removeClass('minus-sign');
-  //     //
-  //     // $this.next().parent().removeClass('addOrange');
-  //
-  //     $this.parent().parent().find('li .inner').css('border-left', 'none')
-  //
-  //     console.log('has show')
-  //
-  //   }
-  //
-  //   else {
-  //
-  //       console.log('no show')
-  //
-  //     $this.parent().parent().find('li .inner').removeClass('show');
-  //
-  //
-  //     $this.parent().parent().find('li .inner').slideUp(350);
-  //     $this.next().toggleClass('show');
-  //     $this.next().slideToggle(350);
-  //     // $this.next().parent().addClass('minus-sign');
-  //     //
-  //     // $this.next().addClass('minus-sign');
-  //     //
-  //     // // $this.next().parent().addClass('addOrange');
-  //     // $this.next().parent().addClass('addOrange');
-  //     // // $this.children().removeClass('addOrange');
-  //
-  //
-  //     $this.parent().parent().find('li .inner').css('border-left', '2px solid #c7482e')
-  //
-  //   }
-  // });
-  //
+//levels
 
+$('.toggle').click(function(e) {
+e.preventDefault();
 
+var $this = $(this);
 
+if ($this.next().hasClass('show')) {
+$this.next().removeClass('show');
 
+/* JUST ADD HERE CLASS .ACTIVE */
+$this.removeClass("activeState");
 
+$this.next().slideUp(350);
+}
+else {
+$this.parent().parent().find('li .inner').removeClass('show');
 
+if($this.hasClass('parent')){
 
+/* JUST REMOVING HERE CLASS .ACTIVE FROM EARLY APPLIED */
 
+$this.parents(".accordion").find(".toggle").removeClass("activeState");
 
+}
+
+else if($this.hasClass('child')){
+
+/* JUST REMOVING HERE CLASS .ACTIVE FROM EARLY APPLIED FOR CHILD */
+$this.parents(".accordion").find(".toggle.child1").removeClass("activeState");
+
+}
+
+else if($this.hasClass('child')){
+
+/* JUST REMOVING HERE CLASS .ACTIVE FROM EARLY APPLIED FOR CHILD */
+$this.parents(".accordion").find(".toggle.child2").removeClass("activeState");
+
+}
+
+else if($this.hasClass('child')){
+
+/* JUST REMOVING HERE CLASS .ACTIVE FROM EARLY APPLIED FOR CHILD */
+$this.parents(".accordion").find(".toggle.child3").removeClass("activeState");
+
+}
+
+else if($this.hasClass('child')){
+
+/* JUST REMOVING HERE CLASS .ACTIVE FROM EARLY APPLIED FOR CHILD */
+$this.parents(".accordion").find(".toggle.child4").removeClass("activeState");
+
+}
+
+else if($this.hasClass('child')){
+
+/* JUST REMOVING HERE CLASS .ACTIVE FROM EARLY APPLIED FOR CHILD */
+$this.parents(".accordion").find(".toggle.child5").removeClass("activeState");
+
+}
+
+else
+
+{
+
+/* JUST REMOVING HERE CLASS .ACTIVE FROM EARLY APPLIED FOR CHILD OF CHILD */
+$this.parents(".accordion").find(".toggle.child6").removeClass("activeState");
+
+}
+
+$this.parent().parent().find('li .inner').slideUp(350);
+$this.next().toggleClass('show');
+
+/* JUST ADD HERE CLASS .ACTIVE */
+$this.addClass("activeState");
+$this.addClass("minus-sign");
+$this.next().slideToggle(350);
+}
+});
 
 
 
@@ -327,7 +317,7 @@ $(document).ready(function () {
     $('.years :checkbox:checked').each(function (ind, ele) {
 
       if (this.checked == true)  {
-        var value = $(ele).val()
+        var value = $(ele).attr('id')
         $('.filter-attr-list').append(`<li data-year="${value}" class="results selected">${value} <div class="removeTag"><i class="fal fa-times ml-1"></i></div></li>`);
       }
 
@@ -338,7 +328,12 @@ $(document).ready(function () {
         console.log("hi there")
         $(this).closest('.results').remove();
 
+          if ($(`li[data-year="${value}"  == $(this).find(':checkbox').attr(data-year="${value}"]`)) {
+            console.log("geibuibuewgbuiegriuhgeriuhewfhiuewfihu")
 
+              $(`:checkbox[data-year="${value}"]`).prop('checked', false);
+            // $(":checkbox[data-year]").prop('checked', false);
+          }
 
         // $('.years :checkbox:checked').prop('checked', false);
 
