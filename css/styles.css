@@ -1285,18 +1285,18 @@ ul .inner {
 }
 
 /* .inner  li:hover li .nestedBlock a {
-  color:#07477d;
+color:#07477d;
 }
 
 
 .inner  li:hover {
-  color:#c7482e;
+color:#c7482e;
 }
 
 
 
 .inner .nestedBlock a:hover {
-  color:#c7482e;
+color:#c7482e;
 } */
 
 
@@ -1413,9 +1413,9 @@ ul li a.toggle.parent.activeState{
   border-radius:1rem;
   font-size: 14px;
   font-weight:500;
-  margin-left: 2px;
+
   border-radius:1rem;
-    letter-spacing: 0.01em;
+  letter-spacing: 0.01em;
 }
 
 ul li a.toggle.parent:hover:before {
@@ -1504,7 +1504,7 @@ ul li a.toggle.parent.activeState.minus-sign:before {
   font-family: "Font Awesome 5 Pro";
   content: "\f056";
   margin-left: -20px;
-  margin-right: 5px;
+  margin-right: 8px;
   color:#c7482e;
   font-size: 12px;
 }
@@ -1698,6 +1698,34 @@ ul li a.toggle.child6.activeState{
 }
 
 
+.selectTopic  {
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  position:absolute;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.selectTopic p {
+  font-weight:100 !important;
+  color:#07477d;
+  padding: 0em;
+  font-size: 14px;
+  text-align: center;
+}
+
+.selectTopic .fal {
+  font-size: 50px;
+  color: #1480d6;
+  margin-right: 10px;
+  margin-top: -4px;
+}
+.rel {
+  position: relative;
+}
+
 /* footer classes */
 
 footer {
@@ -1759,7 +1787,7 @@ footer {
     max-width:700px;
   }
 
-  #myModal   .modal-header .close {
+  #myModal .modal-header .close {
     display:none;
   }
 

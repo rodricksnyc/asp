@@ -15,7 +15,7 @@
 
 <body class="analysis">
 <a href="#themaincontent" id="skiptocontent" tabindex="1" aria-hidden="false">skip to main content</a>
-<div class="container-fluid view3">
+<div class="container-fluid view6">
 
 
 <div class="navigation-wrap bg-light start-header start-style">

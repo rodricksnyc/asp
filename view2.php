@@ -198,7 +198,7 @@
 					<p class="text-center mostSmall orange">Build your table frame</p>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row rel">
 				<div class="col-lg-6 col-md-6 variables">
 					<div class="row">
 						<div class="col-lg-6 col-md-6 categoricalHeader padding-0">
@@ -214,6 +214,16 @@
 						<div class="col-lg-12 col-md-12 categoricalHeader padding-0">
 							<?php include("includes/levels-accordion.php"); ?>
 						</div>
+					</div>
+
+				</div>
+
+				<div class="col-lg-6 col-md-6">
+
+					<div class="selectTopic">
+						<i class="fal fa-angle-left"></i>
+						<p>Select a<br>Topic Area</p>
+
 					</div>
 
 				</div>
