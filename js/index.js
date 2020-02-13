@@ -61,47 +61,86 @@ $(document).ready(function () {
   })
 
 
-
-
-
-  $('.toggle').click(function(e) {
-    e.preventDefault();
-    e.stopPropagation()
-
-
-    var $this = $(this);
-      // $this.addClass('plus-sign');
-      // $this.addClass('highlighted');
-
-    if ($this.next().hasClass('show')) {
-      $this.next().removeClass('show');
-      $this.next().slideUp(350);
-
-      $this.removeClass('minus-sign');
-
-      $this.removeClass('highlighted');
-
-      // $this.removeClass('highlighted');
-      $this.parent().parent().find('li .inner').css('border-left', 'none')
-
-    }
-
-    else {
-
-      $this.parent().parent().find('li .inner').removeClass('show');
-
-
-      $this.parent().parent().find('li .inner').slideUp(350);
-      $this.next().toggleClass('show');
-      $this.next().slideToggle(350);
-      $this.addClass('minus-sign');
-      $this.addClass('highlighted');
-
-      $this.parent().parent().find('li .inner').css('border-left', '2px solid #c7482e')
-
-    }
-  });
-
+  // $('.accordion li').mouseenter(function(e) {
+  //   e.stopPropagation()
+  //   $('a' , this).css('background', '#faede9')
+  //   $('a', this).css('border-radius', '1rem')
+  //   $('a', this).css('color' , '#c7482e')
+  //
+  // })
+  //
+  // $('.accordion li').mouseleave(function(e) {
+  //   e.stopPropagation()
+  //   $('a' , this).css('background', 'transparent')
+  //   $('a', this).css('border-radius', '0rem')
+  //   $('a', this).css('color' , '#07477d')
+  //
+  // })
+  //
+  //
+  // $('.toggle').click(function(e) {
+  //   e.preventDefault();
+  //
+  //
+  //   var $this = $(this);
+  //
+  //
+  //   $(this).parent().addClass('activeClass')
+  //
+  //   // if ($('li').hasClass('activeClass')) {
+  //   //   $(this).next().parent().addClass('addOrange');
+  //   //   $(this).next().parent().addClass('minus-sign');
+  //   // }
+  //   //
+  //   //
+  //   // else if (!$('li').hasClass('activeClass')) {
+  //   //   $(this).next().parent().removeClass('addOrange');
+  //   //   $(this).next().parent().removeClass('minus-sign');
+  //   // }
+  //
+  //     // $this.addClass('minus-sign');
+  //
+  //   if ($this.next().hasClass('show')) {
+  //     $this.next().removeClass('show');
+  //     $this.next().slideUp(350);
+  //
+  //     // $this.next().removeClass('minus-sign');
+  //     // $this.next().parent().removeClass('minus-sign');
+  //     //
+  //     //   $this.removeClass('minus-sign');
+  //     //
+  //     // $this.next().parent().removeClass('addOrange');
+  //
+  //     $this.parent().parent().find('li .inner').css('border-left', 'none')
+  //
+  //     console.log('has show')
+  //
+  //   }
+  //
+  //   else {
+  //
+  //       console.log('no show')
+  //
+  //     $this.parent().parent().find('li .inner').removeClass('show');
+  //
+  //
+  //     $this.parent().parent().find('li .inner').slideUp(350);
+  //     $this.next().toggleClass('show');
+  //     $this.next().slideToggle(350);
+  //     // $this.next().parent().addClass('minus-sign');
+  //     //
+  //     // $this.next().addClass('minus-sign');
+  //     //
+  //     // // $this.next().parent().addClass('addOrange');
+  //     // $this.next().parent().addClass('addOrange');
+  //     // // $this.children().removeClass('addOrange');
+  //
+  //
+  //     $this.parent().parent().find('li .inner').css('border-left', '2px solid #c7482e')
+  //
+  //   }
+  // });
+  //
 
 
 
