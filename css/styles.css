@@ -267,6 +267,10 @@ a:hover {
   font-size: 15px !important;
 }
 
+.accordion-items li:hover .listOptions:before {
+  border-left: 4px solid #c7482e;
+}
+
 
 /* .accordions li:hover > a:before {
 content:'';
@@ -1741,33 +1745,37 @@ ul li a.toggle.child6.activeState{
 /* list area view */
 
 .listArea {
-    background: white;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
-    padding: .6em 1em 1em 1em;
-    height: auto;
-    border-radius: .5rem;
-    position: relative;
-    margin-top: .5em;
-    /* min-height: 16em; */
-    display:none
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+  padding: .6em 1em 1em 1em;
+  height: auto;
+  border-radius: .5rem;
+  position: relative;
+  margin-top: .5em;
+  /* min-height: 16em; */
+  display:none
 }
 
 .option[data-type="topics"] .selectedLevels p {
   font-weight:600;
-/* padding:.5em 0em 1em 1em; */
-margin-bottom: 1em !important;
+  /* padding:.5em 0em 1em 1em; */
+  margin-bottom: 1em !important;
 }
 
 .levels label p {
-      color: #07477d;
-      font-size:16px !important;
-      font-weight:300 !important
+  color: #07477d;
+  font-size:16px !important;
+  font-weight:300 !important
 }
 
 .allLevels label p {
-      color: #07477d;
-      font-size:16px !important;
-      font-weight:300 !important
+  color: #07477d;
+  font-size:16px !important;
+  font-weight:300 !important
+}
+
+.levels-accordion2 {
+  display: none;
 }
 
 
@@ -1782,21 +1790,21 @@ a:hover {
 }
 
 .plusRow .btn {
-    display: inline-block;
-    font-weight: 400;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border: 1px solid transparent;
-    padding: .2em .4em;
-    font-size: 10px;
-    line-height: 1.4;
-    border-radius: 0.25rem;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .2em .4em;
+  font-size: 10px;
+  line-height: 1.4;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
 }
 

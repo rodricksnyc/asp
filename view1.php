@@ -186,7 +186,9 @@
 
 					<div class="row">
 						<div class="col-lg-12 col-md-12 categoricalHeader padding-0">
-							<?php include("includes/levels-accordion.php"); ?>
+							<div class="levels-accordion"><?php include("includes/levels-accordion.php"); ?></div>
+							<div class="levels-accordion2"><?php include("includes/levels-accordion2.php"); ?></div>
+
 						</div>
 					</div>
 

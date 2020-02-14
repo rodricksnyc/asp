@@ -253,7 +253,7 @@ $(document).ready(function () {
   })
 
 
-//levels
+  //levels
 
   var one = 1
   var two = 2
@@ -282,100 +282,150 @@ $(document).ready(function () {
   });
 
 
-$('.level1 .addToList').click(function() {
-  if($(this).attr('value')) {
+  $('.level1 .addToList').click(function() {
+    if($(this).attr('value')) {
 
 
-$('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
 
-    $('.selectTopic').hide();
-    $('.levelTopicListNumber').append(one).val();
+      $('.selectTopic').hide();
+      $('.levelTopicListNumber').empty().append(one).val();
 
-    // $('.levelTopicAreaNumber').append(one).val();
+      // $('.levelTopicAreaNumber').append(one).val();
 
-    $('.listArea').addClass('animated fadeIn').show()
+      $('.listArea').addClass('animated fadeIn').show()
 
-  }
+    }
 
-})
+  })
 
-$('.level2 .addToList').click(function() {
-  if($(this).attr('value')) {
+  $('.level2 .addToList').click(function() {
+    if($(this).attr('value')) {
 
-    $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
-    $('.selectTopic').hide();
-    $('.levelTopicListNumber').html(two);
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
+      $('.selectTopic').hide();
+      $('.levelTopicListNumber').empty().append(two).val();
 
-    // $('.levelTopicAreaNumber').html(two + '1')
+      // $('.levelTopicAreaNumber').html(two + '1')
 
-    $('.listArea').addClass('animated fadeIn').show()
+      $('.listArea').addClass('animated fadeIn').show()
 
-  }
+    }
 
-})
+  })
 
-$('.level3 .addToList').click(function() {
-  if($(this).attr('value')) {
+  $('.level3 .addToList').click(function() {
+    if($(this).attr('value')) {
 
-    $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
-    $('.selectTopic').hide();
-    $('.levelTopicListNumber').html(three);
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
+      $('.selectTopic').hide();
+      $('.levelTopicListNumber').empty().append(three).val();
 
-    $('.listArea').addClass('animated fadeIn').show()
+      $('.listArea').addClass('animated fadeIn').show()
 
-  }
+    }
 
-})
+  })
 
-$('.level4 .addToList').click(function() {
-  if($(this).attr('value')) {
-    $('.selectTopic').hide();
-    $('.levelTopicListNumber').html(four);
+  $('.level4 .addToList').click(function() {
+    if($(this).attr('value')) {
+      $('.selectTopic').hide();
+      $('.levelTopicListNumber').empty().append(four).val();
 
-    $('.listArea').addClass('animated fadeIn').show()
+      $('.listArea').addClass('animated fadeIn').show()
 
-  }
+    }
 
-})
+  })
 
-$('.level5 .addToList').click(function() {
-  if($(this).attr('value')) {
+  $('.level5 .addToList').click(function() {
+    if($(this).attr('value')) {
 
-    $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
-    $('.selectTopic').hide();
-    $('.levelTopicListNumber').html(five);
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
+      $('.selectTopic').hide();
+      $('.levelTopicListNumber').empty().append(five).val();
 
-    $('.listArea').addClass('animated fadeIn').show()
+      $('.listArea').addClass('animated fadeIn').show()
 
-  }
+    }
 
-})
+  })
 
-$('.level6 .addToList').click(function() {
-  if($(this).attr('value')) {
+  $('.level6 .addToList').click(function() {
+    if($(this).attr('value')) {
 
-    $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
-    $('.selectTopic').hide();
-    $('.levelTopicListNumber').html(six);
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
+      $('.selectTopic').hide();
+      $('.levelTopicListNumber').empty().append(six).val();
 
-    $('.listArea').addClass('animated fadeIn').show()
+      $('.listArea').addClass('animated fadeIn').show()
 
-  }
+    }
 
-})
+  })
 
-$('.level7 .addToList').click(function() {
-  if($(this).attr('value')) {
+  $('.level7 .addToList').click(function() {
+    if($(this).attr('value')) {
 
-    $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
-    $('.selectTopic').hide();
-    $('.levelTopicListNumber').html(seven);
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
+      $('.selectTopic').hide();
+      $('.levelTopicListNumber').empty().append(seven).val();
 
-    $('.listArea').addClass('animated fadeIn').show()
+      $('.listArea').addClass('animated fadeIn').show()
 
-  }
+    }
 
-})
+  })
+
+
+  // $('.continuousHeader').click(function() {
+  //   $('.levels-accordion').addClass('animated fadeOut')
+  //   setTimeout(function() {
+  //   $('.levels-accordion').hide()
+  //   $('.levels-accordion').removeClass('animated fadeOut')
+  // },700)
+  //     setTimeout(function() {
+  //   $('.levels-accordion2').addClass('animated fadeIn').show();
+  //
+  // },700);
+  //
+  // // $('p.levels-accordion').addClass('animated fadeOut')
+  // // $('plevels-accordion2').addClass('animated fadeOut')
+  //
+  // setTimeout(function() {
+  // $('p.levels-accordion').html('Analysis Variables')
+  // $('p.levels-accordion2').html('Table Variables')
+  // // $('p.levels-accordion').removeClass('animated fadeOut')
+  // // $('p.levels-accordion2').removeClass('animated fadeOut')
+  // // $('p.levels-accordion').addClass('animated fadeIn')
+  // // $('p.levels-accordion2').addClass('animated fadeIn')
+  // },700)
+  // })
+  //
+  //
+  // $('.categoricalHeader').click(function() {
+  //   $('.levels-accordion2').addClass('animated fadeOut')
+  //   setTimeout(function() {
+  //   $('.levels-accordion2').hide()
+  //     $('.levels-accordion2').removeClass('animated fadeOut')
+  // },700)
+  //     setTimeout(function() {
+  //   $('.levels-accordion').addClass('animated fadeIn').show();
+  //
+  // },700);
+  //
+  // // $('p.levels-accordion').addClass('animated fadeOut')
+  // // $('p.levels-accordion2').addClass('animated fadeOut')
+  //
+  // setTimeout(function() {
+  // $('p.levels-accordion2').html('Table Variables')
+  // $('p.levels-accordion').html('Analysis Variables')
+  // // $('p.levels-accordion2').removeClass('animated fadeOut')
+  // // $('p.levels-accordion').removeClass('animated fadeOut')
+  // // $('p.levels-accordion2').addClass('animated fadeIn')
+  // // $('p.levels-accordion').addClass('animated fadeIn')
+  // },700)
+  // })
 
   //scale logo
 
@@ -466,7 +516,7 @@ $('.level7 .addToList').click(function() {
   // })
 
 
-//years checkboxes
+  //years checkboxes
 
   $('.grayLayer').css('top', $('.lightBlueBack').height())
   console.log($('.lightBlueBack').height())
