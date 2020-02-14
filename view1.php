@@ -62,38 +62,6 @@
 	</div>
 
 </div>
-<div class="btn-group">
-	<button type="button" id="level2" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Second Level<i class="fas fa-caret-down"></i></button>
-
-	<div class="dropdown-menu">
-		<button class="dropdown-item" type="button">{{Data View 1}}</button>
-		<button class="dropdown-item submenu" type="button">{{Data View 2}}</button>
-		<div class="dropdown-menu">
-			<button class="dropdown-item" type="button">{{Data View A}}</button>
-			<button class="dropdown-item" type="button">{{Data View B}}</button>
-			<button class="dropdown-item" type="button">{{Data View C}}</button>
-		</div>
-		<button class="dropdown-item" type="button">{{Data View 3}}</button>
-		<button class="dropdown-item" type="button">{{Data View 4}}</button>
-	</div>
-
-</div>
-<div class="btn-group">
-	<button type="button" id="level3" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Third Level<i class="fas fa-caret-down"></i></button>
-
-	<div class="dropdown-menu">
-		<button class="dropdown-item" type="button">{{Data View 1}}</button>
-		<button class="dropdown-item submenu" type="button">{{Data View 2}}</button>
-		<div class="dropdown-menu">
-			<button class="dropdown-item" type="button">{{Data View A}}</button>
-			<button class="dropdown-item" type="button">{{Data View B}}</button>
-			<button class="dropdown-item" type="button">{{Data View C}}</button>
-		</div>
-		<button class="dropdown-item" type="button">{{Data View 3}}</button>
-		<button class="dropdown-item" type="button">{{Data View 4}}</button>
-	</div>
-
-</div>
 
 
 </div>
@@ -160,6 +128,12 @@
 					<label class="custom-control-label" for="2014">2014</label>
 				</div>
 
+				<div class="years custom-control custom-checkbox">
+					<input type="checkbox" name="year" data-year="2013" value="2013" class="custom-control-input" id="2013">
+					<label class="custom-control-label" for="2013">2013</label>
+				</div>
+
+
 			</form>
 
 		</div>
@@ -179,7 +153,7 @@
 								<label for="ctl00_HeaderContentPlaceHolder_Search1_txtSearchText" id="ctl00_HeaderContentPlaceHolder_Search1_lblSearch" class="hiddenOffScreen">
 									<i class="fal fa-search searchBar"></i>
 								</label>
-								<input name="ctl00$HeaderContentPlaceHolder$Search1$txtSearchText" type="text" value="Search" id="ctl00_HeaderContentPlaceHolder_Search1_txtSearchText" class="searchTopics searchTxt-default">
+								<input name="ctl00$HeaderContentPlaceHolder$Search1$txtSearchText" type="text" placeholder="Search" id="ctl00_HeaderContentPlaceHolder_Search1_txtSearchText" class="searchTopics searchTxt-default">
 
 							</fieldset>
 
@@ -225,6 +199,16 @@
 						<p>Select a<br>Topic Area</p>
 
 					</div>
+
+					<div class="listArea">
+						<div class="selectedLevels">
+							<p class="blue">Level <span class="levelTopicListNumber"></span> Topic List Area <span class="levelTopicAreaNumber"> </span></p>
+						</div>
+
+						<?php include("includes/topic-levels-form.php"); ?>
+
+					</div>
+
 
 				</div>
 

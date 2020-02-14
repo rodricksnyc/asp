@@ -72,7 +72,7 @@
   </div>
 
   <a class="navbar-brand" href="default.html" target="_blank">
-    <img src="images/WesDax_logo.svg" alt="WesDax Logo">
+    <img src="images/logo.svg" alt="WesDax Logo">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

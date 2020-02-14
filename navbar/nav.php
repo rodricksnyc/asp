@@ -27,7 +27,9 @@
           <a class="dropdown-item" href="view2.php">{{Data View 2}}</a>
           <a class="dropdown-item" href="view3.php">{{Data View 3}}</a>
           <a class="dropdown-item" href="view4.php">{{Data View 4}}</a>
-          <a class="dropdown-item" href="view4.php">{{Data View 5}}</a>
+          <a class="dropdown-item" href="view5.php">{{Data View 5}}</a>
+          <a class="dropdown-item" href="view6.php">{{Data View 6}}</a>
+          <a class="dropdown-item" href="view7.php">{{Data View 7}}</a>
         </div>
       </li>
       <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
@@ -46,7 +48,7 @@
       </li>
       <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
 
-        <a class="nav-link" href="documents.php">Documents</a>
+        <a class="nav-link" href="#">Documents</a>
         <i class="fal fa-file-alt"></i>
       </li>
     </ul>
@@ -73,7 +75,7 @@
   </div>
 
   <a class="navbar-brand" href="default.html" target="_blank">
-    <img src="images/WesDax_logo.svg" alt="WesDax Logo">
+    <img src="images/logo.svg" alt="WesDax Logo">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

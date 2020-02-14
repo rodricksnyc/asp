@@ -15,7 +15,7 @@
 
 <body class="analysis">
 <a href="#themaincontent" id="skiptocontent" tabindex="1" aria-hidden="false">skip to main content</a>
-<div class="container-fluid view6">
+<div class="container-fluid view7">
 
 
 <div class="navigation-wrap bg-light start-header start-style">
@@ -163,6 +163,23 @@
 
 </div>
 
+<div class="btn-group">
+	<button type="button" id="level7" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Seventh Level<i class="fas fa-caret-down"></i></button>
+
+	<div class="dropdown-menu">
+		<button class="dropdown-item" type="button">{{Data View 1}}</button>
+		<button class="dropdown-item submenu" type="button">{{Data View 2}}</button>
+		<div class="dropdown-menu">
+			<button class="dropdown-item" type="button">{{Data View A}}</button>
+			<button class="dropdown-item" type="button">{{Data View B}}</button>
+			<button class="dropdown-item" type="button">{{Data View C}}</button>
+		</div>
+		<button class="dropdown-item" type="button">{{Data View 3}}</button>
+		<button class="dropdown-item" type="button">{{Data View 4}}</button>
+	</div>
+
+</div>
+
 
 
 </div>
@@ -248,7 +265,7 @@
 								<label for="ctl00_HeaderContentPlaceHolder_Search1_txtSearchText" id="ctl00_HeaderContentPlaceHolder_Search1_lblSearch" class="hiddenOffScreen">
 									<i class="fal fa-search searchBar"></i>
 								</label>
-								<input name="ctl00$HeaderContentPlaceHolder$Search1$txtSearchText" type="text" placeholder="Search" id="ctl00_HeaderContentPlaceHolder_Search1_txtSearchText" class="searchTopics searchTxt-default">
+								<input name="ctl00$HeaderContentPlaceHolder$Search1$txtSearchText" type="text" placeholder=""="Search" id="ctl00_HeaderContentPlaceHolder_Search1_txtSearchText" class="searchTopics searchTxt-default">
 
 							</fieldset>
 

@@ -179,7 +179,7 @@
 								<label for="ctl00_HeaderContentPlaceHolder_Search1_txtSearchText" id="ctl00_HeaderContentPlaceHolder_Search1_lblSearch" class="hiddenOffScreen">
 									<i class="fal fa-search searchBar"></i>
 								</label>
-								<input name="ctl00$HeaderContentPlaceHolder$Search1$txtSearchText" type="text" value="Search" id="ctl00_HeaderContentPlaceHolder_Search1_txtSearchText" class="searchTopics searchTxt-default">
+								<input name="ctl00$HeaderContentPlaceHolder$Search1$txtSearchText" type="text" placeholder="Search" id="ctl00_HeaderContentPlaceHolder_Search1_txtSearchText" class="searchTopics searchTxt-default">
 
 							</fieldset>
 
@@ -225,6 +225,16 @@
 						<p>Select a<br>Topic Area</p>
 
 					</div>
+
+					<div class="listArea">
+						<div class="selectedLevels">
+							<p class="blue">Level <span class="levelTopicListNumber"></span> Topic List Area <span class="levelTopicAreaNumber"> </span></p>
+						</div>
+
+						<?php include("includes/topic-levels-form.php"); ?>
+
+					</div>
+
 
 				</div>
 

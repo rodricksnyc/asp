@@ -438,8 +438,8 @@ background-color: #FFD6CD;
 
   .navbar-brand {
     display: inline-block;
-    padding-top: .2rem;
-    padding-bottom: 0.3125rem;
+    padding-top: .1rem;
+    padding-bottom: .1rem;
     margin-right: 12%;
     font-size: 1.25rem;
     line-height: inherit;

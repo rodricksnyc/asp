@@ -61,85 +61,85 @@ $(document).ready(function () {
   })
 
 
-//levels
+  //levels
 
-$('.toggle').click(function(e) {
-e.preventDefault();
+  $('.toggle').click(function(e) {
+    e.preventDefault();
 
-var $this = $(this);
+    var $this = $(this);
 
-if ($this.next().hasClass('show')) {
-$this.next().removeClass('show');
+    if ($this.next().hasClass('show')) {
+      $this.next().removeClass('show');
 
-/* JUST ADD HERE CLASS .ACTIVE */
-$this.removeClass("activeState");
+      /* JUST ADD HERE CLASS .ACTIVE */
+      $this.removeClass("activeState");
 
-$this.next().slideUp(350);
-}
-else {
-$this.parent().parent().find('li .inner').removeClass('show');
+      $this.next().slideUp(350);
+    }
+    else {
+      $this.parent().parent().find('li .inner').removeClass('show');
 
-if($this.hasClass('parent')){
+      if($this.hasClass('parent')){
 
-/* JUST REMOVING HERE CLASS .ACTIVE FROM EARLY APPLIED */
+        /* JUST REMOVING HERE CLASS .ACTIVE FROM EARLY APPLIED */
 
-$this.parents(".accordion").find(".toggle").removeClass("activeState");
+        $this.parents(".accordion").find(".toggle").removeClass("activeState");
 
-}
+      }
 
-else if($this.hasClass('child')){
+      else if($this.hasClass('child')){
 
-/* JUST REMOVING HERE CLASS .ACTIVE FROM EARLY APPLIED FOR CHILD */
-$this.parents(".accordion").find(".toggle.child1").removeClass("activeState");
+        /* JUST REMOVING HERE CLASS .ACTIVE FROM EARLY APPLIED FOR CHILD */
+        $this.parents(".accordion").find(".toggle.child1").removeClass("activeState");
 
-}
+      }
 
-else if($this.hasClass('child')){
+      else if($this.hasClass('child')){
 
-/* JUST REMOVING HERE CLASS .ACTIVE FROM EARLY APPLIED FOR CHILD */
-$this.parents(".accordion").find(".toggle.child2").removeClass("activeState");
+        /* JUST REMOVING HERE CLASS .ACTIVE FROM EARLY APPLIED FOR CHILD */
+        $this.parents(".accordion").find(".toggle.child2").removeClass("activeState");
 
-}
+      }
 
-else if($this.hasClass('child')){
+      else if($this.hasClass('child')){
 
-/* JUST REMOVING HERE CLASS .ACTIVE FROM EARLY APPLIED FOR CHILD */
-$this.parents(".accordion").find(".toggle.child3").removeClass("activeState");
+        /* JUST REMOVING HERE CLASS .ACTIVE FROM EARLY APPLIED FOR CHILD */
+        $this.parents(".accordion").find(".toggle.child3").removeClass("activeState");
 
-}
+      }
 
-else if($this.hasClass('child')){
+      else if($this.hasClass('child')){
 
-/* JUST REMOVING HERE CLASS .ACTIVE FROM EARLY APPLIED FOR CHILD */
-$this.parents(".accordion").find(".toggle.child4").removeClass("activeState");
+        /* JUST REMOVING HERE CLASS .ACTIVE FROM EARLY APPLIED FOR CHILD */
+        $this.parents(".accordion").find(".toggle.child4").removeClass("activeState");
 
-}
+      }
 
-else if($this.hasClass('child')){
+      else if($this.hasClass('child')){
 
-/* JUST REMOVING HERE CLASS .ACTIVE FROM EARLY APPLIED FOR CHILD */
-$this.parents(".accordion").find(".toggle.child5").removeClass("activeState");
+        /* JUST REMOVING HERE CLASS .ACTIVE FROM EARLY APPLIED FOR CHILD */
+        $this.parents(".accordion").find(".toggle.child5").removeClass("activeState");
 
-}
+      }
 
-else
+      else
 
-{
+      {
 
-/* JUST REMOVING HERE CLASS .ACTIVE FROM EARLY APPLIED FOR CHILD OF CHILD */
-$this.parents(".accordion").find(".toggle.child6").removeClass("activeState");
+        /* JUST REMOVING HERE CLASS .ACTIVE FROM EARLY APPLIED FOR CHILD OF CHILD */
+        $this.parents(".accordion").find(".toggle.child6").removeClass("activeState");
 
-}
+      }
 
-$this.parent().parent().find('li .inner').slideUp(350);
-$this.next().toggleClass('show');
+      $this.parent().parent().find('li .inner').slideUp(350);
+      $this.next().toggleClass('show');
 
-/* JUST ADD HERE CLASS .ACTIVE */
-$this.addClass("activeState");
-$this.addClass("minus-sign");
-$this.next().slideToggle(350);
-}
-});
+      /* JUST ADD HERE CLASS .ACTIVE */
+      $this.addClass("activeState");
+      $this.addClass("minus-sign");
+      $this.next().slideToggle(350);
+    }
+  });
 
 
 
@@ -163,12 +163,12 @@ $this.next().slideToggle(350);
 
 
 
-  $('a[data-type="years"]').addClass('NavItem--is-active');
-  $('a[data-type="topics"]').removeClass('NavItem--is-active')
-  $('.option[data-type="topics"]').addClass('hidden');
-  $('.option[data-type="data"]').addClass('hidden');
-  $('.option[data-type="marks"]').addClass('hidden');
-  $('.option[data-type="stats"]').addClass('hidden');
+  // $('a[data-type="years"]').addClass('NavItem--is-active');
+  // $('a[data-type="topics"]').removeClass('NavItem--is-active')
+  $('.option[data-type="topics"]').addClass('hidden').show();
+  $('.option[data-type="data"]').addClass('hidden').show();
+  $('.option[data-type="marks"]').addClass('hidden').show();
+  $('.option[data-type="stats"]').addClass('hidden').show();
 
 
 
@@ -253,7 +253,129 @@ $this.next().slideToggle(350);
   })
 
 
+//levels
 
+  var one = 1
+  var two = 2
+  var three = 3
+  var four = 4
+  var five = 5
+  var six = 6
+  var seven = 7
+
+  $("input[name=allLevels]").click(function() {
+    if (this.checked) {
+      // $('.filter-attr-list').find('li').remove();
+      $("input[name=levels]").prop('checked', true).change();
+      $("input[name=allLevels]").prop('checked', true).change();
+    }
+
+    else  {
+      $("input[name=levels]").prop('checked', false).change();
+      $("input[name=allLevels]").prop('checked', false).change();
+    }
+  });
+
+  $("input[name=levels]").change(function() {
+
+    $("input[name=allLevels]").prop('checked', false);
+  });
+
+
+$('.level1 .addToList').click(function() {
+  if($(this).attr('value')) {
+
+
+$('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
+
+    $('.selectTopic').hide();
+    $('.levelTopicListNumber').append(one).val();
+
+    // $('.levelTopicAreaNumber').append(one).val();
+
+    $('.listArea').addClass('animated fadeIn').show()
+
+  }
+
+})
+
+$('.level2 .addToList').click(function() {
+  if($(this).attr('value')) {
+
+    $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
+    $('.selectTopic').hide();
+    $('.levelTopicListNumber').html(two);
+
+    // $('.levelTopicAreaNumber').html(two + '1')
+
+    $('.listArea').addClass('animated fadeIn').show()
+
+  }
+
+})
+
+$('.level3 .addToList').click(function() {
+  if($(this).attr('value')) {
+
+    $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
+    $('.selectTopic').hide();
+    $('.levelTopicListNumber').html(three);
+
+    $('.listArea').addClass('animated fadeIn').show()
+
+  }
+
+})
+
+$('.level4 .addToList').click(function() {
+  if($(this).attr('value')) {
+    $('.selectTopic').hide();
+    $('.levelTopicListNumber').html(four);
+
+    $('.listArea').addClass('animated fadeIn').show()
+
+  }
+
+})
+
+$('.level5 .addToList').click(function() {
+  if($(this).attr('value')) {
+
+    $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
+    $('.selectTopic').hide();
+    $('.levelTopicListNumber').html(five);
+
+    $('.listArea').addClass('animated fadeIn').show()
+
+  }
+
+})
+
+$('.level6 .addToList').click(function() {
+  if($(this).attr('value')) {
+
+    $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
+    $('.selectTopic').hide();
+    $('.levelTopicListNumber').html(six);
+
+    $('.listArea').addClass('animated fadeIn').show()
+
+  }
+
+})
+
+$('.level7 .addToList').click(function() {
+  if($(this).attr('value')) {
+
+    $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
+    $('.selectTopic').hide();
+    $('.levelTopicListNumber').html(seven);
+
+    $('.listArea').addClass('animated fadeIn').show()
+
+  }
+
+})
 
   //scale logo
 
@@ -309,46 +431,74 @@ $this.next().slideToggle(350);
 
 
 
-  $(":checkbox[data-year]").change(function (e) {
+  // $(":checkbox[data-year]").change(function (e) {
+  //
+  //   var saveYear = $('.saveYear')
+  //   $('.filter-attr-list').empty().append(saveYear)
+  //
+  //   $('.years :checkbox:checked').each(function (ind, ele) {
+  //
+  //     if (this.checked == true)  {
+  //       var value = $(ele).attr('id')
+  //       $('.filter-attr-list').append(`<li data-year="${value}" class="results selected">${value} <div class="removeTag"><i class="fal fa-times ml-1"></i></div></li>`);
+  //     }
+  //
+  //
+  //
+  //
+  //     // $('.filter-attr-list').on('click', '.removeTag', function() {
+  //     //   console.log("hi there")
+  //     //   $(this).closest('.results').remove();
+  //     //
+  //     //     if ($(`li[data-year="${value}"  == $(this).find(':checkbox').attr(data-year="${value}"]`)) {
+  //     //       console.log("geibuibuewgbuiegriuhgeriuhewfhiuewfihu")
+  //     //
+  //     //         $(`:checkbox[data-year="${value}"]`).prop('checked', false);
+  //     //       // $(":checkbox[data-year]").prop('checked', false);
+  //     //     }
+  //     //
+  //     //   // $('.years :checkbox:checked').prop('checked', false);
+  //     //
+  //     // })
+  //
+  //   });
+  //
+  // })
 
-    var saveYear = $('.saveYear')
-    $('.filter-attr-list').empty().append(saveYear)
 
-    $('.years :checkbox:checked').each(function (ind, ele) {
+//years checkboxes
 
-      if (this.checked == true)  {
-        var value = $(ele).attr('id')
-        $('.filter-attr-list').append(`<li data-year="${value}" class="results selected">${value} <div class="removeTag"><i class="fal fa-times ml-1"></i></div></li>`);
-      }
+  $('.grayLayer').css('top', $('.lightBlueBack').height())
+  console.log($('.lightBlueBack').height())
 
+  $(".years :checkbox").change(function(){
 
+    // var saveYear = $('.saveYear')
+    // $('.filter-attr-list').empty().append(saveYear)
+    console.log(this.value)
+    if($(this).prop("checked")==true){
+      $('.filter-attr-list').append("<li class='results selected' data-year=" + this.value + ">" + this.value + "<div class='removeTag'><i class='fal fa-times ml-1'></i></div></li>");
+    }
 
+    else{
+      $(".filter-attr-list li[data-year=" + this.value + "]").remove()
+    };
 
-      $('.filter-attr-list').on('click', '.removeTag', function() {
-        console.log("hi there")
-        $(this).closest('.results').remove();
+    $(".filter-attr-list [data-year]").on('click',  function(){
+      $("input[name=addall]").prop('checked', false);
+      var yearName = $(this).attr("data-year");
 
-          if ($(`li[data-year="${value}"  == $(this).find(':checkbox').attr(data-year="${value}"]`)) {
-            console.log("geibuibuewgbuiegriuhgeriuhewfhiuewfihu")
+      $(".years :checkbox[value=" + $(this).attr("data-year") + "]").prop("checked",false);
 
-              $(`:checkbox[data-year="${value}"]`).prop('checked', false);
-            // $(":checkbox[data-year]").prop('checked', false);
-          }
-
-        // $('.years :checkbox:checked').prop('checked', false);
-
-      })
-
+      $(this).remove();
     });
-
-  })
-
-
+  });
 
 
 
   $("input[name=addall]").click(function() {
     if (this.checked) {
+      $('.filter-attr-list').find('li').remove();
       $("input[name=year]").prop('checked', true).change();
       $("input[name=addall]").prop('checked', true).change();
     }
@@ -361,23 +511,33 @@ $this.next().slideToggle(350);
 
 
 
-  function updateAllChecked() {
-    $('.years :checkbox:checked').each(function (ind, ele) {
+  // function updateAllChecked() {
+  //   $('.years :checkbox:checked').each(function (ind, ele) {
+  //
+  //
+  //   if($(this).prop("checked")== true) {
+  //
+  //     $('.filter-attr-list').find('li').remove();
+  //
+  //     // $('.filter-attr-list').append("<li class='results selected' data-year=" + this.value + ">" + this.value + "<div class='removeTag'><i class='fal fa-times ml-1'></i></div></li>");
+  //
+  //   }
+  //
+  //   else {
+  //     $(".filter-attr-list li[data-year=" + this.value + "]").remove()
+  //   }
+  //
+  //   });
+  //
+  //
+  // }
+  //
+  // updateAllChecked()
 
-      var value = $(ele).val();
-      $('.filter-attr-list').append(`<li class="results selected"> ${value} <div class="removeTag"><i class="fal fa-times ml-1"></i></div></li>`);
+  $("input[name=year]").change(function() {
 
-    });
-
-
-  }
-
-  updateAllChecked()
-
-  $("input[name=year]").click(function() {
-    console.log("sdubbuisvdvbduisvdsbuiubibuiiubiuvyivy")
     $("input[name=addall]").prop('checked', false);
-});
+  });
 
 
 
@@ -400,6 +560,8 @@ $this.next().slideToggle(350);
 
 
 
+
+
   $('#one').keyup(function (e) {
 
     var code = (e.keyCode ? e.keyCode : e.which);
@@ -409,6 +571,8 @@ $this.next().slideToggle(350);
 
     }
   });
+
+
 
 
 
