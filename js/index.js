@@ -253,16 +253,21 @@ $(document).ready(function () {
     }, 800, function() {
 
     });
+
+    $('#slideOutRight').css('z-index', '10')
   })
 
 
   $('.projects').click(function() {
+
     $('.backdropShadow').fadeIn()
     $( "#slideOutLeft" ).animate({
       left: "0",
     }, 800, function() {
 
     });
+
+    $('#slideOutRight').css('z-index', '1')
   });
 
 
@@ -493,7 +498,6 @@ $(document).ready(function () {
   $(window).bind('resize', function() {
     resizeText();
   }).trigger('resize');
-
 
 
 

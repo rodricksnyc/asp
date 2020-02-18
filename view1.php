@@ -255,7 +255,7 @@
 	<div class="lightBlueBack">
 
 		<ul class="filter-attr-list">
-			<p class="saveYear">Year(s):</p>
+			<p class="saveYear">Year(s)*</p>
 
 
 		</ul>
@@ -268,6 +268,8 @@
 		<div class="container">
 			<div class="row">
 				<p><i class="far fa-bars"></i>&nbsp;Row Topic()&nbsp;<i class="fal fa-info-circle"></i> <span class="evenSmaller">no limit</span></p>
+				<div id="rowTopic">
+				</div>
 			</div>
 			<div class="row">
 				<p><i class="fal fa-line-columns"></i>&nbsp;Column Topic&nbsp;<i class="fal fa-info-circle"></i> <span class="evenSmaller">limit 1</span></p>
@@ -363,8 +365,47 @@ crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react@15/dist/react.js"></script>
 <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
 <!-- <script src="js/react-components.js"></script> -->
-<script src="js/index.js"></script>
 
+<!-- <script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
+<!-- <script type="text/javascript" src="js/jquery-ui/jquery-ui.js"></script> -->
+
+<!-- <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script> -->
+<script src="js/index.js"></script>
+<!-- <script>
+//drag and drop
+
+
+  $('.levels').draggable({
+    cursor: 'move',
+    helper: "clone"
+  });
+
+  $("#topicLevels").droppable({
+    drop: function(event, ui) {
+      var itemid = $(event.originalEvent.toElement).attr("itemid");
+      $('.levels').each(function() {
+        if ($(this).attr("itemid") === itemid) {
+          $(this).appendTo("#topicLevels");
+        }
+      });
+    }
+  });
+
+  $("#rowTopic").droppable({
+    drop: function(event, ui) {
+      var itemid = $(event.originalEvent.toElement).attr("itemid");
+      $('.levels').each(function() {
+        if ($(this).attr("itemid") === itemid) {
+          $(this).appendTo("#rowTopic");
+        }
+      });
+    }
+  });
+
+	</script> -->
 
 
 </body>
