@@ -391,6 +391,13 @@ ul {
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 
+.lighterBlue {
+  background: #eef6fc !important;
+}
+.darkerBlue {
+  background: #deedf8 !important;
+}
+
 #myModal .modal-header {
   display: -ms-flexbox;
   display: flex;
@@ -924,21 +931,37 @@ p.smallest {
   height:3rem;
 }
 
-.optionPicker-nav:after {
+.nextOption i {
+  /* font-family: "Font Awesome 5 Pro";
+  content: "\f105"; */
+  color:#c7482e;
+  font-size:30px;
+  padding-left:8px;
+}
+
+.prevOption  i {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f104";
+  color:#c7482e;
+  font-size:30px;
+  padding-right:5px;
+}
+
+/* .optionPicker-nav:after {
   font-family: "Font Awesome 5 Pro";
   content: "\f105";
   color:#c7482e;
   font-size:25px;
   padding-left:8px;
-}
+} */
 
-.optionPicker-nav:before {
+/* .optionPicker-nav:before {
   font-family: "Font Awesome 5 Pro";
   content: "\f104";
   color:#c7482e;
   font-size:25px;
   padding-right:5px;
-}
+} */
 
 .NavItem--is-active {
   background: white;
@@ -1146,6 +1169,7 @@ input[type="range"]::-ms-track {
   border: inherit;
   color: transparent;
   background: transparent;
+
 }
 
 input[type="range"]::-ms-fill-lower,
@@ -1169,20 +1193,27 @@ input[type="range"]::-webkit-slider-thumb {
   background: radial-gradient(circle, rgba(107,177,227,1) 0%, rgba(55,148,217,0.9402135854341737) 100%);
 }
 input[type="range"]::-moz-range-thumb {
-  width: 40px;
-  height: 18px;
+  -webkit-appearance: none;
+  width: 25px;
+  height: 25px;
   border: none;
-  border-radius: 12px;
-  background-image: linear-gradient(to bottom, #529de1 0, #245e8f 100%);
+  border-radius: 50%;
+  background: rgb(107,177,227);
+  background: radial-gradient(circle, rgba(107,177,227,1) 0%, rgba(55,148,217,0.9402135854341737) 100%);
 }
 
 input[type="range"]::-ms-thumb {
-  width: 40px;
-  height: 18px;
-  border-radius: 12px;
-  border: 0;
-  background-image: linear-gradient(to bottom, #529de1 0, #245e8f 100%);
+  -webkit-appearance: none;
+  width: 25px !important;
+  height: 25px !important;
+  border: none;
+  border-radius: 50% !important;
+  background: rgb(107,177,227);
+  background: radial-gradient(circle, rgba(107,177,227,1) 0%, rgba(55,148,217,0.9402135854341737) 100%);
 }
+
+
+
 
 .blue {
   color:#07477d
@@ -1905,5 +1936,12 @@ footer {
   #myModal   .modal-header .close {
     display:block;
   }
+
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+/* .container-fluid {
+  padding-top:20px;
+} */
 
 }

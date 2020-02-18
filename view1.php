@@ -41,7 +41,8 @@
 </div>
 </div>
 
-<div class="row d-flex justify-content-center">
+<div class="row d-flex">
+<!-- <div class="col-xl-8 col-lg-6 col-md-6 col-sm-12 col-xs-12"> -->
 
 <div id="levels">
 
@@ -65,7 +66,7 @@
 
 
 </div>
-
+<!-- </div> -->
 
 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 ml-auto">
 <div class="tours d-flex justify-content-around align-items-center">
@@ -94,12 +95,13 @@
 	</div>
 
 	<nav class="optionPicker-nav">
+		<span class="prevOption"><i class="fal fa-angle-left"></i></span>
 		<a href="#years" data-type="years" class="NavItem NavItem--is-active">Year(s)</a>
 		<a href="#topics" data-type="topics" class="NavItem">Topic(s)</a>
 		<a href="#stats" data-type="stats" class="NavItem">Statistical Outputs</a>
 		<a href="#data" data-type="data" class="NavItem">Subset Data</a>
 		<a href="#marks" data-type="marks" class="NavItem">Benchmarks</a>
-
+		<span class="nextOption"><i class="fal fa-angle-right"></i></span>
 	</nav>
 
 	<div class="optionListWindow">

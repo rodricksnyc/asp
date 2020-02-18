@@ -41,7 +41,7 @@
 </div>
 </div>
 
-<div class="row d-flex justify-content-center">
+<div class="row d-flex">
 
 <div id="levels">
 

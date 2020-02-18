@@ -20,6 +20,20 @@ $(document).ready(function () {
 
   })
 
+    // $('a[data-type="years"]').addClass('NavItem--is-active');
+    // $('a[data-type="topics"]').removeClass('NavItem--is-active')
+    $('.option[data-type="topics"]').addClass('hidden').show();
+    $('.option[data-type="data"]').addClass('hidden').show();
+    $('.option[data-type="marks"]').addClass('hidden').show();
+    $('.option[data-type="stats"]').addClass('hidden').show();
+
+
+
+
+  $('.optionPicker-nav:after').click(function() {
+    console.log("ekwrubefwbuivesibuveiuohbvd")
+  })
+
 
 
 
@@ -142,34 +156,49 @@ $(document).ready(function () {
   });
 
 
+//changing colors in projects accordion
 
+  $(".panel-body .accordions .panel .panel-header").click(function (){
+    if ($(".panel-body .accordions .panel .panel-header").hasClass('darkerBlue') && $('.nested').hasClass('show')) {
+      setTimeout(function() {
+        $(".panel-body .accordions .panel .panel-header").addClass('lighterBlue');
+        $(".panel-body .accordions .panel .panel-header").removeClass('darkerBlue');
+      },400)
 
-  $(".accordions .mb-0 a").click(function (){
-    if($('.nested').hasClass('show')) {
-      $(".accordions .panel-header").css("background" , "#eef6fc");
+      console.log("blahhhhh")
     }
     else {
-      $(".accordions .panel-header").css("background" , "#deedf8");
+      $(".panel-body .accordions .panel .panel-header").addClass('darkerBlue');
+      $(".panel-body .accordions .panel .panel-header").removeClass('lighterBlue');
+      console.log("2blahhhhh")
     }
 
   });
+
+  $('#accordion .panel .panel-header').click(function() {
+    if ($(".panel-body .accordions .panel .panel-header").hasClass('darkerBlue') && $('.nested').hasClass('show')) {
+      console.log("3blahhhhh")
+      $(".panel-body .accordions .panel .panel-header").removeClass('lighterBlue');
+      $(".panel-body .accordions .panel .panel-header").removeClass('darkerBlue')
+    setTimeout(function() {
+      $('.nested').removeClass('show')
+    },400)
+    }
+
+    else if ($(".panel-body .accordions .panel .panel-header").hasClass('darkerBlue') && !$('.nested').hasClass('show'))  {
+
+      $(".panel-body .accordions .panel .panel-header").removeClass('lighterBlue');
+    }
+  })
+
+
+//change html in navbar
 
 
   if($('body').hasClass('analysis')) {
     $('#navbarDropdownMenuAnalysis .down').html('Analysis on Demand');
     $('.down:after').css('content' , 'none ');
   }
-
-
-
-
-  // $('a[data-type="years"]').addClass('NavItem--is-active');
-  // $('a[data-type="topics"]').removeClass('NavItem--is-active')
-  $('.option[data-type="topics"]').addClass('hidden').show();
-  $('.option[data-type="data"]').addClass('hidden').show();
-  $('.option[data-type="marks"]').addClass('hidden').show();
-  $('.option[data-type="stats"]').addClass('hidden').show();
-
 
 
   //projects slider
@@ -431,7 +460,7 @@ $(document).ready(function () {
 
   var resizeText = function () {
 
-    var preferredFontSize = 50; // %
+    var preferredFontSize = 56; // %
     var preferredSize = 1024 * 768;
 
     var currentSize = $(window).width() * $(window).height();
