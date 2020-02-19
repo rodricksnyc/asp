@@ -74,7 +74,7 @@
 
 				<script src="js/westat.js" type="text/javascript"></script>
 				<script src="js/bootstrap.js"></script>
-				<script src="js/index.js"></script>
+				<script type="text/javascript" src="js/index.js"></script>
 
 
 			</body>

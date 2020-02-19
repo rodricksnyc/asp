@@ -4,7 +4,7 @@
     <a class="toggle parent" href="#">Level 1 Topic Area (one level deep)</a>
     <ul class="inner level1">
       <a class="addToList"><li>Level 2 Topic Area</li></a>
-      <a class="addToList" name="COPD" value="COPD"><li>COPD</li></a>
+      <a class="addToList" name="Dogs Breeds" value="Dog Breeds"><li>Dog Breeds</li></a>
     </ul>
   </li>
 

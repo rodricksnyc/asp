@@ -370,7 +370,7 @@ crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react@15/dist/react.js"></script>
 <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
 <!-- <script src="js/react-components.js"></script> -->
-<script src="js/index.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
 
 
 
