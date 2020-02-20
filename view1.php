@@ -204,7 +204,7 @@
 
 					</div>
 
-					<div class="listArea" data-draggable="target">
+					<div class="listArea">
 						<div class="selectedLevels">
 							<p class="blue">Level <span class="levelTopicListNumber"></span> Topic List Area <span class="levelTopicAreaNumber"> </span></p>
 						</div>

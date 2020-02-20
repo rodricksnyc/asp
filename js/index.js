@@ -20,10 +20,10 @@ $(document).ready(function () {
   })
 
 
-    $('.option[data-type="topics"]').addClass('hidden').show();
-    $('.option[data-type="data"]').addClass('hidden').show();
-    $('.option[data-type="marks"]').addClass('hidden').show();
-    $('.option[data-type="stats"]').addClass('hidden').show();
+  $('.option[data-type="topics"]').addClass('hidden').show();
+  $('.option[data-type="data"]').addClass('hidden').show();
+  $('.option[data-type="marks"]').addClass('hidden').show();
+  $('.option[data-type="stats"]').addClass('hidden').show();
 
 
 
@@ -149,7 +149,7 @@ $(document).ready(function () {
   });
 
 
-//changing colors in projects accordion
+  //changing colors in projects accordion
 
   $(".panel-body .accordions .panel .panel-header").click(function (){
     if ($(".panel-body .accordions .panel .panel-header").hasClass('darkerBlue') && $('.nested').hasClass('show')) {
@@ -173,9 +173,9 @@ $(document).ready(function () {
       console.log("3blahhhhh")
       $(".panel-body .accordions .panel .panel-header").removeClass('lighterBlue');
       $(".panel-body .accordions .panel .panel-header").removeClass('darkerBlue')
-    setTimeout(function() {
-      $('.nested').removeClass('show')
-    },400)
+      setTimeout(function() {
+        $('.nested').removeClass('show')
+      },400)
     }
 
     else if ($(".panel-body .accordions .panel .panel-header").hasClass('darkerBlue') && !$('.nested').hasClass('show'))  {
@@ -185,7 +185,7 @@ $(document).ready(function () {
   })
 
 
-//change html in navbar
+  //change html in navbar
 
 
   if($('body').hasClass('analysis')) {
@@ -636,166 +636,181 @@ $(document).ready(function () {
 
   // drag and drop functionality
 
+  if (
+    !document.querySelectorAll
+    ||
+    !('draggable' in document.createElement('span'))
+    ||
+    window.opera
+  ) {
+    return;
+  }
 
+  //get the collection of draggable items and add their draggable attribute
+  for (var items = document.querySelectorAll('[data-draggable="item"]'),
+  len = items.length,
+  i = 0; i < len; i ++
+)
+{
+  items[i].setAttribute('draggable', 'true');
+}
 
-  	// if (
-  	// 	!document.querySelectorAll
-  	// 	||
-  	// 	!('draggable' in document.createElement('span'))
-  	// 	||
-  	// 	window.opera
-  	// ) {
-    // return;
-    // }
+//variable for storing the dragging item reference
+//this will avoid the need to define any transfer data
+//which means that the elements don't need to have IDs
+var item = null;
 
-  	//get the collection of draggable items and add their draggable attribute
-  	for (var items = document.querySelectorAll('[data-draggable="item"]'),
-    len = items.length,
-  		i = 0; i < len; i ++
-    )
-    {
-  		items[i].setAttribute('draggable', 'true');
-  	}
-
-  	//variable for storing the dragging item reference
-  	//this will avoid the need to define any transfer data
-  	//which means that the elements don't need to have IDs
-  	var item = null;
-
-
-
-    document.addEventListener("drag", function(event) {
-
-
+document.addEventListener("drag", function(event) {
 
 }, false);
 
 
 
-  	// //dragstart event to initiate mouse dragging
-  	document.addEventListener('dragstart', function(e) {
+// //dragstart event to initiate mouse dragging
+document.addEventListener('dragstart', function(e) {
 
-      $('#rowTopic').animate({
+  $('#rowTopic').animate({
 
-        minHeight: 300
+    minHeight: 140
 
-      },100);
-
-
-  		item = e.target;
-
-      // console.log('moving first time')
+  },100);
 
 
 
-  		//we don't need the transfer data, but we have to define something
-  		//otherwise the drop action won't work at all in firefox
-  		//most browsers support the proper mime-type syntax, eg. "text/plain"
-  		//but we have to use this incorrect syntax for the benefit of IE10+
-  		e.dataTransfer.setData('text', '');
+  item = e.target;
+
+  // console.log('moving first time')
 
 
-      }, false);
 
-  	// dragover event to allow the drag by preventing its default
-  	// ie. the default action of an element is not to allow dragging
-  	document.addEventListener('dragover', function(e) {
-
-
-        console.log('moving second time')
+  //we don't need the transfer data, but we have to define something
+  //otherwise the drop action won't work at all in firefox
+  //most browsers support the proper mime-type syntax, eg. "text/plain"
+  //but we have to use this incorrect syntax for the benefit of IE10+
+  e.dataTransfer.setData('text', '');
 
 
-  		if(item) {
-        e.preventDefault();
+}, false);
 
-      }
-  	}, false);
+// dragover event to allow the drag by preventing its default
+// ie. the default action of an element is not to allow dragging
+document.addEventListener('dragover', function(e) {
 
-  	//drop event to allow the element to be dropped into valid targets
-  	document.addEventListener('drop', function(e) {
 
+  console.log('moving second time')
+
+
+  if(item) {
+    e.preventDefault();
+
+  }
+}, false);
+
+//drop event to allow the element to be dropped into valid targets
+document.addEventListener('drop', function(e) {
 
   console.log('moving third time')
 
-        $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90)
-
-
-  			// $('.listArea').css('min-height', '20em')
-  		//if this element is a drop target, move the item here
-  		//then prevent default to allow the action (same as dragover)
-  		if(e.target.getAttribute('data-draggable') == 'target') {
-
-          console.log('moving fourth time')
-
-  			e.target.appendChild(item);
-  			e.preventDefault();
-  		}
-  	}, false);
-
-  	//dragend event to clean-up after drop or abort
-  	//which fires whether or not the drop target was valid
-  	document.addEventListener('dragend', function(e) {
-        console.log('moving fifth time')
-
-  		item = null;
-  	}, false);
+  $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90);
 
 
 
-
-  //
-  // if ($('#rowTopic .levels').length < 1) {
-  //
-  //   console.log("fucker")
-  //   $('#rowTopic').animate({
-  //
-  //     minHeight: "0px"},
-  //
-  //   );
-  //
-  // }
+// $('.levels').addClass('dragged')
 
 
-
-  $('#one').keyup(function (e) {
-
-    var code = (e.keyCode ? e.keyCode : e.which);
-    if (code == 13) {
-
-      $("#slideOutRight").addClass('showSlideOut');
-
-    }
-  });
+  //if this element is a drop target, move the item here
+  //then prevent default to allow the action (same as dragover)
+  if(e.target.getAttribute('data-draggable') == 'target') {
 
 
+    console.log('moving fourth time')
+
+    var thing = e.target.appendChild(item);
+
+
+if ($(thing).children('.deleteOptions').length == 0 ) {
+console.log("weiuveuiveuvuiviuvuiviugveiuevyi")
+    $('<div class="deleteOptions"><i class="fal fa-expand-arrows"></i>&nbsp;&nbsp;<i class="fal fa-trash-alt"></i></div>').appendTo(thing)
+}
+
+else {
+  console.log("kkukukukukjukukuk")
+  $(thing).detach($('<div class="deleteOptions"><i class="fal fa-expand-arrows"></i>&nbsp;&nbsp;<i class="fal fa-trash-alt"></i></div>'))
+}
+
+    e.preventDefault();
+  }
+}, false);
+
+//dragend event to clean-up after drop or abort
+//which fires whether or not the drop target was valid
+document.addEventListener('dragend', function(e) {
+
+  console.log('moving fifth time')
 
 
 
-  //make the nav item have active line on current page
+  item = null;
+}, false);
 
-  var path = window.location.href;
-  $('.navbar-nav li a').each(function() {
-    if (this.href === path) {
-      $(this).addClass('active');
-    }
-    else {
-      $(this).removeClass('active');
-    }
 
-  });
 
-  //make the nav item children have active line on current page
+  // $('.listArea #topicLevels .levels .deleteOptions').hide()
 
-  $('.navbar-nav li .dropdown-menu .dropdown-item').each(function() {
-    if (this.href === path) {
-      $(this).parent().siblings('a').addClass('active');
-      // $(this).removeClass('active');
-    }
-    else {
-      $(this).removeClass('active');
-    }
 
-  });
+//
+// if ($('#rowTopic .levels').length < 1) {
+//
+//   console.log("fucker")
+//   $('#rowTopic').animate({
+//
+//     minHeight: "0px"},
+//
+//   );
+//
+// }
+
+
+
+$('#one').keyup(function (e) {
+
+  var code = (e.keyCode ? e.keyCode : e.which);
+  if (code == 13) {
+
+    $("#slideOutRight").addClass('showSlideOut');
+
+  }
+});
+
+
+
+
+
+//make the nav item have active line on current page
+
+var path = window.location.href;
+$('.navbar-nav li a').each(function() {
+  if (this.href === path) {
+    $(this).addClass('active');
+  }
+  else {
+    $(this).removeClass('active');
+  }
+
+});
+
+//make the nav item children have active line on current page
+
+$('.navbar-nav li .dropdown-menu .dropdown-item').each(function() {
+  if (this.href === path) {
+    $(this).parent().siblings('a').addClass('active');
+    // $(this).removeClass('active');
+  }
+  else {
+    $(this).removeClass('active');
+  }
+
+});
 
 
 })

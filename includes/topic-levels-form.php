@@ -1,7 +1,7 @@
 
 
 
-<form method="post" id="topicLevels">
+<form method="post" id="topicLevels" data-draggable="target">
   <div class="allLevels custom-control custom-checkbox">
     <input type="checkbox" name="allLevels" class="custom-control-input" id="allLevels">
     <label class="custom-control-label" for="allLevels"><p class="blue">ALL</p></label>
