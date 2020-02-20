@@ -371,21 +371,7 @@
 	</div>
 	<p class="text-center mostSmall">&ndash;DRAG AND DROP TOPICS IN DESIRED ORDER&ndash;</p>
 
-	<div class="topics">
-
-		<div class="container">
-			<div class="row">
-				<p><i class="far fa-bars"></i>&nbsp;Row Topic()&nbsp;<i class="fal fa-info-circle"></i> <span class="evenSmaller">no limit</span></p>
-			</div>
-			<div class="row">
-				<p><i class="fal fa-line-columns"></i>&nbsp;Column Topic&nbsp;<i class="fal fa-info-circle"></i> <span class="evenSmaller">limit 1</span></p>
-			</div>
-			<div class="row">
-				<p><i class="fal fa-layer-group"></i></i>&nbsp;Layer Topic&nbsp;<i class="fal fa-info-circle"></i> <span class="evenSmaller">limit 1</span></p>
-			</div>
-		</div>
-	</div>
-
+<?php include("includes/topics-div.php"); ?>
 
 	<!-- <div class="grayLayer"> -->
 	<div class="analysis-topic">

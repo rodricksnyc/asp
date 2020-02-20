@@ -1966,6 +1966,7 @@ a:hover {
   flex-direction: column;
   flex-wrap: wrap; */
   width:100%;
+  position: relative;
 
 }
 
@@ -1986,6 +1987,7 @@ a:hover {
 
 #rowTopic .custom-control {
   border:1px solid #deedf8;
+  margin-bottom: .4em;
 }
 
 #rowTopic .custom-control-label::before {
@@ -2056,6 +2058,25 @@ a:hover {
   display:none !important;
 
 }
+
+.whiteBar {
+
+    position: absolute;
+    z-index: 11;
+    top: 20px;
+    height: auto;
+    background: white;
+    height: 80px;
+    bottom: 0px;
+    width: 100%;
+    left: 0;
+    background: rgb(255,255,255);
+        background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5480567226890756) 0%, rgba(255,255,255,1) 100%);
+
+    display: none;
+}
+
+
 
 /* footer classes */
 

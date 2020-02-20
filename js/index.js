@@ -671,7 +671,7 @@ document.addEventListener('dragstart', function(e) {
 
   $('#rowTopic').animate({
 
-    minHeight: 140
+    minHeight: 160
 
   },100);
 
@@ -714,7 +714,6 @@ document.addEventListener('drop', function(e) {
   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90);
 
 
-
 // $('.levels').addClass('dragged')
 
 
@@ -723,31 +722,74 @@ document.addEventListener('drop', function(e) {
   if(e.target.getAttribute('data-draggable') == 'target') {
 
 
+
+
     console.log('moving fourth time')
 
     var thing = e.target.appendChild(item);
 
 
 if ($(thing).children('.deleteOptions').length == 0 ) {
-console.log("weiuveuiveuvuiviuvuiviugveiuevyi")
+
     $('<div class="deleteOptions"><i class="fal fa-expand-arrows"></i>&nbsp;&nbsp;<i class="fal fa-trash-alt"></i></div>').appendTo(thing)
 }
 
 else {
-  console.log("kkukukukukjukukuk")
+
   $(thing).detach($('<div class="deleteOptions"><i class="fal fa-expand-arrows"></i>&nbsp;&nbsp;<i class="fal fa-trash-alt"></i></div>'))
 }
+
+
+
+  if ($('#rowTopic .levels').length > 3) {
+  console.log("more than")
+    $('#rowTopic .levels').slice(3).hide();
+    $('.whiteBar').fadeIn()
+
+
+    // $('#rowTopic').animate({
+    //
+    //   minHeight: 80,
+    //   maxHeight:80,
+    //   height:80
+    //
+    // },1000);
+
+
+  }
+
+  //
+  // if  ($('#topicLevels .levels').length > 3) {
+  //     console.log("less than")
+  //
+  //     $('#rowTopic .levels').show();
+  //   }
+
+
+
+//     some(function(e) {
+//       let elements = document.elementsFromPoint(e.clientX, event.clientY);
+//       let target = elements.find(e => e.matches('.whiteBar'));
+//       target.dispatchEvent(new DragEvent('drop', {
+//
+//       }));
+//     })
+// some()
+
 
     e.preventDefault();
   }
 }, false);
+
+
+
+
 
 //dragend event to clean-up after drop or abort
 //which fires whether or not the drop target was valid
 document.addEventListener('dragend', function(e) {
 
   console.log('moving fifth time')
-
 
 
   item = null;

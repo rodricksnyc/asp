@@ -270,21 +270,7 @@
 	</div>
 	<p class="text-center mostSmall">&ndash;DRAG AND DROP TOPICS IN DESIRED ORDER&ndash;</p>
 
-	<div class="topics">
-
-		<div class="container">
-			<div class="row">
-				<p><i class="far fa-bars"></i>&nbsp;Row Topic()&nbsp;<i class="fal fa-info-circle"></i> <span class="evenSmaller">no limit</span></p>
-			</div>
-			<div class="row">
-				<p><i class="fal fa-line-columns"></i>&nbsp;Column Topic&nbsp;<i class="fal fa-info-circle"></i> <span class="evenSmaller">limit 1</span></p>
-			</div>
-			<div class="row">
-				<p><i class="fal fa-layer-group"></i></i>&nbsp;Layer Topic&nbsp;<i class="fal fa-info-circle"></i> <span class="evenSmaller">limit 1</span></p>
-			</div>
-		</div>
-	</div>
-
+<?php include("includes/topics-div.php"); ?>
 
 	<!-- <div class="grayLayer"> -->
 	<div class="analysis-topic">
@@ -348,7 +334,10 @@ src="https://code.jquery.com/jquery-3.4.1.min.js"
 integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 crossorigin="anonymous"></script>
 <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
-
+<script
+  src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+  integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+  crossorigin="anonymous"></script>
 
 <script src="js/jquery.js" type="text/javascript"></script>
 <script src="js/migrate.js" type="text/javascript"></script>
