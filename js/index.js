@@ -671,7 +671,8 @@ document.addEventListener('dragstart', function(e) {
 
   $('#rowTopic').animate({
 
-    minHeight: 160
+    minHeight: 20,
+    paddingTop:25
 
   },100);
 
@@ -703,11 +704,16 @@ document.addEventListener('dragover', function(e) {
   if(item) {
     e.preventDefault();
 
+
+
+
   }
 }, false);
 
 //drop event to allow the element to be dropped into valid targets
 document.addEventListener('drop', function(e) {
+
+
 
   console.log('moving third time')
 
@@ -728,6 +734,33 @@ document.addEventListener('drop', function(e) {
 
     var thing = e.target.appendChild(item);
 
+//     function handle_drop_patient(event, ui) {
+//          $(this).append( $(ui.draggable).clone().css({'float':'left','display':'block'}) );
+//          $(ui.draggable).remove();
+//     }
+//     $(thing).droppable({
+//     classes: {
+//       'ui-droppable': 'highlight'
+//     },
+//     drop: handle_drop_patient
+// });
+//
+//       $(thing).addClass( "ui-state-highlight" )
+
+  //
+  //   if ($('#rowTopic .levels').length > 3) {
+  //
+  //   $(thing).draggable().css("position", "absolute");
+  //
+  //
+  // }
+
+
+  // $('#rowTopic').on('mouseenter' , function() {
+  //   alert("kubfwubih89figu43")
+
+  // })
+
 
 if ($(thing).children('.deleteOptions').length == 0 ) {
 
@@ -743,6 +776,8 @@ else {
 
   if ($('#rowTopic .levels').length > 3) {
   console.log("more than")
+
+
     $('#rowTopic .levels').slice(3).hide();
     $('.whiteBar').fadeIn()
 
@@ -780,9 +815,6 @@ else {
     e.preventDefault();
   }
 }, false);
-
-
-
 
 
 //dragend event to clean-up after drop or abort
