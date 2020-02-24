@@ -616,6 +616,81 @@ $(document).ready(function () {
   });
 
 
+//levels topics checkboxes
+
+
+$('.addRow').click(function() {
+var obj = $(this).parent().parent().siblings().val();
+var whole = $(this).parent().parent().siblings().find('.levels')
+console.log(obj)
+console.log(this)
+console.log(whole)
+
+
+
+// $(obj).attr("checked","checked")
+
+// var checkboxValue = $(this).parent().parent().siblings().find("input[data-level='" + obj.value + "']")
+// console.log(checkboxValue)
+
+// if($(obj).prop("checked")==true){
+
+    $('#rowTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj.value}' class='custom-control-input id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class='deleteOptions'><i class='fal fa-expand-arrows'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt'></i></div></div>`);
+
+
+
+// }
+
+  if ($('#rowTopic .levels').length > 3) {
+  console.log("more than")
+
+    $('#rowTopic .levels').slice(3).hide();
+    $('.whiteBar').fadeIn()
+
+  }
+
+});
+
+
+// $("#topicLevels :checkbox").change(function(){
+//
+//   console.log(this.value)
+//   if($(this).prop("checked")==true){
+//
+//
+//     $('#rowTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${this.value}' value='${this.value}' class='custom-control-input id='${this.value}'><label class='custom-control-label' for='${this.value}'><p class='blue'>${this.value}</p></label><div class='deleteOptions'><i class='fal fa-expand-arrows'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt'></i></div></div>`);
+//
+//   // $('#rowTopic').append("<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='" + this.value + "' value='" + this.value + "' class='custom-control-input id='" + this.value + "'><label class='custom-control-label' for='" + this.value + "'><p class='blue'>" + this.value + "</p></label><div class='deleteOptions'><i class='fal fa-expand-arrows'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt'></i></div></div>");
+//
+//     $(this).parent().fadeOut()
+//
+//   }
+//
+//
+//   if ($('#rowTopic .levels').length > 3) {
+//   console.log("more than")
+//
+//     $('#rowTopic .levels').slice(3).hide();
+//     $('.whiteBar').fadeIn()
+//
+//   }
+//
+//
+//
+//
+//
+// });
+
+
+
+
+
+
+
+
+
+
+
 
   //move zip case tab on window shrink
 
