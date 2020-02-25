@@ -616,70 +616,132 @@ $(document).ready(function () {
   });
 
 
-//levels topics checkboxes
-
-
-$('.addRow').click(function() {
-var obj = $(this).parent().parent().siblings().val();
-var whole = $(this).parent().parent().siblings().find('.levels')
-console.log(obj)
-console.log(this)
-console.log(whole)
+  //levels topics checkboxes
 
 
 
-// $(obj).attr("checked","checked")
 
-// var checkboxValue = $(this).parent().parent().siblings().find("input[data-level='" + obj.value + "']")
-// console.log(checkboxValue)
+  $('.addRow').on('click', function() {
+    // var obj = $(this).parent().parent().siblings().val();
 
-// if($(obj).prop("checked")==true){
+    var obj = $(this).closest('.levels').find('input[data-level]').val()
 
-    $('#rowTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj.value}' class='custom-control-input id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class='deleteOptions'><i class='fal fa-expand-arrows'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt'></i></div></div>`);
+    var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
+
+    // var checkedBox = $(this).parent().parent().siblings().closest(':checkbox[data-level]').prop("checked", true);
+    // var thisCheckBox = $(this).parent().parent().siblings().closest(':checkbox[data-level]')
+
+    if($(x).prop("checked")==true){
+
+      $('#rowTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class='deleteOptions'><i class='fal fa-expand-arrows'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel'></i></div></div>`);
+
+       // $(this).closest('.levels').fadeOut()
+       $(this).closest('.levels').find('input[data-level]').parent().fadeOut()
+
+    }
+
+  })
+
+
+
+$('#rowTopic').on('click', '.removeLevel' , function() {
+
+
+
+  var el = $(this).closest('.levels').find('input[data-level]').val()
+
+
+
+  console.log(el)
+
+  //
+  // if($(this).closest('.levels').find('input[data-level =" '+el+' "]').val() == $('.addRow').closest('.levels').find('input[data-level =" '+el+' "]').val()) {
+  //
+  //   console.log('fuck')
+
+
+    $('.addRow').closest('.levels').find(`input[data-level='${el}']`).parent().fadeIn()
+    $('.addRow').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
+
+
 
 
 
 // }
 
-  if ($('#rowTopic .levels').length > 3) {
-  console.log("more than")
 
-    $('#rowTopic .levels').slice(3).hide();
-    $('.whiteBar').fadeIn()
-
-  }
-
-});
+    $(this).closest('.levels').remove();
 
 
-// $("#topicLevels :checkbox").change(function(){
-//
-//   console.log(this.value)
-//   if($(this).prop("checked")==true){
-//
-//
-//     $('#rowTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${this.value}' value='${this.value}' class='custom-control-input id='${this.value}'><label class='custom-control-label' for='${this.value}'><p class='blue'>${this.value}</p></label><div class='deleteOptions'><i class='fal fa-expand-arrows'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt'></i></div></div>`);
-//
-//   // $('#rowTopic').append("<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='" + this.value + "' value='" + this.value + "' class='custom-control-input id='" + this.value + "'><label class='custom-control-label' for='" + this.value + "'><p class='blue'>" + this.value + "</p></label><div class='deleteOptions'><i class='fal fa-expand-arrows'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt'></i></div></div>");
-//
-//     $(this).parent().fadeOut()
-//
-//   }
-//
-//
-//   if ($('#rowTopic .levels').length > 3) {
-//   console.log("more than")
-//
-//     $('#rowTopic .levels').slice(3).hide();
-//     $('.whiteBar').fadeIn()
-//
-//   }
-//
-//
-//
-//
-//
-// });
+})
+
+
+
+
+
+  // });
+
+
+
+  // $('.removeLevel').click(function() {
+  //   var obj = $(this).parent().parent().siblings().val();
+  //   var checkedBox = $(this).parent().parent().siblings().closest(':checkbox[data-level]').prop("checked", false);
+  //
+  //
+  //
+  //   // $(obj).attr("checked","checked")
+  //
+  //   // var checkboxValue = $(this).parent().parent().siblings().find("input[data-level='" + obj.value + "']")
+  //   // console.log(checkboxValue)
+  //
+  //   if($(checkedBox).prop("checked")==false){
+  //
+  //     // $('#rowTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj.value}' class='custom-control-input id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class='deleteOptions'><i class='fal fa-expand-arrows'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel'></i></div></div>`);
+  //
+  //     $(checkedBox).parent().fadeIn()
+  //
+  //   }
+  //
+  //   if ($('#rowTopic .levels').length > 3) {
+  //     console.log("more than")
+  //
+  //     $('#rowTopic .levels').slice(3).hide();
+  //     $('.whiteBar').fadeIn()
+  //
+  //   }
+  //
+  // });
+
+
+  //
+  // $("#topicLevels :checkbox").change(function(){
+  //
+  //   console.log(this.value)
+  //   if($(this).prop("checked")==true){
+  //
+  //
+  //     $('#rowTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${this.value}' value='${this.value}' class='custom-control-input id='${this.value}'><label class='custom-control-label' for='${this.value}'><p class='blue'>${this.value}</p></label><div class='deleteOptions'><i class='fal fa-expand-arrows'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt'></i></div></div>`);
+  //
+  //   // $('#rowTopic').append("<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='" + this.value + "' value='" + this.value + "' class='custom-control-input id='" + this.value + "'><label class='custom-control-label' for='" + this.value + "'><p class='blue'>" + this.value + "</p></label><div class='deleteOptions'><i class='fal fa-expand-arrows'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt'></i></div></div>");
+  //
+  //     $(this).parent().fadeOut()
+  //
+  //   }
+  //
+  //
+  //   if ($('#rowTopic .levels').length > 3) {
+  //   console.log("more than")
+  //
+  //     $('#rowTopic .levels').slice(3).hide();
+  //     $('.whiteBar').fadeIn()
+  //
+  //   }
+  //
+  //
+  //
+  //
+  //
+  // });
 
 
 
@@ -795,7 +857,7 @@ document.addEventListener('drop', function(e) {
   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90);
 
 
-// $('.levels').addClass('dragged')
+  // $('.levels').addClass('dragged')
 
 
   //if this element is a drop target, move the item here
@@ -809,82 +871,82 @@ document.addEventListener('drop', function(e) {
 
     var thing = e.target.appendChild(item);
 
-//     function handle_drop_patient(event, ui) {
-//          $(this).append( $(ui.draggable).clone().css({'float':'left','display':'block'}) );
-//          $(ui.draggable).remove();
-//     }
-//     $(thing).droppable({
-//     classes: {
-//       'ui-droppable': 'highlight'
-//     },
-//     drop: handle_drop_patient
-// });
-//
-//       $(thing).addClass( "ui-state-highlight" )
-
-  //
-  //   if ($('#rowTopic .levels').length > 3) {
-  //
-  //   $(thing).draggable().css("position", "absolute");
-  //
-  //
-  // }
-
-
-  // $('#rowTopic').on('mouseenter' , function() {
-  //   alert("kubfwubih89figu43")
-
-  // })
-
-
-if ($(thing).children('.deleteOptions').length == 0 ) {
-
-    $('<div class="deleteOptions"><i class="fal fa-expand-arrows"></i>&nbsp;&nbsp;<i class="fal fa-trash-alt"></i></div>').appendTo(thing)
-}
-
-else {
-
-  $(thing).detach($('<div class="deleteOptions"><i class="fal fa-expand-arrows"></i>&nbsp;&nbsp;<i class="fal fa-trash-alt"></i></div>'))
-}
-
-
-
-  if ($('#rowTopic .levels').length > 3) {
-  console.log("more than")
-
-
-    $('#rowTopic .levels').slice(3).hide();
-    $('.whiteBar').fadeIn()
-
-
-    // $('#rowTopic').animate({
+    //     function handle_drop_patient(event, ui) {
+    //          $(this).append( $(ui.draggable).clone().css({'float':'left','display':'block'}) );
+    //          $(ui.draggable).remove();
+    //     }
+    //     $(thing).droppable({
+    //     classes: {
+    //       'ui-droppable': 'highlight'
+    //     },
+    //     drop: handle_drop_patient
+    // });
     //
-    //   minHeight: 80,
-    //   maxHeight:80,
-    //   height:80
+    //       $(thing).addClass( "ui-state-highlight" )
+
     //
-    // },1000);
+    //   if ($('#rowTopic .levels').length > 3) {
+    //
+    //   $(thing).draggable().css("position", "absolute");
+    //
+    //
+    // }
 
 
-  }
+    // $('#rowTopic').on('mouseenter' , function() {
+    //   alert("kubfwubih89figu43")
 
-  //
-  // if  ($('#topicLevels .levels').length > 3) {
-  //     console.log("less than")
-  //
-  //     $('#rowTopic .levels').show();
-  //   }
+    // })
 
 
+    if ($(thing).children('.deleteOptions').length == 0 ) {
 
-//     some(function(e) {
-//       let elements = document.elementsFromPoint(e.clientX, event.clientY);
-//       let target = elements.find(e => e.matches('.whiteBar'));
-//       target.dispatchEvent(new DragEvent('drop', {
-//
-//       }));
-//     })
-// some()
+      $('<div class="deleteOptions"><i class="fal fa-expand-arrows"></i>&nbsp;&nbsp;<i class="fal fa-trash-alt"></i></div>').appendTo(thing)
+    }
+
+    else {
+
+      $(thing).detach($('<div class="deleteOptions"><i class="fal fa-expand-arrows"></i>&nbsp;&nbsp;<i class="fal fa-trash-alt"></i></div>'))
+    }
+
+
+
+    if ($('#rowTopic .levels').length > 3) {
+      console.log("more than")
+
+
+      $('#rowTopic .levels').slice(3).hide();
+      $('.whiteBar').fadeIn()
+
+
+      // $('#rowTopic').animate({
+      //
+      //   minHeight: 80,
+      //   maxHeight:80,
+      //   height:80
+      //
+      // },1000);
+
+
+    }
+
+    //
+    // if  ($('#topicLevels .levels').length > 3) {
+    //     console.log("less than")
+    //
+    //     $('#rowTopic .levels').show();
+    //   }
+
+
+
+    //     some(function(e) {
+    //       let elements = document.elementsFromPoint(e.clientX, event.clientY);
+    //       let target = elements.find(e => e.matches('.whiteBar'));
+    //       target.dispatchEvent(new DragEvent('drop', {
+    //
+    //       }));
+    //     })
+    // some()
 
 
     e.preventDefault();
@@ -904,7 +966,7 @@ document.addEventListener('dragend', function(e) {
 
 
 
-  // $('.listArea #topicLevels .levels .deleteOptions').hide()
+// $('.listArea #topicLevels .levels .deleteOptions').hide()
 
 
 //

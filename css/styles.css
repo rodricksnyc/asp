@@ -1970,7 +1970,7 @@ a:hover {
   position: relative;
   display: block;
   min-height: 2.8rem;
-  padding-left: 2rem;
+  padding-left: 1.4rem;
   margin-bottom: .5em;
   max-height: 2.8em;
   padding-top: .4rem;
@@ -2092,7 +2092,7 @@ background-size: 50% 50%;
   display:none;
 }
 
-#topicLevels .custom-control:hover  .endOptions {
+#topicLevels .custom-control:hover .endOptions {
   display:block;
   background-color: #faede9;
   border-radius: .5rem;
@@ -2101,8 +2101,24 @@ background-size: 50% 50%;
 #topicLevels .custom-control-label {
     position: relative;
     margin-bottom: 0;
-    padding-left: .2em;
+    padding-left: .5em;
 }
+
+#topicLevels .levels .custom-control-label::before {
+  display:none;
+}
+
+
+#topicLevels .custom-control-label::before {
+  left:-1rem;
+}
+#topicLevels .custom-control-label::after {
+    left: -.9rem;
+}
+#topicLevels .levels:hover .custom-control-label::before {
+  display:block;
+}
+
 
 .endOptions .mostSmall {
     font-size: 10px;
