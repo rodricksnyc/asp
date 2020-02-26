@@ -799,12 +799,24 @@ document.addEventListener("drag", function(event) {
 // //dragstart event to initiate mouse dragging
 document.addEventListener('dragstart', function(e) {
 
+
+
   $('#rowTopic').animate({
 
     minHeight: 20,
     paddingTop:25
 
   },100);
+
+
+// if ($('#rowTopic .levels').length == 0) {
+//   $('#rowTopic').animate({
+//
+//     minHeight: 0,
+//     paddingTop:0
+//
+//   },100);
+// }
 
 
 
@@ -912,10 +924,10 @@ document.addEventListener('drop', function(e) {
 
             $('#rowTopic').on('click', '.removeDrag' , function() {
 
-                $('#topicLevels').append($(thing).closest('.levels'))
+                // $('#topicLevels').append($(thing).closest('.levels'))
 
-
-
+                  // $(this).closest('.levels').remove();
+                  $(this).closest('.levels').appendTo('#topicLevels')
 
                 // $(this).closest('#rowTopic [data-draggable]').remove();
 
