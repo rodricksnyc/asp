@@ -809,15 +809,6 @@ document.addEventListener('dragstart', function(e) {
   },100);
 
 
-// if ($('#rowTopic .levels').length == 0) {
-//   $('#rowTopic').animate({
-//
-//     minHeight: 0,
-//     paddingTop:0
-//
-//   },100);
-// }
-
 
 
   item = e.target;
@@ -932,6 +923,17 @@ document.addEventListener('drop', function(e) {
                 // $(this).closest('#rowTopic [data-draggable]').remove();
 
               // $(this).closest('.levels').find('input[data-level]').prop("checked", false);
+
+
+              if ($('#rowTopic .levels').length == 0) {
+                $('#rowTopic').animate({
+
+                  minHeight: 0,
+                  paddingTop:0
+
+                },100);
+              }
+
 
 
             })
