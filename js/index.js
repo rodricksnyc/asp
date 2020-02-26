@@ -622,6 +622,8 @@ $(document).ready(function () {
 
 
   $('.addRow').on('click', function() {
+
+    console.log("ghghghghghghghgh")
     // var obj = $(this).parent().parent().siblings().val();
 
     var obj = $(this).closest('.levels').find('input[data-level]').val()
@@ -631,14 +633,14 @@ $(document).ready(function () {
     // var checkedBox = $(this).parent().parent().siblings().closest(':checkbox[data-level]').prop("checked", true);
     // var thisCheckBox = $(this).parent().parent().siblings().closest(':checkbox[data-level]')
 
-    if($(x).prop("checked")==true){
+    // if($(x).prop("checked")==true){
 
       $('#rowTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class='deleteOptions'><i class='fal fa-expand-arrows'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel'></i></div></div>`);
 
        // $(this).closest('.levels').fadeOut()
        $(this).closest('.levels').find('input[data-level]').parent().fadeOut()
 
-    }
+    // }
 
   })
 
@@ -660,7 +662,7 @@ $('#rowTopic').on('click', '.removeLevel' , function() {
   //   console.log('fuck')
 
 
-    $('.addRow').closest('.levels').find(`input[data-level='${el}']`).parent().fadeIn()
+    $('.addRow').closest('.levels').find(`input[data-level='${el}']`).parent().fadeIn().css('display', 'flex')
     $('.addRow').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
 
 
@@ -745,15 +747,6 @@ $('#rowTopic').on('click', '.removeLevel' , function() {
 
 
 
-
-
-
-
-
-
-
-
-
   //move zip case tab on window shrink
 
   $(window).scroll(function () {
@@ -828,6 +821,9 @@ document.addEventListener('dragstart', function(e) {
   e.dataTransfer.setData('text', '');
 
 
+
+
+
 }, false);
 
 // dragover event to allow the drag by preventing its default
@@ -841,6 +837,7 @@ document.addEventListener('dragover', function(e) {
   if(item) {
     e.preventDefault();
 
+      // $(item).closest('.levels').find('input[data-level]').prop("checked", true);
 
 
 
@@ -899,15 +896,34 @@ document.addEventListener('drop', function(e) {
     // })
 
 
+
+
+
     if ($(thing).children('.deleteOptions').length == 0 ) {
 
-      $('<div class="deleteOptions"><i class="fal fa-expand-arrows"></i>&nbsp;&nbsp;<i class="fal fa-trash-alt"></i></div>').appendTo(thing)
+      $('<div class="deleteOptions"><i class="fal fa-expand-arrows"></i>&nbsp;&nbsp;<i class="fal fa-trash-alt removeDrag"></i></div>').appendTo(thing)
     }
+    //
+    // else {
+    //
+    //   $(thing).detach($('<div class="deleteOptions"><i class="fal fa-expand-arrows"></i>&nbsp;&nbsp;<i class="fal fa-trash-alt"></i></div>'))
+    // }
 
-    else {
 
-      $(thing).detach($('<div class="deleteOptions"><i class="fal fa-expand-arrows"></i>&nbsp;&nbsp;<i class="fal fa-trash-alt"></i></div>'))
-    }
+            $('#rowTopic').on('click', '.removeDrag' , function() {
+
+                $('#topicLevels').append($(thing).closest('.levels'))
+
+
+
+
+                // $(this).closest('#rowTopic [data-draggable]').remove();
+
+              // $(this).closest('.levels').find('input[data-level]').prop("checked", false);
+
+
+            })
+
 
 
 
@@ -915,7 +931,7 @@ document.addEventListener('drop', function(e) {
       console.log("more than")
 
 
-      $('#rowTopic .levels').slice(3).hide();
+      // $('#rowTopic .levels').slice(3).hide();
       $('.whiteBar').fadeIn()
 
 
@@ -962,6 +978,11 @@ document.addEventListener('dragend', function(e) {
 
 
   item = null;
+
+
+
+
+
 }, false);
 
 
