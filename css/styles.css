@@ -2068,6 +2068,12 @@ background-size: 50% 50%;
 
 }
 
+#columnTopic {
+    height: auto;
+    width: 100%;
+    position: relative;
+}
+
 .listArea .custom-control {
   border-bottom: 1px dotted lightgray;
 }
@@ -2234,6 +2240,66 @@ background-size: 50% 50%;
 }
 
 #rowTopic .custom-control {
+  position: relative;
+  display: flex;
+  min-height: 0rem;
+  padding-left: 0rem;
+  padding: .1rem 0rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+#columnTopic .custom-control {
+  border:1px solid #deedf8;
+  margin-bottom: .2em;
+}
+
+#columnTopic .custom-control-label::before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f142" !important;
+  color:#c7482e;
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  display: block;
+  width: auto;
+  height: auto;
+  pointer-events: none;
+  content: "";
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent !important;
+  border: none;
+  padding-left: .1rem;
+  font-size: 15px;
+}
+
+#columnTopic .custom-control-label::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 0rem;
+  height: 0rem;
+  content: "";
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+#columnTopic .levels .custom-control-label p {
+  margin-bottom:0rem !important;
+  margin-right: 0rem;
+  margin-left: .3rem;
+  font-size:13px !important;
+}
+
+#columnTopic .custom-control {
   position: relative;
   display: flex;
   min-height: 0rem;

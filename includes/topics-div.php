@@ -9,7 +9,12 @@
       </div>
     </div>
     <div class="row">
-      <p><i class="fal fa-line-columns"></i>&nbsp;Column Topic&nbsp;<i class="fal fa-info-circle"></i> <span class="evenSmaller">limit 1</span></p>
+      <div id="columnTopic" data-draggable="target">
+      <p>
+        <i class="fal fa-line-columns"></i>&nbsp;Column Topic&nbsp;<i class="fal fa-info-circle"></i>
+        <span class="evenSmaller">limit 1</span>
+      </p>
+    </div>
     </div>
     <div class="row">
       <p><i class="fal fa-layer-group"></i></i>&nbsp;Layer Topic&nbsp;<i class="fal fa-info-circle"></i> <span class="evenSmaller">limit 1</span></p>

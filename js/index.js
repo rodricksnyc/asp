@@ -618,12 +618,10 @@ $(document).ready(function () {
 
   //levels topics checkboxes
 
-
-
+//clicking on add as row
 
   $('.addRow').on('click', function() {
 
-    console.log("ghghghghghghghgh")
     // var obj = $(this).parent().parent().siblings().val();
 
     var obj = $(this).closest('.levels').find('input[data-level]').val()
@@ -633,14 +631,22 @@ $(document).ready(function () {
     // var checkedBox = $(this).parent().parent().siblings().closest(':checkbox[data-level]').prop("checked", true);
     // var thisCheckBox = $(this).parent().parent().siblings().closest(':checkbox[data-level]')
 
-    // if($(x).prop("checked")==true){
+    if($(this).closest('.levels').find('input[data-level]').prop("checked")==true) {
 
       $('#rowTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class='deleteOptions'><i class='fal fa-expand-arrows'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel'></i></div></div>`);
 
        // $(this).closest('.levels').fadeOut()
-       $(this).closest('.levels').find('input[data-level]').parent().fadeOut()
+       $(this).closest('.levels').find('input[data-level]').parent().hide()
 
-    // }
+
+    }
+
+//     if ($('#rowTopic .levels').length > 0) {
+//
+// $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 100);
+//
+//
+// }
 
   })
 
@@ -648,11 +654,7 @@ $(document).ready(function () {
 
 $('#rowTopic').on('click', '.removeLevel' , function() {
 
-
-
   var el = $(this).closest('.levels').find('input[data-level]').val()
-
-
 
   console.log(el)
 
@@ -662,21 +664,86 @@ $('#rowTopic').on('click', '.removeLevel' , function() {
   //   console.log('fuck')
 
 
-    $('.addRow').closest('.levels').find(`input[data-level='${el}']`).parent().fadeIn().css('display', 'flex')
+    $('.addRow').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
     $('.addRow').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
 
-
-
-
-
+//   if ($('#rowTopic .levels').length == 0) {
+//
+//   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() - 500)
 // }
 
+// }
 
     $(this).closest('.levels').remove();
 
 
 })
 
+
+
+
+
+
+//clicking on add as column
+
+  $('.addColumn').on('click', function() {
+
+    // var obj = $(this).parent().parent().siblings().val();
+
+    var obj = $(this).closest('.levels').find('input[data-level]').val()
+
+    var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
+
+    // var checkedBox = $(this).parent().parent().siblings().closest(':checkbox[data-level]').prop("checked", true);
+    // var thisCheckBox = $(this).parent().parent().siblings().closest(':checkbox[data-level]')
+
+    if($(this).closest('.levels').find('input[data-level]').prop("checked")==true) {
+
+      $('#columnTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class='deleteOptions'><i class='fal fa-expand-arrows'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel'></i></div></div>`);
+
+       // $(this).closest('.levels').fadeOut()
+       $(this).closest('.levels').find('input[data-level]').parent().hide()
+
+
+    }
+
+//     if ($('#rowTopic .levels').length > 0) {
+//
+// $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 100);
+//
+//
+// }
+
+  })
+
+
+
+$('#columnTopic').on('click', '.removeLevel' , function() {
+
+  var el = $(this).closest('.levels').find('input[data-level]').val()
+
+  console.log(el)
+
+  //
+  // if($(this).closest('.levels').find('input[data-level =" '+el+' "]').val() == $('.addRow').closest('.levels').find('input[data-level =" '+el+' "]').val()) {
+  //
+  //   console.log('fuck')
+
+
+    $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
+    $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
+
+//   if ($('#rowTopic .levels').length == 0) {
+//
+//   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() - 500)
+// }
+
+// }
+
+    $(this).closest('.levels').remove();
+
+
+})
 
 
 
@@ -804,6 +871,13 @@ document.addEventListener('dragstart', function(e) {
   $('#rowTopic').animate({
 
     minHeight: 20,
+    paddingTop:25
+
+  },100);
+
+  $('#columnTopic').animate({
+
+    minHeight: 80,
     paddingTop:25
 
   },100);
