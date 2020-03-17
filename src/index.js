@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-
+//hello there bitch!
 
   $('.NavItem').click(function(evt) {
     evt.preventDefault();
