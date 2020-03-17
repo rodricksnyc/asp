@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
-console.log("FUCK YOU!!!!!!!!!")
+
+
 
   $('.NavItem').click(function(evt) {
     evt.preventDefault();
