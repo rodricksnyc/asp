@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-console.log("rgubergierigeriugerbu")
+console.log("FUCK YOU!!!!!!!!!")
 
   $('.NavItem').click(function(evt) {
     evt.preventDefault();
