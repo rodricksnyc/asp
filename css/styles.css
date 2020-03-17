@@ -2220,6 +2220,10 @@ background-size: 50% 50%;
   font-size: 15px;
 }
 
+#rowTopic .custom-control-label {
+  width:100%;
+}
+
 #rowTopic .custom-control-label::after {
   position: absolute;
   top: 0;
