@@ -1,8 +1,5 @@
 $(document).ready(function () {
 
-//kbgbeebrbribeibiegbi
-
-
   $('.NavItem').click(function(evt) {
     evt.preventDefault();
     evt.stopPropagation();

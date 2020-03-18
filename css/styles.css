@@ -27,10 +27,12 @@ background-size: cover;
 background-repeat: no-repeat;
 /* background-position: center; */
 width: 100%;
-position: absolute;
+min-height: calc(100vh);
+position: relative;
+/* position: absolute;
 top: 0;
 right: 0;
-bottom:0;
+bottom:0; */
 
 }
 

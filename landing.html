@@ -62,30 +62,39 @@
     -webkit-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
 }
-.modal-open {
-	padding-right: 0px !important;
-}
 
-/* .container-fluid {
+.container-fluid {
     width: 100%;
     padding-right: 0px;
     padding-left: 0px;
     margin-right: 0;
     margin-left: 0;
-    min-height: calc(100vh - 50px);
-    position: relative;
-    padding-bottom: 50px;
+
+    /* padding-bottom: 200px; */
+		padding-bottom: 0px;
+overflow-x: hidden;
+}
+
+html {
+    overflow-x: hidden;
 }
 
 .modal-open {
 	padding-right: 0px !important;
 }
 
+#themaincontent {
+	    min-height: calc(100vh - 2rem);
+}
 .modal-open .modal {
-    overflow:visible;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+/* .modal-open .modal {
+    overflow:visible !important;
 }
 body {
-    overflow: hidden;
+    overflow-x: hidden;
 } */
 
 </style>
@@ -559,16 +568,20 @@ body {
 
 					</div>
 
+					<footer>
+						<div class="footer-wrapper">
+
+							<a href="https://www.westat.com" target="_blank" title="Visit website">
+								<img src="images/footer_westat_logo.svg" alt="Westat Home page" title="Westat" class="img-wes-logo"></a> <p class="p-wes-title t-white">An Employee-Owned Research Corporation<sup class="t-white">®</sup></p></div>
+						</footer>
 
 </div>
+
+
 </div>
 
-<footer>
-	<div class="footer-wrapper">
 
-		<a href="https://www.westat.com" target="_blank" title="Visit website">
-			<img src="images/footer_westat_logo.svg" alt="Westat Home page" title="Westat" class="img-wes-logo"></a> <p class="p-wes-title t-white">An Employee-Owned Research Corporation<sup class="t-white">®</sup></p></div>
-	</footer>
+
 
 
 							<script
