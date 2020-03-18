@@ -1,8 +1,5 @@
 $(document).ready(function () {
 
-
-
-
   $('.NavItem').click(function(evt) {
     evt.preventDefault();
     evt.stopPropagation();

@@ -19,6 +19,20 @@ body{
   background-color: #8167a9;
 }
 
+.landing-background{
+  background-image: url(../images/landing.png);
+  height: inherit;
+min-height: inherit;
+background-size: cover;
+background-repeat: no-repeat;
+/* background-position: center; */
+width: 100%;
+position: absolute;
+top: 0;
+right: 0;
+bottom:0;
+
+}
 
 /* main styles for welcome and about */
 
@@ -34,7 +48,7 @@ body{
 }
 
 #myModal {
-  z-index: 99999998;
+  z-index: 99999999999;
 }
 
 

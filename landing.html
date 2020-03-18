@@ -51,9 +51,50 @@
 
 
 </head>
+<style>
+
+.navigation-wrap {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.modal-open {
+	padding-right: 0px !important;
+}
+
+/* .container-fluid {
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: 0;
+    margin-left: 0;
+    min-height: calc(100vh - 50px);
+    position: relative;
+    padding-bottom: 50px;
+}
+
+.modal-open {
+	padding-right: 0px !important;
+}
+
+.modal-open .modal {
+    overflow:visible;
+}
+body {
+    overflow: hidden;
+} */
+
+</style>
+
+
 <body class="initial">
 	<a href="#themaincontent" id="skiptocontent" tabindex="1" aria-hidden="false">skip to main content</a>
 	<div class="container-fluid">
+			<div class="landing-background">
 		<div class="navigation-wrap bg-light start-header start-style">
 
 			<div class="row">
@@ -111,7 +152,7 @@
 
 						</div>
 						<div class="modal-body">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 							<div class="row">
 								<div class="col-lg-1 col-md-1 col-sm-2 col-xs-3">
 									<i class="fal fa-atom-alt"></i>
@@ -518,12 +559,16 @@
 
 					</div>
 
-					<footer>
-						<div class="footer-wrapper">
 
-							<a href="https://www.westat.com" target="_blank" title="Visit website">
-								<img src="images/footer_westat_logo.svg" alt="Westat Home page" title="Westat" class="img-wes-logo"></a> <p class="p-wes-title t-white">An Employee-Owned Research Corporation<sup class="t-white">®</sup></p></div>
-						</footer>
+</div>
+</div>
+
+<footer>
+	<div class="footer-wrapper">
+
+		<a href="https://www.westat.com" target="_blank" title="Visit website">
+			<img src="images/footer_westat_logo.svg" alt="Westat Home page" title="Westat" class="img-wes-logo"></a> <p class="p-wes-title t-white">An Employee-Owned Research Corporation<sup class="t-white">®</sup></p></div>
+	</footer>
 
 
 							<script
