@@ -2361,11 +2361,11 @@ background-size: 50% 50%;
 .whiteBar {
   position: absolute;
   z-index: 11;
-  top: 20%;
-  height: 100%;
+  top: 40px;
+  /* height: 100%; */
   background: white;
-  height: 80px;
-  padding-top:5px;
+  height: 60px;
+  /* padding-top:5px; */
   bottom: 0px;
   width: 100%;
   left: 0;
@@ -2378,6 +2378,9 @@ background-size: 50% 50%;
     font-size: 45px;
     /* margin: 0em .3em 0em 0.1em; */
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .whiteBar .fas .numberCounter {
@@ -2399,9 +2402,9 @@ h6 {
 
 }
 
-/* .whiteBar p {
-  padding-top:3em;
-} */
+.whiteBar p {
+  margin-top:1em !important;
+}
 
 .highlight {
   border-top: 2px solid aqua !important;

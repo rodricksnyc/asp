@@ -472,6 +472,25 @@ $(document).ready(function () {
     // }
     // }
 
+    if ($('#rowTopic .levels').length > 3) {
+      // alert("more than")
+      $('#rowTopic .levels').not().slice(3).css({
+        'height': 'auto',
+        'width': 'auto',
+        'opacity': '1'
+      });
+      $('.whiteBar').fadeOut(); // $('#rowTopic').animate({
+      //
+      //   minHeight: 80,
+      //   maxHeight:80,
+      //   height:80
+      //
+      // },1000);
+    }
+
+    $('.numberCounter').html(function (i, val) {
+      return val * 1 - 1;
+    });
     $(this).closest('.levels').remove();
   }); //clicking on add as column
 
