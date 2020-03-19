@@ -620,8 +620,6 @@ $(document).ready(function () {
 
   $('.addRow').on('click', function() {
 
-
-
     var obj = $(this).closest('.levels').find('input[data-level]').val()
 
     var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
@@ -639,6 +637,34 @@ $(document).ready(function () {
 
 
     }
+
+    if ($('#rowTopic .levels').length > 3) {
+      console.log("more than")
+
+
+      $('#rowTopic .levels').slice(3).css({
+        'height' : '0px',
+        'width' : '0px',
+        'opacity' : '0'
+      });
+
+      $('.whiteBar').fadeIn()
+
+
+      // $('#rowTopic').animate({
+      //
+      //   minHeight: 80,
+      //   maxHeight:80,
+      //   height:80
+      //
+      // },1000);
+
+
+    }
+
+
+    $('.numberCounter').html(function(i, val) { return val*1+1 });
+
 
 
 
@@ -700,6 +726,7 @@ $('#rowTopic').on('click', '.removeLevel' , function() {
 
 
     }
+
 
 //     if ($('#rowTopic .levels').length > 0) {
 //
