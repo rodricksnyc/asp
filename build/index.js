@@ -479,7 +479,7 @@ $(document).ready(function () {
         'width': 'auto',
         'opacity': '1'
       });
-      $('.whiteBar').fadeOut(); // $('#rowTopic').animate({
+      $('.whiteBar').fadeOut('slow'); // $('#rowTopic').animate({
       //
       //   minHeight: 80,
       //   maxHeight:80,
@@ -674,6 +674,29 @@ $(document).ready(function () {
       //   alert("kubfwubih89figu43")
       // })
 
+      if ($('#rowTopic .levels').length > 3) {
+        console.log("more than");
+        $('#rowTopic .levels').slice(3).css({
+          'height': '0px',
+          'width': '0px',
+          'opacity': '0'
+        });
+        $('.whiteBar').css({
+          'height': '100px',
+          'top': '80px'
+        }).fadeIn(); // $('#rowTopic').animate({
+        //
+        //   minHeight: 80,
+        //   maxHeight:80,
+        //   height:80
+        //
+        // },1000);
+      }
+
+      $('.numberCounter').html(function (i, val) {
+        return val * 1 + 1;
+      });
+
       if ($(thing).children('.deleteOptions').length == 0) {
         $('<div class="deleteOptions"><i class="fal fa-expand-arrows"></i>&nbsp;&nbsp;<i class="fal fa-trash-alt removeDrag"></i></div>').appendTo(thing);
       } //
@@ -681,33 +704,50 @@ $(document).ready(function () {
       //
       //   $(thing).detach($('<div class="deleteOptions"><i class="fal fa-expand-arrows"></i>&nbsp;&nbsp;<i class="fal fa-trash-alt"></i></div>'))
       // }
-
-
-      $('#rowTopic').on('click', '.removeDrag', function () {
-        // $('#topicLevels').append($(thing).closest('.levels'))
-        // $(this).closest('.levels').remove();
-        $(this).closest('.levels').appendTo('#topicLevels'); // $(this).closest('#rowTopic [data-draggable]').remove();
-        // $(this).closest('.levels').find('input[data-level]').prop("checked", false);
-
-        if ($('#rowTopic .levels').length == 0) {
-          $('#rowTopic').animate({
-            minHeight: 0,
-            paddingTop: 0
-          }, 100);
-        }
-      });
-
-      if ($('#rowTopic .levels').length > 3) {
-        console.log("more than"); // $('#rowTopic .levels').slice(3).hide();
-
-        $('.whiteBar').fadeIn(); // $('#rowTopic').animate({
-        //
-        //   minHeight: 80,
-        //   maxHeight:80,
-        //   height:80
-        //
-        // },1000);
-      } //
+      // $('#rowTopic').on('click', '.removeDrag' , function() {
+      //
+      //     // $('#topicLevels').append($(thing).closest('.levels'))
+      //
+      //       // $(this).closest('.levels').remove();
+      //       $(this).closest('.levels').appendTo('#topicLevels')
+      //
+      //     // $(this).closest('#rowTopic [data-draggable]').remove();
+      //
+      //   // $(this).closest('.levels').find('input[data-level]').prop("checked", false);
+      //
+      //
+      //   if ($('#rowTopic .levels').length == 0) {
+      //     $('#rowTopic').animate({
+      //
+      //       minHeight: 0,
+      //       paddingTop:0
+      //
+      //     },100);
+      //   }
+      //
+      //   $('.numberCounter').html(function(i, val) { return val*1 - 1 });
+      //
+      //
+      // })
+      // if ($('#rowTopic .levels').length > 3) {
+      //   console.log("more than")
+      //
+      //
+      //   // $('#rowTopic .levels').slice(3).hide();
+      //   $('.whiteBar').fadeIn()
+      //
+      //
+      //   // $('#rowTopic').animate({
+      //   //
+      //   //   minHeight: 80,
+      //   //   maxHeight:80,
+      //   //   height:80
+      //   //
+      //   // },1000);
+      //
+      //
+      // }
+      //
       // if  ($('#topicLevels .levels').length > 3) {
       //     console.log("less than")
       //
@@ -731,7 +771,43 @@ $(document).ready(function () {
   document.addEventListener('dragend', function (e) {
     console.log('moving fifth time');
     item = null;
-  }, false); // $('.listArea #topicLevels .levels .deleteOptions').hide()
+  }, false);
+  $('#rowTopic').on('click', '.removeDrag', function () {
+    // $('#topicLevels').append($(thing).closest('.levels'))
+    // $(this).closest('.levels').remove();
+    $(this).closest('.levels').appendTo('#topicLevels'); // $(this).closest('#rowTopic [data-draggable]').remove();
+    // $(this).closest('.levels').find('input[data-level]').prop("checked", false);
+
+    if ($('#rowTopic .levels').length > 1) {
+      $('#rowTopic').animate({
+        minHeight: 0,
+        paddingTop: 0
+      }, 100);
+    }
+
+    if ($('#rowTopic .levels').length > 1) {
+      // alert("more than")
+      $('#rowTopic .levels').not().slice(3).css({
+        'height': 'auto',
+        'width': 'auto',
+        'opacity': '1'
+      });
+      $('.whiteBar').css({
+        'height': '60px',
+        'top': '40px'
+      }).fadeOut('slow'); // $('#rowTopic').animate({
+      //
+      //   minHeight: 80,
+      //   maxHeight:80,
+      //   height:80
+      //
+      // },1000);
+    }
+
+    $('.numberCounter').html(function (i, val) {
+      return val * 1 - 1;
+    });
+  }); // $('.listArea #topicLevels .levels .deleteOptions').hide()
   //
   // if ($('#rowTopic .levels').length < 1) {
   //

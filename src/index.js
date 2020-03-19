@@ -704,7 +704,7 @@ if ($('#rowTopic .levels').length > 3) {
     'opacity' : '1'
   });
 
-  $('.whiteBar').fadeOut()
+  $('.whiteBar').fadeOut('slow')
 
 
   // $('#rowTopic').animate({
@@ -1020,6 +1020,38 @@ document.addEventListener('drop', function(e) {
     // })
 
 
+    if ($('#rowTopic .levels').length > 3) {
+      console.log("more than")
+
+
+      $('#rowTopic .levels').slice(3).css({
+        'height' : '0px',
+        'width' : '0px',
+        'opacity' : '0'
+      });
+
+      $('.whiteBar').css({
+        'height' : '100px',
+        'top' : '80px',
+
+      }).fadeIn()
+
+
+      // $('#rowTopic').animate({
+      //
+      //   minHeight: 80,
+      //   maxHeight:80,
+      //   height:80
+      //
+      // },1000);
+
+
+    }
+
+
+    $('.numberCounter').html(function(i, val) { return val*1+1 });
+
+
 
 
 
@@ -1034,52 +1066,53 @@ document.addEventListener('drop', function(e) {
     // }
 
 
-            $('#rowTopic').on('click', '.removeDrag' , function() {
-
-                // $('#topicLevels').append($(thing).closest('.levels'))
-
-                  // $(this).closest('.levels').remove();
-                  $(this).closest('.levels').appendTo('#topicLevels')
-
-                // $(this).closest('#rowTopic [data-draggable]').remove();
-
-              // $(this).closest('.levels').find('input[data-level]').prop("checked", false);
-
-
-              if ($('#rowTopic .levels').length == 0) {
-                $('#rowTopic').animate({
-
-                  minHeight: 0,
-                  paddingTop:0
-
-                },100);
-              }
-
-
-
-            })
-
-
-
-
-    if ($('#rowTopic .levels').length > 3) {
-      console.log("more than")
+            // $('#rowTopic').on('click', '.removeDrag' , function() {
+            //
+            //     // $('#topicLevels').append($(thing).closest('.levels'))
+            //
+            //       // $(this).closest('.levels').remove();
+            //       $(this).closest('.levels').appendTo('#topicLevels')
+            //
+            //     // $(this).closest('#rowTopic [data-draggable]').remove();
+            //
+            //   // $(this).closest('.levels').find('input[data-level]').prop("checked", false);
+            //
+            //
+            //   if ($('#rowTopic .levels').length == 0) {
+            //     $('#rowTopic').animate({
+            //
+            //       minHeight: 0,
+            //       paddingTop:0
+            //
+            //     },100);
+            //   }
+            //
+            //   $('.numberCounter').html(function(i, val) { return val*1 - 1 });
+            //
+            //
+            // })
 
 
-      // $('#rowTopic .levels').slice(3).hide();
-      $('.whiteBar').fadeIn()
 
 
-      // $('#rowTopic').animate({
-      //
-      //   minHeight: 80,
-      //   maxHeight:80,
-      //   height:80
-      //
-      // },1000);
-
-
-    }
+    // if ($('#rowTopic .levels').length > 3) {
+    //   console.log("more than")
+    //
+    //
+    //   // $('#rowTopic .levels').slice(3).hide();
+    //   $('.whiteBar').fadeIn()
+    //
+    //
+    //   // $('#rowTopic').animate({
+    //   //
+    //   //   minHeight: 80,
+    //   //   maxHeight:80,
+    //   //   height:80
+    //   //
+    //   // },1000);
+    //
+    //
+    // }
 
     //
     // if  ($('#topicLevels .levels').length > 3) {
@@ -1119,6 +1152,65 @@ document.addEventListener('dragend', function(e) {
 
 
 }, false);
+
+
+$('#rowTopic').on('click', '.removeDrag' , function() {
+
+    // $('#topicLevels').append($(thing).closest('.levels'))
+
+      // $(this).closest('.levels').remove();
+      $(this).closest('.levels').appendTo('#topicLevels')
+
+    // $(this).closest('#rowTopic [data-draggable]').remove();
+
+  // $(this).closest('.levels').find('input[data-level]').prop("checked", false);
+
+
+  if ($('#rowTopic .levels').length > 1) {
+    $('#rowTopic').animate({
+
+      minHeight: 0,
+      paddingTop:0
+
+    },100);
+
+  }
+
+  if ($('#rowTopic .levels').length > 1) {
+    // alert("more than")
+
+
+    $('#rowTopic .levels').not().slice(3).css({
+      'height' : 'auto',
+      'width' : 'auto',
+      'opacity' : '1'
+    });
+
+
+          $('.whiteBar').css({
+            'height' : '60px',
+            'top' : '40px',
+
+          }).fadeOut('slow')
+
+
+    // $('#rowTopic').animate({
+    //
+    //   minHeight: 80,
+    //   maxHeight:80,
+    //   height:80
+    //
+    // },1000);
+
+
+  }
+
+
+
+  $('.numberCounter').html(function(i, val) { return val*1 - 1 });
+
+
+})
 
 
 
