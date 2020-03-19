@@ -1166,7 +1166,7 @@ $('#rowTopic').on('click', '.removeDrag' , function() {
   // $(this).closest('.levels').find('input[data-level]').prop("checked", false);
 
 
-  if ($('#rowTopic .levels').length > 1) {
+  // if ($('#rowTopic .levels').length > 1) {
     $('#rowTopic').animate({
 
       minHeight: 0,
@@ -1174,13 +1174,13 @@ $('#rowTopic').on('click', '.removeDrag' , function() {
 
     },100);
 
-  }
+  // }
 
-  if ($('#rowTopic .levels').length > 1) {
+  // if ($('#rowTopic .levels').length > 1) {
     // alert("more than")
 
 
-    $('#rowTopic .levels').not().slice(3).css({
+    $('#rowTopic .levels').not().slice(2).css({
       'height' : 'auto',
       'width' : 'auto',
       'opacity' : '1'
@@ -1203,7 +1203,7 @@ $('#rowTopic').on('click', '.removeDrag' , function() {
     // },1000);
 
 
-  }
+  // }
 
 
 

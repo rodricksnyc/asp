@@ -777,32 +777,31 @@ $(document).ready(function () {
     // $(this).closest('.levels').remove();
     $(this).closest('.levels').appendTo('#topicLevels'); // $(this).closest('#rowTopic [data-draggable]').remove();
     // $(this).closest('.levels').find('input[data-level]').prop("checked", false);
+    // if ($('#rowTopic .levels').length > 1) {
 
-    if ($('#rowTopic .levels').length > 1) {
-      $('#rowTopic').animate({
-        minHeight: 0,
-        paddingTop: 0
-      }, 100);
-    }
+    $('#rowTopic').animate({
+      minHeight: 0,
+      paddingTop: 0
+    }, 100); // }
+    // if ($('#rowTopic .levels').length > 1) {
+    // alert("more than")
 
-    if ($('#rowTopic .levels').length > 1) {
-      // alert("more than")
-      $('#rowTopic .levels').not().slice(3).css({
-        'height': 'auto',
-        'width': 'auto',
-        'opacity': '1'
-      });
-      $('.whiteBar').css({
-        'height': '60px',
-        'top': '40px'
-      }).fadeOut('slow'); // $('#rowTopic').animate({
-      //
-      //   minHeight: 80,
-      //   maxHeight:80,
-      //   height:80
-      //
-      // },1000);
-    }
+    $('#rowTopic .levels').not().slice(2).css({
+      'height': 'auto',
+      'width': 'auto',
+      'opacity': '1'
+    });
+    $('.whiteBar').css({
+      'height': '60px',
+      'top': '40px'
+    }).fadeOut('slow'); // $('#rowTopic').animate({
+    //
+    //   minHeight: 80,
+    //   maxHeight:80,
+    //   height:80
+    //
+    // },1000);
+    // }
 
     $('.numberCounter').html(function (i, val) {
       return val * 1 - 1;
