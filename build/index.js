@@ -216,6 +216,16 @@ $(document).ready(function () {
       $('.close-project').attr('tabindex', '-1');
       $('.close-project').attr('aria-hidden', 'true');
     }
+  }); //levels navbar dropdowns
+
+  $('.dropdown-item.submenu').on('keyup', function (e) {
+    var code = e.keyCode ? e.keyCode : e.which;
+
+    if (code == 9 || code == 13) {
+      $('.dropdown-item + .dropdown-menu').show();
+      $('.dropdown-item + .dropdown-menu').css('opacity', '1');
+      $('.dropdown-item + .dropdown-menu').css('transition', 'opacity .3s .1s');
+    }
   }); // $('a.nav-link').last().on('blur', function() {
   //
   //   $('#levels .btn-group button').focus()
