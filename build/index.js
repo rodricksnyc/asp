@@ -318,7 +318,8 @@ $(document).ready(function () {
   $("input[name=levels]").change(function () {
     $("input[name=allLevels]").prop('checked', false);
   });
-  $('.level1 .addToList').click(function () {
+
+  var addLevel1 = function addLevel1() {
     if ($(this).attr('value')) {
       $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
       $('.selectTopic').hide();
@@ -326,8 +327,11 @@ $(document).ready(function () {
 
       $('.listArea').addClass('animated fadeIn').show();
     }
-  });
-  $('.level2 .addToList').click(function () {
+  };
+
+  $('.level1 .addToList').keypress(addLevel1).click(addLevel1);
+
+  var addLevel2 = function addLevel2() {
     if ($(this).attr('value')) {
       $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
       $('.selectTopic').hide();
@@ -335,46 +339,63 @@ $(document).ready(function () {
 
       $('.listArea').addClass('animated fadeIn').show();
     }
-  });
-  $('.level3 .addToList').click(function () {
+  };
+
+  $('.level2 .addToList').keypress(addLevel2).click(addLevel2);
+
+  var addLevel3 = function addLevel3() {
     if ($(this).attr('value')) {
       $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(three).val();
       $('.listArea').addClass('animated fadeIn').show();
     }
-  });
-  $('.level4 .addToList').click(function () {
+  };
+
+  $('.level3 .addToList').keypress(addLevel3).click(addLevel3);
+
+  var addLevel4 = function addLevel4() {
     if ($(this).attr('value')) {
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(four).val();
       $('.listArea').addClass('animated fadeIn').show();
     }
-  });
-  $('.level5 .addToList').click(function () {
+  };
+
+  $('.level4 .addToList').keypress(addLevel4).click(addLevel4);
+
+  var addLevel5 = function addLevel5() {
     if ($(this).attr('value')) {
       $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(five).val();
       $('.listArea').addClass('animated fadeIn').show();
     }
-  });
-  $('.level6 .addToList').click(function () {
+  };
+
+  $('.level5 .addToList').keypress(addLevel5).click(addLevel5);
+
+  var addLevel6 = function addLevel6() {
     if ($(this).attr('value')) {
       $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(six).val();
       $('.listArea').addClass('animated fadeIn').show();
     }
-  });
-  $('.level7 .addToList').click(function () {
+  };
+
+  $('.level6 .addToList').keypress(addLevel6).click(addLevel6);
+
+  var addLevel7 = function addLevel7() {
     if ($(this).attr('value')) {
       $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(seven).val();
       $('.listArea').addClass('animated fadeIn').show();
     }
-  }); // $('.continuousHeader').click(function() {
+  };
+
+  $('.level7 .addToList').keypress(addLevel7).click(addLevel7); // $('.continuousHeader').click(function() {
   //   $('.levels-accordion').addClass('animated fadeOut')
   //   setTimeout(function() {
   //   $('.levels-accordion').hide()

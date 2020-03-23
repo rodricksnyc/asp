@@ -503,7 +503,8 @@ $('body').on('keydown', function(event) {
   });
 
 
-  $('.level1 .addToList').click(function() {
+
+  var addLevel1 = function (){
     if($(this).attr('value')) {
 
 
@@ -517,10 +518,18 @@ $('body').on('keydown', function(event) {
       $('.listArea').addClass('animated fadeIn').show()
 
     }
+  }
+  $('.level1 .addToList').keypress(
+    addLevel1
 
-  })
+  ).click(
+    addLevel1
+  );
 
-  $('.level2 .addToList').click(function() {
+
+
+
+  var addLevel2 = function (){
     if($(this).attr('value')) {
 
       $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
@@ -532,10 +541,17 @@ $('body').on('keydown', function(event) {
       $('.listArea').addClass('animated fadeIn').show()
 
     }
+  }
+  $('.level2 .addToList').keypress(
+    addLevel2
 
-  })
+  ).click(
+    addLevel2
+  );
 
-  $('.level3 .addToList').click(function() {
+
+
+  var addLevel3 = function (){
     if($(this).attr('value')) {
 
       $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
@@ -545,10 +561,16 @@ $('body').on('keydown', function(event) {
       $('.listArea').addClass('animated fadeIn').show()
 
     }
+  }
+  $('.level3 .addToList').keypress(
+    addLevel3
 
-  })
+  ).click(
+    addLevel3
+  );
 
-  $('.level4 .addToList').click(function() {
+
+  var addLevel4 = function (){
     if($(this).attr('value')) {
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(four).val();
@@ -556,10 +578,15 @@ $('body').on('keydown', function(event) {
       $('.listArea').addClass('animated fadeIn').show()
 
     }
+  }
+  $('.level4 .addToList').keypress(
+    addLevel4
 
-  })
+  ).click(
+    addLevel4
+  );
 
-  $('.level5 .addToList').click(function() {
+  var addLevel5 = function (){
     if($(this).attr('value')) {
 
       $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
@@ -569,10 +596,16 @@ $('body').on('keydown', function(event) {
       $('.listArea').addClass('animated fadeIn').show()
 
     }
+  }
+  $('.level5 .addToList').keypress(
+    addLevel5
 
-  })
+  ).click(
+    addLevel5
+  );
 
-  $('.level6 .addToList').click(function() {
+
+  var addLevel6 = function (){
     if($(this).attr('value')) {
 
       $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
@@ -582,10 +615,16 @@ $('body').on('keydown', function(event) {
       $('.listArea').addClass('animated fadeIn').show()
 
     }
+  }
+  $('.level6 .addToList').keypress(
+    addLevel6
 
-  })
+  ).click(
+    addLevel6
+  );
 
-  $('.level7 .addToList').click(function() {
+
+  var addLevel7 = function (){
     if($(this).attr('value')) {
 
       $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
@@ -595,8 +634,13 @@ $('body').on('keydown', function(event) {
       $('.listArea').addClass('animated fadeIn').show()
 
     }
+  }
+  $('.level7 .addToList').keypress(
+    addLevel7
 
-  })
+  ).click(
+    addLevel7
+  );
 
 
   // $('.continuousHeader').click(function() {
