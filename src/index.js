@@ -39,9 +39,6 @@ $('body').on('keydown', function(event) {
 
 
 
-
-
-
   //hover for dropdown items in main navbar
 
   var $dropdown = $(".navbar-nav .nav-item");
@@ -769,6 +766,34 @@ $('body').on('keydown', function(event) {
 
 
 
+  $('.years :checkbox').keypress(function(e){
+    e.preventDefault();
+    if((e.keyCode ? e.keyCode : e.which) == 13){
+      $(this).trigger('click');
+    }
+  });
+
+  $('input[name=addall]').keypress(function(e){
+    e.preventDefault();
+    if((e.keyCode ? e.keyCode : e.which) == 13){
+      $(this).trigger('click');
+    }
+
+    if (this.checked) {
+      $('.filter-attr-list').find('li').remove();
+      $("input[name=year]").prop('checked', true).change();
+      $("input[name=addall]").prop('checked', true).change();
+    }
+
+    else  {
+      $("input[name=year]").prop('checked', false).change();
+      $("input[name=addall]").prop('checked', false).change();
+    }
+  });
+
+
+
+
   $("input[name=addall]").click(function() {
     if (this.checked) {
       $('.filter-attr-list').find('li').remove();
@@ -781,6 +806,23 @@ $('body').on('keydown', function(event) {
       $("input[name=addall]").prop('checked', false).change();
     }
   });
+
+
+
+
+
+
+  $("input[name=year]").change(function() {
+    $("input[name=addall]").prop('checked', false);
+
+
+    var a = $("input[name=year]");
+    if(a.length == a.filter(":checked").length){
+      $("input[name=addall]").prop('checked', true);
+    }
+
+  });
+
 
 
 
@@ -807,10 +849,6 @@ $('body').on('keydown', function(event) {
   //
   // updateAllChecked()
 
-  $("input[name=year]").change(function() {
-
-    $("input[name=addall]").prop('checked', false);
-  });
 
 
   //levels topics checkboxes

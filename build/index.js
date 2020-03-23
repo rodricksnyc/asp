@@ -514,6 +514,29 @@ $(document).ready(function () {
       $(this).remove();
     });
   });
+  $('.years :checkbox').keypress(function (e) {
+    e.preventDefault();
+
+    if ((e.keyCode ? e.keyCode : e.which) == 13) {
+      $(this).trigger('click');
+    }
+  });
+  $('input[name=addall]').keypress(function (e) {
+    e.preventDefault();
+
+    if ((e.keyCode ? e.keyCode : e.which) == 13) {
+      $(this).trigger('click');
+    }
+
+    if (this.checked) {
+      $('.filter-attr-list').find('li').remove();
+      $("input[name=year]").prop('checked', true).change();
+      $("input[name=addall]").prop('checked', true).change();
+    } else {
+      $("input[name=year]").prop('checked', false).change();
+      $("input[name=addall]").prop('checked', false).change();
+    }
+  });
   $("input[name=addall]").click(function () {
     if (this.checked) {
       $('.filter-attr-list').find('li').remove();
@@ -522,6 +545,14 @@ $(document).ready(function () {
     } else {
       $("input[name=year]").prop('checked', false).change();
       $("input[name=addall]").prop('checked', false).change();
+    }
+  });
+  $("input[name=year]").change(function () {
+    $("input[name=addall]").prop('checked', false);
+    var a = $("input[name=year]");
+
+    if (a.length == a.filter(":checked").length) {
+      $("input[name=addall]").prop('checked', true);
     }
   }); // function updateAllChecked() {
   //   $('.years :checkbox:checked').each(function (ind, ele) {
@@ -545,10 +576,7 @@ $(document).ready(function () {
   // }
   //
   // updateAllChecked()
-
-  $("input[name=year]").change(function () {
-    $("input[name=addall]").prop('checked', false);
-  }); //levels topics checkboxes
+  //levels topics checkboxes
   //clicking on add as row
 
   $('.addRow').on('click', function () {
