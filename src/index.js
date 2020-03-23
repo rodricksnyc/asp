@@ -347,15 +347,15 @@ $('body').on('keydown', function(event) {
 
   })
 
-  $('a.nav-link').last().on('blur', function() {
-
-    $('#levels .btn-group button').focus()
-  })
-
-  $('#levels .btn-group button').on('blur', function() {
-
-    $('.tours input').focus()
-  })
+  // $('a.nav-link').last().on('blur', function() {
+  //
+  //   $('#levels .btn-group button').focus()
+  // })
+  //
+  // $('#levels .btn-group button').on('blur', function() {
+  //
+  //   $('.tours input').focus()
+  // })
 
 
 

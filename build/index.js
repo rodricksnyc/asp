@@ -216,13 +216,16 @@ $(document).ready(function () {
       $('.close-project').attr('tabindex', '-1');
       $('.close-project').attr('aria-hidden', 'true');
     }
-  });
-  $('a.nav-link').last().on('blur', function () {
-    $('#levels .btn-group button').focus();
-  });
-  $('#levels .btn-group button').on('blur', function () {
-    $('.tours input').focus();
-  }); //zip case slider
+  }); // $('a.nav-link').last().on('blur', function() {
+  //
+  //   $('#levels .btn-group button').focus()
+  // })
+  //
+  // $('#levels .btn-group button').on('blur', function() {
+  //
+  //   $('.tours input').focus()
+  // })
+  //zip case slider
 
   $('#one').on('click', function () {
     $('.backdropShadow').fadeIn();
