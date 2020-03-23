@@ -586,6 +586,11 @@ ul.bullet li {
   outline-offset: -2px;
 }
 
+button:focus {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
 /* When mouse is detected, ALL focused elements have outline removed. */
 body.using-mouse :focus {
   outline: none;

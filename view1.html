@@ -63,19 +63,16 @@
 	  <div class="navbar-collapse collapse order-1 order-md-0 dual-collapse2" id="navbarSupportedContent">
 	    <ul class="navbar-nav ml-auto py-4 py-md-0">
 
-	      <li class="projects">
+	      <li class="projects" tabindex="0" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	        <i class="fal fa-angle-left"></i>
 	        <i class="fas fa-circle"><p class="initials">PN</p></i>
 	        <h3>Project Name</h3>
 	      </li>
 	      <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-	        <a class="nav-link active" href="index.html">Welcome</a>
+	        <a class="nav-link active" href="index.html" tabindex="0">Welcome</a>
 	        <i class="fal fa-door-open"></i>
 	      </li>
-	      <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-	        <a class="nav-link" href="about.html">About</a>
-	        <i class="fal fa-info-circle"></i>
-	      </li>
+
 	      <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
 	        <a class="nav-link dropdown-toggle" tabindex="0" id="navbarDropdownMenuAnalysis" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	          <p class="down">Analysis</p>
@@ -93,7 +90,7 @@
 	      </li>
 	      <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
 
-	        <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+	        <a class="nav-link dropdown-toggle" tabindex="0" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 	          <p class="down">Reports</p>
 	        </a>
 	        <i class="fal fa-clipboard-list"></i>
@@ -110,9 +107,17 @@
 	        <a class="nav-link" href="#">Documents</a>
 	        <i class="fal fa-file-alt"></i>
 	      </li>
+				<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+					<a class="nav-link" href="about.html">About</a>
+					<i class="fal fa-info-circle"></i>
+				</li>
 	    </ul>
 
 	    <ul class="navbar-nav ml-auto nav-flex-icons">
+
+				<a class="navbar-brand" href="default.html" target="_blank">
+					<img src="images/logo.svg" alt="WesDax Logo">
+				</a>
 
 	      <li class="nav-item dropdown">
 	        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0" role="button">
@@ -133,9 +138,7 @@
 	    </ul>
 	  </div>
 
-	  <a class="navbar-brand" href="default.html" target="_blank">
-	    <img src="images/logo.svg" alt="WesDax Logo">
-	  </a>
+
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
@@ -151,16 +154,15 @@
 <div class="row">
 <div class="col-lg-12 col-xs-12">
 
-
 	<div id="slideOutLeft">
 	  <div class="selectProject">&ndash; Select a Project &ndash;</div>
 
-	    <div class="projects">
+	    <div class="projects" aria-expanded="false" role="button" aria-hidden="false" tabindex="0">
 	      <div class="across">
 	      <i class="fas fa-circle"><p class="initials">PN</p></i><h3>Project Name</h3>
 
 	      </div>
-	      <div class="close-project">
+	      <div class="close-project" aria-expanded="false" role="button" aria-hidden="true" tabindex="-1">
 	        <i class="fal fa-angle-double-left"></i>
 	      </div>
 	  </div>
@@ -168,7 +170,7 @@
 	    <div class="panel">
 	      <div class="panel-header" id="acs">
 	        <h5 class="mb-0">
-	          <a role="button" data-toggle="collapse" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+	          <a role="button" data-toggle="collapse" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1" aria-hidden="true" tabindex="-1">
 	            ACS-PUMS
 	          </a>
 	        </h5>
@@ -258,7 +260,7 @@
 	    <div class="panel">
 	      <div class="panel-header" id="brfss">
 	        <h5 class="mb-0">
-	          <a role="button" data-toggle="collapse" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+	          <a role="button" data-toggle="collapse" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2" aria-hidden="true" tabindex="-1">
 	            BRFSS
 	          </a>
 	        </h5>
@@ -333,7 +335,7 @@
 	    <div class="panel">
 	      <div class="panel-header" id="ccd">
 	        <h5 class="mb-0">
-	          <a role="button" data-toggle="collapse" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+	          <a role="button" data-toggle="collapse" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3" aria-hidden="true" tabindex="-1">
 	            CCD
 	          </a>
 	        </h5>
@@ -351,8 +353,6 @@
 
 	            <div class="card-body">
 	              <h5>
-
-
 	                <a class="listOptions" href="view1.html" title="CCD – Welcome" role="menuitem" tabindex="0">Analysis on Demand</a>
 
 	              </h5>
@@ -401,7 +401,7 @@
 	    <div class="panel">
 	      <div class="panel-header" id="cps">
 	        <h5 class="mb-0">
-	          <a role="button" data-toggle="collapse" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+	          <a role="button" data-toggle="collapse" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4" aria-hidden="true" tabindex="-1">
 	            CPS
 	          </a>
 	        </h5>
@@ -514,7 +514,7 @@
 	        <p class="fileHistory orange">View File History</p>
 	      </div>
 	      <div class="closeThisPlease" id="close">
-	        <button type="button" role="button" class="close" data-dismiss="modal" id="closeThisPlease" tabindex="0" aria-hidden="false" style="opacity:1" aria-label="Close">
+	        <button type="button" role="button" class="close" data-dismiss="modal" id="closeThisPlease" tabindex="-1" aria-hidden="true" style="opacity:1" aria-label="Close">
 	          <span aria-hidden="true">
 	            <i class="fal fa-angle-double-right orange"></i>
 	          </span>
@@ -619,18 +619,18 @@
 	          <form>
 	            <div class="form-group">
 	              <label for="exampleFormControlTextarea1"><p class="blue strong">Notes</p></label>
-	              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Notes, etc."></textarea>
+	              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Notes, etc." tabindex="-1" aria-hidden="true"></textarea>
+
 	            </div>
 
 
 	            <div class="form-group">
-	              <label for="exampleFormControlTextarea1"><p class="blue strong">Zip File Name</p></label>
-	              <input id="term_input" class="form-control allResults" placeholder="Name of file, example, etc." type="text" name="search">
-
+	              <label for="term_input"><p class="blue strong">Zip File Name</p></label>
+	              <input id="term_input" class="form-control allResults" placeholder="Name of file, example, etc." type="text" name="search" tabindex="-1" aria-hidden="true">
 	            </div>
 
 	            <center>
-	              <a href="#"><div class="orangeBubble"><i class="fal fa-download">&nbsp;&nbsp;</i>Download</div></a>
+	              <a href="#" tabindex="-1" aria-hidden="true"><div class="orangeBubble"><i class="fal fa-download">&nbsp;&nbsp;</i>Download</div></a>
 	            </center>
 
 	          </form>
@@ -655,7 +655,7 @@
 
 <!-- <div id="root"></div> -->
 <div class="btn-group">
-	<button type="button" id="level1" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">First Level<i class="fas fa-caret-down"></i></button>
+	<button type="button" id="level1" tabindex="0" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">First Level<i class="fas fa-caret-down"></i></button>
 
 	<div class="dropdown-menu">
 		<button class="dropdown-item" type="button">{{Data View 1}}</button>
@@ -679,7 +679,7 @@
 <div class="tours d-flex justify-content-around align-items-center">
 	<p class="smallest">ON THIS PAGE</p>
 
-	<input type="range" min="0" value="100" max="100">
+	<input type="range" min="0" value="100" max="100" role="button" tabindex="0">
 	<p class="blue">Hover Tooltips</p>
 	<div class="orangeBubble small">Tour</div>
 
@@ -696,18 +696,18 @@
 
 	<div class="optional-line"><p class="smallest">OPTIONAL</p></div>
 	<div class="getResults">
-		<button type="button" class="btn btn-success">
+		<button type="button" class="btn btn-success" role="button" tabindex="0">
 			<i class="fas fa-calculator"></i>&nbsp;Results
 		</button>
 	</div>
 
 	<nav class="optionPicker-nav">
 		<!-- <span class="prevOption"><i class="fal fa-angle-left"></i></span> -->
-		<a href="#years" data-type="years" class="NavItem NavItem--is-active">Year(s)</a>
-		<a href="#topics" data-type="topics" class="NavItem">Topic(s)</a>
-		<a href="#stats" data-type="stats" class="NavItem">Statistical Outputs</a>
-		<a href="#data" data-type="data" class="NavItem">Subset Data</a>
-		<a href="#marks" data-type="marks" class="NavItem">Benchmarks</a>
+		<a href="#years" data-type="years" class="NavItem NavItem--is-active" role="button" data-toggle="tab" tabindex="0">Year(s)</a>
+		<a href="#topics" data-type="topics" class="NavItem" role="button" data-toggle="tab" tabindex="0">Topic(s)</a>
+		<a href="#stats" data-type="stats" class="NavItem" role="button" data-toggle="tab" tabindex="0">Statistical Outputs</a>
+		<a href="#data" data-type="data" class="NavItem" role="button" data-toggle="tab" tabindex="0">Subset Data</a>
+		<a href="#marks" data-type="marks" class="NavItem" role="button" data-toggle="tab" tabindex="0">Benchmarks</a>
 		<!-- <span class="nextOption"><i class="fal fa-angle-right"></i></span> -->
 	</nav>
 
@@ -818,7 +818,7 @@
 							          <div class="nestedBlock">
 							            <a class="addToList">Level 3 Topic Area</a>
 							            <a class="addToList">Level 3 Topic Area</a>
-							            <a class="addToList" value="Dog Breeds 2">Dog Breeds 2</a>
+							            <a class="addToList" value="Dog Breeds 2" role="menuitem" tabindex="0">Dog Breeds 2</a>
 							          </div>
 							        </div>
 							      </li>
@@ -851,7 +851,7 @@
 							              <div class="nestedBlock">
 							                <a class="addToList">Level 4 Topic Area</a>
 							                <a class="addToList">Level 4 Topic Area</a>
-							                <a class="addToList" value="Dog Breeds 3">Dog Breeds 3</a>
+							                <a class="addToList" value="Dog Breeds 3" role="menuitem" tabindex="0">Dog Breeds 3</a>
 							              </div>
 
 							            </ul>
@@ -894,7 +894,7 @@
 							                  <div class="nestedBlock">
 							                    <a class="addToList">Level 5 Topic Area</a>
 							                    <a class="addToList">Level 5 Topic Area</a>
-							                    <a class="addToList" value="Dog Breeds 4">Dog Breeds 4</a>
+							                    <a class="addToList" value="Dog Breeds 4" role="menuitem" tabindex="0">Dog Breeds 4</a>
 							                  </div>
 
 							                </ul>
@@ -953,7 +953,7 @@
 							                      <div class="nestedBlock">
 							                        <a class="addToList">Level 6 Topic Area</a>
 							                        <a class="addToList">Level 6 Topic Area</a>
-							                        <a class="addToList" value="Dog Breeds 5">Dog Breeds 5</a>
+							                        <a class="addToList" value="Dog Breeds 5" role="menuitem" tabindex="0">Dog Breeds 5</a>
 							                      </div>
 
 							                    </ul>
@@ -1025,7 +1025,7 @@
 							                          <div class="nestedBlock">
 							                            <a class="addToList">Level 7 Topic Area</a>
 							                            <a class="addToList">Level 7 Topic Area</a>
-							                            <a class="addToList" value="Dog Breeds 6">Dog Breeds 6</a>
+							                            <a class="addToList" value="Dog Breeds 6" role="menuitem" tabindex="0">Dog Breeds 6</a>
 							                          </div>
 
 							                        </ul>
@@ -1110,7 +1110,7 @@
 							                              <div class="nestedBlock">
 							                                <a class="addToList">Level 8 Topic Area</a>
 							                                <a class="addToList">Level 8 Topic Area</a>
-							                                <a class="addToList" value="Dog Breeds 7">Dog Breeds 7</a>
+							                                <a class="addToList" value="Dog Breeds 7" role="menuitem" tabindex="0">Dog Breeds 7</a>
 							                              </div>
 
 							                            </ul>
