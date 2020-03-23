@@ -808,10 +808,6 @@ $('body').on('keydown', function(event) {
   });
 
 
-
-
-
-
   $("input[name=year]").change(function() {
     $("input[name=addall]").prop('checked', false);
 
