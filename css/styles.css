@@ -587,13 +587,26 @@ ul.bullet li {
 }
 
 button:focus {
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
+  outline: 5px auto -webkit-focus-ring-color !important;
+  outline-offset: -2px !important;
+}
+
+input:focus {
+  outline: 5px auto -webkit-focus-ring-color !important;
+  outline-offset: -2px !important;
 }
 
 /* When mouse is detected, ALL focused elements have outline removed. */
 body.using-mouse :focus {
-  outline: none;
+  outline: none !important;
+}
+
+button.using-mouse :focus {
+  outline: none !important;
+}
+
+input.using-mouse :focus {
+  outline: none !important;
 }
 
 

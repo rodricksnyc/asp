@@ -2,11 +2,11 @@
 
 $(document).ready(function () {
   // Let the document know when the mouse is being used
-  document.body.addEventListener('mousedown', function () {
+  $('body').on('mousedown', function () {
     document.body.classList.add('using-mouse');
   }); // Re-enable focus styling when Tab is pressed
 
-  document.body.addEventListener('keydown', function (event) {
+  $('body').on('keydown', function (event) {
     if (event.keyCode === 9) {
       document.body.classList.remove('using-mouse');
     }
@@ -218,7 +218,10 @@ $(document).ready(function () {
     }
   });
   $('a.nav-link').last().on('blur', function () {
-    $('#levels .btn-group').focus();
+    $('#levels .btn-group button').focus();
+  });
+  $('#levels .btn-group button').on('blur', function () {
+    $('.tours input').focus();
   }); //zip case slider
 
   $('#one').on('click', function () {
