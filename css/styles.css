@@ -2065,7 +2065,7 @@ a:hover {
 #topicLevels .levels .card-body {
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
-    padding: 1.25rem 1.25rem 1rem 0rem;
+    padding: 1rem 1.25rem 0rem 0rem;
     position: relative;
     background-color: #faede9;
     border: none !important;
