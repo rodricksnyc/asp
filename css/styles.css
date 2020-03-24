@@ -2060,7 +2060,7 @@ a:hover {
 #topicLevels .levels .card-body {
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
-    padding: 1.25rem 1.25rem 1rem 1.25rem;
+    padding: 1.25rem 1.25rem 1rem 0rem;
     position: relative;
     background-color: #faede9;
     border: none !important;
@@ -2176,7 +2176,7 @@ background-size: 50% 50%;
 #topicLevels .custom-control:hover {
   background-color: #faede9;
   border-radius: .5rem;
-  padding-bottom: 0em;
+  /* padding-bottom: 0em; */
 }
 
 .activeCustomControl {
@@ -2250,6 +2250,40 @@ background-size: 50% 50%;
 
 .endOptions .mostSmall .fas {
   color: #07477d;
+}
+
+.horizontal {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: flex-start;
+    -moz-justify-content: flex-start;
+    -ms-justify-content: flex-start;
+    justify-content: flex-start;
+    -webkit-align-items: flex-start;
+    -moz-align-items: flex-start;
+    -ms-align-items: flex-start;
+    align-items: flex-start;
+}
+
+.horizontal p {
+  margin:0;
+  font-size:14px;
+  padding-left:.5em;
+  width: 33%;
+}
+
+.variableName li {
+  margin: 0;
+  font-size: 14px;
+  margin-left: -2em;
+}
+
+.categories li {
+  margin: 0;
+  font-size: 14px;
+  margin-left: -2em;
 }
 
 .blockAcross {
