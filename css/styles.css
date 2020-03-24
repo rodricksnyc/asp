@@ -1944,7 +1944,8 @@ ul li a.toggle.child6.activeState{
   background: white;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
   padding: .6em 1em 1em 1em;
-  height: auto;
+  height: 27em;
+  overflow-y: auto;
   border-radius: .5rem;
   position: relative;
   margin-top: .5em;
