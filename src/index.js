@@ -895,7 +895,7 @@ $('body').on('keydown', function(event) {
 
 //clicking on add as row
 
-  $('.addRow').on('click', function() {
+  $('.addRow').on('click', function(e) {
 
     var obj = $(this).closest('.levels').find('input[data-level]').val()
 
@@ -915,17 +915,29 @@ $('body').on('keydown', function(event) {
 
     }
 
+    $("#rowTopic .levels:nth-child(4)").nextAll( ".levels" ).addClass('noWidth')
+
+
     if ($('#rowTopic .levels').length > 3) {
       console.log("more than")
 
+    $('.whiteBar').fadeIn()
 
-      $('#rowTopic .levels').slice(3).css({
-        'height' : '0px',
-        'width' : '0px',
-        'opacity' : '0'
-      });
+    // $(levels).each(function() {
+    //       $(this).addClass('noWidth'); //This doesn't run one at a time
+    //    });
 
-      $('.whiteBar').fadeIn()
+
+
+
+      //
+      // $('#rowTopic .levels').slice(3).css({
+      //   'height' : '0px',
+      //   'width' : '0px',
+      //   'opacity' : '0'
+      // });
+
+      // $('.whiteBar').fadeIn()
 
 
       // $('#rowTopic').animate({
@@ -953,7 +965,14 @@ $('#rowTopic').on('click', '.removeLevel' , function() {
 
   var el = $(this).closest('.levels').find('input[data-level]').val()
 
-  console.log(el)
+  console.log(el);
+  // var levels = $(this).parent().parent();
+
+  $('#rowTopic .levels').each(function () {
+     $(this).removeClass("noWidth");
+   });
+
+
 
   //
   // if($(this).closest('.levels').find('input[data-level =" '+el+' "]').val() == $('.addRow').closest('.levels').find('input[data-level =" '+el+' "]').val()) {
@@ -971,15 +990,15 @@ $('#rowTopic').on('click', '.removeLevel' , function() {
 
 // }
 
-if ($('#rowTopic .levels').length > 3) {
+if ($('#rowTopic .levels').length >3 ) {
   // alert("more than")
 
 
-  $('#rowTopic .levels').not().slice(3).css({
-    'height' : 'auto',
-    'width' : 'auto',
-    'opacity' : '1'
-  });
+  // $('#rowTopic .levels').not().slice(3).css({
+  //   'height' : 'auto',
+  //   'width' : 'auto',
+  //   'opacity' : '1'
+  // });
 
   $('.whiteBar').fadeOut('slow')
 
@@ -1003,13 +1022,40 @@ $('.numberCounter').html(function(i, val) { return val*1 - 1 });
 })
 
 
+// $(".years :checkbox").change(function(){
+//
+//   // var saveYear = $('.saveYear')
+//   // $('.filter-attr-list').empty().append(saveYear)
+//   console.log(this.value)
+//   if($(this).prop("checked")==true){
+//     $('.filter-attr-list').append("<li class='results selected' data-year=" + this.value + ">" + this.value + "<div class='removeTag'><i class='fal fa-times ml-1'></i></div></li>");
+//   }
+//
+//   else{
+//     $(".filter-attr-list li[data-year=" + this.value + "]").remove()
+//   };
+//
+//   $(".filter-attr-list [data-year]").on('click',  function(){
+//     $("input[name=addall]").prop('checked', false);
+//     var yearName = $(this).attr("data-year");
+//
+//     $(".years :checkbox[value=" + $(this).attr("data-year") + "]").prop("checked",false);
+//
+//     $(this).remove();
+//   });
+// });
+
+
 
 
 
 
 //clicking on add as column
 
+
+
   $('.addColumn').on('click', function() {
+
 
     // var obj = $(this).parent().parent().siblings().val();
 
@@ -1020,7 +1066,7 @@ $('.numberCounter').html(function(i, val) { return val*1 - 1 });
     // var checkedBox = $(this).parent().parent().siblings().closest(':checkbox[data-level]').prop("checked", true);
     // var thisCheckBox = $(this).parent().parent().siblings().closest(':checkbox[data-level]')
 
-    if($(this).closest('.levels').find('input[data-level]').prop("checked")==true) {
+    // if($(this).closest('.levels').find('input[data-level]').prop("checked")==true) {
 
       $('#columnTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class='deleteOptions'><i class='fal fa-expand-arrows'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel'></i></div></div>`);
 
@@ -1028,25 +1074,36 @@ $('.numberCounter').html(function(i, val) { return val*1 - 1 });
        $(this).closest('.levels').find('input[data-level]').parent().hide()
 
 
-    }
+    // }
 
 
-//     if ($('#rowTopic .levels').length > 0) {
-//
-// $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 100);
-//
-//
-// }
+      if ($('#columnTopic .levels').length == 1) {
+
+        $(".addColumn").off("click");
+
+      }
+
+      else {
+          $(".addColumn").on("click");
+      }
+
+
+
 
   })
 
 
 
+
+
 $('#columnTopic').on('click', '.removeLevel' , function() {
+
+
 
   var el = $(this).closest('.levels').find('input[data-level]').val()
 
   console.log(el)
+
 
   //
   // if($(this).closest('.levels').find('input[data-level =" '+el+' "]').val() == $('.addRow').closest('.levels').find('input[data-level =" '+el+' "]').val()) {
@@ -1135,6 +1192,16 @@ $('#columnTopic').on('click', '.removeLevel' , function() {
   //
   //
   // });
+
+//adding href and id to accordions dynamically for checkboxes
+
+var hash = 1;
+$(".accordion-toggle").each(function(i){
+  var count = "collapseAccord" + (++hash)
+  $(this).attr("href",  "#" + count);
+  $(this).attr("aria-controls", count);
+  $(this).closest('.custom-checkbox').find(".collapse").attr("id", count);
+});
 
 
 
