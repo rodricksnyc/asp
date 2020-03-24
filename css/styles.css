@@ -2045,9 +2045,25 @@ a:hover {
   color:#c7482e;
 }
 
+#topicLevels .levels:hover p.blue,
+#topicLevels .levels:active p.blue,
+#topicLevels .levels:focus p.blue {
+    color:#c7482e;
+    font-weight:500 !important;
+}
+
 #topicLevels .levels:hover .accordion-toggle i {
   visibility: visible;
   color:#c7482e;
+}
+
+#topicLevels .levels .card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem 1.25rem 1rem 1.25rem;
+    position: relative;
+    background-color: #faede9;
+    border: none !important;
 }
 
 
@@ -2163,6 +2179,25 @@ background-size: 50% 50%;
   padding-bottom: 0em;
 }
 
+.activeCustomControl {
+  background-color: #faede9;
+  border-radius: .5rem;
+  padding-bottom: 0em;
+}
+
+.activeCustomControl p.blue {
+  color: #c7482e;
+  font-weight: 500 !important;
+}
+.activeCustomControl i {
+  color: #c7482e;
+  visibility: visible !important;
+}
+
+.activeCustomControl .custom-control-label::before {
+    display: block !important;
+}
+
 
 .endOptions {
   position: absolute;
@@ -2176,6 +2211,13 @@ background-size: 50% 50%;
   background-color: #faede9;
   border-radius: .5rem;
 }
+
+.visibleEndOptions {
+  display:block;
+  background-color: #faede9;
+  border-radius: .5rem;
+}
+
 
 #topicLevels .custom-control-label {
     position: relative;

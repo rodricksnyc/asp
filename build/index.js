@@ -797,6 +797,10 @@ $(document).ready(function () {
     $(this).attr("href", "#" + count);
     $(this).attr("aria-controls", count);
     $(this).closest('.custom-checkbox').find(".collapse").attr("id", count);
+  });
+  $(".accordion-toggle").click(function () {
+    $(this).closest('.custom-control').toggleClass('activeCustomControl');
+    $(this).closest('.custom-control').find('.endOptions').toggleClass('visibleEndOptions');
   }); //move zip case tab on window shrink
 
   $(window).scroll(function () {
