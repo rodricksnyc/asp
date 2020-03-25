@@ -914,12 +914,12 @@ $(document).ready(function () {
     $(this).attr("aria-controls", count);
     $(this).closest('.custom-checkbox').find(".collapse").attr("id", count);
   });
-  $(".accordion-toggle").click(function () {
+  $(".levels .accordion-toggle").click(function () {
     $(this).closest('.custom-control').toggleClass('activeCustomControl');
     $(this).closest('.custom-control').find('.endOptions').toggleClass('visibleEndOptions');
   }); //scroll to open accordion in listArea
 
-  $('.collapse').on('show.bs.collapse', function (e) {
+  $('.levels .collapse').on('show.bs.collapse', function (e) {
     var $panel = $(this).closest('.levels').find('.accordion-toggle');
     var $open = $(this).closest('.levels').find('.collapse');
 
