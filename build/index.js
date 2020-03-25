@@ -296,6 +296,15 @@ $(document).ready(function () {
       $('#slideOutRight a').attr('tabindex', '-1');
       $('#slideOutRight a').attr('aria-hidden', 'true');
     }
+  }); //toggle between analyis and table
+
+  $('.continuousHeader').click(function () {
+    $('.analysisVariables').removeClass('hidden');
+    $('.tableVariables').addClass('hidden');
+  });
+  $('.categoricalHeader').click(function () {
+    $('.analysisVariables').addClass('hidden');
+    $('.tableVariables').removeClass('hidden');
   }); //levels
 
   var one = 1;
@@ -319,7 +328,7 @@ $(document).ready(function () {
     $("input[name=allLevels]").prop('checked', false);
   });
 
-  var addLevel1 = function addLevel1() {
+  var tableLevel1 = function tableLevel1() {
     if ($(this).attr('value')) {
       $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
       $('.selectTopic').hide();
@@ -329,9 +338,21 @@ $(document).ready(function () {
     }
   };
 
-  $('.level1 .addToList').keypress(addLevel1).click(addLevel1);
+  $('.tableVariables .level1 .addToList').keypress(tableLevel1).click(tableLevel1);
 
-  var addLevel2 = function addLevel2() {
+  var analysisLevel1 = function analysisLevel1() {
+    if ($(this).attr('value')) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
+      $('.selectTopic').hide();
+      $('.levelTopicListNumber').empty().append(one).val(); // $('.levelTopicAreaNumber').append(one).val();
+
+      $('.listArea2').addClass('animated fadeIn').show();
+    }
+  };
+
+  $('.analysisVariables .level1 .addToList').keypress(analysisLevel1).click(analysisLevel1);
+
+  var tableLevel2 = function tableLevel2() {
     if ($(this).attr('value')) {
       $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
       $('.selectTopic').hide();
@@ -341,7 +362,19 @@ $(document).ready(function () {
     }
   };
 
-  $('.level2 .addToList').keypress(addLevel2).click(addLevel2);
+  $('.tableVariables .level2 .addToList').keypress(tableLevel2).click(tableLevel2);
+
+  var analysisLevel2 = function analysisLevel2() {
+    if ($(this).attr('value')) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
+      $('.selectTopic').hide();
+      $('.levelTopicListNumber').empty().append(two).val(); // $('.levelTopicAreaNumber').html(two + '1')
+
+      $('.listArea2').addClass('animated fadeIn').show();
+    }
+  };
+
+  $('.analysisVariables .level2 .addToList').keypress(analysisLevel2).click(analysisLevel2);
 
   var addLevel3 = function addLevel3() {
     if ($(this).attr('value')) {
@@ -352,7 +385,7 @@ $(document).ready(function () {
     }
   };
 
-  $('.level3 .addToList').keypress(addLevel3).click(addLevel3);
+  $('.tableVariables .level3 .addToList').keypress(addLevel3).click(addLevel3);
 
   var addLevel4 = function addLevel4() {
     if ($(this).attr('value')) {
@@ -362,7 +395,7 @@ $(document).ready(function () {
     }
   };
 
-  $('.level4 .addToList').keypress(addLevel4).click(addLevel4);
+  $('.tableVariables .level4 .addToList').keypress(addLevel4).click(addLevel4);
 
   var addLevel5 = function addLevel5() {
     if ($(this).attr('value')) {
@@ -373,7 +406,7 @@ $(document).ready(function () {
     }
   };
 
-  $('.level5 .addToList').keypress(addLevel5).click(addLevel5);
+  $('.tableVariables .level5 .addToList').keypress(addLevel5).click(addLevel5);
 
   var addLevel6 = function addLevel6() {
     if ($(this).attr('value')) {
@@ -384,7 +417,7 @@ $(document).ready(function () {
     }
   };
 
-  $('.level6 .addToList').keypress(addLevel6).click(addLevel6);
+  $('.tableVariables .level6 .addToList').keypress(addLevel6).click(addLevel6);
 
   var addLevel7 = function addLevel7() {
     if ($(this).attr('value')) {
@@ -395,7 +428,7 @@ $(document).ready(function () {
     }
   };
 
-  $('.level7 .addToList').keypress(addLevel7).click(addLevel7); // $('.continuousHeader').click(function() {
+  $('.tableVariables .level7 .addToList').keypress(addLevel7).click(addLevel7); // $('.continuousHeader').click(function() {
   //   $('.levels-accordion').addClass('animated fadeOut')
   //   setTimeout(function() {
   //   $('.levels-accordion').hide()
