@@ -1421,7 +1421,7 @@ $(document).ready(function () {
     }
 
     else {
-      var additionalOffset = 310;
+      var additionalOffset = 350;
     }
     console.log(additionalOffset)
 
@@ -1430,6 +1430,10 @@ $(document).ready(function () {
       additionalOffset =  $open.height();
     }
     $('.listArea').animate({
+      scrollTop: $panel.offset().top - additionalOffset
+    }, 1000);
+
+    $('.listArea2').animate({
       scrollTop: $panel.offset().top - additionalOffset
     }, 1000);
   });

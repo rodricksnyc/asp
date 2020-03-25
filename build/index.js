@@ -926,7 +926,7 @@ $(document).ready(function () {
     if ($(this).closest('.levels').find('.collapse').height() > 200) {
       var additionalOffset = 250;
     } else {
-      var additionalOffset = 310;
+      var additionalOffset = 350;
     }
 
     console.log(additionalOffset);
@@ -936,6 +936,9 @@ $(document).ready(function () {
     }
 
     $('.listArea').animate({
+      scrollTop: $panel.offset().top - additionalOffset
+    }, 1000);
+    $('.listArea2').animate({
       scrollTop: $panel.offset().top - additionalOffset
     }, 1000);
   }); //move zip case tab on window shrink
