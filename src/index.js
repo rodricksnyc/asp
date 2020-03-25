@@ -473,8 +473,13 @@ $('body').on('keydown', function(event) {
 
   })
 
+
+
+
   //toggle between analyis and table
 $('.continuousHeader').click(function() {
+
+
   $('.analysisVariables').addClass('animated fadeIn').removeClass('hidden');
   $('.tableVariables').addClass('hidden');
 

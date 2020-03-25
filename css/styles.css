@@ -1438,7 +1438,7 @@ a[data-type="stats"].NavItem--is-active:before {
   border-radius: 1rem;
 }
 
-.categoricalHeader .heading {
+/* .categoricalHeader .heading {
   background: #07477d;
   color:white;
   border-top-left-radius: .5rem;
@@ -1448,6 +1448,29 @@ a[data-type="stats"].NavItem--is-active:before {
   color:#07477d;
   background: #deedf8;
   border-top-right-radius: .5rem;
+} */
+
+
+.activeHeading .heading {
+  background: #07477d;
+  color:white;
+  border-top-left-radius: .5rem;
+}
+
+.inactiveHeading .heading {
+  color:#07477d;
+  background: #deedf8;
+  border-top-right-radius: .5rem;
+  font-weight:100;
+}
+
+.activeHeading .heading p {
+  font-weight:600;
+}
+
+.inactiveHeading .heading p {
+
+  font-weight:100;
 }
 
 .heading {
