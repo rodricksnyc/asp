@@ -2023,6 +2023,12 @@ a:hover {
   float:right;
   color:#A0A0A0;
   font-size:10px;
+  display: flex;
+  align-items: center;
+}
+
+.plusRow i {
+  font-weight: 900 !important;
 }
 
 .plusRow .btn {
