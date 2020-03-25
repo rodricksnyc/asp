@@ -475,14 +475,22 @@ $('body').on('keydown', function(event) {
 
   //toggle between analyis and table
 $('.continuousHeader').click(function() {
-  $('.analysisVariables').removeClass('hidden');
+  $('.analysisVariables').addClass('animated fadeIn').removeClass('hidden');
   $('.tableVariables').addClass('hidden');
+
+  setTimeout(function () {
+    $('.analysisVariables').removeClass('animated fadeIn')
+  }, 700)
 })
 
 
 $('.categoricalHeader').click(function() {
   $('.analysisVariables').addClass('hidden')
-  $('.tableVariables').removeClass('hidden')
+  $('.tableVariables').addClass('animated fadeIn').removeClass('hidden')
+
+  setTimeout(function () {
+    $('.tableVariables').removeClass('animated fadeIn')
+  }, 700)
 })
 
   //levels
@@ -785,8 +793,8 @@ $('.categoricalHeader').click(function() {
 
     }
   }
-  $('.analyisVariables .level7 .addToList').keypress(
-    analysisLevel7
+  $('.analysisVariables .level7 .addToList').keypress(
+  analysisLevel7
 
   ).click(
     analysisLevel7
