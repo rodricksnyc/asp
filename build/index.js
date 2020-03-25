@@ -801,6 +801,20 @@ $(document).ready(function () {
   $(".accordion-toggle").click(function () {
     $(this).closest('.custom-control').toggleClass('activeCustomControl');
     $(this).closest('.custom-control').find('.endOptions').toggleClass('visibleEndOptions');
+  }); //scroll to open accordion in listArea
+
+  $('.collapse').on('show.bs.collapse', function (e) {
+    var $panel = $(this).closest('.levels').find('.accordion-toggle');
+    var $open = $(this).closest('.levels').find('.collapse');
+    var additionalOffset = 0;
+
+    if ($panel.prevAll().filter($open.closest('.accordion-toggle')).length !== 0) {
+      additionalOffset = $open.height();
+    }
+
+    $('.listArea').animate({
+      scrollTop: $panel.offset().top - additionalOffset
+    }, 500);
   }); //move zip case tab on window shrink
 
   $(window).scroll(function () {
