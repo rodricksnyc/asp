@@ -298,20 +298,42 @@ $(document).ready(function () {
     }
   }); //toggle between analyis and table
 
-  $('.continuousHeader').click(function () {
+  var continuous = function continuous() {
+    $(this).addClass('activeHeading').removeClass('inactiveHeading');
+    $('.categoricalHeader').removeClass('activeHeading').addClass('inactiveHeading');
     $('.analysisVariables').addClass('animated fadeIn').removeClass('hidden');
     $('.tableVariables').addClass('hidden');
     setTimeout(function () {
       $('.analysisVariables').removeClass('animated fadeIn');
     }, 700);
-  });
-  $('.categoricalHeader').click(function () {
+  };
+
+  $('.continuousHeader').keypress(continuous).click(continuous);
+
+  var categorical = function categorical() {
+    $(this).addClass('activeHeading').removeClass('inactiveHeading');
+    $('.continuousHeader').removeClass('activeHeading').addClass('inactiveHeading');
     $('.analysisVariables').addClass('hidden');
     $('.tableVariables').addClass('animated fadeIn').removeClass('hidden');
     setTimeout(function () {
       $('.tableVariables').removeClass('animated fadeIn');
     }, 700);
-  }); //levels
+  };
+
+  $('.categoricalHeader').keypress(categorical).click(categorical); // $('.categoricalHeader').click(function() {
+  //
+  //   $(this).addClass('activeHeading').removeClass('inactiveHeading')
+  //   $('.continuousHeader').removeClass('activeHeading').addClass('inactiveHeading')
+  //
+  //
+  //   $('.analysisVariables').addClass('hidden')
+  //   $('.tableVariables').addClass('animated fadeIn').removeClass('hidden')
+  //
+  //   setTimeout(function () {
+  //     $('.tableVariables').removeClass('animated fadeIn')
+  //   }, 700)
+  // })
+  //levels
 
   var one = 1;
   var two = 2;

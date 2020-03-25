@@ -477,26 +477,58 @@ $('body').on('keydown', function(event) {
 
 
   //toggle between analyis and table
-$('.continuousHeader').click(function() {
+  var continuous = function (){
+    $(this).addClass('activeHeading').removeClass('inactiveHeading')
+    $('.categoricalHeader').removeClass('activeHeading').addClass('inactiveHeading')
 
 
-  $('.analysisVariables').addClass('animated fadeIn').removeClass('hidden');
-  $('.tableVariables').addClass('hidden');
+    $('.analysisVariables').addClass('animated fadeIn').removeClass('hidden');
+    $('.tableVariables').addClass('hidden');
 
-  setTimeout(function () {
-    $('.analysisVariables').removeClass('animated fadeIn')
-  }, 700)
-})
+    setTimeout(function () {
+      $('.analysisVariables').removeClass('animated fadeIn')
+    }, 700)
+  }
+  $('.continuousHeader').keypress(
+    continuous
+
+  ).click(
+    continuous
+  );
 
 
-$('.categoricalHeader').click(function() {
-  $('.analysisVariables').addClass('hidden')
-  $('.tableVariables').addClass('animated fadeIn').removeClass('hidden')
+  var categorical = function (){
+    $(this).addClass('activeHeading').removeClass('inactiveHeading')
+    $('.continuousHeader').removeClass('activeHeading').addClass('inactiveHeading')
 
-  setTimeout(function () {
-    $('.tableVariables').removeClass('animated fadeIn')
-  }, 700)
-})
+
+    $('.analysisVariables').addClass('hidden')
+    $('.tableVariables').addClass('animated fadeIn').removeClass('hidden')
+
+    setTimeout(function () {
+      $('.tableVariables').removeClass('animated fadeIn')
+    }, 700)
+  }
+  $('.categoricalHeader').keypress(
+    categorical
+
+  ).click(
+    categorical
+  );
+
+// $('.categoricalHeader').click(function() {
+//
+//   $(this).addClass('activeHeading').removeClass('inactiveHeading')
+//   $('.continuousHeader').removeClass('activeHeading').addClass('inactiveHeading')
+//
+//
+//   $('.analysisVariables').addClass('hidden')
+//   $('.tableVariables').addClass('animated fadeIn').removeClass('hidden')
+//
+//   setTimeout(function () {
+//     $('.tableVariables').removeClass('animated fadeIn')
+//   }, 700)
+// })
 
   //levels
 
