@@ -535,6 +535,7 @@ $('.categoricalHeader').click(function() {
       // $('.levelTopicAreaNumber').append(one).val();
 
       $('.listArea').addClass('animated fadeIn').show()
+      $('.listArea2').removeClass('animated fadeIn').hide()
 
     }
   }
@@ -558,6 +559,7 @@ $('.categoricalHeader').click(function() {
       // $('.levelTopicAreaNumber').append(one).val();
 
       $('.listArea2').addClass('animated fadeIn').show()
+      $('.listArea').removeClass('animated fadeIn').hide()
 
     }
   }
@@ -581,6 +583,7 @@ $('.categoricalHeader').click(function() {
       // $('.levelTopicAreaNumber').html(two + '1')
 
       $('.listArea').addClass('animated fadeIn').show()
+      $('.listArea2').removeClass('animated fadeIn').hide()
 
     }
   }
@@ -603,6 +606,7 @@ $('.categoricalHeader').click(function() {
       // $('.levelTopicAreaNumber').html(two + '1')
 
       $('.listArea2').addClass('animated fadeIn').show()
+      $('.listArea').removeClass('animated fadeIn').hide()
 
     }
   }
@@ -623,6 +627,7 @@ $('.categoricalHeader').click(function() {
       $('.levelTopicListNumber').empty().append(three).val();
 
       $('.listArea').addClass('animated fadeIn').show()
+      $('.listArea2').removeClass('animated fadeIn').hide()
 
     }
   }
@@ -642,6 +647,7 @@ $('.categoricalHeader').click(function() {
       $('.levelTopicListNumber').empty().append(three).val();
 
       $('.listArea2').addClass('animated fadeIn').show()
+      $('.listArea').removeClass('animated fadeIn').hide()
 
     }
   }
@@ -659,6 +665,7 @@ $('.categoricalHeader').click(function() {
       $('.levelTopicListNumber').empty().append(four).val();
 
       $('.listArea').addClass('animated fadeIn').show()
+      $('.listArea2').removeClass('animated fadeIn').hide()
 
     }
   }
@@ -676,6 +683,7 @@ $('.categoricalHeader').click(function() {
       $('.levelTopicListNumber').empty().append(four).val();
 
       $('.listArea2').addClass('animated fadeIn').show()
+      $('.listArea').removeClass('animated fadeIn').hide()
 
     }
   }
@@ -696,6 +704,7 @@ $('.categoricalHeader').click(function() {
       $('.levelTopicListNumber').empty().append(five).val();
 
       $('.listArea').addClass('animated fadeIn').show()
+      $('.listArea2').removeClass('animated fadeIn').hide()
 
     }
   }
@@ -715,6 +724,7 @@ $('.categoricalHeader').click(function() {
       $('.levelTopicListNumber').empty().append(five).val();
 
       $('.listArea2').addClass('animated fadeIn').show()
+      $('.listArea').removeClass('animated fadeIn').hide()
 
     }
   }
@@ -734,6 +744,7 @@ $('.categoricalHeader').click(function() {
       $('.levelTopicListNumber').empty().append(six).val();
 
       $('.listArea').addClass('animated fadeIn').show()
+      $('.listArea2').removeClass('animated fadeIn').hide()
 
     }
   }
@@ -753,6 +764,7 @@ $('.categoricalHeader').click(function() {
       $('.levelTopicListNumber').empty().append(six).val();
 
       $('.listArea2').addClass('animated fadeIn').show()
+      $('.listArea').removeClass('animated fadeIn').hide()
 
     }
   }
@@ -772,6 +784,7 @@ $('.categoricalHeader').click(function() {
       $('.levelTopicListNumber').empty().append(seven).val();
 
       $('.listArea').addClass('animated fadeIn').show()
+      $('.listArea2').removeClass('animated fadeIn').hide()
 
     }
   }
@@ -790,6 +803,7 @@ $('.categoricalHeader').click(function() {
       $('.levelTopicListNumber').empty().append(seven).val();
 
       $('.listArea2').addClass('animated fadeIn').show()
+      $('.listArea').removeClass('animated fadeIn').hide()
 
     }
   }
