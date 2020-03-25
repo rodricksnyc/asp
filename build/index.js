@@ -376,7 +376,7 @@ $(document).ready(function () {
 
   $('.analysisVariables .level2 .addToList').keypress(analysisLevel2).click(analysisLevel2);
 
-  var addLevel3 = function addLevel3() {
+  var tableLevel3 = function tableLevel3() {
     if ($(this).attr('value')) {
       $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
       $('.selectTopic').hide();
@@ -385,9 +385,20 @@ $(document).ready(function () {
     }
   };
 
-  $('.tableVariables .level3 .addToList').keypress(addLevel3).click(addLevel3);
+  $('.tableVariables .level3 .addToList').keypress(tableLevel3).click(tableLevel3);
 
-  var addLevel4 = function addLevel4() {
+  var analysisLevel3 = function analysisLevel3() {
+    if ($(this).attr('value')) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
+      $('.selectTopic').hide();
+      $('.levelTopicListNumber').empty().append(three).val();
+      $('.listArea2').addClass('animated fadeIn').show();
+    }
+  };
+
+  $('.analysisVariables .level3 .addToList').keypress(analysisLevel3).click(analysisLevel3);
+
+  var tableLevel4 = function tableLevel4() {
     if ($(this).attr('value')) {
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(four).val();
@@ -395,9 +406,19 @@ $(document).ready(function () {
     }
   };
 
-  $('.tableVariables .level4 .addToList').keypress(addLevel4).click(addLevel4);
+  $('.tableVariables .level4 .addToList').keypress(tableLevel4).click(tableLevel4);
 
-  var addLevel5 = function addLevel5() {
+  var analysisLevel4 = function analysisLevel4() {
+    if ($(this).attr('value')) {
+      $('.selectTopic').hide();
+      $('.levelTopicListNumber').empty().append(four).val();
+      $('.listArea2').addClass('animated fadeIn').show();
+    }
+  };
+
+  $('.analysisVariables .level4 .addToList').keypress(analysisLevel4).click(analysisLevel4);
+
+  var tableLevel5 = function tableLevel5() {
     if ($(this).attr('value')) {
       $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
       $('.selectTopic').hide();
@@ -406,9 +427,20 @@ $(document).ready(function () {
     }
   };
 
-  $('.tableVariables .level5 .addToList').keypress(addLevel5).click(addLevel5);
+  $('.tableVariables .level5 .addToList').keypress(tableLevel5).click(tableLevel5);
 
-  var addLevel6 = function addLevel6() {
+  var analysisLevel5 = function analysisLevel5() {
+    if ($(this).attr('value')) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
+      $('.selectTopic').hide();
+      $('.levelTopicListNumber').empty().append(five).val();
+      $('.listArea2').addClass('animated fadeIn').show();
+    }
+  };
+
+  $('.analysisVariables .level5 .addToList').keypress(analysisLevel5).click(analysisLevel5);
+
+  var tableLevel6 = function tableLevel6() {
     if ($(this).attr('value')) {
       $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
       $('.selectTopic').hide();
@@ -417,9 +449,20 @@ $(document).ready(function () {
     }
   };
 
-  $('.tableVariables .level6 .addToList').keypress(addLevel6).click(addLevel6);
+  $('.tableVariables .level6 .addToList').keypress(tableLevel6).click(tableLevel6);
 
-  var addLevel7 = function addLevel7() {
+  var analysisLevel6 = function analysisLevel6() {
+    if ($(this).attr('value')) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
+      $('.selectTopic').hide();
+      $('.levelTopicListNumber').empty().append(six).val();
+      $('.listArea2').addClass('animated fadeIn').show();
+    }
+  };
+
+  $('.analysisVariables .level6 .addToList').keypress(analysisLevel6).click(analysisLevel6);
+
+  var tableLevel7 = function tableLevel7() {
     if ($(this).attr('value')) {
       $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
       $('.selectTopic').hide();
@@ -428,7 +471,18 @@ $(document).ready(function () {
     }
   };
 
-  $('.tableVariables .level7 .addToList').keypress(addLevel7).click(addLevel7); // $('.continuousHeader').click(function() {
+  $('.tableVariables .level7 .addToList').keypress(tableLevel7).click(tableLevel7);
+
+  var analysisLevel7 = function analysisLevel7() {
+    if ($(this).attr('value')) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
+      $('.selectTopic').hide();
+      $('.levelTopicListNumber').empty().append(seven).val();
+      $('.listArea2').addClass('animated fadeIn').show();
+    }
+  };
+
+  $('.analyisVariables .level7 .addToList').keypress(analysisLevel7).click(analysisLevel7); // $('.continuousHeader').click(function() {
   //   $('.levels-accordion').addClass('animated fadeOut')
   //   setTimeout(function() {
   //   $('.levels-accordion').hide()

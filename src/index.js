@@ -607,7 +607,7 @@ $('.categoricalHeader').click(function() {
 
 
 
-  var addLevel3 = function (){
+  var tableLevel3 = function (){
     if($(this).attr('value')) {
 
       $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
@@ -619,14 +619,33 @@ $('.categoricalHeader').click(function() {
     }
   }
   $('.tableVariables .level3 .addToList').keypress(
-    addLevel3
+    tableLevel3
 
   ).click(
-    addLevel3
+    tableLevel3
   );
 
 
-  var addLevel4 = function (){
+  var analysisLevel3 = function (){
+    if($(this).attr('value')) {
+
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
+      $('.selectTopic').hide();
+      $('.levelTopicListNumber').empty().append(three).val();
+
+      $('.listArea2').addClass('animated fadeIn').show()
+
+    }
+  }
+  $('.analysisVariables .level3 .addToList').keypress(
+    analysisLevel3
+
+  ).click(
+    analysisLevel3
+  );
+
+
+  var tableLevel4 = function (){
     if($(this).attr('value')) {
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(four).val();
@@ -636,13 +655,32 @@ $('.categoricalHeader').click(function() {
     }
   }
   $('.tableVariables .level4 .addToList').keypress(
-    addLevel4
+    tableLevel4
 
   ).click(
-    addLevel4
+    tableLevel4
   );
 
-  var addLevel5 = function (){
+
+  var analysisLevel4 = function (){
+    if($(this).attr('value')) {
+      $('.selectTopic').hide();
+      $('.levelTopicListNumber').empty().append(four).val();
+
+      $('.listArea2').addClass('animated fadeIn').show()
+
+    }
+  }
+  $('.analysisVariables .level4 .addToList').keypress(
+    analysisLevel4
+
+  ).click(
+    analysisLevel4
+  );
+
+
+
+  var tableLevel5 = function (){
     if($(this).attr('value')) {
 
       $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
@@ -654,14 +692,33 @@ $('.categoricalHeader').click(function() {
     }
   }
   $('.tableVariables .level5 .addToList').keypress(
-    addLevel5
+    tableLevel5
 
   ).click(
-    addLevel5
+    tableLevel5
   );
 
 
-  var addLevel6 = function (){
+  var analysisLevel5 = function (){
+    if($(this).attr('value')) {
+
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
+      $('.selectTopic').hide();
+      $('.levelTopicListNumber').empty().append(five).val();
+
+      $('.listArea2').addClass('animated fadeIn').show()
+
+    }
+  }
+  $('.analysisVariables .level5 .addToList').keypress(
+    analysisLevel5
+
+  ).click(
+    analysisLevel5
+  );
+
+
+  var tableLevel6 = function (){
     if($(this).attr('value')) {
 
       $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
@@ -673,14 +730,33 @@ $('.categoricalHeader').click(function() {
     }
   }
   $('.tableVariables .level6 .addToList').keypress(
-    addLevel6
+  tableLevel6
 
   ).click(
-    addLevel6
+    tableLevel6
   );
 
 
-  var addLevel7 = function (){
+  var analysisLevel6 = function (){
+    if($(this).attr('value')) {
+
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
+      $('.selectTopic').hide();
+      $('.levelTopicListNumber').empty().append(six).val();
+
+      $('.listArea2').addClass('animated fadeIn').show()
+
+    }
+  }
+  $('.analysisVariables .level6 .addToList').keypress(
+  analysisLevel6
+
+  ).click(
+    analysisLevel6
+  );
+
+
+  var tableLevel7 = function (){
     if($(this).attr('value')) {
 
       $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
@@ -692,10 +768,28 @@ $('.categoricalHeader').click(function() {
     }
   }
   $('.tableVariables .level7 .addToList').keypress(
-    addLevel7
+    tableLevel7
 
   ).click(
-    addLevel7
+    tableLevel7
+  );
+
+  var analysisLevel7 = function (){
+    if($(this).attr('value')) {
+
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
+      $('.selectTopic').hide();
+      $('.levelTopicListNumber').empty().append(seven).val();
+
+      $('.listArea2').addClass('animated fadeIn').show()
+
+    }
+  }
+  $('.analyisVariables .level7 .addToList').keypress(
+    analysisLevel7
+
+  ).click(
+    analysisLevel7
   );
 
 
