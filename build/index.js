@@ -721,8 +721,7 @@ $(document).ready(function () {
     var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
 
     if ($(this).closest('.levels').find('input[data-level]').prop("checked") == true) {
-      $('#rowTopic').append("<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='" + obj + "' value='" + obj + "' class='custom-control-input' id='" + obj + "'><label class='custom-control-label' for='" + obj + "'><p class='blue'>" + obj + "</p></label><div class='deleteOptions'><i class='fal fa-expand-arrows'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel'></i></div></div>"); // $('#rowTopic').append("<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class='deleteOptions'><i class='fal fa-expand-arrows'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel'></i></div></div>");
-
+      $('#rowTopic').append("<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='" + obj + "' value='" + obj + "' class='custom-control-input' id='" + obj + "'><label class='custom-control-label' for='" + obj + "'><p class='blue'>" + obj + "</p></label><div class='deleteOptions'><i class='fal fa-expand-arrows'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel'></i></div></div>");
       $(this).closest('.levels').find('input[data-level]').parent().hide();
     }
 
@@ -740,7 +739,7 @@ $(document).ready(function () {
       //   'opacity' : '0'
       // });
       // $('.whiteBar').fadeIn()
-      // $('#rowTopic').animate({
+      // $('#layerTopic').animate({
       //
       //   minHeight: 80,
       //   maxHeight:80,
@@ -752,6 +751,10 @@ $(document).ready(function () {
     $('.numberCounter').html(function (i, val) {
       return val * 1 + 1;
     });
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 3 && $('#layerTopic .levels').length > 0) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90);
+    }
   });
   $('#rowTopic').on('click', '.removeLevel', function () {
     var el = $(this).closest('.levels').find('input[data-level]').val();
@@ -824,10 +827,8 @@ $(document).ready(function () {
       $(this).closest('.levels').find('input[data-level]').parent().hide();
     }
 
-    if ($('#columnTopic .levels').length == 1) {
-      $(".addColumn").off("click");
-    } else {
-      $(".addColumn").on("click");
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 3 && $('#layerTopic .levels').length > 0) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90);
     }
   });
   $('#columnTopic').on('click', '.removeLevel', function () {
@@ -844,6 +845,10 @@ $(document).ready(function () {
     if ($(this).closest('.levels').find('input[data-level]').prop("checked") == true) {
       $('#layerTopic').append("<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='" + obj + "' value='" + obj + "' class='custom-control-input' id='" + obj + "'><label class='custom-control-label' for='" + obj + "'><p class='blue'>" + obj + "</p></label><div class='deleteOptions'><i class='fal fa-expand-arrows'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel'></i></div></div>");
       $(this).closest('.levels').find('input[data-level]').parent().hide();
+    }
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 3 && $('#layerTopic .levels').length > 0) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90);
     }
 
     if ($('#layerTopic .levels').length == 1) {

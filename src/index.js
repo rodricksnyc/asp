@@ -1104,9 +1104,6 @@ $(document).ready(function () {
       $('#rowTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class='deleteOptions'><i class='fal fa-expand-arrows'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel'></i></div></div>`);
 
 
-      // $('#rowTopic').append("<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class='deleteOptions'><i class='fal fa-expand-arrows'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel'></i></div></div>");
-
-
       $(this).closest('.levels').find('input[data-level]').parent().hide()
 
 
@@ -1137,7 +1134,7 @@ $(document).ready(function () {
       // $('.whiteBar').fadeIn()
 
 
-      // $('#rowTopic').animate({
+      // $('#layerTopic').animate({
       //
       //   minHeight: 80,
       //   maxHeight:80,
@@ -1151,6 +1148,11 @@ $(document).ready(function () {
 
     $('.numberCounter').html(function(i, val) { return val*1+1 });
 
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 3 && $('#layerTopic .levels').length > 0 ) {
+
+        $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90)
+
+    }
 
 
 
@@ -1189,6 +1191,7 @@ $(document).ready(function () {
 
     if ($('#rowTopic .levels').length >3 ) {
       // alert("more than")
+
 
 
       // $('#rowTopic .levels').not().slice(3).css({
@@ -1266,18 +1269,15 @@ $(document).ready(function () {
 
     }
 
-    if ($('#columnTopic .levels').length == 1) {
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 3 && $('#layerTopic .levels').length > 0 ) {
 
-      $(".addColumn").off("click");
+        $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90)
 
     }
 
-    else {
-      $(".addColumn").on("click");
-    }
+
 
   })
-
 
 
 
@@ -1313,6 +1313,14 @@ $(document).ready(function () {
 
 
       }
+
+
+      if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 3 && $('#layerTopic .levels').length > 0 ) {
+
+          $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90)
+
+      }
+
 
       if ($('#layerTopic .levels').length == 1) {
 
