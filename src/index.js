@@ -1164,14 +1164,14 @@ $(document).ready(function () {
 
 
         e.stopPropagation()
-      $('.whiteBar').hide().addClass('itsGone')
+      $('.whiteBar').hide()
 
       $("#rowTopic .levels:nth-child(4)").nextAll( ".levels" ).removeClass('noWidth')
 
             $('#rowTopic').animate({
               minHeight: "none",
               maxHeight:"100%",
-              height:"auto"
+              height:"100%"
 
             },400);
 
@@ -1181,7 +1181,7 @@ $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() 
   })
 
   $('#rowTopic').on('mouseleave', function(e) {
-    if($('.whiteBar').css('display') == 'none' && $('.whiteBar').hasClass('itsGone') ) {
+    if($('.whiteBar').css('display') == 'none' && $('#rowTopic .levels').length > 3 ) {
 
 
       e.stopPropagation()
@@ -1191,16 +1191,13 @@ $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() 
 
             $('#rowTopic').animate({
               minHeight: "none",
-              maxHeight:"85px",
-              height:"auto"
+              maxHeight:"none",
+              height:"85px"
 
             },400);
 
-            setTimeout(function() {
-              $('.whiteBar').removeClass('itsGone')
-            }, 1000)
 
-$('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() - 20)
+$('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() )
   }
 
   })
