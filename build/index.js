@@ -753,7 +753,7 @@ $(document).ready(function () {
     });
 
     if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 3 && $('#layerTopic .levels').length > 0) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90);
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
     }
   });
   $('#rowTopic').on('mouseenter', function (e) {
@@ -776,11 +776,34 @@ $(document).ready(function () {
       $("#rowTopic .levels:nth-child(4)").nextAll(".levels").addClass('noWidth');
       $('#rowTopic').animate({
         minHeight: "none",
-        maxHeight: "none",
-        height: "85px"
+        maxHeight: "85px",
+        height: "auto"
       }, 400);
       $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height());
-    }
+    } // if ($('#rowTopic .levels').length < 4 ) {
+    //
+    //     $('#rowTopic').animate({
+    //       minHeight: "none",
+    //       maxHeight:"85px",
+    //       height:"auto"
+    //
+    //     },300);
+    //
+    //   }
+    //
+    //
+    //     if ( $('#rowTopic .levels').length < 1 ) {
+    //
+    //         $('#rowTopic').animate({
+    //           minHeight: "none",
+    //           maxHeight:"85px",
+    //           height:"auto"
+    //
+    //         }, 300);
+    //
+    //
+    // }
+
   }); // $('.whiteBar .fas').on('mouseleave', function(e) {
   //   e.stopPropagation()
   //     $('.whiteBar').show()
@@ -811,9 +834,17 @@ $(document).ready(function () {
     $('.addRow').closest('.levels').find("input[data-level='" + el + "']").parent().show().css('display', 'flex');
     $('.addRow').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false); //   if ($('#rowTopic .levels').length == 0) {
     //
-    //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() - 500)
+    // $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height())
     // }
     // }
+
+    if ($('#rowTopic .levels').length < 3) {
+      $('#rowTopic').animate({
+        minHeight: "none",
+        maxHeight: "85px",
+        height: "auto"
+      }, 400);
+    }
 
     if ($('#rowTopic .levels').length > 3) {
       // alert("more than")
@@ -898,10 +929,10 @@ $(document).ready(function () {
       $(".addLayer").on("click");
     }
   });
-  $('#columnTopic').on('click', '.removeLevel', function () {
+  $('#layerTopic').on('click', '.removeLevel', function () {
     var el = $(this).closest('.levels').find('input[data-level]').val();
-    $('.addColumn').closest('.levels').find("input[data-level='" + el + "']").parent().show().css('display', 'flex');
-    $('.addColumn').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false);
+    $('.addLayer').closest('.levels').find("input[data-level='" + el + "']").parent().show().css('display', 'flex');
+    $('.addLayer').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false);
     $(this).closest('.levels').remove();
   }); // $('.removeLevel').click(function() {
   //   var obj = $(this).parent().parent().siblings().val();
