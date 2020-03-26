@@ -816,15 +816,13 @@ $(document).ready(function () {
   //clicking on add as column
 
   $('.addColumn').on('click', function () {
-    // var obj = $(this).parent().parent().siblings().val();
     var obj = $(this).closest('.levels').find('input[data-level]').val();
-    var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true); // var checkedBox = $(this).parent().parent().siblings().closest(':checkbox[data-level]').prop("checked", true);
-    // var thisCheckBox = $(this).parent().parent().siblings().closest(':checkbox[data-level]')
-    // if($(this).closest('.levels').find('input[data-level]').prop("checked")==true) {
+    var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
 
-    $('#columnTopic').append("<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='" + obj + "' value='" + obj + "' class='custom-control-input' id='" + obj + "'><label class='custom-control-label' for='" + obj + "'><p class='blue'>" + obj + "</p></label><div class='deleteOptions'><i class='fal fa-expand-arrows'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel'></i></div></div>"); // $(this).closest('.levels').fadeOut()
-
-    $(this).closest('.levels').find('input[data-level]').parent().hide(); // }
+    if ($(this).closest('.levels').find('input[data-level]').prop("checked") == true) {
+      $('#columnTopic').append("<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='" + obj + "' value='" + obj + "' class='custom-control-input' id='" + obj + "'><label class='custom-control-label' for='" + obj + "'><p class='blue'>" + obj + "</p></label><div class='deleteOptions'><i class='fal fa-expand-arrows'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel'></i></div></div>");
+      $(this).closest('.levels').find('input[data-level]').parent().hide();
+    }
 
     if ($('#columnTopic .levels').length == 1) {
       $(".addColumn").off("click");
@@ -834,21 +832,32 @@ $(document).ready(function () {
   });
   $('#columnTopic').on('click', '.removeLevel', function () {
     var el = $(this).closest('.levels').find('input[data-level]').val();
-    console.log(el); //
-    // if($(this).closest('.levels').find('input[data-level =" '+el+' "]').val() == $('.addRow').closest('.levels').find('input[data-level =" '+el+' "]').val()) {
-    //
-    //   console.log('fuck')
-
     $('.addColumn').closest('.levels').find("input[data-level='" + el + "']").parent().show().css('display', 'flex');
-    $('.addColumn').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false); //   if ($('#rowTopic .levels').length == 0) {
-    //
-    //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() - 500)
-    // }
-    // }
-
+    $('.addColumn').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false);
     $(this).closest('.levels').remove();
-  }); // });
-  // $('.removeLevel').click(function() {
+  }); //clicking on add as layer
+
+  $('.addLayer').on('click', function () {
+    var obj = $(this).closest('.levels').find('input[data-level]').val();
+    var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
+
+    if ($(this).closest('.levels').find('input[data-level]').prop("checked") == true) {
+      $('#layerTopic').append("<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='" + obj + "' value='" + obj + "' class='custom-control-input' id='" + obj + "'><label class='custom-control-label' for='" + obj + "'><p class='blue'>" + obj + "</p></label><div class='deleteOptions'><i class='fal fa-expand-arrows'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel'></i></div></div>");
+      $(this).closest('.levels').find('input[data-level]').parent().hide();
+    }
+
+    if ($('#layerTopic .levels').length == 1) {
+      $(".addLayer").off("click");
+    } else {
+      $(".addLayer").on("click");
+    }
+  });
+  $('#columnTopic').on('click', '.removeLevel', function () {
+    var el = $(this).closest('.levels').find('input[data-level]').val();
+    $('.addColumn').closest('.levels').find("input[data-level='" + el + "']").parent().show().css('display', 'flex');
+    $('.addColumn').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false);
+    $(this).closest('.levels').remove();
+  }); // $('.removeLevel').click(function() {
   //   var obj = $(this).parent().parent().siblings().val();
   //   var checkedBox = $(this).parent().parent().siblings().closest(':checkbox[data-level]').prop("checked", false);
   //
