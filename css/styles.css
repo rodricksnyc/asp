@@ -2077,9 +2077,9 @@ a:hover {
   display: block;
   min-height: 2.8rem;
   padding-left: 1.4rem;
-  margin-bottom: .5em;
+  margin-bottom: 0em;
   /* max-height: 2.8em; */
-  padding-top: .4rem;
+  padding-top: .6rem;
 }
 
 .levels label p {
@@ -2247,15 +2247,27 @@ background-size: 50% 50%;
 
 .endOptions {
   position: absolute;
-  right: 0;
-  top: -8px;
+  right: -8px;
+  top: -15px;
+
   display:none;
 }
 
 #topicLevels .custom-control:hover .endOptions {
   display:block;
-  background-color: #faede9;
+
   border-radius: .5rem;
+}
+
+#topicLevels .custom-control:hover .orangeHover {
+  background-color: #c7482e;
+    padding-bottom: .4em;
+    padding-left: .8em;
+    padding-right: .8em;
+    padding-top: .6em;
+    border-top-left-radius: 1.2em;
+    border-bottom-right-radius: 1.2em;
+    border-top-right-radius: 1.2em;
 }
 
 .visibleEndOptions {
@@ -2291,7 +2303,7 @@ background-size: 50% 50%;
     font-size: 10px;
     margin-top: 0em;
     font-weight: 100 !important;
-    padding-bottom: 5px;
+    padding-bottom: 0px;
 }
 
 .endOptions .mostSmall .fas {
@@ -2367,24 +2379,25 @@ background-size: 50% 50%;
   padding-right: .5em;
 }
 .vertical .far {
-      color: #07477d;
+      color: white;
       font-size: 15px;
 }
 
 .vertical .fal {
-      color: #07477d;
+      color: white;
       font-size: 15px;
 }
 
 .vertical .evenSmaller {
     font-size: 10px;
+    color:white;
     font-weight:100 !important;
 }
 
 
 #topicLevels .custom-control:first-child {
   border-bottom: none;
-  padding-bottom: 0em;
+  padding-bottom: 1em;
 }
 
 #rowTopic .custom-control {
