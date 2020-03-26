@@ -850,6 +850,7 @@ p.smallest {
 
 .evenSmaller {
   font-size:10px;
+  color: #07477d;
 }
 
 .topics, .stats, .benchmarks, .data, .analysis-topic {
@@ -867,21 +868,25 @@ p.smallest {
   font-size:13px;
   margin-bottom: .5rem !important;
   margin-top: 0rem !important;
+  font-weight: 600;
 }
 .analysis-topic p {
   font-size:13px;
   margin-bottom: .5rem !important;
   margin-top: 0rem !important;
+    font-weight: 600;
 }
 .stats p {
   font-size:13px;
   margin-bottom: .5rem !important;
   margin-top: 0rem !important;
+    font-weight: 600;
 }
 .benchmarks p {
   font-size:13px;
   margin-bottom: .5rem !important;
   margin-top: 0rem !important;
+    font-weight: 600;
 }
 
 .topics .row {
@@ -908,6 +913,7 @@ p.smallest {
   font-size:13px;
   margin-bottom: .5rem !important;
   margin-top: 0rem !important;
+  font-weight: 600;
 }
 
 .topics .fal{
@@ -939,6 +945,7 @@ p.smallest {
 .mostSmall {
   font-size:11px;
   margin-top:1em;
+  font-weight: 600;
 }
 
 .filter-attr-list {
@@ -2270,11 +2277,11 @@ background-size: 50% 50%;
     border-top-right-radius: 1.2em;
 }
 
-.visibleEndOptions {
+/* .visibleEndOptions {
   display:block;
   background-color: #faede9;
   border-radius: .5rem;
-}
+} */
 
 
 #topicLevels .custom-control-label {
@@ -2302,7 +2309,7 @@ background-size: 50% 50%;
 .endOptions .mostSmall {
     font-size: 10px;
     margin-top: 0em;
-    font-weight: 100 !important;
+    font-weight: 700 !important;
     padding-bottom: 0px;
 }
 

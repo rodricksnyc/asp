@@ -1001,6 +1001,7 @@ $(document).ready(function () {
     $(this).closest('.custom-checkbox').find(".collapse").attr("id", count);
   });
   $(".levels .accordion-toggle").click(function () {
+    $('.endOptions').toggleClass('hidden');
     $(this).closest('.custom-control').toggleClass('activeCustomControl');
     $(this).closest('.custom-control').find('.endOptions').toggleClass('visibleEndOptions');
   }); //scroll to open accordion in listArea
