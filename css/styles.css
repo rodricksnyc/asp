@@ -946,6 +946,8 @@ p.smallest {
   font-size:11px;
   margin-top:1em;
   font-weight: 600;
+  padding-left:2px;
+  padding-right:2px;
 }
 
 .filter-attr-list {
