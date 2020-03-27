@@ -1524,6 +1524,9 @@ $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() 
   $(".levels .accordion-toggle").click(function(){
     $(this).closest('.custom-control').toggleClass('activeCustomControl')
 
+    // $(this).closest('.custom-checkbox').find(".collapse").show();
+    // $(this).closest('.custom-checkbox').siblings().find('.collapse').hide()
+
     $(this).closest('.custom-control').find('.orangeHover').toggleClass('showIt2')
     $(this).closest('.custom-control').find('.endOptions').toggleClass('showIt')
   })

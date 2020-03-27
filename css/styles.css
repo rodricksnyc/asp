@@ -2292,14 +2292,16 @@ background-size: 50% 50%;
 
 
 .showIt2 {
-    background-color: #c7482e;
+  background-color: #c7482e;
     padding-bottom: .4em;
     padding-left: .8em;
     padding-right: .8em;
     padding-top: .6em;
     border-top-left-radius: 1.2em;
     border-bottom-right-radius: 1.2em;
-    border-top-right-radius: 1.2em;
+    border-top-right-radius: 0em !important;
+    display: none;
+    margin-right: 8px;
     display: block !important;
 }
 
@@ -2313,6 +2315,58 @@ background-size: 50% 50%;
     border-bottom-right-radius: 1.2em;
     border-top-right-radius: 1.2em;
     display: none;
+}
+
+.addRow:hover {
+    background-color: #faede9;
+    color: #c7482e;
+    padding-top: 0.2em;
+    padding-bottom: 0em;
+    margin-top: -.2em;
+    border-radius: .2em;
+}
+
+.addRow:hover i {
+color: #c7482e;
+}
+
+.addRow:hover .evenSmaller {
+color: #c7482e;
+}
+
+
+.addColumn:hover {
+    background-color: #faede9;
+    color: #c7482e;
+    padding-top: 0.2em;
+    padding-bottom: 0em;
+    margin-top: -.2em;
+    border-radius: .2em;
+}
+
+.addColumn:hover i {
+color: #c7482e;
+}
+
+.addColumn:hover .evenSmaller {
+color: #c7482e;
+}
+
+.addLayer:hover {
+    background-color: #faede9;
+    color: #c7482e;
+    padding-top: 0.2em;
+    padding-bottom: 0em;
+    margin-top: -.2em;
+    border-radius: .2em;
+}
+
+.addLayer:hover i {
+color: #c7482e;
+}
+
+.addLayer:hover .evenSmaller {
+color: #c7482e;
 }
 
 /* .visibleEndOptions {
