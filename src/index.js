@@ -1098,10 +1098,16 @@ $(document).ready(function () {
 
     var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
 
+    var variableObj = $(this).closest('.levels').find(".variableName li[data-variable]").html()
+
+    var categoryObj = $(this).closest('.levels').find(".categories li[data-category]").html()
+
+
+    console.log(variableObj)
 
     if($(this).closest('.levels').find('input[data-level]').prop("checked")==true) {
 
-      $('#rowTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class='deleteOptions'><i class='fal fa-expand-arrows'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel'></i></div></div>`);
+      $('#rowTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}&nbsp;<a role='button' tabindex='0' class='accordion-toggle' data-toggle='collapse' role='button' aria-expanded='false'><span><i class="fas fa-info-circle"></i></span></a></p></label><div class='collapse'><div class='card card-body'><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'><li name='category' data-category='${categoryObj}' value='${categoryObj}'>${categoryObj}</li></ul></div></div></div><div class='deleteOptions'><i class='fal fa-expand-arrows'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel'></i></div></div>`);
 
 
       $(this).closest('.levels').find('input[data-level]').parent().hide()
