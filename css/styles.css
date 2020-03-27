@@ -2502,7 +2502,7 @@ color: #c7482e;
 
 #topicLevels .custom-control:first-child {
   border-bottom: none;
-  padding-bottom: 1em;
+  padding-bottom: 1.4em;
 }
 
 #rowTopic .custom-control {
@@ -2821,9 +2821,22 @@ footer {
 
 @media (max-width:1470px) {
   .optionPicker-nav {
-    width: 90%;
-    left: 0%;
+    width: 88%;
+    left: -5px;
   }
+  .getResults button {
+    max-width: 240px;
+        height: 1.8rem;
+        border-radius: 1rem;
+        font-size: 11px;
+        min-width: 100px;
+}
+.optional-line {
+    position: absolute;
+    right: 26%;
+    z-index: 2;
+    top: .4rem;
+}
 }
 
 @media (min-width: 1025px) {
