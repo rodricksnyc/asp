@@ -1509,7 +1509,7 @@
 							<p class="blue">Level <span class="levelTopicListNumber"></span> Topic List Area <span class="levelTopicAreaNumber"> </span></p>
 						</div>
 
-						<form method="post" id="topicLevels" data-draggable="target">
+						<form method="post" class="topicLevels" data-draggable="target">
 						  <div class="allLevels custom-control custom-checkbox">
 						    <input type="checkbox" name="allLevels" class="custom-control-input" id="allLevels">
 						    <label class="custom-control-label" for="allLevels"><p class="blue">ALL</p></label>
@@ -1626,7 +1626,7 @@
 										<p>Categories:</p>
 										<ul class="categories">
 											<li name="category" data-category="Stinky Dog" value="Stinky Dog" id="StinkyDog">Stinky Dog</li>
-											<li name="category" data-category="Aromatic Dog" value="Aromatic Dog" id="AromaticDog"></li>
+											<li name="category" data-category="Aromatic Dog" value="Aromatic Dog" id="AromaticDog">Aromatic Dog</li>
 										</ul>
 										</div>
 									</div>
@@ -1915,7 +1915,7 @@
 							<p class="blue">Level <span class="levelTopicListNumber"></span> Topic List Area <span class="levelTopicAreaNumber"> </span></p>
 						</div>
 
-						<form method="post" id="topicLevels" data-draggable="target">
+						<form method="post" class="topicLevels" data-draggable="target">
 							<div class="allLevels custom-control custom-checkbox">
 								<input type="checkbox" name="allLevels" class="custom-control-input" id="allLevels2">
 								<label class="custom-control-label" for="allLevels2"><p class="blue">ALL</p></label>
@@ -2142,6 +2142,30 @@
 
 </div>
 
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="reorderCategories" tabindex="-1" role="dialog" aria-labelledby="reorderCategories" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Combine/Reorder Categories</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body addCategories">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="col-lg-3 col-xl-3 col-md-12 append">
 <p class="blue text-center">Query Summary</p>
 <div class="appendOptions">
@@ -2194,7 +2218,7 @@
 	<!-- <div class="grayLayer"> -->
 	<div class="analysis-topic">
 		<div class="container">
-			<div class="row">
+			<div class="row" id="analysisTopic" data-draggable="target">
 				<p><i class="fal fa-chart-bar"></i>&nbsp;Analysis Topic&nbsp;<i class="fal fa-info-circle"></i> <span class="evenSmaller">limit 1</span></p>
 			</div>
 		</div>
