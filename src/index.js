@@ -1104,34 +1104,36 @@ $(document).ready(function () {
 
 
     console.log(variableObj)
+    var Opt01 = "";
+  		$(categoryObj).each(function() {
+              Opt01 = Opt01 + this.outerHTML; // console.log(this)
 
+              console.log(Opt01);
+          });
 
-  var Opt01 =  $(categoryObj).each(function(){
-       Opt01 = (this)
-      // console.log(this)
-      console.log(Opt01)
+  		console.log(Opt01);
 
-
-    });
-
-console.log(Opt01)
-
-
-
+//   var Opt01 =  $(categoryObj).each(function(){
+//        Opt01 = (this)
+//       // console.log(this)
+//       console.log(Opt01)
+//
+//
+//     });
+//
+// console.log(Opt01)
 
   // if($(this).closest('.levels').find('input[data-level]').prop("checked")==true) {
-    $('#rowTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'></ul></div></div><div class='deleteOptions'><i class='fal fa-expand-arrows categoriesModal'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel'></i></div></div>`);
+    $('#rowTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-expand-arrows categoriesModal'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel'></i></div></div>`);
 
 
-    $(Opt01).appendTo('.categories')
+    // $(Opt01).appendTo('.categories')
 
     $(this).closest('.levels').find('input[data-level]').parent().hide()
 
 
 
 // }
-
-
 
 
              $('.categoriesModal').on('click',  () => {
