@@ -1132,7 +1132,6 @@ padding-right:5px;
   margin-bottom: 1em;
 }
 
-
 /* levels */
 
 .btn-light {
@@ -2771,6 +2770,64 @@ h6 {
 .highlight {
   border-top: 2px solid aqua !important;
 
+}
+
+/*
+categories reorder modal */
+.addCategories .custom-control-input {
+    z-index: 80000;
+    left:2px;
+}
+.addCategories li {
+  list-style-type: none !important;
+}
+
+.hideInModal {
+    margin: 0;
+    font-size: 14px;
+    padding-left: 0em !important;
+    font-weight: 100 !important;
+}
+.addCategories li .custom-control p {
+color: #07477d;
+font-weight:600;
+font-size:16px;
+}
+
+#reorderCategories .modal-header {
+  display:block !important;
+  border-bottom:none !important;
+}
+#reorderCategories .modal-header h5 {
+border-bottom: 4px solid #c7482e !important;
+
+}
+
+#reorderCategories .modal-footer  {
+  border-top:none !important;
+}
+#reorderCategories .modal-header .close {
+    padding: .5rem !important;
+    margin: -3rem -1rem -1rem auto !important;
+    color: #c7482e !important;
+      opacity:1 !important;
+}
+
+#reorderCategories .modal-header .close span {
+  color: #c7482e !important;
+  opacity:1 !important;
+}
+
+.addCategories .hideInModal {
+  display:none;
+}
+
+.categories li .custom-checkbox .fal.fa-ellipsis-v {
+  position: absolute;
+    left: -9px;
+    font-size: 24px;
+    font-weight: 500;
+    color: #c7482e;
 }
 
 

@@ -740,6 +740,7 @@ $(document).ready(function () {
         Opt02 = Opt02 + this.outerHTML;
       });
       $('.addCategories').append(Opt02);
+      $('.addCategories li .custom-control').removeClass('hidden');
       $('.closeCategoryModal').click(function () {
         $('.addCategories').empty();
       });

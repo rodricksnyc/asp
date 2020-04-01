@@ -1127,6 +1127,7 @@ $(document).ready(function () {
 
     $('.categoriesModal').click(function() {
       $('#reorderCategories').modal('show');
+
       var categoryLi =  $(this).closest('.levels').find('.categories li')
 
       var Opt02 = "";
@@ -1137,6 +1138,8 @@ $(document).ready(function () {
             });
 
       $('.addCategories').append(Opt02)
+
+      $('.addCategories li .custom-control').removeClass('hidden')
 
       $('.closeCategoryModal').click(function() {
         $('.addCategories').empty()
