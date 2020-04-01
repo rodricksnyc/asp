@@ -2695,11 +2695,11 @@ color: #c7482e;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding-right:.2em;
+  padding-right:.4em;
 }
 .deleteOptions .fal {
   color:#c7482e;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .topicLevels {
