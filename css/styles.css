@@ -2776,7 +2776,9 @@ h6 {
 categories reorder modal */
 .addCategories .custom-control-input {
     z-index: 80000;
-    left:2px;
+    left: 18px;
+    top: 15px;
+
 }
 .addCategories li {
   list-style-type: none !important;
@@ -2818,16 +2820,60 @@ border-bottom: 4px solid #c7482e !important;
   opacity:1 !important;
 }
 
+#reorderCategories .modal-body {
+  padding-top:0em !important;
+}
+
+#reorderCategories .modal-dialog {
+  min-width:600px;
+  height:auto;
+}
+
 .addCategories .hideInModal {
   display:none;
 }
 
-.categories li .custom-checkbox .fal.fa-ellipsis-v {
-  position: absolute;
-    left: -9px;
-    font-size: 24px;
+.addCategories .custom-checkbox {
+  padding-left:2.5em;
+  padding-top:.8em;
+}
+.addCategories .custom-checkbox:hover,
+.addCategories .custom-checkbox:focus,
+.addCategories .custom-checkbox:active {
+  background-color: #faede9;
+  border-radius: .5rem;
+}
+
+.reorderSort {
+    position: absolute;
+    left: 4px;
+    font-size: 23px;
     font-weight: 500;
     color: #c7482e;
+}
+
+.reorderOptions {
+  position: absolute;
+  right:5px;
+  top:16px;
+  display:inline-flex;
+}
+
+.reorderOptions .fal {
+  color: #c7482e !important;
+  font-size: 21px;
+  font-weight: 500;
+  margin:0em .2em;
+}
+
+.addCategories .custom-checkbox .fal {
+  display:none
+}
+
+.addCategories .custom-checkbox:hover .fal,
+.addCategories .custom-checkbox:focus .fal
+ {
+  display:block
 }
 
 
