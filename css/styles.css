@@ -2836,12 +2836,26 @@ border-bottom: 4px solid #c7482e !important;
 .addCategories .custom-checkbox {
   padding-left:2.5em;
   padding-top:.8em;
+  margin-left: -.5em;
+  margin-right: -.5em;
 }
 .addCategories .custom-checkbox:hover,
 .addCategories .custom-checkbox:focus,
 .addCategories .custom-checkbox:active {
   background-color: #faede9;
-  border-radius: .5rem;
+  border-radius: 1rem;
+margin-left: -.5em;
+margin-right: -.5em;
+}
+
+.straight p {
+  font-size:10px !important;
+  color: #c7482e !important;
+}
+.straight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .reorderSort {
@@ -2863,15 +2877,25 @@ border-bottom: 4px solid #c7482e !important;
   color: #c7482e !important;
   font-size: 21px;
   font-weight: 500;
-  margin:0em .2em;
+  margin:0em .4em;
+  height: 20px;
 }
 
 .addCategories .custom-checkbox .fal {
   display:none
 }
+.addCategories .custom-checkbox .straight p {
+  display:none
+}
 
 .addCategories .custom-checkbox:hover .fal,
 .addCategories .custom-checkbox:focus .fal
+ {
+  display:block
+}
+
+.addCategories .custom-checkbox:hover .straight p,
+.addCategories .custom-checkbox:focus .straight p
  {
   display:block
 }
