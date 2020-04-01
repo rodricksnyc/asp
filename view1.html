@@ -2305,175 +2305,265 @@
 														<div class="horizontal">
 															<p>Categories:</p>
 															<ul class="categories">
-																<li name="category" data-category="Barks Seldom" value="Barks Seldom" id="BarksSeldom">Barks Seldom</li>
-																<li name="category" data-category="Barks Sometimes" value="Barks Sometimes" id="BarksSometimes">Barks Sometimes</li>
-																<li name="category" data-category="Barks Frequently" value="Barks Frequently" id="BarksFrequently">Barks Frequently</li>
-															</ul>
+																<li>
+																	<div data-draggable="item" class="hidden custom-control custom-checkbox" draggable="true">
+																		<i class="fal fa-ellipsis-v reorderSort"></i>
+																		<input type="checkbox" name="categories" data-category="Barks Seldom" value="Barks Seldom" class="custom-control-input" id="BarksSeldom">
+																		<label class="custom-control-label" for="BarksSeldom">
+																			<p>Barks Seldom&nbsp;
+																			</p>
+																		</label>
+																		<div class="reorderOptions">
+																			<i class="fal fa-angle-up" tabindex="0" role="button"></i>
+																			<i class="fal fa-angle-down" tabindex="0" role="button"></i>
+																			<div class="straight"><i class="fal fa-angle-double-up" tabindex="0" role="button"></i><p>top</p></div>
+																			<div class="straight"><i class="fal fa-angle-double-down" tabindex="0" role="button"></i><p>last</p></div>
+																		</div>
+																	</div><p class="hideInModal">Barks Seldom</p>
+																</li>
+																<li>
+													<div data-draggable="item" class="hidden custom-control custom-checkbox" draggable="true">
+														<i class="fal fa-ellipsis-v reorderSort"></i>
+														<input type="checkbox" name="categories" data-category="Barks Sometimes" value="Barks Sometimes" class="custom-control-input" id="BarksSometimes">
+														<label class="custom-control-label" for="BarksSometimes">
+															<p>Barks Sometimes&nbsp;
+															</p>
+														</label>
+														<div class="reorderOptions">
+															<i class="fal fa-angle-up" tabindex="0" role="button"></i>
+															<i class="fal fa-angle-down" tabindex="0" role="button"></i>
+															<div class="straight"><i class="fal fa-angle-double-up" tabindex="0" role="button"></i><p>top</p></div>
+															<div class="straight"><i class="fal fa-angle-double-down" tabindex="0" role="button"></i><p>last</p></div>
 														</div>
-													</div>
-												</div>
-
-												<div class="endOptions">
-													<p class="text-center mostSmall"><i class="fas fa-plus"></i>&nbsp;ADD AS</p>
-													<div class="orangeHover">
-														<div class="blockAcross">
-															<div class="vertical pl1 addRow" role="button" tabindex="0">
-																<i class="far fa-bars"></i>
-																<p class="evenSmaller">row</p>
-															</div>
-															<div class="vertical pl1 addColumn" role="button" tabindex="0">
-																<i class="fal fa-line-columns"></i>
-																<p class="evenSmaller">column</p>
-															</div>
-															<div class="vertical pl1 addLayer" role="button" tabindex="0">
-																<i class="fal fa-layer-group"></i>
-																<p class="evenSmaller">layer</p>
-															</div>
+													</div><p class="hideInModal">Barks Sometimes</p>
+												</li>
+												<li>
+													<div data-draggable="item" class="hidden custom-control custom-checkbox" draggable="true">
+														<i class="fal fa-ellipsis-v reorderSort"></i>
+														<input type="checkbox" name="categories" data-category="Barks Frequently" value="Barks Frequently" class="custom-control-input" id="BarksFrequently">
+														<label class="custom-control-label" for="BarksFrequently">
+															<p>Barks Frequently&nbsp;
+															</p>
+														</label>
+														<div class="reorderOptions">
+															<i class="fal fa-angle-up" tabindex="0" role="button"></i>
+															<i class="fal fa-angle-down" tabindex="0" role="button"></i>
+															<div class="straight"><i class="fal fa-angle-double-up" tabindex="0" role="button"></i><p>top</p></div>
+															<div class="straight"><i class="fal fa-angle-double-down" tabindex="0" role="button"></i><p>last</p></div>
 														</div>
-													</div>
-												</div>
-											</div>
+													</div><p class="hideInModal">Barks Frequently</p>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
 
-											<div data-draggable="item" class="levels custom-control custom-checkbox">
-												<input type="checkbox" name="levels" data-level="Greyhound" value="Greyhound" class="custom-control-input" id="Greyhound">
-												<label class="custom-control-label" for="Greyhound">
-													<p class="blue">Greyhound&nbsp;
-														<a role="button" tabindex="0" class="accordion-toggle" data-toggle="collapse" role="button" aria-expanded="false"><span><i class="fas fa-info-circle"></i></span></a>
+						<div class="endOptions">
+							<p class="text-center mostSmall"><i class="fas fa-plus"></i>&nbsp;ADD AS</p>
+							<div class="orangeHover">
+								<div class="blockAcross">
+									<div class="vertical pl1 addRow" role="button" tabindex="0">
+										<i class="far fa-bars"></i>
+										<p class="evenSmaller">row</p>
+									</div>
+									<div class="vertical pl1 addColumn" role="button" tabindex="0">
+										<i class="fal fa-line-columns"></i>
+										<p class="evenSmaller">column</p>
+									</div>
+									<div class="vertical pl1 addLayer" role="button" tabindex="0">
+										<i class="fal fa-layer-group"></i>
+										<p class="evenSmaller">layer</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div data-draggable="item" class="levels custom-control custom-checkbox">
+						<input type="checkbox" name="levels" data-level="Greyhound" value="Greyhound" class="custom-control-input" id="Greyhound">
+						<label class="custom-control-label" for="Greyhound">
+							<p class="blue">Greyhound&nbsp;
+								<a role="button" tabindex="0" class="accordion-toggle" data-toggle="collapse" role="button" aria-expanded="false"><span><i class="fas fa-info-circle"></i></span></a>
+							</p>
+						</label>
+						<div class="collapse">
+							<div class="card card-body">
+								<div class="horizontal">
+									<p>Variable Name:</p>
+									<ul class="variableName">
+										<li name="variableName" data-variable="Dog Breath" value="Dog Breath" id="DogBreath">Dog Breath</li>
+									</ul>
+								</div>
+								<div class="horizontal">
+									<p>Categories:</p>
+									<ul class="categories">
+										<li>
+											<div data-draggable="item" class="hidden custom-control custom-checkbox" draggable="true">
+												<i class="fal fa-ellipsis-v reorderSort"></i>
+												<input type="checkbox" name="categories" data-category="Bad Breath" value="Bad Breath" class="custom-control-input" id="BadBreath">
+												<label class="custom-control-label" for="BadBreath">
+													<p>Bad Breath&nbsp;
 													</p>
 												</label>
-												<div class="collapse">
-													<div class="card card-body">
-														<div class="horizontal">
-															<p>Variable Name:</p>
-															<ul class="variableName">
-																<li name="variableName" data-variable="Dog Breath" value="Dog Breath" id="DogBreath">Dog Breath</li>
-															</ul>
-														</div>
-														<div class="horizontal">
-															<p>Categories:</p>
-															<ul class="categories">
-																<li name="category" data-category="Bad Breath" value="Bad Breath" id="Bad Breath">Bad Breath</li>
-																<li name="category" data-category="Average Breath" value="Average Breath" id="AverageBreath">Average Breath</li>
-																<li name="category" data-category="Good Breath" value="Good Breath" id="GoodBreath">Good Breath</li>
-															</ul>
-														</div>
+												<div class="reorderOptions">
+													<i class="fal fa-angle-up" tabindex="0" role="button"></i>
+													<i class="fal fa-angle-down" tabindex="0" role="button"></i>
+													<div class="straight"><i class="fal fa-angle-double-up" tabindex="0" role="button"></i><p>top</p></div>
+													<div class="straight"><i class="fal fa-angle-double-down" tabindex="0" role="button"></i><p>last</p></div>
+												</div>
+											</div><p class="hideInModal">Bad Breath</p>
+										</li>
+										<li>
+											<div data-draggable="item" class="hidden custom-control custom-checkbox" draggable="true">
+												<i class="fal fa-ellipsis-v reorderSort"></i>
+												<input type="checkbox" name="categories" data-category="Average Breath" value="Average Breath" class="custom-control-input" id="AverageBreath">
+												<label class="custom-control-label" for="AverageBreath">
+													<p>Average Breath&nbsp;
+													</p>
+												</label>
+												<div class="reorderOptions">
+													<i class="fal fa-angle-up" tabindex="0" role="button"></i>
+													<i class="fal fa-angle-down" tabindex="0" role="button"></i>
+													<div class="straight"><i class="fal fa-angle-double-up" tabindex="0" role="button"></i><p>top</p></div>
+													<div class="straight"><i class="fal fa-angle-double-down" tabindex="0" role="button"></i><p>last</p></div>
+												</div>
+											</div><p class="hideInModal">Average Breath</p>
+										</li>
+										<li>
+											<div data-draggable="item" class="hidden custom-control custom-checkbox" draggable="true">
+												<i class="fal fa-ellipsis-v reorderSort"></i>
+												<input type="checkbox" name="categories" data-category="Good Breath" value="Good Breath" class="custom-control-input" id="GoodBreath">
+												<label class="custom-control-label" for="GoodBreath">
+													<p>Good Breath&nbsp;
+													</p>
+												</label>
+												<div class="reorderOptions">
+													<i class="fal fa-angle-up" tabindex="0" role="button"></i>
+													<i class="fal fa-angle-down" tabindex="0" role="button"></i>
+													<div class="straight"><i class="fal fa-angle-double-up" tabindex="0" role="button"></i><p>top</p></div>
+													<div class="straight"><i class="fal fa-angle-double-down" tabindex="0" role="button"></i><p>last</p></div>
+												</div>
+											</div><p class="hideInModal">Good Breath</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+										<div class="endOptions">
+											<p class="text-center mostSmall"><i class="fas fa-plus"></i>&nbsp;ADD AS</p>
+											<div class="orangeHover">
+												<div class="blockAcross">
+													<div class="vertical pl1 addRow" role="button" tabindex="0">
+														<i class="far fa-bars"></i>
+														<p class="evenSmaller">row</p>
+													</div>
+													<div class="vertical pl1 addColumn" role="button" tabindex="0">
+														<i class="fal fa-line-columns"></i>
+														<p class="evenSmaller">column</p>
+													</div>
+													<div class="vertical pl1 addLayer" role="button" tabindex="0">
+														<i class="fal fa-layer-group"></i>
+														<p class="evenSmaller">layer</p>
 													</div>
 												</div>
+											</div>
+										</div>
+									</div>
 
-												<div class="endOptions">
-													<p class="text-center mostSmall"><i class="fas fa-plus"></i>&nbsp;ADD AS</p>
-													<div class="orangeHover">
-														<div class="blockAcross">
-															<div class="vertical pl1 addRow" role="button" tabindex="0">
-																<i class="far fa-bars"></i>
-																<p class="evenSmaller">row</p>
-															</div>
-															<div class="vertical pl1 addColumn" role="button" tabindex="0">
-																<i class="fal fa-line-columns"></i>
-																<p class="evenSmaller">column</p>
-															</div>
-															<div class="vertical pl1 addLayer" role="button" tabindex="0">
-																<i class="fal fa-layer-group"></i>
-																<p class="evenSmaller">layer</p>
-															</div>
+
+								</form>
+
+							</div>
+
+							<div class="listArea2">
+								<div class="selectedLevels">
+									<p class="blue">Level <span class="levelTopicListNumber"></span> Topic List Area <span class="levelTopicAreaNumber"> </span></p>
+								</div>
+
+								<form method="post" class="topicLevels" data-draggable="target">
+									<div class="allLevels custom-control custom-checkbox">
+										<input type="checkbox" name="allLevels" class="custom-control-input" id="allLevels2">
+										<label class="custom-control-label" for="allLevels2"><p class="blue">ALL</p></label>
+										<span class="plusRow"><i class="fas fa-plus"></i>&nbsp;as&nbsp;<button type="button" class="btn btn-success">
+											row&nbsp;<i class="fal fa-bars"></i></button></span></span>
+										</div>
+										<div data-draggable="item" class="levels custom-control custom-checkbox">
+											<input type="checkbox" name="levels" data-level="Persian Cat" value="Persian Cat" class="custom-control-input" id="PersianCat">
+											<label class="custom-control-label" for="PersianCat">
+												<p class="blue">Persian Cat&nbsp;
+													<a role="button" tabindex="0" class="accordion-toggle" data-toggle="collapse" role="button" aria-expanded="false"><span><i class="fas fa-info-circle"></i></span></a>
+												</p>
+											</label>
+											<div class="collapse">
+												<div class="card card-body">
+													<div class="horizontal">
+														<p>Variable Name:</p>
+														<ul class="variableName">
+															<li name="variableName" data-variable="Cat Size" value="Cat Size" id="CatSize">Cat Size</li>
+														</ul>
+													</div>
+													<div class="horizontal">
+														<p>Categories:</p>
+														<ul class="categories">
+															<li name="category" data-category="Small Cat" value="Small Cat" id="SmallCat">Small Cat</li>
+															<li name="category" data-category="Medium Cat" value="Medium Cat" id="MediumCat">Medium Cat</li>
+															<li name="category" data-category="Large Cat" value="Large Cat" id="LargeCat">Large Cat</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+											<div class="endOptions">
+												<p class="text-center mostSmall"><i class="fas fa-plus"></i>&nbsp;ADD AS</p>
+												<div class="orangeHover">
+													<div class="blockAcross">
+														<div class="vertical pl1 addRow" role="button" tabindex="0">
+															<i class="far fa-bars"></i>
+															<p class="evenSmaller">row</p>
+														</div>
+														<div class="vertical pl1 addColumn" role="button" tabindex="0">
+															<i class="fal fa-line-columns"></i>
+															<p class="evenSmaller">column</p>
+														</div>
+														<div class="vertical pl1 addLayer" role="button" tabindex="0">
+															<i class="fal fa-layer-group"></i>
+															<p class="evenSmaller">layer</p>
 														</div>
 													</div>
 												</div>
 											</div>
-
-
-										</form>
-
-									</div>
-
-									<div class="listArea2">
-										<div class="selectedLevels">
-											<p class="blue">Level <span class="levelTopicListNumber"></span> Topic List Area <span class="levelTopicAreaNumber"> </span></p>
 										</div>
-
-										<form method="post" class="topicLevels" data-draggable="target">
-											<div class="allLevels custom-control custom-checkbox">
-												<input type="checkbox" name="allLevels" class="custom-control-input" id="allLevels2">
-												<label class="custom-control-label" for="allLevels2"><p class="blue">ALL</p></label>
-												<span class="plusRow"><i class="fas fa-plus"></i>&nbsp;as&nbsp;<button type="button" class="btn btn-success">
-													row&nbsp;<i class="fal fa-bars"></i></button></span></span>
-												</div>
-												<div data-draggable="item" class="levels custom-control custom-checkbox">
-													<input type="checkbox" name="levels" data-level="Persian Cat" value="Persian Cat" class="custom-control-input" id="PersianCat">
-													<label class="custom-control-label" for="PersianCat">
-														<p class="blue">Persian Cat&nbsp;
-															<a role="button" tabindex="0" class="accordion-toggle" data-toggle="collapse" role="button" aria-expanded="false"><span><i class="fas fa-info-circle"></i></span></a>
-														</p>
-													</label>
-													<div class="collapse">
-														<div class="card card-body">
-															<div class="horizontal">
-																<p>Variable Name:</p>
-																<ul class="variableName">
-																	<li name="variableName" data-variable="Cat Size" value="Cat Size" id="CatSize">Cat Size</li>
-																</ul>
-															</div>
-															<div class="horizontal">
-																<p>Categories:</p>
-																<ul class="categories">
-																	<li name="category" data-category="Small Cat" value="Small Cat" id="SmallCat">Small Cat</li>
-																	<li name="category" data-category="Medium Cat" value="Medium Cat" id="MediumCat">Medium Cat</li>
-																	<li name="category" data-category="Large Cat" value="Large Cat" id="LargeCat">Large Cat</li>
-																</ul>
-															</div>
-														</div>
+										<div data-draggable="item" class="levels custom-control custom-checkbox">
+											<input type="checkbox" name="levels" data-level="Siamese" value="Siamese" class="custom-control-input" id="Siamese">
+											<label class="custom-control-label" for="Siamese">
+												<p class="blue">Siamese&nbsp;
+													<a role="button" tabindex="0" class="accordion-toggle" data-toggle="collapse" role="button" aria-expanded="false"><span><i class="fas fa-info-circle"></i></span></a>
+												</p>
+											</label>
+											<div class="collapse">
+												<div class="card card-body">
+													<div class="horizontal">
+														<p>Variable Name:</p>
+														<ul class="variableName">
+															<li name="variableName" data-variable="Cat Color" value="Cat Color" id="CatColor">Cat Color</li>
+														</ul>
 													</div>
-													<div class="endOptions">
-														<p class="text-center mostSmall"><i class="fas fa-plus"></i>&nbsp;ADD AS</p>
-														<div class="orangeHover">
-															<div class="blockAcross">
-																<div class="vertical pl1 addRow" role="button" tabindex="0">
-																	<i class="far fa-bars"></i>
-																	<p class="evenSmaller">row</p>
-																</div>
-																<div class="vertical pl1 addColumn" role="button" tabindex="0">
-																	<i class="fal fa-line-columns"></i>
-																	<p class="evenSmaller">column</p>
-																</div>
-																<div class="vertical pl1 addLayer" role="button" tabindex="0">
-																	<i class="fal fa-layer-group"></i>
-																	<p class="evenSmaller">layer</p>
-																</div>
-															</div>
-														</div>
+													<div class="horizontal">
+														<p>Categories:</p>
+														<ul class="categories">
+															<li name="category" data-category="Black Cat" value="Black Cat" id="BlackCat">Black Cat</li>
+															<li name="category" data-category="White Cat" value="White Cat" id="WhiteCat">White Cat</li>
+															<li name="category" data-category="Grey Cat" value="Grey Cat" id="GreyCat">Grey Cat</li>
+														</ul>
 													</div>
 												</div>
-												<div data-draggable="item" class="levels custom-control custom-checkbox">
-													<input type="checkbox" name="levels" data-level="Siamese" value="Siamese" class="custom-control-input" id="Siamese">
-													<label class="custom-control-label" for="Siamese">
-														<p class="blue">Siamese&nbsp;
-															<a role="button" tabindex="0" class="accordion-toggle" data-toggle="collapse" role="button" aria-expanded="false"><span><i class="fas fa-info-circle"></i></span></a>
-														</p>
-													</label>
-													<div class="collapse">
-														<div class="card card-body">
-															<div class="horizontal">
-																<p>Variable Name:</p>
-																<ul class="variableName">
-																	<li name="variableName" data-variable="Cat Color" value="Cat Color" id="CatColor">Cat Color</li>
-																</ul>
-															</div>
-															<div class="horizontal">
-																<p>Categories:</p>
-																<ul class="categories">
-																	<li name="category" data-category="Black Cat" value="Black Cat" id="BlackCat">Black Cat</li>
-																	<li name="category" data-category="White Cat" value="White Cat" id="WhiteCat">White Cat</li>
-																	<li name="category" data-category="Grey Cat" value="Grey Cat" id="GreyCat">Grey Cat</li>
-																</ul>
-															</div>
-														</div>
-													</div>
-													<div class="endOptions">
-														<p class="text-center mostSmall"><i class="fas fa-plus"></i>&nbsp;ADD AS</p>
-														<div class="orangeHover">
-															<div class="blockAcross">
-																<div class="vertical pl1 addRow" role="button" tabindex="0">
-																	<i class="far fa-bars"></i>
+											</div>
+											<div class="endOptions">
+												<p class="text-center mostSmall"><i class="fas fa-plus"></i>&nbsp;ADD AS</p>
+												<div class="orangeHover">
+													<div class="blockAcross">
+														<div class="vertical pl1 addRow" role="button" tabindex="0">
+															<i class="far fa-bars"></i>
 																	<p class="evenSmaller">row</p>
 																</div>
 																<div class="vertical pl1 addColumn" role="button" tabindex="0">
