@@ -1534,9 +1534,38 @@
 											<div class="horizontal">
 											<p>Categories:</p>
 											<ul class="categories">
-												<li name="category" data-category="Small Dog" value="Small Dog" id="SmallDog">Small Dog</li>
-												<li name="category" data-category="Medium Dog" value="Medium Dog" id="MediumDog">Medium Dog</li>
-												<li name="category" data-category="Large Dog" value="Large Dog" id="LargeDog">Large Dogs</li>
+												<li name="category" data-category="Small Dog" value="Small Dog">
+												<div data-draggable="item" class="hidden custom-control custom-checkbox" draggable="true">
+														<input type="checkbox" name="categories" data-category="Small Dog" value="Small Dog" class="custom-control-input" id="SmallDog">
+														<label class="custom-control-label" for="SmallDog">
+															<p>Small Dog&nbsp;
+															</p>
+														</label>
+														<div class="reorderOptions">
+														</div>
+												</div>
+												Small Dog</li>
+												<li name="category" data-category="Medium Dog" value="Medium Dog">
+													<div data-draggable="item" class="hidden custom-control custom-checkbox" draggable="true">
+															<input type="checkbox" name="categories" data-category="Medium Dog" value="Medium Dog" class="custom-control-input" id="MediumDog">
+															<label class="custom-control-label" for="MediumDog">
+																<p>Medium Dog&nbsp;
+																</p>
+															</label>
+															<div class="reorderOptions">
+															</div>
+													</div>
+													Medium Dog</li>
+												<li name="category" data-category="Large Dog" value="Large Dog">
+													<div data-draggable="item" class="hidden custom-control custom-checkbox" draggable="true">
+															<input type="checkbox" name="categories" data-category="Large Dog" value="Large Dog" class="custom-control-input" id="LargeDog">
+															<label class="custom-control-label" for="LargeDog">
+																<p>Large Dog&nbsp;
+																</p>
+															</label>
+															<div class="reorderOptions">
+															</div>
+													</div>Large Dog</li>
 											</ul>
 											</div>
 										</div>
@@ -1579,9 +1608,36 @@
 											<div class="horizontal">
 											<p>Categories:</p>
 											<ul class="categories">
-												<li name="category" data-category="Black Poodle" value="Black Poodle" id="BlackPoodle">Black Poodle</li>
-												<li name="category" data-category="White Poodle" value="White Poodle" id="WhitePoodle">White Poodle</li>
-												<li name="category" data-category="Grey Poodle" value="Grey Poodle" id="GreyPoodle">Grey Poodle</li>
+												<li name="category" data-category="Black Poodle" value="Black Poodle">
+													<div data-draggable="item" class="hidden custom-control custom-checkbox" draggable="true">
+															<input type="checkbox" name="categories" data-category="Black Poodle" value="Black Poodle" class="custom-control-input" id="BlackPoodle">
+															<label class="custom-control-label" for="BlackPoodle">
+																<p>Black Poodle&nbsp;
+																</p>
+															</label>
+															<div class="reorderOptions">
+															</div>
+													</div>Black Poodle</li>
+												<li name="category" data-category="White Poodle" value="White Poodle">
+													<div data-draggable="item" class="hidden custom-control custom-checkbox" draggable="true">
+															<input type="checkbox" name="categories" data-category="White Poodle" value="White Poodle" class="custom-control-input" id="WhitePoodle">
+															<label class="custom-control-label" for="WhitePoodle">
+																<p>White Poodle&nbsp;
+																</p>
+															</label>
+															<div class="reorderOptions">
+															</div>
+													</div>White Poodle</li>
+												<li name="category" data-category="Grey Poodle" value="Grey Poodle">
+													<div data-draggable="item" class="hidden custom-control custom-checkbox" draggable="true">
+															<input type="checkbox" name="categories" data-category="Grey Poodle" value="Grey Poodle" class="custom-control-input" id="GreyPoodle">
+															<label class="custom-control-label" for="WhitePoodle">
+																<p>Grey Poodle&nbsp;
+																</p>
+															</label>
+															<div class="reorderOptions">
+															</div>
+													</div>Grey Poodle</li>
 											</ul>
 											</div>
 										</div>
@@ -1625,8 +1681,26 @@
 										<div class="horizontal">
 										<p>Categories:</p>
 										<ul class="categories">
-											<li name="category" data-category="Stinky Dog" value="Stinky Dog" id="StinkyDog">Stinky Dog</li>
-											<li name="category" data-category="Aromatic Dog" value="Aromatic Dog" id="AromaticDog">Aromatic Dog</li>
+											<li name="category" data-category="Stinky Dog" value="Stinky Dog">
+												<div data-draggable="item" class="hidden custom-control custom-checkbox" draggable="true">
+														<input type="checkbox" name="categories" data-category="Stinky Dog" value="Stinky Dog" class="custom-control-input" id="StinkyDog">
+														<label class="custom-control-label" for="StinkyDog">
+															<p>Stinky Dog&nbsp;
+															</p>
+														</label>
+														<div class="reorderOptions">
+														</div>
+												</div>Stinky Dog</li>
+											<li name="category" data-category="Aromatic Dog" value="Aromatic Dog">
+												<div data-draggable="item" class="hidden custom-control custom-checkbox" draggable="true">
+														<input type="checkbox" name="categories" data-category="Aromatic Dog" value="Aromatic Dog" class="custom-control-input" id="AromaticDog">
+														<label class="custom-control-label" for="StinkyDog">
+															<p>Aromatic Dog&nbsp;
+															</p>
+														</label>
+														<div class="reorderOptions">
+														</div>
+												</div>Aromatic Dog</li>
 										</ul>
 										</div>
 									</div>
@@ -2155,7 +2229,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body addCategories">
+      <div class="modal-body addCategories" data-draggable="target">
 
       </div>
       <div class="modal-footer">
