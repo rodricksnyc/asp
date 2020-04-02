@@ -1094,6 +1094,7 @@ $(document).ready(function () {
 
   $('.addRow').on('click', function(e) {
 
+
     var obj = $(this).closest('.levels').find('input[data-level]').val()
 
     var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
@@ -1108,15 +1109,15 @@ $(document).ready(function () {
   		$(categoryObj).each(function() {
               Opt01 = Opt01 + this.outerHTML;
 
-              console.log(Opt01);
+              // console.log(Opt01);
           });
 
-  		console.log(Opt01);
+  		// console.log(Opt01);
 
 
 
   // if($(this).closest('.levels').find('input[data-level]').prop("checked")==true) {
-    $('#rowTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel'></i></div></div>`);
+    $('#rowTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
 
 
     $(this).closest('.levels').find('input[data-level]').parent().hide()
@@ -1125,10 +1126,13 @@ $(document).ready(function () {
     // }
 
 
-    $('.categoriesModal').click(function() {
+
+    $('.categoriesModal').unbind("click").on('click', function() {
       $('#reorderCategories').modal('show');
 
       var categoryLi =  $(this).closest('.levels').find('.categories li')
+
+              console.log(categoryLi)
 
       var Opt02 = "";
         $(categoryLi).each(function() {
@@ -1136,6 +1140,10 @@ $(document).ready(function () {
 
 
             });
+
+            // console.log(Opt02)
+
+
 
       $('.addCategories').append(Opt02)
 
@@ -1147,9 +1155,6 @@ $(document).ready(function () {
 
 
     })
-
-
-
 
 
 
@@ -1201,6 +1206,10 @@ $(document).ready(function () {
 
 
   })
+
+
+
+
 
 
   $('#rowTopic').on('mouseenter', function(e) {
@@ -1402,7 +1411,7 @@ $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() 
 
     if($(this).closest('.levels').find('input[data-level]').prop("checked")==true) {
 
-    $('#columnTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel'></i></div></div>`);
+    $('#columnTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
 
     $(this).closest('.levels').find('input[data-level]').parent().hide()
 
@@ -1447,7 +1456,7 @@ $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() 
 
       if($(this).closest('.levels').find('input[data-level]').prop("checked")==true) {
 
-      $('#layerTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel'></i></div></div>`);
+      $('#layerTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
 
       $(this).closest('.levels').find('input[data-level]').parent().hide()
 
