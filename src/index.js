@@ -1406,6 +1406,7 @@ $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() 
 
   $('.addColumn').on('click', function() {
 
+
     console.log('add column')
 
     var obj = $(this).closest('.levels').find('input[data-level]').val()
@@ -1481,16 +1482,20 @@ $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() 
 
 
 
-
   })
 
 
 
 
   $('#columnTopic').on('click', '.removeLevel' , function() {
+
+  if ($('#columnTopic .levels').length > 0 ) {
     $('.addColumn').on("click")
 
-    console.log('re-adding column')
+    console.log("re-adding column")
+
+  }
+
 
     var el = $(this).closest('.levels').find('input[data-level]').val()
 
@@ -1586,15 +1591,98 @@ $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() 
     })
 
 
+    //clicking on add analyis
+
+
+      $('.addAnalysis').on('click', function() {
+
+        var obj = $(this).closest('.levels').find('input[data-level]').val()
+
+        var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
+
+        var variableObj = $(this).closest('.levels').find(".variableName li[data-variable]").html()
+
+        var categoryObj = $(this).closest('.levels').find('.categories li')
+
+
+        // console.log(variableObj)
+        var Opt01 = "";
+          $(categoryObj).each(function() {
+                  Opt01 = Opt01 + this.outerHTML;
+
+                  // console.log(Opt01);
+              });
 
 
 
-    $('#layerTopic').on('click', '.removeLevel' , function() {
+        if($(this).closest('.levels').find('input[data-level]').prop("checked")==true) {
+
+        $('#analysisTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
+
+        $(this).closest('.levels').find('input[data-level]').parent().hide()
+
+
+        }
+
+        $('.categoriesModal').unbind("click").on('click', function() {
+          $('#reorderCategories').modal('show');
+
+          var categoryLi =  $(this).closest('.levels').find('.categories li')
+
+                  console.log(categoryLi)
+
+          var Opt02 = "";
+            $(categoryLi).each(function() {
+                    Opt02 = Opt02 + this.outerHTML;
+
+
+                });
+
+                // console.log(Opt02)
+
+
+
+          $('.addCategories').append(Opt02)
+
+          $('.addCategories li .custom-control').removeClass('hidden')
+
+          $('.closeCategoryModal').click(function() {
+            $('.addCategories').empty()
+          })
+
+
+        })
+
+
+        if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 || $('#analysisTopic .levels').length > 0 ) {
+
+            $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90)
+
+        }
+
+        //
+        // if ($('#layerTopic .levels').length == 1) {
+        //
+        //   $(".addLayer").off("click");
+        //
+        // }
+        //
+        // else {
+        //   $(".addLayer").on("click");
+        // }
+
+      })
+
+
+
+
+
+    $('#analysisTopic').on('click', '.removeLevel' , function() {
 
       var el = $(this).closest('.levels').find('input[data-level]').val()
 
-      $('.addLayer').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
-      $('.addLayer').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
+      $('.addAnalysis').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
+      $('.addAnalysis').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
 
       $(this).closest('.levels').remove();
 
