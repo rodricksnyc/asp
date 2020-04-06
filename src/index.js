@@ -1761,7 +1761,7 @@ $('#layerTopic').on('keyup', '.removeLevel' , function (e) {
   //clicking on add analyis
 
 var addAnalysisTopic = function() {
-  $('.addAnalysis').on('click', function() {
+  // $('.addAnalysis').on('click', function() {
 
     var obj = $(this).closest('.levels').find('input[data-level]').val()
 
@@ -1859,7 +1859,7 @@ var addAnalysisTopic = function() {
 
 
 
-  })
+  // })
 
 }
 $('.addAnalysis').keypress(
@@ -1874,12 +1874,13 @@ $('.addAnalysis').keypress(
 
   $('#analysisTopic').on('click', '.removeLevel' , function() {
 
-    if ($('#analyisTopic .levels').length > 0 ) {
-      $('.addAnalysis').on("click", addAnalysisTopic)
 
-      console.log("re-adding column")
+        if ($('#analysisTopic .levels').length > 0 ) {
+          $('.addAnalysis').on("click", addAnalysisTopic)
 
-    }
+    
+
+        }
 
 
     var el = $(this).closest('.levels').find('input[data-level]').val()
