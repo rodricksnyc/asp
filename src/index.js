@@ -1094,239 +1094,121 @@ $(document).ready(function () {
 
   var addRow = function (){
 
-        var obj = $(this).closest('.levels').find('input[data-level]').val()
+    var obj = $(this).closest('.levels').find('input[data-level]').val()
 
-        var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
+    var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
 
-        var variableObj = $(this).closest('.levels').find(".variableName li[data-variable]").html()
+    var variableObj = $(this).closest('.levels').find(".variableName li[data-variable]").html()
 
-        var categoryObj = $(this).closest('.levels').find('.categories li')
-
-
-        console.log(variableObj)
-        var Opt01 = "";
-      		$(categoryObj).each(function() {
-                  Opt01 = Opt01 + this.outerHTML;
-
-                  // console.log(Opt01);
-              });
-
-      		// console.log(Opt01);
+    var categoryObj = $(this).closest('.levels').find('.categories li')
 
 
+    console.log(variableObj)
+    var Opt01 = "";
+    $(categoryObj).each(function() {
+      Opt01 = Opt01 + this.outerHTML;
 
-      if($(this).closest('.levels').find('input[data-level]').prop("checked")==true) {
+      // console.log(Opt01);
+    });
 
-        $('#rowTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
-
-
-        $(this).closest('.levels').find('input[data-level]').parent().hide()
-
-
-        }
+    // console.log(Opt01);
 
 
 
-        $('.categoriesModal').unbind("click").on('click', function() {
-          $('#reorderCategories').modal('show');
+    if($(this).closest('.levels').find('input[data-level]').prop("checked")==true) {
 
-          var categoryLi =  $(this).closest('.levels').find('.categories li')
-
-                  console.log(categoryLi)
-
-          var Opt02 = "";
-            $(categoryLi).each(function() {
-                    Opt02 = Opt02 + this.outerHTML;
+      $('#rowTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
 
 
-                });
+      $(this).closest('.levels').find('input[data-level]').parent().hide()
 
-                // console.log(Opt02)
+
+    }
 
 
 
-          $('.addCategories').append(Opt02)
+    $('.categoriesModal').unbind("click").on('click', function() {
+      $('#reorderCategories').modal('show');
 
-          $('.addCategories li .custom-control').removeClass('hidden')
+      var categoryLi =  $(this).closest('.levels').find('.categories li')
 
-          $('.closeCategoryModal').click(function() {
-            $('.addCategories').empty()
-          })
+      console.log(categoryLi)
 
-
-        })
-
-
-
-        $("#rowTopic .levels:nth-child(4)").nextAll( ".levels" ).addClass('noWidth')
+      var Opt02 = "";
+      $(categoryLi).each(function() {
+        Opt02 = Opt02 + this.outerHTML;
 
 
-        if ($('#rowTopic .levels').length > 3) {
-          console.log("more than")
+      });
 
-          $('.whiteBar').fadeIn()
-
-          // $(levels).each(function() {
-          //       $(this).addClass('noWidth'); //This doesn't run one at a time
-          //    });
+      // console.log(Opt02)
 
 
 
+      $('.addCategories').append(Opt02)
 
-          //
-          // $('#rowTopic .levels').slice(3).css({
-          //   'height' : '0px',
-          //   'width' : '0px',
-          //   'opacity' : '0'
-          // });
+      $('.addCategories li .custom-control').removeClass('hidden')
 
-          // $('.whiteBar').fadeIn()
+      $('.closeCategoryModal').click(function() {
+        $('.addCategories').empty()
+      })
 
 
-          // $('#layerTopic').animate({
-          //
-          //   minHeight: 80,
-          //   maxHeight:80,
-          //   height:80
-          //
-          // },1000);
+    })
 
 
-        }
+
+    $("#rowTopic .levels:nth-child(4)").nextAll( ".levels" ).addClass('noWidth')
 
 
-        $('.numberCounter').html(function(i, val) { return val*1+1 });
+    if ($('#rowTopic .levels').length > 3) {
+      console.log("more than")
 
-        if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 ) {
+      $('.whiteBar').fadeIn()
 
-        $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
+      // $(levels).each(function() {
+      //       $(this).addClass('noWidth'); //This doesn't run one at a time
+      //    });
 
-        }
+
+
+
+      //
+      // $('#rowTopic .levels').slice(3).css({
+      //   'height' : '0px',
+      //   'width' : '0px',
+      //   'opacity' : '0'
+      // });
+
+      // $('.whiteBar').fadeIn()
+
+
+      // $('#layerTopic').animate({
+      //
+      //   minHeight: 80,
+      //   maxHeight:80,
+      //   height:80
+      //
+      // },1000);
+
+
+    }
+
+
+    $('.numberCounter').html(function(i, val) { return val*1+1 });
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 ) {
+
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
+
+    }
   }
   $('.addRow').keypress(
-  addRow
+    addRow
 
   ).click(
     addRow
   );
-
-  // $('.addRow').on('click', function(e) {
-  //
-  //
-  //   var obj = $(this).closest('.levels').find('input[data-level]').val()
-  //
-  //   var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
-  //
-  //   var variableObj = $(this).closest('.levels').find(".variableName li[data-variable]").html()
-  //
-  //   var categoryObj = $(this).closest('.levels').find('.categories li')
-  //
-  //
-  //   console.log(variableObj)
-  //   var Opt01 = "";
-  // 		$(categoryObj).each(function() {
-  //             Opt01 = Opt01 + this.outerHTML;
-  //
-  //             // console.log(Opt01);
-  //         });
-  //
-  // 		// console.log(Opt01);
-  //
-  //
-  //
-  // if($(this).closest('.levels').find('input[data-level]').prop("checked")==true) {
-  //
-  //   $('#rowTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
-  //
-  //
-  //   $(this).closest('.levels').find('input[data-level]').parent().hide()
-  //
-  //
-  //   }
-  //
-  //
-  //
-  //   $('.categoriesModal').unbind("click").on('click', function() {
-  //     $('#reorderCategories').modal('show');
-  //
-  //     var categoryLi =  $(this).closest('.levels').find('.categories li')
-  //
-  //             console.log(categoryLi)
-  //
-  //     var Opt02 = "";
-  //       $(categoryLi).each(function() {
-  //               Opt02 = Opt02 + this.outerHTML;
-  //
-  //
-  //           });
-  //
-  //           // console.log(Opt02)
-  //
-  //
-  //
-  //     $('.addCategories').append(Opt02)
-  //
-  //     $('.addCategories li .custom-control').removeClass('hidden')
-  //
-  //     $('.closeCategoryModal').click(function() {
-  //       $('.addCategories').empty()
-  //     })
-  //
-  //
-  //   })
-  //
-  //
-  //
-  //   $("#rowTopic .levels:nth-child(4)").nextAll( ".levels" ).addClass('noWidth')
-  //
-  //
-  //   if ($('#rowTopic .levels').length > 3) {
-  //     console.log("more than")
-  //
-  //     $('.whiteBar').fadeIn()
-  //
-  //     // $(levels).each(function() {
-  //     //       $(this).addClass('noWidth'); //This doesn't run one at a time
-  //     //    });
-  //
-  //
-  //
-  //
-  //     //
-  //     // $('#rowTopic .levels').slice(3).css({
-  //     //   'height' : '0px',
-  //     //   'width' : '0px',
-  //     //   'opacity' : '0'
-  //     // });
-  //
-  //     // $('.whiteBar').fadeIn()
-  //
-  //
-  //     // $('#layerTopic').animate({
-  //     //
-  //     //   minHeight: 80,
-  //     //   maxHeight:80,
-  //     //   height:80
-  //     //
-  //     // },1000);
-  //
-  //
-  //   }
-  //
-  //
-  //   $('.numberCounter').html(function(i, val) { return val*1+1 });
-  //
-  //   if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 ) {
-  //
-  //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
-  //
-  //   }
-  //
-  //
-  //
-  // })
-
-
 
 
 
@@ -1334,20 +1216,20 @@ $(document).ready(function () {
   $('#rowTopic').on('mouseenter', function(e) {
     if($('.whiteBar').css('display') == 'block') {
 
-        e.stopPropagation()
+      e.stopPropagation()
       $('.whiteBar').hide()
 
       $("#rowTopic .levels:nth-child(4)").nextAll( ".levels" ).removeClass('noWidth')
 
-            $('#rowTopic').animate({
-              minHeight: "none",
-              maxHeight:"100%",
-              height:"100%"
+      $('#rowTopic').animate({
+        minHeight: "none",
+        maxHeight:"100%",
+        height:"100%"
 
-            },400);
+      },400);
 
-  $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 20)
-  }
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 20)
+    }
 
   })
 
@@ -1360,40 +1242,40 @@ $(document).ready(function () {
 
       $("#rowTopic .levels:nth-child(4)").nextAll( ".levels" ).addClass('noWidth')
 
-            $('#rowTopic').animate({
-              minHeight: "none",
-              maxHeight:"85px",
-              height:"auto"
+      $('#rowTopic').animate({
+        minHeight: "none",
+        maxHeight:"85px",
+        height:"auto"
 
-            },400);
+      },400);
 
 
-$('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() )
-  }
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() )
+    }
 
-// if ($('#rowTopic .levels').length < 4 ) {
-//
-//     $('#rowTopic').animate({
-//       minHeight: "none",
-//       maxHeight:"85px",
-//       height:"auto"
-//
-//     },300);
-//
-//   }
-//
-//
-//     if ( $('#rowTopic .levels').length < 1 ) {
-//
-//         $('#rowTopic').animate({
-//           minHeight: "none",
-//           maxHeight:"85px",
-//           height:"auto"
-//
-//         }, 300);
-//
-//
-// }
+    // if ($('#rowTopic .levels').length < 4 ) {
+    //
+    //     $('#rowTopic').animate({
+    //       minHeight: "none",
+    //       maxHeight:"85px",
+    //       height:"auto"
+    //
+    //     },300);
+    //
+    //   }
+    //
+    //
+    //     if ( $('#rowTopic .levels').length < 1 ) {
+    //
+    //         $('#rowTopic').animate({
+    //           minHeight: "none",
+    //           maxHeight:"85px",
+    //           height:"auto"
+    //
+    //         }, 300);
+    //
+    //
+    // }
 
 
   })
@@ -1419,35 +1301,35 @@ $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() 
 
   $('#rowTopic').on('keyup', '.removeLevel' , function (e) {
 
-      var code = (e.keyCode ? e.keyCode : e.which);
-      if (code == 13) {
+    var code = (e.keyCode ? e.keyCode : e.which);
+    if (code == 13) {
 
-        var el = $(this).closest('.levels').find('input[data-level]').val()
+      var el = $(this).closest('.levels').find('input[data-level]').val()
 
-        console.log(el);
-        // var levels = $(this).parent().parent();
+      console.log(el);
+      // var levels = $(this).parent().parent();
 
-        $('#rowTopic .levels').each(function () {
-          $(this).removeClass("noWidth");
-        });
-
-
-
-        //
-        // if($(this).closest('.levels').find('input[data-level =" '+el+' "]').val() == $('.addRow').closest('.levels').find('input[data-level =" '+el+' "]').val()) {
-        //
-        //   console.log('fuck')
+      $('#rowTopic .levels').each(function () {
+        $(this).removeClass("noWidth");
+      });
 
 
-        $('.addRow').closest('.levels').find(`input[data-level='${el}']`).parent().show()
-        $('.addRow').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
 
-        //   if ($('#rowTopic .levels').length == 0) {
-        //
-          // $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height())
-        // }
+      //
+      // if($(this).closest('.levels').find('input[data-level =" '+el+' "]').val() == $('.addRow').closest('.levels').find('input[data-level =" '+el+' "]').val()) {
+      //
+      //   console.log('fuck')
 
-        // }
+
+      $('.addRow').closest('.levels').find(`input[data-level='${el}']`).parent().show()
+      $('.addRow').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
+
+      //   if ($('#rowTopic .levels').length == 0) {
+      //
+      // $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height())
+      // }
+
+      // }
       if ($('#rowTopic .levels').length < 3 ) {
         $('#rowTopic').animate({
           minHeight: "none",
@@ -1458,40 +1340,40 @@ $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() 
 
       }
 
-        if ($('#rowTopic .levels').length >3 ) {
-          // alert("more than")
+      if ($('#rowTopic .levels').length >3 ) {
+        // alert("more than")
 
 
 
-          // $('#rowTopic .levels').not().slice(3).css({
-          //   'height' : 'auto',
-          //   'width' : 'auto',
-          //   'opacity' : '1'
-          // });
+        // $('#rowTopic .levels').not().slice(3).css({
+        //   'height' : 'auto',
+        //   'width' : 'auto',
+        //   'opacity' : '1'
+        // });
 
-          $('.whiteBar').fadeOut('slow')
-
-
-          // $('#rowTopic').animate({
-          //
-          //   minHeight: 80,
-          //   maxHeight:80,
-          //   height:80
-          //
-          // },1000);
+        $('.whiteBar').fadeOut('slow')
 
 
-        }
-
-        $('.numberCounter').html(function(i, val) { return val*1 - 1 });
-
-        $(this).closest('.levels').remove();
+        // $('#rowTopic').animate({
+        //
+        //   minHeight: 80,
+        //   maxHeight:80,
+        //   height:80
+        //
+        // },1000);
 
 
       }
 
+      $('.numberCounter').html(function(i, val) { return val*1 - 1 });
 
-    })
+      $(this).closest('.levels').remove();
+
+
+    }
+
+
+  })
 
   $('#rowTopic').on('click', '.removeLevel' , function() {
 
@@ -1517,19 +1399,19 @@ $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() 
 
     //   if ($('#rowTopic .levels').length == 0) {
     //
-      // $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height())
+    // $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height())
     // }
 
     // }
-  if ($('#rowTopic .levels').length < 3 ) {
-    $('#rowTopic').animate({
-      minHeight: "none",
-      maxHeight:"85px",
-      height:"auto"
+    if ($('#rowTopic .levels').length < 3 ) {
+      $('#rowTopic').animate({
+        minHeight: "none",
+        maxHeight:"85px",
+        height:"auto"
 
-    },400);
+      },400);
 
-  }
+    }
 
     if ($('#rowTopic .levels').length >3 ) {
       // alert("more than")
@@ -1594,10 +1476,7 @@ $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() 
 
   //clicking on add as column
 
-
-
-  $('.addColumn').on('click', function() {
-
+  var addColumnTopic = function (){
 
     console.log('add column')
 
@@ -1611,18 +1490,18 @@ $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() 
 
     // console.log(variableObj)
     var Opt01 = "";
-      $(categoryObj).each(function() {
-              Opt01 = Opt01 + this.outerHTML;
+    $(categoryObj).each(function() {
+      Opt01 = Opt01 + this.outerHTML;
 
-              // console.log(Opt01);
-          });
+      // console.log(Opt01);
+    });
 
 
     if($(this).closest('.levels').find('input[data-level]').prop("checked")==true) {
 
-    $('#columnTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
+      $('#columnTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
 
-    $(this).closest('.levels').find('input[data-level]').parent().hide()
+      $(this).closest('.levels').find('input[data-level]').parent().hide()
 
 
     }
@@ -1632,16 +1511,16 @@ $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() 
 
       var categoryLi =  $(this).closest('.levels').find('.categories li')
 
-              console.log(categoryLi)
+      console.log(categoryLi)
 
       var Opt02 = "";
-        $(categoryLi).each(function() {
-                Opt02 = Opt02 + this.outerHTML;
+      $(categoryLi).each(function() {
+        Opt02 = Opt02 + this.outerHTML;
 
 
-            });
+      });
 
-            // console.log(Opt02)
+      // console.log(Opt02)
 
 
 
@@ -1659,7 +1538,7 @@ $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() 
 
     if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 ) {
 
-    $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90)
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90)
 
     }
 
@@ -1672,21 +1551,50 @@ $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() 
     }
 
 
+  }
+  $('.addColumn').keypress(
+    addColumnTopic
+
+  ).click(
+    addColumnTopic
+  );
+
+
+
+  $('#columnTopic').on('keyup', '.removeLevel' , function (e) {
+
+    var code = (e.keyCode ? e.keyCode : e.which);
+    if (code == 13) {
+
+      if ($('#columnTopic .levels').length > 0 ) {
+        $('.addColumn').on("click")
+
+        console.log("re-adding column")
+
+      }
+
+
+      var el = $(this).closest('.levels').find('input[data-level]').val()
+
+      $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
+      $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
+
+      $(this).closest('.levels').remove();
+
+    }
 
 
   })
 
 
-
-
   $('#columnTopic').on('click', '.removeLevel' , function() {
 
-  if ($('#columnTopic .levels').length > 0 ) {
-    $('.addColumn').on("click")
+    if ($('#columnTopic .levels').length > 0 ) {
+      $('.addColumn').on("click", addColumnTopic)
 
-    console.log("re-adding column")
+      console.log("re-adding column")
 
-  }
+    }
 
 
     var el = $(this).closest('.levels').find('input[data-level]').val()
@@ -1701,185 +1609,288 @@ $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() 
 
 
   //clicking on add as layer
+  var addLayerTopic = function (){
+
+  // $('.addLayer').on('click', function() {
+
+    var obj = $(this).closest('.levels').find('input[data-level]').val()
+
+    var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
+
+    var variableObj = $(this).closest('.levels').find(".variableName li[data-variable]").html()
+
+    var categoryObj = $(this).closest('.levels').find('.categories li')
 
 
-    $('.addLayer').on('click', function() {
+    // console.log(variableObj)
+    var Opt01 = "";
+    $(categoryObj).each(function() {
+      Opt01 = Opt01 + this.outerHTML;
 
-      var obj = $(this).closest('.levels').find('input[data-level]').val()
-
-      var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
-
-      var variableObj = $(this).closest('.levels').find(".variableName li[data-variable]").html()
-
-      var categoryObj = $(this).closest('.levels').find('.categories li')
-
-
-      // console.log(variableObj)
-      var Opt01 = "";
-        $(categoryObj).each(function() {
-                Opt01 = Opt01 + this.outerHTML;
-
-                // console.log(Opt01);
-            });
+      // console.log(Opt01);
+    });
 
 
 
-      if($(this).closest('.levels').find('input[data-level]').prop("checked")==true) {
+    if($(this).closest('.levels').find('input[data-level]').prop("checked")==true) {
 
       $('#layerTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
 
       $(this).closest('.levels').find('input[data-level]').parent().hide()
 
 
-      }
-
-      $('.categoriesModal').unbind("click").on('click', function() {
-        $('#reorderCategories').modal('show');
-
-        var categoryLi =  $(this).closest('.levels').find('.categories li')
-
-                console.log(categoryLi)
-
-        var Opt02 = "";
-          $(categoryLi).each(function() {
-                  Opt02 = Opt02 + this.outerHTML;
+    }
 
 
-              });
+        if ($('#layerTopic .levels').length > 0 ) {
+          $('.addLayer').off("click")
 
-              // console.log(Opt02)
+          console.log("stop adding column")
+
+        }
 
 
 
-        $('.addCategories').append(Opt02)
+    $('.categoriesModal').unbind("click").on('click', function() {
+      $('#reorderCategories').modal('show');
 
-        $('.addCategories li .custom-control').removeClass('hidden')
+      var categoryLi =  $(this).closest('.levels').find('.categories li')
 
-        $('.closeCategoryModal').click(function() {
-          $('.addCategories').empty()
-        })
+      console.log(categoryLi)
+
+      var Opt02 = "";
+      $(categoryLi).each(function() {
+        Opt02 = Opt02 + this.outerHTML;
 
 
+      });
+
+      // console.log(Opt02)
+
+
+
+      $('.addCategories').append(Opt02)
+
+      $('.addCategories li .custom-control').removeClass('hidden')
+
+      $('.closeCategoryModal').click(function() {
+        $('.addCategories').empty()
       })
 
-
-      if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 ) {
-
-          $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90)
-
-      }
-
-      //
-      // if ($('#layerTopic .levels').length == 1) {
-      //
-      //   $(".addLayer").off("click");
-      //
-      // }
-      //
-      // else {
-      //   $(".addLayer").on("click");
-      // }
 
     })
 
 
-    //clicking on add analyis
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 ) {
 
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90)
 
-      $('.addAnalysis').on('click', function() {
+    }
 
-        var obj = $(this).closest('.levels').find('input[data-level]').val()
+    //
+    // if ($('#layerTopic .levels').length == 1) {
+    //
+    //   $(".addLayer").off("click");
+    //
+    // }
+    //
+    // else {
+    //   $(".addLayer").on("click");
+    // }
 
-        var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
+  // })
 
-        var variableObj = $(this).closest('.levels').find(".variableName li[data-variable]").html()
+}
+$('.addLayer').keypress(
+  addLayerTopic
 
-        var categoryObj = $(this).closest('.levels').find('.categories li')
-
-
-        // console.log(variableObj)
-        var Opt01 = "";
-          $(categoryObj).each(function() {
-                  Opt01 = Opt01 + this.outerHTML;
-
-                  // console.log(Opt01);
-              });
-
-
-
-        if($(this).closest('.levels').find('input[data-level]').prop("checked")==true) {
-
-        $('#analysisTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
-
-        $(this).closest('.levels').find('input[data-level]').parent().hide()
-
-
-        }
-
-        $('.categoriesModal').unbind("click").on('click', function() {
-          $('#reorderCategories').modal('show');
-
-          var categoryLi =  $(this).closest('.levels').find('.categories li')
-
-                  console.log(categoryLi)
-
-          var Opt02 = "";
-            $(categoryLi).each(function() {
-                    Opt02 = Opt02 + this.outerHTML;
-
-
-                });
-
-                // console.log(Opt02)
+).click(
+  addLayerTopic
+);
 
 
 
-          $('.addCategories').append(Opt02)
+$('#layerTopic').on('click', '.removeLevel' , function() {
 
-          $('.addCategories li .custom-control').removeClass('hidden')
+  if ($('#layerTopic .levels').length > 0 ) {
+    $('.addLayer').on("click", addLayerTopic)
 
-          $('.closeCategoryModal').click(function() {
-            $('.addCategories').empty()
-          })
+    console.log("re-adding column")
 
-
-        })
+  }
 
 
-        if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 || $('#analysisTopic .levels').length > 0 ) {
+  var el = $(this).closest('.levels').find('input[data-level]').val()
 
-            $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90)
+  $('.addLayer').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
+  $('.addLayer').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
 
-        }
+  $(this).closest('.levels').remove();
 
-        //
-        // if ($('#layerTopic .levels').length == 1) {
-        //
-        //   $(".addLayer").off("click");
-        //
-        // }
-        //
-        // else {
-        //   $(".addLayer").on("click");
-        // }
 
+})
+
+
+$('#layerTopic').on('keyup', '.removeLevel' , function (e) {
+
+  var code = (e.keyCode ? e.keyCode : e.which);
+  if (code == 13) {
+
+    if ($('#layerTopic .levels').length > 0 ) {
+      $('.addLayer').on("click", addLayerTopic)
+
+      console.log("re-adding column")
+
+    }
+
+
+    var el = $(this).closest('.levels').find('input[data-level]').val()
+
+    $('.addLayer').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
+    $('.addLayer').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
+
+    $(this).closest('.levels').remove();
+
+
+  }
+
+
+})
+
+
+  //clicking on add analyis
+
+var addAnalysisTopic = function() {
+  $('.addAnalysis').on('click', function() {
+
+    var obj = $(this).closest('.levels').find('input[data-level]').val()
+
+    var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
+
+    var variableObj = $(this).closest('.levels').find(".variableName li[data-variable]").html()
+
+    var categoryObj = $(this).closest('.levels').find('.categories li')
+
+
+    // console.log(variableObj)
+    var Opt01 = "";
+    $(categoryObj).each(function() {
+      Opt01 = Opt01 + this.outerHTML;
+
+      // console.log(Opt01);
+    });
+
+
+
+    if($(this).closest('.levels').find('input[data-level]').prop("checked")==true) {
+
+      $('#analysisTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
+
+      $(this).closest('.levels').find('input[data-level]').parent().hide()
+
+
+    }
+
+
+    if ($('#analysisTopic .levels').length > 0 ) {
+      $('.addAnalysis').off("click")
+
+      console.log("stop adding column")
+
+    }
+
+
+    $('.categoriesModal').unbind("click").on('click', function() {
+      $('#reorderCategories').modal('show');
+
+      var categoryLi =  $(this).closest('.levels').find('.categories li')
+
+      console.log(categoryLi)
+
+      var Opt02 = "";
+      $(categoryLi).each(function() {
+        Opt02 = Opt02 + this.outerHTML;
+
+
+      });
+
+      // console.log(Opt02)
+
+
+
+      $('.addCategories').append(Opt02)
+
+      $('.addCategories li .custom-control').removeClass('hidden')
+
+      $('.closeCategoryModal').click(function() {
+        $('.addCategories').empty()
       })
 
 
-
-
-
-    $('#analysisTopic').on('click', '.removeLevel' , function() {
-
-      var el = $(this).closest('.levels').find('input[data-level]').val()
-
-      $('.addAnalysis').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
-      $('.addAnalysis').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
-
-      $(this).closest('.levels').remove();
-
-
     })
+
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 || $('#analysisTopic .levels').length > 0 ) {
+
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90)
+
+    }
+
+    //
+    // if ($('#layerTopic .levels').length == 1) {
+    //
+    //   $(".addLayer").off("click");
+    //
+    // }
+    //
+    // else {
+    //   $(".addLayer").on("click");
+    // }
+
+
+            //
+            // if ($('#analysisTopic .levels').length > 0 ) {
+            //   $('.addLayer').off("click")
+            //
+            //   console.log("stop adding column")
+            //
+            // }
+
+
+
+
+  })
+
+}
+$('.addAnalysis').keypress(
+  addAnalysisTopic
+
+).click(
+  addAnalysisTopic
+);
+
+
+
+
+  $('#analysisTopic').on('click', '.removeLevel' , function() {
+
+    if ($('#analyisTopic .levels').length > 0 ) {
+      $('.addAnalysis').on("click", addAnalysisTopic)
+
+      console.log("re-adding column")
+
+    }
+
+
+    var el = $(this).closest('.levels').find('input[data-level]').val()
+
+    $('.addAnalysis').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
+    $('.addAnalysis').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
+
+    $(this).closest('.levels').remove();
+
+
+  })
 
 
 

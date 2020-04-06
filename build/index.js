@@ -779,122 +779,7 @@ $(document).ready(function () {
     }
   };
 
-  $('.addRow').keypress(addRow).click(addRow); // $('.addRow').on('click', function(e) {
-  //
-  //
-  //   var obj = $(this).closest('.levels').find('input[data-level]').val()
-  //
-  //   var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
-  //
-  //   var variableObj = $(this).closest('.levels').find(".variableName li[data-variable]").html()
-  //
-  //   var categoryObj = $(this).closest('.levels').find('.categories li')
-  //
-  //
-  //   console.log(variableObj)
-  //   var Opt01 = "";
-  // 		$(categoryObj).each(function() {
-  //             Opt01 = Opt01 + this.outerHTML;
-  //
-  //             // console.log(Opt01);
-  //         });
-  //
-  // 		// console.log(Opt01);
-  //
-  //
-  //
-  // if($(this).closest('.levels').find('input[data-level]').prop("checked")==true) {
-  //
-  //   $('#rowTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
-  //
-  //
-  //   $(this).closest('.levels').find('input[data-level]').parent().hide()
-  //
-  //
-  //   }
-  //
-  //
-  //
-  //   $('.categoriesModal').unbind("click").on('click', function() {
-  //     $('#reorderCategories').modal('show');
-  //
-  //     var categoryLi =  $(this).closest('.levels').find('.categories li')
-  //
-  //             console.log(categoryLi)
-  //
-  //     var Opt02 = "";
-  //       $(categoryLi).each(function() {
-  //               Opt02 = Opt02 + this.outerHTML;
-  //
-  //
-  //           });
-  //
-  //           // console.log(Opt02)
-  //
-  //
-  //
-  //     $('.addCategories').append(Opt02)
-  //
-  //     $('.addCategories li .custom-control').removeClass('hidden')
-  //
-  //     $('.closeCategoryModal').click(function() {
-  //       $('.addCategories').empty()
-  //     })
-  //
-  //
-  //   })
-  //
-  //
-  //
-  //   $("#rowTopic .levels:nth-child(4)").nextAll( ".levels" ).addClass('noWidth')
-  //
-  //
-  //   if ($('#rowTopic .levels').length > 3) {
-  //     console.log("more than")
-  //
-  //     $('.whiteBar').fadeIn()
-  //
-  //     // $(levels).each(function() {
-  //     //       $(this).addClass('noWidth'); //This doesn't run one at a time
-  //     //    });
-  //
-  //
-  //
-  //
-  //     //
-  //     // $('#rowTopic .levels').slice(3).css({
-  //     //   'height' : '0px',
-  //     //   'width' : '0px',
-  //     //   'opacity' : '0'
-  //     // });
-  //
-  //     // $('.whiteBar').fadeIn()
-  //
-  //
-  //     // $('#layerTopic').animate({
-  //     //
-  //     //   minHeight: 80,
-  //     //   maxHeight:80,
-  //     //   height:80
-  //     //
-  //     // },1000);
-  //
-  //
-  //   }
-  //
-  //
-  //   $('.numberCounter').html(function(i, val) { return val*1+1 });
-  //
-  //   if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 ) {
-  //
-  //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
-  //
-  //   }
-  //
-  //
-  //
-  // })
-
+  $('.addRow').keypress(addRow).click(addRow);
   $('#rowTopic').on('mouseenter', function (e) {
     if ($('.whiteBar').css('display') == 'block') {
       e.stopPropagation();
@@ -1080,7 +965,7 @@ $(document).ready(function () {
   // });
   //clicking on add as column
 
-  $('.addColumn').on('click', function () {
+  var addColumnTopic = function addColumnTopic() {
     console.log('add column');
     var obj = $(this).closest('.levels').find('input[data-level]').val();
     var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
@@ -1121,10 +1006,27 @@ $(document).ready(function () {
       $('.addColumn').off("click");
       console.log("stop adding column");
     }
+  };
+
+  $('.addColumn').keypress(addColumnTopic).click(addColumnTopic);
+  $('#columnTopic').on('keyup', '.removeLevel', function (e) {
+    var code = e.keyCode ? e.keyCode : e.which;
+
+    if (code == 13) {
+      if ($('#columnTopic .levels').length > 0) {
+        $('.addColumn').on("click");
+        console.log("re-adding column");
+      }
+
+      var el = $(this).closest('.levels').find('input[data-level]').val();
+      $('.addColumn').closest('.levels').find("input[data-level='" + el + "']").parent().show().css('display', 'flex');
+      $('.addColumn').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false);
+      $(this).closest('.levels').remove();
+    }
   });
   $('#columnTopic').on('click', '.removeLevel', function () {
     if ($('#columnTopic .levels').length > 0) {
-      $('.addColumn').on("click");
+      $('.addColumn').on("click", addColumnTopic);
       console.log("re-adding column");
     }
 
@@ -1134,7 +1036,8 @@ $(document).ready(function () {
     $(this).closest('.levels').remove();
   }); //clicking on add as layer
 
-  $('.addLayer').on('click', function () {
+  var addLayerTopic = function addLayerTopic() {
+    // $('.addLayer').on('click', function() {
     var obj = $(this).closest('.levels').find('input[data-level]').val();
     var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
     var variableObj = $(this).closest('.levels').find(".variableName li[data-variable]").html();
@@ -1148,6 +1051,11 @@ $(document).ready(function () {
     if ($(this).closest('.levels').find('input[data-level]').prop("checked") == true) {
       $('#layerTopic').append("<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='" + obj + "' value='" + obj + "' class='custom-control-input' id='" + obj + "'><label class='custom-control-label' for='" + obj + "'><p class='blue'>" + obj + "</p></label><div class=\"reorder hidden\"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='" + variableObj + "' value='" + variableObj + "'>" + variableObj + "</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>" + Opt01 + "</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>");
       $(this).closest('.levels').find('input[data-level]').parent().hide();
+    }
+
+    if ($('#layerTopic .levels').length > 0) {
+      $('.addLayer').off("click");
+      console.log("stop adding column");
     }
 
     $('.categoriesModal').unbind("click").on('click', function () {
@@ -1178,56 +1086,106 @@ $(document).ready(function () {
     // else {
     //   $(".addLayer").on("click");
     // }
+    // })
 
-  }); //clicking on add analyis
+  };
 
-  $('.addAnalysis').on('click', function () {
-    var obj = $(this).closest('.levels').find('input[data-level]').val();
-    var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
-    var variableObj = $(this).closest('.levels').find(".variableName li[data-variable]").html();
-    var categoryObj = $(this).closest('.levels').find('.categories li'); // console.log(variableObj)
-
-    var Opt01 = "";
-    $(categoryObj).each(function () {
-      Opt01 = Opt01 + this.outerHTML; // console.log(Opt01);
-    });
-
-    if ($(this).closest('.levels').find('input[data-level]').prop("checked") == true) {
-      $('#analysisTopic').append("<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='" + obj + "' value='" + obj + "' class='custom-control-input' id='" + obj + "'><label class='custom-control-label' for='" + obj + "'><p class='blue'>" + obj + "</p></label><div class=\"reorder hidden\"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='" + variableObj + "' value='" + variableObj + "'>" + variableObj + "</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>" + Opt01 + "</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>");
-      $(this).closest('.levels').find('input[data-level]').parent().hide();
+  $('.addLayer').keypress(addLayerTopic).click(addLayerTopic);
+  $('#layerTopic').on('click', '.removeLevel', function () {
+    if ($('#layerTopic .levels').length > 0) {
+      $('.addLayer').on("click", addLayerTopic);
+      console.log("re-adding column");
     }
 
-    $('.categoriesModal').unbind("click").on('click', function () {
-      $('#reorderCategories').modal('show');
-      var categoryLi = $(this).closest('.levels').find('.categories li');
-      console.log(categoryLi);
-      var Opt02 = "";
-      $(categoryLi).each(function () {
-        Opt02 = Opt02 + this.outerHTML;
-      }); // console.log(Opt02)
-
-      $('.addCategories').append(Opt02);
-      $('.addCategories li .custom-control').removeClass('hidden');
-      $('.closeCategoryModal').click(function () {
-        $('.addCategories').empty();
-      });
-    });
-
-    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 || $('#analysisTopic .levels').length > 0) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90);
-    } //
-    // if ($('#layerTopic .levels').length == 1) {
-    //
-    //   $(".addLayer").off("click");
-    //
-    // }
-    //
-    // else {
-    //   $(".addLayer").on("click");
-    // }
-
+    var el = $(this).closest('.levels').find('input[data-level]').val();
+    $('.addLayer').closest('.levels').find("input[data-level='" + el + "']").parent().show().css('display', 'flex');
+    $('.addLayer').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false);
+    $(this).closest('.levels').remove();
   });
+  $('#layerTopic').on('keyup', '.removeLevel', function (e) {
+    var code = e.keyCode ? e.keyCode : e.which;
+
+    if (code == 13) {
+      if ($('#layerTopic .levels').length > 0) {
+        $('.addLayer').on("click", addLayerTopic);
+        console.log("re-adding column");
+      }
+
+      var el = $(this).closest('.levels').find('input[data-level]').val();
+      $('.addLayer').closest('.levels').find("input[data-level='" + el + "']").parent().show().css('display', 'flex');
+      $('.addLayer').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false);
+      $(this).closest('.levels').remove();
+    }
+  }); //clicking on add analyis
+
+  var addAnalysisTopic = function addAnalysisTopic() {
+    $('.addAnalysis').on('click', function () {
+      var obj = $(this).closest('.levels').find('input[data-level]').val();
+      var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
+      var variableObj = $(this).closest('.levels').find(".variableName li[data-variable]").html();
+      var categoryObj = $(this).closest('.levels').find('.categories li'); // console.log(variableObj)
+
+      var Opt01 = "";
+      $(categoryObj).each(function () {
+        Opt01 = Opt01 + this.outerHTML; // console.log(Opt01);
+      });
+
+      if ($(this).closest('.levels').find('input[data-level]').prop("checked") == true) {
+        $('#analysisTopic').append("<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='" + obj + "' value='" + obj + "' class='custom-control-input' id='" + obj + "'><label class='custom-control-label' for='" + obj + "'><p class='blue'>" + obj + "</p></label><div class=\"reorder hidden\"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='" + variableObj + "' value='" + variableObj + "'>" + variableObj + "</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>" + Opt01 + "</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>");
+        $(this).closest('.levels').find('input[data-level]').parent().hide();
+      }
+
+      if ($('#analysisTopic .levels').length > 0) {
+        $('.addAnalysis').off("click");
+        console.log("stop adding column");
+      }
+
+      $('.categoriesModal').unbind("click").on('click', function () {
+        $('#reorderCategories').modal('show');
+        var categoryLi = $(this).closest('.levels').find('.categories li');
+        console.log(categoryLi);
+        var Opt02 = "";
+        $(categoryLi).each(function () {
+          Opt02 = Opt02 + this.outerHTML;
+        }); // console.log(Opt02)
+
+        $('.addCategories').append(Opt02);
+        $('.addCategories li .custom-control').removeClass('hidden');
+        $('.closeCategoryModal').click(function () {
+          $('.addCategories').empty();
+        });
+      });
+
+      if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 || $('#analysisTopic .levels').length > 0) {
+        $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90);
+      } //
+      // if ($('#layerTopic .levels').length == 1) {
+      //
+      //   $(".addLayer").off("click");
+      //
+      // }
+      //
+      // else {
+      //   $(".addLayer").on("click");
+      // }
+      //
+      // if ($('#analysisTopic .levels').length > 0 ) {
+      //   $('.addLayer').off("click")
+      //
+      //   console.log("stop adding column")
+      //
+      // }
+
+    });
+  };
+
+  $('.addAnalysis').keypress(addAnalysisTopic).click(addAnalysisTopic);
   $('#analysisTopic').on('click', '.removeLevel', function () {
+    if ($('#analyisTopic .levels').length > 0) {
+      $('.addAnalysis').on("click", addAnalysisTopic);
+      console.log("re-adding column");
+    }
+
     var el = $(this).closest('.levels').find('input[data-level]').val();
     $('.addAnalysis').closest('.levels').find("input[data-level='" + el + "']").parent().show().css('display', 'flex');
     $('.addAnalysis').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false);
