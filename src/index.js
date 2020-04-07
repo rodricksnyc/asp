@@ -579,7 +579,7 @@ $(document).ready(function () {
   var analysisLevel1 = function (){
     if($(this).attr('value')) {
 
-  $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
 
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(one).val();
@@ -604,7 +604,7 @@ $(document).ready(function () {
   var tableLevel2 = function (){
     if($(this).attr('value')) {
 
-  $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + 170 )
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + 170 )
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(two).val();
 
@@ -627,7 +627,7 @@ $(document).ready(function () {
   var analysisLevel2 = function (){
     if($(this).attr('value')) {
 
-    $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
 
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(two).val();
@@ -651,7 +651,7 @@ $(document).ready(function () {
   var tableLevel3 = function (){
     if($(this).attr('value')) {
 
-  $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + 170 )
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + 170 )
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(three).val();
 
@@ -671,7 +671,7 @@ $(document).ready(function () {
   var analysisLevel3 = function (){
     if($(this).attr('value')) {
 
-  $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
 
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(three).val();
@@ -691,7 +691,7 @@ $(document).ready(function () {
 
   var tableLevel4 = function (){
     if($(this).attr('value')) {
-        $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + 170 )
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + 170 )
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(four).val();
 
@@ -710,7 +710,7 @@ $(document).ready(function () {
 
   var analysisLevel4 = function (){
     if($(this).attr('value')) {
-    $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
 
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(four).val();
@@ -732,7 +732,7 @@ $(document).ready(function () {
   var tableLevel5 = function (){
     if($(this).attr('value')) {
 
-  $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + 170 )
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + 170 )
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(five).val();
 
@@ -752,7 +752,7 @@ $(document).ready(function () {
   var analysisLevel5 = function (){
     if($(this).attr('value')) {
 
-  $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
 
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(five).val();
@@ -773,7 +773,7 @@ $(document).ready(function () {
   var tableLevel6 = function (){
     if($(this).attr('value')) {
 
-  $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + 170 )
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + 170 )
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(six).val();
 
@@ -793,7 +793,7 @@ $(document).ready(function () {
   var analysisLevel6 = function (){
     if($(this).attr('value')) {
 
-  $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
 
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(six).val();
@@ -814,7 +814,7 @@ $(document).ready(function () {
   var tableLevel7 = function (){
     if($(this).attr('value')) {
 
-  $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + 170 )
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + 170 )
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(seven).val();
 
@@ -833,7 +833,7 @@ $(document).ready(function () {
   var analysisLevel7 = function (){
     if($(this).attr('value')) {
 
-  $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(seven).val();
 
@@ -1190,12 +1190,7 @@ $(document).ready(function () {
       $(categoryLi).each(function() {
         Opt02 = Opt02 + this.outerHTML;
 
-
       });
-
-      // console.log(Opt02)
-
-
 
       $('.addCategories').append(Opt02)
 
@@ -1210,6 +1205,44 @@ $(document).ready(function () {
 
 
 
+    $('.categoriesModal').unbind("keyup").on('keyup', function(e) {
+
+      var code = (e.keyCode ? e.keyCode : e.which);
+      if (code == 13) {
+        $('#reorderCategories').modal('show');
+
+        var categoryLi =  $(this).closest('.levels').find('.categories li')
+
+        console.log(categoryLi)
+
+        var Opt02 = "";
+        $(categoryLi).each(function() {
+          Opt02 = Opt02 + this.outerHTML;
+
+
+        });
+
+        $('.addCategories').append(Opt02)
+
+        $('.addCategories li .custom-control').removeClass('hidden')
+
+      }
+
+    })
+
+    var emptyModal = function (){
+      $('.addCategories').empty()
+    }
+    $('.closeCategoryModal').keypress(
+      emptyModal
+
+    ).click(
+      emptyModal
+    );
+
+
+
+
     $("#rowTopic .levels:nth-child(4)").nextAll( ".levels" ).addClass('noWidth')
 
 
@@ -1217,7 +1250,6 @@ $(document).ready(function () {
       console.log("more than")
 
       $('.whiteBar').fadeIn()
-
 
 
     }
@@ -1239,7 +1271,7 @@ $(document).ready(function () {
   );
 
 
-//hover over rows
+  //hover over rows
 
   $('#rowTopic').on('mouseenter', function(e) {
     if($('.whiteBar').css('display') == 'block') {
@@ -1285,7 +1317,7 @@ $(document).ready(function () {
   })
 
 
-//remove row
+  //remove row
 
   $('#rowTopic').on('keyup', '.removeLevel' , function (e) {
 
@@ -1335,7 +1367,7 @@ $(document).ready(function () {
       }
 
       if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
-          $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
+        $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
 
       }
 
@@ -1405,7 +1437,7 @@ $(document).ready(function () {
     }
 
     if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
-        $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
 
     }
 
@@ -1533,12 +1565,7 @@ $(document).ready(function () {
       $(categoryLi).each(function() {
         Opt02 = Opt02 + this.outerHTML;
 
-
       });
-
-      // console.log(Opt02)
-
-
 
       $('.addCategories').append(Opt02)
 
@@ -1552,11 +1579,42 @@ $(document).ready(function () {
     })
 
 
-    // if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 ) {
-    //
-    //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90)
-    //
-    // }
+
+    $('.categoriesModal').unbind("keyup").on('keyup', function(e) {
+
+      var code = (e.keyCode ? e.keyCode : e.which);
+      if (code == 13) {
+        $('#reorderCategories').modal('show');
+
+        var categoryLi =  $(this).closest('.levels').find('.categories li')
+
+        console.log(categoryLi)
+
+        var Opt02 = "";
+        $(categoryLi).each(function() {
+          Opt02 = Opt02 + this.outerHTML;
+
+
+        });
+
+        $('.addCategories').append(Opt02)
+
+        $('.addCategories li .custom-control').removeClass('hidden')
+
+      }
+
+    })
+
+    var emptyModal = function (){
+      $('.addCategories').empty()
+    }
+    $('.closeCategoryModal').keypress(
+      emptyModal
+
+    ).click(
+      emptyModal
+    );
+
 
 
     if ($('#columnTopic .levels').length > 0 ) {
@@ -1576,7 +1634,7 @@ $(document).ready(function () {
   );
 
 
-//remove column
+  //remove column
 
   $('#columnTopic').on('keyup', '.removeLevel' , function (e) {
 
@@ -1603,7 +1661,7 @@ $(document).ready(function () {
 
       }
       if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
-          $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
+        $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
 
       }
 
@@ -1637,7 +1695,7 @@ $(document).ready(function () {
     }
 
     if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
-        $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
 
     }
 
@@ -1729,7 +1787,6 @@ $(document).ready(function () {
     }
 
 
-
     $('.categoriesModal').unbind("click").on('click', function() {
       $('#reorderCategories').modal('show');
 
@@ -1741,9 +1798,7 @@ $(document).ready(function () {
       $(categoryLi).each(function() {
         Opt02 = Opt02 + this.outerHTML;
 
-
       });
-
 
       $('.addCategories').append(Opt02)
 
@@ -1756,12 +1811,42 @@ $(document).ready(function () {
 
     })
 
-    //
-    // if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 ) {
-    //
-    //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90)
-    //
-    // }
+
+
+    $('.categoriesModal').unbind("keyup").on('keyup', function(e) {
+
+      var code = (e.keyCode ? e.keyCode : e.which);
+      if (code == 13) {
+        $('#reorderCategories').modal('show');
+
+        var categoryLi =  $(this).closest('.levels').find('.categories li')
+
+        console.log(categoryLi)
+
+        var Opt02 = "";
+        $(categoryLi).each(function() {
+          Opt02 = Opt02 + this.outerHTML;
+
+
+        });
+
+        $('.addCategories').append(Opt02)
+
+        $('.addCategories li .custom-control').removeClass('hidden')
+
+      }
+
+    })
+
+    var emptyModal = function (){
+      $('.addCategories').empty()
+    }
+    $('.closeCategoryModal').keypress(
+      emptyModal
+
+    ).click(
+      emptyModal
+    );
 
 
   }
@@ -1797,7 +1882,7 @@ $(document).ready(function () {
     }
 
     if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
-        $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
 
     }
 
@@ -1805,7 +1890,7 @@ $(document).ready(function () {
 
   })
 
-//remove layers
+  //remove layers
   $('#layerTopic').on('keyup', '.removeLevel' , function (e) {
 
     var code = (e.keyCode ? e.keyCode : e.which);
@@ -1832,7 +1917,7 @@ $(document).ready(function () {
       }
 
       if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
-          $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
+        $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
 
       }
 
@@ -1896,9 +1981,7 @@ $(document).ready(function () {
       $(categoryLi).each(function() {
         Opt02 = Opt02 + this.outerHTML;
 
-
       });
-
 
       $('.addCategories').append(Opt02)
 
@@ -1910,6 +1993,44 @@ $(document).ready(function () {
 
 
     })
+
+
+
+    $('.categoriesModal').unbind("keyup").on('keyup', function(e) {
+
+      var code = (e.keyCode ? e.keyCode : e.which);
+      if (code == 13) {
+        $('#reorderCategories').modal('show');
+
+        var categoryLi =  $(this).closest('.levels').find('.categories li')
+
+        console.log(categoryLi)
+
+        var Opt02 = "";
+        $(categoryLi).each(function() {
+          Opt02 = Opt02 + this.outerHTML;
+
+
+        });
+
+        $('.addCategories').append(Opt02)
+
+        $('.addCategories li .custom-control').removeClass('hidden')
+
+      }
+
+    })
+
+    var emptyModal = function (){
+      $('.addCategories').empty()
+    }
+    $('.closeCategoryModal').keypress(
+      emptyModal
+
+    ).click(
+      emptyModal
+    );
+
 
     if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
       $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
@@ -1931,12 +2052,7 @@ $(document).ready(function () {
 
     }
 
-    //
-    // if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 || $('#analysisTopic .levels').length > 0 ) {
-    //
-    //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90)
-    //
-    // }
+
 
 
   }
@@ -1948,7 +2064,7 @@ $(document).ready(function () {
   );
 
 
-//remove analyis
+  //remove analyis
 
   $('#analysisTopic').on('click', '.removeLevel' , function() {
 
@@ -2006,11 +2122,6 @@ $(document).ready(function () {
     }
 
   })
-
-
-
-
-
 
 
 
@@ -2206,28 +2317,28 @@ document.addEventListener('dragstart', function(e) {
   //
   // },100);
 
-    //
-    // if ($('#rowTopic .levels').length > 0 && $('#columnTopic .levels').length < 0 &&  $('#layerTopic .levels').length < 0 ) {
-    //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height()+ 400)
-    //
-    // }
-    //
-    // if ($('#rowTopic .levels').length > 0 && $('#columnTopic .levels').length > 0 &&  $('#layerTopic .levels').length < 0 ) {
-    //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + 400 )
-    //
-    // }
-    //
-    //
-    // if ($('#rowTopic .levels').length > 0 && $('#columnTopic .levels').length > 0 &&  $('#layerTopic .levels').length > 0 ) {
-    //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height()  +  $('#layerTopic').height() + 400)
-    //
-    // }
+  //
+  // if ($('#rowTopic .levels').length > 0 && $('#columnTopic .levels').length < 0 &&  $('#layerTopic .levels').length < 0 ) {
+  //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height()+ 400)
+  //
+  // }
+  //
+  // if ($('#rowTopic .levels').length > 0 && $('#columnTopic .levels').length > 0 &&  $('#layerTopic .levels').length < 0 ) {
+  //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + 400 )
+  //
+  // }
+  //
+  //
+  // if ($('#rowTopic .levels').length > 0 && $('#columnTopic .levels').length > 0 &&  $('#layerTopic .levels').length > 0 ) {
+  //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height()  +  $('#layerTopic').height() + 400)
+  //
+  // }
 
-    $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height()  +  $('#layerTopic').height() + 500)
+  $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height()  +  $('#layerTopic').height() + 500)
 
-    if ($('#rowTopic .levels').length > 3) {
-          $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height()  +  $('#layerTopic').height() + 900)
-    }
+  if ($('#rowTopic .levels').length > 3) {
+    $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height()  +  $('#layerTopic').height() + 900)
+  }
 
   item = e.target;
 
@@ -2266,11 +2377,11 @@ document.addEventListener('drop', function(e) {
 
 
 
-    $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() +  $('#layerTopic').height() )
-    if ($('#rowTopic .levels').length > 3) {
-  $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() +  $('#layerTopic').height() - 100)
+  $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() +  $('#layerTopic').height() )
+  if ($('#rowTopic .levels').length > 3) {
+    $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() +  $('#layerTopic').height() - 100)
 
-    }
+  }
 
 
   //if this element is a drop target, move the item here
