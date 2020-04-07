@@ -238,7 +238,7 @@ a:hover {
 }
 
 .content-spacer {
-  height:10vh
+  height:14vh
 }
 
 .content-spacer2 {
@@ -2033,6 +2033,7 @@ a:hover {
   font-size:10px;
   display: flex;
   align-items: center;
+  display:none;
 }
 
 .plusRow i {

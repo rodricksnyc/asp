@@ -2483,7 +2483,7 @@
 									<p class="blue">Level <span class="levelTopicListNumber"></span> Topic List Area <span class="levelTopicAreaNumber"> </span></p>
 								</div>
 
-								<form method="post" class="topicLevels" data-draggable="target">
+								<form method="post" class="topicLevels" data-draggable="target2">
 									<div class="allLevels custom-control custom-checkbox">
 										<input type="checkbox" name="allLevels" class="custom-control-input" id="allLevels2">
 										<label class="custom-control-label" for="allLevels2"><p class="blue">ALL</p></label>
@@ -2867,8 +2867,10 @@
 								<button type="button" class="close closeCategoryModal" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
+									<p class="text-center mostSmall">&ndash;SELECT TOPICS TO MOVE IN DESIRED&ndash;</p>
 							</div>
 							<div class="modal-body addCategories" data-draggable="target">
+
 
 							</div>
 							<div class="modal-footer">
@@ -2893,7 +2895,7 @@
 							</ul>
 
 						</div>
-						<p class="text-center mostSmall">&ndash;DRAG AND DROP TOPICS IN DESIRED ORDER&ndash;</p>
+						<!-- <p class="text-center mostSmall">&ndash;SELECT TOPICS&ndash;</p> -->
 
 						<div class="topics">
 
@@ -2918,7 +2920,7 @@
 										</p>
 									</div>
 								</div>
-								<div id="layerTopic" class="row">
+								<div id="layerTopic" class="row" data-draggable="target">
 									<p><i class="fal fa-layer-group"></i></i>&nbsp;Layer Topic&nbsp;<i class="fal fa-info-circle"></i> <span class="evenSmaller">limit 1</span></p>
 								</div>
 
@@ -2931,7 +2933,7 @@
 						<!-- <div class="grayLayer"> -->
 						<div class="analysis-topic">
 							<div class="container">
-								<div class="row" id="analysisTopic" data-draggable="target">
+								<div class="row" id="analysisTopic" data-draggable="target2">
 									<p><i class="fal fa-chart-bar"></i>&nbsp;Analysis Topic&nbsp;<i class="fal fa-info-circle"></i> <span class="evenSmaller">limit 1</span></p>
 								</div>
 							</div>

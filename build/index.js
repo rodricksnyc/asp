@@ -345,7 +345,12 @@ $(document).ready(function () {
 
   var tableLevel1 = function tableLevel1() {
     if ($(this).attr('value')) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + 170);
+
+      if ($('#analysisTopic .levels').length > 0) {
+        $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + 270);
+      }
+
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(one).val(); // $('.levelTopicAreaNumber').append(one).val();
 
@@ -358,7 +363,7 @@ $(document).ready(function () {
 
   var analysisLevel1 = function analysisLevel1() {
     if ($(this).attr('value')) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220);
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(one).val(); // $('.levelTopicAreaNumber').append(one).val();
 
@@ -371,7 +376,7 @@ $(document).ready(function () {
 
   var tableLevel2 = function tableLevel2() {
     if ($(this).attr('value')) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + 170);
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(two).val(); // $('.levelTopicAreaNumber').html(two + '1')
 
@@ -384,7 +389,7 @@ $(document).ready(function () {
 
   var analysisLevel2 = function analysisLevel2() {
     if ($(this).attr('value')) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220);
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(two).val(); // $('.levelTopicAreaNumber').html(two + '1')
 
@@ -397,7 +402,7 @@ $(document).ready(function () {
 
   var tableLevel3 = function tableLevel3() {
     if ($(this).attr('value')) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + 170);
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(three).val();
       $('.listArea').addClass('animated fadeIn').show();
@@ -409,7 +414,7 @@ $(document).ready(function () {
 
   var analysisLevel3 = function analysisLevel3() {
     if ($(this).attr('value')) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220);
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(three).val();
       $('.listArea2').addClass('animated fadeIn').show();
@@ -421,6 +426,7 @@ $(document).ready(function () {
 
   var tableLevel4 = function tableLevel4() {
     if ($(this).attr('value')) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + 170);
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(four).val();
       $('.listArea').addClass('animated fadeIn').show();
@@ -432,6 +438,7 @@ $(document).ready(function () {
 
   var analysisLevel4 = function analysisLevel4() {
     if ($(this).attr('value')) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220);
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(four).val();
       $('.listArea2').addClass('animated fadeIn').show();
@@ -443,7 +450,7 @@ $(document).ready(function () {
 
   var tableLevel5 = function tableLevel5() {
     if ($(this).attr('value')) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + 170);
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(five).val();
       $('.listArea').addClass('animated fadeIn').show();
@@ -455,7 +462,7 @@ $(document).ready(function () {
 
   var analysisLevel5 = function analysisLevel5() {
     if ($(this).attr('value')) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220);
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(five).val();
       $('.listArea2').addClass('animated fadeIn').show();
@@ -467,7 +474,7 @@ $(document).ready(function () {
 
   var tableLevel6 = function tableLevel6() {
     if ($(this).attr('value')) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + 170);
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(six).val();
       $('.listArea').addClass('animated fadeIn').show();
@@ -479,7 +486,7 @@ $(document).ready(function () {
 
   var analysisLevel6 = function analysisLevel6() {
     if ($(this).attr('value')) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220);
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(six).val();
       $('.listArea2').addClass('animated fadeIn').show();
@@ -491,7 +498,7 @@ $(document).ready(function () {
 
   var tableLevel7 = function tableLevel7() {
     if ($(this).attr('value')) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + 170);
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(seven).val();
       $('.listArea').addClass('animated fadeIn').show();
@@ -503,7 +510,7 @@ $(document).ready(function () {
 
   var analysisLevel7 = function analysisLevel7() {
     if ($(this).attr('value')) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220);
       $('.selectTopic').hide();
       $('.levelTopicListNumber').empty().append(seven).val();
       $('.listArea2').addClass('animated fadeIn').show();
@@ -732,6 +739,10 @@ $(document).ready(function () {
       $(this).closest('.levels').find('input[data-level]').parent().hide();
     }
 
+    if ($('#rowTopic .levels').length > 2 && $('#columnTopic .levels').length > 0 && $('#layerTopic .levels').length > 0) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + 200);
+    }
+
     $('.categoriesModal').unbind("click").on('click', function () {
       $('#reorderCategories').modal('show');
       var categoryLi = $(this).closest('.levels').find('.categories li');
@@ -756,11 +767,12 @@ $(document).ready(function () {
 
     $('.numberCounter').html(function (i, val) {
       return val * 1 + 1;
-    });
-
-    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94);
-    }
+    }); //
+    // if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 ) {
+    //
+    //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
+    //
+    // }
   };
 
   $('.addRow').keypress(addRow).click(addRow); //hover over rows
@@ -846,7 +858,18 @@ $(document).ready(function () {
     $('.numberCounter').html(function (i, val) {
       return val * 1 - 1;
     });
-    $(this).closest('.levels').remove();
+    $(this).closest('.levels').remove(); // if ($('#rowTopic .levels').length < 3 && $('#columnTopic .levels').length < 0 &&  $('#layerTopic .levels').length < 0 ) {
+    //   alert('digubeirbgiberibregib')
+    //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height()  +  $('#layerTopic').height() - 260 )
+    //
+    // }
+    //
+    //
+    // if ($('#rowTopic .levels').length < 0 && $('#columnTopic .levels').length < 0 &&  $('#layerTopic .levels').length < 0 ) {
+    //   alert('eirugbierbgiberibbib')
+    //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height()  +  $('#layerTopic').height() - 500)
+    //
+    // }
   }); // $(".years :checkbox").change(function(){
   //
   //   // var saveYear = $('.saveYear')
@@ -888,6 +911,14 @@ $(document).ready(function () {
       $(this).closest('.levels').find('input[data-level]').parent().hide();
     }
 
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 280);
+    }
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length == 0) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140);
+    }
+
     $('.categoriesModal').unbind("click").on('click', function () {
       $('#reorderCategories').modal('show');
       var categoryLi = $(this).closest('.levels').find('.categories li');
@@ -902,11 +933,11 @@ $(document).ready(function () {
       $('.closeCategoryModal').click(function () {
         $('.addCategories').empty();
       });
-    });
-
-    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90);
-    }
+    }); // if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 ) {
+    //
+    //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90)
+    //
+    // }
 
     if ($('#columnTopic .levels').length > 0) {
       $('.addColumn').off("click");
@@ -959,6 +990,14 @@ $(document).ready(function () {
       $(this).closest('.levels').find('input[data-level]').parent().hide();
     }
 
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 280);
+    }
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length == 0) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140);
+    }
+
     if ($('#layerTopic .levels').length > 0) {
       $('.addLayer').off("click");
       console.log("stop adding column");
@@ -977,11 +1016,12 @@ $(document).ready(function () {
       $('.closeCategoryModal').click(function () {
         $('.addCategories').empty();
       });
-    });
-
-    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90);
-    }
+    }); //
+    // if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 ) {
+    //
+    //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90)
+    //
+    // }
   };
 
   $('.addLayer').keypress(addLayerTopic).click(addLayerTopic);
@@ -1048,9 +1088,27 @@ $(document).ready(function () {
       });
     });
 
-    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 || $('#analysisTopic .levels').length > 0) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90);
+    if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210);
     }
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220);
+    }
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220);
+    }
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 2 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220);
+    } //
+    // if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 || $('#analysisTopic .levels').length > 0 ) {
+    //
+    //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90)
+    //
+    // }
+
   };
 
   $('.addAnalysis').keypress(addAnalysisTopic).click(addAnalysisTopic); //remove analyis
@@ -1197,33 +1255,52 @@ $(document).ready(function () {
 
   for (var items = document.querySelectorAll('[data-draggable="item"]'), len = items.length, i = 0; i < len; i++) {
     items[i].setAttribute('draggable', 'true');
-  } //variable for storing the dragging item reference
-  //this will avoid the need to define any transfer data
-  //which means that the elements don't need to have IDs
-
+  }
 
   var item = null;
   document.addEventListener("drag", function (event) {}, false); // //dragstart event to initiate mouse dragging
 
   document.addEventListener('dragstart', function (e) {
     $('#rowTopic').animate({
-      minHeight: 20,
-      paddingTop: 25
+      minHeight: 100,
+      paddingTop: 40
     }, 100);
     $('#columnTopic').animate({
-      minHeight: 80,
-      paddingTop: 25
+      minHeight: 100
     }, 100);
-    item = e.target; // console.log('moving first time')
-    //we don't need the transfer data, but we have to define something
-    //otherwise the drop action won't work at all in firefox
-    //most browsers support the proper mime-type syntax, eg. "text/plain"
-    //but we have to use this incorrect syntax for the benefit of IE10+
+    $('#layerTopic').animate({
+      minHeight: 100
+    }, 100); // $('#analysisTopic').animate({
+    //
+    //   minHeight: 100
+    //
+    // },100);
+    //
+    // if ($('#rowTopic .levels').length > 0 && $('#columnTopic .levels').length < 0 &&  $('#layerTopic .levels').length < 0 ) {
+    //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height()+ 400)
+    //
+    // }
+    //
+    // if ($('#rowTopic .levels').length > 0 && $('#columnTopic .levels').length > 0 &&  $('#layerTopic .levels').length < 0 ) {
+    //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + 400 )
+    //
+    // }
+    //
+    //
+    // if ($('#rowTopic .levels').length > 0 && $('#columnTopic .levels').length > 0 &&  $('#layerTopic .levels').length > 0 ) {
+    //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height()  +  $('#layerTopic').height() + 400)
+    //
+    // }
 
+    $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + 500);
+
+    if ($('#rowTopic .levels').length > 3) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + 900);
+    }
+
+    item = e.target;
     e.dataTransfer.setData('text', '');
-  }, false); // dragover event to allow the drag by preventing its default
-  // ie. the default action of an element is not to allow dragging
-
+  }, false);
   document.addEventListener('dragover', function (e) {
     console.log('moving second time');
 
@@ -1234,180 +1311,111 @@ $(document).ready(function () {
 
   document.addEventListener('drop', function (e) {
     console.log('moving third time');
-    $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 90); // $('.levels').addClass('dragged')
-    //if this element is a drop target, move the item here
+    $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height());
+
+    if ($('#rowTopic .levels').length > 3) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() - 100);
+    } //if this element is a drop target, move the item here
     //then prevent default to allow the action (same as dragover)
+
 
     if (e.target.getAttribute('data-draggable') == 'target') {
       console.log('moving fourth time');
-      var thing = e.target.appendChild(item); //     function handle_drop_patient(event, ui) {
-      //          $(this).append( $(ui.draggable).clone().css({'float':'left','display':'block'}) );
-      //          $(ui.draggable).remove();
-      //     }
-      //     $(thing).droppable({
-      //     classes: {
-      //       'ui-droppable': 'highlight'
-      //     },
-      //     drop: handle_drop_patient
-      // });
-      //
-      //       $(thing).addClass( "ui-state-highlight" )
-      //
-      //   if ($('#rowTopic .levels').length > 3) {
-      //
-      //   $(thing).draggable().css("position", "absolute");
-      //
-      //
-      // }
-      // $('#rowTopic').on('mouseenter' , function() {
-      //   alert("kubfwubih89figu43")
-      // })
-
-      if ($('#rowTopic .levels').length > 3) {
-        console.log("more than");
-        $('#rowTopic .levels').slice(3).css({
-          'height': '0px',
-          'width': '0px',
-          'opacity': '0'
-        });
-        $('.whiteBar').css({
-          'height': '100px',
-          'top': '80px'
-        }).fadeIn(); // $('#rowTopic').animate({
-        //
-        //   minHeight: 80,
-        //   maxHeight:80,
-        //   height:80
-        //
-        // },1000);
-      }
-
-      $('.numberCounter').html(function (i, val) {
-        return val * 1 + 1;
-      });
-
-      if ($(thing).children('.deleteOptions').length == 0) {
-        $('<div class="deleteOptions"><i class="fal fa-expand-arrows"></i>&nbsp;&nbsp;<i class="fal fa-trash-alt removeDrag"></i></div>').appendTo(thing);
-      } //
-      // else {
-      //
-      //   $(thing).detach($('<div class="deleteOptions"><i class="fal fa-expand-arrows"></i>&nbsp;&nbsp;<i class="fal fa-trash-alt"></i></div>'))
-      // }
-      // $('#rowTopic').on('click', '.removeDrag' , function() {
-      //
-      //     // $('.topicLevels').append($(thing).closest('.levels'))
-      //
-      //       // $(this).closest('.levels').remove();
-      //       $(this).closest('.levels').appendTo('.topicLevels')
-      //
-      //     // $(this).closest('#rowTopic [data-draggable]').remove();
-      //
-      //   // $(this).closest('.levels').find('input[data-level]').prop("checked", false);
-      //
-      //
-      //   if ($('#rowTopic .levels').length == 0) {
-      //     $('#rowTopic').animate({
-      //
-      //       minHeight: 0,
-      //       paddingTop:0
-      //
-      //     },100);
-      //   }
-      //
-      //   $('.numberCounter').html(function(i, val) { return val*1 - 1 });
-      //
-      //
-      // })
-      // if ($('#rowTopic .levels').length > 3) {
+      var thing = e.target.appendChild(item); // if ($('#rowTopic .levels').length > 3) {
       //   console.log("more than")
       //
       //
-      //   // $('#rowTopic .levels').slice(3).hide();
-      //   $('.whiteBar').fadeIn()
       //
+      //   $('.whiteBar').css({
+      //     'height' : '120px',
+      //     'top' : '20px',
       //
-      //   // $('#rowTopic').animate({
-      //   //
-      //   //   minHeight: 80,
-      //   //   maxHeight:80,
-      //   //   height:80
-      //   //
-      //   // },1000);
+      //   }).fadeIn()
+      //
       //
       //
       // }
       //
-      // if  ($('.topicLevels .levels').length > 3) {
-      //     console.log("less than")
-      //
-      //     $('#rowTopic .levels').show();
-      //   }
-      //     some(function(e) {
-      //       let elements = document.elementsFromPoint(e.clientX, event.clientY);
-      //       let target = elements.find(e => e.matches('.whiteBar'));
-      //       target.dispatchEvent(new DragEvent('drop', {
-      //
-      //       }));
-      //     })
-      // some()
+      // $('.numberCounter').html(function(i, val) { return val*1+1 });
 
+      if ($(thing).children('.deleteOptions').length == 0) {
+        $("<div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeDrag' role='button' tabindex='0'></i></div>").appendTo(thing);
+      }
 
+      $('#rowTopic').animate({
+        minHeight: 0,
+        paddingTop: 0
+      }, 100);
+      $('#columnTopic').animate({
+        minHeight: 0
+      }, 100);
+      $('#layerTopic').animate({
+        minHeight: 0
+      }, 100); // $('#analysisTopic').animate({
+      //
+      //   minHeight: 0
+      //
+      // },100);
+
+      $('.categoriesModal').unbind("click").on('click', function () {
+        $('#reorderCategories').modal('show');
+        var categoryLi = $(this).closest('.levels').find('.categories li');
+        console.log(categoryLi);
+        var Opt02 = "";
+        $(categoryLi).each(function () {
+          Opt02 = Opt02 + this.outerHTML;
+        });
+        $('.addCategories').append(Opt02);
+        $('.addCategories li .custom-control').removeClass('hidden');
+        $('.closeCategoryModal').click(function () {
+          $('.addCategories').empty();
+        });
+      });
       e.preventDefault();
     }
-  }, false); //dragend event to clean-up after drop or abort
-  //which fires whether or not the drop target was valid
-
+  }, false);
   document.addEventListener('dragend', function (e) {
     console.log('moving fifth time');
     item = null;
-  }, false);
-  $('#rowTopic').on('click', '.removeDrag', function () {
-    // $('.topicLevels').append($(thing).closest('.levels'))
-    // $(this).closest('.levels').remove();
-    $(this).closest('.levels').appendTo('.topicLevels'); // $(this).closest('#rowTopic [data-draggable]').remove();
-    // $(this).closest('.levels').find('input[data-level]').prop("checked", false);
-    // if ($('#rowTopic .levels').length > 1) {
+  }, false); //end drag and drop functions
 
+  $('#rowTopic').on('click', '.removeDrag', function () {
+    $(this).closest('.levels').appendTo('.topicLevels');
     $('#rowTopic').animate({
       minHeight: 0,
       paddingTop: 0
-    }, 100); // }
-    // if ($('#rowTopic .levels').length > 1) {
-    // alert("more than")
-
-    $('#rowTopic .levels').not().slice(2).css({
-      'height': 'auto',
-      'width': 'auto',
-      'opacity': '1'
-    });
-    $('.whiteBar').css({
-      'height': '60px',
-      'top': '40px'
-    }).fadeOut('slow'); // $('#rowTopic').animate({
+    }, 100); // $('.whiteBar').css({
+    //   'height' : '60px',
+    //   'top' : '40px',
     //
-    //   minHeight: 80,
-    //   maxHeight:80,
-    //   height:80
+    // }).fadeOut('slow')
     //
-    // },1000);
-    // }
-
-    $('.numberCounter').html(function (i, val) {
-      return val * 1 - 1;
-    });
-  }); // $('.listArea .topicLevels .levels .deleteOptions').hide()
-  //
-  // if ($('#rowTopic .levels').length < 1) {
-  //
-  //   console.log("fucker")
-  //   $('#rowTopic').animate({
-  //
-  //     minHeight: "0px"},
-  //
-  //   );
-  //
-  // }
-  //make the nav item have active line on current page
+    //
+    //
+    //
+    // $('.numberCounter').html(function(i, val) { return val*1 - 1 });
+  });
+  $('#columnTopic').on('click', '.removeDrag', function () {
+    $(this).closest('.levels').appendTo('.topicLevels');
+    $('#columnTopic').animate({
+      minHeight: 0,
+      paddingTop: 0
+    }, 100);
+  });
+  $('#layerTopic').on('click', '.removeDrag', function () {
+    $(this).closest('.levels').appendTo('.topicLevels');
+    $('#layerTopic').animate({
+      minHeight: 0,
+      paddingTop: 0
+    }, 100);
+  });
+  $('#analysisTopic').on('click', '.removeDrag', function () {
+    $(this).closest('.levels').appendTo('.topicLevels');
+    $('#analysisTopic').animate({
+      minHeight: 0,
+      paddingTop: 0
+    }, 100);
+  }); //make the nav item have active line on current page
 
   var path = window.location.href;
   $('.navbar-nav li a').each(function () {
