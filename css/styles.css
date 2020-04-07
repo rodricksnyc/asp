@@ -2123,6 +2123,8 @@ a:hover {
 
 
 
+
+
 /* .levels .custom-control-label {
 position: relative;
 margin-bottom: 0;
@@ -2233,6 +2235,68 @@ background-size: 50% 50%;
   border-radius: .5rem;
   /* padding-bottom: 0em; */
 }
+
+.activeLevel  {
+    background-color: #faede9;
+    border-radius: .5rem;
+
+}
+
+.activeLevel  p.blue {
+    color:#c7482e;
+    font-weight:500 !important;
+
+}
+.activeLevel .accordion-toggle i {
+    visibility: visible !important;
+    color: #c7482e;
+}
+
+.activeLevel .custom-control-label::before {
+  display:block !important;
+}
+
+.activeLevel .endOptions {
+    position: absolute;
+    right: -8px;
+    top: -15px;
+    display: block !important;
+}
+
+.activeLevel .orangeHover {
+    background-color: #c7482e;
+    padding-bottom: .4em;
+    padding-left: .8em;
+    padding-right: .8em;
+    padding-top: .6em;
+    border-top-left-radius: 1.2em;
+    border-bottom-right-radius: 1.2em;
+    border-top-right-radius: 1.2em;
+    display: block !important;
+}
+
+
+/* .activeLevel .custom-control-label::before {
+  display:block;
+} */
+
+.special:before {
+  position: absolute;
+  top: .1rem;
+  left: -1.5rem;
+  display: block;
+  width: 1.2rem;
+  height: 1.2rem;
+  pointer-events: none;
+  content: "";
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: white;
+  border: 1px solid black;
+}
+
 
 .activeCustomControl {
   background-color: #faede9;
@@ -2402,6 +2466,8 @@ color: #c7482e;
 .topicLevels .levels:hover .custom-control-label::before {
   display:block;
 }
+
+
 
 
 .endOptions .mostSmall {

@@ -937,7 +937,9 @@ $(document).ready(function () {
     resizeText();
   }).trigger('resize');
 
+  //gray overlay on query summary
 
+  $('.grayLayer').css('top', $('.lightBlueBack').height())
 
   // $(":checkbox[data-year]").on('change' , function() {
   //
@@ -989,8 +991,8 @@ $(document).ready(function () {
 
   //years checkboxes
 
-  $('.grayLayer').css('top', $('.lightBlueBack').height())
-  console.log($('.lightBlueBack').height())
+
+
 
   $(".years :checkbox").change(function(){
 
@@ -1097,6 +1099,44 @@ $(document).ready(function () {
   // updateAllChecked()
 
 
+  $(".levels :checkbox").change(function(){
+
+
+
+    console.log(this.value)
+    if($(this).prop("checked")==true){
+
+      $(this).closest('.levels').addClass('activeLevel')
+
+
+      // $('.filter-attr-list').append("<li class='results selected' data-year=" + this.value + ">" + this.value + "<div class='removeTag'><i class='fal fa-times ml-1'></i></div></li>");
+    }
+
+    else{
+    $(this).closest('.levels').removeClass('activeLevel')
+
+    };
+
+    if($(".topicLevels .levels :checkbox:checked").length >= 2)   {
+      $('.plusRow').show()
+    }
+
+    else {
+      $('.plusRow').hide()
+    }
+
+
+    // $(".filter-attr-list [data-year]").on('click',  function(){
+    //   $("input[name=addall]").prop('checked', false);
+    //   var yearName = $(this).attr("data-year");
+    //
+    //   $(".years :checkbox[value=" + $(this).attr("data-year") + "]").prop("checked",false);
+    //
+    //   $(this).remove();
+    // });
+  });
+
+
 
   //levels topics checkboxes
 
@@ -1129,7 +1169,9 @@ $(document).ready(function () {
       $('#rowTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
 
 
-      $(this).closest('.levels').find('input[data-level]').parent().hide()
+     $(this).closest('.levels').find('input[data-level]').parent().hide()
+
+
 
 
     }
@@ -1242,7 +1284,6 @@ $(document).ready(function () {
 
 
 
-
     $("#rowTopic .levels:nth-child(4)").nextAll( ".levels" ).addClass('noWidth')
 
 
@@ -1256,12 +1297,7 @@ $(document).ready(function () {
 
 
     $('.numberCounter').html(function(i, val) { return val*1+1 });
-    //
-    // if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 ) {
-    //
-    //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height() + 94)
-    //
-    // }
+
   }
   $('.addRow').keypress(
     addRow
@@ -1380,6 +1416,7 @@ $(document).ready(function () {
 
   })
 
+
   $('#rowTopic').on('click', '.removeLevel' , function() {
 
     var el = $(this).closest('.levels').find('input[data-level]').val()
@@ -1391,8 +1428,10 @@ $(document).ready(function () {
       $(this).removeClass("noWidth");
     });
 
-
     $('.addRow').closest('.levels').find(`input[data-level='${el}']`).parent().show()
+
+
+
     $('.addRow').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
 
 
@@ -1444,35 +1483,6 @@ $(document).ready(function () {
 
 
   })
-
-
-
-
-
-
-  // $(".years :checkbox").change(function(){
-  //
-  //   // var saveYear = $('.saveYear')
-  //   // $('.filter-attr-list').empty().append(saveYear)
-  //   console.log(this.value)
-  //   if($(this).prop("checked")==true){
-  //     $('.filter-attr-list').append("<li class='results selected' data-year=" + this.value + ">" + this.value + "<div class='removeTag'><i class='fal fa-times ml-1'></i></div></li>");
-  //   }
-  //
-  //   else{
-  //     $(".filter-attr-list li[data-year=" + this.value + "]").remove()
-  //   };
-  //
-  //   $(".filter-attr-list [data-year]").on('click',  function(){
-  //     $("input[name=addall]").prop('checked', false);
-  //     var yearName = $(this).attr("data-year");
-  //
-  //     $(".years :checkbox[value=" + $(this).attr("data-year") + "]").prop("checked",false);
-  //
-  //     $(this).remove();
-  //   });
-  // });
-
 
 
 
@@ -2124,67 +2134,6 @@ $(document).ready(function () {
   })
 
 
-
-
-  // $('.removeLevel').click(function() {
-  //   var obj = $(this).parent().parent().siblings().val();
-  //   var checkedBox = $(this).parent().parent().siblings().closest(':checkbox[data-level]').prop("checked", false);
-  //
-  //
-  //
-  //   // $(obj).attr("checked","checked")
-  //
-  //   // var checkboxValue = $(this).parent().parent().siblings().find("input[data-level='" + obj.value + "']")
-  //   // console.log(checkboxValue)
-  //
-  //   if($(checkedBox).prop("checked")==false){
-  //
-  //     // $('#rowTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj.value}' class='custom-control-input id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class='deleteOptions'><i class='fal fa-expand-arrows'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel'></i></div></div>`);
-  //
-  //     $(checkedBox).parent().fadeIn()
-  //
-  //   }
-  //
-  //   if ($('#rowTopic .levels').length > 3) {
-  //     console.log("more than")
-  //
-  //     $('#rowTopic .levels').slice(3).hide();
-  //     $('.whiteBar').fadeIn()
-  //
-  //   }
-  //
-  // });
-
-
-  //
-  // $(".topicLevels :checkbox").change(function(){
-  //
-  //   console.log(this.value)
-  //   if($(this).prop("checked")==true){
-  //
-  //
-  //     $('#rowTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${this.value}' value='${this.value}' class='custom-control-input id='${this.value}'><label class='custom-control-label' for='${this.value}'><p class='blue'>${this.value}</p></label><div class='deleteOptions'><i class='fal fa-expand-arrows'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt'></i></div></div>`);
-  //
-  //   // $('#rowTopic').append("<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='" + this.value + "' value='" + this.value + "' class='custom-control-input id='" + this.value + "'><label class='custom-control-label' for='" + this.value + "'><p class='blue'>" + this.value + "</p></label><div class='deleteOptions'><i class='fal fa-expand-arrows'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt'></i></div></div>");
-  //
-  //     $(this).parent().fadeOut()
-  //
-  //   }
-  //
-  //
-  //   if ($('#rowTopic .levels').length > 3) {
-  //   console.log("more than")
-  //
-  //     $('#rowTopic .levels').slice(3).hide();
-  //     $('.whiteBar').fadeIn()
-  //
-  //   }
-  //
-  //
-  //
-  //
-  //
-  // });
 
   //adding href and id to accordions dynamically for checkboxes
 
