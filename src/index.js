@@ -1101,10 +1101,17 @@ $(document).ready(function () {
 
   $(".levels :checkbox").change(function(){
 
-
-
     console.log(this.value)
+
+
     if($(this).prop("checked")==true){
+
+      // var e =  $(this).closest('.levels').find('.endOptions')
+      //
+      // console.log(e)
+      //
+      // $(e).css('display', 'none !important')
+
 
       $(this).closest('.levels').addClass('activeLevel')
 
@@ -1115,15 +1122,28 @@ $(document).ready(function () {
     else{
     $(this).closest('.levels').removeClass('activeLevel')
 
+
+
     };
 
-    if($(".topicLevels .levels :checkbox:checked").length >= 2)   {
+
+    if($(".topicLevels .levels :checkbox:checked").length >= 1)   {
       $('.plusRow').show()
+
     }
 
     else {
-      $('.plusRow').hide()
+      $('.plusRow').hide();
+
     }
+
+      if($(".topicLevels .levels :checkbox:checked").length >= 2) {
+        $('.plusRow').addClass('green')
+      }
+      else {
+        $('.plusRow').removeClass('green')
+      }
+
 
 
     // $(".filter-attr-list [data-year]").on('click',  function(){
@@ -1134,6 +1154,20 @@ $(document).ready(function () {
     //
     //   $(this).remove();
     // });
+  });
+
+
+  $("#allLevels input").click(function() {
+    if (this.checked) {
+      // $('.filter-attr-list').find('li').remove();
+      $(".levels :checkbox").prop('checked', true).change();
+      $("#allLevels input").prop('checked', true).change();
+    }
+
+    else  {
+      $(".levels :checkbox").prop('checked', false).change();
+      $("#allLevels input").prop('checked', false).change();
+    }
   });
 
 

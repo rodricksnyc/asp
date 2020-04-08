@@ -725,6 +725,11 @@ $(document).ready(function () {
     console.log(this.value);
 
     if ($(this).prop("checked") == true) {
+      // var e =  $(this).closest('.levels').find('.endOptions')
+      //
+      // console.log(e)
+      //
+      // $(e).css('display', 'none !important')
       $(this).closest('.levels').addClass('activeLevel'); // $('.filter-attr-list').append("<li class='results selected' data-year=" + this.value + ">" + this.value + "<div class='removeTag'><i class='fal fa-times ml-1'></i></div></li>");
     } else {
       $(this).closest('.levels').removeClass('activeLevel');
@@ -732,10 +737,16 @@ $(document).ready(function () {
 
     ;
 
-    if ($(".topicLevels .levels :checkbox:checked").length >= 2) {
+    if ($(".topicLevels .levels :checkbox:checked").length >= 1) {
       $('.plusRow').show();
     } else {
       $('.plusRow').hide();
+    }
+
+    if ($(".topicLevels .levels :checkbox:checked").length >= 2) {
+      $('.plusRow').addClass('green');
+    } else {
+      $('.plusRow').removeClass('green');
     } // $(".filter-attr-list [data-year]").on('click',  function(){
     //   $("input[name=addall]").prop('checked', false);
     //   var yearName = $(this).attr("data-year");
@@ -745,6 +756,16 @@ $(document).ready(function () {
     //   $(this).remove();
     // });
 
+  });
+  $("#allLevels input").click(function () {
+    if (this.checked) {
+      // $('.filter-attr-list').find('li').remove();
+      $(".levels :checkbox").prop('checked', true).change();
+      $("#allLevels input").prop('checked', true).change();
+    } else {
+      $(".levels :checkbox").prop('checked', false).change();
+      $("#allLevels input").prop('checked', false).change();
+    }
   }); //levels topics checkboxes
   //clicking on add as row
 

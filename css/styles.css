@@ -1097,6 +1097,14 @@ padding-right:5px;
 
 }
 
+.listArea2 .custom-control-label::before {
+  display:none !important;
+}
+
+.listArea2 .activeCustomControl .custom-control-label::before {
+    display: none !important;
+}
+
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
   font-family: "Font Awesome 5 Pro";
   content: "\f00c";
@@ -2260,7 +2268,7 @@ background-size: 50% 50%;
     position: absolute;
     right: -8px;
     top: -15px;
-    display: block !important;
+    display: none !important;
 }
 
 .activeLevel .orangeHover {
@@ -2272,9 +2280,21 @@ background-size: 50% 50%;
     border-top-left-radius: 1.2em;
     border-bottom-right-radius: 1.2em;
     border-top-right-radius: 1.2em;
-    display: block !important;
+    display: none !important;
 }
 
+.plusRow.green {
+  color:#28a745
+}
+
+.plusRow.green .btn-success {
+  background-color: #28a745;
+border-color: #28a745
+}
+
+.allLevels:hover {
+  background: none !important;
+}
 
 /* .activeLevel .custom-control-label::before {
   display:block;
