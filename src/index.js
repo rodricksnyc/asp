@@ -1371,14 +1371,14 @@ $(document).ready(function () {
       console.log(el);
 
 
-          var putBack = $(this).closest('.levels')
-
-          $('.topicLevels').append(putBack)
-
-
       $('#rowTopic .levels').each(function () {
         $(this).removeClass("noWidth");
       });
+
+      var putBack = $(this).closest('.levels')
+
+      $('.topicLevels').append(putBack)
+
 
 
 
@@ -1434,9 +1434,7 @@ $(document).ready(function () {
 
     console.log(el);
 
-    var putBack = $(this).closest('.levels')
 
-    $('.topicLevels').append(putBack)
 
 
     $('#rowTopic .levels').each(function () {
@@ -1445,7 +1443,9 @@ $(document).ready(function () {
     //
     // $('.addRow').closest('.levels').find(`input[data-level='${el}']`).parent().show()
     //
+    var putBack = $(this).closest('.levels')
 
+    $('.topicLevels').append(putBack)
 
     $('.addRow').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
 
@@ -1684,7 +1684,7 @@ $(document).ready(function () {
 
       var putBack = $(this).closest('.levels')
 
-      $('.topicLevels').append(putBack)
+      $('.listArea .topicLevels').append(putBack)
 
       $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
 
@@ -1720,7 +1720,7 @@ $(document).ready(function () {
 
     var putBack = $(this).closest('.levels')
 
-    $('.topicLevels').append(putBack)
+    $('.listArea .topicLevels').append(putBack)
 
     // $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
     $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
@@ -1910,7 +1910,7 @@ $(document).ready(function () {
 
     var putBack = $(this).closest('.levels')
 
-    $('.topicLevels').append(putBack)
+    $('.listArea .topicLevels').append(putBack)
 
 
     var el = $(this).closest('.levels').find('input[data-level]').val()
@@ -1953,7 +1953,7 @@ $(document).ready(function () {
 
       var putBack = $(this).closest('.levels')
 
-      $('.topicLevels').append(putBack)
+      $('.listArea .topicLevels').append(putBack)
 
       // $('.addLayer').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
       $('.addLayer').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
@@ -2131,7 +2131,7 @@ $(document).ready(function () {
 
     var putBack = $(this).closest('.levels')
 
-    $('.topicLevels').append(putBack)
+    $('.listArea2 .topicLevels').append(putBack)
 
 
     var el = $(this).closest('.levels').find('input[data-level]').val()
@@ -2166,7 +2166,7 @@ $(document).ready(function () {
 
       var putBack = $(this).closest('.levels')
 
-      $('.topicLevels').append(putBack)
+      $('.listArea2 .topicLevels').append(putBack)
 
 
       var el = $(this).closest('.levels').find('input[data-level]').val()
