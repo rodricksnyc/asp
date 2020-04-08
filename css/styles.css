@@ -2836,11 +2836,20 @@ color: #c7482e;
   font-size: 14px;
 }
 
+.appendOptions .fas.fa-info-circle {
+  display:none;
+}
+
 .topicLevels {
   padding: 1em 0em 1em 0em;
 }
 
 .listArea .topicLevels .levels .deleteOptions {
+  display:none !important;
+
+}
+
+.listArea2 .topicLevels .levels .deleteOptions {
   display:none !important;
 
 }

@@ -1152,6 +1152,10 @@ $(document).ready(function () {
 
     var categoryObj = $(this).closest('.levels').find('.categories li')
 
+    var item = $(this).closest('.levels')
+
+    console.log(item)
+
 
     console.log(variableObj)
     var Opt01 = "";
@@ -1166,10 +1170,12 @@ $(document).ready(function () {
 
     if($(this).closest('.levels').find('input[data-level]').prop("checked")==true) {
 
-      $('#rowTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
+      $('#rowTopic').append(item)
+
+      // $('#rowTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
 
 
-     $(this).closest('.levels').find('input[data-level]').parent().hide()
+     // $(this).closest('.levels').find('input[data-level]').parent().hide()
 
 
 
@@ -1365,13 +1371,18 @@ $(document).ready(function () {
       console.log(el);
 
 
+          var putBack = $(this).closest('.levels')
+
+          $('.topicLevels').append(putBack)
+
+
       $('#rowTopic .levels').each(function () {
         $(this).removeClass("noWidth");
       });
 
 
 
-      $('.addRow').closest('.levels').find(`input[data-level='${el}']`).parent().show()
+      // $('.addRow').closest('.levels').find(`input[data-level='${el}']`).parent().show()
       $('.addRow').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
 
 
@@ -1423,13 +1434,17 @@ $(document).ready(function () {
 
     console.log(el);
 
+    var putBack = $(this).closest('.levels')
+
+    $('.topicLevels').append(putBack)
+
 
     $('#rowTopic .levels').each(function () {
       $(this).removeClass("noWidth");
     });
-
-    $('.addRow').closest('.levels').find(`input[data-level='${el}']`).parent().show()
-
+    //
+    // $('.addRow').closest('.levels').find(`input[data-level='${el}']`).parent().show()
+    //
 
 
     $('.addRow').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
@@ -1510,12 +1525,16 @@ $(document).ready(function () {
       // console.log(Opt01);
     });
 
+      var item = $(this).closest('.levels')
+
 
     if($(this).closest('.levels').find('input[data-level]').prop("checked")==true) {
 
-      $('#columnTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
+      $('#columnTopic').append(item)
 
-      $(this).closest('.levels').find('input[data-level]').parent().hide()
+      // $('#columnTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
+      //
+      // $(this).closest('.levels').find('input[data-level]').parent().hide()
 
 
     }
@@ -1661,10 +1680,15 @@ $(document).ready(function () {
 
       var el = $(this).closest('.levels').find('input[data-level]').val()
 
-      $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
+      // $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
+
+      var putBack = $(this).closest('.levels')
+
+      $('.topicLevels').append(putBack)
+
       $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
 
-      $(this).closest('.levels').remove();
+      // $(this).closest('.levels').remove();
 
       if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length == 0 ) {
         $('.grayLayer').css('top', $('.lightBlueBack').height() )
@@ -1694,10 +1718,14 @@ $(document).ready(function () {
 
     var el = $(this).closest('.levels').find('input[data-level]').val()
 
-    $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
+    var putBack = $(this).closest('.levels')
+
+    $('.topicLevels').append(putBack)
+
+    // $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
     $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
 
-    $(this).closest('.levels').remove();
+    // $(this).closest('.levels').remove();
 
     if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length == 0 ) {
       $('.grayLayer').css('top', $('.lightBlueBack').height() )
@@ -1735,13 +1763,15 @@ $(document).ready(function () {
       // console.log(Opt01);
     });
 
-
+    var item = $(this).closest('.levels')
 
     if($(this).closest('.levels').find('input[data-level]').prop("checked")==true) {
 
-      $('#layerTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
+      $('#layerTopic').append(item)
 
-      $(this).closest('.levels').find('input[data-level]').parent().hide()
+      // $('#layerTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
+      //
+      // $(this).closest('.levels').find('input[data-level]').parent().hide()
 
 
     }
@@ -1878,13 +1908,17 @@ $(document).ready(function () {
 
     }
 
+    var putBack = $(this).closest('.levels')
+
+    $('.topicLevels').append(putBack)
+
 
     var el = $(this).closest('.levels').find('input[data-level]').val()
 
-    $('.addLayer').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
+    // $('.addLayer').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
     $('.addLayer').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
 
-    $(this).closest('.levels').remove();
+    // $(this).closest('.levels').remove();
 
     if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length == 0 ) {
       $('.grayLayer').css('top', $('.lightBlueBack').height() )
@@ -1916,10 +1950,15 @@ $(document).ready(function () {
 
       var el = $(this).closest('.levels').find('input[data-level]').val()
 
-      $('.addLayer').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
+
+      var putBack = $(this).closest('.levels')
+
+      $('.topicLevels').append(putBack)
+
+      // $('.addLayer').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
       $('.addLayer').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
 
-      $(this).closest('.levels').remove();
+      // $(this).closest('.levels').remove();
 
       if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length == 0 ) {
         $('.grayLayer').css('top', $('.lightBlueBack').height() )
@@ -1937,6 +1976,8 @@ $(document).ready(function () {
 
 
   })
+
+
 
 
   //clicking on add analyis
@@ -1960,13 +2001,15 @@ $(document).ready(function () {
 
     });
 
-
+    var item = $(this).closest('.levels')
 
     if($(this).closest('.levels').find('input[data-level]').prop("checked")==true) {
 
-      $('#analysisTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
+      $('#analysisTopic').append(item)
 
-      $(this).closest('.levels').find('input[data-level]').parent().hide()
+      // $('#analysisTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
+
+      // $(this).closest('.levels').find('input[data-level]').parent().hide()
 
 
     }
@@ -2086,13 +2129,17 @@ $(document).ready(function () {
 
     }
 
+    var putBack = $(this).closest('.levels')
+
+    $('.topicLevels').append(putBack)
+
 
     var el = $(this).closest('.levels').find('input[data-level]').val()
 
-    $('.addAnalysis').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
+    // $('.addAnalysis').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
     $('.addAnalysis').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
 
-    $(this).closest('.levels').remove();
+    // $(this).closest('.levels').remove();
 
     if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length == 0 ) {
       $('.grayLayer').css('top', $('.lightBlueBack').height() )
@@ -2117,13 +2164,17 @@ $(document).ready(function () {
 
       }
 
+      var putBack = $(this).closest('.levels')
+
+      $('.topicLevels').append(putBack)
+
 
       var el = $(this).closest('.levels').find('input[data-level]').val()
 
-      $('.addAnalysis').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
+      // $('.addAnalysis').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
       $('.addAnalysis').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
 
-      $(this).closest('.levels').remove();
+      // $(this).closest('.levels').remove();
 
       if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length == 0 ) {
         $('.grayLayer').css('top', $('.lightBlueBack').height() )
