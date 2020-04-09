@@ -2284,12 +2284,12 @@ background-size: 50% 50%;
 }
 
 .plusRow.green {
-  color:#28a745
+  color:#1d832f;
 }
 
 .plusRow.green .btn-success {
-  background-color: #28a745;
-border-color: #28a745
+  background-color: #1d832f;
+border-color: #1d832f;
 }
 
 .allLevels:hover {

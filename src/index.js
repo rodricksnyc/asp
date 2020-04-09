@@ -1101,28 +1101,15 @@ $(document).ready(function () {
 
   $(".levels :checkbox").change(function(){
 
-    console.log(this.value)
-
-
     if($(this).prop("checked")==true){
-
-      // var e =  $(this).closest('.levels').find('.endOptions')
-      //
-      // console.log(e)
-      //
-      // $(e).css('display', 'none !important')
 
 
       $(this).closest('.levels').addClass('activeLevel')
 
-
-      // $('.filter-attr-list').append("<li class='results selected' data-year=" + this.value + ">" + this.value + "<div class='removeTag'><i class='fal fa-times ml-1'></i></div></li>");
     }
 
     else{
     $(this).closest('.levels').removeClass('activeLevel')
-
-
 
     };
 
@@ -1145,16 +1132,13 @@ $(document).ready(function () {
       }
 
 
-
-    // $(".filter-attr-list [data-year]").on('click',  function(){
-    //   $("input[name=addall]").prop('checked', false);
-    //   var yearName = $(this).attr("data-year");
-    //
-    //   $(".years :checkbox[value=" + $(this).attr("data-year") + "]").prop("checked",false);
-    //
-    //   $(this).remove();
-    // });
   });
+
+
+
+
+
+
 
 
   $("#allLevels input").click(function() {
@@ -2293,312 +2277,312 @@ $(document).ready(function () {
 
   // drag and drop functionality
 
-  if (
-    !document.querySelectorAll
-    ||
-    !('draggable' in document.createElement('span'))
-    ||
-    window.opera
-  ) {
-    return;
-  }
-
-  //get the collection of draggable items and add their draggable attribute
-  for (var items = document.querySelectorAll('[data-draggable="item"]'),
-  len = items.length,
-  i = 0; i < len; i ++
-)
-{
-  items[i].setAttribute('draggable', 'true');
-}
-
-
-var item = null;
-
-document.addEventListener("drag", function(event) {
-
-}, false);
-
-
-
-// //dragstart event to initiate mouse dragging
-document.addEventListener('dragstart', function(e) {
-
-
-
-  $('#rowTopic').animate({
-
-    minHeight: 100,
-    paddingTop:40
-
-  },100);
-
-  $('#columnTopic').animate({
-
-    minHeight: 100
-
-  },100);
-
-  $('#layerTopic').animate({
-
-    minHeight: 100
-
-  },100);
-
-  // $('#analysisTopic').animate({
-  //
-  //   minHeight: 100
-  //
-  // },100);
-
-  //
-  // if ($('#rowTopic .levels').length > 0 && $('#columnTopic .levels').length < 0 &&  $('#layerTopic .levels').length < 0 ) {
-  //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height()+ 400)
-  //
-  // }
-  //
-  // if ($('#rowTopic .levels').length > 0 && $('#columnTopic .levels').length > 0 &&  $('#layerTopic .levels').length < 0 ) {
-  //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + 400 )
-  //
-  // }
-  //
-  //
-  // if ($('#rowTopic .levels').length > 0 && $('#columnTopic .levels').length > 0 &&  $('#layerTopic .levels').length > 0 ) {
-  //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height()  +  $('#layerTopic').height() + 400)
-  //
-  // }
-
-  $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height()  +  $('#layerTopic').height() + 500)
-
-  if ($('#rowTopic .levels').length > 3) {
-    $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height()  +  $('#layerTopic').height() + 900)
-  }
-
-  item = e.target;
-
-
-  e.dataTransfer.setData('text', '');
-
-
-
-
-
-}, false);
-
-
-document.addEventListener('dragover', function(e) {
-
-
-  console.log('moving second time')
-
-
-  if(item) {
-    e.preventDefault();
-
-    // $(item).closest('.levels').find('input[data-level]').prop("checked", true);
-
-
-
-  }
-}, false);
-
-//drop event to allow the element to be dropped into valid targets
-document.addEventListener('drop', function(e) {
-
-
-
-  console.log('moving third time')
-
-
-
-  $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() +  $('#layerTopic').height() )
-  if ($('#rowTopic .levels').length > 3) {
-    $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() +  $('#layerTopic').height() - 100)
-
-  }
-
-
-  //if this element is a drop target, move the item here
-  //then prevent default to allow the action (same as dragover)
-  if(e.target.getAttribute('data-draggable') == 'target') {
-
-
-    console.log('moving fourth time')
-
-    var thing = e.target.appendChild(item);
-
-
-
-    // if ($('#rowTopic .levels').length > 3) {
-    //   console.log("more than")
-    //
-    //
-    //
-    //   $('.whiteBar').css({
-    //     'height' : '120px',
-    //     'top' : '20px',
-    //
-    //   }).fadeIn()
-    //
-    //
-    //
-    // }
-    //
-    // $('.numberCounter').html(function(i, val) { return val*1+1 });
-
-
-    if ($(thing).children('.deleteOptions').length == 0 ) {
-
-      $("<div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeDrag' role='button' tabindex='0'></i></div>").appendTo(thing)
-    }
-
-
-
-    $('#rowTopic').animate({
-
-      minHeight: 0,
-      paddingTop:0
-
-    },100);
-
-    $('#columnTopic').animate({
-
-      minHeight: 0
-    },100);
-
-    $('#layerTopic').animate({
-
-      minHeight: 0
-
-    },100);
-
-    // $('#analysisTopic').animate({
-    //
-    //   minHeight: 0
-    //
-    // },100);
-
-
-
-    $('.categoriesModal').unbind("click").on('click', function() {
-      $('#reorderCategories').modal('show');
-
-      var categoryLi =  $(this).closest('.levels').find('.categories li')
-
-      console.log(categoryLi)
-
-      var Opt02 = "";
-      $(categoryLi).each(function() {
-        Opt02 = Opt02 + this.outerHTML;
-
-
-      });
-
-
-      $('.addCategories').append(Opt02)
-
-      $('.addCategories li .custom-control').removeClass('hidden')
-
-      $('.closeCategoryModal').click(function() {
-        $('.addCategories').empty()
-      })
-
-
-    })
-
-
-
-    e.preventDefault();
-  }
-}, false);
-
-
-
-document.addEventListener('dragend', function(e) {
-
-  console.log('moving fifth time')
-
-
-  item = null;
-
-
-
-
-
-}, false);
-
-//end drag and drop functions
-
-
-$('#rowTopic').on('click', '.removeDrag' , function() {
-
-  $(this).closest('.levels').appendTo('.topicLevels')
-
-  $('#rowTopic').animate({
-
-    minHeight: 0,
-    paddingTop:0
-
-  },100);
-
-
-  // $('.whiteBar').css({
-  //   'height' : '60px',
-  //   'top' : '40px',
-  //
-  // }).fadeOut('slow')
-  //
-  //
-  //
-  //
-  // $('.numberCounter').html(function(i, val) { return val*1 - 1 });
-
-
-})
-
-
-$('#columnTopic').on('click', '.removeDrag' , function() {
-
-  $(this).closest('.levels').appendTo('.topicLevels')
-
-  $('#columnTopic').animate({
-
-    minHeight: 0,
-    paddingTop:0
-
-  },100);
-
-})
-
-
-$('#layerTopic').on('click', '.removeDrag' , function() {
-
-  $(this).closest('.levels').appendTo('.topicLevels')
-
-  $('#layerTopic').animate({
-
-    minHeight: 0,
-    paddingTop:0
-
-  },100);
-
-})
-
-$('#analysisTopic').on('click', '.removeDrag' , function() {
-
-  $(this).closest('.levels').appendTo('.topicLevels')
-
-  $('#analysisTopic').animate({
-
-    minHeight: 0,
-    paddingTop:0
-
-  },100);
-
-
-
-})
-
+//   if (
+//     !document.querySelectorAll
+//     ||
+//     !('draggable' in document.createElement('span'))
+//     ||
+//     window.opera
+//   ) {
+//     return;
+//   }
+//
+//   //get the collection of draggable items and add their draggable attribute
+//   for (var items = document.querySelectorAll('[data-draggable="item"]'),
+//   len = items.length,
+//   i = 0; i < len; i ++
+// )
+// {
+//   items[i].setAttribute('draggable', 'true');
+// }
+//
+//
+// var item = null;
+//
+// document.addEventListener("drag", function(event) {
+//
+// }, false);
+//
+//
+//
+// // //dragstart event to initiate mouse dragging
+// document.addEventListener('dragstart', function(e) {
+//
+//
+//
+//   $('#rowTopic').animate({
+//
+//     minHeight: 100,
+//     paddingTop:40
+//
+//   },100);
+//
+//   $('#columnTopic').animate({
+//
+//     minHeight: 100
+//
+//   },100);
+//
+//   $('#layerTopic').animate({
+//
+//     minHeight: 100
+//
+//   },100);
+//
+//   // $('#analysisTopic').animate({
+//   //
+//   //   minHeight: 100
+//   //
+//   // },100);
+//
+//   //
+//   // if ($('#rowTopic .levels').length > 0 && $('#columnTopic .levels').length < 0 &&  $('#layerTopic .levels').length < 0 ) {
+//   //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height()+ 400)
+//   //
+//   // }
+//   //
+//   // if ($('#rowTopic .levels').length > 0 && $('#columnTopic .levels').length > 0 &&  $('#layerTopic .levels').length < 0 ) {
+//   //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + 400 )
+//   //
+//   // }
+//   //
+//   //
+//   // if ($('#rowTopic .levels').length > 0 && $('#columnTopic .levels').length > 0 &&  $('#layerTopic .levels').length > 0 ) {
+//   //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height()  +  $('#layerTopic').height() + 400)
+//   //
+//   // }
+//
+//   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height()  +  $('#layerTopic').height() + 500)
+//
+//   if ($('#rowTopic .levels').length > 3) {
+//     $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height()  +  $('#layerTopic').height() + 900)
+//   }
+//
+//   item = e.target;
+//
+//
+//   e.dataTransfer.setData('text', '');
+//
+//
+//
+//
+//
+// }, false);
+//
+//
+// document.addEventListener('dragover', function(e) {
+//
+//
+//   console.log('moving second time')
+//
+//
+//   if(item) {
+//     e.preventDefault();
+//
+//     // $(item).closest('.levels').find('input[data-level]').prop("checked", true);
+//
+//
+//
+//   }
+// }, false);
+//
+// //drop event to allow the element to be dropped into valid targets
+// document.addEventListener('drop', function(e) {
+//
+//
+//
+//   console.log('moving third time')
+//
+//
+//
+//   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() +  $('#layerTopic').height() )
+//   if ($('#rowTopic .levels').length > 3) {
+//     $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() +  $('#layerTopic').height() - 100)
+//
+//   }
+//
+//
+//   //if this element is a drop target, move the item here
+//   //then prevent default to allow the action (same as dragover)
+//   if(e.target.getAttribute('data-draggable') == 'target') {
+//
+//
+//     console.log('moving fourth time')
+//
+//     var thing = e.target.appendChild(item);
+//
+//
+//
+//     // if ($('#rowTopic .levels').length > 3) {
+//     //   console.log("more than")
+//     //
+//     //
+//     //
+//     //   $('.whiteBar').css({
+//     //     'height' : '120px',
+//     //     'top' : '20px',
+//     //
+//     //   }).fadeIn()
+//     //
+//     //
+//     //
+//     // }
+//     //
+//     // $('.numberCounter').html(function(i, val) { return val*1+1 });
+//
+//
+//     if ($(thing).children('.deleteOptions').length == 0 ) {
+//
+//       $("<div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeDrag' role='button' tabindex='0'></i></div>").appendTo(thing)
+//     }
+//
+//
+//
+//     $('#rowTopic').animate({
+//
+//       minHeight: 0,
+//       paddingTop:0
+//
+//     },100);
+//
+//     $('#columnTopic').animate({
+//
+//       minHeight: 0
+//     },100);
+//
+//     $('#layerTopic').animate({
+//
+//       minHeight: 0
+//
+//     },100);
+//
+//     // $('#analysisTopic').animate({
+//     //
+//     //   minHeight: 0
+//     //
+//     // },100);
+//
+//
+//
+//     $('.categoriesModal').unbind("click").on('click', function() {
+//       $('#reorderCategories').modal('show');
+//
+//       var categoryLi =  $(this).closest('.levels').find('.categories li')
+//
+//       console.log(categoryLi)
+//
+//       var Opt02 = "";
+//       $(categoryLi).each(function() {
+//         Opt02 = Opt02 + this.outerHTML;
+//
+//
+//       });
+//
+//
+//       $('.addCategories').append(Opt02)
+//
+//       $('.addCategories li .custom-control').removeClass('hidden')
+//
+//       $('.closeCategoryModal').click(function() {
+//         $('.addCategories').empty()
+//       })
+//
+//
+//     })
+//
+//
+//
+//     e.preventDefault();
+//   }
+// }, false);
+//
+//
+//
+// document.addEventListener('dragend', function(e) {
+//
+//   console.log('moving fifth time')
+//
+//
+//   item = null;
+//
+//
+//
+//
+//
+// }, false);
+//
+// //end drag and drop functions
+//
+//
+// $('#rowTopic').on('click', '.removeDrag' , function() {
+//
+//   $(this).closest('.levels').appendTo('.topicLevels')
+//
+//   $('#rowTopic').animate({
+//
+//     minHeight: 0,
+//     paddingTop:0
+//
+//   },100);
+//
+//
+//   // $('.whiteBar').css({
+//   //   'height' : '60px',
+//   //   'top' : '40px',
+//   //
+//   // }).fadeOut('slow')
+//   //
+//   //
+//   //
+//   //
+//   // $('.numberCounter').html(function(i, val) { return val*1 - 1 });
+//
+//
+// })
+//
+//
+// $('#columnTopic').on('click', '.removeDrag' , function() {
+//
+//   $(this).closest('.levels').appendTo('.topicLevels')
+//
+//   $('#columnTopic').animate({
+//
+//     minHeight: 0,
+//     paddingTop:0
+//
+//   },100);
+//
+// })
+//
+//
+// $('#layerTopic').on('click', '.removeDrag' , function() {
+//
+//   $(this).closest('.levels').appendTo('.topicLevels')
+//
+//   $('#layerTopic').animate({
+//
+//     minHeight: 0,
+//     paddingTop:0
+//
+//   },100);
+//
+// })
+//
+// $('#analysisTopic').on('click', '.removeDrag' , function() {
+//
+//   $(this).closest('.levels').appendTo('.topicLevels')
+//
+//   $('#analysisTopic').animate({
+//
+//     minHeight: 0,
+//     paddingTop:0
+//
+//   },100);
+//
+//
+//
+// })
+//
 
 
 
