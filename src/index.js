@@ -1500,7 +1500,7 @@ $(document).ready(function () {
     var code = (e.keyCode ? e.keyCode : e.which);
     if (code == 13) {
 
-        $(".allLevels input").prop('checked', false).change();
+      $(".allLevels input").prop('checked', false).change();
 
       var el = $(this).closest('.levels').find('input[data-level]').val()
 
