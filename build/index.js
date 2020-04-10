@@ -721,7 +721,7 @@ $(document).ready(function () {
   //
   // updateAllChecked()
 
-  $(".levels :checkbox").change(function () {
+  $(".listArea .levels :checkbox").change(function () {
     $(this).closest('.levels').addClass('activeLevel');
     var checkedOff = $(this).closest('.levels');
     var Opt0 = "";
@@ -732,6 +732,10 @@ $(document).ready(function () {
     if ($(this).prop("checked") == true) {
       console.log(Opt0);
       $('.addAsRow').on('click', function () {
+        if ($('.allLevels input').is(':checked')) {
+          $('.listArea .levels').remove(); // $('.listArea .levels').removeClass('activeLevel').appendTo('#rowTopic')
+        }
+
         $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140);
 
         if ($('#rowTopic .levels').length < 3) {
@@ -741,8 +745,6 @@ $(document).ready(function () {
             height: "auto"
           }, 400);
         }
-
-        $("#rowTopic .levels:nth-child(4)").nextAll(".levels").addClass('noWidth');
 
         if ($('#rowTopic .levels').length > 3) {
           $('.whiteBar').fadeIn();
@@ -807,14 +809,13 @@ $(document).ready(function () {
       $('.plusRow').removeClass('green');
     }
   });
-  $("#allLevels input").click(function () {
+  $(".allLevels input").click(function () {
     if (this.checked) {
-      // $('.filter-attr-list').find('li').remove();
-      $(".levels :checkbox").prop('checked', true).change();
-      $("#allLevels input").prop('checked', true).change();
+      $(".levels").addClass('activeLevel'); // $(".levels :checkbox").prop('checked', true).change();
+      // $(".allLevels input").prop('checked', true).change();
     } else {
-      $(".levels :checkbox").prop('checked', false).change();
-      $("#allLevels input").prop('checked', false).change();
+      $(".levels").removeClass('activeLevel'); // $(".levels :checkbox").prop('checked', false).change();
+      // $(".allLevels input").prop('checked', false).change();
     }
   }); //levels topics checkboxes
   //clicking on add as row
@@ -949,6 +950,7 @@ $(document).ready(function () {
     var code = e.keyCode ? e.keyCode : e.which;
 
     if (code == 13) {
+      $(".allLevels input").prop('checked', false).change();
       var el = $(this).closest('.levels').find('input[data-level]').val();
       console.log(el);
       $('#rowTopic .levels').each(function () {
@@ -986,6 +988,7 @@ $(document).ready(function () {
     }
   });
   $('#rowTopic').on('click', '.removeLevel', function () {
+    $(".allLevels input").prop('checked', false).change();
     var el = $(this).closest('.levels').find('input[data-level]').val();
     console.log(el);
     $('#rowTopic .levels').each(function () {
