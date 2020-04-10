@@ -645,7 +645,7 @@ $(document).ready(function () {
     console.log(this.value);
 
     if ($(this).prop("checked") == true) {
-      $('.filter-attr-list').append("<li class='results selected' data-year=" + this.value + ">" + this.value + "<div class='removeTag'><i class='fal fa-times ml-1'></i></div></li>");
+      $('.filter-attr-list').append("<li class='results selected' data-year=\"" + this.value + "\">" + this.value + "<div class='removeTag'><i class='fal fa-times ml-1'></i></div></li>");
     } else {
       $(".filter-attr-list li[data-year=" + this.value + "]").remove();
     }
@@ -722,8 +722,73 @@ $(document).ready(function () {
   // updateAllChecked()
 
   $(".levels :checkbox").change(function () {
+    $(this).closest('.levels').addClass('activeLevel');
+    var checkedOff = $(this).closest('.levels');
+    var Opt0 = "";
+    $(checkedOff).each(function () {
+      Opt0 = Opt0 + this.outerHTML;
+    });
+
     if ($(this).prop("checked") == true) {
-      $(this).closest('.levels').addClass('activeLevel');
+      console.log(Opt0);
+      $('.addAsRow').on('click', function () {
+        $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140);
+
+        if ($('#rowTopic .levels').length < 3) {
+          $('#rowTopic').animate({
+            minHeight: "85px",
+            maxHeight: "85px",
+            height: "auto"
+          }, 400);
+        }
+
+        $("#rowTopic .levels:nth-child(4)").nextAll(".levels").addClass('noWidth');
+
+        if ($('#rowTopic .levels').length > 3) {
+          $('.whiteBar').fadeIn();
+        }
+
+        $('.numberCounter').html(function (i, val) {
+          return val * 1 + 1;
+        });
+        $(checkedOff).remove();
+        $(Opt0).removeClass('activeLevel').appendTo('#rowTopic');
+        $('.categoriesModal').unbind("click").on('click', function () {
+          $('#reorderCategories').modal('show');
+          var categoryLi = $(this).closest('.levels').find('.categories li');
+          console.log(categoryLi);
+          var Opt02 = "";
+          $(categoryLi).each(function () {
+            Opt02 = Opt02 + this.outerHTML;
+          });
+          $('.addCategories').append(Opt02);
+          $('.addCategories li .custom-control').removeClass('hidden');
+          $('.closeCategoryModal').click(function () {
+            $('.addCategories').empty();
+          });
+        });
+        $('.categoriesModal').unbind("keyup").on('keyup', function (e) {
+          var code = e.keyCode ? e.keyCode : e.which;
+
+          if (code == 13) {
+            $('#reorderCategories').modal('show');
+            var categoryLi = $(this).closest('.levels').find('.categories li');
+            console.log(categoryLi);
+            var Opt02 = "";
+            $(categoryLi).each(function () {
+              Opt02 = Opt02 + this.outerHTML;
+            });
+            $('.addCategories').append(Opt02);
+            $('.addCategories li .custom-control').removeClass('hidden');
+          }
+        });
+
+        var emptyModal = function emptyModal() {
+          $('.addCategories').empty();
+        };
+
+        $('.closeCategoryModal').keypress(emptyModal).click(emptyModal);
+      });
     } else {
       $(this).closest('.levels').removeClass('activeLevel');
     }
