@@ -49,6 +49,10 @@ bottom:0; */
   padding-bottom: 60px;
 }
 
+.view1 {
+  padding-right:65px;
+}
+
 /* #myModal {
   z-index: 99999999999;
 } */
@@ -795,13 +799,100 @@ p.smallest {
 }
 
 .append {
-  margin-top:2em;
-
+  margin-top:2.4em;
+  padding:0em;
 }
 
 .append .blue {
   font-weight:600;
-  margin-right:4em;
+      margin-bottom: 0em;
+}
+
+.appendActions {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-around;
+    -moz-justify-content: space-around;
+    -ms-justify-content: space-around;
+    justify-content: space-around;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    margin-bottom: .5em;
+    /* margin-left: -4em; */
+
+
+}
+
+
+@media (min-width:1401px) {
+  .col-xl-9.changeBreakpoint {
+      -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+        max-width: 75%;
+
+  }
+
+  .col-xl-3.changeBreakpoint {
+      -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+
+  }
+
+
+}
+
+
+
+@media (min-width: 1100px) and (max-width:1400px) {
+  .col-lg-8.changeBreakpoint {
+      -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+  }
+
+  .col-lg-4.changeBreakpoint {
+
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+
+  }
+
+
+}
+
+
+
+
+/*
+.appendActions div {
+  margin:0em 1.5em;
+} */
+
+.appendActions p.smallest {
+    font-size: 13px;
+    margin-bottom: 0em !important;
+    font-weight:600 !important;
+}
+
+/* .appendActions div:first-child{
+  margin:0em .3em 0em 0em;
+} */
+
+.appendActions  i {
+  font-size:13px;
+  font-weight:600 !important;
+}
+
+.appendActions .vertical .evenSmaller {
+    font-size: 10px;
+    color: #07477d;
+    font-weight: 600 !important;
 }
 
 .grayLayer {
@@ -823,7 +914,7 @@ p.smallest {
   height:auto;
   border-radius:1rem;
   position:relative;
-  margin-right:4em;
+  /* margin-right:4em; */
 }
 
 .lightBlueBack {
