@@ -1103,23 +1103,29 @@ $(document).ready(function () {
 
         $(this).closest('.levels').addClass('activeLevel')
 
-          var checkedOff = $(this).closest('.levels')
+          // var checkedOff = $(this).closest('.levels')
+          //
+          //       var Opt0 = "";
+          //       $(checkedOff).each(function() {
+          //         Opt0 = Opt0 + this.outerHTML;
+          //
+          //       });
 
-                var Opt0 = "";
-                $(checkedOff).each(function() {
-                  Opt0 = Opt0 + this.outerHTML;
-
-                });
 
 
     if($(this).prop("checked")==true){
-      console.log(Opt0)
+
 
       $('.addAsRow').on('click', function() {
 
-        if ($('.allLevels input').is(':checked')) {
-          $('.listArea .levels').remove()
 
+
+
+        $('.activeLevel').removeClass('activeLevel').appendTo('#rowTopic')
+
+        if ($('.allLevels input').is(':checked')) {
+          // $('.listArea .levels').remove()
+          //
           // $('.listArea .levels').removeClass('activeLevel').appendTo('#rowTopic')
 
         }
@@ -1138,7 +1144,6 @@ $(document).ready(function () {
 
 
 
-
         if ($('#rowTopic .levels').length > 3) {
 
           $('.whiteBar').fadeIn()
@@ -1147,76 +1152,75 @@ $(document).ready(function () {
         }
 
 
-        $('.numberCounter').html(function(i, val) { return val*1+1 });
-
-
-        $(checkedOff).remove()
-        $(Opt0).removeClass('activeLevel').appendTo('#rowTopic')
+        // $('.numberCounter').html(function(i, val) { return val*1+1 });
 
 
 
 
 
-            $('.categoriesModal').unbind("click").on('click', function() {
-              $('#reorderCategories').modal('show');
-
-              var categoryLi =  $(this).closest('.levels').find('.categories li')
-
-              console.log(categoryLi)
-
-              var Opt02 = "";
-              $(categoryLi).each(function() {
-                Opt02 = Opt02 + this.outerHTML;
-
-              });
-
-              $('.addCategories').append(Opt02)
-
-              $('.addCategories li .custom-control').removeClass('hidden')
-
-              $('.closeCategoryModal').click(function() {
-                $('.addCategories').empty()
-              })
 
 
-            })
-
-
-
-            $('.categoriesModal').unbind("keyup").on('keyup', function(e) {
-
-              var code = (e.keyCode ? e.keyCode : e.which);
-              if (code == 13) {
-                $('#reorderCategories').modal('show');
-
-                var categoryLi =  $(this).closest('.levels').find('.categories li')
-
-                console.log(categoryLi)
-
-                var Opt02 = "";
-                $(categoryLi).each(function() {
-                  Opt02 = Opt02 + this.outerHTML;
-
-
-                });
-
-                $('.addCategories').append(Opt02)
-
-                $('.addCategories li .custom-control').removeClass('hidden')
-
-              }
-
-            })
-
-            var emptyModal = function (){
-              $('.addCategories').empty()
-            }
-            $('.closeCategoryModal').keypress(
-              emptyModal
-
-            ).click(
-              emptyModal
-            );
+            //
+            // $('.categoriesModal').unbind("click").on('click', function() {
+            //   $('#reorderCategories').modal('show');
+            //
+            //   var categoryLi =  $(this).closest('.levels').find('.categories li')
+            //
+            //   console.log(categoryLi)
+            //
+            //   var Opt02 = "";
+            //   $(categoryLi).each(function() {
+            //     Opt02 = Opt02 + this.outerHTML;
+            //
+            //   });
+            //
+            //   $('.addCategories').append(Opt02)
+            //
+            //   $('.addCategories li .custom-control').removeClass('hidden')
+            //
+            //   $('.closeCategoryModal').click(function() {
+            //     $('.addCategories').empty()
+            //   })
+            //
+            //
+            // })
+            //
+            //
+            //
+            // $('.categoriesModal').unbind("keyup").on('keyup', function(e) {
+            //
+            //   var code = (e.keyCode ? e.keyCode : e.which);
+            //   if (code == 13) {
+            //     $('#reorderCategories').modal('show');
+            //
+            //     var categoryLi =  $(this).closest('.levels').find('.categories li')
+            //
+            //     console.log(categoryLi)
+            //
+            //     var Opt02 = "";
+            //     $(categoryLi).each(function() {
+            //       Opt02 = Opt02 + this.outerHTML;
+            //
+            //
+            //     });
+            //
+            //     $('.addCategories').append(Opt02)
+            //
+            //     $('.addCategories li .custom-control').removeClass('hidden')
+            //
+            //   }
+            //
+            // })
+            //
+            // var emptyModal = function (){
+            //   $('.addCategories').empty()
+            // }
+            // $('.closeCategoryModal').keypress(
+            //   emptyModal
+            //
+            // ).click(
+            //   emptyModal
+            // );
 
 
 
@@ -1252,17 +1256,21 @@ $(document).ready(function () {
   });
 
 
+
+
+
+
   $(".allLevels input").click(function() {
 
     if (this.checked) {
-      $(".levels").addClass('activeLevel')
+      $(".listArea .levels").addClass('activeLevel')
 
       // $(".levels :checkbox").prop('checked', true).change();
       // $(".allLevels input").prop('checked', true).change();
     }
 
     else  {
-      $(".levels").removeClass('activeLevel')
+      $(".listArea .levels").removeClass('activeLevel')
       // $(".levels :checkbox").prop('checked', false).change();
       // $(".allLevels input").prop('checked', false).change();
     }
@@ -1435,7 +1443,9 @@ $(document).ready(function () {
 
     }
 
-    $('.numberCounter').html(function(i, val) { return val*1+1 });
+    $('.numberCounter').html(function(i, val) {
+      return val*1+1 }
+    );
 
   }
   $('.addRow').keypress(
