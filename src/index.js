@@ -1294,12 +1294,6 @@ $(document).ready(function () {
 
       $('#rowTopic').append(item)
 
-      // $('#rowTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
-
-
-      // $(this).closest('.levels').find('input[data-level]').parent().hide()
-
-
 
 
     }
@@ -1346,6 +1340,8 @@ $(document).ready(function () {
 
     }
 
+
+
     $('.numberCounter').html(function(i, val) { return val*1 + 1 });
 
 
@@ -1368,10 +1364,6 @@ $(document).ready(function () {
       $('.addCategories').append(Opt02).parent()
 
       $('.addCategories li .custom-control').removeClass('hidden')
-      //
-      // $('.closeCategoryModal').click(function() {
-      //   $('.addCategories').empty()
-      // })
 
 
     })
@@ -1412,6 +1404,19 @@ $(document).ready(function () {
     ).click(
       emptyModal
     );
+
+    var saveOrder = function (){
+      $('.addCategories .categories.newOrder').appendTo('.horizontal .categories')
+      $('#reorderCategories').modal('show');
+    }
+    $('.save').keypress(
+      saveOrder
+
+    ).click(
+      saveOrder
+    );
+
+
 
 
 
@@ -2766,7 +2771,7 @@ $(document).ready(function () {
   //
   //
   // })
-  //
+  // 
 
 
 

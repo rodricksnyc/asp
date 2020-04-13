@@ -817,8 +817,7 @@ $(document).ready(function () {
     }); // console.log(Opt01);
 
     if ($(this).closest('.levels').find('input[data-level]').prop("checked") == true) {
-      $('#rowTopic').append(item); // $('#rowTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
-      // $(this).closest('.levels').find('input[data-level]').parent().hide()
+      $('#rowTopic').append(item);
     }
 
     if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0) {
@@ -866,10 +865,7 @@ $(document).ready(function () {
         Opt02 = Opt02 + this.outerHTML;
       });
       $('.addCategories').append(Opt02).parent();
-      $('.addCategories li .custom-control').removeClass('hidden'); //
-      // $('.closeCategoryModal').click(function() {
-      //   $('.addCategories').empty()
-      // })
+      $('.addCategories li .custom-control').removeClass('hidden');
     });
     $('.categoriesModal').unbind("keyup").on('keyup', function (e) {
       var code = e.keyCode ? e.keyCode : e.which;
@@ -892,6 +888,13 @@ $(document).ready(function () {
     };
 
     $('.closeCategoryModal').keypress(emptyModal).click(emptyModal);
+
+    var saveOrder = function saveOrder() {
+      $('.addCategories .categories.newOrder').appendTo('.horizontal .categories');
+      $('#reorderCategories').modal('show');
+    };
+
+    $('.save').keypress(saveOrder).click(saveOrder);
     $("#rowTopic .levels:nth-child(4)").nextAll(".levels").addClass('noWidth');
 
     if ($('#rowTopic .levels').length > 3) {
@@ -1820,7 +1823,7 @@ $(document).ready(function () {
   //
   //
   // })
-  //
+  // 
   //make the nav item have active line on current page
 
   var path = window.location.href;
