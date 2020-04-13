@@ -1455,6 +1455,12 @@ $(document).ready(function () {
   $('.addCategories').on('click', '.moveUp', function () {
     var before = $(this).closest('li').prev();
     $(this).closest('li').insertBefore(before);
+  });
+  $('.addCategories').on('click', '.bottom', function () {
+    $(this).closest('li').insertAfter($('.addCategories .categories li').last());
+  });
+  $('.addCategories').on('click', '.top', function () {
+    $(this).closest('li').insertBefore($('.addCategories .categories li').first());
   }); //adding href and id to accordions dynamically for checkboxes
 
   var hash = 1;
