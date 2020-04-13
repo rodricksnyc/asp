@@ -724,11 +724,11 @@ $(document).ready(function () {
 
     if ($(this).prop("checked") == true) {
       $('.addAsRow').on('click', function () {
-        pageModule.getnumberFunc();
+        $('.numberCounter').html($('#rowTopic .levels').length); // pageModule.getnumberFunc()
+
         $('.activeLevel').removeClass('activeLevel').appendTo('#rowTopic');
 
-        if ($('.allLevels input').is(':checked')) {
-          pageModule.getnumberFunc();
+        if ($('.allLevels input').is(':checked')) {// pageModule.getnumberFunc()
         }
 
         $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140);
@@ -1446,6 +1446,11 @@ $(document).ready(function () {
         $('.grayLayer').css('top', $('.lightBlueBack').height());
       }
     }
+  });
+  $('.addCategories').click('.top', function () {
+    var list = $(this).closest('li').find('li');
+    console.log();
+    $(list).prependTo('.categories');
   }); //adding href and id to accordions dynamically for checkboxes
 
   var hash = 1;

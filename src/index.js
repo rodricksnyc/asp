@@ -1118,14 +1118,14 @@ $(document).ready(function () {
 
 
       $('.addAsRow').on('click', function() {
+        $('.numberCounter').html($('#rowTopic .levels').length)
 
-
-        pageModule.getnumberFunc()
+        // pageModule.getnumberFunc()
 
         $('.activeLevel').removeClass('activeLevel').appendTo('#rowTopic')
 
         if ($('.allLevels input').is(':checked')) {
-          pageModule.getnumberFunc()
+          // pageModule.getnumberFunc()
 
 
         }
@@ -2154,11 +2154,6 @@ $(document).ready(function () {
 
 
 
-
-
-
-
-
   //clicking on add analyis
 
   var addAnalysisTopic = function() {
@@ -2362,6 +2357,20 @@ $(document).ready(function () {
     }
 
   })
+
+
+
+
+$('.addCategories').click('.top', function() {
+
+    var list = $(this).closest('li').find('li')
+
+    console.log()
+
+    $(list).prependTo('.categories')
+
+
+})
 
 
 
