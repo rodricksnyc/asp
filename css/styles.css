@@ -50,7 +50,7 @@ bottom:0; */
 }
 
 .view1 {
-  padding-right:65px;
+  padding-right:15px;
 }
 
 /* #myModal {
@@ -801,6 +801,7 @@ p.smallest {
 .append {
   margin-top:2.4em;
   padding:0em;
+  padding-right:4em;
 }
 
 .append .blue {
