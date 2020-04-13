@@ -773,6 +773,38 @@ $(document).ready(function () {
         };
 
         $('.closeCategoryModal').keypress(emptyModal).click(emptyModal);
+
+        if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0) {
+          $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 280);
+        }
+
+        if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0) {
+          $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210);
+        }
+
+        if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length == 0) {
+          $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140);
+        }
+
+        if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0) {
+          $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210);
+        }
+
+        if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0) {
+          $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220);
+        }
+
+        if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0) {
+          $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220);
+        }
+
+        if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length == 0) {
+          $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140);
+        }
+
+        if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length == 0) {
+          $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140);
+        }
       });
     } else {
       $(this).closest('.levels').removeClass('activeLevel');
@@ -864,7 +896,8 @@ $(document).ready(function () {
       $(categoryLi).each(function () {
         Opt02 = Opt02 + this.outerHTML;
       });
-      $('.addCategories').append(Opt02).parent();
+      $('.addCategories').append(Opt02).parent(); // var categoryLi =  $(this).closest('.levels').find('.categories').remove()
+
       $('.addCategories li .custom-control').removeClass('hidden');
     });
     $('.categoriesModal').unbind("keyup").on('keyup', function (e) {
@@ -890,8 +923,8 @@ $(document).ready(function () {
     $('.closeCategoryModal').keypress(emptyModal).click(emptyModal);
 
     var saveOrder = function saveOrder() {
-      $('.addCategories .categories.newOrder').appendTo('.horizontal .categories');
-      $('#reorderCategories').modal('show');
+      $('.horizontal .categories').replaceWith('.addCategories .categories.newOrder');
+      $('#reorderCategories').modal('hide');
     };
 
     $('.save').keypress(saveOrder).click(saveOrder);
@@ -1823,7 +1856,7 @@ $(document).ready(function () {
   //
   //
   // })
-  // 
+  //
   //make the nav item have active line on current page
 
   var path = window.location.href;
