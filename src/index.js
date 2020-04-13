@@ -1118,12 +1118,23 @@ $(document).ready(function () {
 
       $('.addAsRow').on('click', function() {
 
+        var activeLevel = $('.activeLevel')
+        var numberFunc = function() {
+          $('.numberCounter').html(function(i, activeLevel ) { return activeLevel*1 + 1 });
+        }
+
+        numberFunc()
+
+
+
 
 
 
         $('.activeLevel').removeClass('activeLevel').appendTo('#rowTopic')
 
         if ($('.allLevels input').is(':checked')) {
+          // numberFunc()
+          // $('.numberCounter').html(function(i, activeLevel ) { return activeLevel*1 + 1 });
           // $('.listArea .levels').remove()
           //
           // $('.listArea .levels').removeClass('activeLevel').appendTo('#rowTopic')
@@ -1346,7 +1357,7 @@ $(document).ready(function () {
 
     }
 
-
+    $('.numberCounter').html(function(i, val) { return val*1 + 1 });
 
 
     $('.categoriesModal').unbind("click").on('click', function() {
@@ -1423,10 +1434,8 @@ $(document).ready(function () {
 
     }
 
-    $('.numberCounter').html(function(i, val) {
-      return val*1+1
-    }
-    );
+
+
 
   }
   $('.addRow').keypress(
@@ -1435,6 +1444,34 @@ $(document).ready(function () {
   ).click(
     addRow
   );
+
+
+      // var incrementBy1 = function (){
+      //     var numberOfRows = $('#rowTopic').children('.levels').length;
+      //     $('.numberCounter').html(numberOfRows);
+      //
+      //   }
+      //   $('.addRow').keypress(
+      //    incrementBy1
+      //
+      //   ).click(
+      //     incrementBy1
+      //   );
+      //
+      //   var decreaseBy1 = function (){
+      //       var numberOfRows = $('#rowTopic').children('.levels').length;
+      //       $('.numberCounter').html(numberOfRows);
+      //
+      //     }
+      //     $('.removeLevel').keypress(
+      //      decreaseBy1
+      //
+      //     ).click(
+      //       decreaseBy1
+      //     );
+
+
+
 
 
   //hover over rows
@@ -1531,7 +1568,7 @@ $(document).ready(function () {
 
       }
 
-      $('.numberCounter').html(function(i, val) { return val*1 - 1 });
+      // $('.numberCounter').html(function(i, val) { return val*1 - 1 });
 
       $(this).closest('.levels').remove();
 
@@ -1556,6 +1593,8 @@ $(document).ready(function () {
 
 
   $('#rowTopic').on('click', '.removeLevel' , function() {
+
+
 
     $(".allLevels input").prop('checked', false).change();
     var el = $(this).closest('.levels').find('input[data-level]').val()
@@ -2108,6 +2147,25 @@ $(document).ready(function () {
 
 
   })
+
+  //
+  //   var rowCounter = $('#nowTopic .levels').length
+  //
+  // $('.addRow').click(function() {
+  //
+  //   rowCounter = rowCounter ++;
+  //   $('.numberCounter').html(rowCounter)
+  //
+  //   console.log(rowCounter)
+  //
+  // })
+  //
+
+
+
+
+
+
 
 
 
