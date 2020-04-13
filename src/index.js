@@ -2362,18 +2362,17 @@ $(document).ready(function () {
   })
 
 
+  $('.addCategories').on('click','.moveDown',function(){
+    var after = $(this).closest('li').next()
+    $(this).closest('li').insertAfter(after)
+  });
+
+  $('.addCategories').on('click','.moveUp',function(){
+    var before = $(this).closest('li').prev()
+    $(this).closest('li').insertBefore(before)
+  });
 
 
-$('.addCategories').click('.top', function() {
-
-    var list = $(this).closest('li').find('li')
-
-    console.log()
-
-    $(list).prependTo('.categories')
-
-
-})
 
 
 
