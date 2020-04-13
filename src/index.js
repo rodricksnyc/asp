@@ -1156,7 +1156,7 @@ $(document).ready(function () {
 
           });
 
-          $('.addCategories').append(Opt02)
+          $('.addCategories').append(Opt02).parent()
 
           $('.addCategories li .custom-control').removeClass('hidden')
 
@@ -1186,7 +1186,7 @@ $(document).ready(function () {
 
             });
 
-            $('.addCategories').append(Opt02)
+            $('.addCategories').append(Opt02).parent()
 
             $('.addCategories li .custom-control').removeClass('hidden')
 
@@ -1352,7 +1352,9 @@ $(document).ready(function () {
     $('.categoriesModal').unbind("click").on('click', function() {
       $('#reorderCategories').modal('show');
 
-      var categoryLi =  $(this).closest('.levels').find('.categories li')
+      var categoryLi =  $(this).closest('.levels').find('.categories')
+
+      console.log(Opt02)
 
       console.log(categoryLi)
 
@@ -1360,15 +1362,16 @@ $(document).ready(function () {
       $(categoryLi).each(function() {
         Opt02 = Opt02 + this.outerHTML;
 
-      });
+      })
 
-      $('.addCategories').append(Opt02)
+
+      $('.addCategories').append(Opt02).parent()
 
       $('.addCategories li .custom-control').removeClass('hidden')
-
-      $('.closeCategoryModal').click(function() {
-        $('.addCategories').empty()
-      })
+      //
+      // $('.closeCategoryModal').click(function() {
+      //   $('.addCategories').empty()
+      // })
 
 
     })
@@ -1392,7 +1395,7 @@ $(document).ready(function () {
 
         });
 
-        $('.addCategories').append(Opt02)
+        $('.addCategories').append(Opt02).parent()
 
         $('.addCategories li .custom-control').removeClass('hidden')
 
@@ -1756,7 +1759,7 @@ $(document).ready(function () {
 
       });
 
-      $('.addCategories').append(Opt02)
+      $('.addCategories').append(Opt02).parent()
 
       $('.addCategories li .custom-control').removeClass('hidden')
 
@@ -1786,7 +1789,7 @@ $(document).ready(function () {
 
         });
 
-        $('.addCategories').append(Opt02)
+        $('.addCategories').append(Opt02).parent()
 
         $('.addCategories li .custom-control').removeClass('hidden')
 
@@ -2000,7 +2003,7 @@ $(document).ready(function () {
 
       });
 
-      $('.addCategories').append(Opt02)
+      $('.addCategories').append(Opt02).parent()
 
       $('.addCategories li .custom-control').removeClass('hidden')
 
@@ -2030,7 +2033,7 @@ $(document).ready(function () {
 
         });
 
-        $('.addCategories').append(Opt02)
+        $('.addCategories').append(Opt02).parent()
 
         $('.addCategories li .custom-control').removeClass('hidden')
 
@@ -2210,7 +2213,7 @@ $(document).ready(function () {
 
       });
 
-      $('.addCategories').append(Opt02)
+      $('.addCategories').append(Opt02).parent()
 
       $('.addCategories li .custom-control').removeClass('hidden')
 
@@ -2240,7 +2243,7 @@ $(document).ready(function () {
 
         });
 
-        $('.addCategories').append(Opt02)
+        $('.addCategories').append(Opt02).parent()
 
         $('.addCategories li .custom-control').removeClass('hidden')
 
