@@ -3126,15 +3126,15 @@ border-bottom: 4px solid #c7482e !important;
   display:none;
 }
 
-.addCategories .custom-checkbox {
+.addCategories  .custom-checkbox {
   padding-left:2.5em;
   padding-top:.8em;
   margin-left: -.5em;
   margin-right: -.5em;
 }
-.addCategories .custom-checkbox:hover,
-.addCategories .custom-checkbox:focus,
-.addCategories .custom-checkbox:active {
+.addCategories li:hover .custom-checkbox,
+.addCategories li:focus .custom-checkbox,
+.addCategories li:active .custom-checkbox {
   background-color: #faede9;
   border-radius: 1rem;
 margin-left: -.5em;
@@ -3181,14 +3181,16 @@ margin-right: -.5em;
   display:none
 }
 
-.addCategories .custom-checkbox:hover .fal,
-.addCategories .custom-checkbox:focus .fal
+.addCategories li:hover .custom-checkbox .fal,
+.addCategories li:focus .custom-checkbox .fal,
+.addCategories li:active .custom-checkbox .fal
  {
   display:block
 }
 
-.addCategories .custom-checkbox:hover .straight p,
-.addCategories .custom-checkbox:focus .straight p
+.addCategories li:hover .custom-checkbox .straight p,
+.addCategories li:focus .custom-checkbox .straight p,
+.addCategories li:active .custom-checkbox .straight p
  {
   display:block
 }
