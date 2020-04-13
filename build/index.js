@@ -698,56 +698,37 @@ $(document).ready(function () {
     if (a.length == a.filter(":checked").length) {
       $("input[name=addall]").prop('checked', true);
     }
-  }); // function updateAllChecked() {
-  //   $('.years :checkbox:checked').each(function (ind, ele) {
-  //
-  //
-  //   if($(this).prop("checked")== true) {
-  //
-  //     $('.filter-attr-list').find('li').remove();
-  //
-  //     // $('.filter-attr-list').append("<li class='results selected' data-year=" + this.value + ">" + this.value + "<div class='removeTag'><i class='fal fa-times ml-1'></i></div></li>");
-  //
-  //   }
-  //
-  //   else {
-  //     $(".filter-attr-list li[data-year=" + this.value + "]").remove()
-  //   }
-  //
-  //   });
-  //
-  //
-  // }
-  //
-  // updateAllChecked()
-
+  });
+  var pageModule = {
+    config: {
+      classes: {
+        activeLevel: '.activeLevel',
+        numberCounter: '.numberCounter'
+      }
+    },
+    getnumberFunc: function getnumberFunc() {
+      var number = pageModule.config.classes.numberCounter;
+      var showNumber = $(number).html(function (i, activeLevel) {
+        return activeLevel * 1 + 1;
+      });
+      return showNumber;
+    },
+    init: function init() {
+      var self = this;
+      console.log('this is started');
+    }
+  };
+  pageModule.init();
   $(".listArea .levels :checkbox").change(function () {
-    $(this).closest('.levels').addClass('activeLevel'); // var checkedOff = $(this).closest('.levels')
-    //
-    //       var Opt0 = "";
-    //       $(checkedOff).each(function() {
-    //         Opt0 = Opt0 + this.outerHTML;
-    //
-    //       });
+    $(this).closest('.levels').addClass('activeLevel');
 
     if ($(this).prop("checked") == true) {
       $('.addAsRow').on('click', function () {
-        var activeLevel = $('.activeLevel');
-
-        var numberFunc = function numberFunc() {
-          $('.numberCounter').html(function (i, activeLevel) {
-            return activeLevel * 1 + 1;
-          });
-        };
-
-        numberFunc();
+        pageModule.getnumberFunc();
         $('.activeLevel').removeClass('activeLevel').appendTo('#rowTopic');
 
-        if ($('.allLevels input').is(':checked')) {// numberFunc()
-          // $('.numberCounter').html(function(i, activeLevel ) { return activeLevel*1 + 1 });
-          // $('.listArea .levels').remove()
-          //
-          // $('.listArea .levels').removeClass('activeLevel').appendTo('#rowTopic')
+        if ($('.allLevels input').is(':checked')) {
+          pageModule.getnumberFunc();
         }
 
         $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140);

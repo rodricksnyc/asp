@@ -1075,42 +1075,43 @@ $(document).ready(function () {
 
 
 
-  // function updateAllChecked() {
-  //   $('.years :checkbox:checked').each(function (ind, ele) {
-  //
-  //
-  //   if($(this).prop("checked")== true) {
-  //
-  //     $('.filter-attr-list').find('li').remove();
-  //
-  //     // $('.filter-attr-list').append("<li class='results selected' data-year=" + this.value + ">" + this.value + "<div class='removeTag'><i class='fal fa-times ml-1'></i></div></li>");
-  //
-  //   }
-  //
-  //   else {
-  //     $(".filter-attr-list li[data-year=" + this.value + "]").remove()
-  //   }
-  //
-  //   });
-  //
-  //
-  // }
-  //
-  // updateAllChecked()
+  let pageModule = {
+    config: {
+      classes: {
+        activeLevel: '.activeLevel',
+        numberCounter: '.numberCounter'
+      }
+    },
+
+    getnumberFunc: function() {
+
+      var number = pageModule.config.classes.numberCounter
+
+      let showNumber =  $(number).html(function(i, activeLevel ) { return activeLevel*1 + 1 });
+      return showNumber;
+
+    },
+
+    init: function() {
+
+      let self = this;
+
+      console.log('this is started');
+
+
+    },
+
+  }
+
+
+  pageModule.init();
+
+
 
 
   $(".listArea .levels :checkbox").change(function(){
 
-        $(this).closest('.levels').addClass('activeLevel')
-
-          // var checkedOff = $(this).closest('.levels')
-          //
-          //       var Opt0 = "";
-          //       $(checkedOff).each(function() {
-          //         Opt0 = Opt0 + this.outerHTML;
-          //
-          //       });
-
+    $(this).closest('.levels').addClass('activeLevel')
 
 
     if($(this).prop("checked")==true){
@@ -1118,30 +1119,18 @@ $(document).ready(function () {
 
       $('.addAsRow').on('click', function() {
 
-        var activeLevel = $('.activeLevel')
-        var numberFunc = function() {
-          $('.numberCounter').html(function(i, activeLevel ) { return activeLevel*1 + 1 });
-        }
 
-        numberFunc()
-
-
-
-
-
+        pageModule.getnumberFunc()
 
         $('.activeLevel').removeClass('activeLevel').appendTo('#rowTopic')
 
         if ($('.allLevels input').is(':checked')) {
-          // numberFunc()
-          // $('.numberCounter').html(function(i, activeLevel ) { return activeLevel*1 + 1 });
-          // $('.listArea .levels').remove()
-          //
-          // $('.listArea .levels').removeClass('activeLevel').appendTo('#rowTopic')
+          pageModule.getnumberFunc()
+
 
         }
 
-            $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
+        $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
 
 
         if ($('#rowTopic .levels').length > 3) {
@@ -1154,66 +1143,66 @@ $(document).ready(function () {
         $("#rowTopic .levels:nth-child(4)").nextAll( ".levels" ).addClass('noWidth')
 
 
-            $('.categoriesModal').unbind("click").on('click', function() {
-              $('#reorderCategories').modal('show');
+        $('.categoriesModal').unbind("click").on('click', function() {
+          $('#reorderCategories').modal('show');
 
-              var categoryLi =  $(this).closest('.levels').find('.categories li')
+          var categoryLi =  $(this).closest('.levels').find('.categories li')
 
-              console.log(categoryLi)
+          console.log(categoryLi)
 
-              var Opt02 = "";
-              $(categoryLi).each(function() {
-                Opt02 = Opt02 + this.outerHTML;
+          var Opt02 = "";
+          $(categoryLi).each(function() {
+            Opt02 = Opt02 + this.outerHTML;
 
-              });
+          });
 
-              $('.addCategories').append(Opt02)
+          $('.addCategories').append(Opt02)
 
-              $('.addCategories li .custom-control').removeClass('hidden')
+          $('.addCategories li .custom-control').removeClass('hidden')
 
-              $('.closeCategoryModal').click(function() {
-                $('.addCategories').empty()
-              })
-
-
-            })
+          $('.closeCategoryModal').click(function() {
+            $('.addCategories').empty()
+          })
 
 
-
-            $('.categoriesModal').unbind("keyup").on('keyup', function(e) {
-
-              var code = (e.keyCode ? e.keyCode : e.which);
-              if (code == 13) {
-                $('#reorderCategories').modal('show');
-
-                var categoryLi =  $(this).closest('.levels').find('.categories li')
-
-                console.log(categoryLi)
-
-                var Opt02 = "";
-                $(categoryLi).each(function() {
-                  Opt02 = Opt02 + this.outerHTML;
+        })
 
 
-                });
 
-                $('.addCategories').append(Opt02)
+        $('.categoriesModal').unbind("keyup").on('keyup', function(e) {
 
-                $('.addCategories li .custom-control').removeClass('hidden')
+          var code = (e.keyCode ? e.keyCode : e.which);
+          if (code == 13) {
+            $('#reorderCategories').modal('show');
 
-              }
+            var categoryLi =  $(this).closest('.levels').find('.categories li')
 
-            })
+            console.log(categoryLi)
 
-            var emptyModal = function (){
-              $('.addCategories').empty()
-            }
-            $('.closeCategoryModal').keypress(
-              emptyModal
+            var Opt02 = "";
+            $(categoryLi).each(function() {
+              Opt02 = Opt02 + this.outerHTML;
 
-            ).click(
-              emptyModal
-            );
+
+            });
+
+            $('.addCategories').append(Opt02)
+
+            $('.addCategories li .custom-control').removeClass('hidden')
+
+          }
+
+        })
+
+        var emptyModal = function (){
+          $('.addCategories').empty()
+        }
+        $('.closeCategoryModal').keypress(
+          emptyModal
+
+        ).click(
+          emptyModal
+        );
 
 
 
@@ -1224,7 +1213,7 @@ $(document).ready(function () {
     }
 
     else{
-    $(this).closest('.levels').removeClass('activeLevel')
+      $(this).closest('.levels').removeClass('activeLevel')
 
     };
 
@@ -1239,12 +1228,12 @@ $(document).ready(function () {
 
     }
 
-      if($(".topicLevels .levels :checkbox:checked").length >= 2) {
-        $('.plusRow').addClass('green')
-      }
-      else {
-        $('.plusRow').removeClass('green')
-      }
+    if($(".topicLevels .levels :checkbox:checked").length >= 2) {
+      $('.plusRow').addClass('green')
+    }
+    else {
+      $('.plusRow').removeClass('green')
+    }
 
 
   });
@@ -1308,7 +1297,7 @@ $(document).ready(function () {
       // $('#rowTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
 
 
-     // $(this).closest('.levels').find('input[data-level]').parent().hide()
+      // $(this).closest('.levels').find('input[data-level]').parent().hide()
 
 
 
@@ -1446,29 +1435,30 @@ $(document).ready(function () {
   );
 
 
-      // var incrementBy1 = function (){
-      //     var numberOfRows = $('#rowTopic').children('.levels').length;
-      //     $('.numberCounter').html(numberOfRows);
-      //
-      //   }
-      //   $('.addRow').keypress(
-      //    incrementBy1
-      //
-      //   ).click(
-      //     incrementBy1
-      //   );
-      //
-      //   var decreaseBy1 = function (){
-      //       var numberOfRows = $('#rowTopic').children('.levels').length;
-      //       $('.numberCounter').html(numberOfRows);
-      //
-      //     }
-      //     $('.removeLevel').keypress(
-      //      decreaseBy1
-      //
-      //     ).click(
-      //       decreaseBy1
-      //     );
+
+  // var incrementBy1 = function (){
+  //     var numberOfRows = $('#rowTopic').children('.levels').length;
+  //     $('.numberCounter').html(numberOfRows);
+  //
+  //   }
+  //   $('.addRow').keypress(
+  //    incrementBy1
+  //
+  //   ).click(
+  //     incrementBy1
+  //   );
+  //
+  //   var decreaseBy1 = function (){
+  //       var numberOfRows = $('#rowTopic').children('.levels').length;
+  //       $('.numberCounter').html(numberOfRows);
+  //
+  //     }
+  //     $('.removeLevel').keypress(
+  //      decreaseBy1
+  //
+  //     ).click(
+  //       decreaseBy1
+  //     );
 
 
 
@@ -1595,14 +1585,13 @@ $(document).ready(function () {
   $('#rowTopic').on('click', '.removeLevel' , function() {
 
 
-
     $(".allLevels input").prop('checked', false).change();
     var el = $(this).closest('.levels').find('input[data-level]').val()
 
-  if ($('#rowTopic .levels').length <= 2 ) {
-  $('.plusRow').removeClass('green')
+    if ($('#rowTopic .levels').length <= 2 ) {
+      $('.plusRow').removeClass('green')
 
-  }
+    }
 
     console.log(el);
 
@@ -1696,7 +1685,7 @@ $(document).ready(function () {
       // console.log(Opt01);
     });
 
-      var item = $(this).closest('.levels')
+    var item = $(this).closest('.levels')
 
 
     if($(this).closest('.levels').find('input[data-level]').prop("checked")==true) {
@@ -2449,341 +2438,341 @@ $(document).ready(function () {
 
   // drag and drop functionality
 
-//   if (
-//     !document.querySelectorAll
-//     ||
-//     !('draggable' in document.createElement('span'))
-//     ||
-//     window.opera
-//   ) {
-//     return;
-//   }
-//
-//   //get the collection of draggable items and add their draggable attribute
-//   for (var items = document.querySelectorAll('[data-draggable="item"]'),
-//   len = items.length,
-//   i = 0; i < len; i ++
-// )
-// {
-//   items[i].setAttribute('draggable', 'true');
-// }
-//
-//
-// var item = null;
-//
-// document.addEventListener("drag", function(event) {
-//
-// }, false);
-//
-//
-//
-// // //dragstart event to initiate mouse dragging
-// document.addEventListener('dragstart', function(e) {
-//
-//
-//
-//   $('#rowTopic').animate({
-//
-//     minHeight: 100,
-//     paddingTop:40
-//
-//   },100);
-//
-//   $('#columnTopic').animate({
-//
-//     minHeight: 100
-//
-//   },100);
-//
-//   $('#layerTopic').animate({
-//
-//     minHeight: 100
-//
-//   },100);
-//
-//   // $('#analysisTopic').animate({
-//   //
-//   //   minHeight: 100
-//   //
-//   // },100);
-//
-//   //
-//   // if ($('#rowTopic .levels').length > 0 && $('#columnTopic .levels').length < 0 &&  $('#layerTopic .levels').length < 0 ) {
-//   //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height()+ 400)
-//   //
-//   // }
-//   //
-//   // if ($('#rowTopic .levels').length > 0 && $('#columnTopic .levels').length > 0 &&  $('#layerTopic .levels').length < 0 ) {
-//   //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + 400 )
-//   //
-//   // }
-//   //
-//   //
-//   // if ($('#rowTopic .levels').length > 0 && $('#columnTopic .levels').length > 0 &&  $('#layerTopic .levels').length > 0 ) {
-//   //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height()  +  $('#layerTopic').height() + 400)
-//   //
-//   // }
-//
-//   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height()  +  $('#layerTopic').height() + 500)
-//
-//   if ($('#rowTopic .levels').length > 3) {
-//     $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height()  +  $('#layerTopic').height() + 900)
-//   }
-//
-//   item = e.target;
-//
-//
-//   e.dataTransfer.setData('text', '');
-//
-//
-//
-//
-//
-// }, false);
-//
-//
-// document.addEventListener('dragover', function(e) {
-//
-//
-//   console.log('moving second time')
-//
-//
-//   if(item) {
-//     e.preventDefault();
-//
-//     // $(item).closest('.levels').find('input[data-level]').prop("checked", true);
-//
-//
-//
-//   }
-// }, false);
-//
-// //drop event to allow the element to be dropped into valid targets
-// document.addEventListener('drop', function(e) {
-//
-//
-//
-//   console.log('moving third time')
-//
-//
-//
-//   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() +  $('#layerTopic').height() )
-//   if ($('#rowTopic .levels').length > 3) {
-//     $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() +  $('#layerTopic').height() - 100)
-//
-//   }
-//
-//
-//   //if this element is a drop target, move the item here
-//   //then prevent default to allow the action (same as dragover)
-//   if(e.target.getAttribute('data-draggable') == 'target') {
-//
-//
-//     console.log('moving fourth time')
-//
-//     var thing = e.target.appendChild(item);
-//
-//
-//
-//     // if ($('#rowTopic .levels').length > 3) {
-//     //   console.log("more than")
-//     //
-//     //
-//     //
-//     //   $('.whiteBar').css({
-//     //     'height' : '120px',
-//     //     'top' : '20px',
-//     //
-//     //   }).fadeIn()
-//     //
-//     //
-//     //
-//     // }
-//     //
-//     // $('.numberCounter').html(function(i, val) { return val*1+1 });
-//
-//
-//     if ($(thing).children('.deleteOptions').length == 0 ) {
-//
-//       $("<div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeDrag' role='button' tabindex='0'></i></div>").appendTo(thing)
-//     }
-//
-//
-//
-//     $('#rowTopic').animate({
-//
-//       minHeight: 0,
-//       paddingTop:0
-//
-//     },100);
-//
-//     $('#columnTopic').animate({
-//
-//       minHeight: 0
-//     },100);
-//
-//     $('#layerTopic').animate({
-//
-//       minHeight: 0
-//
-//     },100);
-//
-//     // $('#analysisTopic').animate({
-//     //
-//     //   minHeight: 0
-//     //
-//     // },100);
-//
-//
-//
-//     $('.categoriesModal').unbind("click").on('click', function() {
-//       $('#reorderCategories').modal('show');
-//
-//       var categoryLi =  $(this).closest('.levels').find('.categories li')
-//
-//       console.log(categoryLi)
-//
-//       var Opt02 = "";
-//       $(categoryLi).each(function() {
-//         Opt02 = Opt02 + this.outerHTML;
-//
-//
-//       });
-//
-//
-//       $('.addCategories').append(Opt02)
-//
-//       $('.addCategories li .custom-control').removeClass('hidden')
-//
-//       $('.closeCategoryModal').click(function() {
-//         $('.addCategories').empty()
-//       })
-//
-//
-//     })
-//
-//
-//
-//     e.preventDefault();
-//   }
-// }, false);
-//
-//
-//
-// document.addEventListener('dragend', function(e) {
-//
-//   console.log('moving fifth time')
-//
-//
-//   item = null;
-//
-//
-//
-//
-//
-// }, false);
-//
-// //end drag and drop functions
-//
-//
-// $('#rowTopic').on('click', '.removeDrag' , function() {
-//
-//   $(this).closest('.levels').appendTo('.topicLevels')
-//
-//   $('#rowTopic').animate({
-//
-//     minHeight: 0,
-//     paddingTop:0
-//
-//   },100);
-//
-//
-//   // $('.whiteBar').css({
-//   //   'height' : '60px',
-//   //   'top' : '40px',
-//   //
-//   // }).fadeOut('slow')
-//   //
-//   //
-//   //
-//   //
-//   // $('.numberCounter').html(function(i, val) { return val*1 - 1 });
-//
-//
-// })
-//
-//
-// $('#columnTopic').on('click', '.removeDrag' , function() {
-//
-//   $(this).closest('.levels').appendTo('.topicLevels')
-//
-//   $('#columnTopic').animate({
-//
-//     minHeight: 0,
-//     paddingTop:0
-//
-//   },100);
-//
-// })
-//
-//
-// $('#layerTopic').on('click', '.removeDrag' , function() {
-//
-//   $(this).closest('.levels').appendTo('.topicLevels')
-//
-//   $('#layerTopic').animate({
-//
-//     minHeight: 0,
-//     paddingTop:0
-//
-//   },100);
-//
-// })
-//
-// $('#analysisTopic').on('click', '.removeDrag' , function() {
-//
-//   $(this).closest('.levels').appendTo('.topicLevels')
-//
-//   $('#analysisTopic').animate({
-//
-//     minHeight: 0,
-//     paddingTop:0
-//
-//   },100);
-//
-//
-//
-// })
-//
+  //   if (
+  //     !document.querySelectorAll
+  //     ||
+  //     !('draggable' in document.createElement('span'))
+  //     ||
+  //     window.opera
+  //   ) {
+  //     return;
+  //   }
+  //
+  //   //get the collection of draggable items and add their draggable attribute
+  //   for (var items = document.querySelectorAll('[data-draggable="item"]'),
+  //   len = items.length,
+  //   i = 0; i < len; i ++
+  // )
+  // {
+  //   items[i].setAttribute('draggable', 'true');
+  // }
+  //
+  //
+  // var item = null;
+  //
+  // document.addEventListener("drag", function(event) {
+  //
+  // }, false);
+  //
+  //
+  //
+  // // //dragstart event to initiate mouse dragging
+  // document.addEventListener('dragstart', function(e) {
+  //
+  //
+  //
+  //   $('#rowTopic').animate({
+  //
+  //     minHeight: 100,
+  //     paddingTop:40
+  //
+  //   },100);
+  //
+  //   $('#columnTopic').animate({
+  //
+  //     minHeight: 100
+  //
+  //   },100);
+  //
+  //   $('#layerTopic').animate({
+  //
+  //     minHeight: 100
+  //
+  //   },100);
+  //
+  //   // $('#analysisTopic').animate({
+  //   //
+  //   //   minHeight: 100
+  //   //
+  //   // },100);
+  //
+  //   //
+  //   // if ($('#rowTopic .levels').length > 0 && $('#columnTopic .levels').length < 0 &&  $('#layerTopic .levels').length < 0 ) {
+  //   //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height()+ 400)
+  //   //
+  //   // }
+  //   //
+  //   // if ($('#rowTopic .levels').length > 0 && $('#columnTopic .levels').length > 0 &&  $('#layerTopic .levels').length < 0 ) {
+  //   //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + 400 )
+  //   //
+  //   // }
+  //   //
+  //   //
+  //   // if ($('#rowTopic .levels').length > 0 && $('#columnTopic .levels').length > 0 &&  $('#layerTopic .levels').length > 0 ) {
+  //   //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height()  +  $('#layerTopic').height() + 400)
+  //   //
+  //   // }
+  //
+  //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height()  +  $('#layerTopic').height() + 500)
+  //
+  //   if ($('#rowTopic .levels').length > 3) {
+  //     $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height()  +  $('#layerTopic').height() + 900)
+  //   }
+  //
+  //   item = e.target;
+  //
+  //
+  //   e.dataTransfer.setData('text', '');
+  //
+  //
+  //
+  //
+  //
+  // }, false);
+  //
+  //
+  // document.addEventListener('dragover', function(e) {
+  //
+  //
+  //   console.log('moving second time')
+  //
+  //
+  //   if(item) {
+  //     e.preventDefault();
+  //
+  //     // $(item).closest('.levels').find('input[data-level]').prop("checked", true);
+  //
+  //
+  //
+  //   }
+  // }, false);
+  //
+  // //drop event to allow the element to be dropped into valid targets
+  // document.addEventListener('drop', function(e) {
+  //
+  //
+  //
+  //   console.log('moving third time')
+  //
+  //
+  //
+  //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() +  $('#layerTopic').height() )
+  //   if ($('#rowTopic .levels').length > 3) {
+  //     $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() +  $('#layerTopic').height() - 100)
+  //
+  //   }
+  //
+  //
+  //   //if this element is a drop target, move the item here
+  //   //then prevent default to allow the action (same as dragover)
+  //   if(e.target.getAttribute('data-draggable') == 'target') {
+  //
+  //
+  //     console.log('moving fourth time')
+  //
+  //     var thing = e.target.appendChild(item);
+  //
+  //
+  //
+  //     // if ($('#rowTopic .levels').length > 3) {
+  //     //   console.log("more than")
+  //     //
+  //     //
+  //     //
+  //     //   $('.whiteBar').css({
+  //     //     'height' : '120px',
+  //     //     'top' : '20px',
+  //     //
+  //     //   }).fadeIn()
+  //     //
+  //     //
+  //     //
+  //     // }
+  //     //
+  //     // $('.numberCounter').html(function(i, val) { return val*1+1 });
+  //
+  //
+  //     if ($(thing).children('.deleteOptions').length == 0 ) {
+  //
+  //       $("<div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeDrag' role='button' tabindex='0'></i></div>").appendTo(thing)
+  //     }
+  //
+  //
+  //
+  //     $('#rowTopic').animate({
+  //
+  //       minHeight: 0,
+  //       paddingTop:0
+  //
+  //     },100);
+  //
+  //     $('#columnTopic').animate({
+  //
+  //       minHeight: 0
+  //     },100);
+  //
+  //     $('#layerTopic').animate({
+  //
+  //       minHeight: 0
+  //
+  //     },100);
+  //
+  //     // $('#analysisTopic').animate({
+  //     //
+  //     //   minHeight: 0
+  //     //
+  //     // },100);
+  //
+  //
+  //
+  //     $('.categoriesModal').unbind("click").on('click', function() {
+  //       $('#reorderCategories').modal('show');
+  //
+  //       var categoryLi =  $(this).closest('.levels').find('.categories li')
+  //
+  //       console.log(categoryLi)
+  //
+  //       var Opt02 = "";
+  //       $(categoryLi).each(function() {
+  //         Opt02 = Opt02 + this.outerHTML;
+  //
+  //
+  //       });
+  //
+  //
+  //       $('.addCategories').append(Opt02)
+  //
+  //       $('.addCategories li .custom-control').removeClass('hidden')
+  //
+  //       $('.closeCategoryModal').click(function() {
+  //         $('.addCategories').empty()
+  //       })
+  //
+  //
+  //     })
+  //
+  //
+  //
+  //     e.preventDefault();
+  //   }
+  // }, false);
+  //
+  //
+  //
+  // document.addEventListener('dragend', function(e) {
+  //
+  //   console.log('moving fifth time')
+  //
+  //
+  //   item = null;
+  //
+  //
+  //
+  //
+  //
+  // }, false);
+  //
+  // //end drag and drop functions
+  //
+  //
+  // $('#rowTopic').on('click', '.removeDrag' , function() {
+  //
+  //   $(this).closest('.levels').appendTo('.topicLevels')
+  //
+  //   $('#rowTopic').animate({
+  //
+  //     minHeight: 0,
+  //     paddingTop:0
+  //
+  //   },100);
+  //
+  //
+  //   // $('.whiteBar').css({
+  //   //   'height' : '60px',
+  //   //   'top' : '40px',
+  //   //
+  //   // }).fadeOut('slow')
+  //   //
+  //   //
+  //   //
+  //   //
+  //   // $('.numberCounter').html(function(i, val) { return val*1 - 1 });
+  //
+  //
+  // })
+  //
+  //
+  // $('#columnTopic').on('click', '.removeDrag' , function() {
+  //
+  //   $(this).closest('.levels').appendTo('.topicLevels')
+  //
+  //   $('#columnTopic').animate({
+  //
+  //     minHeight: 0,
+  //     paddingTop:0
+  //
+  //   },100);
+  //
+  // })
+  //
+  //
+  // $('#layerTopic').on('click', '.removeDrag' , function() {
+  //
+  //   $(this).closest('.levels').appendTo('.topicLevels')
+  //
+  //   $('#layerTopic').animate({
+  //
+  //     minHeight: 0,
+  //     paddingTop:0
+  //
+  //   },100);
+  //
+  // })
+  //
+  // $('#analysisTopic').on('click', '.removeDrag' , function() {
+  //
+  //   $(this).closest('.levels').appendTo('.topicLevels')
+  //
+  //   $('#analysisTopic').animate({
+  //
+  //     minHeight: 0,
+  //     paddingTop:0
+  //
+  //   },100);
+  //
+  //
+  //
+  // })
+  //
 
 
 
 
-//make the nav item have active line on current page
+  //make the nav item have active line on current page
 
-var path = window.location.href;
-$('.navbar-nav li a').each(function() {
-  if (this.href === path) {
-    $(this).addClass('active');
-  }
-  else {
-    $(this).removeClass('active');
-  }
+  var path = window.location.href;
+  $('.navbar-nav li a').each(function() {
+    if (this.href === path) {
+      $(this).addClass('active');
+    }
+    else {
+      $(this).removeClass('active');
+    }
 
-});
+  });
 
-//make the nav item children have active line on current page
+  //make the nav item children have active line on current page
 
-$('.navbar-nav li .dropdown-menu .dropdown-item').each(function() {
-  if (this.href === path) {
-    $(this).parent().siblings('a').addClass('active');
-    // $(this).removeClass('active');
-  }
-  else {
-    $(this).removeClass('active');
-  }
+  $('.navbar-nav li .dropdown-menu .dropdown-item').each(function() {
+    if (this.href === path) {
+      $(this).parent().siblings('a').addClass('active');
+      // $(this).removeClass('active');
+    }
+    else {
+      $(this).removeClass('active');
+    }
 
-});
+  });
 
 
 })
