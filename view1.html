@@ -69,8 +69,26 @@
 					</a>
 					<i class="fal fa-chart-bar"></i>
 					<div class="dropdown-menu" id="analysis" aria-labelledby="navbarDropdownMenuAnalysis">
+						<p class="text-center navLevels">Level 1</p>
 						<a class="dropdown-item" href="view1.html">{{Data View 1}}</a>
-						<a class="dropdown-item" href="view2.html">{{Data View 2}}</a>
+						<a href="view2.html" class="dropdown-item submenu nestedOne" type="button" tabindex="0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{Data View 2}}</a>
+						<div class="small-dropdown-menu">
+							<p class="text-center navLevels">Level 2</p>
+							<a class="smallerDropdown nestedTwo" type="button" tabindex="0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<button class="dropdown-item" type="button">{{Data View A}}</button>
+							</a>
+						<div class="small-dropdown-menu2">
+							<p class="text-center navLevels">Level 3</p>
+							<button class="dropdown-item" type="button">{{Data View B}}</button>
+							<button class="dropdown-item" type="button">{{Data View C}}</button>
+						</div>
+
+							<button class="dropdown-item" type="button">{{Data View B}}</button>
+							<button class="dropdown-item" type="button">{{Data View C}}</button>
+						</div>
+
+
+
 						<a class="dropdown-item" href="view3.html">{{Data View 3}}</a>
 						<a class="dropdown-item" href="view4.html">{{Data View 4}}</a>
 						<a class="dropdown-item" href="view5.html">{{Data View 5}}</a>
@@ -492,7 +510,7 @@
 <div id="slideOutRight">
 	<div id="one" class="orangeTab" role="button" tabindex="0" aria-label="Contact">
 		<center>
-			<p>Zip Case ({X}) <i class="fal fa-file-archive"></i></p>
+			<p>Zip Case&nbsp;&nbsp;<i class="fal fa-file-archive"></i></p>
 		</center>
 	</div>
 	<div class="modal-content">
@@ -652,6 +670,32 @@
 		<button class="dropdown-item submenu" type="button" tabindex="0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{Data View 2}}</button>
 		<div class="dropdown-menu">
 			<button class="dropdown-item" type="button">{{Data View A}}</button>
+			<button class="dropdown-item" type="button">{{Data View B}}</button>
+			<button class="dropdown-item" type="button">{{Data View C}}</button>
+		</div>
+		<button class="dropdown-item" type="button">{{Data View 3}}</button>
+		<button class="dropdown-item" type="button">{{Data View 4}}</button>
+	</div>
+
+</div>
+
+<div class="btn-group">
+	<button type="button" id="level2" tabindex="0" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current Level<i class="fas fa-caret-down"></i></button>
+
+	<div class="dropdown-menu">
+		<button class="dropdown-item" type="button">{{Data View 1}}</button>
+		<button class="dropdown-item submenu" type="button" tabindex="0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{Data View 2}}</button>
+		<div class="dropdown-menu">
+
+			<button type="button" class="dropdown-item submenu nestedOne" type="button" tabindex="0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{Data View 2}}</a>
+			<div class="small-dropdown-menu">{{Data View A}}</button>
+
+			<div class="small-dropdown-menu">
+				<button class="dropdown-item" type="button">{{Data View B}}</button>
+				<button class="dropdown-item" type="button">{{Data View C}}</button>
+			</div>
+
+
 			<button class="dropdown-item" type="button">{{Data View B}}</button>
 			<button class="dropdown-item" type="button">{{Data View C}}</button>
 		</div>

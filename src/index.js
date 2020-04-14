@@ -76,6 +76,29 @@ $(document).ready(function () {
 
   })
 
+  $('.nestedOne').on('mouseenter', function()  {
+
+  $('.small-dropdown-menu').css('display', 'block')
+  })
+
+  $('.dropdown-menu').on('mouseleave', function()  {
+
+  $('.small-dropdown-menu').css('display', 'none')
+  })
+
+  $('.nestedTwo').on('mouseenter', function()  {
+
+  $('.small-dropdown-menu2').css('display', 'block')
+  })
+
+  $('.small-dropdown-menu').on('mouseleave', function()  {
+
+  $('.small-dropdown-menu2').css('display', 'none')
+  })
+
+
+
+
 
   //levels
 
@@ -362,6 +385,8 @@ $(document).ready(function () {
 
 
   })
+
+
 
 
   // $('a.nav-link').last().on('blur', function() {
