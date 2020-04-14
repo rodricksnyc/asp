@@ -32,10 +32,21 @@ $(document).ready(function () {
   })
 
 
+if ($('body').hasClass('analysis')) {
   $('.option[data-type="topics"]').addClass('hidden').show();
   $('.option[data-type="data"]').addClass('hidden').show();
   $('.option[data-type="marks"]').addClass('hidden').show();
   $('.option[data-type="stats"]').addClass('hidden').show();
+}
+
+if ($('body').hasClass('analysis2')) {
+  $('.option[data-type="topics"]').addClass('hidden').show();
+  $('.option[data-type="data"]').addClass('hidden').show();
+  $('.option[data-type="marks"]').addClass('hidden').show();
+  $('.option[data-type="stats"]').addClass('hidden').show();
+}
+
+
 
 
 

@@ -23,10 +23,21 @@ $(document).ready(function () {
     $('.option').addClass('hidden');
     $('.option[data-type="' + type + '"]').removeClass('hidden');
   });
-  $('.option[data-type="topics"]').addClass('hidden').show();
-  $('.option[data-type="data"]').addClass('hidden').show();
-  $('.option[data-type="marks"]').addClass('hidden').show();
-  $('.option[data-type="stats"]').addClass('hidden').show(); //hover for dropdown items in main navbar
+
+  if ($('body').hasClass('analysis')) {
+    $('.option[data-type="topics"]').addClass('hidden').show();
+    $('.option[data-type="data"]').addClass('hidden').show();
+    $('.option[data-type="marks"]').addClass('hidden').show();
+    $('.option[data-type="stats"]').addClass('hidden').show();
+  }
+
+  if ($('body').hasClass('analysis2')) {
+    $('.option[data-type="topics"]').addClass('hidden').show();
+    $('.option[data-type="data"]').addClass('hidden').show();
+    $('.option[data-type="marks"]').addClass('hidden').show();
+    $('.option[data-type="stats"]').addClass('hidden').show();
+  } //hover for dropdown items in main navbar
+
 
   var $dropdown = $(".navbar-nav .nav-item");
   var $dropdownToggle = $(".dropdown-toggle");
