@@ -1326,10 +1326,23 @@ $(document).ready(function () {
     $(categoryObj).each(function() {
       Opt01 = Opt01 + this.outerHTML;
 
-      // console.log(Opt01);
+
     });
 
-    // console.log(Opt01);
+  if($(this).closest('.topicLevels .levels').hasClass('activeCustomControl')) {
+
+  // $('.levels .collapse').collapse('hide')
+  //   $(this).closest('.custom-control').toggleClass('activeCustomControl')
+  //
+  //
+  //   $(this).closest('.custom-control').find('.orangeHover').toggleClass('showIt2')
+  //   $(this).closest('.custom-control').find('.endOptions').toggleClass('showIt')
+  // $('#rowTopic .levels').find('.collapse').collapse('hide');
+
+
+  }
+
+
 
 
     if($(this).closest('.levels').find('input[data-level]').prop("checked")==true) {
@@ -1491,33 +1504,6 @@ $(document).ready(function () {
 
 
 
-  // var incrementBy1 = function (){
-  //     var numberOfRows = $('#rowTopic').children('.levels').length;
-  //     $('.numberCounter').html(numberOfRows);
-  //
-  //   }
-  //   $('.addRow').keypress(
-  //    incrementBy1
-  //
-  //   ).click(
-  //     incrementBy1
-  //   );
-  //
-  //   var decreaseBy1 = function (){
-  //       var numberOfRows = $('#rowTopic').children('.levels').length;
-  //       $('.numberCounter').html(numberOfRows);
-  //
-  //     }
-  //     $('.removeLevel').keypress(
-  //      decreaseBy1
-  //
-  //     ).click(
-  //       decreaseBy1
-  //     );
-
-
-
-
 
   //hover over rows
 
@@ -1638,6 +1624,7 @@ $(document).ready(function () {
 
 
   $('#rowTopic').on('click', '.removeLevel' , function() {
+
 
 
     $(".allLevels input").prop('checked', false).change();
@@ -2454,11 +2441,12 @@ $(document).ready(function () {
   $(".levels .accordion-toggle").click(function(){
     $(this).closest('.custom-control').toggleClass('activeCustomControl')
 
-    // $(this).closest('.custom-checkbox').find(".collapse").show();
-    // $(this).closest('.custom-checkbox').siblings().find('.collapse').hide()
+
+    // // $(this).closest('.custom-checkbox').siblings().find('.collapse').hide()
 
     $(this).closest('.custom-control').find('.orangeHover').toggleClass('showIt2')
     $(this).closest('.custom-control').find('.endOptions').toggleClass('showIt')
+
   })
 
 

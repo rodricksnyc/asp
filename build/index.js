@@ -845,8 +845,17 @@ $(document).ready(function () {
     console.log(variableObj);
     var Opt01 = "";
     $(categoryObj).each(function () {
-      Opt01 = Opt01 + this.outerHTML; // console.log(Opt01);
-    }); // console.log(Opt01);
+      Opt01 = Opt01 + this.outerHTML;
+    });
+
+    if ($(this).closest('.topicLevels .levels').hasClass('activeCustomControl')) {// $('.levels .collapse').collapse('hide')
+      //   $(this).closest('.custom-control').toggleClass('activeCustomControl')
+      //
+      //
+      //   $(this).closest('.custom-control').find('.orangeHover').toggleClass('showIt2')
+      //   $(this).closest('.custom-control').find('.endOptions').toggleClass('showIt')
+      // $('#rowTopic .levels').find('.collapse').collapse('hide');
+    }
 
     if ($(this).closest('.levels').find('input[data-level]').prop("checked") == true) {
       $('#rowTopic').append(item);
@@ -936,30 +945,7 @@ $(document).ready(function () {
     }
   };
 
-  $('.addRow').keypress(addRow).click(addRow); // var incrementBy1 = function (){
-  //     var numberOfRows = $('#rowTopic').children('.levels').length;
-  //     $('.numberCounter').html(numberOfRows);
-  //
-  //   }
-  //   $('.addRow').keypress(
-  //    incrementBy1
-  //
-  //   ).click(
-  //     incrementBy1
-  //   );
-  //
-  //   var decreaseBy1 = function (){
-  //       var numberOfRows = $('#rowTopic').children('.levels').length;
-  //       $('.numberCounter').html(numberOfRows);
-  //
-  //     }
-  //     $('.removeLevel').keypress(
-  //      decreaseBy1
-  //
-  //     ).click(
-  //       decreaseBy1
-  //     );
-  //hover over rows
+  $('.addRow').keypress(addRow).click(addRow); //hover over rows
 
   $('#rowTopic').on('mouseenter', function (e) {
     if ($('.whiteBar').css('display') == 'block') {
@@ -1507,8 +1493,7 @@ $(document).ready(function () {
     $(this).closest('.custom-checkbox').find(".collapse").attr("id", count);
   });
   $(".levels .accordion-toggle").click(function () {
-    $(this).closest('.custom-control').toggleClass('activeCustomControl'); // $(this).closest('.custom-checkbox').find(".collapse").show();
-    // $(this).closest('.custom-checkbox').siblings().find('.collapse').hide()
+    $(this).closest('.custom-control').toggleClass('activeCustomControl'); // // $(this).closest('.custom-checkbox').siblings().find('.collapse').hide()
 
     $(this).closest('.custom-control').find('.orangeHover').toggleClass('showIt2');
     $(this).closest('.custom-control').find('.endOptions').toggleClass('showIt');
