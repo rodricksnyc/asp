@@ -1111,7 +1111,7 @@ $(document).ready(function () {
 
   $(".listArea .levels :checkbox").change(function(){
 
-    $(this).closest('.levels').addClass('activeLevel')
+    $(this).closest('.topicLevels .levels').addClass('activeLevel')
 
 
     if($(this).prop("checked")==true){
