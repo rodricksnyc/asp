@@ -8,12 +8,13 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 6rem;
+    padding: 0px 1.6rem;
     flex-wrap: wrap;
 }
 
 .t-white {
     color: #ffffff !important;
+    padding-top:20px;
 }
 
 .img-wes-logo {
