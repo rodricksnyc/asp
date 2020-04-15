@@ -32,7 +32,7 @@ $(document).ready(function () {
   }
 
   if ($('body').hasClass('analysis2')) {
-    $('.option[data-type="topics"]').addClass('hidden').show();
+    $('.option[data-type="topics"]').removeClass('hidden').show();
     $('.option[data-type="data"]').addClass('hidden').show();
     $('.option[data-type="marks"]').addClass('hidden').show();
     $('.option[data-type="stats"]').addClass('hidden').show();
@@ -150,6 +150,11 @@ $(document).ready(function () {
   }); //change html in navbar
 
   if ($('body').hasClass('analysis')) {
+    $('#navbarDropdownMenuAnalysis .down').html('Analysis on Demand');
+    $('.down:after').css('content', 'none ');
+  }
+
+  if ($('body').hasClass('analysis2')) {
     $('#navbarDropdownMenuAnalysis .down').html('Analysis on Demand');
     $('.down:after').css('content', 'none ');
   } //projects slider
