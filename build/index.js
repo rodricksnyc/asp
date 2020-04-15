@@ -1075,18 +1075,7 @@ $(document).ready(function () {
     $('.numberCounter').html(function (i, val) {
       return val * 1 - 1;
     });
-    $(this).closest('.levels').remove(); // if ($('#rowTopic .levels').length < 3 && $('#columnTopic .levels').length < 0 &&  $('#layerTopic .levels').length < 0 ) {
-    //   alert('digubeirbgiberibregib')
-    //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height()  +  $('#layerTopic').height() - 260 )
-    //
-    // }
-    //
-    //
-    // if ($('#rowTopic .levels').length < 0 && $('#columnTopic .levels').length < 0 &&  $('#layerTopic .levels').length < 0 ) {
-    //   alert('eirugbierbgiberibbib')
-    //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height()  +  $('#layerTopic').height() - 500)
-    //
-    // }
+    $(this).closest('.levels').remove();
 
     if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length == 0) {
       $('.grayLayer').css('top', $('.lightBlueBack').height());
@@ -1098,22 +1087,18 @@ $(document).ready(function () {
   }); //clicking on add as column
 
   var addColumnTopic = function addColumnTopic() {
-    console.log('add column');
     var obj = $(this).closest('.levels').find('input[data-level]').val();
     var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
     var variableObj = $(this).closest('.levels').find(".variableName li[data-variable]").html();
-    var categoryObj = $(this).closest('.levels').find('.categories li'); // console.log(variableObj)
-
+    var categoryObj = $(this).closest('.levels').find('.categories li');
     var Opt01 = "";
     $(categoryObj).each(function () {
-      Opt01 = Opt01 + this.outerHTML; // console.log(Opt01);
+      Opt01 = Opt01 + this.outerHTML;
     });
     var item = $(this).closest('.levels');
 
     if ($(this).closest('.levels').find('input[data-level]').prop("checked") == true) {
-      $('#columnTopic').append(item); // $('#columnTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
-      //
-      // $(this).closest('.levels').find('input[data-level]').parent().hide()
+      $('#columnTopic').append(item);
     }
 
     if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0) {
@@ -1186,7 +1171,10 @@ $(document).ready(function () {
 
     if ($('#columnTopic .levels').length > 0) {
       $('.addColumn').off("click");
+      $('.topicLevels .levels').find('.addColumn').hide();
       console.log("stop adding column");
+    } else {
+      $('.topicLevels .levels').find('.addColumn').show();
     }
   };
 
@@ -1201,6 +1189,7 @@ $(document).ready(function () {
         console.log("re-adding column");
       }
 
+      $('.topicLevels .levels').find('.addColumn').show();
       var el = $(this).closest('.levels').find('input[data-level]').val(); // $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
 
       var putBack = $(this).closest('.levels');
@@ -1222,6 +1211,7 @@ $(document).ready(function () {
       console.log("re-adding column");
     }
 
+    $('.topicLevels .levels').find('.addColumn').show();
     var el = $(this).closest('.levels').find('input[data-level]').val();
     var putBack = $(this).closest('.levels');
     $('.listArea .topicLevels').append(putBack); // $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
@@ -1250,9 +1240,7 @@ $(document).ready(function () {
     var item = $(this).closest('.levels');
 
     if ($(this).closest('.levels').find('input[data-level]').prop("checked") == true) {
-      $('#layerTopic').append(item); // $('#layerTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
-      //
-      // $(this).closest('.levels').find('input[data-level]').parent().hide()
+      $('#layerTopic').append(item);
     }
 
     if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0) {
@@ -1289,6 +1277,7 @@ $(document).ready(function () {
 
     if ($('#layerTopic .levels').length > 0) {
       $('.addLayer').off("click");
+      $('.topicLevels .levels').find('.addLayer').hide();
       console.log("stop adding column");
     }
 
@@ -1336,6 +1325,7 @@ $(document).ready(function () {
       console.log("re-adding column");
     }
 
+    $('.topicLevels .levels').find('.addLayer').show();
     var putBack = $(this).closest('.levels');
     $('.listArea .topicLevels').append(putBack);
     var el = $(this).closest('.levels').find('input[data-level]').val(); // $('.addLayer').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
@@ -1360,6 +1350,7 @@ $(document).ready(function () {
         console.log("re-adding column");
       }
 
+      $('.topicLevels .levels').find('.addLayer').show();
       var el = $(this).closest('.levels').find('input[data-level]').val();
       var putBack = $(this).closest('.levels');
       $('.listArea .topicLevels').append(putBack); // $('.addLayer').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
@@ -1374,19 +1365,7 @@ $(document).ready(function () {
         $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210);
       }
     }
-  }); //
-  //   var rowCounter = $('#nowTopic .levels').length
-  //
-  // $('.addRow').click(function() {
-  //
-  //   rowCounter = rowCounter ++;
-  //   $('.numberCounter').html(rowCounter)
-  //
-  //   console.log(rowCounter)
-  //
-  // })
-  //
-  //clicking on add analyis
+  }); //clicking on add analyis
 
   var addAnalysisTopic = function addAnalysisTopic() {
     var obj = $(this).closest('.levels').find('input[data-level]').val();
@@ -1400,12 +1379,12 @@ $(document).ready(function () {
     var item = $(this).closest('.levels');
 
     if ($(this).closest('.levels').find('input[data-level]').prop("checked") == true) {
-      $('#analysisTopic').append(item); // $('#analysisTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
-      // $(this).closest('.levels').find('input[data-level]').parent().hide()
+      $('#analysisTopic').append(item);
     }
 
     if ($('#analysisTopic .levels').length > 0) {
       $('.addAnalysis').off("click");
+      $('.listArea2 .topicLevels .custom-control').addClass("noShow");
       console.log("stop adding column");
     }
 
@@ -1469,6 +1448,7 @@ $(document).ready(function () {
       $('.addAnalysis').on("click", addAnalysisTopic);
     }
 
+    $('.listArea2 .topicLevels .custom-control').removeClass("noShow");
     var putBack = $(this).closest('.levels');
     $('.listArea2 .topicLevels').append(putBack);
     var el = $(this).closest('.levels').find('input[data-level]').val(); // $('.addAnalysis').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
@@ -1487,6 +1467,7 @@ $(document).ready(function () {
         $('.addAnalysis').on("click", addAnalysisTopic);
       }
 
+      $('.listArea2 .topicLevels .levels').find('.endOptions').show();
       var putBack = $(this).closest('.levels');
       $('.listArea2 .topicLevels').append(putBack);
       var el = $(this).closest('.levels').find('input[data-level]').val(); // $('.addAnalysis').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')

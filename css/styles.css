@@ -2500,6 +2500,10 @@ border-color: #1d832f;
   display: block;
 }
 
+.noShow .endOptions {
+  display:none !important;
+}
+
 .topicLevels .custom-control:hover .orangeHover {
     background-color: #c7482e;
     padding-bottom: .4em;

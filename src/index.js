@@ -1519,8 +1519,6 @@ if ($('body').hasClass('analysis2')) {
 
 
 
-
-
     $("#rowTopic .levels:nth-child(4)").nextAll( ".levels" ).addClass('noWidth')
 
 
@@ -1659,13 +1657,10 @@ if ($('body').hasClass('analysis2')) {
     }
 
 
-
-
   })
 
 
   $('#rowTopic').on('click', '.removeLevel' , function() {
-
 
 
     $(".allLevels input").prop('checked', false).change();
@@ -1715,18 +1710,6 @@ if ($('body').hasClass('analysis2')) {
 
     $(this).closest('.levels').remove();
 
-    // if ($('#rowTopic .levels').length < 3 && $('#columnTopic .levels').length < 0 &&  $('#layerTopic .levels').length < 0 ) {
-    //   alert('digubeirbgiberibregib')
-    //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height()  +  $('#layerTopic').height() - 260 )
-    //
-    // }
-    //
-    //
-    // if ($('#rowTopic .levels').length < 0 && $('#columnTopic .levels').length < 0 &&  $('#layerTopic .levels').length < 0 ) {
-    //   alert('eirugbierbgiberibbib')
-    //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height()  +  $('#layerTopic').height() - 500)
-    //
-    // }
 
     if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length == 0 ) {
       $('.grayLayer').css('top', $('.lightBlueBack').height() )
@@ -1744,13 +1727,11 @@ if ($('body').hasClass('analysis2')) {
 
 
 
-
-
   //clicking on add as column
 
   var addColumnTopic = function (){
 
-    console.log('add column')
+
 
     var obj = $(this).closest('.levels').find('input[data-level]').val()
 
@@ -1760,12 +1741,11 @@ if ($('body').hasClass('analysis2')) {
     var categoryObj = $(this).closest('.levels').find('.categories li')
 
 
-    // console.log(variableObj)
     var Opt01 = "";
     $(categoryObj).each(function() {
       Opt01 = Opt01 + this.outerHTML;
 
-      // console.log(Opt01);
+
     });
 
     var item = $(this).closest('.levels')
@@ -1775,12 +1755,11 @@ if ($('body').hasClass('analysis2')) {
 
       $('#columnTopic').append(item)
 
-      // $('#columnTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
-      //
-      // $(this).closest('.levels').find('input[data-level]').parent().hide()
-
 
     }
+
+
+
     if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0 ) {
 
 
@@ -1891,9 +1870,14 @@ if ($('body').hasClass('analysis2')) {
 
     if ($('#columnTopic .levels').length > 0 ) {
       $('.addColumn').off("click")
+      $('.topicLevels .levels').find('.addColumn').hide()
 
       console.log("stop adding column")
 
+    }
+
+    else {
+        $('.topicLevels .levels').find('.addColumn').show()
     }
 
 
@@ -1919,6 +1903,7 @@ if ($('body').hasClass('analysis2')) {
         console.log("re-adding column")
 
       }
+        $('.topicLevels .levels').find('.addColumn').show()
 
 
       var el = $(this).closest('.levels').find('input[data-level]').val()
@@ -1956,7 +1941,13 @@ if ($('body').hasClass('analysis2')) {
 
       console.log("re-adding column")
 
+
+
+
     }
+
+  $('.topicLevels .levels').find('.addColumn').show()
+
 
 
     var el = $(this).closest('.levels').find('input[data-level]').val()
@@ -2012,10 +2003,6 @@ if ($('body').hasClass('analysis2')) {
 
       $('#layerTopic').append(item)
 
-      // $('#layerTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
-      //
-      // $(this).closest('.levels').find('input[data-level]').parent().hide()
-
 
     }
 
@@ -2064,6 +2051,7 @@ if ($('body').hasClass('analysis2')) {
 
     if ($('#layerTopic .levels').length > 0 ) {
       $('.addLayer').off("click")
+      $('.topicLevels .levels').find('.addLayer').hide()
 
       console.log("stop adding column")
 
@@ -2151,6 +2139,8 @@ if ($('body').hasClass('analysis2')) {
 
     }
 
+      $('.topicLevels .levels').find('.addLayer').show()
+
     var putBack = $(this).closest('.levels')
 
     $('.listArea .topicLevels').append(putBack)
@@ -2183,12 +2173,15 @@ if ($('body').hasClass('analysis2')) {
     var code = (e.keyCode ? e.keyCode : e.which);
     if (code == 13) {
 
+
+
       if ($('#layerTopic .levels').length > 0 ) {
         $('.addLayer').on("click", addLayerTopic)
 
         console.log("re-adding column")
 
       }
+      $('.topicLevels .levels').find('.addLayer').show()
 
 
       var el = $(this).closest('.levels').find('input[data-level]').val()
@@ -2220,20 +2213,6 @@ if ($('body').hasClass('analysis2')) {
 
   })
 
-  //
-  //   var rowCounter = $('#nowTopic .levels').length
-  //
-  // $('.addRow').click(function() {
-  //
-  //   rowCounter = rowCounter ++;
-  //   $('.numberCounter').html(rowCounter)
-  //
-  //   console.log(rowCounter)
-  //
-  // })
-  //
-
-
 
 
 
@@ -2264,16 +2243,14 @@ if ($('body').hasClass('analysis2')) {
 
       $('#analysisTopic').append(item)
 
-      // $('#analysisTopic').append(`<div class='levels custom-control custom-checkbox'><input type='checkbox' name='levels' data-level='${obj}' value='${obj}' class='custom-control-input' id='${obj}'><label class='custom-control-label' for='${obj}'><p class='blue'>${obj}</p></label><div class="reorder hidden"><div class='horizontal'><p>Variable Name:</p><ul class='variableName'><li name='variableName' data-variable='${variableObj}' value='${variableObj}'>${variableObj}</li></ul></div><div class='horizontal'><p>Categories:</p><ul class='categories'>${Opt01}</ul></div></div><div class='deleteOptions'><i class='fal fa-sort-alt categoriesModal' role='button' tabindex='0'></i>&nbsp;&nbsp;<i class='fal fa-trash-alt removeLevel' role='button' tabindex='0'></i></div></div>`);
-
-      // $(this).closest('.levels').find('input[data-level]').parent().hide()
-
 
     }
 
 
     if ($('#analysisTopic .levels').length > 0 ) {
       $('.addAnalysis').off("click")
+
+      $('.listArea2 .topicLevels .custom-control').addClass("noShow")
 
       console.log("stop adding column")
 
@@ -2382,9 +2359,9 @@ if ($('body').hasClass('analysis2')) {
     if ($('#analysisTopic .levels').length > 0 ) {
       $('.addAnalysis').on("click", addAnalysisTopic)
 
-
-
     }
+
+  $('.listArea2 .topicLevels .custom-control').removeClass("noShow")
 
     var putBack = $(this).closest('.levels')
 
@@ -2417,9 +2394,9 @@ if ($('body').hasClass('analysis2')) {
       if ($('#analysisTopic .levels').length > 0 ) {
         $('.addAnalysis').on("click", addAnalysisTopic)
 
-
-
       }
+
+        $('.listArea2 .topicLevels .levels').find('.endOptions').show()
 
       var putBack = $(this).closest('.levels')
 
