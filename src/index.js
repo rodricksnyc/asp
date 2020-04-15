@@ -1187,7 +1187,7 @@ if ($('body').hasClass('analysis2')) {
         $('.categoriesModal').unbind("click").on('click', function() {
           $('#reorderCategories').modal('show');
 
-          var categoryLi =  $(this).closest('.levels').find('.categories li')
+          var categoryLi =  $(this).closest('.levels').find('.categories')
 
           console.log(categoryLi)
 
@@ -1216,7 +1216,7 @@ if ($('body').hasClass('analysis2')) {
           if (code == 13) {
             $('#reorderCategories').modal('show');
 
-            var categoryLi =  $(this).closest('.levels').find('.categories li')
+            var categoryLi =  $(this).closest('.levels').find('.categories')
 
             console.log(categoryLi)
 
@@ -1476,7 +1476,7 @@ if ($('body').hasClass('analysis2')) {
       if (code == 13) {
         $('#reorderCategories').modal('show');
 
-        var categoryLi =  $(this).closest('.levels').find('.categories li')
+        var categoryLi =  $(this).closest('.levels').find('.categories')
 
         console.log(categoryLi)
 
@@ -1507,7 +1507,7 @@ if ($('body').hasClass('analysis2')) {
     );
 
     var saveOrder = function (){
-      $( '.horizontal .categories').replaceWith('.addCategories .categories.newOrder')
+      // $( '.horizontal .categories').replaceWith('.addCategories .categories.newOrder')
       $('#reorderCategories').modal('hide');
     }
     $('.save').keypress(
@@ -1829,7 +1829,7 @@ if ($('body').hasClass('analysis2')) {
     $('.categoriesModal').unbind("click").on('click', function() {
       $('#reorderCategories').modal('show');
 
-      var categoryLi =  $(this).closest('.levels').find('.categories li')
+      var categoryLi =  $(this).closest('.levels').find('.categories')
 
       console.log(categoryLi)
 
@@ -1858,7 +1858,7 @@ if ($('body').hasClass('analysis2')) {
       if (code == 13) {
         $('#reorderCategories').modal('show');
 
-        var categoryLi =  $(this).closest('.levels').find('.categories li')
+        var categoryLi =  $(this).closest('.levels').find('.categories')
 
         console.log(categoryLi)
 
@@ -2073,7 +2073,7 @@ if ($('body').hasClass('analysis2')) {
     $('.categoriesModal').unbind("click").on('click', function() {
       $('#reorderCategories').modal('show');
 
-      var categoryLi =  $(this).closest('.levels').find('.categories li')
+      var categoryLi =  $(this).closest('.levels').find('.categories')
 
       console.log(categoryLi)
 
@@ -2102,7 +2102,7 @@ if ($('body').hasClass('analysis2')) {
       if (code == 13) {
         $('#reorderCategories').modal('show');
 
-        var categoryLi =  $(this).closest('.levels').find('.categories li')
+        var categoryLi =  $(this).closest('.levels').find('.categories')
 
         console.log(categoryLi)
 
@@ -2283,7 +2283,7 @@ if ($('body').hasClass('analysis2')) {
     $('.categoriesModal').unbind("click").on('click', function() {
       $('#reorderCategories').modal('show');
 
-      var categoryLi =  $(this).closest('.levels').find('.categories li')
+      var categoryLi =  $(this).closest('.levels').find('.categories')
 
       console.log(categoryLi)
 
@@ -2312,7 +2312,7 @@ if ($('body').hasClass('analysis2')) {
       if (code == 13) {
         $('#reorderCategories').modal('show');
 
-        var categoryLi =  $(this).closest('.levels').find('.categories li')
+        var categoryLi =  $(this).closest('.levels').find('.categories')
 
         console.log(categoryLi)
 
@@ -2440,6 +2440,7 @@ if ($('body').hasClass('analysis2')) {
     }
 
   })
+
 
 
   $('.addCategories').on('click','.moveDown',function(){

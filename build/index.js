@@ -768,7 +768,7 @@ $(document).ready(function () {
         $("#rowTopic .levels:nth-child(4)").nextAll(".levels").addClass('noWidth');
         $('.categoriesModal').unbind("click").on('click', function () {
           $('#reorderCategories').modal('show');
-          var categoryLi = $(this).closest('.levels').find('.categories li');
+          var categoryLi = $(this).closest('.levels').find('.categories');
           console.log(categoryLi);
           var Opt02 = "";
           $(categoryLi).each(function () {
@@ -785,7 +785,7 @@ $(document).ready(function () {
 
           if (code == 13) {
             $('#reorderCategories').modal('show');
-            var categoryLi = $(this).closest('.levels').find('.categories li');
+            var categoryLi = $(this).closest('.levels').find('.categories');
             console.log(categoryLi);
             var Opt02 = "";
             $(categoryLi).each(function () {
@@ -942,7 +942,7 @@ $(document).ready(function () {
 
       if (code == 13) {
         $('#reorderCategories').modal('show');
-        var categoryLi = $(this).closest('.levels').find('.categories li');
+        var categoryLi = $(this).closest('.levels').find('.categories');
         console.log(categoryLi);
         var Opt02 = "";
         $(categoryLi).each(function () {
@@ -960,7 +960,7 @@ $(document).ready(function () {
     $('.closeCategoryModal').keypress(emptyModal).click(emptyModal);
 
     var saveOrder = function saveOrder() {
-      $('.horizontal .categories').replaceWith('.addCategories .categories.newOrder');
+      // $( '.horizontal .categories').replaceWith('.addCategories .categories.newOrder')
       $('#reorderCategories').modal('hide');
     };
 
@@ -1150,7 +1150,7 @@ $(document).ready(function () {
 
     $('.categoriesModal').unbind("click").on('click', function () {
       $('#reorderCategories').modal('show');
-      var categoryLi = $(this).closest('.levels').find('.categories li');
+      var categoryLi = $(this).closest('.levels').find('.categories');
       console.log(categoryLi);
       var Opt02 = "";
       $(categoryLi).each(function () {
@@ -1167,7 +1167,7 @@ $(document).ready(function () {
 
       if (code == 13) {
         $('#reorderCategories').modal('show');
-        var categoryLi = $(this).closest('.levels').find('.categories li');
+        var categoryLi = $(this).closest('.levels').find('.categories');
         console.log(categoryLi);
         var Opt02 = "";
         $(categoryLi).each(function () {
@@ -1294,7 +1294,7 @@ $(document).ready(function () {
 
     $('.categoriesModal').unbind("click").on('click', function () {
       $('#reorderCategories').modal('show');
-      var categoryLi = $(this).closest('.levels').find('.categories li');
+      var categoryLi = $(this).closest('.levels').find('.categories');
       console.log(categoryLi);
       var Opt02 = "";
       $(categoryLi).each(function () {
@@ -1311,7 +1311,7 @@ $(document).ready(function () {
 
       if (code == 13) {
         $('#reorderCategories').modal('show');
-        var categoryLi = $(this).closest('.levels').find('.categories li');
+        var categoryLi = $(this).closest('.levels').find('.categories');
         console.log(categoryLi);
         var Opt02 = "";
         $(categoryLi).each(function () {
@@ -1411,7 +1411,7 @@ $(document).ready(function () {
 
     $('.categoriesModal').unbind("click").on('click', function () {
       $('#reorderCategories').modal('show');
-      var categoryLi = $(this).closest('.levels').find('.categories li');
+      var categoryLi = $(this).closest('.levels').find('.categories');
       console.log(categoryLi);
       var Opt02 = "";
       $(categoryLi).each(function () {
@@ -1428,7 +1428,7 @@ $(document).ready(function () {
 
       if (code == 13) {
         $('#reorderCategories').modal('show');
-        var categoryLi = $(this).closest('.levels').find('.categories li');
+        var categoryLi = $(this).closest('.levels').find('.categories');
         console.log(categoryLi);
         var Opt02 = "";
         $(categoryLi).each(function () {
