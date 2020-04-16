@@ -3186,6 +3186,10 @@ color: #c7482e;
   top: 0.02rem;
 }
 
+.listArea2 .custom-control-label::after {
+  display:none;
+}
+
 .whiteBar {
   position: absolute;
   z-index: 11;

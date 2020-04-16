@@ -810,15 +810,11 @@ $(document).ready(function () {
     $(categoryObj).each(function () {
       Opt01 = Opt01 + this.outerHTML;
     });
-
-    if ($(this).closest('.topicLevels .levels').hasClass('activeCustomControl')) {// $('.levels .collapse').collapse('hide')
-      //   $(this).closest('.custom-control').toggleClass('activeCustomControl')
-      //
-      //
-      //   $(this).closest('.custom-control').find('.orangeHover').toggleClass('showIt2')
-      //   $(this).closest('.custom-control').find('.endOptions').toggleClass('showIt')
-      // $('#rowTopic .levels').find('.collapse').collapse('hide');
-    }
+    $(this).closest('.levels').removeClass('activeCustomControl');
+    $(this).closest('.levels').find('.collapse').collapse('hide');
+    $(this).closest('.levels').find('.accordion-toggle i').fadeIn();
+    $(this).closest('.levels').find('.orangeHover').removeClass('showIt2');
+    $(this).closest('.levels').find('.endOptions').removeClass('showIt');
 
     if ($(this).closest('.levels').find('input[data-level]').prop("checked") == true) {
       $('#rowTopic').append(item);
@@ -951,7 +947,7 @@ $(document).ready(function () {
     //
 
     var putBack = $(this).closest('.levels');
-    $('.topicLevels').append(putBack);
+    $(' .topicLevels').append(putBack);
     $('.addRow').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false);
 
     if ($('#rowTopic .levels').length < 3) {
@@ -982,6 +978,11 @@ $(document).ready(function () {
       Opt01 = Opt01 + this.outerHTML;
     });
     var item = $(this).closest('.levels');
+    $(this).closest('.levels').removeClass('activeCustomControl');
+    $(this).closest('.levels').find('.collapse').collapse('hide');
+    $(this).closest('.levels').find('.accordion-toggle i').fadeIn();
+    $(this).closest('.levels').find('.orangeHover').removeClass('showIt2');
+    $(this).closest('.levels').find('.endOptions').removeClass('showIt');
 
     if ($(this).closest('.levels').find('input[data-level]').prop("checked") == true) {
       $('#columnTopic').append(item);
@@ -1085,6 +1086,11 @@ $(document).ready(function () {
     $(categoryObj).each(function () {
       Opt01 = Opt01 + this.outerHTML; // console.log(Opt01);
     });
+    $(this).closest('.levels').removeClass('activeCustomControl');
+    $(this).closest('.levels').find('.collapse').collapse('hide');
+    $(this).closest('.levels').find('.accordion-toggle i').fadeIn();
+    $(this).closest('.levels').find('.orangeHover').removeClass('showIt2');
+    $(this).closest('.levels').find('.endOptions').removeClass('showIt');
     var item = $(this).closest('.levels');
 
     if ($(this).closest('.levels').find('input[data-level]').prop("checked") == true) {
@@ -1186,6 +1192,11 @@ $(document).ready(function () {
     $(categoryObj).each(function () {
       Opt01 = Opt01 + this.outerHTML;
     });
+    $(this).closest('.levels').removeClass('activeCustomControl');
+    $(this).closest('.levels').find('.collapse').collapse('hide');
+    $(this).closest('.levels').find('.accordion-toggle i').fadeIn();
+    $(this).closest('.levels').find('.orangeHover').removeClass('showIt2');
+    $(this).closest('.levels').find('.endOptions').removeClass('showIt');
     var item = $(this).closest('.levels');
 
     if ($(this).closest('.levels').find('input[data-level]').prop("checked") == true) {
@@ -1289,23 +1300,23 @@ $(document).ready(function () {
     var count = "collapseAccord" + ++hash;
     $(this).attr("href", "#" + count);
     $(this).attr("aria-controls", count);
-    $(this).closest('.custom-checkbox').find(".collapse").attr("id", count);
+    $(this).closest('.levels').find(".collapse").attr("id", count);
   });
   $(".levels .accordion-toggle").click(function () {
     console.log('show accordion');
-    $(this).closest('.custom-control').addClass('activeCustomControl');
-    $(this).closest('.custom-checkbox').find('.collapse').collapse('show');
-    $(this).closest('.custom-checkbox').find('.accordion-toggle i').hide();
-    $(this).closest('.custom-control').find('.orangeHover').addClass('showIt2');
-    $(this).closest('.custom-control').find('.endOptions').addClass('showIt');
+    $(this).closest('.levels').addClass('activeCustomControl');
+    $(this).closest('.levels').find('.collapse').collapse('show');
+    $(this).closest('.levels').find('.accordion-toggle i').hide();
+    $(this).closest('.levels').find('.orangeHover').addClass('showIt2');
+    $(this).closest('.levels').find('.endOptions').addClass('showIt');
   });
   $(".levels .closeToggle").click(function () {
     console.log('hide accordion');
-    $(this).closest('.custom-control').removeClass('activeCustomControl');
-    $(this).closest('.custom-checkbox').find('.collapse').collapse('hide');
-    $(this).closest('.custom-checkbox').find('.accordion-toggle i').fadeIn();
-    $(this).closest('.custom-control').find('.orangeHover').removeClass('showIt2');
-    $(this).closest('.custom-control').find('.endOptions').removeClass('showIt');
+    $(this).closest('.levels').removeClass('activeCustomControl');
+    $(this).closest('.levels').find('.collapse').collapse('hide');
+    $(this).closest('.levels').find('.accordion-toggle i').fadeIn();
+    $(this).closest('.levels').find('.orangeHover').removeClass('showIt2');
+    $(this).closest('.levels').find('.endOptions').removeClass('showIt');
   }); //scroll to open accordion in listArea
 
   $('.levels .collapse').on('show.bs.collapse', function (e) {
