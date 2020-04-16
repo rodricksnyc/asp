@@ -1319,6 +1319,8 @@ $(document).ready(function () {
 
 
 
+
+
     $('.numberCounter').html(function(i, val) { return val*1 + 1 });
 
 
@@ -1421,7 +1423,6 @@ $(document).ready(function () {
 
 
 
-
   //hover over rows
 
   $('#rowTopic').on('mouseenter', function(e) {
@@ -1475,6 +1476,8 @@ $(document).ready(function () {
 
     var code = (e.keyCode ? e.keyCode : e.which);
     if (code == 13) {
+
+
 
       $(".allLevels input").prop('checked', false).change();
 
@@ -1585,7 +1588,6 @@ $(document).ready(function () {
   })
 
 
-
   //clicking on add as column
 
   var addColumnTopic = function (){
@@ -1616,8 +1618,6 @@ $(document).ready(function () {
 
 
     }
-
-
 
 
     $('.categoriesModal').unbind("click").on('click', function() {
@@ -1712,6 +1712,7 @@ $(document).ready(function () {
     var code = (e.keyCode ? e.keyCode : e.which);
     if (code == 13) {
 
+
       if ($('#columnTopic .levels').length > 0 ) {
         $('.addColumn').on("click")
 
@@ -1723,7 +1724,7 @@ $(document).ready(function () {
 
           if ($('#layerTopic .levels').length > 0 ) {
 
-  
+
 
             $('.levels').find('.addLayer').hide()
 
@@ -1755,12 +1756,11 @@ $(document).ready(function () {
 
   $('#columnTopic').on('click', '.removeLevel' , function() {
 
+
     if ($('#columnTopic .levels').length > 0 ) {
       $('.addColumn').on("click", addColumnTopic)
 
       console.log("re-adding column")
-
-
 
 
     }
@@ -1912,6 +1912,8 @@ $(document).ready(function () {
 
 
   $('#layerTopic').on('click', '.removeLevel' , function() {
+
+
 
     if ($('#layerTopic .levels').length > 0 ) {
       $('.addLayer').on("click", addLayerTopic)
@@ -2175,6 +2177,12 @@ $(document).ready(function () {
   })
 
 
+  // $('.removeLevel').click(function() {
+  //     $('.accordion-toggle.collapsed').collapse('toggle' );
+  //     console.log("fucker")
+  // })
+
+
 
   $('.addCategories').on('click','.moveDown',function(){
     var after = $(this).closest('li').next()
@@ -2214,13 +2222,35 @@ $(document).ready(function () {
   });
 
   $(".levels .accordion-toggle").click(function(){
-    $(this).closest('.custom-control').toggleClass('activeCustomControl')
+
+    console.log('show accordion')
+    $(this).closest('.custom-control').addClass('activeCustomControl')
+
+    $(this).closest('.custom-checkbox').find('.collapse').collapse('show')
 
 
-    // // $(this).closest('.custom-checkbox').siblings().find('.collapse').hide()
+    $(this).closest('.custom-checkbox').find('.accordion-toggle i').hide()
 
-    $(this).closest('.custom-control').find('.orangeHover').toggleClass('showIt2')
-    $(this).closest('.custom-control').find('.endOptions').toggleClass('showIt')
+
+
+    $(this).closest('.custom-control').find('.orangeHover').addClass('showIt2')
+    $(this).closest('.custom-control').find('.endOptions').addClass('showIt')
+
+
+  })
+
+  $(".levels .closeToggle").click(function(){
+
+      console.log('hide accordion')
+    $(this).closest('.custom-control').removeClass('activeCustomControl')
+
+
+    $(this).closest('.custom-checkbox').find('.collapse').collapse('hide')
+  $(this).closest('.custom-checkbox').find('.accordion-toggle i').fadeIn()
+
+    $(this).closest('.custom-control').find('.orangeHover').removeClass('showIt2')
+    $(this).closest('.custom-control').find('.endOptions').removeClass('showIt')
+
 
   })
 

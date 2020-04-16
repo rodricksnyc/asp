@@ -2381,6 +2381,20 @@ a:hover {
   color:#c7482e;
 }
 
+
+.topicLevels .levels .closeToggle i {
+font-weight:600;
+}
+
+.closeToggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -10px;
+}
+
+
+
 .topicLevels .levels:hover p.blue,
 .topicLevels .levels:active p.blue,
 .topicLevels .levels:focus p.blue {
@@ -2604,6 +2618,15 @@ border-color: #1d832f;
 .activeCustomControl i {
   color: #c7482e;
   visibility: visible !important;
+}
+
+.topicLevels  .levels:hover .accordion-toggle i {
+    visibility: visible !important;
+    color: #c7482e;
+}
+
+.topics .accordion-toggle i {
+display:none !important;
 }
 
 .activeCustomControl .custom-control-label::before {

@@ -1264,7 +1264,11 @@ $(document).ready(function () {
 
       $('.addAnalysis').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false); // $(this).closest('.levels').remove();
     }
-  });
+  }); // $('.removeLevel').click(function() {
+  //     $('.accordion-toggle.collapsed').collapse('toggle' );
+  //     console.log("fucker")
+  // })
+
   $('.addCategories').on('click', '.moveDown', function () {
     var after = $(this).closest('li').next();
     $(this).closest('li').insertAfter(after);
@@ -1288,10 +1292,20 @@ $(document).ready(function () {
     $(this).closest('.custom-checkbox').find(".collapse").attr("id", count);
   });
   $(".levels .accordion-toggle").click(function () {
-    $(this).closest('.custom-control').toggleClass('activeCustomControl'); // // $(this).closest('.custom-checkbox').siblings().find('.collapse').hide()
-
-    $(this).closest('.custom-control').find('.orangeHover').toggleClass('showIt2');
-    $(this).closest('.custom-control').find('.endOptions').toggleClass('showIt');
+    console.log('show accordion');
+    $(this).closest('.custom-control').addClass('activeCustomControl');
+    $(this).closest('.custom-checkbox').find('.collapse').collapse('show');
+    $(this).closest('.custom-checkbox').find('.accordion-toggle i').hide();
+    $(this).closest('.custom-control').find('.orangeHover').addClass('showIt2');
+    $(this).closest('.custom-control').find('.endOptions').addClass('showIt');
+  });
+  $(".levels .closeToggle").click(function () {
+    console.log('hide accordion');
+    $(this).closest('.custom-control').removeClass('activeCustomControl');
+    $(this).closest('.custom-checkbox').find('.collapse').collapse('hide');
+    $(this).closest('.custom-checkbox').find('.accordion-toggle i').fadeIn();
+    $(this).closest('.custom-control').find('.orangeHover').removeClass('showIt2');
+    $(this).closest('.custom-control').find('.endOptions').removeClass('showIt');
   }); //scroll to open accordion in listArea
 
   $('.levels .collapse').on('show.bs.collapse', function (e) {
