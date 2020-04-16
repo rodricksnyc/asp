@@ -2629,6 +2629,10 @@ border-color: #1d832f;
 display:none !important;
 }
 
+.analysis-topic .accordion-toggle i {
+display:none !important;
+}
+
 .activeCustomControl .custom-control-label::before {
     display: block !important;
 }
