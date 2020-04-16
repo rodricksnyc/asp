@@ -976,6 +976,8 @@ p.smallest {
   height: auto;
   /* top: 6%; */
   bottom: 0%;
+  /* border-radius: 1rem; */
+
 }
 
 .appendOptions {
@@ -1012,26 +1014,26 @@ p.smallest {
     background: #deedf8;
     width: 100%;
     text-align: center;
-    padding: .5em 0em 0em 0em;
+    padding: 0;
     border-radius: 5px;
     height: auto;
     /* min-height: 40px; */
     position: relative;
     z-index: 5;
-    height: 45px;
+    height: 0px;
 }
 
 .analysis3 .lightBlueBack {
     background: #deedf8;
     width: 100%;
     text-align: center;
-    padding: .5em 0em 0em 0em;
+    padding: 0;
     border-radius: 5px;
     height: auto;
     /* min-height: 40px; */
     position: relative;
     z-index: 5;
-    height: 45px;
+    height: 0px;
 }
 
 #search .clearfix label {

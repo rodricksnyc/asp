@@ -32,26 +32,26 @@ $(document).ready(function () {
   })
 
 
-if ($('body').hasClass('analysis')) {
-  $('.option[data-type="topics"]').addClass('hidden').show();
-  $('.option[data-type="data"]').addClass('hidden').show();
-  $('.option[data-type="marks"]').addClass('hidden').show();
-  $('.option[data-type="stats"]').addClass('hidden').show();
-}
+  if ($('body').hasClass('analysis')) {
+    $('.option[data-type="topics"]').addClass('hidden').show();
+    $('.option[data-type="data"]').addClass('hidden').show();
+    $('.option[data-type="marks"]').addClass('hidden').show();
+    $('.option[data-type="stats"]').addClass('hidden').show();
+  }
 
-if ($('body').hasClass('analysis2')) {
-  $('.option[data-type="topics"]').removeClass('hidden').show();
-  $('.option[data-type="data"]').addClass('hidden').show();
-  $('.option[data-type="marks"]').addClass('hidden').show();
-  $('.option[data-type="stats"]').addClass('hidden').show();
-}
+  if ($('body').hasClass('analysis2')) {
+    $('.option[data-type="topics"]').removeClass('hidden').show();
+    $('.option[data-type="data"]').addClass('hidden').show();
+    $('.option[data-type="marks"]').addClass('hidden').show();
+    $('.option[data-type="stats"]').addClass('hidden').show();
+  }
 
-if ($('body').hasClass('analysis3')) {
-  $('.option[data-type="topics"]').removeClass('hidden').show();
-  $('.option[data-type="data"]').addClass('hidden').show();
+  if ($('body').hasClass('analysis3')) {
+    $('.option[data-type="topics"]').removeClass('hidden').show();
+    $('.option[data-type="data"]').addClass('hidden').show();
 
-  $('.option[data-type="stats"]').addClass('hidden').show();
-}
+    $('.option[data-type="stats"]').addClass('hidden').show();
+  }
 
 
 
@@ -97,22 +97,22 @@ if ($('body').hasClass('analysis3')) {
 
   $('.nestedOne').on('mouseenter', function()  {
 
-  $('.small-dropdown-menu').css('display', 'block')
+    $('.small-dropdown-menu').css('display', 'block')
   })
 
   $('.dropdown-menu').on('mouseleave', function()  {
 
-  $('.small-dropdown-menu').css('display', 'none')
+    $('.small-dropdown-menu').css('display', 'none')
   })
 
   $('.nestedTwo').on('mouseenter', function()  {
 
-  $('.small-dropdown-menu2').css('display', 'block')
+    $('.small-dropdown-menu2').css('display', 'block')
   })
 
   $('.small-dropdown-menu').on('mouseleave', function()  {
 
-  $('.small-dropdown-menu2').css('display', 'none')
+    $('.small-dropdown-menu2').css('display', 'none')
   })
 
 
@@ -996,63 +996,14 @@ if ($('body').hasClass('analysis3')) {
 
   $('.grayLayer').css('top', $('.lightBlueBack').height())
 
-  // $(":checkbox[data-year]").on('change' , function() {
-  //
-  //   var years = $(this).attr('id');
-  //
-  //   $('.filter-attr-list').append(`<li class="results selected"> ${years} <div class="removeTag"><i class="fal fa-times ml-1"></i></div></li>`);
-  //
-  //
-  //
-  // });
 
-
-
-
-  // $(":checkbox[data-year]").change(function (e) {
-  //
-  //   var saveYear = $('.saveYear')
-  //   $('.filter-attr-list').empty().append(saveYear)
-  //
-  //   $('.years :checkbox:checked').each(function (ind, ele) {
-  //
-  //     if (this.checked == true)  {
-  //       var value = $(ele).attr('id')
-  //       $('.filter-attr-list').append(`<li data-year="${value}" class="results selected">${value} <div class="removeTag"><i class="fal fa-times ml-1"></i></div></li>`);
-  //     }
-  //
-  //
-  //
-  //
-  //     // $('.filter-attr-list').on('click', '.removeTag', function() {
-  //     //   console.log("hi there")
-  //     //   $(this).closest('.results').remove();
-  //     //
-  //     //     if ($(`li[data-year="${value}"  == $(this).find(':checkbox').attr(data-year="${value}"]`)) {
-  //     //       console.log("geibuibuewgbuiegriuhgeriuhewfhiuewfihu")
-  //     //
-  //     //         $(`:checkbox[data-year="${value}"]`).prop('checked', false);
-  //     //       // $(":checkbox[data-year]").prop('checked', false);
-  //     //     }
-  //     //
-  //     //   // $('.years :checkbox:checked').prop('checked', false);
-  //     //
-  //     // })
-  //
-  //   });
-  //
-  // })
 
 
   //years checkboxes
 
 
-
-
   $(".years :checkbox").change(function(){
 
-    // var saveYear = $('.saveYear')
-    // $('.filter-attr-list').empty().append(saveYear)
     console.log(this.value)
     if($(this).prop("checked")==true){
       $('.filter-attr-list').append(`<li class='results selected' data-year="${this.value}">${this.value}<div class='removeTag'><i class='fal fa-times ml-1'></i></div></li>`);
@@ -1260,46 +1211,6 @@ if ($('body').hasClass('analysis3')) {
         );
 
 
-            if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0 ) {
-              $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 280 )
-
-            }
-
-            if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
-              $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
-
-            }
-
-            if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length == 0 ) {
-              $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
-
-            }
-
-
-            if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
-              $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
-
-            }
-
-            if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
-              $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
-
-            }
-
-            if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0 ) {
-              $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
-
-            }
-
-            if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length == 0 ) {
-              $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
-
-            }
-
-            if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length == 0 ) {
-              $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
-
-            }
 
 
 
@@ -1355,8 +1266,6 @@ if ($('body').hasClass('analysis3')) {
 
 
 
-
-
   //levels topics checkboxes
 
   //clicking on add as row
@@ -1384,18 +1293,18 @@ if ($('body').hasClass('analysis3')) {
 
     });
 
-  if($(this).closest('.topicLevels .levels').hasClass('activeCustomControl')) {
+    if($(this).closest('.topicLevels .levels').hasClass('activeCustomControl')) {
 
-  // $('.levels .collapse').collapse('hide')
-  //   $(this).closest('.custom-control').toggleClass('activeCustomControl')
-  //
-  //
-  //   $(this).closest('.custom-control').find('.orangeHover').toggleClass('showIt2')
-  //   $(this).closest('.custom-control').find('.endOptions').toggleClass('showIt')
-  // $('#rowTopic .levels').find('.collapse').collapse('hide');
+      // $('.levels .collapse').collapse('hide')
+      //   $(this).closest('.custom-control').toggleClass('activeCustomControl')
+      //
+      //
+      //   $(this).closest('.custom-control').find('.orangeHover').toggleClass('showIt2')
+      //   $(this).closest('.custom-control').find('.endOptions').toggleClass('showIt')
+      // $('#rowTopic .levels').find('.collapse').collapse('hide');
 
 
-  }
+    }
 
 
 
@@ -1405,48 +1314,6 @@ if ($('body').hasClass('analysis3')) {
       $('#rowTopic').append(item)
 
 
-
-    }
-
-
-    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 280 )
-
-    }
-
-    if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
-
-    }
-
-    if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length == 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
-
-    }
-
-
-    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
-
-    }
-
-    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
-
-    }
-
-    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
-
-    }
-
-    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length == 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
-
-    }
-
-    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length == 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
 
     }
 
@@ -1472,9 +1339,6 @@ if ($('body').hasClass('analysis3')) {
 
 
       $('.addCategories').append(Opt02).parent()
-
-     // var categoryLi =  $(this).closest('.levels').find('.categories').remove()
-
 
 
       $('.addCategories li .custom-control').removeClass('hidden')
@@ -1656,15 +1520,6 @@ if ($('body').hasClass('analysis3')) {
 
       $(this).closest('.levels').remove();
 
-      if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length == 0 ) {
-        $('.grayLayer').css('top', $('.lightBlueBack').height() )
-
-      }
-
-      if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
-        $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
-
-      }
 
 
 
@@ -1725,16 +1580,6 @@ if ($('body').hasClass('analysis3')) {
     $(this).closest('.levels').remove();
 
 
-    if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length == 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() )
-
-    }
-
-    if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
-
-    }
-
 
 
   })
@@ -1773,50 +1618,6 @@ if ($('body').hasClass('analysis3')) {
     }
 
 
-
-    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0 ) {
-
-
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
-
-    }
-
-
-    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
-
-    }
-
-    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
-
-    }
-
-    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
-
-    }
-
-    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length == 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
-
-    }
-
-    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length == 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
-
-    }
-
-    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length == 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
-
-    }
-
-
-    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length == 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
-
-    }
 
 
     $('.categoriesModal').unbind("click").on('click', function() {
@@ -1891,7 +1692,7 @@ if ($('body').hasClass('analysis3')) {
     }
 
     else {
-        $('.topicLevels .levels').find('.addColumn').show()
+      $('.topicLevels .levels').find('.addColumn').show()
     }
 
 
@@ -1917,7 +1718,7 @@ if ($('body').hasClass('analysis3')) {
         console.log("re-adding column")
 
       }
-        $('.topicLevels .levels').find('.addColumn').show()
+      $('.topicLevels .levels').find('.addColumn').show()
 
 
       var el = $(this).closest('.levels').find('input[data-level]').val()
@@ -1932,14 +1733,7 @@ if ($('body').hasClass('analysis3')) {
 
       // $(this).closest('.levels').remove();
 
-      if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length == 0 ) {
-        $('.grayLayer').css('top', $('.lightBlueBack').height() )
 
-      }
-      if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
-        $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
-
-      }
 
 
     }
@@ -1960,7 +1754,7 @@ if ($('body').hasClass('analysis3')) {
 
     }
 
-  $('.topicLevels .levels').find('.addColumn').show()
+    $('.topicLevels .levels').find('.addColumn').show()
 
 
 
@@ -1975,15 +1769,7 @@ if ($('body').hasClass('analysis3')) {
 
     // $(this).closest('.levels').remove();
 
-    if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length == 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() )
 
-    }
-
-    if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
-
-    }
 
 
 
@@ -2020,46 +1806,7 @@ if ($('body').hasClass('analysis3')) {
 
     }
 
-    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
 
-    }
-
-
-    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
-
-    }
-
-    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
-
-    }
-
-    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
-
-    }
-
-    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length == 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
-
-    }
-
-    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length == 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
-
-    }
-
-    if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
-
-    }
-
-    if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length == 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
-
-    }
 
 
 
@@ -2153,7 +1900,7 @@ if ($('body').hasClass('analysis3')) {
 
     }
 
-      $('.topicLevels .levels').find('.addLayer').show()
+    $('.topicLevels .levels').find('.addLayer').show()
 
     var putBack = $(this).closest('.levels')
 
@@ -2167,15 +1914,7 @@ if ($('body').hasClass('analysis3')) {
 
     // $(this).closest('.levels').remove();
 
-    if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length == 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() )
 
-    }
-
-    if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
-
-    }
 
 
 
@@ -2210,15 +1949,6 @@ if ($('body').hasClass('analysis3')) {
 
       // $(this).closest('.levels').remove();
 
-      if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length == 0 ) {
-        $('.grayLayer').css('top', $('.lightBlueBack').height() )
-
-      }
-
-      if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
-        $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
-
-      }
 
 
 
@@ -2333,25 +2063,7 @@ if ($('body').hasClass('analysis3')) {
     );
 
 
-    if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
 
-    }
-
-    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
-
-    }
-
-    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
-
-    }
-
-    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 2 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
-
-    }
 
 
 
@@ -2375,7 +2087,7 @@ if ($('body').hasClass('analysis3')) {
 
     }
 
-  $('.listArea2 .topicLevels .custom-control').removeClass("noShow")
+    $('.listArea2 .topicLevels .custom-control').removeClass("noShow")
 
     var putBack = $(this).closest('.levels')
 
@@ -2389,10 +2101,7 @@ if ($('body').hasClass('analysis3')) {
 
     // $(this).closest('.levels').remove();
 
-    if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length == 0 ) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() )
 
-    }
 
 
   })
@@ -2410,7 +2119,7 @@ if ($('body').hasClass('analysis3')) {
 
       }
 
-        $('.listArea2 .topicLevels .levels').find('.endOptions').show()
+      $('.listArea2 .topicLevels .levels').find('.endOptions').show()
 
       var putBack = $(this).closest('.levels')
 
@@ -2424,10 +2133,7 @@ if ($('body').hasClass('analysis3')) {
 
       // $(this).closest('.levels').remove();
 
-      if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length == 0 ) {
-        $('.grayLayer').css('top', $('.lightBlueBack').height() )
 
-      }
     }
 
   })
@@ -2448,14 +2154,14 @@ if ($('body').hasClass('analysis3')) {
 
     $(this).closest('li').insertAfter($('.addCategories .categories li').last());
 
-})
+  })
 
 
   $('.addCategories').on('click','.top',function(){
 
     $(this).closest('li').insertBefore($('.addCategories .categories li').first());
 
-})
+  })
 
 
 
@@ -2512,6 +2218,247 @@ if ($('body').hasClass('analysis3')) {
       scrollTop: $panel.offset().top - additionalOffset
     }, 1000);
   });
+
+
+
+
+  var changeOverlayHeight = function (){
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 280 )
+
+    }
+
+    if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
+
+    }
+
+    if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length == 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
+
+    }
+
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
+
+    }
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
+
+    }
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
+
+    }
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length == 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
+
+    }
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length == 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
+
+    }
+
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0 ) {
+
+
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
+
+    }
+
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
+
+    }
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
+
+    }
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
+
+    }
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length == 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
+
+    }
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length == 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
+
+    }
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length == 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
+
+    }
+
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length == 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
+
+    }
+
+    if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length == 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() )
+
+    }
+
+    if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
+
+    }
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
+
+    }
+
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
+
+    }
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
+
+    }
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
+
+    }
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length == 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
+
+    }
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length == 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
+
+    }
+
+    if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
+
+    }
+
+    if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length == 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
+
+    }
+
+    if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length == 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() )
+
+    }
+
+    if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
+
+    }
+
+    if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length == 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() )
+
+    }
+
+    if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
+
+    }
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
+
+    }
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
+
+    }
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 2 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
+
+    }
+
+    if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length == 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() )
+
+    }
+
+    if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
+
+    }
+
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 280 )
+
+    }
+
+    if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
+
+    }
+
+    if ($('#columnTopic .levels').length == 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length == 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
+
+    }
+
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 210 )
+
+    }
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length == 0 && $('#analysisTopic .levels').length > 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
+
+    }
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220 )
+
+    }
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length == 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
+
+    }
+
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length == 0 ) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
+
+    }
+
+
+
+  }
+  $('body').keypress(
+    changeOverlayHeight
+
+  ).click(
+    changeOverlayHeight
+  );
+
+
 
 
 
