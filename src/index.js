@@ -1685,14 +1685,14 @@ $(document).ready(function () {
 
     if ($('#columnTopic .levels').length > 0 ) {
       $('.addColumn').off("click")
-      $('.topicLevels .levels').find('.addColumn').hide()
+      $('.levels').find('.addColumn').hide()
 
       console.log("stop adding column")
 
     }
 
     else {
-      $('.topicLevels .levels').find('.addColumn').show()
+      $('.levels').find('.addColumn').show()
     }
 
 
@@ -1718,7 +1718,18 @@ $(document).ready(function () {
         console.log("re-adding column")
 
       }
-      $('.topicLevels .levels').find('.addColumn').show()
+      $('.levels').find('.addColumn').show()
+
+
+          if ($('#layerTopic .levels').length > 0 ) {
+
+  
+
+            $('.levels').find('.addLayer').hide()
+
+
+          }
+
 
 
       var el = $(this).closest('.levels').find('input[data-level]').val()
@@ -1754,7 +1765,16 @@ $(document).ready(function () {
 
     }
 
-    $('.topicLevels .levels').find('.addColumn').show()
+    $('.levels').find('.addColumn').show()
+
+    if ($('#layerTopic .levels').length > 0 ) {
+
+
+
+      $('.levels').find('.addLayer').hide()
+
+
+    }
 
 
 
@@ -1812,7 +1832,7 @@ $(document).ready(function () {
 
     if ($('#layerTopic .levels').length > 0 ) {
       $('.addLayer').off("click")
-      $('.topicLevels .levels').find('.addLayer').hide()
+      $('.levels').find('.addLayer').hide()
 
       console.log("stop adding column")
 
@@ -1900,7 +1920,18 @@ $(document).ready(function () {
 
     }
 
-    $('.topicLevels .levels').find('.addLayer').show()
+    $('.levels').find('.addLayer').show()
+
+
+        if ($('#columnTopic .levels').length > 0 ) {
+
+
+
+          $('.levels').find('.addColumn').hide()
+
+
+        }
+
 
     var putBack = $(this).closest('.levels')
 
@@ -1934,7 +1965,17 @@ $(document).ready(function () {
         console.log("re-adding column")
 
       }
-      $('.topicLevels .levels').find('.addLayer').show()
+      $('.levels').find('.addLayer').show()
+
+      if ($('#columnTopic .levels').length > 0 ) {
+
+
+
+        $('.levels').find('.addColumn').hide()
+
+
+      }
+
 
 
       var el = $(this).closest('.levels').find('input[data-level]').val()
@@ -2061,11 +2102,6 @@ $(document).ready(function () {
     ).click(
       emptyModal
     );
-
-
-
-
-
 
 
   }
