@@ -1288,6 +1288,8 @@ $('.closeLevels').keypress(
 
 
 
+
+
   //levels topics checkboxes
 
   //clicking on add as row
@@ -2527,7 +2529,19 @@ var categoryLi = "";
 
   })
 
-
+//adding background color to levels if any of its children are focused
+// $('input[data-level]').focus(function() {
+//         $(this).parent().css({
+//           'background-color' :'#faede9',
+//           'color' : '#c7482e'
+//       } );
+//     })
+//     .blur(function() {
+//         $(this).parent().css({
+//         'background-color' :'transparent',
+//         'color' : '#c7482e'
+//     })
+//     });
 
 
   //adding href and id to accordions dynamically for checkboxes

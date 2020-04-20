@@ -1583,7 +1583,20 @@ $(document).ready(function () {
   });
   $('.addCategories').on('click', '.top', function () {
     $(this).closest('li').insertBefore($('.addCategories .categories li').first());
-  }); //adding href and id to accordions dynamically for checkboxes
+  }); //adding background color to levels if any of its children are focused
+  // $('input[data-level]').focus(function() {
+  //         $(this).parent().css({
+  //           'background-color' :'#faede9',
+  //           'color' : '#c7482e'
+  //       } );
+  //     })
+  //     .blur(function() {
+  //         $(this).parent().css({
+  //         'background-color' :'transparent',
+  //         'color' : '#c7482e'
+  //     })
+  //     });
+  //adding href and id to accordions dynamically for checkboxes
 
   var hash = 1;
   $(".accordion-toggle").each(function (i) {
