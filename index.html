@@ -41,122 +41,82 @@
 <a href="#themaincontent" id="skiptocontent" tabindex="1" aria-hidden="false">skip to main content</a>
 <div class="container-fluid view1">
 
+	<div class="navigation-wrap bg-light start-header start-style">
 
-<div class="navigation-wrap bg-light start-header start-style">
+		<div class="row">
+			<div class="col-12">
 
-<div class="row">
-<div class="col-12">
+				<nav class="navbar navbar-expand-xl navbar-light">
+					<div class="navbar-collapse collapse order-1 order-md-0 dual-collapse2" id="navbarSupportedContent">
+						<ul class="navbar-nav ml-auto py-4 py-md-0">
 
+							<li class="projects" tabindex="0" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="fal fa-angle-left"></i>
+								<i class="fas fa-circle"><p class="initials">PN</p></i>
+								<h3>Project Name</h3>
+							</li>
+							<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+								<a class="nav-link active" href="index.html" tabindex="0">Welcome</a>
+								<i class="fal fa-door-open"></i>
+							</li>
 
+							<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+								<a class="nav-link" href="view1.html" tabindex="0">Analysis</a>
+								<i class="fal fal fa-chart-bar"></i>
+							</li>
 
-	<nav class="navbar navbar-expand-xl navbar-light">
-		<div class="navbar-collapse collapse order-1 order-md-0 dual-collapse2" id="navbarSupportedContent">
-			<ul class="navbar-nav ml-auto py-4 py-md-0">
+							<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+								<a class="nav-link" href="reports.html" tabindex="0">Reports</a>
+								<i class="fal fa-clipboard-list"></i>
+							</li>
 
-				<li class="projects" tabindex="0" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					<i class="fal fa-angle-left"></i>
-					<i class="fas fa-circle"><p class="initials">PN</p></i>
-					<h3>Project Name</h3>
-				</li>
-				<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-					<a class="nav-link active" href="index.html" tabindex="0">Welcome</a>
-					<i class="fal fa-door-open"></i>
-				</li>
+							<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
 
-				<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-					<a class="nav-link dropdown-toggle" tabindex="0" id="navbarDropdownMenuAnalysis" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<p class="down">Analysis</p>
-					</a>
-					<i class="fal fa-chart-bar"></i>
-					<div class="dropdown-menu" id="analysis" aria-labelledby="navbarDropdownMenuAnalysis">
-						<p class="text-center navLevels">Level 1</p>
-						<a class="dropdown-item" href="view1.html">{{Data View 1}}</a>
-						<a href="view2.html" class="dropdown-item submenu nestedOne" type="button" tabindex="0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{Data View 2}}</a>
-						<div class="small-dropdown-menu">
-							<p class="text-center navLevels">Level 2</p>
-							<a class="smallerDropdown nestedTwo" type="button" tabindex="0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<button class="dropdown-item" type="button">{{Data View A}}</button>
+								<a class="nav-link" href="#">Documents</a>
+								<i class="fal fa-file-alt"></i>
+							</li>
+							<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+								<a class="nav-link" href="about.html">About</a>
+								<i class="fal fa-info-circle"></i>
+							</li>
+						</ul>
+
+						<ul class="navbar-nav ml-auto nav-flex-icons">
+
+							<a class="navbar-brand" href="default.html" target="_blank">
+								<img src="images/logo.svg" alt="WesDax Logo">
 							</a>
-						<div class="small-dropdown-menu2">
-							<p class="text-center navLevels">Level 3</p>
-							<button class="dropdown-item" type="button">{{Data View B}}</button>
-							<button class="dropdown-item" type="button">{{Data View C}}</button>
-						</div>
 
-							<button class="dropdown-item" type="button">{{Data View B}}</button>
-							<button class="dropdown-item" type="button">{{Data View C}}</button>
-						</div>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0" role="button">
+									<h6 class="user">{{USER}}</h6>
 
-
-
-						<a class="dropdown-item" href="view3.html">{{Data View 3}}</a>
-						<a class="dropdown-item" href="view4.html">{{Data View 4}}</a>
-						<a class="dropdown-item" href="view5.html">{{Data View 5}}</a>
-						<a class="dropdown-item" href="view6.html">{{Data View 6}}</a>
-						<a class="dropdown-item" href="view7.html">{{Data View 7}}</a>
+								</a>
+								<div class="dropdown-menu dropdown-menu-right dropdown-unique" aria-labelledby="navbarDropdownMenuLink">
+									<a class="dropdown-item" href="#">Action</a>
+									<a class="dropdown-item" href="#">Another action</a>
+									<a class="dropdown-item" href="#">Something else here</a>
+								</div>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link signOut" role="button" aria-haspopup="true" aria-expanded="false" tabindex="0">
+									<i class="fal fa-sign-out-alt"></i>
+								</a>
+							</li>
+						</ul>
 					</div>
-				</li>
-				<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
 
-					<a class="nav-link dropdown-toggle" tabindex="0" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-						<p class="down">Reports</p>
-					</a>
-					<i class="fal fa-clipboard-list"></i>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="#">{{Report View 1}}</a>
-						<a class="dropdown-item" href="#">{{Report View 2}}</a>
-						<a class="dropdown-item" href="#">{{Report View 3}}</a>
-						<a class="dropdown-item" href="#">{{Report View 4}}</a>
-						<a class="dropdown-item" href="#">{{Report View 5}}</a>
-					</div>
-				</li>
-				<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
 
-					<a class="nav-link" href="#">Documents</a>
-					<i class="fal fa-file-alt"></i>
-				</li>
-				<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-					<a class="nav-link" href="about.html">About</a>
-					<i class="fal fa-info-circle"></i>
-				</li>
-			</ul>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
 
-			<ul class="navbar-nav ml-auto nav-flex-icons">
+				</nav>
 
-				<a class="navbar-brand" href="default.html" target="_blank">
-					<img src="images/logo.svg" alt="WesDax Logo">
-				</a>
-
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0" role="button">
-						<h6 class="user">{{USER}}</h6>
-
-					</a>
-					<div class="dropdown-menu dropdown-menu-right dropdown-unique" aria-labelledby="navbarDropdownMenuLink">
-						<a class="dropdown-item" href="#">Action</a>
-						<a class="dropdown-item" href="#">Another action</a>
-						<a class="dropdown-item" href="#">Something else here</a>
-					</div>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link signOut" role="button" aria-haspopup="true" aria-expanded="false" tabindex="0">
-						<i class="fal fa-sign-out-alt"></i>
-					</a>
-				</li>
-			</ul>
+			</div>
 		</div>
 
-
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-
-	</nav>
-
-</div>
-</div>
-
-</div>
+	</div>
 
 		<div class="content-spacer"></div>
 		<div class="row">

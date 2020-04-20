@@ -95,27 +95,17 @@ $(document).ready(function () {
 
   })
 
-  $('.nestedOne').on('mouseenter', function()  {
 
-    $('.small-dropdown-menu').css('display', 'block')
-  })
+  $('.submenu').on("mouseenter", function(e){
+    $(this).next('.small-dropdown-menu').show();
+    e.stopPropagation();
+    // e.preventDefault();
+  });
 
-  $('.dropdown-menu').on('mouseleave', function()  {
+  $('.dropdown-menu').on("mouseleave", function(e){
+    $('.small-dropdown-menu').hide();
 
-    $('.small-dropdown-menu').css('display', 'none')
-  })
-
-  $('.nestedTwo').on('mouseenter', function()  {
-
-    $('.small-dropdown-menu2').css('display', 'block')
-  })
-
-  $('.small-dropdown-menu').on('mouseleave', function()  {
-
-    $('.small-dropdown-menu2').css('display', 'none')
-  })
-
-
+  });
 
 
 
@@ -3200,7 +3190,17 @@ closeToggle
   //make the nav item have active line on current page
 
   var path = window.location.href;
-  $('.navbar-nav li a').each(function() {
+  // $('.navbar-nav li a').each(function() {
+  //   if (this.href === path) {
+  //     $(this).addClass('active');
+  //   }
+  //   else {
+  //     $(this).removeClass('active');
+  //   }
+  //
+  // });
+
+  $('.nav-link').each(function() {
     if (this.href === path) {
       $(this).addClass('active');
     }
@@ -3208,6 +3208,10 @@ closeToggle
       $(this).removeClass('active');
     }
 
+  });
+
+  $('.dropdown-toggle').click(function () {
+    window.location = $(this).attr('href');
   });
 
   //make the nav item children have active line on current page

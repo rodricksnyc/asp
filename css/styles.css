@@ -1423,6 +1423,11 @@ padding-right:5px;
   margin-left: 0.5rem;
   margin-right: -0.5rem;
 }
+.submenu::after {
+    content: '▸';
+    margin-left: 0.5rem;
+    margin-right: -0.5rem;
+}
 
 .dropdown-item:hover + .dropdown-menu,
 .dropdown-menu:hover {
