@@ -1078,7 +1078,38 @@ $(document).ready(function () {
 
   });
 
+//close list areas
 
+var closeListArea = function (e){
+  // e.stopPropagation()
+
+$(this).find('i').toggleClass('fa-plus fa-minus')
+
+if($(this).find('i').hasClass('fa-plus')) {
+  $('.listArea').animate({
+    height: '2.7em'
+  }, 300)
+}
+
+else {
+  $('.listArea').animate({
+    height: '27em'
+  }, 300)
+}
+  //
+  // $('.listArea').animate({
+  //   height: 40
+  // }, 1000)
+  //
+
+
+}
+$('.closeLevels').keypress(
+  closeListArea
+
+).click(
+  closeListArea
+);
 
 
   let pageModule = {
@@ -1619,11 +1650,13 @@ $(document).ready(function () {
     }
 
 
-
+var categoryLi = "";
     $('.categoriesModal').unbind("click").on('click', function() {
       $('#reorderCategories').modal('show');
 
       var categoryLi =  $(this).closest('.levels').find('.categories')
+
+      var categoryListItems =  $(this).closest('.levels').find('.categories li')
 
       console.log(categoryLi)
 
@@ -1635,14 +1668,63 @@ $(document).ready(function () {
 
       $('.addCategories').append(Opt02).parent()
 
+
+
       $('.addCategories li .custom-control').removeClass('hidden')
 
-      $('.closeCategoryModal').click(function() {
-        $('.addCategories').empty()
-      })
+      $(categoryListItems).remove()
+      // $('.addCategories').empty()
+
+      // var emptyModal = function (){
+      //
+      //     // $(categoryLi).append(Opt50)
+      //
+      //   // $(thisUL).remove()
+      //   // $('.addCategories').empty()
+      //
+      // }
+      // $('.closeCategoryModal').keypress(
+      //   emptyModal
+      //
+      // ).click(
+      //   emptyModal
+      // );
+      //
+
+
+      var saveOrder = function (){
+
+
+      var newLI =  $(this).closest('.modal-content').find('.categories li')
+
+      var Opt50 = "";
+      $(newLI).each(function() {
+        Opt50 = Opt50 + this.outerHTML;
+
+      });
+
+      $(categoryLi).append(Opt50)
+
+      $('#reorderCategories').modal('hide');
+
+          // $('.addCategories').remove()
+      }
+
+      $('.save').keypress(
+        saveOrder
+
+      ).click(
+        saveOrder
+      );
+
+
+
 
 
     })
+
+
+
 
 
 
@@ -1694,26 +1776,7 @@ $(document).ready(function () {
 
       $('.numberCounter').html(function(i, val) { return val*1 + 1 });
 
-        var emptyModal = function (){
-          $('.addCategories').empty()
-        }
-        $('.closeCategoryModal').keypress(
-          emptyModal
 
-        ).click(
-          emptyModal
-        );
-      //
-      //   var saveOrder = function (){
-      //     // $( '.horizontal .categories').replaceWith('.addCategories .categories.newOrder')
-      //     $('#reorderCategories').modal('hide');
-      //   }
-      //   $('.save').keypress(
-      //     saveOrder
-      //
-      //   ).click(
-      //     saveOrder
-      //   );
 
 
 
