@@ -552,11 +552,23 @@ background-color: #FFD6CD;
   .navbar-brand{
       top:0;
   }
-  /* .content-spacer {
-    height:17vh !important
-  } */
-  /* .start-header {
+  .content-spacer {
+    height:15vh !important
+  }
+ .start-header {
     height:auto !important;
     min-height:69px;
-  } */
+  }
+  .navbar {
+    padding:1rem 1rem;
+  }
+.navbar-brand {
+  padding-top:.5rem
+}
+.projects{
+  padding:1.2em 0em .8em 2em;
+}
+
+
+
 }

@@ -686,6 +686,7 @@ a:focus {
 .optionPicker {
   margin: 0em 1em;
   position:relative;
+  max-width: 1500px;
 }
 
 .optional-line {
@@ -832,6 +833,7 @@ p.smallest {
 .option {
   padding: .5em;
   margin-right: 20px;
+  max-width: 1400px;
 }
 
 .append {
