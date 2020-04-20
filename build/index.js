@@ -2145,14 +2145,14 @@ $(document).ready(function () {
   //
   // });
 
-  $('.nav-link').each(function () {
+  $('.navbar-nav li .nav-link').each(function () {
     if (this.href === path) {
       $(this).addClass('active');
     } else {
       $(this).removeClass('active');
     }
   });
-  $('.dropdown-toggle').click(function () {
+  $('.navbar-nav li .dropdown-toggle').click(function () {
     window.location = $(this).attr('href');
   }); //make the nav item children have active line on current page
 

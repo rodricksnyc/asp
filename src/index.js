@@ -3200,7 +3200,7 @@ closeToggle
   //
   // });
 
-  $('.nav-link').each(function() {
+  $('.navbar-nav li .nav-link').each(function() {
     if (this.href === path) {
       $(this).addClass('active');
     }
@@ -3210,7 +3210,7 @@ closeToggle
 
   });
 
-  $('.dropdown-toggle').click(function () {
+  $('.navbar-nav li .dropdown-toggle').click(function () {
     window.location = $(this).attr('href');
   });
 
