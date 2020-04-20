@@ -557,7 +557,7 @@ background-color: #FFD6CD;
   }
  .start-header {
     height:auto !important;
-    min-height:69px;
+    height:78px;
   }
   .navbar {
     padding:1rem 1rem;
@@ -566,7 +566,7 @@ background-color: #FFD6CD;
   padding-top:.5rem
 }
 .projects{
-  padding:1.2em 0em .8em 2em;
+  padding:1em 1em .8em 2em;
 }
 
 
