@@ -695,24 +695,24 @@ $(document).ready(function () {
     }
   }); //close list areas
 
-  var closeListArea = function closeListArea(e) {
-    // e.stopPropagation()
+  var closeListArea = function closeListArea() {
     $(this).find('i').toggleClass('fa-plus fa-minus');
 
     if ($(this).find('i').hasClass('fa-plus')) {
       $('.listArea').animate({
         height: '2.7em'
       }, 300);
+      $('.listArea2').animate({
+        height: '2.7em'
+      }, 300);
     } else {
       $('.listArea').animate({
         height: '27em'
       }, 300);
-    } //
-    // $('.listArea').animate({
-    //   height: 40
-    // }, 1000)
-    //
-
+      $('.listArea2').animate({
+        height: '27em'
+      }, 300);
+    }
   };
 
   $('.closeLevels').keypress(closeListArea).click(closeListArea);
