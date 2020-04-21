@@ -710,12 +710,50 @@ $(document).ready(function () {
     }
   };
 
-  $('.closeLevels').keypress(closeListArea).click(closeListArea);
+  $('.closeLevels').keypress(closeListArea).click(closeListArea); // $('.addCategories input:checkbox').change( function(){
+  //
+  //
+  //   if($(this).prop("checked")==true){
+  //
+  //     $(this).closest('li').find('.custom-checkbox').addClass('reorderActive')
+  //
+  //
+  //   }
+  //
+  //   else{
+  //
+  //     $(this).closest('li').find('.custom-checkbox').removeClass('reorderActive')
+  //
+  //
+  //   };
+  //
+  //
+  //   let groupNumber =  $('.addCategories input:checkbox:checked').length;
+  //
+  //   const groupCounter = `Combine ${groupNumber}`;
+  //
+  //       if($(".addCategories input:checkbox:checked").length >= 2) {
+  //         $('#reorderCategories button').addClass('brightBlue')
+  //         $('.groupTopics').html(groupCounter)
+  //       }
+  //       else {
+  //           $('#reorderCategories button').removeClass('brightBlue')
+  //           $('.groupTopics').html('Select to group')
+  //       }
+  //
+  //
+  //
+  // });
+
   var pageModule = {
     config: {
       classes: {
         activeLevel: '.activeLevel',
-        numberCounter: '.numberCounter'
+        numberCounter: '.numberCounter',
+        groupCheckbox: '.addCategories input:checkbox',
+        groupButton: '#reorderCategories button',
+        groupWords: '.groupTopics',
+        checked: ".addCategories input:checkbox:checked"
       }
     },
     getnumberFunc: function getnumberFunc() {
@@ -724,6 +762,32 @@ $(document).ready(function () {
         return activeLevel * 1 + 1;
       });
       return showNumber;
+    },
+    groupCategoriesFunc: function groupCategoriesFunc() {
+      var modalInputs = pageModule.config.classes.groupCheckbox;
+      var button = pageModule.config.classes.groupButton;
+      var words = pageModule.config.classes.groupWords;
+      var checkedInputs = pageModule.config.classes.checked;
+      var groupNumber = $(checkedInputs).length;
+      $(modalInputs).change(function () {
+        if ($(this).prop("checked") == true) {
+          $(this).closest('li').find('.custom-checkbox').addClass('reorderActive');
+        } else {
+          $(this).closest('li').find('.custom-checkbox').removeClass('reorderActive');
+        }
+
+        ;
+        var groupNumber = $(checkedInputs).length;
+        var groupCounter = "Combine " + groupNumber;
+
+        if ($(checkedInputs).length >= 2) {
+          $(button).addClass('brightBlue');
+          $(words).html(groupCounter);
+        } else {
+          $(button).removeClass('brightBlue');
+          $(words).html('Select to group');
+        }
+      });
     },
     init: function init() {
       var self = this;
@@ -872,27 +936,7 @@ $(document).ready(function () {
         Opt02 = Opt02 + this.outerHTML;
       });
       $('.addCategories').append(Opt02).parent();
-      $('.addCategories input:checkbox').change(function () {
-        console.log(this.value);
-
-        if ($(this).prop("checked") == true) {
-          $(this).closest('li').find('.custom-checkbox').addClass('reorderActive');
-        } else {
-          $(this).closest('li').find('.custom-checkbox').removeClass('reorderActive');
-        }
-
-        ;
-        var groupNumber = $('.addCategories input:checkbox:checked').length;
-        var groupCounter = "Combine " + groupNumber;
-
-        if ($(".addCategories input:checkbox:checked").length >= 2) {
-          $('#reorderCategories button').addClass('brightBlue');
-          $('.groupTopics').html(groupCounter);
-        } else {
-          $('#reorderCategories button').removeClass('brightBlue');
-          $('.groupTopics').html('Select to group');
-        }
-      });
+      pageModule.groupCategoriesFunc();
       $('.addCategories li .custom-control').removeClass('hidden');
       $(categoryListItems).remove(); // $('.addCategories').empty()
       // var emptyModal = function (){
@@ -935,6 +979,7 @@ $(document).ready(function () {
           Opt02 = Opt02 + this.outerHTML;
         });
         $('.addCategories').append(Opt02).parent();
+        pageModule.groupCategoriesFunc();
         $('.addCategories li .custom-control').removeClass('hidden');
       }
     });
@@ -1049,6 +1094,7 @@ $(document).ready(function () {
         Opt02 = Opt02 + this.outerHTML;
       });
       $('.addCategories').append(Opt02).parent();
+      pageModule.groupCategoriesFunc();
       $('.addCategories li .custom-control').removeClass('hidden');
       $('.closeCategoryModal').click(function () {
         $('.addCategories').empty();
@@ -1066,6 +1112,7 @@ $(document).ready(function () {
           Opt02 = Opt02 + this.outerHTML;
         });
         $('.addCategories').append(Opt02).parent();
+        pageModule.groupCategoriesFunc();
         $('.addCategories li .custom-control').removeClass('hidden');
       }
     });
@@ -1164,6 +1211,7 @@ $(document).ready(function () {
         Opt02 = Opt02 + this.outerHTML;
       });
       $('.addCategories').append(Opt02).parent();
+      pageModule.groupCategoriesFunc();
       $('.addCategories li .custom-control').removeClass('hidden');
       $('.closeCategoryModal').click(function () {
         $('.addCategories').empty();
@@ -1181,6 +1229,7 @@ $(document).ready(function () {
           Opt02 = Opt02 + this.outerHTML;
         });
         $('.addCategories').append(Opt02).parent();
+        pageModule.groupCategoriesFunc();
         $('.addCategories li .custom-control').removeClass('hidden');
       }
     });
@@ -1270,6 +1319,7 @@ $(document).ready(function () {
         Opt02 = Opt02 + this.outerHTML;
       });
       $('.addCategories').append(Opt02).parent();
+      pageModule.groupCategoriesFunc();
       $('.addCategories li .custom-control').removeClass('hidden');
       $('.closeCategoryModal').click(function () {
         $('.addCategories').empty();
@@ -1287,6 +1337,7 @@ $(document).ready(function () {
           Opt02 = Opt02 + this.outerHTML;
         });
         $('.addCategories').append(Opt02).parent();
+        pageModule.groupCategoriesFunc();
         $('.addCategories li .custom-control').removeClass('hidden');
       }
     });
