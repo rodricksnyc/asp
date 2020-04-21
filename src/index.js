@@ -1415,6 +1415,20 @@ var categoryLi = "";
         };
 
 
+        let groupNumber =  $('.addCategories input:checkbox:checked').length;
+
+        const groupCounter = `Combine ${groupNumber}`;
+
+            if($(".addCategories input:checkbox:checked").length >= 2) {
+              $('#reorderCategories button').addClass('brightBlue')
+              $('.groupTopics').html(groupCounter)
+            }
+            else {
+                $('#reorderCategories button').removeClass('brightBlue')
+                $('.groupTopics').html('Select to group')
+            }
+
+
 
       });
 

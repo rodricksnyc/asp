@@ -1391,6 +1391,10 @@ padding-right:5px;
 
 }
 
+.brightBlue {
+background: #127abf;
+}
+
 .addCategories .custom-checkbox.reorderActive .fal {
     display: block !important;
 }
@@ -1745,6 +1749,23 @@ input[type="range"]::-ms-thumb {
   margin-left: -5px;
   margin-right: 3px;
 
+}
+
+
+.analysis a[data-type="topics"].NavItem--is-active:before {
+    content: "2";
+    background: #127abf;
+    color: white;
+    font-weight: 900;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    -moz-border-radius: 7.5px;
+    -webkit-border-radius: 18.5px;
+    border-radius: 18.5px;
+    font-size: 11px;
+    margin-left: -5px;
+    margin-right: 3px;
 }
 
 .analysis2 a[data-type="topics"]:before {

@@ -882,6 +882,16 @@ $(document).ready(function () {
         }
 
         ;
+        var groupNumber = $('.addCategories input:checkbox:checked').length;
+        var groupCounter = "Combine " + groupNumber;
+
+        if ($(".addCategories input:checkbox:checked").length >= 2) {
+          $('#reorderCategories button').addClass('brightBlue');
+          $('.groupTopics').html(groupCounter);
+        } else {
+          $('#reorderCategories button').removeClass('brightBlue');
+          $('.groupTopics').html('Select to group');
+        }
       });
       $('.addCategories li .custom-control').removeClass('hidden');
       $(categoryListItems).remove(); // $('.addCategories').empty()
