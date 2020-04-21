@@ -1466,36 +1466,41 @@ var categoryLi = "";
 
       var categoryLi =  $(this).closest('.levels').find('.categories')
 
-      var categoryListItems =  $(this).closest('.levels').find('.categories li')
+      var horizontal =  $(this).closest('.levels').find('.horizontal:eq( 1 )')
+      //
+      // var categoryListItems =  $(this).closest('.levels').find('.categories li')
+      //
+      // console.log(categoryLi)
+      //
+      // var Opt02 = "";
+      // $(categoryListItems).each(function() {
+      //   Opt02 = Opt02 + this.outerHTML;
+      //
+      // });
 
-      console.log(categoryLi)
 
-      var Opt02 = "";
-      $(categoryLi).each(function() {
-        Opt02 = Opt02 + this.outerHTML;
 
-      });
-
-      $('.addCategories').append(Opt02).parent()
-
+ $('.addCategories').append(categoryLi)
+      // $(categoryLi).remove()
 
 
       pageModule.groupCategoriesFunc()
 
 
-
-
       $('.addCategories li .custom-control').removeClass('hidden')
 
-      $(categoryListItems).remove()
+$('.closeCategoryModal').click(function() {
+$(horizontal).append(categoryLi)
+})
+
       // $('.addCategories').empty()
 
       // var emptyModal = function (){
       //
-      //     // $(categoryLi).append(Opt50)
       //
-      //   // $(thisUL).remove()
-      //   // $('.addCategories').empty()
+      //
+      //
+      //   $('.addCategories').remove()
       //
       // }
       // $('.closeCategoryModal').keypress(
@@ -1504,33 +1509,33 @@ var categoryLi = "";
       // ).click(
       //   emptyModal
       // );
+
+
+
+      // var saveOrder = function (){
       //
-
-
-      var saveOrder = function (){
-
-
-      var newLI =  $(this).closest('.modal-content').find('.categories li')
-
-      var Opt50 = "";
-      $(newLI).each(function() {
-        Opt50 = Opt50 + this.outerHTML;
-
-      });
-
-      $(categoryLi).append(Opt50)
-
-      $('#reorderCategories').modal('hide');
-
-          // $('.addCategories').remove()
-      }
-
-      $('.save').keypress(
-        saveOrder
-
-      ).click(
-        saveOrder
-      );
+      //
+      // var newLI =  $(this).closest('.modal-content').find('.categories li')
+      //
+      // var Opt50 = "";
+      // $(newLI).each(function() {
+      //   Opt50 = Opt50 + this.outerHTML;
+      //
+      // });
+      //
+      // $(categoryLi).append(Opt50)
+      //
+      // $('#reorderCategories').modal('hide');
+      //
+      //     // $('.addCategories').remove()
+      // }
+      //
+      // $('.save').keypress(
+      //   saveOrder
+      //
+      // ).click(
+      //   saveOrder
+      // );
 
 
 
@@ -1742,7 +1747,6 @@ var categoryLi = "";
 
 
     }
-
 
 
     $('.categoriesModal').unbind("click").on('click', function() {
@@ -2326,17 +2330,6 @@ var categoryLi = "";
     }
 
   })
-
-
-
-
-
-
-
-
-
-
-
 
 
 
