@@ -1419,11 +1419,32 @@ $(document).ready(function () {
 
   })
 
+  $('.addCategories').on('click','.moveDown',function(){
+    var after = $(this).closest('li').next()
+    $(this).closest('li').insertAfter(after)
+  });
+
+  $('.addCategories').on('click','.moveUp',function(){
+    var before = $(this).closest('li').prev()
+    $(this).closest('li').insertBefore(before)
+  });
+
+  $('.addCategories').on('click','.bottom',function(){
+
+    $(this).closest('li').insertAfter($('.addCategories .categories li').last());
+
+  })
+
+
+  $('.addCategories').on('click','.top',function(){
+
+    $(this).closest('li').insertBefore($('.addCategories .categories li').first());
+
+  })
+
 
 
   var addRow = function (){
-
-
 
     var obj = $(this).closest('.levels').find('input[data-level]').val()
 
@@ -1466,11 +1487,11 @@ $(document).ready(function () {
 
       var categoryLi =  $(this).closest('.levels').find('.categories')
 
-      var horizontal =  $(this).closest('.levels').find('.horizontal:eq( 1 )')
+      var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
 
 
-      $('.addCategories').append(categoryLi)
-      // $(categoryLi).remove()
+   $('.addCategories').append($(categoryLi).clone());
+
 
 
       pageModule.groupCategoriesFunc()
@@ -1479,8 +1500,9 @@ $(document).ready(function () {
       $('.addCategories li .custom-control').removeClass('hidden')
 
       var emptyModal = function (){
+        $('.addCategories').empty()
 
-        $(horizontal).append(categoryLi)
+        // $(horizontal).append(categoryLi)
 
 
       }
@@ -1494,6 +1516,7 @@ $(document).ready(function () {
       var saveModal = function (){
 
         $(horizontal).append(categoryLi)
+        $('.addCategories').empty()
 
 
       }
@@ -1509,9 +1532,6 @@ $(document).ready(function () {
         $('#reorderCategories').modal('hide');
         $(horizontal).append(categoryLi)
       })
-
-
-
 
 
     })
@@ -2434,28 +2454,7 @@ $(document).ready(function () {
 
 
 
-  $('.addCategories').on('click','.moveDown',function(){
-    var after = $(this).closest('li').next()
-    $(this).closest('li').insertAfter(after)
-  });
 
-  $('.addCategories').on('click','.moveUp',function(){
-    var before = $(this).closest('li').prev()
-    $(this).closest('li').insertBefore(before)
-  });
-
-  $('.addCategories').on('click','.bottom',function(){
-
-    $(this).closest('li').insertAfter($('.addCategories .categories li').last());
-
-  })
-
-
-  $('.addCategories').on('click','.top',function(){
-
-    $(this).closest('li').insertBefore($('.addCategories .categories li').first());
-
-  })
 
   //adding background color to levels if any of its children are focused
   // $('input[data-level]').focus(function() {

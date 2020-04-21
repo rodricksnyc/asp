@@ -37,6 +37,7 @@
   -webkit-transition : all 0.3s ease-out;
   transition : all 0.3s ease-out;
   /* padding-bottom:1em; */
+  max-width: 17em;
 }
 .navbar-toggler {
   float: right;

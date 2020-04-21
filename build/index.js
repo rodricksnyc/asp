@@ -904,6 +904,20 @@ $(document).ready(function () {
       $('.grayLayer').css('top', $('.lightBlueBack').height() + $('.topics').height() + $('.analysis-topic').height());
     }
   });
+  $('.addCategories').on('click', '.moveDown', function () {
+    var after = $(this).closest('li').next();
+    $(this).closest('li').insertAfter(after);
+  });
+  $('.addCategories').on('click', '.moveUp', function () {
+    var before = $(this).closest('li').prev();
+    $(this).closest('li').insertBefore(before);
+  });
+  $('.addCategories').on('click', '.bottom', function () {
+    $(this).closest('li').insertAfter($('.addCategories .categories li').last());
+  });
+  $('.addCategories').on('click', '.top', function () {
+    $(this).closest('li').insertBefore($('.addCategories .categories li').first());
+  });
 
   var addRow = function addRow() {
     var obj = $(this).closest('.levels').find('input[data-level]').val();
@@ -929,20 +943,20 @@ $(document).ready(function () {
     $('.categoriesModal').unbind("click").on('click', function () {
       $('#reorderCategories').modal('show');
       var categoryLi = $(this).closest('.levels').find('.categories');
-      var horizontal = $(this).closest('.levels').find('.horizontal:eq( 1 )');
-      $('.addCategories').append(categoryLi); // $(categoryLi).remove()
-
+      var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
+      $('.addCategories').append($(categoryLi).clone());
       pageModule.groupCategoriesFunc();
       $('.addCategories li .custom-control').removeClass('hidden');
 
       var emptyModal = function emptyModal() {
-        $(horizontal).append(categoryLi);
+        $('.addCategories').empty(); // $(horizontal).append(categoryLi)
       };
 
       $('.closeCategoryModal').keypress(emptyModal).click(emptyModal);
 
       var saveModal = function saveModal() {
         $(horizontal).append(categoryLi);
+        $('.addCategories').empty();
       };
 
       $('.save').keypress(saveModal).click(saveModal);
@@ -1399,20 +1413,6 @@ $(document).ready(function () {
 
       $('.addAnalysis').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false); // $(this).closest('.levels').remove();
     }
-  });
-  $('.addCategories').on('click', '.moveDown', function () {
-    var after = $(this).closest('li').next();
-    $(this).closest('li').insertAfter(after);
-  });
-  $('.addCategories').on('click', '.moveUp', function () {
-    var before = $(this).closest('li').prev();
-    $(this).closest('li').insertBefore(before);
-  });
-  $('.addCategories').on('click', '.bottom', function () {
-    $(this).closest('li').insertAfter($('.addCategories .categories li').last());
-  });
-  $('.addCategories').on('click', '.top', function () {
-    $(this).closest('li').insertBefore($('.addCategories .categories li').first());
   }); //adding background color to levels if any of its children are focused
   // $('input[data-level]').focus(function() {
   //         $(this).parent().css({
