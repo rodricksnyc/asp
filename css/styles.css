@@ -1435,6 +1435,10 @@ padding-right:5px;
 background: #127abf;
 }
 
+.brightBlue:hover {
+    background: #127abf;
+}
+
 .addCategories .custom-checkbox.reorderActive .fal {
     display: block !important;
 }
