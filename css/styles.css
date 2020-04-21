@@ -832,6 +832,33 @@ p.smallest {
   left: -112%;
 }
 
+.analysis2 .optional-line:before {
+    content: '';
+    width: calc(100% - 2.4rem);
+      border-bottom: solid 2px #68aadc;
+      position: absolute;
+      top: 32%;
+      z-index: 1;
+      left: -52%;
+}
+
+.analysis2 .optional-line:after {
+    content: '';
+    border-bottom: solid 2px #68aadc;
+    position: absolute;
+    top: 32%;
+    z-index: 1;
+    right: -54%;
+      width: calc(100% - 2.5rem);
+}
+
+.analysis2 .optional-line {
+    position: absolute;
+    right: 15.5%;
+    z-index: 2;
+    top: .4rem;
+}
+
 .analysis3 .optional-line:before {
     content: '';
     width: calc(100% - 2.4rem);
@@ -858,6 +885,7 @@ p.smallest {
     z-index: 2;
     top: .4rem;
 }
+
 
 
 .optionListWindow {
@@ -1056,6 +1084,18 @@ p.smallest {
   border-radius:1rem;
   position:relative;
   /* margin-right:4em; */
+}
+
+.analysis2 .appendOptions {
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+    /* padding: .5em 1em; */
+    height: auto;
+    border-radius: 1rem;
+    position: relative;
+    /* margin-right: 4em; */
+    padding-bottom: 4px;
+    padding-top: 2px;
 }
 
 .lightBlueBack {
