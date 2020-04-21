@@ -1384,6 +1384,30 @@ padding-right:5px;
   background-size: 50% 50%;
 }
 
+.reorderActive {
+
+    background-color: #faede9;
+    border-radius: .5rem;
+
+}
+
+.addCategories .custom-checkbox.reorderActive .fal {
+    display: block !important;
+}
+
+.addCategories .custom-control-label::after {
+    position: absolute;
+    top: 0.2rem;
+    left: -1.35rem;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    content: "";
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
+
 .custom-control-label {
   position: relative;
   margin-bottom: 0;
