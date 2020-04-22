@@ -967,7 +967,6 @@ $(document).ready(function () {
       };
 
       $('.save').keypress(saveModal).click(saveModal);
-      $('.save').click(function () {});
     });
     $('.categoriesModal').unbind("keyup").on('keyup', function (e) {
       var code = e.keyCode ? e.keyCode : e.which;
@@ -975,27 +974,30 @@ $(document).ready(function () {
       if (code == 13) {
         $('#reorderCategories').modal('show');
         var categoryLi = $(this).closest('.levels').find('.categories');
-        var horizontal = $(this).closest('.levels').find('.horizontal:eq( 1 )');
-        $('.addCategories').append(categoryLi); // $(categoryLi).remove()
-
+        var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
+        var original = $(categoryLi).clone();
+        $('.addCategories').append(categoryLi);
         pageModule.groupCategoriesFunc();
         $('.addCategories li .custom-control').removeClass('hidden');
 
         var emptyModal = function emptyModal() {
-          $(horizontal).append(categoryLi);
+          console.log(original);
+          $(horizontal).empty().append(original);
+          $('.addCategories').empty();
         };
 
         $('.closeCategoryModal').keypress(emptyModal).click(emptyModal);
 
         var saveModal = function saveModal() {
-          $(horizontal).append(categoryLi);
+          // var updated = $('.addCategories .categories')
+          //
+          // $(horizontal).append(updated)
+          $(horizontal).empty().append(categoryLi);
+          $('.addCategories').empty();
+          $('#reorderCategories').modal('hide');
         };
 
         $('.save').keypress(saveModal).click(saveModal);
-        $('.save').click(function () {
-          $('#reorderCategories').modal('hide');
-          $(horizontal).append(categoryLi);
-        });
       }
     });
     $("#rowTopic .levels:nth-child(4)").nextAll(".levels").addClass('noWidth');
@@ -1098,20 +1100,27 @@ $(document).ready(function () {
     $('.categoriesModal').unbind("click").on('click', function () {
       $('#reorderCategories').modal('show');
       var categoryLi = $(this).closest('.levels').find('.categories');
-      var horizontal = $(this).closest('.levels').find('.horizontal:eq( 1 )');
-      $('.addCategories').append(categoryLi); // $(categoryLi).remove()
-
+      var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
+      var original = $(categoryLi).clone();
+      $('.addCategories').append(categoryLi);
       pageModule.groupCategoriesFunc();
       $('.addCategories li .custom-control').removeClass('hidden');
 
       var emptyModal = function emptyModal() {
-        $(horizontal).append(categoryLi);
+        console.log(original);
+        $(horizontal).empty().append(original);
+        $('.addCategories').empty();
       };
 
       $('.closeCategoryModal').keypress(emptyModal).click(emptyModal);
 
       var saveModal = function saveModal() {
-        $(horizontal).append(categoryLi);
+        // var updated = $('.addCategories .categories')
+        //
+        // $(horizontal).append(updated)
+        $(horizontal).empty().append(categoryLi);
+        $('.addCategories').empty();
+        $('#reorderCategories').modal('hide');
       };
 
       $('.save').keypress(saveModal).click(saveModal);
@@ -1122,20 +1131,27 @@ $(document).ready(function () {
       if (code == 13) {
         $('#reorderCategories').modal('show');
         var categoryLi = $(this).closest('.levels').find('.categories');
-        var horizontal = $(this).closest('.levels').find('.horizontal:eq( 1 )');
-        $('.addCategories').append(categoryLi); // $(categoryLi).remove()
-
+        var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
+        var original = $(categoryLi).clone();
+        $('.addCategories').append(categoryLi);
         pageModule.groupCategoriesFunc();
         $('.addCategories li .custom-control').removeClass('hidden');
 
         var emptyModal = function emptyModal() {
-          $(horizontal).append(categoryLi);
+          console.log(original);
+          $(horizontal).empty().append(original);
+          $('.addCategories').empty();
         };
 
         $('.closeCategoryModal').keypress(emptyModal).click(emptyModal);
 
         var saveModal = function saveModal() {
-          $(horizontal).append(categoryLi);
+          // var updated = $('.addCategories .categories')
+          //
+          // $(horizontal).append(updated)
+          $(horizontal).empty().append(categoryLi);
+          $('.addCategories').empty();
+          $('#reorderCategories').modal('hide');
         };
 
         $('.save').keypress(saveModal).click(saveModal);
@@ -1225,20 +1241,27 @@ $(document).ready(function () {
     $('.categoriesModal').unbind("click").on('click', function () {
       $('#reorderCategories').modal('show');
       var categoryLi = $(this).closest('.levels').find('.categories');
-      var horizontal = $(this).closest('.levels').find('.horizontal:eq( 1 )');
-      $('.addCategories').append(categoryLi); // $(categoryLi).remove()
-
+      var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
+      var original = $(categoryLi).clone();
+      $('.addCategories').append(categoryLi);
       pageModule.groupCategoriesFunc();
       $('.addCategories li .custom-control').removeClass('hidden');
 
       var emptyModal = function emptyModal() {
-        $(horizontal).append(categoryLi);
+        console.log(original);
+        $(horizontal).empty().append(original);
+        $('.addCategories').empty();
       };
 
       $('.closeCategoryModal').keypress(emptyModal).click(emptyModal);
 
       var saveModal = function saveModal() {
-        $(horizontal).append(categoryLi);
+        // var updated = $('.addCategories .categories')
+        //
+        // $(horizontal).append(updated)
+        $(horizontal).empty().append(categoryLi);
+        $('.addCategories').empty();
+        $('#reorderCategories').modal('hide');
       };
 
       $('.save').keypress(saveModal).click(saveModal);
@@ -1249,20 +1272,27 @@ $(document).ready(function () {
       if (code == 13) {
         $('#reorderCategories').modal('show');
         var categoryLi = $(this).closest('.levels').find('.categories');
-        var horizontal = $(this).closest('.levels').find('.horizontal:eq( 1 )');
-        $('.addCategories').append(categoryLi); // $(categoryLi).remove()
-
+        var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
+        var original = $(categoryLi).clone();
+        $('.addCategories').append(categoryLi);
         pageModule.groupCategoriesFunc();
         $('.addCategories li .custom-control').removeClass('hidden');
 
         var emptyModal = function emptyModal() {
-          $(horizontal).append(categoryLi);
+          console.log(original);
+          $(horizontal).empty().append(original);
+          $('.addCategories').empty();
         };
 
         $('.closeCategoryModal').keypress(emptyModal).click(emptyModal);
 
         var saveModal = function saveModal() {
-          $(horizontal).append(categoryLi);
+          // var updated = $('.addCategories .categories')
+          //
+          // $(horizontal).append(updated)
+          $(horizontal).empty().append(categoryLi);
+          $('.addCategories').empty();
+          $('#reorderCategories').modal('hide');
         };
 
         $('.save').keypress(saveModal).click(saveModal);
@@ -1343,20 +1373,27 @@ $(document).ready(function () {
     $('.categoriesModal').unbind("click").on('click', function () {
       $('#reorderCategories').modal('show');
       var categoryLi = $(this).closest('.levels').find('.categories');
-      var horizontal = $(this).closest('.levels').find('.horizontal:eq( 1 )');
-      $('.addCategories').append(categoryLi); // $(categoryLi).remove()
-
+      var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
+      var original = $(categoryLi).clone();
+      $('.addCategories').append(categoryLi);
       pageModule.groupCategoriesFunc();
       $('.addCategories li .custom-control').removeClass('hidden');
 
       var emptyModal = function emptyModal() {
-        $(horizontal).append(categoryLi);
+        console.log(original);
+        $(horizontal).empty().append(original);
+        $('.addCategories').empty();
       };
 
       $('.closeCategoryModal').keypress(emptyModal).click(emptyModal);
 
       var saveModal = function saveModal() {
-        $(horizontal).append(categoryLi);
+        // var updated = $('.addCategories .categories')
+        //
+        // $(horizontal).append(updated)
+        $(horizontal).empty().append(categoryLi);
+        $('.addCategories').empty();
+        $('#reorderCategories').modal('hide');
       };
 
       $('.save').keypress(saveModal).click(saveModal);
@@ -1367,20 +1404,27 @@ $(document).ready(function () {
       if (code == 13) {
         $('#reorderCategories').modal('show');
         var categoryLi = $(this).closest('.levels').find('.categories');
-        var horizontal = $(this).closest('.levels').find('.horizontal:eq( 1 )');
-        $('.addCategories').append(categoryLi); // $(categoryLi).remove()
-
+        var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
+        var original = $(categoryLi).clone();
+        $('.addCategories').append(categoryLi);
         pageModule.groupCategoriesFunc();
         $('.addCategories li .custom-control').removeClass('hidden');
 
         var emptyModal = function emptyModal() {
-          $(horizontal).append(categoryLi);
+          console.log(original);
+          $(horizontal).empty().append(original);
+          $('.addCategories').empty();
         };
 
         $('.closeCategoryModal').keypress(emptyModal).click(emptyModal);
 
         var saveModal = function saveModal() {
-          $(horizontal).append(categoryLi);
+          // var updated = $('.addCategories .categories')
+          //
+          // $(horizontal).append(updated)
+          $(horizontal).empty().append(categoryLi);
+          $('.addCategories').empty();
+          $('#reorderCategories').modal('hide');
         };
 
         $('.save').keypress(saveModal).click(saveModal);

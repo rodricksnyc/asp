@@ -1518,9 +1518,6 @@ $(document).ready(function () {
         $('.addCategories').empty()
 
 
-
-
-
       }
       $('.closeCategoryModal').keypress(
         emptyModal
@@ -1556,10 +1553,6 @@ $(document).ready(function () {
       );
 
 
-      $('.save').click(function() {
-
-      })
-
 
     })
 
@@ -1568,53 +1561,68 @@ $(document).ready(function () {
     $('.categoriesModal').unbind("keyup").on('keyup', function(e) {
       var code = (e.keyCode ? e.keyCode : e.which);
       if (code == 13) {
-      $('#reorderCategories').modal('show');
-
-      var categoryLi =  $(this).closest('.levels').find('.categories')
-
-      var horizontal =  $(this).closest('.levels').find('.horizontal:eq( 1 )')
+        $('#reorderCategories').modal('show');
 
 
-      $('.addCategories').append(categoryLi)
-      // $(categoryLi).remove()
+        var categoryLi =  $(this).closest('.levels').find('.categories')
+
+        var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
 
 
-      pageModule.groupCategoriesFunc()
+       var original = $(categoryLi).clone();
 
 
-      $('.addCategories li .custom-control').removeClass('hidden')
+       $('.addCategories').append(categoryLi)
 
-      var emptyModal = function (){
-
-        $(horizontal).append(categoryLi)
+        pageModule.groupCategoriesFunc()
 
 
-      }
-      $('.closeCategoryModal').keypress(
-        emptyModal
-
-      ).click(
-        emptyModal
-      );
-
-      var saveModal = function (){
-
-        $(horizontal).append(categoryLi)
+        $('.addCategories li .custom-control').removeClass('hidden')
 
 
-      }
-      $('.save').keypress(
-        saveModal
 
-      ).click(
-        saveModal
-      );
+        var emptyModal = function (){
+
+          console.log(original)
+
+          $(horizontal).empty().append(original)
+
+          $('.addCategories').empty()
 
 
-      $('.save').click(function() {
-        $('#reorderCategories').modal('hide');
-        $(horizontal).append(categoryLi)
-      })
+        }
+        $('.closeCategoryModal').keypress(
+          emptyModal
+
+        ).click(
+          emptyModal
+        );
+
+        var saveModal = function (){
+
+
+          // var updated = $('.addCategories .categories')
+          //
+          // $(horizontal).append(updated)
+
+          $(horizontal).empty().append(categoryLi)
+
+
+          $('.addCategories').empty()
+
+
+          $('#reorderCategories').modal('hide');
+
+
+
+
+        }
+        $('.save').keypress(
+          saveModal
+
+        ).click(
+          saveModal
+        );
 
 
 
@@ -1790,23 +1798,31 @@ $(document).ready(function () {
         $('.categoriesModal').unbind("click").on('click', function() {
           $('#reorderCategories').modal('show');
 
+
           var categoryLi =  $(this).closest('.levels').find('.categories')
 
-          var horizontal =  $(this).closest('.levels').find('.horizontal:eq( 1 )')
+          var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
 
 
-          $('.addCategories').append(categoryLi)
-          // $(categoryLi).remove()
+         var original = $(categoryLi).clone();
 
+
+         $('.addCategories').append(categoryLi)
 
           pageModule.groupCategoriesFunc()
 
 
           $('.addCategories li .custom-control').removeClass('hidden')
 
+
+
           var emptyModal = function (){
 
-            $(horizontal).append(categoryLi)
+            console.log(original)
+
+            $(horizontal).empty().append(original)
+
+            $('.addCategories').empty()
 
 
           }
@@ -1819,7 +1835,20 @@ $(document).ready(function () {
 
           var saveModal = function (){
 
-            $(horizontal).append(categoryLi)
+
+            // var updated = $('.addCategories .categories')
+            //
+            // $(horizontal).append(updated)
+
+            $(horizontal).empty().append(categoryLi)
+
+
+            $('.addCategories').empty()
+
+
+            $('#reorderCategories').modal('hide');
+
+
 
 
           }
@@ -1829,6 +1858,7 @@ $(document).ready(function () {
           ).click(
             saveModal
           );
+
 
 
 
@@ -1839,49 +1869,68 @@ $(document).ready(function () {
         $('.categoriesModal').unbind("keyup").on('keyup', function(e) {
           var code = (e.keyCode ? e.keyCode : e.which);
           if (code == 13) {
-          $('#reorderCategories').modal('show');
-
-          var categoryLi =  $(this).closest('.levels').find('.categories')
-
-          var horizontal =  $(this).closest('.levels').find('.horizontal:eq( 1 )')
+            $('#reorderCategories').modal('show');
 
 
-          $('.addCategories').append(categoryLi)
-          // $(categoryLi).remove()
+            var categoryLi =  $(this).closest('.levels').find('.categories')
+
+            var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
 
 
-          pageModule.groupCategoriesFunc()
+           var original = $(categoryLi).clone();
 
 
-          $('.addCategories li .custom-control').removeClass('hidden')
+           $('.addCategories').append(categoryLi)
 
-          var emptyModal = function (){
-
-            $(horizontal).append(categoryLi)
+            pageModule.groupCategoriesFunc()
 
 
-          }
-          $('.closeCategoryModal').keypress(
-            emptyModal
-
-          ).click(
-            emptyModal
-          );
-
-          var saveModal = function (){
-
-            $(horizontal).append(categoryLi)
+            $('.addCategories li .custom-control').removeClass('hidden')
 
 
-          }
-          $('.save').keypress(
-            saveModal
 
-          ).click(
-            saveModal
-          );
+            var emptyModal = function (){
+
+              console.log(original)
+
+              $(horizontal).empty().append(original)
+
+              $('.addCategories').empty()
 
 
+            }
+            $('.closeCategoryModal').keypress(
+              emptyModal
+
+            ).click(
+              emptyModal
+            );
+
+            var saveModal = function (){
+
+
+              // var updated = $('.addCategories .categories')
+              //
+              // $(horizontal).append(updated)
+
+              $(horizontal).empty().append(categoryLi)
+
+
+              $('.addCategories').empty()
+
+
+              $('#reorderCategories').modal('hide');
+
+
+
+
+            }
+            $('.save').keypress(
+              saveModal
+
+            ).click(
+              saveModal
+            );
 
 
 
@@ -2060,23 +2109,31 @@ $(document).ready(function () {
         $('.categoriesModal').unbind("click").on('click', function() {
           $('#reorderCategories').modal('show');
 
+
           var categoryLi =  $(this).closest('.levels').find('.categories')
 
-          var horizontal =  $(this).closest('.levels').find('.horizontal:eq( 1 )')
+          var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
 
 
-          $('.addCategories').append(categoryLi)
-          // $(categoryLi).remove()
+         var original = $(categoryLi).clone();
 
+
+         $('.addCategories').append(categoryLi)
 
           pageModule.groupCategoriesFunc()
 
 
           $('.addCategories li .custom-control').removeClass('hidden')
 
+
+
           var emptyModal = function (){
 
-            $(horizontal).append(categoryLi)
+            console.log(original)
+
+            $(horizontal).empty().append(original)
+
+            $('.addCategories').empty()
 
 
           }
@@ -2089,7 +2146,20 @@ $(document).ready(function () {
 
           var saveModal = function (){
 
-            $(horizontal).append(categoryLi)
+
+            // var updated = $('.addCategories .categories')
+            //
+            // $(horizontal).append(updated)
+
+            $(horizontal).empty().append(categoryLi)
+
+
+            $('.addCategories').empty()
+
+
+            $('#reorderCategories').modal('hide');
+
+
 
 
           }
@@ -2099,6 +2169,7 @@ $(document).ready(function () {
           ).click(
             saveModal
           );
+
 
         })
 
@@ -2107,46 +2178,69 @@ $(document).ready(function () {
         $('.categoriesModal').unbind("keyup").on('keyup', function(e) {
           var code = (e.keyCode ? e.keyCode : e.which);
           if (code == 13) {
-          $('#reorderCategories').modal('show');
-
-          var categoryLi =  $(this).closest('.levels').find('.categories')
-
-          var horizontal =  $(this).closest('.levels').find('.horizontal:eq( 1 )')
+            $('#reorderCategories').modal('show');
 
 
-          $('.addCategories').append(categoryLi)
-          // $(categoryLi).remove()
+            var categoryLi =  $(this).closest('.levels').find('.categories')
+
+            var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
 
 
-          pageModule.groupCategoriesFunc()
+           var original = $(categoryLi).clone();
 
 
-          $('.addCategories li .custom-control').removeClass('hidden')
+           $('.addCategories').append(categoryLi)
 
-          var emptyModal = function (){
-
-            $(horizontal).append(categoryLi)
+            pageModule.groupCategoriesFunc()
 
 
-          }
-          $('.closeCategoryModal').keypress(
-            emptyModal
+            $('.addCategories li .custom-control').removeClass('hidden')
 
-          ).click(
-            emptyModal
-          );
 
-          var saveModal = function (){
 
-            $(horizontal).append(categoryLi)
+            var emptyModal = function (){
 
-          }
-          $('.save').keypress(
-            saveModal
+              console.log(original)
 
-          ).click(
-            saveModal
-          );
+              $(horizontal).empty().append(original)
+
+              $('.addCategories').empty()
+
+
+            }
+            $('.closeCategoryModal').keypress(
+              emptyModal
+
+            ).click(
+              emptyModal
+            );
+
+            var saveModal = function (){
+
+
+              // var updated = $('.addCategories .categories')
+              //
+              // $(horizontal).append(updated)
+
+              $(horizontal).empty().append(categoryLi)
+
+
+              $('.addCategories').empty()
+
+
+              $('#reorderCategories').modal('hide');
+
+
+
+
+            }
+            $('.save').keypress(
+              saveModal
+
+            ).click(
+              saveModal
+            );
+
 
 
 
@@ -2314,23 +2408,31 @@ $(document).ready(function () {
     $('.categoriesModal').unbind("click").on('click', function() {
       $('#reorderCategories').modal('show');
 
+
       var categoryLi =  $(this).closest('.levels').find('.categories')
 
-      var horizontal =  $(this).closest('.levels').find('.horizontal:eq( 1 )')
+      var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
 
 
-      $('.addCategories').append(categoryLi)
-      // $(categoryLi).remove()
+     var original = $(categoryLi).clone();
 
+
+     $('.addCategories').append(categoryLi)
 
       pageModule.groupCategoriesFunc()
 
 
       $('.addCategories li .custom-control').removeClass('hidden')
 
+
+
       var emptyModal = function (){
 
-        $(horizontal).append(categoryLi)
+        console.log(original)
+
+        $(horizontal).empty().append(original)
+
+        $('.addCategories').empty()
 
 
       }
@@ -2343,7 +2445,20 @@ $(document).ready(function () {
 
       var saveModal = function (){
 
-        $(horizontal).append(categoryLi)
+
+        // var updated = $('.addCategories .categories')
+        //
+        // $(horizontal).append(updated)
+
+        $(horizontal).empty().append(categoryLi)
+
+
+        $('.addCategories').empty()
+
+
+        $('#reorderCategories').modal('hide');
+
+
 
 
       }
@@ -2353,6 +2468,7 @@ $(document).ready(function () {
       ).click(
         saveModal
       );
+
 
     })
 
@@ -2361,46 +2477,68 @@ $(document).ready(function () {
     $('.categoriesModal').unbind("keyup").on('keyup', function(e) {
       var code = (e.keyCode ? e.keyCode : e.which);
       if (code == 13) {
-      $('#reorderCategories').modal('show');
-
-      var categoryLi =  $(this).closest('.levels').find('.categories')
-
-      var horizontal =  $(this).closest('.levels').find('.horizontal:eq( 1 )')
+        $('#reorderCategories').modal('show');
 
 
-      $('.addCategories').append(categoryLi)
-      // $(categoryLi).remove()
+        var categoryLi =  $(this).closest('.levels').find('.categories')
+
+        var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
 
 
-      pageModule.groupCategoriesFunc()
+       var original = $(categoryLi).clone();
 
 
-      $('.addCategories li .custom-control').removeClass('hidden')
+       $('.addCategories').append(categoryLi)
 
-      var emptyModal = function (){
-
-        $(horizontal).append(categoryLi)
+        pageModule.groupCategoriesFunc()
 
 
-      }
-      $('.closeCategoryModal').keypress(
-        emptyModal
+        $('.addCategories li .custom-control').removeClass('hidden')
 
-      ).click(
-        emptyModal
-      );
 
-      var saveModal = function (){
 
-        $(horizontal).append(categoryLi)
+        var emptyModal = function (){
 
-      }
-      $('.save').keypress(
-        saveModal
+          console.log(original)
 
-      ).click(
-        saveModal
-      );
+          $(horizontal).empty().append(original)
+
+          $('.addCategories').empty()
+
+
+        }
+        $('.closeCategoryModal').keypress(
+          emptyModal
+
+        ).click(
+          emptyModal
+        );
+
+        var saveModal = function (){
+
+
+          // var updated = $('.addCategories .categories')
+          //
+          // $(horizontal).append(updated)
+
+          $(horizontal).empty().append(categoryLi)
+
+
+          $('.addCategories').empty()
+
+
+          $('#reorderCategories').modal('hide');
+
+
+
+
+        }
+        $('.save').keypress(
+          saveModal
+
+        ).click(
+          saveModal
+        );
 
 
 
