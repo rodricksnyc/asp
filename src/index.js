@@ -1419,6 +1419,9 @@ $(document).ready(function () {
 
   })
 
+
+
+
   $('.addCategories').on('click','.moveDown',function(){
     var after = $(this).closest('li').next()
     $(this).closest('li').insertAfter(after)
@@ -1441,6 +1444,9 @@ $(document).ready(function () {
     $(this).closest('li').insertBefore($('.addCategories .categories li').first());
 
   })
+
+
+
 
 
 
@@ -1491,10 +1497,10 @@ $(document).ready(function () {
       var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
 
 
-     $('.addCategories').append($(categoryLi).clone());
+     var original = $(categoryLi).clone();
 
-     var rem = $(categoryLi).detach()
 
+     $('.addCategories').append(categoryLi)
 
       pageModule.groupCategoriesFunc()
 
@@ -1505,9 +1511,14 @@ $(document).ready(function () {
 
       var emptyModal = function (){
 
+        console.log(original)
+
+        $(horizontal).empty().append(original)
+
         $('.addCategories').empty()
 
-        $(horizontal).append(rem)
+
+
 
 
       }
@@ -1521,9 +1532,11 @@ $(document).ready(function () {
       var saveModal = function (){
 
 
-        var updated = $('.addCategories .categories')
+        // var updated = $('.addCategories .categories')
+        //
+        // $(horizontal).append(updated)
 
-        $(horizontal).append(updated)
+        $(horizontal).empty().append(categoryLi)
 
 
         $('.addCategories').empty()

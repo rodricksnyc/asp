@@ -944,21 +944,24 @@ $(document).ready(function () {
       $('#reorderCategories').modal('show');
       var categoryLi = $(this).closest('.levels').find('.categories');
       var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
-      $('.addCategories').append($(categoryLi).clone());
-      var rem = $(categoryLi).detach();
+      var original = $(categoryLi).clone();
+      $('.addCategories').append(categoryLi);
       pageModule.groupCategoriesFunc();
       $('.addCategories li .custom-control').removeClass('hidden');
 
       var emptyModal = function emptyModal() {
+        console.log(original);
+        $(horizontal).empty().append(original);
         $('.addCategories').empty();
-        $(horizontal).append(rem);
       };
 
       $('.closeCategoryModal').keypress(emptyModal).click(emptyModal);
 
       var saveModal = function saveModal() {
-        var updated = $('.addCategories .categories');
-        $(horizontal).append(updated);
+        // var updated = $('.addCategories .categories')
+        //
+        // $(horizontal).append(updated)
+        $(horizontal).empty().append(categoryLi);
         $('.addCategories').empty();
         $('#reorderCategories').modal('hide');
       };
