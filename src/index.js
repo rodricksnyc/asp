@@ -1482,27 +1482,38 @@ $(document).ready(function () {
 
 
     var categoryLi = "";
-    $('.categoriesModal').unbind("click").on('click', function() {
+    $('.categoriesModal').unbind("click").on('click', function(e) {
       $('#reorderCategories').modal('show');
+       e.stopPropagation();
 
       var categoryLi =  $(this).closest('.levels').find('.categories')
 
       var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
 
+      // $('.addCategories').append(categoryLi);
 
-   $('.addCategories').append($(categoryLi).clone());
+   if($(horizontal).hasClass('newOrder')) {
 
+      $('.addCategories').append(categoryLi);
+   }
 
+   else {
+     $('.addCategories').append($(categoryLi).clone());
+
+     var rem = $(categoryLi).detach()
+   }
 
       pageModule.groupCategoriesFunc()
 
 
       $('.addCategories li .custom-control').removeClass('hidden')
 
+
+
       var emptyModal = function (){
         $('.addCategories').empty()
 
-        // $(horizontal).append(categoryLi)
+        $(horizontal).append(rem)
 
 
       }
@@ -1514,9 +1525,17 @@ $(document).ready(function () {
       );
 
       var saveModal = function (){
+        $(horizontal).addClass('newOrder')
+        var updated = $('.addCategories .categories')
 
-        $(horizontal).append(categoryLi)
+        $(horizontal).append(updated)
+
         $('.addCategories').empty()
+
+
+        $('#reorderCategories').modal('hide');
+
+
 
 
       }
@@ -1529,8 +1548,7 @@ $(document).ready(function () {
 
 
       $('.save').click(function() {
-        $('#reorderCategories').modal('hide');
-        $(horizontal).append(categoryLi)
+
       })
 
 
