@@ -1952,6 +1952,8 @@ input[type="range"]::-ms-thumb {
   position: relative;
   margin-top: .5em;
   /* min-height: 16em; */
+  height: 23em;
+    overflow-y: scroll;
 }
 .categoricalHeader {
   padding:.5em;
@@ -2014,6 +2016,9 @@ input[type="range"]::-ms-thumb {
   padding-left: 0px;
   padding-right: 5px;
   padding-top: .5em;
+  /* height: 23em;
+
+overflow-y: scroll; */
 }
 
 .accordion ul {

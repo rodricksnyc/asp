@@ -764,7 +764,8 @@ $(document).ready(function () {
         modal: '.categoriesModal',
         add: '.addCategories',
         closeModal: '.closeCategoryModal',
-        save: '.save'
+        save: '.save',
+        hide: '.topicLevels .levels .collapse .card .horizontal .categories li .custom-control'
       }
     },
     getnumberFunc: function getnumberFunc() {
@@ -803,10 +804,11 @@ $(document).ready(function () {
     },
     displayreorderOptionsFunc: function displayreorderOptionsFunc() {
       var reorderOptions = pageModule.config.classes.reorderOptions;
-      var modal = pageModule.config.classes.modal;
-      $(modal).click(function () {
-        $(reorderOptions).removeClass('hidden');
-      });
+      var modal = pageModule.config.classes.modal; // $(modal).click(function() {
+      //
+      //   $(reorderOptions).removeClass('hidden');
+      //
+      // })
     },
     modalFunc: function modalFunc() {
       var modal = pageModule.config.classes.modal;
@@ -821,10 +823,13 @@ $(document).ready(function () {
       var closeModal = pageModule.config.classes.closeModal;
       var save = pageModule.config.classes.save;
       var remove = pageModule.config.classes.removeLevel;
+      var hide = pageModule.config.classes.hide;
       var horizontal = "";
       var original = "";
-      $(modal).unbind("click").on('click', function () {
+      $(modal).on('click', function () {
         $(showModal).modal('show');
+        $(hide).addClass('hidden');
+        alert("iweyvfieyvwiygvefi");
         var categoryLi = $(this).closest('.levels').find('.categories');
         var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
         var original = $(categoryLi).clone();

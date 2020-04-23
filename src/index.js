@@ -1160,7 +1160,8 @@ $(document).ready(function () {
         modal: '.categoriesModal',
         add: '.addCategories',
         closeModal : '.closeCategoryModal',
-        save: '.save'
+        save: '.save',
+        hide: '.topicLevels .levels .collapse .card .horizontal .categories li .custom-control'
 
       }
     },
@@ -1224,13 +1225,11 @@ $(document).ready(function () {
         var reorderOptions = pageModule.config.classes.reorderOptions
         var modal = pageModule.config.classes.modal
 
-        $(modal).click(function() {
-
-
-
-          $(reorderOptions).removeClass('hidden');
-
-        })
+        // $(modal).click(function() {
+        //
+        //   $(reorderOptions).removeClass('hidden');
+        //
+        // })
 
 
     },
@@ -1248,12 +1247,15 @@ $(document).ready(function () {
       var closeModal = pageModule.config.classes.closeModal
       var save = pageModule.config.classes.save
       var remove = pageModule.config.classes.removeLevel
+      var hide = pageModule.config.classes.hide
 
   var horizontal = "";
   var original = "";
-      $(modal).unbind("click").on('click', function() {
+      $(modal).on('click', function() {
         $(showModal).modal('show');
 
+        $(hide).addClass('hidden')
+        alert("iweyvfieyvwiygvefi")
 
         var categoryLi =  $(this).closest('.levels').find('.categories')
 
