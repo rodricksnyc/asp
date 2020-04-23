@@ -967,12 +967,18 @@ p.smallest {
 
 @media (min-width: 2100px) {
 
-
+  .getResults button {
+      width: 5vw;
+      max-width: 115px;
+      height: 1.8rem;
+      border-radius: 1rem;
+      font-size: 14px;
+  }
 .col-xl-9.changeBreakpoint {
     -ms-flex: 0 0 50%;
     flex: 0 0 55%;
     max-width: 50%;
-  margin-left: 10%;
+  margin-left: 13%;
 }
 }
 
