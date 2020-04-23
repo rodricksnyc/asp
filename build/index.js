@@ -821,6 +821,8 @@ $(document).ready(function () {
       var closeModal = pageModule.config.classes.closeModal;
       var save = pageModule.config.classes.save;
       var remove = pageModule.config.classes.removeLevel;
+      var horizontal = "";
+      var original = "";
       $(modal).unbind("click").on('click', function () {
         $(showModal).modal('show');
         var categoryLi = $(this).closest('.levels').find('.categories');
@@ -863,57 +865,76 @@ $(document).ready(function () {
         };
 
         $(save).keypress(saveModal).click(saveModal);
-        $('#rowTopic').on('click', '.removeLevel', function () {
-          $(horizontal).empty().append(original);
-          var el = $(this).closest('.levels').find('input[data-level]').val();
-          var putBack = $(this).closest('.levels');
-          $('.listArea .topicLevels').append(putBack); // $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
-
-          $('.addRow').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false); // $(this).closest('.levels').remove();
-
-          if ($('#rowTopic .levels').length < 3) {
-            $('#rowTopic').animate({
-              minHeight: "none",
-              maxHeight: "85px",
-              height: "auto"
-            }, 400);
-          }
-
-          if ($('#rowTopic .levels').length > 3) {
-            $('.whiteBar').fadeOut('slow');
-          }
-
-          $('.numberCounter').html(function (i, val) {
-            return val * 1 - 1;
-          });
-          $(".allLevels input").prop('checked', false).change();
-          var el = $(this).closest('.levels').find('input[data-level]').val();
-
-          if ($('#rowTopic .levels').length <= 2) {
-            $('.plusRow').removeClass('green');
-          }
-        });
-        $('#columnTopic').on('click', '.removeLevel', function () {
-          $(horizontal).empty().append(original);
-
-          if ($('#columnTopic .levels').length > 0) {
-            $('.addColumn').on("click", addColumnTopic);
-            console.log("re-adding column");
-          }
-
-          $('.levels').find('.addColumn').show();
-
-          if ($('#layerTopic .levels').length > 0) {
-            $('.levels').find('.addLayer').hide();
-          }
-
-          var el = $(this).closest('.levels').find('input[data-level]').val();
-          var putBack = $(this).closest('.levels');
-          $('.listArea .topicLevels').append(putBack); // $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
-
-          $('.addColumn').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false); // $(this).closest('.levels').remove();
-        });
       });
+      console.log(horizontal);
+      $('#rowTopic').on('click', '.removeLevel', function () {
+        $(horizontal).empty().append(original);
+        var el = $(this).closest('.levels').find('input[data-level]').val();
+        var putBack = $(this).closest('.levels');
+        $('.listArea .topicLevels').append(putBack); // $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
+
+        $('.addRow').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false); // $(this).closest('.levels').remove();
+
+        if ($('#rowTopic .levels').length < 3) {
+          $('#rowTopic').animate({
+            minHeight: "none",
+            maxHeight: "85px",
+            height: "auto"
+          }, 400);
+        }
+
+        if ($('#rowTopic .levels').length > 3) {
+          $('.whiteBar').fadeOut('slow');
+        }
+
+        $('.numberCounter').html(function (i, val) {
+          return val * 1 - 1;
+        });
+        $(".allLevels input").prop('checked', false).change();
+        var el = $(this).closest('.levels').find('input[data-level]').val();
+
+        if ($('#rowTopic .levels').length <= 2) {
+          $('.plusRow').removeClass('green');
+        }
+      }); // $('#columnTopic').on('click', '.removeLevel' , function() {
+      //
+      //   $(horizontal).empty().append(original)
+      //
+      //   if ($('#columnTopic .levels').length > 0 ) {
+      //     $('.addColumn').on("click", addColumnTopic)
+      //
+      //     console.log("re-adding column")
+      //
+      //
+      //   }
+      //
+      //   $('.levels').find('.addColumn').show()
+      //
+      //   if ($('#layerTopic .levels').length > 0 ) {
+      //
+      //     $('.levels').find('.addLayer').hide()
+      //
+      //
+      //   }
+      //
+      //
+      //
+      //   var el = $(this).closest('.levels').find('input[data-level]').val()
+      //
+      //   var putBack = $(this).closest('.levels')
+      //
+      //   $('.listArea .topicLevels').append(putBack)
+      //
+      //   // $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
+      //   $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
+      //
+      //   // $(this).closest('.levels').remove();
+      //
+      //
+      //
+      //
+      //
+      // })
     },
     modalKeypressFunc: function modalKeypressFunc() {
       var modal = pageModule.config.classes.modal;

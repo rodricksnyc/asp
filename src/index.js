@@ -1249,7 +1249,8 @@ $(document).ready(function () {
       var save = pageModule.config.classes.save
       var remove = pageModule.config.classes.removeLevel
 
-
+  var horizontal = "";
+  var original = "";
       $(modal).unbind("click").on('click', function() {
         $(showModal).modal('show');
 
@@ -1340,7 +1341,9 @@ $(document).ready(function () {
           saveModal
         );
 
+        })
 
+console.log(horizontal)
 
       $('#rowTopic').on('click', '.removeLevel' , function() {
 
@@ -1389,47 +1392,47 @@ $(document).ready(function () {
 
       })
 
-      $('#columnTopic').on('click', '.removeLevel' , function() {
+      // $('#columnTopic').on('click', '.removeLevel' , function() {
+      //
+      //   $(horizontal).empty().append(original)
+      //
+      //   if ($('#columnTopic .levels').length > 0 ) {
+      //     $('.addColumn').on("click", addColumnTopic)
+      //
+      //     console.log("re-adding column")
+      //
+      //
+      //   }
+      //
+      //   $('.levels').find('.addColumn').show()
+      //
+      //   if ($('#layerTopic .levels').length > 0 ) {
+      //
+      //     $('.levels').find('.addLayer').hide()
+      //
+      //
+      //   }
+      //
+      //
+      //
+      //   var el = $(this).closest('.levels').find('input[data-level]').val()
+      //
+      //   var putBack = $(this).closest('.levels')
+      //
+      //   $('.listArea .topicLevels').append(putBack)
+      //
+      //   // $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
+      //   $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
+      //
+      //   // $(this).closest('.levels').remove();
+      //
+      //
+      //
+      //
+      //
+      // })
 
-        $(horizontal).empty().append(original)
 
-        if ($('#columnTopic .levels').length > 0 ) {
-          $('.addColumn').on("click", addColumnTopic)
-
-          console.log("re-adding column")
-
-
-        }
-
-        $('.levels').find('.addColumn').show()
-
-        if ($('#layerTopic .levels').length > 0 ) {
-
-          $('.levels').find('.addLayer').hide()
-
-
-        }
-
-
-
-        var el = $(this).closest('.levels').find('input[data-level]').val()
-
-        var putBack = $(this).closest('.levels')
-
-        $('.listArea .topicLevels').append(putBack)
-
-        // $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
-        $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
-
-        // $(this).closest('.levels').remove();
-
-
-
-
-
-      })
-
-    })
 
     },
 
@@ -1543,8 +1546,6 @@ $(document).ready(function () {
       })
 
     },
-
-
 
 
     init: function() {
