@@ -965,7 +965,7 @@ p.smallest {
 }
 
 
-@media (min-width: 2500px) {
+@media (min-width: 2100px) {
 
 
 .col-xl-9.changeBreakpoint {
@@ -976,7 +976,7 @@ p.smallest {
 }
 }
 
-@media (min-width:1451px) and (max-width:2499px){
+@media (min-width:1451px) and (max-width:2000px){
   .col-xl-9.changeBreakpoint {
       -ms-flex: 0 0 75%;
         flex: 0 0 75%;
@@ -3640,17 +3640,17 @@ footer {
 
 /* media queries */
 
-@media (min-width:2500px)  {
+@media (min-width:2001px)  {
   .tours {
     margin-left:-4em;
   }
 }
 
-@media (min-width:2100px) and (max-width:2499px)  {
+/* @media (min-width:2100px) and (max-width:2499px)  {
   .tours {
     margin-left:15em;
   }
-}
+} */
 
 @media (min-width:1400px) and (max-width:2000px){
   .tours {

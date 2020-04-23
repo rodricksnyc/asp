@@ -1255,7 +1255,7 @@ $(document).ready(function () {
         $(showModal).modal('show');
 
         $(hide).addClass('hidden')
-        alert("iweyvfieyvwiygvefi")
+
 
         var categoryLi =  $(this).closest('.levels').find('.categories')
 
@@ -1345,7 +1345,7 @@ $(document).ready(function () {
 
         })
 
-console.log(horizontal)
+
 
       $('#rowTopic').on('click', '.removeLevel' , function() {
 
@@ -1394,45 +1394,107 @@ console.log(horizontal)
 
       })
 
-      // $('#columnTopic').on('click', '.removeLevel' , function() {
-      //
-      //   $(horizontal).empty().append(original)
-      //
-      //   if ($('#columnTopic .levels').length > 0 ) {
-      //     $('.addColumn').on("click", addColumnTopic)
-      //
-      //     console.log("re-adding column")
-      //
-      //
-      //   }
-      //
-      //   $('.levels').find('.addColumn').show()
-      //
-      //   if ($('#layerTopic .levels').length > 0 ) {
-      //
-      //     $('.levels').find('.addLayer').hide()
-      //
-      //
-      //   }
-      //
-      //
-      //
-      //   var el = $(this).closest('.levels').find('input[data-level]').val()
-      //
-      //   var putBack = $(this).closest('.levels')
-      //
-      //   $('.listArea .topicLevels').append(putBack)
-      //
-      //   // $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
-      //   $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
-      //
-      //   // $(this).closest('.levels').remove();
-      //
-      //
-      //
-      //
-      //
-      // })
+      $('#columnTopic').on('click', '.removeLevel' , function() {
+
+        $(horizontal).empty().append(original)
+
+        if ($('#columnTopic .levels').length > 0 ) {
+          $('.addColumn').on("click", addColumnTopic)
+
+          console.log("re-adding column")
+
+
+        }
+
+        $('.levels').find('.addColumn').show()
+
+        if ($('#layerTopic .levels').length > 0 ) {
+
+          $('.levels').find('.addLayer').hide()
+
+
+        }
+
+
+
+        var el = $(this).closest('.levels').find('input[data-level]').val()
+
+        var putBack = $(this).closest('.levels')
+
+        $('.listArea .topicLevels').append(putBack)
+
+        // $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
+        $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
+
+        // $(this).closest('.levels').remove();
+
+      })
+
+      $('#layerTopic').on('click', '.removeLevel' , function() {
+
+
+
+        if ($('#layerTopic .levels').length > 0 ) {
+          $('.addLayer').on("click", addLayerTopic)
+
+          console.log("re-adding column")
+
+        }
+
+        $('.levels').find('.addLayer').show()
+
+
+        if ($('#columnTopic .levels').length > 0 ) {
+
+
+
+          $('.levels').find('.addColumn').hide()
+
+
+        }
+
+
+        var putBack = $(this).closest('.levels')
+
+        $('.listArea .topicLevels').append(putBack)
+
+
+        var el = $(this).closest('.levels').find('input[data-level]').val()
+
+        // $('.addLayer').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
+        $('.addLayer').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
+
+        // $(this).closest('.levels').remove();
+
+
+      })
+
+      $('#analysisTopic').on('click', '.removeLevel' , function() {
+
+
+        if ($('#analysisTopic .levels').length > 0 ) {
+          $('.addAnalysis').on("click", addAnalysisTopic)
+
+        }
+
+        $('.listArea2 .topicLevels .custom-control').removeClass("noShow")
+
+        var putBack = $(this).closest('.levels')
+
+        $('.listArea2 .topicLevels').append(putBack)
+
+
+        var el = $(this).closest('.levels').find('input[data-level]').val()
+
+        // $('.addAnalysis').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
+        $('.addAnalysis').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
+
+        // $(this).closest('.levels').remove();
+
+
+
+
+      })
 
 
 
@@ -2107,47 +2169,7 @@ console.log(horizontal)
 
 
 
-  $('#layerTopic').on('click', '.removeLevel' , function() {
 
-
-
-    if ($('#layerTopic .levels').length > 0 ) {
-      $('.addLayer').on("click", addLayerTopic)
-
-      console.log("re-adding column")
-
-    }
-
-    $('.levels').find('.addLayer').show()
-
-
-    if ($('#columnTopic .levels').length > 0 ) {
-
-
-
-      $('.levels').find('.addColumn').hide()
-
-
-    }
-
-
-    var putBack = $(this).closest('.levels')
-
-    $('.listArea .topicLevels').append(putBack)
-
-
-    var el = $(this).closest('.levels').find('input[data-level]').val()
-
-    // $('.addLayer').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
-    $('.addLayer').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
-
-    // $(this).closest('.levels').remove();
-
-
-
-
-
-  })
 
   //remove layers
   $('#layerTopic').on('keyup', '.removeLevel' , function (e) {
@@ -2264,32 +2286,7 @@ console.log(horizontal)
 
   //remove analyis
 
-  $('#analysisTopic').on('click', '.removeLevel' , function() {
 
-
-    if ($('#analysisTopic .levels').length > 0 ) {
-      $('.addAnalysis').on("click", addAnalysisTopic)
-
-    }
-
-    $('.listArea2 .topicLevels .custom-control').removeClass("noShow")
-
-    var putBack = $(this).closest('.levels')
-
-    $('.listArea2 .topicLevels').append(putBack)
-
-
-    var el = $(this).closest('.levels').find('input[data-level]').val()
-
-    // $('.addAnalysis').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
-    $('.addAnalysis').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
-
-    // $(this).closest('.levels').remove();
-
-
-
-
-  })
 
 
 

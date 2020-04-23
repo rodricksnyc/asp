@@ -829,7 +829,6 @@ $(document).ready(function () {
       $(modal).on('click', function () {
         $(showModal).modal('show');
         $(hide).addClass('hidden');
-        alert("iweyvfieyvwiygvefi");
         var categoryLi = $(this).closest('.levels').find('.categories');
         var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
         var original = $(categoryLi).clone();
@@ -871,7 +870,6 @@ $(document).ready(function () {
 
         $(save).keypress(saveModal).click(saveModal);
       });
-      console.log(horizontal);
       $('#rowTopic').on('click', '.removeLevel', function () {
         $(horizontal).empty().append(original);
         var el = $(this).closest('.levels').find('input[data-level]').val();
@@ -901,45 +899,57 @@ $(document).ready(function () {
         if ($('#rowTopic .levels').length <= 2) {
           $('.plusRow').removeClass('green');
         }
-      }); // $('#columnTopic').on('click', '.removeLevel' , function() {
-      //
-      //   $(horizontal).empty().append(original)
-      //
-      //   if ($('#columnTopic .levels').length > 0 ) {
-      //     $('.addColumn').on("click", addColumnTopic)
-      //
-      //     console.log("re-adding column")
-      //
-      //
-      //   }
-      //
-      //   $('.levels').find('.addColumn').show()
-      //
-      //   if ($('#layerTopic .levels').length > 0 ) {
-      //
-      //     $('.levels').find('.addLayer').hide()
-      //
-      //
-      //   }
-      //
-      //
-      //
-      //   var el = $(this).closest('.levels').find('input[data-level]').val()
-      //
-      //   var putBack = $(this).closest('.levels')
-      //
-      //   $('.listArea .topicLevels').append(putBack)
-      //
-      //   // $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
-      //   $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
-      //
-      //   // $(this).closest('.levels').remove();
-      //
-      //
-      //
-      //
-      //
-      // })
+      });
+      $('#columnTopic').on('click', '.removeLevel', function () {
+        $(horizontal).empty().append(original);
+
+        if ($('#columnTopic .levels').length > 0) {
+          $('.addColumn').on("click", addColumnTopic);
+          console.log("re-adding column");
+        }
+
+        $('.levels').find('.addColumn').show();
+
+        if ($('#layerTopic .levels').length > 0) {
+          $('.levels').find('.addLayer').hide();
+        }
+
+        var el = $(this).closest('.levels').find('input[data-level]').val();
+        var putBack = $(this).closest('.levels');
+        $('.listArea .topicLevels').append(putBack); // $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
+
+        $('.addColumn').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false); // $(this).closest('.levels').remove();
+      });
+      $('#layerTopic').on('click', '.removeLevel', function () {
+        if ($('#layerTopic .levels').length > 0) {
+          $('.addLayer').on("click", addLayerTopic);
+          console.log("re-adding column");
+        }
+
+        $('.levels').find('.addLayer').show();
+
+        if ($('#columnTopic .levels').length > 0) {
+          $('.levels').find('.addColumn').hide();
+        }
+
+        var putBack = $(this).closest('.levels');
+        $('.listArea .topicLevels').append(putBack);
+        var el = $(this).closest('.levels').find('input[data-level]').val(); // $('.addLayer').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
+
+        $('.addLayer').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false); // $(this).closest('.levels').remove();
+      });
+      $('#analysisTopic').on('click', '.removeLevel', function () {
+        if ($('#analysisTopic .levels').length > 0) {
+          $('.addAnalysis').on("click", addAnalysisTopic);
+        }
+
+        $('.listArea2 .topicLevels .custom-control').removeClass("noShow");
+        var putBack = $(this).closest('.levels');
+        $('.listArea2 .topicLevels').append(putBack);
+        var el = $(this).closest('.levels').find('input[data-level]').val(); // $('.addAnalysis').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
+
+        $('.addAnalysis').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false); // $(this).closest('.levels').remove();
+      });
     },
     modalKeypressFunc: function modalKeypressFunc() {
       var modal = pageModule.config.classes.modal;
@@ -1316,25 +1326,7 @@ $(document).ready(function () {
     }
   };
 
-  $('.addLayer').keypress(addLayerTopic).click(addLayerTopic);
-  $('#layerTopic').on('click', '.removeLevel', function () {
-    if ($('#layerTopic .levels').length > 0) {
-      $('.addLayer').on("click", addLayerTopic);
-      console.log("re-adding column");
-    }
-
-    $('.levels').find('.addLayer').show();
-
-    if ($('#columnTopic .levels').length > 0) {
-      $('.levels').find('.addColumn').hide();
-    }
-
-    var putBack = $(this).closest('.levels');
-    $('.listArea .topicLevels').append(putBack);
-    var el = $(this).closest('.levels').find('input[data-level]').val(); // $('.addLayer').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
-
-    $('.addLayer').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false); // $(this).closest('.levels').remove();
-  }); //remove layers
+  $('.addLayer').keypress(addLayerTopic).click(addLayerTopic); //remove layers
 
   $('#layerTopic').on('keyup', '.removeLevel', function (e) {
     var code = e.keyCode ? e.keyCode : e.which;
@@ -1388,18 +1380,6 @@ $(document).ready(function () {
 
   $('.addAnalysis').keypress(addAnalysisTopic).click(addAnalysisTopic); //remove analyis
 
-  $('#analysisTopic').on('click', '.removeLevel', function () {
-    if ($('#analysisTopic .levels').length > 0) {
-      $('.addAnalysis').on("click", addAnalysisTopic);
-    }
-
-    $('.listArea2 .topicLevels .custom-control').removeClass("noShow");
-    var putBack = $(this).closest('.levels');
-    $('.listArea2 .topicLevels').append(putBack);
-    var el = $(this).closest('.levels').find('input[data-level]').val(); // $('.addAnalysis').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
-
-    $('.addAnalysis').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false); // $(this).closest('.levels').remove();
-  });
   $('#analysisTopic').on('keyup', '.removeLevel', function (e) {
     var code = e.keyCode ? e.keyCode : e.which;
 
