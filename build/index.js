@@ -753,11 +753,16 @@ $(document).ready(function () {
         groupCheckbox: '.addCategories input:checkbox',
         globalCheckbox: 'input:checkbox',
         groupButton: '#reorderCategories button',
+        showModal: '#reorderCategories',
         groupWords: '.groupTopics',
         checked: ".addCategories input:checkbox:checked",
         removeLevel: '.removeLevel',
         reorderOptions: '.categories li .custom-control',
-        modal: '.categoriesModal'
+        addCustomControl: '.addCategories li .custom-control',
+        modal: '.categoriesModal',
+        add: '.addCategories',
+        closeModal: '.closeCategoryModal',
+        save: '.save'
       }
     },
     getnumberFunc: function getnumberFunc() {
@@ -767,32 +772,48 @@ $(document).ready(function () {
       });
       return showNumber;
     },
-    groupCategoriesFunc: function groupCategoriesFunc() {
-      var modalInputs = pageModule.config.classes.groupCheckbox;
-      var button = pageModule.config.classes.groupButton;
-      var words = pageModule.config.classes.groupWords;
-      var checkedInputs = pageModule.config.classes.checked;
-      var groupNumber = $(checkedInputs).length;
-      $(modalInputs).change(function () {
-        if ($(this).prop("checked") == true) {
-          $(this).closest('li').find('.custom-checkbox').addClass('reorderActive');
-        } else {
-          $(this).closest('li').find('.custom-checkbox').removeClass('reorderActive');
-        }
-
-        ;
-        var groupNumber = $(checkedInputs).length;
-        var groupCounter = "Combine " + groupNumber;
-
-        if ($(checkedInputs).length >= 2) {
-          $(button).addClass('brightBlue');
-          $(words).html(groupCounter);
-        } else {
-          $(button).removeClass('brightBlue');
-          $(words).html('Select to group');
-        }
-      });
-    },
+    // groupCategoriesFunc: function() {
+    //
+    //   var modalInputs = pageModule.config.classes.groupCheckbox
+    //   var button = pageModule.config.classes.groupButton
+    //   var words = pageModule.config.classes.groupWords
+    //   var checkedInputs = pageModule.config.classes.checked
+    //   let groupNumber =  $(checkedInputs).length;
+    //
+    //   $(modalInputs).change( function(){
+    //
+    //
+    //     if($(this).prop("checked")==true){
+    //
+    //       $(this).closest('li').find('.custom-checkbox').addClass('reorderActive')
+    //
+    //
+    //     }
+    //
+    //     else{
+    //
+    //       $(this).closest('li').find('.custom-checkbox').removeClass('reorderActive')
+    //
+    //
+    //     };
+    //
+    //
+    //     let groupNumber =  $(checkedInputs).length;
+    //
+    //     let groupCounter = `Combine ${groupNumber}`;
+    //
+    //     if($(checkedInputs).length >= 2) {
+    //
+    //       $(button).addClass('brightBlue')
+    //       $(words).html(groupCounter)
+    //     }
+    //     else {
+    //       $(button).removeClass('brightBlue')
+    //       $(words).html('Select to group')
+    //     }
+    //
+    //   })
+    // },
     removeCheckFunc: function removeCheckFunc() {
       var inputs = pageModule.config.classes.globalCheckbox;
       var remove = pageModule.config.classes.removeLevel;
@@ -807,8 +828,123 @@ $(document).ready(function () {
       var reorderOptions = pageModule.config.classes.reorderOptions;
       var modal = pageModule.config.classes.modal;
       $(modal).click(function () {
-        alert('wtf');
         $(reorderOptions).removeClass('hidden');
+      });
+    },
+    modalFunc: function modalFunc() {
+      var modal = pageModule.config.classes.modal;
+      var showModal = pageModule.config.classes.showModal;
+      var add = pageModule.config.classes.add;
+      var addCustomControl = pageModule.config.classes.addCustomControl;
+      var modalInputs = pageModule.config.classes.groupCheckbox;
+      var button = pageModule.config.classes.groupButton;
+      var words = pageModule.config.classes.groupWords;
+      var checkedInputs = pageModule.config.classes.checked;
+      var groupNumber = $(checkedInputs).length;
+      var closeModal = pageModule.config.classes.closeModal;
+      var save = pageModule.config.classes.save;
+      $(modal).unbind("click").on('click', function () {
+        $(showModal).modal('show');
+        var categoryLi = $(this).closest('.levels').find('.categories');
+        var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
+        var original = $(categoryLi).clone();
+        $(add).append(categoryLi);
+        $(modalInputs).change(function () {
+          if ($(this).prop("checked") == true) {
+            $(this).closest('li').find('.custom-checkbox').addClass('reorderActive');
+          } else {
+            $(this).closest('li').find('.custom-checkbox').removeClass('reorderActive');
+          }
+
+          ;
+          var groupNumber = $(checkedInputs).length;
+          var groupCounter = "Combine " + groupNumber;
+
+          if ($(checkedInputs).length >= 2) {
+            $(button).addClass('brightBlue');
+            $(words).html(groupCounter);
+          } else {
+            $(button).removeClass('brightBlue');
+            $(words).html('Select to group');
+          }
+        });
+        $(addCustomControl).removeClass('hidden');
+
+        var emptyModal = function emptyModal() {
+          console.log(original);
+          $(horizontal).empty().append(original);
+          $(add).empty();
+        };
+
+        $(closeModal).keypress(emptyModal).click(emptyModal);
+
+        var saveModal = function saveModal() {
+          $(horizontal).empty().append(categoryLi);
+          $(add).empty();
+          $(showModal).modal('hide');
+        };
+
+        $(save).keypress(saveModal).click(saveModal);
+      });
+    },
+    modalKeypressFunc: function modalKeypressFunc() {
+      var modal = pageModule.config.classes.modal;
+      var showModal = pageModule.config.classes.showModal;
+      var add = pageModule.config.classes.add;
+      var addCustomControl = pageModule.config.classes.addCustomControl;
+      var modalInputs = pageModule.config.classes.groupCheckbox;
+      var button = pageModule.config.classes.groupButton;
+      var words = pageModule.config.classes.groupWords;
+      var checkedInputs = pageModule.config.classes.checked;
+      var groupNumber = $(checkedInputs).length;
+      var closeModal = pageModule.config.classes.closeModal;
+      var save = pageModule.config.classes.save;
+      $(modal).unbind("keyup").on('keyup', function (e) {
+        var code = e.keyCode ? e.keyCode : e.which;
+
+        if (code == 13) {
+          $(showModal).modal('show');
+          var categoryLi = $(this).closest('.levels').find('.categories');
+          var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
+          var original = $(categoryLi).clone();
+          $(add).append(categoryLi);
+          $(modalInputs).change(function () {
+            if ($(this).prop("checked") == true) {
+              $(this).closest('li').find('.custom-checkbox').addClass('reorderActive');
+            } else {
+              $(this).closest('li').find('.custom-checkbox').removeClass('reorderActive');
+            }
+
+            ;
+            var groupNumber = $(checkedInputs).length;
+            var groupCounter = "Combine " + groupNumber;
+
+            if ($(checkedInputs).length >= 2) {
+              $(button).addClass('brightBlue');
+              $(words).html(groupCounter);
+            } else {
+              $(button).removeClass('brightBlue');
+              $(words).html('Select to group');
+            }
+          });
+          $(addCustomControl).removeClass('hidden');
+
+          var emptyModal = function emptyModal() {
+            console.log(original);
+            $(horizontal).empty().append(original);
+            $(add).empty();
+          };
+
+          $(closeModal).keypress(emptyModal).click(emptyModal);
+
+          var saveModal = function saveModal() {
+            $(horizontal).empty().append(categoryLi);
+            $(add).empty();
+            $(showModal).modal('hide');
+          };
+
+          $(save).keypress(saveModal).click(saveModal);
+        }
       });
     },
     init: function init() {
@@ -817,6 +953,8 @@ $(document).ready(function () {
     }
   };
   pageModule.init();
+  pageModule.modalFunc();
+  pageModule.modalKeypressFunc();
   pageModule.removeCheckFunc();
   pageModule.displayreorderOptionsFunc();
   $(".listArea .levels :checkbox").change(function () {
@@ -963,67 +1101,6 @@ $(document).ready(function () {
       $('#rowTopic').append(item);
     }
 
-    var categoryLi = "";
-    $('.categoriesModal').unbind("click").on('click', function () {
-      $('#reorderCategories').modal('show');
-      var categoryLi = $(this).closest('.levels').find('.categories');
-      var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
-      var original = $(categoryLi).clone();
-      $('.addCategories').append(categoryLi);
-      pageModule.groupCategoriesFunc();
-      $('.addCategories li .custom-control').removeClass('hidden');
-
-      var emptyModal = function emptyModal() {
-        console.log(original);
-        $(horizontal).empty().append(original);
-        $('.addCategories').empty();
-      };
-
-      $('.closeCategoryModal').keypress(emptyModal).click(emptyModal);
-
-      var saveModal = function saveModal() {
-        // var updated = $('.addCategories .categories')
-        //
-        // $(horizontal).append(updated)
-        $(horizontal).empty().append(categoryLi);
-        $('.addCategories').empty();
-        $('#reorderCategories').modal('hide');
-      };
-
-      $('.save').keypress(saveModal).click(saveModal);
-    });
-    $('.categoriesModal').unbind("keyup").on('keyup', function (e) {
-      var code = e.keyCode ? e.keyCode : e.which;
-
-      if (code == 13) {
-        $('#reorderCategories').modal('show');
-        var categoryLi = $(this).closest('.levels').find('.categories');
-        var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
-        var original = $(categoryLi).clone();
-        $('.addCategories').append(categoryLi);
-        pageModule.groupCategoriesFunc();
-        $('.addCategories li .custom-control').removeClass('hidden');
-
-        var emptyModal = function emptyModal() {
-          console.log(original);
-          $(horizontal).empty().append(original);
-          $('.addCategories').empty();
-        };
-
-        $('.closeCategoryModal').keypress(emptyModal).click(emptyModal);
-
-        var saveModal = function saveModal() {
-          // var updated = $('.addCategories .categories')
-          //
-          // $(horizontal).append(updated)
-          $(horizontal).empty().append(categoryLi);
-          $('.addCategories').empty();
-          $('#reorderCategories').modal('hide');
-        };
-
-        $('.save').keypress(saveModal).click(saveModal);
-      }
-    });
     $("#rowTopic .levels:nth-child(4)").nextAll(".levels").addClass('noWidth');
 
     if ($('#rowTopic .levels').length > 3) {
@@ -1120,68 +1197,6 @@ $(document).ready(function () {
       $('#columnTopic').append(item);
     }
 
-    var categoryLi = "";
-    $('.categoriesModal').unbind("click").on('click', function () {
-      $('#reorderCategories').modal('show');
-      var categoryLi = $(this).closest('.levels').find('.categories');
-      var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
-      var original = $(categoryLi).clone();
-      $('.addCategories').append(categoryLi);
-      pageModule.groupCategoriesFunc();
-      $('.addCategories li .custom-control').removeClass('hidden');
-
-      var emptyModal = function emptyModal() {
-        console.log(original);
-        $(horizontal).empty().append(original);
-        $('.addCategories').empty();
-      };
-
-      $('.closeCategoryModal').keypress(emptyModal).click(emptyModal);
-
-      var saveModal = function saveModal() {
-        // var updated = $('.addCategories .categories')
-        //
-        // $(horizontal).append(updated)
-        $(horizontal).empty().append(categoryLi);
-        $('.addCategories').empty();
-        $('#reorderCategories').modal('hide');
-      };
-
-      $('.save').keypress(saveModal).click(saveModal);
-    });
-    $('.categoriesModal').unbind("keyup").on('keyup', function (e) {
-      var code = e.keyCode ? e.keyCode : e.which;
-
-      if (code == 13) {
-        $('#reorderCategories').modal('show');
-        var categoryLi = $(this).closest('.levels').find('.categories');
-        var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
-        var original = $(categoryLi).clone();
-        $('.addCategories').append(categoryLi);
-        pageModule.groupCategoriesFunc();
-        $('.addCategories li .custom-control').removeClass('hidden');
-
-        var emptyModal = function emptyModal() {
-          console.log(original);
-          $(horizontal).empty().append(original);
-          $('.addCategories').empty();
-        };
-
-        $('.closeCategoryModal').keypress(emptyModal).click(emptyModal);
-
-        var saveModal = function saveModal() {
-          // var updated = $('.addCategories .categories')
-          //
-          // $(horizontal).append(updated)
-          $(horizontal).empty().append(categoryLi);
-          $('.addCategories').empty();
-          $('#reorderCategories').modal('hide');
-        };
-
-        $('.save').keypress(saveModal).click(saveModal);
-      }
-    });
-
     if ($('#columnTopic .levels').length > 0) {
       $('.addColumn').off("click");
       $('.levels').find('.addColumn').hide();
@@ -1260,68 +1275,6 @@ $(document).ready(function () {
       $('.levels').find('.addLayer').hide();
       console.log("stop adding column");
     }
-
-    var categoryLi = "";
-    $('.categoriesModal').unbind("click").on('click', function () {
-      $('#reorderCategories').modal('show');
-      var categoryLi = $(this).closest('.levels').find('.categories');
-      var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
-      var original = $(categoryLi).clone();
-      $('.addCategories').append(categoryLi);
-      pageModule.groupCategoriesFunc();
-      $('.addCategories li .custom-control').removeClass('hidden');
-
-      var emptyModal = function emptyModal() {
-        console.log(original);
-        $(horizontal).empty().append(original);
-        $('.addCategories').empty();
-      };
-
-      $('.closeCategoryModal').keypress(emptyModal).click(emptyModal);
-
-      var saveModal = function saveModal() {
-        // var updated = $('.addCategories .categories')
-        //
-        // $(horizontal).append(updated)
-        $(horizontal).empty().append(categoryLi);
-        $('.addCategories').empty();
-        $('#reorderCategories').modal('hide');
-      };
-
-      $('.save').keypress(saveModal).click(saveModal);
-    });
-    $('.categoriesModal').unbind("keyup").on('keyup', function (e) {
-      var code = e.keyCode ? e.keyCode : e.which;
-
-      if (code == 13) {
-        $('#reorderCategories').modal('show');
-        var categoryLi = $(this).closest('.levels').find('.categories');
-        var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
-        var original = $(categoryLi).clone();
-        $('.addCategories').append(categoryLi);
-        pageModule.groupCategoriesFunc();
-        $('.addCategories li .custom-control').removeClass('hidden');
-
-        var emptyModal = function emptyModal() {
-          console.log(original);
-          $(horizontal).empty().append(original);
-          $('.addCategories').empty();
-        };
-
-        $('.closeCategoryModal').keypress(emptyModal).click(emptyModal);
-
-        var saveModal = function saveModal() {
-          // var updated = $('.addCategories .categories')
-          //
-          // $(horizontal).append(updated)
-          $(horizontal).empty().append(categoryLi);
-          $('.addCategories').empty();
-          $('#reorderCategories').modal('hide');
-        };
-
-        $('.save').keypress(saveModal).click(saveModal);
-      }
-    });
   };
 
   $('.addLayer').keypress(addLayerTopic).click(addLayerTopic);
@@ -1392,68 +1345,6 @@ $(document).ready(function () {
       $('.listArea2 .topicLevels .custom-control').addClass("noShow");
       console.log("stop adding column");
     }
-
-    var categoryLi = "";
-    $('.categoriesModal').unbind("click").on('click', function () {
-      $('#reorderCategories').modal('show');
-      var categoryLi = $(this).closest('.levels').find('.categories');
-      var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
-      var original = $(categoryLi).clone();
-      $('.addCategories').append(categoryLi);
-      pageModule.groupCategoriesFunc();
-      $('.addCategories li .custom-control').removeClass('hidden');
-
-      var emptyModal = function emptyModal() {
-        console.log(original);
-        $(horizontal).empty().append(original);
-        $('.addCategories').empty();
-      };
-
-      $('.closeCategoryModal').keypress(emptyModal).click(emptyModal);
-
-      var saveModal = function saveModal() {
-        // var updated = $('.addCategories .categories')
-        //
-        // $(horizontal).append(updated)
-        $(horizontal).empty().append(categoryLi);
-        $('.addCategories').empty();
-        $('#reorderCategories').modal('hide');
-      };
-
-      $('.save').keypress(saveModal).click(saveModal);
-    });
-    $('.categoriesModal').unbind("keyup").on('keyup', function (e) {
-      var code = e.keyCode ? e.keyCode : e.which;
-
-      if (code == 13) {
-        $('#reorderCategories').modal('show');
-        var categoryLi = $(this).closest('.levels').find('.categories');
-        var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
-        var original = $(categoryLi).clone();
-        $('.addCategories').append(categoryLi);
-        pageModule.groupCategoriesFunc();
-        $('.addCategories li .custom-control').removeClass('hidden');
-
-        var emptyModal = function emptyModal() {
-          console.log(original);
-          $(horizontal).empty().append(original);
-          $('.addCategories').empty();
-        };
-
-        $('.closeCategoryModal').keypress(emptyModal).click(emptyModal);
-
-        var saveModal = function saveModal() {
-          // var updated = $('.addCategories .categories')
-          //
-          // $(horizontal).append(updated)
-          $(horizontal).empty().append(categoryLi);
-          $('.addCategories').empty();
-          $('#reorderCategories').modal('hide');
-        };
-
-        $('.save').keypress(saveModal).click(saveModal);
-      }
-    });
   };
 
   $('.addAnalysis').keypress(addAnalysisTopic).click(addAnalysisTopic); //remove analyis

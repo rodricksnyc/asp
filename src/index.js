@@ -1149,11 +1149,17 @@ $(document).ready(function () {
         groupCheckbox : '.addCategories input:checkbox',
         globalCheckbox: 'input:checkbox',
         groupButton : '#reorderCategories button',
+        showModal : '#reorderCategories',
         groupWords : '.groupTopics',
         checked : ".addCategories input:checkbox:checked",
         removeLevel :'.removeLevel',
         reorderOptions : '.categories li .custom-control',
-        modal: '.categoriesModal'
+        addCustomControl : '.addCategories li .custom-control',
+        modal: '.categoriesModal',
+        add: '.addCategories',
+        closeModal : '.closeCategoryModal',
+        save: '.save'
+
       }
     },
 
@@ -1165,48 +1171,48 @@ $(document).ready(function () {
       return showNumber;
 
     },
-    groupCategoriesFunc: function() {
-
-      var modalInputs = pageModule.config.classes.groupCheckbox
-      var button = pageModule.config.classes.groupButton
-      var words = pageModule.config.classes.groupWords
-      var checkedInputs = pageModule.config.classes.checked
-      let groupNumber =  $(checkedInputs).length;
-
-      $(modalInputs).change( function(){
-
-
-        if($(this).prop("checked")==true){
-
-          $(this).closest('li').find('.custom-checkbox').addClass('reorderActive')
-
-
-        }
-
-        else{
-
-          $(this).closest('li').find('.custom-checkbox').removeClass('reorderActive')
-
-
-        };
-
-
-        let groupNumber =  $(checkedInputs).length;
-
-        let groupCounter = `Combine ${groupNumber}`;
-
-        if($(checkedInputs).length >= 2) {
-
-          $(button).addClass('brightBlue')
-          $(words).html(groupCounter)
-        }
-        else {
-          $(button).removeClass('brightBlue')
-          $(words).html('Select to group')
-        }
-
-      })
-    },
+    // groupCategoriesFunc: function() {
+    //
+    //   var modalInputs = pageModule.config.classes.groupCheckbox
+    //   var button = pageModule.config.classes.groupButton
+    //   var words = pageModule.config.classes.groupWords
+    //   var checkedInputs = pageModule.config.classes.checked
+    //   let groupNumber =  $(checkedInputs).length;
+    //
+    //   $(modalInputs).change( function(){
+    //
+    //
+    //     if($(this).prop("checked")==true){
+    //
+    //       $(this).closest('li').find('.custom-checkbox').addClass('reorderActive')
+    //
+    //
+    //     }
+    //
+    //     else{
+    //
+    //       $(this).closest('li').find('.custom-checkbox').removeClass('reorderActive')
+    //
+    //
+    //     };
+    //
+    //
+    //     let groupNumber =  $(checkedInputs).length;
+    //
+    //     let groupCounter = `Combine ${groupNumber}`;
+    //
+    //     if($(checkedInputs).length >= 2) {
+    //
+    //       $(button).addClass('brightBlue')
+    //       $(words).html(groupCounter)
+    //     }
+    //     else {
+    //       $(button).removeClass('brightBlue')
+    //       $(words).html('Select to group')
+    //     }
+    //
+    //   })
+    // },
     removeCheckFunc: function() {
 
         var inputs = pageModule.config.classes.globalCheckbox
@@ -1231,7 +1237,7 @@ $(document).ready(function () {
 
         $(modal).click(function() {
 
-          alert('wtf')
+
 
           $(reorderOptions).removeClass('hidden');
 
@@ -1239,6 +1245,227 @@ $(document).ready(function () {
 
 
     },
+
+    modalFunc: function() {
+      var modal = pageModule.config.classes.modal
+      var showModal = pageModule.config.classes.showModal
+      var add = pageModule.config.classes.add
+      var addCustomControl  = pageModule.config.classes.addCustomControl
+      var modalInputs = pageModule.config.classes.groupCheckbox
+      var button = pageModule.config.classes.groupButton
+      var words = pageModule.config.classes.groupWords
+      var checkedInputs = pageModule.config.classes.checked
+      let groupNumber =  $(checkedInputs).length;
+      var closeModal = pageModule.config.classes.closeModal
+      var save = pageModule.config.classes.save
+
+
+      $(modal).unbind("click").on('click', function() {
+        $(showModal).modal('show');
+
+
+        var categoryLi =  $(this).closest('.levels').find('.categories')
+
+        var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
+
+
+       var original = $(categoryLi).clone();
+
+
+       $(add).append(categoryLi)
+
+       $(modalInputs).change( function(){
+
+
+         if($(this).prop("checked")==true){
+
+           $(this).closest('li').find('.custom-checkbox').addClass('reorderActive')
+
+
+         }
+
+         else{
+
+           $(this).closest('li').find('.custom-checkbox').removeClass('reorderActive')
+
+
+         };
+
+
+         let groupNumber =  $(checkedInputs).length;
+
+         let groupCounter = `Combine ${groupNumber}`;
+
+         if($(checkedInputs).length >= 2) {
+
+           $(button).addClass('brightBlue')
+           $(words).html(groupCounter)
+         }
+         else {
+           $(button).removeClass('brightBlue')
+           $(words).html('Select to group')
+         }
+
+       })
+
+
+        $(addCustomControl).removeClass('hidden')
+
+
+
+        var emptyModal = function (){
+
+          console.log(original)
+
+          $(horizontal).empty().append(original)
+
+          $(add).empty()
+
+
+        }
+        $(closeModal).keypress(
+          emptyModal
+
+        ).click(
+          emptyModal
+        );
+
+        var saveModal = function (){
+
+
+          $(horizontal).empty().append(categoryLi)
+
+
+          $(add).empty()
+
+
+          $(showModal).modal('hide');
+
+
+        }
+        $(save).keypress(
+          saveModal
+
+        ).click(
+          saveModal
+        );
+
+      })
+
+    },
+
+    modalKeypressFunc: function() {
+      var modal = pageModule.config.classes.modal
+      var showModal = pageModule.config.classes.showModal
+      var add = pageModule.config.classes.add
+      var addCustomControl  = pageModule.config.classes.addCustomControl
+      var modalInputs = pageModule.config.classes.groupCheckbox
+      var button = pageModule.config.classes.groupButton
+      var words = pageModule.config.classes.groupWords
+      var checkedInputs = pageModule.config.classes.checked
+      let groupNumber =  $(checkedInputs).length;
+      var closeModal = pageModule.config.classes.closeModal
+      var save = pageModule.config.classes.save
+
+
+      $(modal).unbind("keyup").on('keyup', function(e) {
+        var code = (e.keyCode ? e.keyCode : e.which);
+        if (code == 13) {
+        $(showModal).modal('show');
+
+
+        var categoryLi =  $(this).closest('.levels').find('.categories')
+
+        var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
+
+
+       var original = $(categoryLi).clone();
+
+
+       $(add).append(categoryLi)
+
+       $(modalInputs).change( function(){
+
+
+         if($(this).prop("checked")==true){
+
+           $(this).closest('li').find('.custom-checkbox').addClass('reorderActive')
+
+
+         }
+
+         else{
+
+           $(this).closest('li').find('.custom-checkbox').removeClass('reorderActive')
+
+
+         };
+
+
+         let groupNumber =  $(checkedInputs).length;
+
+         let groupCounter = `Combine ${groupNumber}`;
+
+         if($(checkedInputs).length >= 2) {
+
+           $(button).addClass('brightBlue')
+           $(words).html(groupCounter)
+         }
+         else {
+           $(button).removeClass('brightBlue')
+           $(words).html('Select to group')
+         }
+
+       })
+
+
+        $(addCustomControl).removeClass('hidden')
+
+
+
+        var emptyModal = function (){
+
+          console.log(original)
+
+          $(horizontal).empty().append(original)
+
+          $(add).empty()
+
+
+        }
+        $(closeModal).keypress(
+          emptyModal
+
+        ).click(
+          emptyModal
+        );
+
+        var saveModal = function (){
+
+
+          $(horizontal).empty().append(categoryLi)
+
+
+          $(add).empty()
+
+
+          $(showModal).modal('hide');
+
+
+        }
+        $(save).keypress(
+          saveModal
+
+        ).click(
+          saveModal
+        );
+
+      }
+
+      })
+
+    },
+
 
 
 
@@ -1254,8 +1481,16 @@ $(document).ready(function () {
   }
 
 
-  pageModule.init();
 
+
+
+
+
+
+
+  pageModule.init();
+  pageModule.modalFunc()
+  pageModule.modalKeypressFunc()
   pageModule.removeCheckFunc()
   pageModule.displayreorderOptionsFunc()
 
@@ -1525,149 +1760,6 @@ $(document).ready(function () {
     }
 
 
-    var categoryLi = "";
-    $('.categoriesModal').unbind("click").on('click', function() {
-      $('#reorderCategories').modal('show');
-
-
-      var categoryLi =  $(this).closest('.levels').find('.categories')
-
-      var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
-
-
-     var original = $(categoryLi).clone();
-
-
-     $('.addCategories').append(categoryLi)
-
-      pageModule.groupCategoriesFunc()
-
-
-      $('.addCategories li .custom-control').removeClass('hidden')
-
-
-
-      var emptyModal = function (){
-
-        console.log(original)
-
-        $(horizontal).empty().append(original)
-
-        $('.addCategories').empty()
-
-
-      }
-      $('.closeCategoryModal').keypress(
-        emptyModal
-
-      ).click(
-        emptyModal
-      );
-
-      var saveModal = function (){
-
-
-        // var updated = $('.addCategories .categories')
-        //
-        // $(horizontal).append(updated)
-
-        $(horizontal).empty().append(categoryLi)
-
-
-        $('.addCategories').empty()
-
-
-        $('#reorderCategories').modal('hide');
-
-
-
-
-      }
-      $('.save').keypress(
-        saveModal
-
-      ).click(
-        saveModal
-      );
-
-
-
-    })
-
-
-
-    $('.categoriesModal').unbind("keyup").on('keyup', function(e) {
-      var code = (e.keyCode ? e.keyCode : e.which);
-      if (code == 13) {
-        $('#reorderCategories').modal('show');
-
-
-        var categoryLi =  $(this).closest('.levels').find('.categories')
-
-        var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
-
-
-       var original = $(categoryLi).clone();
-
-
-       $('.addCategories').append(categoryLi)
-
-        pageModule.groupCategoriesFunc()
-
-
-        $('.addCategories li .custom-control').removeClass('hidden')
-
-
-
-        var emptyModal = function (){
-
-          console.log(original)
-
-          $(horizontal).empty().append(original)
-
-          $('.addCategories').empty()
-
-
-        }
-        $('.closeCategoryModal').keypress(
-          emptyModal
-
-        ).click(
-          emptyModal
-        );
-
-        var saveModal = function (){
-
-
-          // var updated = $('.addCategories .categories')
-          //
-          // $(horizontal).append(updated)
-
-          $(horizontal).empty().append(categoryLi)
-
-
-          $('.addCategories').empty()
-
-
-          $('#reorderCategories').modal('hide');
-
-
-
-
-        }
-        $('.save').keypress(
-          saveModal
-
-        ).click(
-          saveModal
-        );
-
-
-
-    }
-
-    })
-
 
     $("#rowTopic .levels:nth-child(4)").nextAll( ".levels" ).addClass('noWidth')
 
@@ -1693,6 +1785,7 @@ $(document).ready(function () {
   ).click(
     addRow
   );
+
 
 
   $('#rowTopic').on('click', '.removeLevel' , function() {
@@ -1830,151 +1923,6 @@ $(document).ready(function () {
 
 
     }
-
-
-        var categoryLi = "";
-        $('.categoriesModal').unbind("click").on('click', function() {
-          $('#reorderCategories').modal('show');
-
-
-          var categoryLi =  $(this).closest('.levels').find('.categories')
-
-          var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
-
-
-         var original = $(categoryLi).clone();
-
-
-         $('.addCategories').append(categoryLi)
-
-          pageModule.groupCategoriesFunc()
-
-
-          $('.addCategories li .custom-control').removeClass('hidden')
-
-
-
-          var emptyModal = function (){
-
-            console.log(original)
-
-            $(horizontal).empty().append(original)
-
-            $('.addCategories').empty()
-
-
-          }
-          $('.closeCategoryModal').keypress(
-            emptyModal
-
-          ).click(
-            emptyModal
-          );
-
-          var saveModal = function (){
-
-
-            // var updated = $('.addCategories .categories')
-            //
-            // $(horizontal).append(updated)
-
-            $(horizontal).empty().append(categoryLi)
-
-
-            $('.addCategories').empty()
-
-
-            $('#reorderCategories').modal('hide');
-
-
-
-
-          }
-          $('.save').keypress(
-            saveModal
-
-          ).click(
-            saveModal
-          );
-
-
-
-
-        })
-
-
-
-    $('.categoriesModal').unbind("keyup").on('keyup', function(e) {
-          var code = (e.keyCode ? e.keyCode : e.which);
-          if (code == 13) {
-            $('#reorderCategories').modal('show');
-
-
-            var categoryLi =  $(this).closest('.levels').find('.categories')
-
-            var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
-
-
-           var original = $(categoryLi).clone();
-
-
-           $('.addCategories').append(categoryLi)
-
-            pageModule.groupCategoriesFunc()
-
-
-            $('.addCategories li .custom-control').removeClass('hidden')
-
-
-
-            var emptyModal = function (){
-
-              console.log(original)
-
-              $(horizontal).empty().append(original)
-
-              $('.addCategories').empty()
-
-
-            }
-            $('.closeCategoryModal').keypress(
-              emptyModal
-
-            ).click(
-              emptyModal
-            );
-
-            var saveModal = function (){
-
-
-              // var updated = $('.addCategories .categories')
-              //
-              // $(horizontal).append(updated)
-
-              $(horizontal).empty().append(categoryLi)
-
-
-              $('.addCategories').empty()
-
-
-              $('#reorderCategories').modal('hide');
-
-
-
-
-            }
-            $('.save').keypress(
-              saveModal
-
-            ).click(
-              saveModal
-            );
-
-
-
-        }
-
-        })
 
 
 
@@ -2143,149 +2091,6 @@ $(document).ready(function () {
 
 
 
-        var categoryLi = "";
-        $('.categoriesModal').unbind("click").on('click', function() {
-          $('#reorderCategories').modal('show');
-
-
-          var categoryLi =  $(this).closest('.levels').find('.categories')
-
-          var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
-
-
-         var original = $(categoryLi).clone();
-
-
-         $('.addCategories').append(categoryLi)
-
-          pageModule.groupCategoriesFunc()
-
-
-          $('.addCategories li .custom-control').removeClass('hidden')
-
-
-
-          var emptyModal = function (){
-
-            console.log(original)
-
-            $(horizontal).empty().append(original)
-
-            $('.addCategories').empty()
-
-
-          }
-          $('.closeCategoryModal').keypress(
-            emptyModal
-
-          ).click(
-            emptyModal
-          );
-
-          var saveModal = function (){
-
-
-            // var updated = $('.addCategories .categories')
-            //
-            // $(horizontal).append(updated)
-
-            $(horizontal).empty().append(categoryLi)
-
-
-            $('.addCategories').empty()
-
-
-            $('#reorderCategories').modal('hide');
-
-
-
-
-          }
-          $('.save').keypress(
-            saveModal
-
-          ).click(
-            saveModal
-          );
-
-
-        })
-
-
-
-        $('.categoriesModal').unbind("keyup").on('keyup', function(e) {
-          var code = (e.keyCode ? e.keyCode : e.which);
-          if (code == 13) {
-            $('#reorderCategories').modal('show');
-
-
-            var categoryLi =  $(this).closest('.levels').find('.categories')
-
-            var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
-
-
-           var original = $(categoryLi).clone();
-
-
-           $('.addCategories').append(categoryLi)
-
-            pageModule.groupCategoriesFunc()
-
-
-            $('.addCategories li .custom-control').removeClass('hidden')
-
-
-
-            var emptyModal = function (){
-
-              console.log(original)
-
-              $(horizontal).empty().append(original)
-
-              $('.addCategories').empty()
-
-
-            }
-            $('.closeCategoryModal').keypress(
-              emptyModal
-
-            ).click(
-              emptyModal
-            );
-
-            var saveModal = function (){
-
-
-              // var updated = $('.addCategories .categories')
-              //
-              // $(horizontal).append(updated)
-
-              $(horizontal).empty().append(categoryLi)
-
-
-              $('.addCategories').empty()
-
-
-              $('#reorderCategories').modal('hide');
-
-
-
-
-            }
-            $('.save').keypress(
-              saveModal
-
-            ).click(
-              saveModal
-            );
-
-
-
-
-        }
-
-        })
-
 
   }
   $('.addLayer').keypress(
@@ -2441,148 +2246,6 @@ $(document).ready(function () {
 
     }
 
-
-    var categoryLi = "";
-    $('.categoriesModal').unbind("click").on('click', function() {
-      $('#reorderCategories').modal('show');
-
-
-      var categoryLi =  $(this).closest('.levels').find('.categories')
-
-      var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
-
-
-     var original = $(categoryLi).clone();
-
-
-     $('.addCategories').append(categoryLi)
-
-      pageModule.groupCategoriesFunc()
-
-
-      $('.addCategories li .custom-control').removeClass('hidden')
-
-
-
-      var emptyModal = function (){
-
-        console.log(original)
-
-        $(horizontal).empty().append(original)
-
-        $('.addCategories').empty()
-
-
-      }
-      $('.closeCategoryModal').keypress(
-        emptyModal
-
-      ).click(
-        emptyModal
-      );
-
-      var saveModal = function (){
-
-
-        // var updated = $('.addCategories .categories')
-        //
-        // $(horizontal).append(updated)
-
-        $(horizontal).empty().append(categoryLi)
-
-
-        $('.addCategories').empty()
-
-
-        $('#reorderCategories').modal('hide');
-
-
-
-
-      }
-      $('.save').keypress(
-        saveModal
-
-      ).click(
-        saveModal
-      );
-
-
-    })
-
-
-
-    $('.categoriesModal').unbind("keyup").on('keyup', function(e) {
-      var code = (e.keyCode ? e.keyCode : e.which);
-      if (code == 13) {
-        $('#reorderCategories').modal('show');
-
-
-        var categoryLi =  $(this).closest('.levels').find('.categories')
-
-        var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
-
-
-       var original = $(categoryLi).clone();
-
-
-       $('.addCategories').append(categoryLi)
-
-        pageModule.groupCategoriesFunc()
-
-
-        $('.addCategories li .custom-control').removeClass('hidden')
-
-
-
-        var emptyModal = function (){
-
-          console.log(original)
-
-          $(horizontal).empty().append(original)
-
-          $('.addCategories').empty()
-
-
-        }
-        $('.closeCategoryModal').keypress(
-          emptyModal
-
-        ).click(
-          emptyModal
-        );
-
-        var saveModal = function (){
-
-
-          // var updated = $('.addCategories .categories')
-          //
-          // $(horizontal).append(updated)
-
-          $(horizontal).empty().append(categoryLi)
-
-
-          $('.addCategories').empty()
-
-
-          $('#reorderCategories').modal('hide');
-
-
-
-
-        }
-        $('.save').keypress(
-          saveModal
-
-        ).click(
-          saveModal
-        );
-
-
-
-    }
-
-    })
 
 
   }
