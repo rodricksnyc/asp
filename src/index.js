@@ -1482,12 +1482,6 @@ $(document).ready(function () {
 
 
 
-
-
-
-
-
-
   pageModule.init();
   pageModule.modalFunc()
   pageModule.modalKeypressFunc()
@@ -1700,23 +1694,50 @@ $(document).ready(function () {
     $(this).closest('li').insertAfter(after)
   });
 
+  $('.addCategories').on('keyup', '.moveDown', function(e) {
+    var code = (e.keyCode ? e.keyCode : e.which);
+    if (code == 13) {
+      var after = $(this).closest('li').next()
+      $(this).closest('li').insertAfter(after)
+
+    }
+  });
+
   $('.addCategories').on('click','.moveUp',function(){
     var before = $(this).closest('li').prev()
     $(this).closest('li').insertBefore(before)
   });
 
+  $('.addCategories').on('keyup','.moveUp', function(e) {
+    var code = (e.keyCode ? e.keyCode : e.which);
+    if (code == 13) {
+      var before = $(this).closest('li').prev()
+      $(this).closest('li').insertBefore(before)
+    }
+  });
+
   $('.addCategories').on('click','.bottom',function(){
-
     $(this).closest('li').insertAfter($('.addCategories .categories li').last());
-
   })
 
+  $('.addCategories').on('keyup', '.bottom', function(e) {
+    var code = (e.keyCode ? e.keyCode : e.which);
+    if (code == 13) {
+      $(this).closest('li').insertAfter($('.addCategories .categories li').last());
+    }
+  })
 
   $('.addCategories').on('click','.top',function(){
-
     $(this).closest('li').insertBefore($('.addCategories .categories li').first());
-
   })
+
+  $('.addCategories').on('keyup','.top', function(e) {
+    var code = (e.keyCode ? e.keyCode : e.which);
+    if (code == 13) {
+      $(this).closest('li').insertBefore($('.addCategories .categories li').first());
+    }
+  })
+
 
 
 
@@ -1759,8 +1780,6 @@ $(document).ready(function () {
 
     }
 
-
-
     $("#rowTopic .levels:nth-child(4)").nextAll( ".levels" ).addClass('noWidth')
 
 
@@ -1773,9 +1792,6 @@ $(document).ready(function () {
     }
 
     $('.numberCounter').html(function(i, val) { return val*1 + 1 });
-
-
-
 
 
   }
@@ -2318,23 +2334,6 @@ $(document).ready(function () {
 
   })
 
-
-
-
-
-  //adding background color to levels if any of its children are focused
-  // $('input[data-level]').focus(function() {
-  //         $(this).parent().css({
-  //           'background-color' :'#faede9',
-  //           'color' : '#c7482e'
-  //       } );
-  //     })
-  //     .blur(function() {
-  //         $(this).parent().css({
-  //         'background-color' :'transparent',
-  //         'color' : '#c7482e'
-  //     })
-  //     });
 
 
   //adding href and id to accordions dynamically for checkboxes
