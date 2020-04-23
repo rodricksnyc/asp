@@ -1147,9 +1147,13 @@ $(document).ready(function () {
         activeLevel: '.activeLevel',
         numberCounter: '.numberCounter',
         groupCheckbox : '.addCategories input:checkbox',
+        globalCheckbox: 'input:checkbox',
         groupButton : '#reorderCategories button',
         groupWords : '.groupTopics',
-        checked : ".addCategories input:checkbox:checked"
+        checked : ".addCategories input:checkbox:checked",
+        removeLevel :'.removeLevel',
+        reorderOptions : '.categories li .custom-control',
+        modal: '.categoriesModal'
       }
     },
 
@@ -1203,6 +1207,39 @@ $(document).ready(function () {
 
       })
     },
+    removeCheckFunc: function() {
+
+        var inputs = pageModule.config.classes.globalCheckbox
+        var remove = pageModule.config.classes.removeLevel
+        var reorderOptions = pageModule.config.classes.reorderOptions
+
+        $(remove).click(function() {
+
+          $(inputs).removeAttr('checked');
+          $(inputs).parents().removeClass('reorderActive');
+          $(reorderOptions).addClass('hidden')
+
+        })
+
+
+    },
+
+    displayreorderOptionsFunc: function() {
+
+        var reorderOptions = pageModule.config.classes.reorderOptions
+        var modal = pageModule.config.classes.modal
+
+        $(modal).click(function() {
+
+          alert('wtf')
+
+          $(reorderOptions).removeClass('hidden');
+
+        })
+
+
+    },
+
 
 
     init: function() {
@@ -1219,7 +1256,8 @@ $(document).ready(function () {
 
   pageModule.init();
 
-
+  pageModule.removeCheckFunc()
+  pageModule.displayreorderOptionsFunc()
 
 
   $(".listArea .levels :checkbox").change(function(){
@@ -1866,7 +1904,7 @@ $(document).ready(function () {
 
 
 
-        $('.categoriesModal').unbind("keyup").on('keyup', function(e) {
+    $('.categoriesModal').unbind("keyup").on('keyup', function(e) {
           var code = (e.keyCode ? e.keyCode : e.which);
           if (code == 13) {
             $('#reorderCategories').modal('show');
