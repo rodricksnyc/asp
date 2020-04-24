@@ -623,12 +623,80 @@ ul.bullet li {
   color:white !important;
 }
 
+.across4{
+
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display:flex;
+  -webkit-justify-content: space-around;
+  -moz-justify-content: space-around;
+  -ms-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+
+}
+
 .merged {
   background: #deedf8;
   margin:1em;
-
-  border-radius: 1em;
+  position:relative;
+  border-radius: .5em;
   padding:1em 1em 0em 1em ;
+  display:none;
+}
+
+.merged p {
+  color: #07477d;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.separate {
+    background: #b9d9f1;
+    position: absolute;
+    color: #07477d;
+    font-weight: 300;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: .3em 1em;
+    right: 10%;
+    border-radius: 1em;
+    min-width: 10em;
+    top: 37%;
+    border: none;
+    z-index: 999999;
+}
+
+.separate:hover {
+  background-color: #07477d;
+  color:white
+}
+.separate:hover p{
+
+  color:white
+}
+
+.separate p {
+  margin-bottom:0em !important;
+  font-weight:100;
+  font-size:15px;
+
+}
+
+.across4 i {
+  font-size:10px;
+}
+
+.merged .custom-control-label::before {
+  display:none;
+}
+.merged .fa-ellipsis-v:before {
   display:none;
 }
 
@@ -809,7 +877,12 @@ a:focus {
 
 .btn-success:hover {
   background-color: #A0A0A0;
-    border-color: #A0A0A0;
+  border-color: #A0A0A0;
+}
+
+.btn-success:active {
+  background-color: #A0A0A0 !important;
+  border-color: #A0A0A0 !important;
 }
 
 .btn-light:hover {
@@ -1464,11 +1537,14 @@ background: #127abf;
 .addCategories .custom-checkbox.reorderActive .fal {
     display: block !important;
 }
+.addCategories .custom-control-label::before {
+      left: -1.2rem;
+}
 
 .addCategories .custom-control-label::after {
     position: absolute;
     top: 0.2rem;
-    left: -1.35rem;
+    left: -1.1rem;
     display: block;
     width: 1rem;
     height: 1rem;

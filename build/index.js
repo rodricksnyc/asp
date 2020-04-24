@@ -731,8 +731,9 @@ $(document).ready(function () {
         reorderOptions: '.categories li .custom-control',
         mergedCategories: '.merged .custom-control',
         addCustomControl: '.addCategories li .custom-control',
+        modalList: '.addCategories li',
         modal: '.categoriesModal'
-      }, _defineProperty(_classes, "reorderOptions", '.reorderOptions'), _defineProperty(_classes, "add", '.addCategories'), _defineProperty(_classes, "closeModal", '.closeCategoryModal'), _defineProperty(_classes, "save", '.save'), _defineProperty(_classes, "expand", '.orangeCircle'), _defineProperty(_classes, "plusRow", '.plusRow'), _classes)
+      }, _defineProperty(_classes, "reorderOptions", '.reorderOptions'), _defineProperty(_classes, "add", '.addCategories'), _defineProperty(_classes, "closeModal", '.closeCategoryModal'), _defineProperty(_classes, "save", '.save'), _defineProperty(_classes, "expand", '.orangeCircle'), _defineProperty(_classes, "plusRow", '.plusRow'), _defineProperty(_classes, "mergedCheckbox", '.merged .custom-checkbox'), _classes)
     },
     combineFunc: function combineFunc() {
       var button = pageModule.config.classes.groupButton;
@@ -743,12 +744,27 @@ $(document).ready(function () {
       var reorderOptions = pageModule.config.classes.reorderOptions;
       var mergedCategories = pageModule.config.classes.mergedCategories;
       var reorderOptions = pageModule.config.classes.reorderOptions;
+      var words = pageModule.config.classes.groupWords;
+      var checkedInputs = pageModule.config.classes.checked;
+      var addCustomControl = pageModule.config.classes.addCustomControl;
+      var modalInputs = pageModule.config.classes.groupCheckbox;
+      var mergedCheckbox = pageModule.config.classes.mergedCheckbox;
+      var checkedInputs = pageModule.config.classes.checked;
+      var modalList = pageModule.config.classes.modalList;
       $(button).click(function () {
         $('.merged').show();
         $('.reorderActive').appendTo('.merged');
         $(mergedCategories).removeClass('reorderActive').css('margin-bottom', '0em');
         $(inputs).removeAttr('checked');
         $(reorderOptions).hide();
+        $(words).html('Select to group');
+        $(button).removeClass('brightBlue');
+
+        if ($(addCustomControl).length == 1) {
+          $(button).off("click");
+        } else {
+          $(button).on("click");
+        }
       });
     },
     getnumberFunc: function getnumberFunc() {
@@ -951,7 +967,7 @@ $(document).ready(function () {
           var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
           var original = $(categoryLi).clone();
           $(add).append(categoryLi);
-          $(modalInputs).change(function () {
+          $(modalInputs).click(function () {
             if ($(this).prop("checked") == true) {
               $(this).closest('li').find('.custom-checkbox').addClass('reorderActive');
             } else {
@@ -1001,7 +1017,18 @@ $(document).ready(function () {
   pageModule.globalRemoveFunc();
   pageModule.getnumberFunc();
   pageModule.combineFunc();
-  pageModule.showExpandFunc();
+  pageModule.showExpandFunc(); // $('.addCategories').on('click', 'input:checkbox', function() {
+  //
+  // if($('.merged .custom-checkbox').length > 0 && $('.addCategories input:checkbox').length == 1) {
+  //   alert('ergiybiugrebiugerbgieru')
+  //
+  //   $('.combine').addClass('brightBlue')
+  //         // $(button).addClass('brightBlue')
+  //         $('.groupTopics').html('Combine 1')
+  //
+  //       }
+  //   })
+
   $(".listArea .levels :checkbox").change(function () {
     $(this).closest('.topicLevels .levels').addClass('activeLevel');
 

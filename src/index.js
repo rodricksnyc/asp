@@ -1152,13 +1152,15 @@ $(document).ready(function () {
         reorderOptions : '.categories li .custom-control',
         mergedCategories :'.merged .custom-control',
         addCustomControl : '.addCategories li .custom-control',
+        modalList:'.addCategories li',
         modal: '.categoriesModal',
         reorderOptions : '.reorderOptions',
         add: '.addCategories',
         closeModal : '.closeCategoryModal',
         save: '.save',
         expand: '.orangeCircle',
-        plusRow: '.plusRow'
+        plusRow: '.plusRow',
+        mergedCheckbox: '.merged .custom-checkbox'
 
       }
     },
@@ -1173,6 +1175,14 @@ $(document).ready(function () {
       var reorderOptions = pageModule.config.classes.reorderOptions
       var mergedCategories = pageModule.config.classes.mergedCategories
       var reorderOptions = pageModule.config.classes.reorderOptions
+      var words = pageModule.config.classes.groupWords
+      var checkedInputs = pageModule.config.classes.checked
+      var addCustomControl = pageModule.config.classes.addCustomControl
+      var modalInputs = pageModule.config.classes.groupCheckbox
+      var mergedCheckbox = pageModule.config.classes.mergedCheckbox
+      var checkedInputs = pageModule.config.classes.checked
+      var modalList = pageModule.config.classes.modalList
+
 
       $(button).click(function() {
         $('.merged').show()
@@ -1180,8 +1190,19 @@ $(document).ready(function () {
         $(mergedCategories).removeClass('reorderActive').css('margin-bottom', '0em')
         $(inputs).removeAttr('checked');
         $(reorderOptions).hide()
+        $(words).html('Select to group')
+        $(button).removeClass('brightBlue')
+
+        if ($(addCustomControl).length == 1) {
+            $(button).off("click")
+
+        }
+        else {
+            $(button).on("click")
+        }
 
       })
+
 
     },
 
@@ -1447,8 +1468,6 @@ $(document).ready(function () {
 
         if ($('#columnTopic .levels').length > 0 ) {
 
-
-
           $('.levels').find('.addColumn').hide()
 
 
@@ -1523,10 +1542,10 @@ $(document).ready(function () {
 
        $(add).append(categoryLi)
 
-       $(modalInputs).change( function(){
-
+       $(modalInputs).click( function(){
 
          if($(this).prop("checked")==true){
+
 
            $(this).closest('li').find('.custom-checkbox').addClass('reorderActive')
 
@@ -1550,12 +1569,17 @@ $(document).ready(function () {
            $(button).addClass('brightBlue')
            $(words).html(groupCounter)
          }
+
          else {
            $(button).removeClass('brightBlue')
            $(words).html('Select to group')
          }
 
+
+
+
        })
+
 
 
         $(addCustomControl).removeClass('hidden')
@@ -1625,6 +1649,21 @@ $(document).ready(function () {
   pageModule.getnumberFunc()
   pageModule.combineFunc()
   pageModule.showExpandFunc()
+
+
+
+  // $('.addCategories').on('click', 'input:checkbox', function() {
+  //
+  // if($('.merged .custom-checkbox').length > 0 && $('.addCategories input:checkbox').length == 1) {
+  //   alert('ergiybiugrebiugerbgieru')
+  //
+  //   $('.combine').addClass('brightBlue')
+  //         // $(button).addClass('brightBlue')
+  //         $('.groupTopics').html('Combine 1')
+  //
+  //       }
+  //   })
+
 
 
   $(".listArea .levels :checkbox").change(function(){
