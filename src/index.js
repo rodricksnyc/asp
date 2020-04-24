@@ -1115,7 +1115,9 @@ $(document).ready(function () {
         reorderOptions : '.reorderOptions',
         add: '.addCategories',
         closeModal : '.closeCategoryModal',
-        save: '.save'
+        save: '.save',
+        expand: '.orangeCircle',
+        plusRow: '.plusRow'
 
       }
     },
@@ -1148,6 +1150,31 @@ $(document).ready(function () {
 
       let showNumber =  $(number).html(function(i, activeLevel ) { return activeLevel*1 + 1 });
       return showNumber;
+
+    },
+
+    showExpandFunc: function() {
+
+      var expand = pageModule.config.classes.expand
+      var plus = pageModule.config.classes.plusRow
+
+      var showExpand = function() {
+      if ($('#rowTopic .levels').length > 0 || $('#columnTopic .levels').length > 0 || $('#layerTopic .levels').length > 0 || $('#analysisTopic .levels').length > 0) {
+        $(expand).show()
+        }
+        else {
+            $(expand).hide()
+        }
+
+      }
+
+        $('body').keypress(
+          showExpand
+
+        ).click(
+          showExpand
+        );
+
 
     },
 
@@ -1309,10 +1336,13 @@ $(document).ready(function () {
 
         if ($('#rowTopic .levels').length >3 ) {
 
-
           $('.whiteBar').fadeOut('slow')
 
 
+        }
+
+        if($("#rowTopic .levels").length == 0) {
+            $('.plusRow').hide();
         }
 
         $('.numberCounter').html(function(i, val) { return val*1 - 1 });
@@ -1553,6 +1583,7 @@ $(document).ready(function () {
   pageModule.globalRemoveFunc()
   pageModule.getnumberFunc()
   pageModule.combineFunc()
+  pageModule.showExpandFunc()
 
 
   $(".listArea .levels :checkbox").change(function(){
@@ -1651,10 +1682,6 @@ $(document).ready(function () {
         );
 
 
-
-
-
-
       })
 
 
@@ -1671,9 +1698,10 @@ $(document).ready(function () {
 
     }
 
+
+
     else {
       $('.plusRow').hide();
-
     }
 
     if($(".topicLevels .levels :checkbox:checked").length >= 2) {

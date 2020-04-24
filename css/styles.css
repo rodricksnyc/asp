@@ -648,6 +648,7 @@ ul.bullet li {
       border-radius: 50%;
       background: #c7482e;
       margin-left: .2em;
+      display:none;
 }
 
 .m2 {
@@ -3671,6 +3672,13 @@ footer {
   .tours {
     margin-left:-4em;
   }
+  .getResults button {
+    width: 5vw;
+    max-width: 120px;
+    height: 1.8rem;
+    border-radius: 1rem;
+    font-size: 14px;
+}
 }
 
 /* @media (min-width:2100px) and (max-width:2499px)  {

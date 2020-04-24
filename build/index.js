@@ -708,7 +708,7 @@ $(document).ready(function () {
         mergedCategories: '.merged .custom-control',
         addCustomControl: '.addCategories li .custom-control',
         modal: '.categoriesModal'
-      }, _defineProperty(_classes, "reorderOptions", '.reorderOptions'), _defineProperty(_classes, "add", '.addCategories'), _defineProperty(_classes, "closeModal", '.closeCategoryModal'), _defineProperty(_classes, "save", '.save'), _classes)
+      }, _defineProperty(_classes, "reorderOptions", '.reorderOptions'), _defineProperty(_classes, "add", '.addCategories'), _defineProperty(_classes, "closeModal", '.closeCategoryModal'), _defineProperty(_classes, "save", '.save'), _defineProperty(_classes, "expand", '.orangeCircle'), _defineProperty(_classes, "plusRow", '.plusRow'), _classes)
     },
     combineFunc: function combineFunc() {
       var button = pageModule.config.classes.groupButton;
@@ -733,6 +733,20 @@ $(document).ready(function () {
         return activeLevel * 1 + 1;
       });
       return showNumber;
+    },
+    showExpandFunc: function showExpandFunc() {
+      var expand = pageModule.config.classes.expand;
+      var plus = pageModule.config.classes.plusRow;
+
+      var showExpand = function showExpand() {
+        if ($('#rowTopic .levels').length > 0 || $('#columnTopic .levels').length > 0 || $('#layerTopic .levels').length > 0 || $('#analysisTopic .levels').length > 0) {
+          $(expand).show();
+        } else {
+          $(expand).hide();
+        }
+      };
+
+      $('body').keypress(showExpand).click(showExpand);
     },
     globalRemoveFunc: function globalRemoveFunc() {
       var inputs = pageModule.config.classes.globalCheckbox;
@@ -829,6 +843,10 @@ $(document).ready(function () {
 
         if ($('#rowTopic .levels').length > 3) {
           $('.whiteBar').fadeOut('slow');
+        }
+
+        if ($("#rowTopic .levels").length == 0) {
+          $('.plusRow').hide();
         }
 
         $('.numberCounter').html(function (i, val) {
@@ -959,6 +977,7 @@ $(document).ready(function () {
   pageModule.globalRemoveFunc();
   pageModule.getnumberFunc();
   pageModule.combineFunc();
+  pageModule.showExpandFunc();
   $(".listArea .levels :checkbox").change(function () {
     $(this).closest('.topicLevels .levels').addClass('activeLevel');
 
