@@ -407,20 +407,6 @@ $(document).ready(function () {
   })
 
 
-
-
-  // $('a.nav-link').last().on('blur', function() {
-  //
-  //   $('#levels .btn-group button').focus()
-  // })
-  //
-  // $('#levels .btn-group button').on('blur', function() {
-  //
-  //   $('.tours input').focus()
-  // })
-
-
-
   //zip case slider
 
   $('#one').on('click', function() {
@@ -470,8 +456,6 @@ $(document).ready(function () {
 
 
 
-
-
   $('#close').on('click', function() {
     $('.backdropShadow').fadeOut()
     $( "#slideOutRight" ).removeClass('showSlideOut')
@@ -517,8 +501,6 @@ $(document).ready(function () {
 
 
   })
-
-
 
 
   //toggle between analyis and table
@@ -1119,7 +1101,7 @@ $(document).ready(function () {
         numberCounter: '.numberCounter',
         groupCheckbox : '.addCategories input:checkbox',
         globalCheckbox: 'input:checkbox',
-        groupButton : '#reorderCategories button',
+        groupButton : '.combine',
         showModal : '#reorderCategories',
         groupWords : '.groupTopics',
         checked : ".addCategories input:checkbox:checked",
@@ -1127,14 +1109,37 @@ $(document).ready(function () {
         removeRow: '#rowTopics .removeLevel',
         removeColumn: '#columnTopics .removeLevel',
         reorderOptions : '.categories li .custom-control',
+        mergedCategories :'.merged .custom-control',
         addCustomControl : '.addCategories li .custom-control',
         modal: '.categoriesModal',
+        reorderOptions : '.reorderOptions',
         add: '.addCategories',
         closeModal : '.closeCategoryModal',
-        save: '.save',
-        hide: '.topicLevels .levels .collapse .card .horizontal .categories li .custom-control'
+        save: '.save'
 
       }
+    },
+
+    combineFunc: function() {
+
+      var button = pageModule.config.classes.groupButton
+      var modalInputs = pageModule.config.classes.groupCheckbox
+      var inputs = pageModule.config.classes.globalCheckbox
+      var remove = pageModule.config.classes.removeLevel
+      var save = pageModule.config.classes.save
+      var reorderOptions = pageModule.config.classes.reorderOptions
+      var mergedCategories = pageModule.config.classes.mergedCategories
+      var reorderOptions = pageModule.config.classes.reorderOptions
+
+      $(button).click(function() {
+        $('.merged').show()
+        $('.reorderActive').appendTo('.merged')
+        $(mergedCategories).removeClass('reorderActive').css('margin-bottom', '0em')
+        $(inputs).removeAttr('checked');
+        $(reorderOptions).hide()
+
+      })
+
     },
 
     getnumberFunc: function() {
@@ -1181,15 +1186,12 @@ $(document).ready(function () {
       var closeModal = pageModule.config.classes.closeModal
       var save = pageModule.config.classes.save
       var remove = pageModule.config.classes.removeLevel
-      var hide = pageModule.config.classes.hide
+
 
   var horizontal = "";
   var original = "";
       $(modal).on('click', function() {
-        $(showModal).modal('show');
-
-        $(hide).addClass('hidden')
-
+      $(showModal).modal('show');
 
         var categoryLi =  $(this).closest('.levels').find('.categories')
 
@@ -1203,18 +1205,15 @@ $(document).ready(function () {
 
        $(modalInputs).change( function(){
 
-
          if($(this).prop("checked")==true){
 
            $(this).closest('li').find('.custom-checkbox').addClass('reorderActive')
-
 
          }
 
          else{
 
            $(this).closest('li').find('.custom-checkbox').removeClass('reorderActive')
-
 
          };
 
@@ -1237,7 +1236,6 @@ $(document).ready(function () {
 
 
         $(addCustomControl).removeClass('hidden')
-
 
 
         var emptyModal = function (){
@@ -1554,6 +1552,7 @@ $(document).ready(function () {
   pageModule.modalKeypressFunc()
   pageModule.globalRemoveFunc()
   pageModule.getnumberFunc()
+  pageModule.combineFunc()
 
 
   $(".listArea .levels :checkbox").change(function(){
@@ -2979,7 +2978,7 @@ $(document).ready(function () {
   // });
 
   //make the nav item children have active line on current page
-  
+
   $('.navbar-nav li .dropdown-menu .dropdown-item').each(function() {
     if (this.href === path) {
       $(this).parent().siblings('a').addClass('active');

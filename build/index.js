@@ -1,6 +1,10 @@
 "use strict";
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 $(document).ready(function () {
+  var _classes;
+
   // Let the document know when the mouse is being used
   $('body').on('mousedown', function () {
     document.body.classList.add('using-mouse');
@@ -260,16 +264,7 @@ $(document).ready(function () {
       $('.dropdown-item + .dropdown-menu').css('opacity', '1');
       $('.dropdown-item + .dropdown-menu').css('transition', 'opacity .3s .1s');
     }
-  }); // $('a.nav-link').last().on('blur', function() {
-  //
-  //   $('#levels .btn-group button').focus()
-  // })
-  //
-  // $('#levels .btn-group button').on('blur', function() {
-  //
-  //   $('.tours input').focus()
-  // })
-  //zip case slider
+  }); //zip case slider
 
   $('#one').on('click', function () {
     $('.backdropShadow').fadeIn();
@@ -697,12 +692,12 @@ $(document).ready(function () {
   $('.closeLevels').keypress(closeListArea).click(closeListArea);
   var pageModule = {
     config: {
-      classes: {
+      classes: (_classes = {
         activeLevel: '.activeLevel',
         numberCounter: '.numberCounter',
         groupCheckbox: '.addCategories input:checkbox',
         globalCheckbox: 'input:checkbox',
-        groupButton: '#reorderCategories button',
+        groupButton: '.combine',
         showModal: '#reorderCategories',
         groupWords: '.groupTopics',
         checked: ".addCategories input:checkbox:checked",
@@ -710,13 +705,27 @@ $(document).ready(function () {
         removeRow: '#rowTopics .removeLevel',
         removeColumn: '#columnTopics .removeLevel',
         reorderOptions: '.categories li .custom-control',
+        mergedCategories: '.merged .custom-control',
         addCustomControl: '.addCategories li .custom-control',
-        modal: '.categoriesModal',
-        add: '.addCategories',
-        closeModal: '.closeCategoryModal',
-        save: '.save',
-        hide: '.topicLevels .levels .collapse .card .horizontal .categories li .custom-control'
-      }
+        modal: '.categoriesModal'
+      }, _defineProperty(_classes, "reorderOptions", '.reorderOptions'), _defineProperty(_classes, "add", '.addCategories'), _defineProperty(_classes, "closeModal", '.closeCategoryModal'), _defineProperty(_classes, "save", '.save'), _classes)
+    },
+    combineFunc: function combineFunc() {
+      var button = pageModule.config.classes.groupButton;
+      var modalInputs = pageModule.config.classes.groupCheckbox;
+      var inputs = pageModule.config.classes.globalCheckbox;
+      var remove = pageModule.config.classes.removeLevel;
+      var save = pageModule.config.classes.save;
+      var reorderOptions = pageModule.config.classes.reorderOptions;
+      var mergedCategories = pageModule.config.classes.mergedCategories;
+      var reorderOptions = pageModule.config.classes.reorderOptions;
+      $(button).click(function () {
+        $('.merged').show();
+        $('.reorderActive').appendTo('.merged');
+        $(mergedCategories).removeClass('reorderActive').css('margin-bottom', '0em');
+        $(inputs).removeAttr('checked');
+        $(reorderOptions).hide();
+      });
     },
     getnumberFunc: function getnumberFunc() {
       var number = pageModule.config.classes.numberCounter;
@@ -754,12 +763,10 @@ $(document).ready(function () {
       var closeModal = pageModule.config.classes.closeModal;
       var save = pageModule.config.classes.save;
       var remove = pageModule.config.classes.removeLevel;
-      var hide = pageModule.config.classes.hide;
       var horizontal = "";
       var original = "";
       $(modal).on('click', function () {
         $(showModal).modal('show');
-        $(hide).addClass('hidden');
         var categoryLi = $(this).closest('.levels').find('.categories');
         var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
         var original = $(categoryLi).clone();
@@ -951,6 +958,7 @@ $(document).ready(function () {
   pageModule.modalKeypressFunc();
   pageModule.globalRemoveFunc();
   pageModule.getnumberFunc();
+  pageModule.combineFunc();
   $(".listArea .levels :checkbox").change(function () {
     $(this).closest('.topicLevels .levels').addClass('activeLevel');
 

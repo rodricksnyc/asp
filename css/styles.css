@@ -623,6 +623,15 @@ ul.bullet li {
   color:white !important;
 }
 
+.merged {
+  background: #deedf8;
+  margin:1em;
+
+  border-radius: 1em;
+  padding:1em 1em 0em 1em ;
+  display:none;
+}
+
 .across2 i {
   color:white;
   font-size: 13px !important;
