@@ -1160,7 +1160,8 @@ $(document).ready(function () {
         save: '.save',
         expand: '.orangeCircle',
         plusRow: '.plusRow',
-        mergedCheckbox: '.merged .custom-checkbox'
+        mergedCheckbox: '.merged .custom-checkbox',
+        activeLi: 'li .reorderActive'
 
       }
     },
@@ -1185,8 +1186,10 @@ $(document).ready(function () {
 
 
       $(button).click(function() {
-        $('.merged').show()
-        $('.reorderActive').appendTo('.merged')
+
+        $('.groupedCategories').append(`<div class="merged"><button class="separate" tabindex="0" role="button"><p>Separate</p><div class="across4"><i class="fal fa-arrow-left"></i>&nbsp;|&nbsp;<i class="fal fa-arrow-right"></i></div></button></div>`)
+        $(this).closest('.modal-content').find('li .reorderActive').parent().appendTo('.merged')
+
         $(mergedCategories).removeClass('reorderActive').css('margin-bottom', '0em')
         $(inputs).removeAttr('checked');
         $(reorderOptions).hide()
@@ -1649,20 +1652,6 @@ $(document).ready(function () {
   pageModule.getnumberFunc()
   pageModule.combineFunc()
   pageModule.showExpandFunc()
-
-
-
-  // $('.addCategories').on('click', 'input:checkbox', function() {
-  //
-  // if($('.merged .custom-checkbox').length > 0 && $('.addCategories input:checkbox').length == 1) {
-  //   alert('ergiybiugrebiugerbgieru')
-  //
-  //   $('.combine').addClass('brightBlue')
-  //         // $(button).addClass('brightBlue')
-  //         $('.groupTopics').html('Combine 1')
-  //
-  //       }
-  //   })
 
 
 

@@ -733,7 +733,7 @@ $(document).ready(function () {
         addCustomControl: '.addCategories li .custom-control',
         modalList: '.addCategories li',
         modal: '.categoriesModal'
-      }, _defineProperty(_classes, "reorderOptions", '.reorderOptions'), _defineProperty(_classes, "add", '.addCategories'), _defineProperty(_classes, "closeModal", '.closeCategoryModal'), _defineProperty(_classes, "save", '.save'), _defineProperty(_classes, "expand", '.orangeCircle'), _defineProperty(_classes, "plusRow", '.plusRow'), _defineProperty(_classes, "mergedCheckbox", '.merged .custom-checkbox'), _classes)
+      }, _defineProperty(_classes, "reorderOptions", '.reorderOptions'), _defineProperty(_classes, "add", '.addCategories'), _defineProperty(_classes, "closeModal", '.closeCategoryModal'), _defineProperty(_classes, "save", '.save'), _defineProperty(_classes, "expand", '.orangeCircle'), _defineProperty(_classes, "plusRow", '.plusRow'), _defineProperty(_classes, "mergedCheckbox", '.merged .custom-checkbox'), _defineProperty(_classes, "activeLi", 'li .reorderActive'), _classes)
     },
     combineFunc: function combineFunc() {
       var button = pageModule.config.classes.groupButton;
@@ -752,8 +752,8 @@ $(document).ready(function () {
       var checkedInputs = pageModule.config.classes.checked;
       var modalList = pageModule.config.classes.modalList;
       $(button).click(function () {
-        $('.merged').show();
-        $('.reorderActive').appendTo('.merged');
+        $('.groupedCategories').append("<div class=\"merged\"><button class=\"separate\" tabindex=\"0\" role=\"button\"><p>Separate</p><div class=\"across4\"><i class=\"fal fa-arrow-left\"></i>&nbsp;|&nbsp;<i class=\"fal fa-arrow-right\"></i></div></button></div>");
+        $(this).closest('.modal-content').find('li .reorderActive').parent().appendTo('.merged');
         $(mergedCategories).removeClass('reorderActive').css('margin-bottom', '0em');
         $(inputs).removeAttr('checked');
         $(reorderOptions).hide();
@@ -1017,18 +1017,7 @@ $(document).ready(function () {
   pageModule.globalRemoveFunc();
   pageModule.getnumberFunc();
   pageModule.combineFunc();
-  pageModule.showExpandFunc(); // $('.addCategories').on('click', 'input:checkbox', function() {
-  //
-  // if($('.merged .custom-checkbox').length > 0 && $('.addCategories input:checkbox').length == 1) {
-  //   alert('ergiybiugrebiugerbgieru')
-  //
-  //   $('.combine').addClass('brightBlue')
-  //         // $(button).addClass('brightBlue')
-  //         $('.groupTopics').html('Combine 1')
-  //
-  //       }
-  //   })
-
+  pageModule.showExpandFunc();
   $(".listArea .levels :checkbox").change(function () {
     $(this).closest('.topicLevels .levels').addClass('activeLevel');
 

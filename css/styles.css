@@ -646,7 +646,7 @@ ul.bullet li {
   position:relative;
   border-radius: .5em;
   padding:1em 1em 0em 1em ;
-  display:none;
+
 }
 
 .merged p {
@@ -699,6 +699,16 @@ ul.bullet li {
 .merged .fa-ellipsis-v:before {
   display:none;
 }
+
+.merged li {
+  list-style-type: none;
+}
+
+.merged .hideInModal {
+  display:none;
+}
+
+
 
 .across2 i {
   color:white;
