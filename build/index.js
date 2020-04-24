@@ -1939,15 +1939,12 @@ $(document).ready(function () {
   //   window.location = $(this).attr('href');
   // });
   //make the nav item children have active line on current page
-  //
-  // $('.navbar-nav li .dropdown-menu .dropdown-item').each(function() {
-  //   if (this.href === path) {
-  //     $(this).parent().siblings('a').addClass('active');
-  //     // $(this).removeClass('active');
-  //   }
-  //   else {
-  //     $(this).removeClass('active');
-  //   }
-  //
-  // });
+
+  $('.navbar-nav li .dropdown-menu .dropdown-item').each(function () {
+    if (this.href === path) {
+      $(this).parent().siblings('a').addClass('active'); // $(this).removeClass('active');
+    } else {
+      $(this).removeClass('active');
+    }
+  });
 });
