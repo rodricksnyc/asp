@@ -1112,42 +1112,6 @@ $(document).ready(function () {
 
 
 
-  // $('.addCategories input:checkbox').change( function(){
-  //
-  //
-  //   if($(this).prop("checked")==true){
-  //
-  //     $(this).closest('li').find('.custom-checkbox').addClass('reorderActive')
-  //
-  //
-  //   }
-  //
-  //   else{
-  //
-  //     $(this).closest('li').find('.custom-checkbox').removeClass('reorderActive')
-  //
-  //
-  //   };
-  //
-  //
-  //   let groupNumber =  $('.addCategories input:checkbox:checked').length;
-  //
-  //   const groupCounter = `Combine ${groupNumber}`;
-  //
-  //       if($(".addCategories input:checkbox:checked").length >= 2) {
-  //         $('#reorderCategories button').addClass('brightBlue')
-  //         $('.groupTopics').html(groupCounter)
-  //       }
-  //       else {
-  //           $('#reorderCategories button').removeClass('brightBlue')
-  //           $('.groupTopics').html('Select to group')
-  //       }
-  //
-  //
-  //
-  // });
-
-
   let pageModule = {
     config: {
       classes: {
@@ -1183,63 +1147,26 @@ $(document).ready(function () {
     },
 
     globalRemoveFunc: function() {
+        var inputs = pageModule.config.classes.globalCheckbox
         var remove = pageModule.config.classes.removeLevel
+        var save = pageModule.config.classes.save
         var reorderOptions = pageModule.config.classes.reorderOptions
 
         $(remove).click(function() {
-          $(reorderOptions).addClass('hidden')
-        })
-
-
-    },
-
-    removeCheckRowFunc: function() {
-
-        var inputs = pageModule.config.classes.globalCheckbox
-        var removeRow = pageModule.config.classes.removeRow
-        var reorderOptions = pageModule.config.classes.reorderOptions
-
-        $(removeRow).click(function() {
-
           $(inputs).removeAttr('checked');
           $(inputs).parents().removeClass('reorderActive');
           $(reorderOptions).addClass('hidden')
-
         })
 
-
-    },
-
-    removeCheckColumnFunc: function() {
-
-        var inputs = pageModule.config.classes.globalCheckbox
-        var removeColumn = pageModule.config.classes.removeColumn
-        var reorderOptions = pageModule.config.classes.reorderOptions
-
-        $(removeColumn).click(function() {
-
+        $(save).click(function() {
           $(inputs).removeAttr('checked');
           $(inputs).parents().removeClass('reorderActive');
           $(reorderOptions).addClass('hidden')
-
         })
 
 
     },
 
-    displayreorderOptionsFunc: function() {
-
-        var reorderOptions = pageModule.config.classes.reorderOptions
-        var modal = pageModule.config.classes.modal
-
-        // $(modal).click(function() {
-        //
-        //   $(reorderOptions).removeClass('hidden');
-        //
-        // })
-
-
-    },
 
     modalFunc: function() {
       var modal = pageModule.config.classes.modal
@@ -1320,6 +1247,8 @@ $(document).ready(function () {
           $(horizontal).empty().append(original)
 
           $(add).empty()
+          $(button).removeClass('brightBlue')
+          $(words).html('Select to group')
 
 
         }
@@ -1340,6 +1269,8 @@ $(document).ready(function () {
 
 
           $(showModal).modal('hide');
+          $(button).removeClass('brightBlue')
+          $(words).html('Select to group')
 
 
         }
@@ -1364,10 +1295,9 @@ $(document).ready(function () {
 
         $('.listArea .topicLevels').append(putBack)
 
-        // $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
         $('.addRow').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
 
-        // $(this).closest('.levels').remove();
+
 
         if ($('#rowTopic .levels').length < 3 ) {
           $('#rowTopic').animate({
@@ -1408,8 +1338,6 @@ $(document).ready(function () {
         if ($('#columnTopic .levels').length > 0 ) {
           $('.addColumn').on("click", addColumnTopic)
 
-          console.log("re-adding column")
-
 
         }
 
@@ -1430,10 +1358,7 @@ $(document).ready(function () {
 
         $('.listArea .topicLevels').append(putBack)
 
-        // $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
         $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
-
-        // $(this).closest('.levels').remove();
 
       })
 
@@ -1468,10 +1393,7 @@ $(document).ready(function () {
 
         var el = $(this).closest('.levels').find('input[data-level]').val()
 
-        // $('.addLayer').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
         $('.addLayer').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
-
-        // $(this).closest('.levels').remove();
 
 
       })
@@ -1493,12 +1415,7 @@ $(document).ready(function () {
 
         var el = $(this).closest('.levels').find('input[data-level]').val()
 
-        // $('.addAnalysis').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
         $('.addAnalysis').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
-
-        // $(this).closest('.levels').remove();
-
-
 
 
       })
@@ -1635,11 +1552,8 @@ $(document).ready(function () {
   pageModule.init();
   pageModule.modalFunc()
   pageModule.modalKeypressFunc()
-  pageModule.removeCheckRowFunc()
-  pageModule.removeCheckColumnFunc()
-
   pageModule.globalRemoveFunc()
-  pageModule.displayreorderOptionsFunc()
+  pageModule.getnumberFunc()
 
 
   $(".listArea .levels :checkbox").change(function(){

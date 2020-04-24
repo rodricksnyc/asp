@@ -694,41 +694,7 @@ $(document).ready(function () {
     }
   };
 
-  $('.closeLevels').keypress(closeListArea).click(closeListArea); // $('.addCategories input:checkbox').change( function(){
-  //
-  //
-  //   if($(this).prop("checked")==true){
-  //
-  //     $(this).closest('li').find('.custom-checkbox').addClass('reorderActive')
-  //
-  //
-  //   }
-  //
-  //   else{
-  //
-  //     $(this).closest('li').find('.custom-checkbox').removeClass('reorderActive')
-  //
-  //
-  //   };
-  //
-  //
-  //   let groupNumber =  $('.addCategories input:checkbox:checked').length;
-  //
-  //   const groupCounter = `Combine ${groupNumber}`;
-  //
-  //       if($(".addCategories input:checkbox:checked").length >= 2) {
-  //         $('#reorderCategories button').addClass('brightBlue')
-  //         $('.groupTopics').html(groupCounter)
-  //       }
-  //       else {
-  //           $('#reorderCategories button').removeClass('brightBlue')
-  //           $('.groupTopics').html('Select to group')
-  //       }
-  //
-  //
-  //
-  // });
-
+  $('.closeLevels').keypress(closeListArea).click(closeListArea);
   var pageModule = {
     config: {
       classes: {
@@ -760,39 +726,20 @@ $(document).ready(function () {
       return showNumber;
     },
     globalRemoveFunc: function globalRemoveFunc() {
+      var inputs = pageModule.config.classes.globalCheckbox;
       var remove = pageModule.config.classes.removeLevel;
+      var save = pageModule.config.classes.save;
       var reorderOptions = pageModule.config.classes.reorderOptions;
       $(remove).click(function () {
-        $(reorderOptions).addClass('hidden');
-      });
-    },
-    removeCheckRowFunc: function removeCheckRowFunc() {
-      var inputs = pageModule.config.classes.globalCheckbox;
-      var removeRow = pageModule.config.classes.removeRow;
-      var reorderOptions = pageModule.config.classes.reorderOptions;
-      $(removeRow).click(function () {
         $(inputs).removeAttr('checked');
         $(inputs).parents().removeClass('reorderActive');
         $(reorderOptions).addClass('hidden');
       });
-    },
-    removeCheckColumnFunc: function removeCheckColumnFunc() {
-      var inputs = pageModule.config.classes.globalCheckbox;
-      var removeColumn = pageModule.config.classes.removeColumn;
-      var reorderOptions = pageModule.config.classes.reorderOptions;
-      $(removeColumn).click(function () {
+      $(save).click(function () {
         $(inputs).removeAttr('checked');
         $(inputs).parents().removeClass('reorderActive');
         $(reorderOptions).addClass('hidden');
       });
-    },
-    displayreorderOptionsFunc: function displayreorderOptionsFunc() {
-      var reorderOptions = pageModule.config.classes.reorderOptions;
-      var modal = pageModule.config.classes.modal; // $(modal).click(function() {
-      //
-      //   $(reorderOptions).removeClass('hidden');
-      //
-      // })
     },
     modalFunc: function modalFunc() {
       var modal = pageModule.config.classes.modal;
@@ -842,6 +789,8 @@ $(document).ready(function () {
           console.log(original);
           $(horizontal).empty().append(original);
           $(add).empty();
+          $(button).removeClass('brightBlue');
+          $(words).html('Select to group');
         };
 
         $(closeModal).keypress(emptyModal).click(emptyModal);
@@ -850,6 +799,8 @@ $(document).ready(function () {
           $(horizontal).empty().append(categoryLi);
           $(add).empty();
           $(showModal).modal('hide');
+          $(button).removeClass('brightBlue');
+          $(words).html('Select to group');
         };
 
         $(save).keypress(saveModal).click(saveModal);
@@ -858,9 +809,8 @@ $(document).ready(function () {
         $(horizontal).empty().append(original);
         var el = $(this).closest('.levels').find('input[data-level]').val();
         var putBack = $(this).closest('.levels');
-        $('.listArea .topicLevels').append(putBack); // $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
-
-        $('.addRow').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false); // $(this).closest('.levels').remove();
+        $('.listArea .topicLevels').append(putBack);
+        $('.addRow').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false);
 
         if ($('#rowTopic .levels').length < 3) {
           $('#rowTopic').animate({
@@ -889,7 +839,6 @@ $(document).ready(function () {
 
         if ($('#columnTopic .levels').length > 0) {
           $('.addColumn').on("click", addColumnTopic);
-          console.log("re-adding column");
         }
 
         $('.levels').find('.addColumn').show();
@@ -900,9 +849,8 @@ $(document).ready(function () {
 
         var el = $(this).closest('.levels').find('input[data-level]').val();
         var putBack = $(this).closest('.levels');
-        $('.listArea .topicLevels').append(putBack); // $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
-
-        $('.addColumn').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false); // $(this).closest('.levels').remove();
+        $('.listArea .topicLevels').append(putBack);
+        $('.addColumn').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false);
       });
       $('#layerTopic').on('click', '.removeLevel', function () {
         if ($('#layerTopic .levels').length > 0) {
@@ -918,9 +866,8 @@ $(document).ready(function () {
 
         var putBack = $(this).closest('.levels');
         $('.listArea .topicLevels').append(putBack);
-        var el = $(this).closest('.levels').find('input[data-level]').val(); // $('.addLayer').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
-
-        $('.addLayer').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false); // $(this).closest('.levels').remove();
+        var el = $(this).closest('.levels').find('input[data-level]').val();
+        $('.addLayer').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false);
       });
       $('#analysisTopic').on('click', '.removeLevel', function () {
         if ($('#analysisTopic .levels').length > 0) {
@@ -930,9 +877,8 @@ $(document).ready(function () {
         $('.listArea2 .topicLevels .custom-control').removeClass("noShow");
         var putBack = $(this).closest('.levels');
         $('.listArea2 .topicLevels').append(putBack);
-        var el = $(this).closest('.levels').find('input[data-level]').val(); // $('.addAnalysis').closest('.levels').find(`input[data-level='${el}']`).parent().show().css('display', 'flex')
-
-        $('.addAnalysis').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false); // $(this).closest('.levels').remove();
+        var el = $(this).closest('.levels').find('input[data-level]').val();
+        $('.addAnalysis').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false);
       });
     },
     modalKeypressFunc: function modalKeypressFunc() {
@@ -1003,10 +949,8 @@ $(document).ready(function () {
   pageModule.init();
   pageModule.modalFunc();
   pageModule.modalKeypressFunc();
-  pageModule.removeCheckRowFunc();
-  pageModule.removeCheckColumnFunc();
   pageModule.globalRemoveFunc();
-  pageModule.displayreorderOptionsFunc();
+  pageModule.getnumberFunc();
   $(".listArea .levels :checkbox").change(function () {
     $(this).closest('.topicLevels .levels').addClass('activeLevel');
 
