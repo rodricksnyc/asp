@@ -751,9 +751,14 @@ $(document).ready(function () {
       var mergedCheckbox = pageModule.config.classes.mergedCheckbox;
       var checkedInputs = pageModule.config.classes.checked;
       var modalList = pageModule.config.classes.modalList;
+      $('input:checkbox').click(function () {
+        $(this).parent().parent().addClass('groupIt');
+      });
       $(button).click(function () {
-        $('.groupedCategories').append("<div class=\"merged\"><button class=\"separate\" tabindex=\"0\" role=\"button\"><p>Separate</p><div class=\"across4\"><i class=\"fal fa-arrow-left\"></i>&nbsp;|&nbsp;<i class=\"fal fa-arrow-right\"></i></div></button></div>");
-        $(this).closest('.modal-content').find('li .reorderActive').parent().appendTo('.merged');
+        $('.groupedCategories').append("<ul class=\"merged\"><button class=\"separate\" tabindex=\"0\" role=\"button\"><p>Separate</p><div class=\"across4\"><i class=\"fal fa-arrow-left\"></i>&nbsp;|&nbsp;<i class=\"fal fa-arrow-right\"></i></div></button></ul>");
+        $('.groupIt').each(function () {
+          $(this).appendTo('.merged');
+        });
         $(mergedCategories).removeClass('reorderActive').css('margin-bottom', '0em');
         $(inputs).removeAttr('checked');
         $(reorderOptions).hide();

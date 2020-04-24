@@ -693,11 +693,22 @@ ul.bullet li {
   font-size:10px;
 }
 
-.merged .custom-control-label::before {
+/* .merged .custom-control-label::before {
   display:none;
 }
 .merged .fa-ellipsis-v:before {
   display:none;
+}
+
+.merged li:hover .custom-control-label::before {
+  display:block;
+}
+.merged li:hover .fa-ellipsis-v:before {
+  display:block
+} */
+.merged .reorderActive {
+    background-color: none !important;
+    border-radius: .5rem;
 }
 
 .merged li {
