@@ -427,6 +427,47 @@ $(document).ready(function () {
 
   })
 
+
+    $('.backdropShadow').click(function() {
+      $('.backdropShadow').fadeOut()
+      $( "#slideOutRight" ).removeClass('showSlideOut')
+
+
+      $('#closeThisPlease').attr('tabindex', '-1')
+      $('#closeThisPlease').attr('aria-hidden', 'true')
+      $('#slideOutRight textarea').attr('tabindex', '-1')
+      $('#slideOutRight textarea').attr('aria-hidden', 'true')
+      $('#slideOutRight input').attr('tabindex', '-1')
+      $('#slideOutRight input').attr('aria-hidden', 'true')
+
+      $('#slideOutRight a').attr('tabindex', '-1')
+      $('#slideOutRight a').attr('aria-hidden', 'true')
+
+    })
+
+
+    $('.backdropShadow').click(function(e) {
+      e.stopPropagation()
+      $('.backdropShadow').fadeOut();
+      $( "#slideOutLeft" ).animate({
+        left: "-400",
+      }, 800, function() {
+
+      });
+
+      $('#slideOutRight').css('z-index', '10')
+
+
+      $('.projects').attr('tabindex', '0')
+      $('#accordion a').attr('tabindex', '-1')
+      $('#accordion a').attr('aria-hidden', 'true')
+
+    })
+
+
+
+  // }
+
   $('#one').keyup(function (e) {
 
     var code = (e.keyCode ? e.keyCode : e.which);
