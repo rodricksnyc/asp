@@ -2023,7 +2023,7 @@ input[type="range"]::-ms-thumb {
 /* level topics */
 
 .accordion {
-  padding-left: 0px;
+  padding-left: 5px;
   padding-right: 5px;
   padding-top: .5em;
   /* height: 23em;
@@ -2132,6 +2132,23 @@ ul li a.toggle.parent{
   font-size: 14px;
   font-weight:100;
   /* margin-left: 2px; */
+}
+
+ul li a.level0{
+  width: 100% ;
+  display: block;
+  border-radius:1rem;
+  padding: 0em;
+  padding-left: 2em;
+  border-radius:1rem;
+  font-size: 14px;
+  font-weight:100;
+  color: #07477d;
+}
+ul li:hover a.level0 {
+background-color: #faede9;
+color: #c7482e !important;
+font-weight: 500;
 }
 
 ul li a.toggle.parent:hover {

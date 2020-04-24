@@ -389,7 +389,7 @@ $(document).ready(function () {
     }
   };
 
-  $('.tableVariables .level0 .addToList').keypress(tableLevel0).click(tableLevel0);
+  $('.tableVariables .level0').keypress(tableLevel0).click(tableLevel0);
 
   var analysisLevel0 = function analysisLevel0() {
     if ($(this).attr('value')) {
@@ -402,7 +402,7 @@ $(document).ready(function () {
     }
   };
 
-  $('.analysisVariables .level0 .addToList').keypress(analysisLevel0).click(analysisLevel0);
+  $('.analysisVariables .level0').keypress(analysisLevel0).click(analysisLevel0);
 
   var tableLevel1 = function tableLevel1() {
     if ($(this).attr('value')) {

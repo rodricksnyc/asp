@@ -595,7 +595,7 @@ $(document).ready(function () {
 
     }
   }
-  $('.tableVariables .level0 .addToList').keypress(
+  $('.tableVariables .level0').keypress(
     tableLevel0
 
   ).click(
@@ -618,7 +618,7 @@ $(document).ready(function () {
 
     }
   }
-  $('.analysisVariables .level0 .addToList').keypress(
+  $('.analysisVariables .level0').keypress(
     analysisLevel0
 
   ).click(
