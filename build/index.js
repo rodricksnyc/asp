@@ -354,15 +354,7 @@ $(document).ready(function () {
     }, 700);
   };
 
-  $('.categoricalHeader').keypress(categorical).click(categorical); //levels
-
-  var one = 1;
-  var two = 2;
-  var three = 3;
-  var four = 4;
-  var five = 5;
-  var six = 6;
-  var seven = 7;
+  $('.categoricalHeader').keypress(categorical).click(categorical);
   $("input[name=allLevels]").click(function () {
     if (this.checked) {
       // $('.filter-attr-list').find('li').remove();
@@ -375,7 +367,47 @@ $(document).ready(function () {
   });
   $("input[name=levels]").change(function () {
     $("input[name=allLevels]").prop('checked', false);
-  });
+  }); //levels
+
+  var zero = 0;
+  var one = 1;
+  var two = 2;
+  var three = 3;
+  var four = 4;
+  var five = 5;
+  var six = 6;
+  var seven = 7;
+
+  var tableLevel0 = function tableLevel0() {
+    if ($(this).attr('value')) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + 170);
+
+      if ($('#analysisTopic .levels').length > 0) {
+        $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + 270);
+      }
+
+      $('.selectTopic').hide();
+      $('.levelTopicListNumber').empty().append(zero).val(); // $('.levelTopicAreaNumber').append(one).val();
+
+      $('.listArea').addClass('animated fadeIn').show();
+      $('.listArea2').removeClass('animated fadeIn').hide();
+    }
+  };
+
+  $('.tableVariables .level0 .addToList').keypress(tableLevel0).click(tableLevel0);
+
+  var analysisLevel0 = function analysisLevel0() {
+    if ($(this).attr('value')) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 220);
+      $('.selectTopic').hide();
+      $('.levelTopicListNumber').empty().append(zero).val(); // $('.levelTopicAreaNumber').append(one).val();
+
+      $('.listArea2').addClass('animated fadeIn').show();
+      $('.listArea').removeClass('animated fadeIn').hide();
+    }
+  };
+
+  $('.analysisVariables .level0 .addToList').keypress(analysisLevel0).click(analysisLevel0);
 
   var tableLevel1 = function tableLevel1() {
     if ($(this).attr('value')) {
@@ -552,55 +584,7 @@ $(document).ready(function () {
     }
   };
 
-  $('.analysisVariables .level7 .addToList').keypress(analysisLevel7).click(analysisLevel7); // $('.continuousHeader').click(function() {
-  //   $('.levels-accordion').addClass('animated fadeOut')
-  //   setTimeout(function() {
-  //   $('.levels-accordion').hide()
-  //   $('.levels-accordion').removeClass('animated fadeOut')
-  // },700)
-  //     setTimeout(function() {
-  //   $('.levels-accordion2').addClass('animated fadeIn').show();
-  //
-  // },700);
-  //
-  // // $('p.levels-accordion').addClass('animated fadeOut')
-  // // $('plevels-accordion2').addClass('animated fadeOut')
-  //
-  // setTimeout(function() {
-  // $('p.levels-accordion').html('Analysis Variables')
-  // $('p.levels-accordion2').html('Table Variables')
-  // // $('p.levels-accordion').removeClass('animated fadeOut')
-  // // $('p.levels-accordion2').removeClass('animated fadeOut')
-  // // $('p.levels-accordion').addClass('animated fadeIn')
-  // // $('p.levels-accordion2').addClass('animated fadeIn')
-  // },700)
-  // })
-  //
-  //
-  // $('.categoricalHeader').click(function() {
-  //   $('.levels-accordion2').addClass('animated fadeOut')
-  //   setTimeout(function() {
-  //   $('.levels-accordion2').hide()
-  //     $('.levels-accordion2').removeClass('animated fadeOut')
-  // },700)
-  //     setTimeout(function() {
-  //   $('.levels-accordion').addClass('animated fadeIn').show();
-  //
-  // },700);
-  //
-  // // $('p.levels-accordion').addClass('animated fadeOut')
-  // // $('p.levels-accordion2').addClass('animated fadeOut')
-  //
-  // setTimeout(function() {
-  // $('p.levels-accordion2').html('Table Variables')
-  // $('p.levels-accordion').html('Analysis Variables')
-  // // $('p.levels-accordion2').removeClass('animated fadeOut')
-  // // $('p.levels-accordion').removeClass('animated fadeOut')
-  // // $('p.levels-accordion2').addClass('animated fadeIn')
-  // // $('p.levels-accordion').addClass('animated fadeIn')
-  // },700)
-  // })
-  //scale logo
+  $('.analysisVariables .level7 .addToList').keypress(analysisLevel7).click(analysisLevel7); //scale logo
 
   var resizeText = function resizeText() {
     var preferredFontSize = 56; // %
