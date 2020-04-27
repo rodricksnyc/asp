@@ -428,41 +428,41 @@ $(document).ready(function () {
   })
 
 
-    $('.backdropShadow').click(function() {
-      $('.backdropShadow').fadeOut()
-      $( "#slideOutRight" ).removeClass('showSlideOut')
+  $('.backdropShadow').click(function() {
+    $('.backdropShadow').fadeOut()
+    $( "#slideOutRight" ).removeClass('showSlideOut')
 
 
-      $('#closeThisPlease').attr('tabindex', '-1')
-      $('#closeThisPlease').attr('aria-hidden', 'true')
-      $('#slideOutRight textarea').attr('tabindex', '-1')
-      $('#slideOutRight textarea').attr('aria-hidden', 'true')
-      $('#slideOutRight input').attr('tabindex', '-1')
-      $('#slideOutRight input').attr('aria-hidden', 'true')
+    $('#closeThisPlease').attr('tabindex', '-1')
+    $('#closeThisPlease').attr('aria-hidden', 'true')
+    $('#slideOutRight textarea').attr('tabindex', '-1')
+    $('#slideOutRight textarea').attr('aria-hidden', 'true')
+    $('#slideOutRight input').attr('tabindex', '-1')
+    $('#slideOutRight input').attr('aria-hidden', 'true')
 
-      $('#slideOutRight a').attr('tabindex', '-1')
-      $('#slideOutRight a').attr('aria-hidden', 'true')
+    $('#slideOutRight a').attr('tabindex', '-1')
+    $('#slideOutRight a').attr('aria-hidden', 'true')
 
-    })
-
-
-    $('.backdropShadow').click(function(e) {
-      e.stopPropagation()
-      $('.backdropShadow').fadeOut();
-      $( "#slideOutLeft" ).animate({
-        left: "-400",
-      }, 800, function() {
-
-      });
-
-      $('#slideOutRight').css('z-index', '10')
+  })
 
 
-      $('.projects').attr('tabindex', '0')
-      $('#accordion a').attr('tabindex', '-1')
-      $('#accordion a').attr('aria-hidden', 'true')
+  $('.backdropShadow').click(function(e) {
+    e.stopPropagation()
+    $('.backdropShadow').fadeOut();
+    $( "#slideOutLeft" ).animate({
+      left: "-400",
+    }, 800, function() {
 
-    })
+    });
+
+    $('#slideOutRight').css('z-index', '10')
+
+
+    $('.projects').attr('tabindex', '0')
+    $('#accordion a').attr('tabindex', '-1')
+    $('#accordion a').attr('aria-hidden', 'true')
+
+  })
 
 
 
@@ -1161,7 +1161,9 @@ $(document).ready(function () {
         expand: '.orangeCircle',
         plusRow: '.plusRow',
         mergedCheckbox: '.merged .custom-checkbox',
-        activeLi: 'li .reorderActive'
+        mergedCheck : ".merged input:checkbox",
+        activeLi: 'li .reorderActive',
+        separate: '.separate'
 
       }
     },
@@ -1183,28 +1185,17 @@ $(document).ready(function () {
       var mergedCheckbox = pageModule.config.classes.mergedCheckbox
       var checkedInputs = pageModule.config.classes.checked
       var modalList = pageModule.config.classes.modalList
-
-
-
-      $('input:checkbox').click(function(){
-        $(this).parent().parent().addClass('groupIt')
-
-      })
-
-
-
-
+      var mergedCheck = pageModule.config.classes.mergedCheck
 
 
       $(button).click(function() {
 
-        $('.groupedCategories').append(`<ul class="merged"><button class="separate" tabindex="0" role="button"><p>Separate</p><div class="across4"><i class="fal fa-arrow-left"></i>&nbsp;|&nbsp;<i class="fal fa-arrow-right"></i></div></button></ul>`)
+        var active  = $(this).closest('.modal-content').find('.reorderActive').parent()
 
-        $('.groupIt').each(function() {
+        $('.groupedCategories').append(`<div class="merged"><ul class="mergedUL"></ul><button class="separate" tabindex="0" role="button"><p>Separate</p><div class="across4"><i class="fal fa-arrow-left"></i>&nbsp;|&nbsp;<i class="fal fa-arrow-right"></i></div></button></div>`)
 
-          $(this).appendTo('.merged')
+        $('.groupedCategories .mergedUL').empty().append(active)
 
-        });
 
         $(mergedCategories).removeClass('reorderActive').css('margin-bottom', '0em')
         $(inputs).removeAttr('checked');
@@ -1213,16 +1204,62 @@ $(document).ready(function () {
         $(button).removeClass('brightBlue')
 
         if ($(addCustomControl).length == 1) {
-            $(button).off("click")
+          $(button).off("click")
 
         }
         else {
-            $(button).on("click")
+          $(button).on("click")
         }
 
       })
 
+    },
 
+    separateFunc: function() {
+
+      var separate = pageModule.config.classes.separate
+      var button = pageModule.config.classes.groupButton
+      var modalInputs = pageModule.config.classes.groupCheckbox
+      var inputs = pageModule.config.classes.globalCheckbox
+      var remove = pageModule.config.classes.removeLevel
+      var save = pageModule.config.classes.save
+      var reorderOptions = pageModule.config.classes.reorderOptions
+      var mergedCategories = pageModule.config.classes.mergedCategories
+      var reorderOptions = pageModule.config.classes.reorderOptions
+      var words = pageModule.config.classes.groupWords
+      var checkedInputs = pageModule.config.classes.checked
+      var addCustomControl = pageModule.config.classes.addCustomControl
+      var modalInputs = pageModule.config.classes.groupCheckbox
+      var mergedCheckbox = pageModule.config.classes.mergedCheckbox
+      var checkedInputs = pageModule.config.classes.checked
+      var modalList = pageModule.config.classes.modalList
+      var mergedCheck = pageModule.config.classes.mergedCheck
+
+
+      $('.merged').click('.separate', function() {
+
+            alert("yes")
+
+
+        $('.mergedUL input:checkbox').change(function(){
+
+          if($(this).prop("checked")==true){
+
+
+
+            $(this).closest('li').appendTo('.addCategories')
+
+          }
+
+          else{
+
+
+
+          };
+
+        })
+
+      })
 
 
 
@@ -1243,42 +1280,42 @@ $(document).ready(function () {
       var plus = pageModule.config.classes.plusRow
 
       var showExpand = function() {
-      if ($('#rowTopic .levels').length > 0 || $('#columnTopic .levels').length > 0 || $('#layerTopic .levels').length > 0 || $('#analysisTopic .levels').length > 0) {
-        $(expand).show()
+        if ($('#rowTopic .levels').length > 0 || $('#columnTopic .levels').length > 0 || $('#layerTopic .levels').length > 0 || $('#analysisTopic .levels').length > 0) {
+          $(expand).show()
         }
         else {
-            $(expand).hide()
+          $(expand).hide()
         }
 
       }
 
-        $('body').keypress(
-          showExpand
+      $('body').keypress(
+        showExpand
 
-        ).click(
-          showExpand
-        );
+      ).click(
+        showExpand
+      );
 
 
     },
 
     globalRemoveFunc: function() {
-        var inputs = pageModule.config.classes.globalCheckbox
-        var remove = pageModule.config.classes.removeLevel
-        var save = pageModule.config.classes.save
-        var reorderOptions = pageModule.config.classes.reorderOptions
+      var inputs = pageModule.config.classes.globalCheckbox
+      var remove = pageModule.config.classes.removeLevel
+      var save = pageModule.config.classes.save
+      var reorderOptions = pageModule.config.classes.reorderOptions
 
-        $(remove).click(function() {
-          $(inputs).removeAttr('checked');
-          $(inputs).parents().removeClass('reorderActive');
-          $(reorderOptions).addClass('hidden')
-        })
+      $(remove).click(function() {
+        $(inputs).removeAttr('checked');
+        $(inputs).parents().removeClass('reorderActive');
+        $(reorderOptions).addClass('hidden')
+      })
 
-        $(save).click(function() {
-          $(inputs).removeAttr('checked');
-          $(inputs).parents().removeClass('reorderActive');
-          $(reorderOptions).addClass('hidden')
-        })
+      $(save).click(function() {
+        $(inputs).removeAttr('checked');
+        $(inputs).parents().removeClass('reorderActive');
+        $(reorderOptions).addClass('hidden')
+      })
 
 
     },
@@ -1297,53 +1334,53 @@ $(document).ready(function () {
       var closeModal = pageModule.config.classes.closeModal
       var save = pageModule.config.classes.save
       var remove = pageModule.config.classes.removeLevel
+      var mergedCheck = pageModule.config.classes.mergedCheck
 
 
-  var horizontal = "";
-  var original = "";
+      var horizontal = "";
+      var original = "";
       $(modal).on('click', function() {
-      $(showModal).modal('show');
+        $(showModal).modal('show');
 
         var categoryLi =  $(this).closest('.levels').find('.categories')
 
         var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
 
 
-       var original = $(categoryLi).clone();
+        var original = $(categoryLi).clone();
 
 
-       $(add).append(categoryLi)
+        $(add).append(categoryLi)
 
-       $(modalInputs).change( function(){
+        $(modalInputs).change( function(){
 
-         if($(this).prop("checked")==true){
+          if($(this).prop("checked")==true){
 
-           $(this).closest('li').find('.custom-checkbox').addClass('reorderActive')
+            $(this).closest('li').find('.custom-checkbox').addClass('reorderActive')
 
-         }
+          }
 
-         else{
+          else{
 
-           $(this).closest('li').find('.custom-checkbox').removeClass('reorderActive')
+            $(this).closest('li').find('.custom-checkbox').removeClass('reorderActive')
 
-         };
+          };
 
+          let groupNumber =  $(checkedInputs).length;
 
-         let groupNumber =  $(checkedInputs).length;
+          let groupCounter = `Combine ${groupNumber}`;
 
-         let groupCounter = `Combine ${groupNumber}`;
+          if($(checkedInputs).length >= 2) {
 
-         if($(checkedInputs).length >= 2) {
+            $(button).addClass('brightBlue')
+            $(words).html(groupCounter)
+          }
+          else {
+            $(button).removeClass('brightBlue')
+            $(words).html('Select to group')
+          }
 
-           $(button).addClass('brightBlue')
-           $(words).html(groupCounter)
-         }
-         else {
-           $(button).removeClass('brightBlue')
-           $(words).html('Select to group')
-         }
-
-       })
+        })
 
 
         $(addCustomControl).removeClass('hidden')
@@ -1390,7 +1427,7 @@ $(document).ready(function () {
           saveModal
         );
 
-        })
+      })
 
 
 
@@ -1426,7 +1463,7 @@ $(document).ready(function () {
         }
 
         if($("#rowTopic .levels").length == 0) {
-            $('.plusRow').hide();
+          $('.plusRow').hide();
         }
 
         $('.numberCounter').html(function(i, val) { return val*1 - 1 });
@@ -1551,100 +1588,100 @@ $(document).ready(function () {
       $(modal).unbind("keyup").on('keyup', function(e) {
         var code = (e.keyCode ? e.keyCode : e.which);
         if (code == 13) {
-        $(showModal).modal('show');
+          $(showModal).modal('show');
 
 
-        var categoryLi =  $(this).closest('.levels').find('.categories')
+          var categoryLi =  $(this).closest('.levels').find('.categories')
 
-        var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
-
-
-       var original = $(categoryLi).clone();
+          var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
 
 
-       $(add).append(categoryLi)
-
-       $(modalInputs).click( function(){
-
-         if($(this).prop("checked")==true){
+          var original = $(categoryLi).clone();
 
 
-           $(this).closest('li').find('.custom-checkbox').addClass('reorderActive')
+          $(add).append(categoryLi)
+
+          $(modalInputs).click( function(){
+
+            if($(this).prop("checked")==true){
 
 
-         }
-
-         else{
-
-           $(this).closest('li').find('.custom-checkbox').removeClass('reorderActive')
+              $(this).closest('li').find('.custom-checkbox').addClass('reorderActive')
 
 
-         };
+            }
+
+            else{
+
+              $(this).closest('li').find('.custom-checkbox').removeClass('reorderActive')
 
 
-         let groupNumber =  $(checkedInputs).length;
-
-         let groupCounter = `Combine ${groupNumber}`;
-
-         if($(checkedInputs).length >= 2) {
-
-           $(button).addClass('brightBlue')
-           $(words).html(groupCounter)
-         }
-
-         else {
-           $(button).removeClass('brightBlue')
-           $(words).html('Select to group')
-         }
+            };
 
 
+            let groupNumber =  $(checkedInputs).length;
 
+            let groupCounter = `Combine ${groupNumber}`;
 
-       })
+            if($(checkedInputs).length >= 2) {
+
+              $(button).addClass('brightBlue')
+              $(words).html(groupCounter)
+            }
+
+            else {
+              $(button).removeClass('brightBlue')
+              $(words).html('Select to group')
+            }
 
 
 
-        $(addCustomControl).removeClass('hidden')
 
-        var emptyModal = function (){
+          })
 
-          console.log(original)
 
-          $(horizontal).empty().append(original)
 
-          $(add).empty()
+          $(addCustomControl).removeClass('hidden')
 
+          var emptyModal = function (){
+
+            console.log(original)
+
+            $(horizontal).empty().append(original)
+
+            $(add).empty()
+
+
+          }
+          $(closeModal).keypress(
+            emptyModal
+
+          ).click(
+            emptyModal
+          );
+
+
+          var saveModal = function (){
+
+
+            $(horizontal).empty().append(categoryLi)
+
+
+            $(add).empty()
+
+
+            $(showModal).modal('hide');
+
+
+          }
+          $(save).keypress(
+            saveModal
+
+          ).click(
+            saveModal
+          );
 
         }
-        $(closeModal).keypress(
-          emptyModal
-
-        ).click(
-          emptyModal
-        );
-
-
-        var saveModal = function (){
-
-
-          $(horizontal).empty().append(categoryLi)
-
-
-          $(add).empty()
-
-
-          $(showModal).modal('hide');
-
-
-        }
-        $(save).keypress(
-          saveModal
-
-        ).click(
-          saveModal
-        );
-
-      }
 
       })
 
@@ -1671,6 +1708,7 @@ $(document).ready(function () {
   pageModule.getnumberFunc()
   pageModule.combineFunc()
   pageModule.showExpandFunc()
+  pageModule.separateFunc()
 
 
 
@@ -1712,8 +1750,6 @@ $(document).ready(function () {
           $('#reorderCategories').modal('show');
 
           var categoryLi =  $(this).closest('.levels').find('.categories')
-
-          console.log(categoryLi)
 
           var Opt02 = "";
           $(categoryLi).each(function() {

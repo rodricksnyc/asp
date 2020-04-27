@@ -649,6 +649,10 @@ ul.bullet li {
 
 }
 
+.mergedUL {
+  margin-left:-2em;
+}
+
 .merged p {
   color: #07477d;
     font-weight: 600;
@@ -707,7 +711,7 @@ ul.bullet li {
   display:block
 } */
 .merged .reorderActive {
-    background-color: none !important;
+    background-color: transparent !important;
     border-radius: .5rem;
 }
 
