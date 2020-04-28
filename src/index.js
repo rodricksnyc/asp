@@ -1301,8 +1301,8 @@ $(document).ready(function () {
           $(add).empty()
           $(button).removeClass('brightBlue')
           $(words).html('Select to group')
+          $(groupedCategories).empty()
 
-          // $(groupedCategories).empty()
         }
         $(closeModal).keypress(
           emptyModal

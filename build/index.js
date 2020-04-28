@@ -831,7 +831,8 @@ $(document).ready(function () {
           $(horizontal).empty().append(original);
           $(add).empty();
           $(button).removeClass('brightBlue');
-          $(words).html('Select to group'); // $(groupedCategories).empty()
+          $(words).html('Select to group');
+          $(groupedCategories).empty();
         };
 
         $(closeModal).keypress(emptyModal).click(emptyModal);
