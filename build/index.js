@@ -801,12 +801,15 @@ $(document).ready(function () {
       $(modal).on('click', function () {
         $(showModal).modal('show');
         $(reorderOptions).removeClass('hidden');
-        var categoryLi = $(this).closest('.levels').find('.categories');
-        var mergedStuff = $(this).closest(groupedCategories).find(merged);
+        var categoryLi = $(this).closest('.levels').find('.categories'); // var mergedStuff =  $(this).closest(groupedCategories).find(merged)
+
         var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
         var original = $(categoryLi).clone();
         $(add).append(categoryLi);
-        $(groupedCategories).append(mergedStuff);
+
+        if ($('.horizontal .merged').length > 0) {// $(groupedCategories).append(merged)
+        }
+
         $(modalInputs).change(function () {
           if ($(this).prop("checked") == true) {
             $(this).closest('li').find('.custom-checkbox').addClass('reorderActive');
@@ -840,7 +843,10 @@ $(document).ready(function () {
 
         var saveModal = function saveModal() {
           $(horizontal).empty().append(categoryLi);
-          $(horizontal).append(mergedStuff);
+
+          if ($('.groupedCategories .merged').length > 0) {// $(horizontal).append(merged)
+          }
+
           $(add).empty();
           $(showModal).modal('hide');
           $(button).removeClass('brightBlue');

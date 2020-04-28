@@ -1252,7 +1252,7 @@ $(document).ready(function () {
 
         var categoryLi =  $(this).closest('.levels').find('.categories')
 
-        var mergedStuff =  $(this).closest(groupedCategories).find(merged)
+        // var mergedStuff =  $(this).closest(groupedCategories).find(merged)
 
         var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
 
@@ -1260,8 +1260,10 @@ $(document).ready(function () {
 
         $(add).append(categoryLi)
 
+        if ($('.horizontal .merged').length > 0) {
+        // $(groupedCategories).append(merged)
 
-      $(groupedCategories).append(mergedStuff)
+        }
 
         $(modalInputs).change( function(){
 
@@ -1319,7 +1321,11 @@ $(document).ready(function () {
 
           $(horizontal).empty().append(categoryLi)
 
-          $(horizontal).append(mergedStuff)
+
+        if ($('.groupedCategories .merged').length > 0) {
+          // $(horizontal).append(merged)
+
+        }
 
 
           $(add).empty()
