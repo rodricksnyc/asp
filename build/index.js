@@ -733,7 +733,7 @@ $(document).ready(function () {
         addCustomControl: '.addCategories li .custom-control',
         modalList: '.addCategories li',
         modal: '.categoriesModal'
-      }, _defineProperty(_classes, "reorderOptions", '.reorderOptions'), _defineProperty(_classes, "add", '.addCategories'), _defineProperty(_classes, "closeModal", '.closeCategoryModal'), _defineProperty(_classes, "save", '.save'), _defineProperty(_classes, "expand", '.orangeCircle'), _defineProperty(_classes, "plusRow", '.plusRow'), _defineProperty(_classes, "mergedCheckbox", '.merged .custom-checkbox'), _defineProperty(_classes, "mergedCheck", ".merged input:checkbox"), _defineProperty(_classes, "activeLi", 'li .reorderActive'), _defineProperty(_classes, "separate", '.separate'), _classes)
+      }, _defineProperty(_classes, "reorderOptions", '.reorderOptions'), _defineProperty(_classes, "add", '.addCategories'), _defineProperty(_classes, "closeModal", '.closeCategoryModal'), _defineProperty(_classes, "save", '.save'), _defineProperty(_classes, "expand", '.orangeCircle'), _defineProperty(_classes, "plusRow", '.plusRow'), _defineProperty(_classes, "mergedCheckbox", '.merged .custom-checkbox'), _defineProperty(_classes, "mergedCheck", ".merged input:checkbox"), _defineProperty(_classes, "activeLi", 'li .reorderActive'), _defineProperty(_classes, "separate", '.separate'), _defineProperty(_classes, "merged", '.merged'), _defineProperty(_classes, "groupedCategories", '.groupedCategories'), _classes)
     },
     getnumberFunc: function getnumberFunc() {
       var number = pageModule.config.classes.numberCounter;
@@ -793,14 +793,18 @@ $(document).ready(function () {
       var modalList = pageModule.config.classes.modalList;
       var mergedCheck = pageModule.config.classes.mergedCheck;
       var separate = pageModule.config.classes.separate;
+      var groupedCategories = pageModule.config.classes.groupedCategories;
+      var merged = pageModule.config.classes.merged;
       var horizontal = "";
       var original = "";
       $(modal).on('click', function () {
         $(showModal).modal('show');
         var categoryLi = $(this).closest('.levels').find('.categories');
+        var mergedStuff = $(this).closest(groupedCategories).find(merged);
         var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
         var original = $(categoryLi).clone();
         $(add).append(categoryLi);
+        $(groupedCategories).append(mergedStuff);
         $(modalInputs).change(function () {
           if ($(this).prop("checked") == true) {
             $(this).closest('li').find('.custom-checkbox').addClass('reorderActive');
@@ -827,14 +831,14 @@ $(document).ready(function () {
           $(horizontal).empty().append(original);
           $(add).empty();
           $(button).removeClass('brightBlue');
-          $(words).html('Select to group');
-          $('.groupedCategories').empty();
+          $(words).html('Select to group'); // $(groupedCategories).empty()
         };
 
         $(closeModal).keypress(emptyModal).click(emptyModal);
 
         var saveModal = function saveModal() {
           $(horizontal).empty().append(categoryLi);
+          $(horizontal).append(mergedStuff);
           $(add).empty();
           $(showModal).modal('hide');
           $(button).removeClass('brightBlue');
@@ -844,7 +848,7 @@ $(document).ready(function () {
         $(save).keypress(saveModal).click(saveModal);
         $(button).click(function () {
           var active = $(this).closest('.modal-content').find('.reorderActive').parent();
-          $('.groupedCategories').append("<div class=\"merged\"><ul class=\"mergedUL\"></ul><button class=\"separate\" tabindex=\"0\" role=\"button\"><p>Separate</p><div class=\"across4\"><i class=\"fal fa-arrow-left\"></i>&nbsp;|&nbsp;<i class=\"fal fa-arrow-right\"></i></div></button></div>");
+          $(groupedCategories).append("<div class=\"merged\"><ul class=\"mergedUL\"></ul><button class=\"separate\" tabindex=\"0\" role=\"button\"><p>Separate</p><div class=\"across4\"><i class=\"fal fa-arrow-left\"></i>&nbsp;|&nbsp;<i class=\"fal fa-arrow-right\"></i></div></button></div>");
           $('.groupedCategories .mergedUL').empty().append(active);
           $(mergedCategories).removeClass('reorderActive').addClass('bottomZero');
           $(mergedCheck).removeAttr('checked');

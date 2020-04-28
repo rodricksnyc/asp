@@ -1163,25 +1163,23 @@ $(document).ready(function () {
         mergedCheckbox: '.merged .custom-checkbox',
         mergedCheck : ".merged input:checkbox",
         activeLi: 'li .reorderActive',
-        separate: '.separate'
+        separate: '.separate',
+        merged : '.merged',
+        groupedCategories :'.groupedCategories'
 
       }
     },
 
     getnumberFunc: function() {
-
       var number = pageModule.config.classes.numberCounter
-
       let showNumber =  $(number).html(function(i, activeLevel ) { return activeLevel*1 + 1 });
       return showNumber;
 
     },
 
     showExpandFunc: function() {
-
       var expand = pageModule.config.classes.expand
       var plus = pageModule.config.classes.plusRow
-
       var showExpand = function() {
         if ($('#rowTopic .levels').length > 0 || $('#columnTopic .levels').length > 0 || $('#layerTopic .levels').length > 0 || $('#analysisTopic .levels').length > 0) {
           $(expand).show()
@@ -1189,7 +1187,6 @@ $(document).ready(function () {
         else {
           $(expand).hide()
         }
-
       }
 
       $('body').keypress(
@@ -1199,7 +1196,6 @@ $(document).ready(function () {
         showExpand
       );
 
-
     },
 
     globalRemoveFunc: function() {
@@ -1207,7 +1203,6 @@ $(document).ready(function () {
       var remove = pageModule.config.classes.removeLevel
       var save = pageModule.config.classes.save
       var reorderOptions = pageModule.config.classes.reorderOptions
-
       $(remove).click(function() {
         $(inputs).removeAttr('checked');
         $(inputs).parents().removeClass('reorderActive');
@@ -1219,7 +1214,6 @@ $(document).ready(function () {
         $(inputs).parents().removeClass('reorderActive');
         $(reorderOptions).addClass('hidden')
       })
-
 
     },
 
@@ -1245,7 +1239,8 @@ $(document).ready(function () {
       var modalList = pageModule.config.classes.modalList
       var mergedCheck = pageModule.config.classes.mergedCheck
       var separate = pageModule.config.classes.separate
-
+      var groupedCategories = pageModule.config.classes.groupedCategories
+      var merged = pageModule.config.classes.merged
 
       var horizontal = "";
       var original = "";
@@ -1254,13 +1249,15 @@ $(document).ready(function () {
 
         var categoryLi =  $(this).closest('.levels').find('.categories')
 
-        var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
+        var mergedStuff =  $(this).closest(groupedCategories).find(merged)
 
+        var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
 
         var original = $(categoryLi).clone();
 
-
         $(add).append(categoryLi)
+
+      $(groupedCategories).append(mergedStuff)
 
         $(modalInputs).change( function(){
 
@@ -1305,7 +1302,7 @@ $(document).ready(function () {
           $(button).removeClass('brightBlue')
           $(words).html('Select to group')
 
-          $('.groupedCategories').empty()
+          // $(groupedCategories).empty()
         }
         $(closeModal).keypress(
           emptyModal
@@ -1316,8 +1313,9 @@ $(document).ready(function () {
 
         var saveModal = function (){
 
-
           $(horizontal).empty().append(categoryLi)
+
+          $(horizontal).append(mergedStuff)
 
 
           $(add).empty()
@@ -1340,7 +1338,7 @@ $(document).ready(function () {
         $(button).click(function() {
           var active  = $(this).closest('.modal-content').find('.reorderActive').parent()
 
-          $('.groupedCategories').append(`<div class="merged"><ul class="mergedUL"></ul><button class="separate" tabindex="0" role="button"><p>Separate</p><div class="across4"><i class="fal fa-arrow-left"></i>&nbsp;|&nbsp;<i class="fal fa-arrow-right"></i></div></button></div>`)
+          $(groupedCategories).append(`<div class="merged"><ul class="mergedUL"></ul><button class="separate" tabindex="0" role="button"><p>Separate</p><div class="across4"><i class="fal fa-arrow-left"></i>&nbsp;|&nbsp;<i class="fal fa-arrow-right"></i></div></button></div>`)
 
           $('.groupedCategories .mergedUL').empty().append(active)
 
