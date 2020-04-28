@@ -1439,7 +1439,7 @@ $(document).ready(function () {
 
           $(mergedCategories).removeClass('reorderActive').addClass('bottomZero')
           $(mergedCheck).removeAttr('checked');
-          // $(reorderOptions).hide()
+
           $(words).html('Select to group')
           $(button).removeClass('brightBlue')
 
@@ -1455,40 +1455,21 @@ $(document).ready(function () {
           $(separate).click(function(){
 
             var item = $(this).closest('.merged').find('input:checkbox:checked').parent().parent()
-            //
-            // $(this).closest('.levels').removeClass('activeCustomControl')
 
-
-            //
-            // if($(this).closest('.merged').find('input[data-category]').prop("checked")==true) {
-            //
-            //   alert("yes")
-
-              $('.addCategories').append(item)
+              $('.addCategories .categories').append(item)
               $(addCustomControl).removeClass('reorderActive').removeClass('bottomZero')
               $(modalInputs).removeAttr('checked');
-              // $(reorderOptions).show()
 
 
-            // }
+              if ($('.mergedUL li').length == 1) {
+                $(separate).css('top', '24%')
 
+              }
 
-            // var checkedOnes = $(this).closest('.merged').find('input:checkbox:checked').parent().parent()
-            //
-            // var checkedInput = $(this).closest('.merged').find('input:checkbox:checked').parent()
-            //
-            // var thisMerged = $(this).closest('.merged')
-            //
-            // var Opt22 = "";
-            // $(checkedOnes).each(function() {
-            //   $(this).closest('.custom-control').removeClass('reorderActive')
-            //   Opt22 = Opt22 + this.outerHTML;
-            //
-            // });
-            //
-            //
-            //
-            // $('.addCategories').append(Opt22)
+              if ($('.mergedUL li').length == 0) {
+                $(this).closest('.merged').remove()
+
+              }
 
 
           })
