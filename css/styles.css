@@ -649,6 +649,10 @@ ul.bullet li {
 
 }
 
+.bottomZero {
+  margin-bottom: 0em;
+}
+
 .mergedUL {
   margin-left:-2em;
 }
@@ -657,6 +661,10 @@ ul.bullet li {
   color: #07477d;
     font-weight: 600;
     font-size: 16px;
+}
+
+.merged .reorderOptions {
+  display:none;
 }
 
 .separate {
@@ -2712,6 +2720,8 @@ a:hover {
   color:white;
   font-size:10px;
 }
+
+
 
 
 .levels {
