@@ -1241,11 +1241,14 @@ $(document).ready(function () {
       var separate = pageModule.config.classes.separate
       var groupedCategories = pageModule.config.classes.groupedCategories
       var merged = pageModule.config.classes.merged
+        var reorderOptions = pageModule.config.classes.reorderOptions
 
       var horizontal = "";
       var original = "";
       $(modal).on('click', function() {
         $(showModal).modal('show');
+
+          $(reorderOptions).removeClass('hidden')
 
         var categoryLi =  $(this).closest('.levels').find('.categories')
 
@@ -1256,6 +1259,7 @@ $(document).ready(function () {
         var original = $(categoryLi).clone();
 
         $(add).append(categoryLi)
+
 
       $(groupedCategories).append(mergedStuff)
 
@@ -1301,7 +1305,7 @@ $(document).ready(function () {
           $(add).empty()
           $(button).removeClass('brightBlue')
           $(words).html('Select to group')
-          $(groupedCategories).empty()
+          // $(groupedCategories).empty()
 
         }
         $(closeModal).keypress(

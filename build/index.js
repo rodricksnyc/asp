@@ -795,10 +795,12 @@ $(document).ready(function () {
       var separate = pageModule.config.classes.separate;
       var groupedCategories = pageModule.config.classes.groupedCategories;
       var merged = pageModule.config.classes.merged;
+      var reorderOptions = pageModule.config.classes.reorderOptions;
       var horizontal = "";
       var original = "";
       $(modal).on('click', function () {
         $(showModal).modal('show');
+        $(reorderOptions).removeClass('hidden');
         var categoryLi = $(this).closest('.levels').find('.categories');
         var mergedStuff = $(this).closest(groupedCategories).find(merged);
         var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
@@ -831,8 +833,7 @@ $(document).ready(function () {
           $(horizontal).empty().append(original);
           $(add).empty();
           $(button).removeClass('brightBlue');
-          $(words).html('Select to group');
-          $(groupedCategories).empty();
+          $(words).html('Select to group'); // $(groupedCategories).empty()
         };
 
         $(closeModal).keypress(emptyModal).click(emptyModal);
