@@ -1165,9 +1165,296 @@ $(document).ready(function () {
         activeLi: 'li .reorderActive',
         separate: '.separate',
         merged : '.merged',
-        groupedCategories :'.groupedCategories'
+        groupedCategories :'.groupedCategories',
+        rowLevel: '#rowTopic .levels',
+        columnLevel : '#columnTopic .levels',
+        layerLevel: '#layerTopic .levels',
+        analysisLevel: '#analysisTopic .levels'
+
+
 
       }
+    },
+    modalFunc: function() {
+      var modal = pageModule.config.classes.modal
+      var showModal = pageModule.config.classes.showModal
+      var add = pageModule.config.classes.add
+      var addCustomControl  = pageModule.config.classes.addCustomControl
+      var modalInputs = pageModule.config.classes.groupCheckbox
+      var button = pageModule.config.classes.groupButton
+      var words = pageModule.config.classes.groupWords
+      var checkedInputs = pageModule.config.classes.checked
+      let groupNumber =  $(checkedInputs).length;
+      var closeModal = pageModule.config.classes.closeModal
+      var save = pageModule.config.classes.save
+      var remove = pageModule.config.classes.removeLevel
+      var mergedCheck = pageModule.config.classes.mergedCheck
+      var inputs = pageModule.config.classes.globalCheckbox
+      var mergedCategories = pageModule.config.classes.mergedCategories
+      var mergedCheckbox = pageModule.config.classes.mergedCheckbox
+      var checkedInputs = pageModule.config.classes.checked
+      var modalList = pageModule.config.classes.modalList
+      var mergedCheck = pageModule.config.classes.mergedCheck
+      var separate = pageModule.config.classes.separate
+      var groupedCategories = pageModule.config.classes.groupedCategories
+      var merged = pageModule.config.classes.merged
+      var reorderOptions = pageModule.config.classes.reorderOptions
+      var rowLevel = pageModule.config.classes.rowLevel
+      var columnLevel = pageModule.config.classes.columnLevel
+      var layerLevel = pageModule.config.classes.layerLevel
+      var analysisLevel = pageModule.config.classes.analysisLevel
+
+      var horizontal = "";
+      var original = "";
+      $(modal).on('click', function() {
+        $(showModal).modal('show');
+        var categoryLi =  $(this).closest('.levels').find('.categories')
+        var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
+
+        var original = $(categoryLi).clone();
+
+        $(add).append(categoryLi)
+        $(reorderOptions).removeClass('hidden')
+
+        $(modalInputs).change( function(){
+
+          if($(this).prop("checked")==true){
+
+            $(this).closest('li').find('.custom-checkbox').addClass('reorderActive')
+          }
+
+          else{
+
+            $(this).closest('li').find('.custom-checkbox').removeClass('reorderActive')
+
+          };
+
+          let groupNumber =  $(checkedInputs).length;
+
+          let groupCounter = `Combine ${groupNumber}`;
+
+          if($(checkedInputs).length >= 2) {
+            $(button).addClass('brightBlue')
+            $(words).html(groupCounter)
+          }
+          else {
+            $(button).removeClass('brightBlue')
+            $(words).html('Select to group')
+          }
+
+        })
+
+        $(addCustomControl).removeClass('hidden')
+
+        var emptyModal = function (){
+
+          console.log(original)
+
+          $(horizontal).empty().append(original)
+
+          $(add).empty()
+          $(button).removeClass('brightBlue')
+          $(words).html('Select to group')
+
+        }
+        $(closeModal).keypress(
+          emptyModal
+
+        ).click(
+          emptyModal
+        );
+
+        var saveModal = function (){
+
+          $(horizontal).empty().append(categoryLi)
+
+          $(add).empty()
+
+          $(showModal).modal('hide');
+          $(button).removeClass('brightBlue')
+          $(words).html('Select to group')
+
+        }
+        $(save).keypress(
+          saveModal
+
+        ).click(
+          saveModal
+        );
+
+        $(button).click(function() {
+          var active  = $(this).closest('.modal-content').find('.reorderActive').parent()
+
+          $(groupedCategories).append(`<div class="merged"><ul class="mergedUL"></ul><button class="separate" tabindex="0" role="button"><p>Separate</p><div class="across4"><i class="fal fa-arrow-left"></i>&nbsp;|&nbsp;<i class="fal fa-arrow-right"></i></div></button></div>`)
+
+          $('.groupedCategories .mergedUL').append(active)
+
+          $(mergedCategories).removeClass('reorderActive').addClass('bottomZero')
+          $(mergedCheck).removeAttr('checked');
+
+          $(words).html('Select to group')
+          $(button).removeClass('brightBlue')
+
+          if ($(addCustomControl).length == 1) {
+            $(button).off("click")
+
+          }
+          else {
+            $(button).on("click")
+          }
+
+          $(separate).click(function(){
+
+            var item = $(this).closest('.merged').find('input:checkbox:checked').parent().parent()
+
+              $('.addCategories .categories').append(item)
+              $(addCustomControl).removeClass('reorderActive').removeClass('bottomZero')
+              $(modalInputs).removeAttr('checked');
+
+              if ($('.mergedUL li').length == 1) {
+                $(separate).css('top', '24%')
+
+              }
+
+              if ($('.mergedUL li').length == 0) {
+                $(this).closest('.merged').remove()
+
+              }
+
+          })
+
+        })
+
+      })
+
+      $('#rowTopic').on('click', '.removeLevel' , function() {
+
+        $(horizontal).empty().append(original)
+
+        var el = $(this).closest('.levels').find('input[data-level]').val()
+
+        var putBack = $(this).closest('.levels')
+
+        $('.listArea .topicLevels').append(putBack)
+
+        $('.addRow').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
+
+        if ($(rowLevel).length < 3 ) {
+          $('#rowTopic').animate({
+            minHeight: "none",
+            maxHeight:"85px",
+            height:"auto"
+
+          },400);
+
+        }
+
+        if ($(rowLevel).length >3 ) {
+
+          $('.whiteBar').fadeOut('slow')
+
+        }
+
+        if($(rowLevel).length == 0) {
+          $('.plusRow').hide();
+        }
+
+        $('.numberCounter').html(function(i, val) { return val*1 - 1 });
+
+        $(".allLevels input").prop('checked', false).change();
+        var el = $(this).closest('.levels').find('input[data-level]').val()
+
+        if ($(rowLevel).length <= 2 ) {
+          $('.plusRow').removeClass('green')
+
+        }
+
+      })
+
+      $('#columnTopic').on('click', '.removeLevel' , function() {
+
+        $(horizontal).empty().append(original)
+
+        $('#columnTopic .evenSmaller').css('color', '#07477d')
+        $('#columnTopic .evenSmaller').html('limit 1')
+        $('#columnTopic .fal.fa-info-circle').css('color', '#07477d')
+
+        if ($(columnLevel).length > 0 ) {
+          $('.addColumn').on("click", addColumnTopic)
+
+        }
+
+        $('.levels').find('.addColumn').show()
+
+        if ($('#layerTopic .levels').length > 0 ) {
+
+          $('.levels').find('.addLayer').hide()
+
+        }
+
+        var el = $(this).closest('.levels').find('input[data-level]').val()
+
+        var putBack = $(this).closest('.levels')
+
+        $('.listArea .topicLevels').append(putBack)
+
+        $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
+
+      })
+
+      $('#layerTopic').on('click', '.removeLevel' , function() {
+
+        $('#layerTopic .evenSmaller').css('color', '#07477d')
+        $('#layerTopic .evenSmaller').html('limit 1')
+        $('#layerTopic .fal.fa-info-circle').css('color', '#07477d')
+
+        if ($(layerLevel).length > 0 ) {
+          $('.addLayer').on("click", addLayerTopic)
+
+        }
+
+        $('.levels').find('.addLayer').show()
+
+        if ($(columnLevel).length > 0 ) {
+
+          $('.levels').find('.addColumn').hide()
+
+        }
+
+
+        var putBack = $(this).closest('.levels')
+
+        $('.listArea .topicLevels').append(putBack)
+
+        var el = $(this).closest('.levels').find('input[data-level]').val()
+
+        $('.addLayer').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
+
+
+      })
+
+      $('#analysisTopic').on('click', '.removeLevel' , function() {
+
+        $('#analysisTopic .evenSmaller').css('color', '#07477d')
+        $('#analysisTopic .evenSmaller').html('limit 1')
+        $('#analysisTopic .fal.fa-info-circle').css('color', '#07477d')
+
+        if ($(analysisLevel).length > 0 ) {
+          $('.addAnalysis').on("click", addAnalysisTopic)
+        }
+
+        $('.listArea2 .topicLevels .custom-control').removeClass("noShow")
+
+        var putBack = $(this).closest('.levels')
+
+        $('.listArea2 .topicLevels').append(putBack)
+
+        var el = $(this).closest('.levels').find('input[data-level]').val()
+
+        $('.addAnalysis').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
+
+      })
+
     },
 
     getnumberFunc: function() {
@@ -1180,8 +1467,14 @@ $(document).ready(function () {
     showExpandFunc: function() {
       var expand = pageModule.config.classes.expand
       var plus = pageModule.config.classes.plusRow
+      var rowLevel = pageModule.config.classes.rowLevel
+      var columnLevel = pageModule.config.classes.columnLevel
+      var layerLevel = pageModule.config.classes.layerLevel
+      var analysisLevel = pageModule.config.classes.analysisLevel
+
+
       var showExpand = function() {
-        if ($('#rowTopic .levels').length > 0 || $('#columnTopic .levels').length > 0 || $('#layerTopic .levels').length > 0 || $('#analysisTopic .levels').length > 0) {
+        if ($(rowLevel).length > 0 || $(columnLevel).length > 0 || $(layerLevel).length > 0 || $(analysisLevel).length > 0) {
           $(expand).show()
         }
         else {
@@ -1217,438 +1510,9 @@ $(document).ready(function () {
 
     },
 
-
-    modalFunc: function() {
-      var modal = pageModule.config.classes.modal
-      var showModal = pageModule.config.classes.showModal
-      var add = pageModule.config.classes.add
-      var addCustomControl  = pageModule.config.classes.addCustomControl
-      var modalInputs = pageModule.config.classes.groupCheckbox
-      var button = pageModule.config.classes.groupButton
-      var words = pageModule.config.classes.groupWords
-      var checkedInputs = pageModule.config.classes.checked
-      let groupNumber =  $(checkedInputs).length;
-      var closeModal = pageModule.config.classes.closeModal
-      var save = pageModule.config.classes.save
-      var remove = pageModule.config.classes.removeLevel
-      var mergedCheck = pageModule.config.classes.mergedCheck
-      var inputs = pageModule.config.classes.globalCheckbox
-      var mergedCategories = pageModule.config.classes.mergedCategories
-      var mergedCheckbox = pageModule.config.classes.mergedCheckbox
-      var checkedInputs = pageModule.config.classes.checked
-      var modalList = pageModule.config.classes.modalList
-      var mergedCheck = pageModule.config.classes.mergedCheck
-      var separate = pageModule.config.classes.separate
-      var groupedCategories = pageModule.config.classes.groupedCategories
-      var merged = pageModule.config.classes.merged
-        var reorderOptions = pageModule.config.classes.reorderOptions
-
-      var horizontal = "";
-      var original = "";
-      $(modal).on('click', function() {
-        $(showModal).modal('show');
-
-        var categoryLi =  $(this).closest('.levels').find('.categories')
-
-
-        var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
-
-        var original = $(categoryLi).clone();
-
-        $(add).append(categoryLi)
-        $(reorderOptions).removeClass('hidden')
-
-
-        $(modalInputs).change( function(){
-
-          if($(this).prop("checked")==true){
-
-            $(this).closest('li').find('.custom-checkbox').addClass('reorderActive')
-
-          }
-
-          else{
-
-            $(this).closest('li').find('.custom-checkbox').removeClass('reorderActive')
-
-          };
-
-          let groupNumber =  $(checkedInputs).length;
-
-          let groupCounter = `Combine ${groupNumber}`;
-
-          if($(checkedInputs).length >= 2) {
-
-            $(button).addClass('brightBlue')
-            $(words).html(groupCounter)
-          }
-          else {
-            $(button).removeClass('brightBlue')
-            $(words).html('Select to group')
-          }
-
-        })
-
-
-        $(addCustomControl).removeClass('hidden')
-
-        var emptyModal = function (){
-
-          console.log(original)
-
-          $(horizontal).empty().append(original)
-
-          $(add).empty()
-          $(button).removeClass('brightBlue')
-          $(words).html('Select to group')
-
-
-        }
-        $(closeModal).keypress(
-          emptyModal
-
-        ).click(
-          emptyModal
-        );
-
-        var saveModal = function (){
-
-          $(horizontal).empty().append(categoryLi)
-
-          $(add).empty()
-
-
-          $(showModal).modal('hide');
-          $(button).removeClass('brightBlue')
-          $(words).html('Select to group')
-
-
-        }
-        $(save).keypress(
-          saveModal
-
-        ).click(
-          saveModal
-        );
-
-
-        $(button).click(function() {
-          var active  = $(this).closest('.modal-content').find('.reorderActive').parent()
-
-          $(groupedCategories).append(`<div class="merged"><ul class="mergedUL"></ul><button class="separate" tabindex="0" role="button"><p>Separate</p><div class="across4"><i class="fal fa-arrow-left"></i>&nbsp;|&nbsp;<i class="fal fa-arrow-right"></i></div></button></div>`)
-
-          $('.groupedCategories .mergedUL').append(active)
-
-          $(mergedCategories).removeClass('reorderActive').addClass('bottomZero')
-          $(mergedCheck).removeAttr('checked');
-
-          $(words).html('Select to group')
-          $(button).removeClass('brightBlue')
-
-          if ($(addCustomControl).length == 1) {
-            $(button).off("click")
-
-          }
-          else {
-            $(button).on("click")
-          }
-
-
-          $(separate).click(function(){
-
-            var item = $(this).closest('.merged').find('input:checkbox:checked').parent().parent()
-
-              $('.addCategories .categories').append(item)
-              $(addCustomControl).removeClass('reorderActive').removeClass('bottomZero')
-              $(modalInputs).removeAttr('checked');
-
-
-              if ($('.mergedUL li').length == 1) {
-                $(separate).css('top', '24%')
-
-              }
-
-              if ($('.mergedUL li').length == 0) {
-                $(this).closest('.merged').remove()
-
-              }
-
-
-          })
-
-        })
-
-
-      })
-
-
-
-      $('#rowTopic').on('click', '.removeLevel' , function() {
-
-        $(horizontal).empty().append(original)
-
-
-        var el = $(this).closest('.levels').find('input[data-level]').val()
-
-        var putBack = $(this).closest('.levels')
-
-        $('.listArea .topicLevels').append(putBack)
-
-        $('.addRow').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
-
-
-
-        if ($('#rowTopic .levels').length < 3 ) {
-          $('#rowTopic').animate({
-            minHeight: "none",
-            maxHeight:"85px",
-            height:"auto"
-
-          },400);
-
-        }
-
-        if ($('#rowTopic .levels').length >3 ) {
-
-          $('.whiteBar').fadeOut('slow')
-
-
-        }
-
-        if($("#rowTopic .levels").length == 0) {
-          $('.plusRow').hide();
-        }
-
-        $('.numberCounter').html(function(i, val) { return val*1 - 1 });
-
-        $(".allLevels input").prop('checked', false).change();
-        var el = $(this).closest('.levels').find('input[data-level]').val()
-
-        if ($('#rowTopic .levels').length <= 2 ) {
-          $('.plusRow').removeClass('green')
-
-        }
-
-
-
-      })
-
-      $('#columnTopic').on('click', '.removeLevel' , function() {
-
-        $(horizontal).empty().append(original)
-
-        $('#columnTopic .evenSmaller').css('color', '#07477d')
-        $('#columnTopic .evenSmaller').html('limit 1')
-        $('#columnTopic .fal.fa-info-circle').css('color', '#07477d')
-
-        if ($('#columnTopic .levels').length > 0 ) {
-          $('.addColumn').on("click", addColumnTopic)
-
-
-        }
-
-        $('.levels').find('.addColumn').show()
-
-        if ($('#layerTopic .levels').length > 0 ) {
-
-          $('.levels').find('.addLayer').hide()
-
-
-        }
-
-
-
-        var el = $(this).closest('.levels').find('input[data-level]').val()
-
-        var putBack = $(this).closest('.levels')
-
-        $('.listArea .topicLevels').append(putBack)
-
-        $('.addColumn').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
-
-      })
-
-      $('#layerTopic').on('click', '.removeLevel' , function() {
-
-        $('#layerTopic .evenSmaller').css('color', '#07477d')
-        $('#layerTopic .evenSmaller').html('limit 1')
-        $('#layerTopic .fal.fa-info-circle').css('color', '#07477d')
-
-        if ($('#layerTopic .levels').length > 0 ) {
-          $('.addLayer').on("click", addLayerTopic)
-
-          console.log("re-adding column")
-
-        }
-
-        $('.levels').find('.addLayer').show()
-
-
-        if ($('#columnTopic .levels').length > 0 ) {
-
-          $('.levels').find('.addColumn').hide()
-
-
-        }
-
-
-        var putBack = $(this).closest('.levels')
-
-        $('.listArea .topicLevels').append(putBack)
-
-
-        var el = $(this).closest('.levels').find('input[data-level]').val()
-
-        $('.addLayer').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
-
-
-      })
-
-      $('#analysisTopic').on('click', '.removeLevel' , function() {
-
-        $('#analysisTopic .evenSmaller').css('color', '#07477d')
-        $('#analysisTopic .evenSmaller').html('limit 1')
-        $('#analysisTopic .fal.fa-info-circle').css('color', '#07477d')
-
-
-        if ($('#analysisTopic .levels').length > 0 ) {
-          $('.addAnalysis').on("click", addAnalysisTopic)
-
-        }
-
-        $('.listArea2 .topicLevels .custom-control').removeClass("noShow")
-
-        var putBack = $(this).closest('.levels')
-
-        $('.listArea2 .topicLevels').append(putBack)
-
-
-        var el = $(this).closest('.levels').find('input[data-level]').val()
-
-        $('.addAnalysis').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
-
-
-      })
-
-
-
-    },
-
-    modalKeypressFunc: function() {
-      var modal = pageModule.config.classes.modal
-      var showModal = pageModule.config.classes.showModal
-      var add = pageModule.config.classes.add
-      var addCustomControl  = pageModule.config.classes.addCustomControl
-      var modalInputs = pageModule.config.classes.groupCheckbox
-      var button = pageModule.config.classes.groupButton
-      var words = pageModule.config.classes.groupWords
-      var checkedInputs = pageModule.config.classes.checked
-      let groupNumber =  $(checkedInputs).length;
-      var closeModal = pageModule.config.classes.closeModal
-      var save = pageModule.config.classes.save
-
-
-      $(modal).unbind("keyup").on('keyup', function(e) {
-        var code = (e.keyCode ? e.keyCode : e.which);
-        if (code == 13) {
-          $(showModal).modal('show');
-
-
-          var categoryLi =  $(this).closest('.levels').find('.categories')
-
-          var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
-
-
-          var original = $(categoryLi).clone();
-
-
-          $(add).append(categoryLi)
-
-          $(modalInputs).click( function(){
-
-            if($(this).prop("checked")==true){
-
-
-              $(this).closest('li').find('.custom-checkbox').addClass('reorderActive')
-
-
-            }
-
-            else{
-
-              $(this).closest('li').find('.custom-checkbox').removeClass('reorderActive')
-
-
-            };
-
-
-            let groupNumber =  $(checkedInputs).length;
-
-            let groupCounter = `Combine ${groupNumber}`;
-
-            if($(checkedInputs).length >= 2) {
-
-              $(button).addClass('brightBlue')
-              $(words).html(groupCounter)
-            }
-
-            else {
-              $(button).removeClass('brightBlue')
-              $(words).html('Select to group')
-            }
-
-
-
-
-          })
-
-
-
-          $(addCustomControl).removeClass('hidden')
-
-          var emptyModal = function (){
-
-            console.log(original)
-
-            $(horizontal).empty().append(original)
-
-            $(add).empty()
-
-
-          }
-          $(closeModal).keypress(
-            emptyModal
-
-          ).click(
-            emptyModal
-          );
-
-
-          var saveModal = function (){
-
-
-            $(horizontal).empty().append(categoryLi)
-
-
-            $(add).empty()
-
-
-            $(showModal).modal('hide');
-
-
-          }
-          $(save).keypress(
-            saveModal
-
-          ).click(
-            saveModal
-          );
-
-        }
-
-      })
-
-    },
+    // modalKeypressFunc: function() {
+    //
+    // },
 
 
     init: function() {
@@ -1666,10 +1530,9 @@ $(document).ready(function () {
 
   pageModule.init();
   pageModule.modalFunc()
-  pageModule.modalKeypressFunc()
+  // pageModule.modalKeypressFunc()
   pageModule.globalRemoveFunc()
   pageModule.getnumberFunc()
-  // pageModule.combineFunc()
   pageModule.showExpandFunc()
 
 
