@@ -3674,11 +3674,15 @@ border-bottom: 4px solid #c7482e !important;
 
 #reorderCategories .modal-body {
   padding-top:0em !important;
+  overflow-y: auto;
+  max-height: 300px;
+  height:auto;
 }
 
 #reorderCategories .modal-dialog {
   min-width:600px;
   height:auto;
+  overflow-y: initial !important;
 }
 
 .addCategories .hideInModal {
