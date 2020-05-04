@@ -812,37 +812,91 @@ $(document).ready(function () {
         };
 
         $(save).keypress(saveModal).click(saveModal);
-        $(button).click(function () {
-          var active = $(this).closest('.modal-content').find('.reorderActive').parent();
-          $(groupedCategories).append("<div class=\"merged\"><ul class=\"mergedUL\"></ul><button class=\"separate\" tabindex=\"0\" role=\"button\"><p>Separate</p><div class=\"across4\"><i class=\"fal fa-arrow-left\"></i>&nbsp;|&nbsp;<i class=\"fal fa-arrow-right\"></i></div></button></div>");
-          $('.groupedCategories .mergedUL').append(active);
-          $(mergedCategories).removeClass('reorderActive').addClass('bottomZero');
-          $(mergedCheck).removeAttr('checked');
-          $(words).html('Select to group');
-          $(button).removeClass('brightBlue');
-
-          if ($(addCustomControl).length == 1) {
-            $(button).off("click");
-          } else {
-            $(button).on("click");
-          }
-
-          $(separate).click(function () {
-            var item = $(this).closest('.merged').find('input:checkbox:checked').parent().parent();
-            $('.addCategories .categories').append(item);
-            $(addCustomControl).removeClass('reorderActive').removeClass('bottomZero');
-            $(modalInputs).removeAttr('checked');
-
-            if ($('.mergedUL li').length == 1) {
-              $(separate).css('top', '24%');
-            }
-
-            if ($('.mergedUL li').length == 0) {
-              $(this).closest('.merged').remove();
-            }
-          });
-        });
       });
+      $(":checkbox").change('.addCategories', function () {
+        if ($(this).prop("checked") == true) {
+          var thing = $(this).closest('li').addClass('activeCategory'); // 
+          // var Opt1 = "";
+          //   $(thing).each(function() {
+          //     Opt1 = Opt1 + this.outerHTML;
+          //
+          //   });
+          //
+
+          $(button).click(function () {
+            console.log(thing); // console.log(Opt1)
+
+            $(groupedCategories).append("<div class=\"merged\"><ul class=\"mergedUL\"></ul><button class=\"separate\" tabindex=\"0\" role=\"button\"><p>Separate</p><div class=\"across4\"><i class=\"fal fa-arrow-left\"></i>&nbsp;|&nbsp;<i class=\"fal fa-arrow-right\"></i></div></button></div>");
+            $('.activeCategory').removeClass('activeCategory');
+            $(mergedCategories).addClass('bottomZero');
+            $(mergedCheck).removeAttr('checked');
+          });
+        } else {
+          $(this).closest('li').removeClass('activeCategory');
+        }
+      }); // $(button).click(function() {
+      //   // var active  = $(this).closest('.modal-content').find('.reorderActive').parent()
+      //
+      //   //
+      //   //
+      //   // var x = $(this).closest('.modal-content').find('.addCategories input:checkbox:checked')
+      //   //
+      //   // var y = $(x).parent().parent()
+      //
+      //   // var categoryObj = $(this).closest('.modal-content').find('.reorderActive').parent()
+      //   //
+      //   //
+      //   // var Opt1 = "";
+      //   //
+      //   // $(categoryObj).each(function() {
+      //   //   Opt1 = Opt1 + this.outerHTML;
+      //   //
+      //   // });
+      //
+      //   $(groupedCategories).append(`<div class="merged"><ul class="mergedUL">${Opt1}</ul><button class="separate" tabindex="0" role="button"><p>Separate</p><div class="across4"><i class="fal fa-arrow-left"></i>&nbsp;|&nbsp;<i class="fal fa-arrow-right"></i></div></button></div>`)
+      //
+      //
+      //
+      //
+      //
+      //   // $('.mergedUL').append(y)
+      //
+      //   $(mergedCategories).removeClass('reorderActive').addClass('bottomZero')
+      //   $(mergedCheck).removeAttr('checked');
+      //
+      //   $(words).html('Select to group')
+      //   $(button).removeClass('brightBlue')
+      //
+      //   if ($(addCustomControl).length == 1) {
+      //     $(button).off("click")
+      //
+      //   }
+      //   else {
+      //     $(button).on("click")
+      //   }
+      //
+      //   $(separate).click(function(){
+      //
+      //     var item = $(this).closest('.merged').find('input:checkbox:checked').parent().parent()
+      //
+      //       $('.addCategories .categories').append(item)
+      //       $(addCustomControl).removeClass('reorderActive').removeClass('bottomZero')
+      //       $(modalInputs).removeAttr('checked');
+      //
+      //       if ($('.mergedUL li').length == 1) {
+      //         $(separate).css('top', '24%')
+      //
+      //       }
+      //
+      //       if ($('.mergedUL li').length == 0) {
+      //         $(this).closest('.merged').remove()
+      //
+      //       }
+      //
+      //   })
+      //
+      // })
+
       $('#rowTopic').on('click', '.removeLevel', function () {
         $(horizontal).empty().append(original);
         var el = $(this).closest('.levels').find('input[data-level]').val();

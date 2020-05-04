@@ -3164,7 +3164,67 @@
 						</div>
 					</div>
 
+					<div class="option" data-type="stats">
+						<p class="small text-center">Options Row Percentage, Column Percentage, and Statistical Tests are only available if more than one topic has been selected and will not be available forselection if your query has only one topic.</p>
 
+						<div class="row">
+
+							<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+								<div class="whiteBubble">
+									<fieldset>
+										<legend class="blue text-left">Cell Estimates&nbsp;<i class="fas fa-info-circle orange"></i>
+										</legend>
+										<div class="wrapper">
+											<input id="ctl00_tabContentPlaceHolder_rdnBasicEst" name="ctl00$tabContentPlaceHolder$est" type="radio" value="no-issues" checked>
+											<label for="ctl00$tabContentPlaceHolder$est" class="blue">Basic Estimates</label>
+										</div>
+
+										<p class="smallest">(check all that apply)</p>
+										<ul class="cell-estimates">
+
+											<li class="cell-estimates custom-control custom-checkbox">
+												<input type="checkbox" name="cell-estimates" data-cell="Frequency" value="Frequency" class="custom-control-input" id="Frequency">
+												<label class="custom-control-label" for="Frequency">Frequency</label>
+											</li>
+											<li class="cell-estimates custom-control custom-checkbox">
+												<input type="checkbox" name="cell-estimates" data-cell="Cell Percentage" value="Cell Percentage" class="custom-control-input" id="CellPercentage">
+												<label class="custom-control-label" for="CellPercentage">Cell Percentage</label>
+											</li>
+											<li class="cell-estimates custom-control custom-checkbox">
+												<input type="checkbox" name="cell-estimates" data-cell="Row Percentage" value="Row Percentage" class="custom-control-input" id="RowPercentage">
+												<label class="custom-control-label" for="RowPercentage">Row Percentage</label>
+											</li>
+
+											<li class="cell-estimates custom-control custom-checkbox">
+												<input type="checkbox" name="cell-estimates" data-cell="Column Percentage" value="Column Percentage" class="custom-control-input" id="ColumnPercentage">
+												<label class="custom-control-label" for="ColumnPercentage">Column Percentage</label>
+											</li>
+
+										</ul>
+
+
+										<div class="wrapper">
+											<input id="ctl00_tabContentPlaceHolder_rdnStatAnalysis" name="ctl00$tabContentPlaceHolder$est2" type="radio" value="no-issues" checked>
+											<label for="ctl00$tabContentPlaceHolder$est2" class="blue">Statistics of Another Variable(s)</label>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+
+							<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+								<div class="whiteBubble text-left">
+									<legend class="blue">Missing Values&nbsp;<i class="fas fa-info-circle orange"></i></legend>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+								<div class="whiteBubble text-left">
+									<legend class="blue">Statistical Tests&nbsp;<i class="fas fa-info-circle orange"></i></legend>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
 
 					<div class="option" data-type="data">
 
@@ -3178,11 +3238,7 @@
 
 					</div>
 
-					<div class="option" data-type="stats">
 
-						<p>STATISTICAL OUTPUTS</p>
-
-					</div>
 
 				</div>
 
