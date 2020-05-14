@@ -3183,11 +3183,11 @@
 										<ul class="statistical-estimates">
 
 											<li class="statistical-estimates custom-control custom-checkbox">
-												<input type="checkbox" name="cell-estimates" data-cell="Frequency" value="Frequency" class="custom-control-input" id="Frequency">
+												<input type="checkbox" name="cell-estimates" data-cell="Frequency" value="Frequency" class="custom-control-input" id="Frequency" checked>
 												<label class="custom-control-label" for="Frequency">Frequency</label>
 											</li>
 											<li class="statistical-estimates custom-control custom-checkbox">
-												<input type="checkbox" name="cell-estimates" data-cell="Cell Percentage" value="Cell Percentage" class="custom-control-input" id="CellPercentage">
+												<input type="checkbox" name="cell-estimates" data-cell="Cell Percentage" value="Cell Percentage" class="custom-control-input" id="CellPercentage" checked>
 												<label class="custom-control-label" for="CellPercentage">Cell Percentage</label>
 											</li>
 											<li class="statistical-estimates custom-control custom-checkbox">
@@ -3224,8 +3224,18 @@
 											<label for="percentile" class="blue">Percentile</label>
 										</li>
 										<li class="wrapper">
-											<input id="ratio" name="stat-analysis" type="radio" value="no-issues">
+											<input id="ratio" name="stat-analysis" type="radio" value="no-issues" checked>
 											<label for="ratio" class="blue">Ratio</label>
+
+											<div class="col-md-6">
+												<input name="radio" type='hidden'>
+												<div class="btn-group ratioGroup" data-toggle="buttons">
+													<button type="button" class="ratio ratioActive" data-radio-name="radio">5%</button>
+													<button type="button" class="ratio" data-radio-name="radio">10%</button>
+													<button type="button" class="ratio" data-radio-name="radio">50%</button>
+													<button type="button" class="ratio" data-radio-name="radio">90%</button>
+												</div>
+											</div>
 										</li>
 									</ul>
 									</fieldset>
@@ -3238,7 +3248,7 @@
 									<legend class="blue">Missing Values&nbsp;<i class="fas fa-info-circle orange"></i></legend>
 									<ul class="missing">
 									<li class="wrapper">
-										<input id="yes" name="missing" type="radio" value="no-issues">
+										<input id="yes" name="missing" type="radio" value="no-issues" checked>
 										<label for="yes" class="blue">Yes</label>
 									</li>
 									<li class="wrapper">

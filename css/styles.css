@@ -3892,7 +3892,7 @@ categories reorder modal */
 
 ul.stat-analysis {
   margin-left:0em;
-  padding-left: 2em;
+  padding-left: 1.8em;
 }
 
 ul.missing {
@@ -3902,6 +3902,42 @@ ul.missing {
 
 .borderBottomBlue {
   border-bottom: 1px solid #07477d;
+}
+
+.ratio {
+  background: #deedf8;
+  color:black;
+  font-size: 14px;
+  padding: .3em .7em;
+  border:none !important;
+
+}
+.ratioGroup {
+  border:1px solid  #127abf !important;
+  border-radius: .6rem;
+}
+
+.ratio:nth-of-type(1) {
+border-right:1px solid #127abf !important;
+border-top-left-radius: .6rem;
+border-bottom-left-radius: .6rem;
+}
+
+.ratio:nth-of-type(2) {
+border-right:1px solid #127abf !important;
+}
+
+.ratio:nth-of-type(4) {
+border-left:1px solid #127abf !important;
+border-top-right-radius: .6rem;
+border-bottom-right-radius: .6rem;
+}
+
+.ratioActive {
+  background: #127abf;
+  color:white;
+  font-weight:600;
+
 }
 
 /* footer classes */

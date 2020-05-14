@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+
+
   // Let the document know when the mouse is being used
   $('body').on('mousedown', function() {
     document.body.classList.add('using-mouse');
