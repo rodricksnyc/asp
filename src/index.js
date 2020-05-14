@@ -1210,29 +1210,22 @@ $(document).ready(function () {
         $(showModal).modal('show');
         var categoryLi =  $(this).closest('.levels').find('.categories')
         var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
-
         var original = $(categoryLi).clone();
-
         $(add).append(categoryLi)
         $(reorderOptions).removeClass('hidden')
 
         $(modalInputs).change( function(){
-
           if($(this).prop("checked")==true){
-
             $(this).closest('li').find('.custom-checkbox').addClass('reorderActive')
           }
 
           else{
-
             $(this).closest('li').find('.custom-checkbox').removeClass('reorderActive')
 
           };
 
           let groupNumber =  $(checkedInputs).length;
-
           let groupCounter = `Combine ${groupNumber}`;
-
           if($(checkedInputs).length >= 2) {
             $(button).addClass('brightBlue')
             $(words).html(groupCounter)
@@ -1241,17 +1234,12 @@ $(document).ready(function () {
             $(button).removeClass('brightBlue')
             $(words).html('Select to group')
           }
-
         })
 
         $(addCustomControl).removeClass('hidden')
-
         var emptyModal = function (){
-
           console.log(original)
-
           $(horizontal).empty().append(original)
-
           $(add).empty()
           $(button).removeClass('brightBlue')
           $(words).html('Select to group')
@@ -1294,7 +1282,7 @@ $(document).ready(function () {
 
 
 
-        // 
+        //
         // var Opt1 = "";
         //   $(thing).each(function() {
         //     Opt1 = Opt1 + this.outerHTML;

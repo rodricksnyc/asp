@@ -3175,50 +3175,113 @@
 										<legend class="blue text-left">Cell Estimates&nbsp;<i class="fas fa-info-circle orange"></i>
 										</legend>
 										<div class="wrapper">
-											<input id="ctl00_tabContentPlaceHolder_rdnBasicEst" name="ctl00$tabContentPlaceHolder$est" type="radio" value="no-issues" checked>
-											<label for="ctl00$tabContentPlaceHolder$est" class="blue">Basic Estimates</label>
+											<input id="BasicEstimates" name="BasicEstimates" type="radio" value="no-issues" checked>
+											<label for="BasicEstimates" class="blue">Basic Estimates</label>
 										</div>
 
 										<p class="smallest">(check all that apply)</p>
-										<ul class="cell-estimates">
+										<ul class="statistical-estimates">
 
-											<li class="cell-estimates custom-control custom-checkbox">
+											<li class="statistical-estimates custom-control custom-checkbox">
 												<input type="checkbox" name="cell-estimates" data-cell="Frequency" value="Frequency" class="custom-control-input" id="Frequency">
 												<label class="custom-control-label" for="Frequency">Frequency</label>
 											</li>
-											<li class="cell-estimates custom-control custom-checkbox">
+											<li class="statistical-estimates custom-control custom-checkbox">
 												<input type="checkbox" name="cell-estimates" data-cell="Cell Percentage" value="Cell Percentage" class="custom-control-input" id="CellPercentage">
 												<label class="custom-control-label" for="CellPercentage">Cell Percentage</label>
 											</li>
-											<li class="cell-estimates custom-control custom-checkbox">
+											<li class="statistical-estimates custom-control custom-checkbox">
 												<input type="checkbox" name="cell-estimates" data-cell="Row Percentage" value="Row Percentage" class="custom-control-input" id="RowPercentage">
 												<label class="custom-control-label" for="RowPercentage">Row Percentage</label>
 											</li>
 
-											<li class="cell-estimates custom-control custom-checkbox">
+											<li class="statistical-estimates custom-control custom-checkbox">
 												<input type="checkbox" name="cell-estimates" data-cell="Column Percentage" value="Column Percentage" class="custom-control-input" id="ColumnPercentage">
 												<label class="custom-control-label" for="ColumnPercentage">Column Percentage</label>
 											</li>
 
 										</ul>
 
-
 										<div class="wrapper">
-											<input id="ctl00_tabContentPlaceHolder_rdnStatAnalysis" name="ctl00$tabContentPlaceHolder$est2" type="radio" value="no-issues" checked>
-											<label for="ctl00$tabContentPlaceHolder$est2" class="blue">Statistics of Another Variable(s)</label>
+											<input id="statAnalysis" name="stat-analysis-title" type="radio" value="no-issues" checked>
+											<label for="statAnalysis" class="blue">Statistics of Another Variable(s)</label>
 										</div>
+										<ul class="stat-analysis">
+										<li class="wrapper">
+											<input id="mean" name="stat-analysis" type="radio" value="no-issues">
+											<label for="mean" class="blue">Mean</label>
+										</li>
+										<li class="wrapper">
+											<input id="total" name="stat-analysis" type="radio" value="no-issues">
+											<label for="total" class="blue">Total</label>
+										</li>
+										<li class="wrapper">
+											<input id="median" name="stat-analysis" type="radio" value="no-issues">
+											<label for="median" class="blue">Median</label>
+										</li>
+										<li class="wrapper">
+											<input id="percentile" name="stat-analysis" type="radio" value="no-issues">
+											<label for="percentile" class="blue">Percentile</label>
+										</li>
+										<li class="wrapper">
+											<input id="ratio" name="stat-analysis" type="radio" value="no-issues">
+											<label for="ratio" class="blue">Ratio</label>
+										</li>
+									</ul>
 									</fieldset>
 								</div>
 							</div>
 
 							<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 								<div class="whiteBubble text-left">
+									<fieldset>
 									<legend class="blue">Missing Values&nbsp;<i class="fas fa-info-circle orange"></i></legend>
+									<ul class="missing">
+									<li class="wrapper">
+										<input id="yes" name="missing" type="radio" value="no-issues">
+										<label for="yes" class="blue">Yes</label>
+									</li>
+									<li class="wrapper">
+										<input id="no" name="missing" type="radio" value="no-issues">
+										<label for="no" class="blue">No</label>
+									</li>
+								</ul>
+
+								<legend class="blue text-left">Precision Measures&nbsp;<i class="fas fa-info-circle orange"></i>
+								</legend>
+
+								<p class="smallest">(check all that apply)</p>
+								<ul class="statistical-estimates">
+
+									<li class="statistical-estimates custom-control custom-checkbox">
+										<input type="checkbox" name="precision" value="Confidence Interval" class="custom-control-input" id="Confidence">
+										<label class="custom-control-label" for="Confidence">Confidence Interval</label>
+									</li>
+									<li class="statistical-estimates custom-control custom-checkbox">
+										<input type="checkbox" name="precision" value="Standard Error" class="custom-control-input" id="StandardError">
+										<label class="custom-control-label" for="StandardError">Standard Error</label>
+									</li>
+									<li class="statistical-estimates custom-control custom-checkbox">
+										<input type="checkbox" name="precision" value="Relative Standard Error" class="custom-control-input" id="RelativeStandardError">
+										<label class="custom-control-label" for="RelativeStandardError">Relative Standard Error (RSE)</label>
+									</li>
+								</ul>
+							</fieldset>
 								</div>
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 								<div class="whiteBubble text-left">
 									<legend class="blue">Statistical Tests&nbsp;<i class="fas fa-info-circle orange"></i></legend>
+										<p class="smallest">(check all that apply)</p>
+										<ul class="statistical-estimates borderBottomBlue">
+
+											<li class="statistical-estimates custom-control custom-checkbox">
+												<input type="checkbox" name="chi" value="Chi-Square" class="custom-control-input" id="Chi-Square">
+												<label class="custom-control-label" for="Chi-Square">Chi-Square (RS3)</label>
+											</li>
+											<br>
+										</ul>
+										<div class="orangeBubble d-flex justify-content-center align-items-center"><i class="far fa-plus"></i>&nbsp;Add a t-test</div>
 								</div>
 							</div>
 

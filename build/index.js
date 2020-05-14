@@ -815,7 +815,7 @@ $(document).ready(function () {
       });
       $(":checkbox").change('.addCategories', function () {
         if ($(this).prop("checked") == true) {
-          var thing = $(this).closest('li').addClass('activeCategory'); // 
+          var thing = $(this).closest('li').addClass('activeCategory'); //
           // var Opt1 = "";
           //   $(thing).each(function() {
           //     Opt1 = Opt1 + this.outerHTML;

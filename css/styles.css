@@ -3813,12 +3813,12 @@ categories reorder modal */
 
 
 .wrapper input + label::before {
-  border: 2px solid #07477d;
+  border: 1px solid #07477d;
   content: "";
   height: 18px;
   left: 0;
   position: absolute;
-  top: 0;
+  top: 2px;
   width: 18px;
   border-radius: 50%;
 }
@@ -3831,8 +3831,8 @@ categories reorder modal */
   border-radius: 50%;
   position: absolute;
   left: 3px;
-  top:3px;
-  transition: opacity 0.2s ease-in-out;  
+  top:5px;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .wrapper input:checked + label::after {
@@ -3890,6 +3890,19 @@ categories reorder modal */
   margin-bottom: .5em;
 }
 
+ul.stat-analysis {
+  margin-left:0em;
+  padding-left: 2em;
+}
+
+ul.missing {
+  margin-left:0em;
+  padding-left: 2em;
+}
+
+.borderBottomBlue {
+  border-bottom: 1px solid #07477d;
+}
 
 /* footer classes */
 
