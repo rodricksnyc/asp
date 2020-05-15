@@ -3905,12 +3905,12 @@ ul.missing {
 }
 
 .ratio {
-  background: #deedf8;
-  color:black;
-  font-size: 14px;
-  padding: .3em .7em;
+  background: #deedf8 !important;
+  color:black !important;
+  font-size: 12px !important;
+  padding: .6em 1em !important;
   border:none !important;
-
+  text-decoration: none !important;
 }
 .ratioGroup {
   border:1px solid  #127abf !important;
@@ -3918,13 +3918,13 @@ ul.missing {
 }
 
 .ratio:nth-of-type(1) {
-border-right:1px solid #127abf !important;
+border-right:2px solid #127abf !important;
 border-top-left-radius: .6rem;
 border-bottom-left-radius: .6rem;
 }
 
 .ratio:nth-of-type(2) {
-border-right:1px solid #127abf !important;
+border-right:2px solid #127abf !important;
 }
 
 .ratio:nth-of-type(4) {
@@ -3934,8 +3934,8 @@ border-bottom-right-radius: .6rem;
 }
 
 .ratioActive {
-  background: #127abf;
-  color:white;
+  background: #127abf !important;
+  color:white !important;
   font-weight:600;
 
 }
