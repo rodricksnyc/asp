@@ -1169,7 +1169,8 @@ $(document).ready(function () {
         rowLevel: '#rowTopic .levels',
         columnLevel : '#columnTopic .levels',
         layerLevel: '#layerTopic .levels',
-        analysisLevel: '#analysisTopic .levels'
+        analysisLevel: '#analysisTopic .levels',
+        addCategoriesUL:'.addCategories .categories'
 
 
 
@@ -1203,6 +1204,11 @@ $(document).ready(function () {
       var columnLevel = pageModule.config.classes.columnLevel
       var layerLevel = pageModule.config.classes.layerLevel
       var analysisLevel = pageModule.config.classes.analysisLevel
+      var addCategoriesUL = pageModule.config.classes.addCategoriesUL
+
+
+
+
 
       var horizontal = "";
       var original = "";
@@ -1214,15 +1220,17 @@ $(document).ready(function () {
         $(add).append(categoryLi)
         $(reorderOptions).removeClass('hidden')
 
-        $(modalInputs).change( function(){
-          if($(this).prop("checked")==true){
-            $(this).closest('li').find('.custom-checkbox').addClass('reorderActive')
-          }
+        $(modalInputs).change(function(){
 
-          else{
-            $(this).closest('li').find('.custom-checkbox').removeClass('reorderActive')
-
-          };
+          // if($(this).prop("checked")==true){
+          //
+          //   $(this).closest('li').find('.custom-checkbox').addClass('reorderActive')
+          // }
+          //
+          // else{
+          //   $(this).closest('li').find('.custom-checkbox').removeClass('reorderActive')
+          //
+          // };
 
           let groupNumber =  $(checkedInputs).length;
           let groupCounter = `Combine ${groupNumber}`;
@@ -1271,7 +1279,77 @@ $(document).ready(function () {
         );
 
 
+
       })
+
+      $(button).click(function() {
+
+        var active  = $(this).closest('.modal-content').find('.reorderActive').parent()
+        var x = $(this).closest('.modal-content').find('.addCategories input:checkbox:checked')
+        var y = $(x).parent().parent()
+        var categoryObj = $(this).closest('.modal-content').find('.addCategories input:checkbox:checked').parent().parent()
+
+        var Opt1 = "";
+        $(y).each(function() {
+          Opt1 = Opt1 + this.outerHTML;
+
+        });
+
+
+        if ($(y).length > 1) {
+
+        $(groupedCategories).append(`<div class="merged"><ul class="mergedUL">${Opt1}</ul><button class="separate" tabindex="0" role="button"><p>Separate</p><div class="across4"><i class="fal fa-arrow-left"></i>&nbsp;|&nbsp;<i class="fal fa-arrow-right"></i></div></button></div>`)
+
+        $(y).remove()
+
+        $(mergedCategories).addClass('bottomZero')
+        $(mergedCheck).removeAttr('checked');
+
+        $(words).html('Select to group')
+        $(button).removeClass('brightBlue')
+
+      }
+
+        if ($(addCustomControl).length == 1) {
+          $(button).off("click")
+
+        }
+        else {
+          $(button).on("click")
+        }
+
+        $(separate).click(function(){
+          var item = $(this).closest('.merged').find('input:checkbox:checked').parent().parent()
+
+          var input = $(this).closest('.merged').find('input:checkbox:checked')
+
+          var listItem = $(this).closest('.merged').find('.mergedUL')
+
+            $('.addCategories .categories').append(item)
+            $(addCustomControl).removeClass('bottomZero')
+            $(input).removeAttr('checked');
+
+            if ($(listItem).children().length == 1) {
+
+              $(separate).css('top', '24%')
+
+            }
+
+            if ($(listItem).children().length == 0) {
+
+              $(this).closest('.merged').remove()
+
+            }
+
+        })
+
+
+      })
+
+
+
+
+
 
       //
       // $(":checkbox").change('.addCategories' , function(){
@@ -1318,69 +1396,7 @@ $(document).ready(function () {
       //   })
 
 
-      $(button).click(function() {
-        var active  = $(this).closest('.modal-content').find('.reorderActive').parent()
 
-        console.log(active)
-
-        var x = $(this).closest('.modal-content').find('.addCategories input:checkbox:checked')
-
-        var y = $(x).parent().parent()
-
-        var categoryObj = $(this).closest('.modal-content').find('.reorderActive').parent()
-
-
-        var Opt1 = "";
-
-        $(categoryObj).each(function() {
-          Opt1 = Opt1 + this.outerHTML;
-
-        });
-
-        $(groupedCategories).append(`<div class="merged"><ul class="mergedUL">${Opt1}</ul><button class="separate" tabindex="0" role="button"><p>Separate</p><div class="across4"><i class="fal fa-arrow-left"></i>&nbsp;|&nbsp;<i class="fal fa-arrow-right"></i></div></button></div>`)
-
-        $(active).remove()
-        // $('.mergedUL').append(y)
-
-        $(mergedCategories).removeClass('reorderActive').addClass('bottomZero')
-        $(mergedCheck).removeAttr('checked');
-
-        $(words).html('Select to group')
-        $(button).removeClass('brightBlue')
-
-        if ($(addCustomControl).length == 1) {
-          $(button).off("click")
-
-        }
-        else {
-          $(button).on("click")
-        }
-
-        $(separate).click(function(){
-
-          var item = $(this).closest('.merged').find('input:checkbox:checked').parent().parent()
-
-          var listItem = $(this).closest('.merged').find('.mergedUL')
-
-            $('.addCategories .categories').append(item)
-            $(addCustomControl).removeClass('reorderActive').removeClass('bottomZero')
-            $(modalInputs).removeAttr('checked');
-
-            if ($(listItem).children().length == 1) {
-              alert("dfiugbreiu ")
-              $(separate).css('top', '24%')
-
-            }
-
-            if ($(listItem).children().length == 0) {
-              alert("wefiuwbeifubwi")
-              $(this).closest('.merged').remove()
-
-            }
-
-        })
-
-      })
 
       $('#rowTopic').on('click', '.removeLevel' , function() {
 
