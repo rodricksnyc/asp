@@ -1360,16 +1360,20 @@ $(document).ready(function () {
 
           var item = $(this).closest('.merged').find('input:checkbox:checked').parent().parent()
 
+          var listItem = $(this).closest('.merged').find('.mergedUL')
+
             $('.addCategories .categories').append(item)
             $(addCustomControl).removeClass('reorderActive').removeClass('bottomZero')
             $(modalInputs).removeAttr('checked');
 
-            if ($('.mergedUL li').length == 1) {
+            if ($(listItem).children().length == 1) {
+              alert("dfiugbreiu ")
               $(separate).css('top', '24%')
 
             }
 
-            if ($('.mergedUL li').length == 0) {
+            if ($(listItem).children().length == 0) {
+              alert("wefiuwbeifubwi")
               $(this).closest('.merged').remove()
 
             }
