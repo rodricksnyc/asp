@@ -1321,7 +1321,7 @@ $(document).ready(function () {
       $(button).click(function() {
         var active  = $(this).closest('.modal-content').find('.reorderActive').parent()
 
-
+        console.log(active)
 
         var x = $(this).closest('.modal-content').find('.addCategories input:checkbox:checked')
 
@@ -1339,7 +1339,7 @@ $(document).ready(function () {
 
         $(groupedCategories).append(`<div class="merged"><ul class="mergedUL">${Opt1}</ul><button class="separate" tabindex="0" role="button"><p>Separate</p><div class="across4"><i class="fal fa-arrow-left"></i>&nbsp;|&nbsp;<i class="fal fa-arrow-right"></i></div></button></div>`)
 
-
+        $(active).remove()
         // $('.mergedUL').append(y)
 
         $(mergedCategories).removeClass('reorderActive').addClass('bottomZero')
