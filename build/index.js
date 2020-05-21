@@ -899,11 +899,14 @@ $(document).ready(function () {
         $(addCustomControl).removeClass('hidden');
 
         var emptyModal = function emptyModal() {
+          var items = $('.merged').find('input').parent().parent();
           console.log(original);
           $(horizontal).empty().append(original);
           $(add).empty();
           $(button).removeClass('brightBlue');
           $(words).html('Select to group');
+          $('.addCategories .categories').append(items);
+          $('.merged').remove();
         };
 
         $(closeModal).keypress(emptyModal).click(emptyModal);
@@ -938,14 +941,7 @@ $(document).ready(function () {
 
           if ($(y).length == 1) {
             alert("You must select 2 or more");
-          } // if ($(addCustomControl).length == 1) {
-          //   $(button).off("click")
-          //
-          // }
-          // else {
-          //   $(button).on("click")
-          // }
-
+          }
 
           $(separate).click(function () {
             var item = $(this).closest('.merged').find('input:checkbox:checked').parent().parent();

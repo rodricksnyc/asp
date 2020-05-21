@@ -1350,12 +1350,20 @@ $(document).ready(function () {
         })
 
         $(addCustomControl).removeClass('hidden')
+
+
         var emptyModal = function (){
+
+          var items = $('.merged').find('input').parent().parent()
+
           console.log(original)
           $(horizontal).empty().append(original)
           $(add).empty()
           $(button).removeClass('brightBlue')
           $(words).html('Select to group')
+
+          $('.addCategories .categories').append(items)
+          $('.merged').remove()
 
         }
         $(closeModal).keypress(
@@ -1418,13 +1426,6 @@ $(document).ready(function () {
 
           }
 
-          // if ($(addCustomControl).length == 1) {
-          //   $(button).off("click")
-          //
-          // }
-          // else {
-          //   $(button).on("click")
-          // }
 
           $(separate).click(function(){
             var item = $(this).closest('.merged').find('input:checkbox:checked').parent().parent()
@@ -1441,7 +1442,7 @@ $(document).ready(function () {
 
               if ($(listItem).children().length == 1) {
 
-            
+
                 $('.addCategories .categories').append(items)
 
                 $(separate).css('top', '24%')
