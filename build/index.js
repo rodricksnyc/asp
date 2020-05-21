@@ -945,7 +945,7 @@ $(document).ready(function () {
 
           $(separate).click(function () {
             var item = $(this).closest('.merged').find('input:checkbox:checked').parent().parent();
-            var items = $('.merged').find('input').parent().parent();
+            var items = $(this).closest('.merged').find('input').parent().parent();
             var input = $(this).closest('.merged').find('input:checkbox:checked');
             var listItem = $(this).closest('.merged').find('.mergedUL');
             $('.addCategories .categories').append(item);

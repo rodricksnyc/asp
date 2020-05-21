@@ -1430,7 +1430,7 @@ $(document).ready(function () {
           $(separate).click(function(){
             var item = $(this).closest('.merged').find('input:checkbox:checked').parent().parent()
 
-            var items = $('.merged').find('input').parent().parent()
+            var items = $(this).closest('.merged').find('input').parent().parent()
 
             var input = $(this).closest('.merged').find('input:checkbox:checked')
 
@@ -1443,7 +1443,7 @@ $(document).ready(function () {
               if ($(listItem).children().length == 1) {
 
 
-                $('.addCategories .categories').append(items)
+              $('.addCategories .categories').append(items)
 
                 $(separate).css('top', '24%')
 
