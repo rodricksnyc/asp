@@ -1172,8 +1172,6 @@ $(document).ready(function () {
         analysisLevel: '#analysisTopic .levels',
         addCategoriesUL:'.addCategories .categories'
 
-
-
       }
     },
 
@@ -1312,17 +1310,32 @@ $(document).ready(function () {
       var addCategoriesUL = pageModule.config.classes.addCategoriesUL
 
 
-
-
-
       var horizontal = "";
       var original = "";
       $(modal).on('click', function() {
         $(showModal).modal('show');
         var categoryLi =  $(this).closest('.levels').find('.categories')
         var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
+
+        var bubbleDivs =  $(this).closest('.levels').find('.merged')
+
+        var Opt44 = "";
+        $(bubbleDivs).each(function() {
+          Opt44 = Opt44 + this.outerHTML;
+
+        });
+        $(horizontal).empty()
+
         var original = $(categoryLi).clone();
         $(add).append(categoryLi)
+
+
+        if ($(bubbleDivs).length > 0) {
+          $('.groupedCategories').append(Opt44)
+        }
+
+
+
         $(reorderOptions).removeClass('hidden')
 
         $(modalInputs).change(function(){
@@ -1365,7 +1378,10 @@ $(document).ready(function () {
           $('.addCategories .categories').append(items)
           $('.merged').remove()
 
+
         }
+
+
         $(closeModal).keypress(
           emptyModal
 
@@ -1375,13 +1391,30 @@ $(document).ready(function () {
 
         var saveModal = function (){
 
-          $(horizontal).empty().append(categoryLi)
+        var bubbles =  $(this).closest('.modal-content').find('.merged')
+
+        var Opt45 = "";
+        $(bubbles).each(function() {
+          Opt45 = Opt45 + this.outerHTML;
+
+        });
+
+        console.log(Opt45)
+
+        $(horizontal).empty().append(categoryLi)
+
+
+        $(horizontal).append(Opt45)
+
 
           $(add).empty()
+          $('.groupedCategories').empty()
 
           $(showModal).modal('hide');
           $(button).removeClass('brightBlue')
           $(words).html('Select to group')
+
+          // $(emptyModal).off()
 
         }
         $(save).keypress(
