@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+    $('[data-toggle=tooltip]').tooltip();
+
+
   // Let the document know when the mouse is being used
   $('body').on('mousedown', function() {
     document.body.classList.add('using-mouse');
@@ -1317,22 +1320,22 @@ $(document).ready(function () {
         var categoryLi =  $(this).closest('.levels').find('.categories')
         var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
 
-        var bubbleDivs =  $(this).closest('.levels').find('.merged')
-
-        var Opt44 = "";
-        $(bubbleDivs).each(function() {
-          Opt44 = Opt44 + this.outerHTML;
-
-        });
-        $(horizontal).empty()
+        // var bubbleDivs =  $(this).closest('.levels').find('.merged')
+        //
+        // var Opt44 = "";
+        // $(bubbleDivs).each(function() {
+        //   Opt44 = Opt44 + this.outerHTML;
+        //
+        // });
+        // $(horizontal).empty()
 
         var original = $(categoryLi).clone();
         $(add).append(categoryLi)
 
-
-        if ($(bubbleDivs).length > 0) {
-          $('.groupedCategories').append(Opt44)
-        }
+        //
+        // if ($(bubbleDivs).length > 0) {
+        //   $('.groupedCategories').append(Opt44)
+        // }
 
 
 
@@ -1389,8 +1392,7 @@ $(document).ready(function () {
           emptyModal
         );
 
-        var saveModal = function (){
-
+        var saveModal = function (e){
         var bubbles =  $(this).closest('.modal-content').find('.merged')
 
         var Opt45 = "";
@@ -1399,16 +1401,13 @@ $(document).ready(function () {
 
         });
 
-        console.log(Opt45)
+        $(Opt45).remove()
 
         $(horizontal).empty().append(categoryLi)
 
+        // $(horizontal).append(Opt45)
 
-        $(horizontal).append(Opt45)
-
-
-          $(add).empty()
-          $('.groupedCategories').empty()
+        $(add).empty()
 
           $(showModal).modal('hide');
           $(button).removeClass('brightBlue')

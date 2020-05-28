@@ -5,7 +5,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 $(document).ready(function () {
   var _classes;
 
-  // Let the document know when the mouse is being used
+  $('[data-toggle=tooltip]').tooltip(); // Let the document know when the mouse is being used
+
   $('body').on('mousedown', function () {
     document.body.classList.add('using-mouse');
   }); // Re-enable focus styling when Tab is pressed
@@ -871,19 +872,20 @@ $(document).ready(function () {
       $(modal).on('click', function () {
         $(showModal).modal('show');
         var categoryLi = $(this).closest('.levels').find('.categories');
-        var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
-        var bubbleDivs = $(this).closest('.levels').find('.merged');
-        var Opt44 = "";
-        $(bubbleDivs).each(function () {
-          Opt44 = Opt44 + this.outerHTML;
-        });
-        $(horizontal).empty();
-        var original = $(categoryLi).clone();
-        $(add).append(categoryLi);
+        var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)'); // var bubbleDivs =  $(this).closest('.levels').find('.merged')
+        //
+        // var Opt44 = "";
+        // $(bubbleDivs).each(function() {
+        //   Opt44 = Opt44 + this.outerHTML;
+        //
+        // });
+        // $(horizontal).empty()
 
-        if ($(bubbleDivs).length > 0) {
-          $('.groupedCategories').append(Opt44);
-        }
+        var original = $(categoryLi).clone();
+        $(add).append(categoryLi); //
+        // if ($(bubbleDivs).length > 0) {
+        //   $('.groupedCategories').append(Opt44)
+        // }
 
         $(reorderOptions).removeClass('hidden');
         $(modalInputs).change(function () {
@@ -922,17 +924,16 @@ $(document).ready(function () {
 
         $(closeModal).keypress(emptyModal).click(emptyModal);
 
-        var saveModal = function saveModal() {
+        var saveModal = function saveModal(e) {
           var bubbles = $(this).closest('.modal-content').find('.merged');
           var Opt45 = "";
           $(bubbles).each(function () {
             Opt45 = Opt45 + this.outerHTML;
           });
-          console.log(Opt45);
-          $(horizontal).empty().append(categoryLi);
-          $(horizontal).append(Opt45);
+          $(Opt45).remove();
+          $(horizontal).empty().append(categoryLi); // $(horizontal).append(Opt45)
+
           $(add).empty();
-          $('.groupedCategories').empty();
           $(showModal).modal('hide');
           $(button).removeClass('brightBlue');
           $(words).html('Select to group'); // $(emptyModal).off()
