@@ -3940,6 +3940,12 @@ border-bottom-right-radius: .6rem;
 
 }
 
+.tooltip-inner {
+   width:auto;
+    min-width: 560px !important;
+    text-align: left;
+    padding:1em
+}
 
 
 /* footer classes */
