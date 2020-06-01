@@ -3273,24 +3273,29 @@
 									<li class="statistical-estimates custom-control custom-checkbox">
 										<input type="checkbox" name="precision" value="Confidence Interval" class="custom-control-input" id="Confidence">
 										<label class="custom-control-label" for="Confidence">Confidence Interval</label>
-										<ul class="missing custom-control-inline">
-										<li class="wrapper">
-											<input id="yes" name="missing" type="radio" value="no-issues" checked>
-											<label for="yes" class="blue">Yes</label>
+										<ul class="precision custom-control-inline">
+											
+										<li class="approach wrapper">
+											<input id="standard" name="approach" type="radio" value="Standard">
+											<label for="standard" class="blue">Standard</label>
 										</li>
 										<li class="wrapper">
-											<input id="no" name="missing" type="radio" value="no-issues">
-											<label for="no" class="blue">No</label>
+											<input id="wilson" name="approach" type="radio" value="Wilson">
+											<label for="wilson" class="blue">Wilson</label>
 										</li>
 									</ul>
-										<ul class="missing custom-control-inline">
+										<ul class="precision custom-control-inline">
 										<li class="wrapper">
-											<input id="yes" name="missing" type="radio" value="no-issues" checked>
-											<label for="yes" class="blue">Yes</label>
+											<input id="90%" name="confidence" type="radio" value="90%">
+											<label for="90%" class="blue">90%</label>
 										</li>
 										<li class="wrapper">
-											<input id="no" name="missing" type="radio" value="no-issues">
-											<label for="no" class="blue">No</label>
+											<input id="95%" name="confidence" type="radio" value="95%">
+											<label for="95%" class="blue">95%</label>
+										</li>
+										<li class="wrapper">
+											<input id="99%" name="confidence" type="radio" value="99%">
+											<label for="99%" class="blue">99%</label>
 										</li>
 									</ul>
 									</li>

@@ -3900,6 +3900,16 @@ ul.missing {
   padding-left: 2em;
 }
 
+ul.precision {
+  margin-left:-1em;
+  padding-left: 0em;
+  margin-top:.6em;
+}
+
+ul.precision label.blue {
+      padding: 0px 15px 0px 24px;
+}
+
 .borderBottomBlue {
   border-bottom: 1px solid #07477d;
 }

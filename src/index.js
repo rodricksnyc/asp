@@ -1316,11 +1316,16 @@ $(document).ready(function () {
       var horizontal = "";
       var original = "";
       $(modal).on('click', function() {
+
         $(showModal).modal('show');
         var categoryLi =  $(this).closest('.levels').find('.categories')
         var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
 
+        var card =  $(this).closest('.levels').find('.card')
+
         var bubbleDivs =  $(this).closest('.levels').find('.merged')
+
+
 
         var Opt44 = "";
         $(bubbleDivs).each(function() {
@@ -1397,22 +1402,26 @@ $(document).ready(function () {
         );
 
         var saveModal = function (e){
-        var bubbles =  $(this).closest('.modal-content').find('.merged')
+        //
+        // var bubbles =  $(this).closest('.modal-content').find('.merged')
 
-        var Opt45 = "";
-        $(bubbles).each(function() {
-          Opt45 = Opt45 + this.outerHTML;
+        var group =  $(this).closest('.modal-content').find('.groupedCategories')
+        //
+        // var Opt45 = "";
+        // $(bubbles).each(function() {
+        //   Opt45 = Opt45 + this.outerHTML;
+        //
+        // });
+        //
+        // console.log(Opt45)
 
-        });
+        // console.log('save')
+        // console.log($(bubbles).length)
 
-        $(horizontal).empty().append(categoryLi)
-
-
-        $(bubbles).appendTo(horizontal)
-
-        // $(groupedCategories).empty()
-
+        $(horizontal).append(categoryLi)
         // $(horizontal).append(Opt45)
+        $(group).children().appendTo(horizontal)
+
 
         $(add).empty()
 
