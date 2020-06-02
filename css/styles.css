@@ -1296,25 +1296,25 @@ margin:0em .3em 0em 0em;
   font-size:13px;
   margin-bottom: .5rem !important;
   margin-top: 0rem !important;
-  font-weight: 600;
+  font-weight: 500;
 }
 .analysis-topic p {
   font-size:13px;
   margin-bottom: .5rem !important;
   margin-top: 0rem !important;
-  font-weight: 600;
+  font-weight: 500;
 }
 .stats p {
   font-size:13px;
   margin-bottom: .5rem !important;
   margin-top: 0rem !important;
-  font-weight: 600;
+  font-weight: 500;
 }
 .benchmarks p {
   font-size:13px;
   margin-bottom: .5rem !important;
   margin-top: 0rem !important;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .topics .row {
@@ -3991,6 +3991,28 @@ border-bottom-right-radius: .6rem;
   border-color: #07477d;
   padding:.3em 1em .1em 1em;
   text-decoration: none;
+}
+
+.stats li.results {
+    padding: 0.2rem .8rem;
+    margin: 0rem .2rem 1rem .2rem;
+    color: #07477d;
+    border-radius: 2rem;
+    background:  #deedf8;
+    cursor: pointer;
+    max-width: none;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 500;
+}
+.outputs {
+  display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 0em;
+    padding-left: 0em;
+    flex-wrap: wrap;
 }
 
 

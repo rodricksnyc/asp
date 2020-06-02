@@ -1512,14 +1512,49 @@ $(document).ready(function () {
       $(this).closest('li').insertBefore($('.addCategories .categories li').first());
     }
   }); //statistical Outputs
+  // $('[data-type="stats"]').on('click', function() {
+  //
+  //   // if ($('#analysisTopic .levels').length > 0) {
+  //
+  //           $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() +  + $('.stats').height()+ 250 )
+  //   // }
+  // })
 
-  $('[data-type="stats"]').on('click', function () {
-    if ($('#analysisTopic .levels').length > 0) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + +$('.stats').height() + 250);
+  $(".statistical-estimates :checkbox").change(function () {
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + $('.stats').height() + 280);
     }
+
+    if ($('.stats li').length > 0) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + $('.stats').height() + 280);
+    }
+
+    if ($('.stats li').length < 0) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 280);
+    }
+
+    console.log(this.value);
+
+    if ($(this).prop("checked") == true) {
+      $('.stats .row .outputs').append("<li class='results selected' data-stat=\"" + this.value + "\">" + this.value + "<div class='removeTag'><i class='fal fa-times ml-1'></i></div></li>");
+    } else {
+      $(".stats li[data-stat=" + this.value + "]").remove();
+    }
+
+    ;
+    $(".stats [data-stat]").on('click', function () {
+      // $("input[name=stat-analysis]").prop('checked', false);
+      var statName = $(this).attr("data-stat");
+      $(".statistical-estimates :checkbox[value=" + $(this).attr("data-stat") + "]").prop("checked", false);
+      $(this).remove();
+    });
   });
 
   var changeOverlayHeight = function changeOverlayHeight() {
+    if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0 && $('.stats li').length > 0) {
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + +$('.stats').height() + 400);
+    }
+
     if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length == 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0) {
       $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 280);
     }
@@ -1693,7 +1728,7 @@ $(document).ready(function () {
     }
   };
 
-  $('body').keypress(changeOverlayHeight).click(changeOverlayHeight); //move zip case tab on window shrink
+  $('.mNeg4').keypress(changeOverlayHeight).click(changeOverlayHeight); //move zip case tab on window shrink
 
   $(window).scroll(function () {
     var distanceY = window.pageYOffset || document.documentElement.scrollTop;

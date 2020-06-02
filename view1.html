@@ -3209,48 +3209,47 @@
 										</div>
 										<ul class="statistical-estimates">
 
-										<li class="statistical-estimates custom-control custom-checkbox">
-											<input type="checkbox" value="Mean" id="mean" name="stat-analysis" class="custom-control-input" checked>
-											<label class="custom-control-label" for="mean">Mean</label>
-										</li>
-										<li class="statistical-estimates custom-control custom-checkbox">
-											<input type="checkbox" value="Total" id="total" name="stat-analysis" class="custom-control-input">
-											<label class="custom-control-label" for="total">Total</label>
-										</li>
+											<li class="statistical-estimates custom-control custom-checkbox">
+												<input type="checkbox" value="Mean" id="mean" name="stat-analysis" class="custom-control-input" data-stat="Mean">
+												<label class="custom-control-label" for="mean">Mean</label>
+											</li>
+											<li class="statistical-estimates custom-control custom-checkbox">
+												<input type="checkbox" value="Total" id="total" name="stat-analysis" class="custom-control-input" data-stat="Total">
+												<label class="custom-control-label" for="total">Total</label>
+											</li>
 
-										<li class="statistical-estimates custom-control custom-checkbox">
-											<input type="checkbox" id="median" name="stat-analysis" value="Median" class="custom-control-input">
-											<label class="custom-control-label" for="median">Median</label>
-										</li>
+											<li class="statistical-estimates custom-control custom-checkbox">
+												<input type="checkbox" id="median" name="stat-analysis" value="Median" class="custom-control-input" data-stat="Median">
+												<label class="custom-control-label" for="median">Median</label>
+											</li>
 
+											<li class="statistical-estimates custom-control custom-checkbox">
+												<input type="checkbox" id="percentile" name="stat-analysis" value="Percentile" class="custom-control-input" data-stat="">
+												<label class="custom-control-label" for="percentile">Percentile</label>
+												<input type="text" class="percentile-text" name="stat-analyis" value="" placeholder="1-99%" />
+											</li>
 
-										<li class="statistical-estimates custom-control custom-checkbox">
-											<input type="checkbox" id="percentile" name="stat-analysis" value="Percentile" class="custom-control-input">
-											<label class="custom-control-label" for="percentile">Percentile</label>
-													<input type="text" class="percentile-text" name="stat-analyis" value="" placeholder="1-99%" />
-										</li>
+											<li class="statistical-estimates custom-control custom-checkbox">
+												<input type="checkbox" id="ratio" name="stat-analysis" value="Ratio" class="custom-control-input">
+												<label class="custom-control-label" for="ratio">Ratio</label>
+												<div class="col-lg-9 col-md-12 col-sm-12">
+													<div class="btn-group btn-group-toggle" data-toggle="buttons">
+														<label class="btn btn-secondary active">
+															<input type="radio" name="options" id="fivePercent" autocomplete="off" checked>5%
+														</label>
+														<label class="btn btn-secondary">
+															<input type="radio" name="options" id="tenPercent" autocomplete="off">10%
+														</label>
+														<label class="btn btn-secondary">
+															<input type="radio" name="options" id="fiftyPercent" autocomplete="off">50%
+														</label>
+														<label class="btn btn-secondary">
+															<input type="radio" name="options" id="ninetyPercent" autocomplete="off">90%
+														</label>
+													</div>
 
-										<li class="statistical-estimates custom-control custom-checkbox">
-											<input type="checkbox" id="ratio" name="stat-analysis" value="Ratio" class="custom-control-input">
-											<label class="custom-control-label" for="ratio">Percentile</label>
-											<div class="col-lg-9 col-md-12 col-sm-12">
-												<div class="btn-group btn-group-toggle" data-toggle="buttons">
-		    <label class="btn btn-secondary active">
-		      <input type="radio" name="options" id="fivePercent" autocomplete="off" checked>5%
-		    </label>
-		    <label class="btn btn-secondary">
-		      <input type="radio" name="options" id="tenPercent" autocomplete="off">10%
-		    </label>
-		    <label class="btn btn-secondary">
-		      <input type="radio" name="options" id="fiftyPercent" autocomplete="off">50%
-		    </label>
-				<label class="btn btn-secondary">
-					<input type="radio" name="options" id="ninetyPercent" autocomplete="off">90%
-				</label>
-		  </div>
-
-											<!-- <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
-												<div class="btn-group ratioGroup" role="group" aria-label="First group">
+													<!-- <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+													<div class="btn-group ratioGroup" role="group" aria-label="First group">
 													<button type="button" class="ratio ratioActive btn">5%</button>
 													<button type="button" class="ratio btn">10%</button>
 													<button type="button" class="ratio btn">50%</button>
@@ -3258,19 +3257,19 @@
 												</div>
 
 											</div> -->
-											</div>
-										</li>
+										</div>
+									</li>
 
-									</ul>
-									</fieldset>
-								</div>
-							</div>
+								</ul>
+							</fieldset>
+						</div>
+					</div>
 
-							<div class="col-xl-4 col-lg-6 col-md-4 col-sm-6 col-xs-12">
-								<div class="whiteBubble text-left">
-									<fieldset>
-									<legend class="blue">Missing Values&nbsp;<i class="fas fa-info-circle orange" data-toggle="tooltip" data-container="body" data-placement="right" data-html="true" title="<p class='smallest'>Missing Values. Indicate whether to include missing values in your query results.</p>"></i></legend>
-									<ul class="missing">
+					<div class="col-xl-4 col-lg-6 col-md-4 col-sm-6 col-xs-12">
+						<div class="whiteBubble text-left">
+							<fieldset>
+								<legend class="blue">Missing Values&nbsp;<i class="fas fa-info-circle orange" data-toggle="tooltip" data-container="body" data-placement="right" data-html="true" title="<p class='smallest'>Missing Values. Indicate whether to include missing values in your query results.</p>"></i></legend>
+								<ul class="missing">
 									<li class="wrapper">
 										<input id="yes" name="missing" type="radio" value="no-issues" checked>
 										<label for="yes" class="blue">Yes</label>
@@ -3292,29 +3291,29 @@
 										<label class="custom-control-label" for="Confidence">Confidence Interval</label>
 										<ul class="precision custom-control-inline">
 
-										<li class="approach wrapper">
-											<input id="standard" name="approach" type="radio" value="Standard">
-											<label for="standard" class="blue">Standard</label>
-										</li>
-										<li class="wrapper">
-											<input id="wilson" name="approach" type="radio" value="Wilson">
-											<label for="wilson" class="blue">Wilson</label>
-										</li>
-									</ul>
+											<li class="approach wrapper">
+												<input id="standard" name="approach" type="radio" value="Standard">
+												<label for="standard" class="blue">Standard</label>
+											</li>
+											<li class="wrapper">
+												<input id="wilson" name="approach" type="radio" value="Wilson">
+												<label for="wilson" class="blue">Wilson</label>
+											</li>
+										</ul>
 										<ul class="precision custom-control-inline">
-										<li class="wrapper">
-											<input id="90%" name="confidence" type="radio" value="90%">
-											<label for="90%" class="blue">90%</label>
-										</li>
-										<li class="wrapper">
-											<input id="95%" name="confidence" type="radio" value="95%">
-											<label for="95%" class="blue">95%</label>
-										</li>
-										<li class="wrapper">
-											<input id="99%" name="confidence" type="radio" value="99%">
-											<label for="99%" class="blue">99%</label>
-										</li>
-									</ul>
+											<li class="wrapper">
+												<input id="90%" name="confidence" type="radio" value="90%">
+												<label for="90%" class="blue">90%</label>
+											</li>
+											<li class="wrapper">
+												<input id="95%" name="confidence" type="radio" value="95%">
+												<label for="95%" class="blue">95%</label>
+											</li>
+											<li class="wrapper">
+												<input id="99%" name="confidence" type="radio" value="99%">
+												<label for="99%" class="blue">99%</label>
+											</li>
+										</ul>
 									</li>
 									<li class="statistical-estimates custom-control custom-checkbox">
 										<input type="checkbox" name="precision" value="Standard Error" class="custom-control-input" id="StandardError">
@@ -3326,44 +3325,126 @@
 									</li>
 								</ul>
 							</fieldset>
-								</div>
-							</div>
-							<div class="col-xl-4 col-lg-6 col-md-4 col-sm-6 col-xs-12">
-								<div class="whiteBubble text-left">
-									<legend class="blue">Statistical Tests&nbsp;<i class="fas fa-info-circle orange" data-toggle="tooltip" data-container="body" data-placement="right" data-html="true" title="<p class='smallest'>Chi-Square. Chi-square tests are used to determine if a distribution of observed frequencies differs significantly from what would be expected by chance. In a two-way table, for example, the chi-square test tests whether the row and column variables are independent. The larger the chi-square statistic, the more likely it is that the row and column variables are related to one another. The RS2 approach computes the Rao-Scott statistic using a design effect adjustment to the Pearson chi-square, and the RS3 approach computes the Rao-Scott statistic using the Satterthwaite adjustment.</p><p class='smallest'>t-test. t-tests are used to determine whether the difference between two estimates is what would be expected by chance. The larger the absolute value of the t-statistic, the more likely it is that the difference is significant. t-tests are available in 1-way or 2-way tables to test the difference between two means, cell percentages, row percentages and column percentages. To specify a t-test, only one specific type of estimate (mean, row percentage, etc.) can be specified at a time</p>"></i></legend>
-										<p class="smallest">(check all that apply)</p>
-										<ul class="statistical-estimates borderBottomBlue">
-
-											<li class="statistical-estimates custom-control custom-checkbox">
-												<input type="checkbox" name="chi" value="Chi-Square" class="custom-control-input" id="Chi-Square">
-												<label class="custom-control-label" for="Chi-Square">Chi-Square (RS3)</label>
-											</li>
-											<br>
-										</ul>
-										<div class="orangeBubble d-flex justify-content-center align-items-center"><i class="far fa-plus"></i>&nbsp;Add a t-test</div>
-								</div>
-							</div>
-
 						</div>
-
 					</div>
+					<div class="col-xl-4 col-lg-6 col-md-4 col-sm-6 col-xs-12">
+						<div class="whiteBubble text-left">
+							<legend class="blue">Statistical Tests&nbsp;<i class="fas fa-info-circle orange" data-toggle="tooltip" data-container="body" data-placement="right" data-html="true" title="<p class='smallest'>Chi-Square. Chi-square tests are used to determine if a distribution of observed frequencies differs significantly from what would be expected by chance. In a two-way table, for example, the chi-square test tests whether the row and column variables are independent. The larger the chi-square statistic, the more likely it is that the row and column variables are related to one another. The RS2 approach computes the Rao-Scott statistic using a design effect adjustment to the Pearson chi-square, and the RS3 approach computes the Rao-Scott statistic using the Satterthwaite adjustment.</p><p class='smallest'>t-test. t-tests are used to determine whether the difference between two estimates is what would be expected by chance. The larger the absolute value of the t-statistic, the more likely it is that the difference is significant. t-tests are available in 1-way or 2-way tables to test the difference between two means, cell percentages, row percentages and column percentages. To specify a t-test, only one specific type of estimate (mean, row percentage, etc.) can be specified at a time</p>"></i></legend>
+							<p class="smallest">(check all that apply)</p>
+							<ul class="statistical-estimates borderBottomBlue">
 
-					<div class="option" data-type="data">
-
-						<p>SUBSET DATA</p>
-
+								<li class="statistical-estimates custom-control custom-checkbox">
+									<input type="checkbox" name="chi" value="Chi-Square" class="custom-control-input" id="Chi-Square">
+									<label class="custom-control-label" for="Chi-Square">Chi-Square (RS3)</label>
+								</li>
+								<br>
+							</ul>
+							<div class="orangeBubble d-flex justify-content-center align-items-center"><i class="far fa-plus"></i>&nbsp;Add a t-test</div>
+						</div>
 					</div>
-
-					<div class="option" data-type="marks">
-
-						<p>BENCHMARKS</p>
-
-					</div>
-
-
 
 				</div>
 
+			</div>
+
+			<div class="option" data-type="data">
+
+				<p>SUBSET DATA</p>
+
+			</div>
+
+			<div class="option" data-type="marks">
+
+				<p>BENCHMARKS</p>
+
+			</div>
+
+
+
+		</div>
+
+
+
+	</div>
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="reorderCategories" tabindex="-1" role="dialog" aria-labelledby="reorderCategories" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title text-center">Combine/Reorder Categories</h5>
+				<button type="button" class="close closeCategoryModal" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<p class="text-center mostSmall">&ndash;SELECT TOPICS TO MOVE IN DESIRED ORDER&ndash;</p>
+				<button type="button" class="btn btn-success combine" role="button" tabindex="0">
+					<p class="groupTopics smallest">Select to group</p>&nbsp;
+					<div class="across3"><i class="fal fa-angle-right"></i><i class="fal fa-arrow-right"></i></div>
+				</button>
+			</div>
+			<div class="modal-body addCategories" data-draggable="target">
+
+
+			</div>
+			<div class="groupedCategories">
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary save">Save</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="col-lg-4 col-xl-3 col-md-12 append changeBreakpoint">
+	<div class="appendActions">
+		<div class="vertical"><i class="fas fa-star blue" tabindex="0" role="button"></i><p class="blue evenSmaller">see Saved</p></div>
+		<div class="across2"><p class="blue">Query Summary</p><div class="orangeCircle" tabindex="0" role="button"><i class="far fa-expand-alt"></i></div></div>
+		<div><p class="orange smallest"><i class="fal fa-undo" tabindex="0" role="button"></i>&nbsp;Clear</p></div>
+	</div>
+	<div class="appendOptions">
+		<div class="grayLayer"></div>
+
+		<div class="lightBlueBack">
+
+			<ul class="filter-attr-list">
+				<p class="saveYear">Year(s)*</p>
+
+
+			</ul>
+
+		</div>
+		<!-- <p class="text-center mostSmall">&ndash;SELECT TOPICS&ndash;</p> -->
+
+		<div class="topics">
+
+			<div class="container">
+				<div class="row">
+					<p><i class="far fa-bars"></i>&nbsp;Row Topic&nbsp;<i class="fal fa-info-circle"></i> <span class="evenSmaller">no limit</span></p>
+					<div id="rowTopic" data-draggable="target">
+
+						<div class="whiteBar">
+							<i class="fas fa-circle"><h6 class="numberCounter">0</h6></i>
+
+							<p class="text-center mostSmall">hover to see all</p>
+
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div id="columnTopic" data-draggable="target">
+						<p>
+							<i class="fal fa-line-columns"></i>&nbsp;Column Topic&nbsp;<i class="fal fa-info-circle"></i>
+							<span class="evenSmaller">limit 1</span>
+						</p>
+					</div>
+				</div>
+				<div id="layerTopic" class="row" data-draggable="target">
+					<p><i class="fal fa-layer-group"></i></i>&nbsp;Layer Topic&nbsp;<i class="fal fa-info-circle"></i> <span class="evenSmaller">limit 1</span></p>
+				</div>
 
 
 			</div>
@@ -3371,138 +3452,59 @@
 		</div>
 
 
-		<!-- Modal -->
-		<div class="modal fade" id="reorderCategories" tabindex="-1" role="dialog" aria-labelledby="reorderCategories" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title text-center">Combine/Reorder Categories</h5>
-						<button type="button" class="close closeCategoryModal" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-						<p class="text-center mostSmall">&ndash;SELECT TOPICS TO MOVE IN DESIRED ORDER&ndash;</p>
-						<button type="button" class="btn btn-success combine" role="button" tabindex="0">
-							<p class="groupTopics smallest">Select to group</p>&nbsp;
-							<div class="across3"><i class="fal fa-angle-right"></i><i class="fal fa-arrow-right"></i></div>
-						</button>
-					</div>
-					<div class="modal-body addCategories" data-draggable="target">
-
-
-					</div>
-					<div class="groupedCategories">
-
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-primary save">Save</button>
-					</div>
+		<!-- <div class="grayLayer"> -->
+		<div class="analysis-topic">
+			<div class="container">
+				<div class="row" id="analysisTopic" data-draggable="target2">
+					<p><i class="fal fa-chart-bar"></i>&nbsp;Analysis Topic&nbsp;<i class="fal fa-info-circle"></i> <span class="evenSmaller">limit 1</span></p>
 				</div>
 			</div>
 		</div>
+		<!-- </div> -->
 
-		<div class="col-lg-4 col-xl-3 col-md-12 append changeBreakpoint">
-			<div class="appendActions">
-				<div class="vertical"><i class="fas fa-star blue" tabindex="0" role="button"></i><p class="blue evenSmaller">see Saved</p></div>
-				<div class="across2"><p class="blue">Query Summary</p><div class="orangeCircle" tabindex="0" role="button"><i class="far fa-expand-alt"></i></div></div>
-				<div><p class="orange smallest"><i class="fal fa-undo" tabindex="0" role="button"></i>&nbsp;Clear</p></div>
-			</div>
-			<div class="appendOptions">
-				<div class="grayLayer"></div>
-
-				<div class="lightBlueBack">
-
-					<ul class="filter-attr-list">
-						<p class="saveYear">Year(s)*</p>
-
-
-					</ul>
-
-				</div>
-				<!-- <p class="text-center mostSmall">&ndash;SELECT TOPICS&ndash;</p> -->
-
-				<div class="topics">
-
-					<div class="container">
-						<div class="row">
-							<p><i class="far fa-bars"></i>&nbsp;Row Topic&nbsp;<i class="fal fa-info-circle"></i> <span class="evenSmaller">no limit</span></p>
-							<div id="rowTopic" data-draggable="target">
-
-								<div class="whiteBar">
-									<i class="fas fa-circle"><h6 class="numberCounter">0</h6></i>
-
-									<p class="text-center mostSmall">hover to see all</p>
-
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div id="columnTopic" data-draggable="target">
-								<p>
-									<i class="fal fa-line-columns"></i>&nbsp;Column Topic&nbsp;<i class="fal fa-info-circle"></i>
-									<span class="evenSmaller">limit 1</span>
-								</p>
-							</div>
-						</div>
-						<div id="layerTopic" class="row" data-draggable="target">
-							<p><i class="fal fa-layer-group"></i></i>&nbsp;Layer Topic&nbsp;<i class="fal fa-info-circle"></i> <span class="evenSmaller">limit 1</span></p>
-						</div>
-
-
-					</div>
-
-				</div>
-
-
-				<!-- <div class="grayLayer"> -->
-				<div class="analysis-topic">
-					<div class="container">
-						<div class="row" id="analysisTopic" data-draggable="target2">
-							<p><i class="fal fa-chart-bar"></i>&nbsp;Analysis Topic&nbsp;<i class="fal fa-info-circle"></i> <span class="evenSmaller">limit 1</span></p>
-						</div>
-					</div>
-				</div>
-				<!-- </div> -->
-
-				<!-- <div class="grayLayer"> -->
-				<div class="stats">
-					<div class="container">
-						<div class="row">
-							<p>Statistical Output</p>
-						</div>
-					</div>
-				</div>
-				<!-- </div> -->
-
-
-				<p class="text-center mostSmall">OPTIONAL FILTERS</p>
-
-				<!-- <div class="grayLayer"> -->
-				<div class="data">
-					<div class="container">
-						<div class="row">
-							<p>Subset Data</p>
-						</div>
-					</div>
-				</div>
-				<!-- </div> -->
-
-				<!-- <div class="grayLayer"> -->
-				<div class="benchmarks">
-					<div class="container">
-						<div class="row">
-							<p>Benchmarks</p>
-						</div>
-					</div>
+		<!-- <div class="grayLayer"> -->
+		<div class="stats">
+			<div class="container">
+				<div class="row">
+					<p>Statistical Output</p>
+					<br>
+					<ul class="outputs"></ul>
 				</div>
 			</div>
+		</div>
+		<!-- </div> -->
 
 
-			<!-- </div> -->
+		<p class="text-center mostSmall">OPTIONAL FILTERS</p>
+
+		<!-- <div class="grayLayer"> -->
+		<div class="data">
+			<div class="container">
+				<div class="row">
+					<p>Subset Data</p>
+
+				</div>
+			</div>
+		</div>
+		<!-- </div> -->
+
+		<!-- <div class="grayLayer"> -->
+		<div class="benchmarks">
+			<div class="container">
+				<div class="row">
+					<p>Benchmarks</p>
+				</div>
+			</div>
 		</div>
 	</div>
 
 
-	<div class="backdropShadow"></div>
+	<!-- </div> -->
+</div>
+</div>
+
+
+<div class="backdropShadow"></div>
 </div>
 
 <footer>
