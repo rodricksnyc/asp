@@ -3910,6 +3910,21 @@ ul.precision label.blue {
       padding: 0px 15px 0px 24px;
 }
 
+.wrapper input.percentile-text{
+  opacity: 1;
+    position: relative;
+    width: 50px;
+    height: auto;
+    border: 1px solid #07477d;
+  font-size:15px;
+    border-radius: .3rem;
+    color: #07477d;
+}
+.percentile-text::placeholder {
+  color: #07477d;
+  font-size:15px;
+}
+
 .borderBottomBlue {
   border-bottom: 1px solid #07477d;
 }
