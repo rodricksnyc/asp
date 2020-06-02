@@ -3910,7 +3910,7 @@ ul.precision label.blue {
       padding: 0px 15px 0px 24px;
 }
 
-.wrapper input.percentile-text{
+.statistical-estimates input.percentile-text{
   opacity: 1;
     position: relative;
     width: 50px;
@@ -3970,6 +3970,10 @@ border-bottom-right-radius: .6rem;
     min-width: 560px !important;
     text-align: left;
     padding:1em
+}
+
+.btn-toolbar {
+  margin-left:-1em;
 }
 
 

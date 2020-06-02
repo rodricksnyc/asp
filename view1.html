@@ -3207,24 +3207,35 @@
 											<input id="statAnalysis" name="stat-analysis-title" type="radio" value="no-issues" checked>
 											<label for="statAnalysis" class="blue">Statistics of Another Variable(s)</label>
 										</div>
-										<ul class="stat-analysis">
-										<li class="wrapper">
-											<input id="mean" name="stat-analysis" type="radio" value="no-issues">
-											<label for="mean" class="blue">Mean</label>
+										<ul class="statistical-estimates">
+
+										<li class="statistical-estimates custom-control custom-checkbox">
+											<input type="checkbox" value="Mean" id="mean" name="stat-analysis" class="custom-control-input">
+											<label class="custom-control-label" for="mean">Mean</label>
 										</li>
-										<li class="wrapper">
-											<input id="total" name="stat-analysis" type="radio" value="no-issues">
-											<label for="total" class="blue">Total</label>
+										<li class="statistical-estimates custom-control custom-checkbox">
+											<input type="checkbox" value="Total" id="total" name="stat-analysis" class="custom-control-input">
+											<label class="custom-control-label" for="total">Total</label>
 										</li>
-										<li class="wrapper">
-											<input id="median" name="stat-analysis" type="radio" value="no-issues">
-											<label for="median" class="blue">Median</label>
+
+										<li class="statistical-estimates custom-control custom-checkbox">
+											<input type="checkbox" id="median" name="stat-analysis" value="Median" class="custom-control-input">
+											<label class="custom-control-label" for="median">Median</label>
 										</li>
-										<li class="wrapper">
-											<input id="percentile" name="stat-analysis" type="radio" value="no-issues">
-											<label for="percentile" class="blue">Percentile</label>
-											<input type="text" class="percentile-text" name="stat-analyis" value="" placeholder="1-99%" />
+
+
+										<li class="statistical-estimates custom-control custom-checkbox">
+											<input type="checkbox" id="percentile" name="stat-analysis" value="Percentile" class="custom-control-input">
+											<label class="custom-control-label" for="percentile">Percentile</label>
+													<input type="text" class="percentile-text" name="stat-analyis" value="" placeholder="1-99%" />
 										</li>
+
+										<li class="statistical-estimates custom-control custom-checkbox">
+											<input type="checkbox" id="ratio" name="stat-analysis" value="Percentile" class="custom-control-input">
+											<label class="custom-control-label" for="percentile">Percentile</label>
+													<input type="text" class="percentile-text" name="stat-analyis" value="" placeholder="1-99%" />
+										</li>
+
 										<li class="wrapper">
 											<input id="ratio" name="stat-analysis" type="radio" value="no-issues" checked>
 

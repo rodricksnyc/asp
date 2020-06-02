@@ -2448,6 +2448,19 @@ $(document).ready(function () {
 
 
 
+//statistical Outputs
+
+
+$('[data-type="stats"]').on('click', function() {
+
+  if ($('#analysisTopic .levels').length > 0) {
+
+          $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() +  + $('.stats').height()+ 250 )
+  }
+})
+
+
+
 
 
   var changeOverlayHeight = function (){
