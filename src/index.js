@@ -2449,32 +2449,37 @@ $(document).ready(function () {
 //statistical Outputs
 
 
-// $('[data-type="stats"]').on('click', function() {
-//
-//   // if ($('#analysisTopic .levels').length > 0) {
-//
-//           $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() +  + $('.stats').height()+ 250 )
-//   // }
-// })
+$('[data-type="stats"]').on('click', function() {
+
+  // if ($('#analysisTopic .levels').length > 0) {
+
+          $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() +  + $('.stats').height()+ 250 )
+  // }
+})
+
+$('[data-type="stats"] .whiteBubble').on('click', function() {
+
+if ($('.stats li').length >= 0 ) {
+
+  $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() +   $('.stats').height() + 350)
+}
+
+})
 
 
 
 $(".statistical-estimates :checkbox").change(function(){
 
-  if ($('#columnTopic .levels').length > 0 && $('#rowTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 && $('#analysisTopic .levels').length > 0 ) {
-
-    $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() +  $('.stats').height()+ 280 )
-  }
-
   if ($('.stats li').length > 0 ) {
 
-    $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() +   $('.stats').height()+ 280 )
+    $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() +   $('.stats').height() + 260)
   }
 
-    if ($('.stats li').length < 0 ) {
-  $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 280 )
-
-    }
+  // if ($('.stats li').length == 0 ) {
+  //
+  //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() )
+  // }
+  //
 
 
 
