@@ -3973,7 +3973,8 @@ border-bottom-right-radius: .6rem;
 }
 
 .btn-toolbar {
-  margin-left:-1em;
+  margin-top:.6em;
+  margin-left:-2em;
 }
 
 
