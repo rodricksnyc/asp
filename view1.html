@@ -3234,7 +3234,22 @@
 											<input type="checkbox" id="ratio" name="stat-analysis" value="Ratio" class="custom-control-input">
 											<label class="custom-control-label" for="ratio">Percentile</label>
 											<div class="col-lg-9 col-md-12 col-sm-12">
-											<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+												<div class="btn-group btn-group-toggle" data-toggle="buttons">
+		    <label class="btn btn-secondary active">
+		      <input type="radio" name="options" id="fivePercent" autocomplete="off" checked>5%
+		    </label>
+		    <label class="btn btn-secondary">
+		      <input type="radio" name="options" id="tenPercent" autocomplete="off">10%
+		    </label>
+		    <label class="btn btn-secondary">
+		      <input type="radio" name="options" id="fiftyPercent" autocomplete="off">50%
+		    </label>
+				<label class="btn btn-secondary">
+					<input type="radio" name="options" id="ninetyPercent" autocomplete="off">90%
+				</label>
+		  </div>
+
+											<!-- <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
 												<div class="btn-group ratioGroup" role="group" aria-label="First group">
 													<button type="button" class="ratio ratioActive btn">5%</button>
 													<button type="button" class="ratio btn">10%</button>
@@ -3242,7 +3257,7 @@
 													<button type="button" class="ratio btn">90%</button>
 												</div>
 
-											</div>
+											</div> -->
 											</div>
 										</li>
 

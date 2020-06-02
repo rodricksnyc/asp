@@ -3972,9 +3972,25 @@ border-bottom-right-radius: .6rem;
     padding:1em
 }
 
-.btn-toolbar {
+.statistical-estimates .btn-group {
   margin-top:.6em;
   margin-left:-2em;
+}
+
+/* selected btn css */
+.statistical-estimates .btn-group-toggle .btn:not(:disabled):not(.disabled).active, .btn-group-toggle .btn:not(:disabled):not(.disabled):active, .show>.btn.dropdown-toggle {
+      color: #fff;
+      background-color: #127abf;
+      border-color: #127abf;
+}
+
+/* non selected btn css */
+.statistical-estimates .btn-group-toggle .btn {
+  color: black;
+  background-color: #deedf8;
+  border-color: #07477d;
+  padding:.3em 1em .1em 1em;
+  text-decoration: none;
 }
 
 
