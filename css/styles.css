@@ -4087,6 +4087,7 @@ min-width: 67%;
 #addTtest th {
 font-weight:300;
 font-size:13px;
+    max-width: 20px;
 }
 .scrollThis {
 height: 500px;
