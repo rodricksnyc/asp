@@ -1512,11 +1512,14 @@ $(document).ready(function () {
       $(this).closest('li').insertBefore($('.addCategories .categories li').first());
     }
   }); //statistical Outputs
+  // $('[data-type="stats"]').on('click', function() {
+  //
+  //   // if ($('#analysisTopic .levels').length > 0) {
+  //
+  //           $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() +  + $('.stats').height()+ 250 )
+  //   // }
+  // })
 
-  $('[data-type="stats"]').on('click', function () {
-    // if ($('#analysisTopic .levels').length > 0) {
-    $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + +$('.stats').height() + 250); // }
-  });
   $('[data-type="stats"] .whiteBubble').on('click', function () {// if ($('.stats li').length > 0 ) {
     //
     //     $('.editOutputs').show()
@@ -1536,6 +1539,7 @@ $(document).ready(function () {
   $("input[name='stat-analysis']").click(function () {
     if ($("input[name='stat-analysis']:checked").length == 0) {
       $('.editOutputs').hide();
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height());
     } // if ($('.stats li').length > 0 ) {
     //
     //

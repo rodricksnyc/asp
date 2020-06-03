@@ -1327,6 +1327,8 @@ margin:0em .3em 0em 0em;
 
 .stats .row {
   margin-bottom: 2em;
+  display: flex;
+    flex-direction: column;
 }
 
 .data .row {
@@ -4005,6 +4007,7 @@ border-bottom-right-radius: .6rem;
     align-items: center;
     font-size: 13px;
     font-weight: 500;
+    margin-bottom: 0em;
 }
 .outputs {
   display: flex;
@@ -4013,10 +4016,35 @@ border-bottom-right-radius: .6rem;
     margin-left: 0em;
     padding-left: 0em;
     flex-wrap: wrap;
+    margin-bottom: 0em;
 }
 
 .editOutputs {
   display:none
+}
+
+#addTtest .modal-header  {
+    border-bottom: 4px solid #c7482e !important;
+    margin-left: 1em;
+margin-right: 1em;
+padding-left: 0em;
+padding-top: 1em;
+padding-bottom: 0em;
+}
+
+#addTtest .modal-header  h5 {
+  margin-left:0em;
+}
+
+#addTtest .modal-header .close {
+    padding: .5rem 0rem .5rem .5rem!important;
+
+    color: #c7482e !important;
+    opacity: 1 !important;
+}
+#addTtest .modal-dialog {
+min-width: 60%;
+
 }
 
 

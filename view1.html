@@ -3339,13 +3339,15 @@
 								</li>
 								<br>
 							</ul>
-							<div class="orangeBubble d-flex justify-content-center align-items-center"><i class="far fa-plus"></i>&nbsp;Add a t-test</div>
+							<div type="button" data-toggle="modal" data-target="#addTtest" class="orangeBubble d-flex justify-content-center align-items-center addTest"><i class="far fa-plus"></i>&nbsp;Add a t-test</div>
 						</div>
 					</div>
 
 				</div>
 
 			</div>
+
+
 
 			<div class="option" data-type="data">
 
@@ -3369,6 +3371,25 @@
 
 </div>
 
+<div class="modal fade" id="addTtest" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+				<h5 class="modal-title text-center"><i class="far fa-table"></i>&nbsp;Define T-test</h5>
+				<button type="button" class="close closeCategoryModal" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="reorderCategories" tabindex="-1" role="dialog" aria-labelledby="reorderCategories" aria-hidden="true">
@@ -3467,7 +3488,7 @@
 			<div class="container">
 				<div class="row">
 					<p>Statistical Output&nbsp;&nbsp;<i class="fas fa-pencil-alt orange editOutputs"></i></p>
-					<br>
+
 					<ul class="outputs"></ul>
 				</div>
 			</div>

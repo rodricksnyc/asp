@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    $('[data-toggle=tooltip]').tooltip();
+  $('[data-toggle=tooltip]').tooltip();
 
 
   // Let the document know when the mouse is being used
@@ -1297,28 +1297,28 @@ $(document).ready(function () {
         );
 
         var saveModal = function (e){
-        //
-        // var bubbles =  $(this).closest('.modal-content').find('.merged')
+          //
+          // var bubbles =  $(this).closest('.modal-content').find('.merged')
 
-        var group =  $(this).closest('.modal-content').find('.groupedCategories')
-        //
-        // var Opt45 = "";
-        // $(bubbles).each(function() {
-        //   Opt45 = Opt45 + this.outerHTML;
-        //
-        // });
-        //
-        // console.log(Opt45)
+          var group =  $(this).closest('.modal-content').find('.groupedCategories')
+          //
+          // var Opt45 = "";
+          // $(bubbles).each(function() {
+          //   Opt45 = Opt45 + this.outerHTML;
+          //
+          // });
+          //
+          // console.log(Opt45)
 
-        // console.log('save')
-        // console.log($(bubbles).length)
+          // console.log('save')
+          // console.log($(bubbles).length)
 
-        $(horizontal).append(categoryLi)
-        // $(horizontal).append(Opt45)
-        $(group).children().appendTo(horizontal)
+          $(horizontal).append(categoryLi)
+          // $(horizontal).append(Opt45)
+          $(group).children().appendTo(horizontal)
 
 
-        $(add).empty()
+          $(add).empty()
 
           $(showModal).modal('hide');
           $(button).removeClass('brightBlue')
@@ -1351,17 +1351,17 @@ $(document).ready(function () {
 
           if ($(y).length > 1) {
 
-          $(groupedCategories).append(`<div class="merged"><ul class="mergedUL">${Opt1}</ul><button class="separate" tabindex="0" role="button"><p>Separate</p><div class="across4"><i class="fal fa-arrow-left"></i>&nbsp;|&nbsp;<i class="fal fa-arrow-right"></i></div></button></div>`)
+            $(groupedCategories).append(`<div class="merged"><ul class="mergedUL">${Opt1}</ul><button class="separate" tabindex="0" role="button"><p>Separate</p><div class="across4"><i class="fal fa-arrow-left"></i>&nbsp;|&nbsp;<i class="fal fa-arrow-right"></i></div></button></div>`)
 
-          $(y).remove()
+            $(y).remove()
 
-          $(mergedCategories).addClass('bottomZero')
-          $(mergedCheck).removeAttr('checked');
+            $(mergedCategories).addClass('bottomZero')
+            $(mergedCheck).removeAttr('checked');
 
-          $(words).html('Select to group')
-          $(button).removeClass('brightBlue')
+            $(words).html('Select to group')
+            $(button).removeClass('brightBlue')
 
-        }
+          }
 
           if ($(y).length == 1) {
 
@@ -1379,25 +1379,25 @@ $(document).ready(function () {
 
             var listItem = $(this).closest('.merged').find('.mergedUL')
 
-              $('.addCategories .categories').append(item)
-              $(addCustomControl).removeClass('bottomZero')
-              $(input).removeAttr('checked');
+            $('.addCategories .categories').append(item)
+            $(addCustomControl).removeClass('bottomZero')
+            $(input).removeAttr('checked');
 
-              if ($(listItem).children().length == 1) {
+            if ($(listItem).children().length == 1) {
 
 
               $('.addCategories .categories').append(items)
 
-                $(separate).css('top', '24%')
+              $(separate).css('top', '24%')
 
 
-              }
+            }
 
-              if ($(listItem).children().length == 0) {
+            if ($(listItem).children().length == 0) {
 
-                $(this).closest('.merged').remove()
+              $(this).closest('.merged').remove()
 
-              }
+            }
 
           })
 
@@ -2446,89 +2446,91 @@ $(document).ready(function () {
 
 
 
-//statistical Outputs
+  //statistical Outputs
 
 
-$('[data-type="stats"]').on('click', function() {
+  // $('[data-type="stats"]').on('click', function() {
+  //
+  //   // if ($('#analysisTopic .levels').length > 0) {
+  //
+  //           $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() +  + $('.stats').height()+ 250 )
+  //   // }
+  // })
 
-  // if ($('#analysisTopic .levels').length > 0) {
+  $('[data-type="stats"] .whiteBubble').on('click', function() {
 
-          $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() +  + $('.stats').height()+ 250 )
-  // }
-})
+    // if ($('.stats li').length > 0 ) {
+    //
+    //     $('.editOutputs').show()
+    //   //
+    //   // $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() +   $('.stats').height() )
+    // }
+    //
+    // else {
+    //       $('.editOutputs').hide()
+    // }
 
-$('[data-type="stats"] .whiteBubble').on('click', function() {
-
-// if ($('.stats li').length > 0 ) {
-//
-//     $('.editOutputs').show()
-//   //
-//   // $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() +   $('.stats').height() )
-// }
-//
-// else {
-//       $('.editOutputs').hide()
-// }
-
-})
+  })
 
 
-$('.stats').on('click', function() {
+  $('.stats').on('click', function() {
 
-if ($('.stats li').length == 0 ) {
+    if ($('.stats li').length == 0 ) {
 
       $('.editOutputs').hide()
-}
-
-
-})
-
-
-
-$("input[name='stat-analysis']").click(function(){
-
-  if($("input[name='stat-analysis']:checked").length == 0) {
-
-          $('.editOutputs').hide()
     }
 
 
-  // if ($('.stats li').length > 0 ) {
-  //
-  //
-  //
+  })
+
+
+
+  $("input[name='stat-analysis']").click(function(){
+
+    if($("input[name='stat-analysis']:checked").length == 0) {
+
+      $('.editOutputs').hide()
+
+      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height())
+    }
+
+
+    // if ($('.stats li').length > 0 ) {
+    //
+    //
+    //
     $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() +   $('.stats').height() + 280)
-  // }
+    // }
 
-  // if ($('.stats li').length == 0 ) {
-  //
-  //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() )
-  // }
-  //
+    // if ($('.stats li').length == 0 ) {
+    //
+    //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() )
+    // }
+    //
 
 
 
-  console.log(this.value)
-  if($(this).prop("checked")==true){
-        $('.editOutputs').show()
-    $('.stats .row .outputs').append(`<li class='results selected' data-stat="${this.value}">${this.value}<div class='removeTag'><i class='fal fa-times ml-1'></i></div></li>`);
-  }
+    console.log(this.value)
+    if($(this).prop("checked")==true){
+      $('.editOutputs').show()
+      $('.stats .row .outputs').append(`<li class='results selected' data-stat="${this.value}">${this.value}<div class='removeTag'><i class='fal fa-times ml-1'></i></div></li>`);
+    }
 
-  else{
+    else{
 
-    $(".stats li[data-stat=" + this.value + "]").remove()
-  };
+      $(".stats li[data-stat=" + this.value + "]").remove()
+    };
 
-  $(".stats [data-stat]").on('click',  function(){
+    $(".stats [data-stat]").on('click',  function(){
 
-    // $("input[name=stat-analysis]").prop('checked', false);
-    var statName = $(this).attr("data-stat");
+      // $("input[name=stat-analysis]").prop('checked', false);
+      var statName = $(this).attr("data-stat");
 
-    $("input[name='stat-analysis'][value=" + $(this).attr("data-stat") + "]").prop("checked",false);
+      $("input[name='stat-analysis'][value=" + $(this).attr("data-stat") + "]").prop("checked",false);
 
-    $(this).remove();
+      $(this).remove();
+    });
   });
-});
 
 
 
