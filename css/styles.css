@@ -1537,7 +1537,7 @@ padding-right:5px;
 
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
   font-family: "Font Awesome 5 Pro";
-  content: "\f00c" !important;
+  content: "\f00c";
   background-image: none !important;
   color: white;
   font-weight: 900;
