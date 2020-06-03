@@ -4043,12 +4043,13 @@ padding-bottom: 0em;
     opacity: 1 !important;
 }
 #addTtest .modal-dialog {
-min-width: 60%;
+min-width: 67%;
 
 }
 
 #addTtest .modal-body {
   padding-left:0em;
+  /* padding-top:0em; */
 }
 
 .tTestSearch {
@@ -4058,6 +4059,24 @@ min-width: 60%;
     position: relative;
     border-radius: 1rem;
     border: 1px solid black;
+    min-width:320px;
+      /* margin-left:1em; */
+}
+
+#addTtest .fal.fa-search.searchBar {
+    position: absolute;
+
+    top: .4em;
+    z-index: 3;
+    color: #07477d;
+    font-weight: 500;
+    left: .6em;
+}
+
+
+
+.black {
+  color:black
 }
 
 
