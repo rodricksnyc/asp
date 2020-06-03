@@ -4074,6 +4074,20 @@ min-width: 67%;
 }
 
 
+#addTtest td .custom-control {
+  position: relative;
+  display: block;
+  min-height:0px;
+}
+#addTtest td {
+    vertical-align: middle;
+    font-size:13px;
+}
+
+#addTtest th {
+font-weight:300;
+font-size:13px;
+}
 
 .black {
   color:black
