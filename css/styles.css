@@ -1328,7 +1328,7 @@ margin:0em .3em 0em 0em;
 .stats .row {
   margin-bottom: 2em;
   display: flex;
-    flex-direction: column;
+  flex-direction: column;
 }
 
 .data .row {
@@ -3909,18 +3909,18 @@ ul.precision {
 }
 
 ul.precision label.blue {
-      padding: 0px 15px 0px 24px;
+  padding: 0px 15px 0px 24px;
 }
 
 .statistical-estimates input.percentile-text{
   opacity: 1;
-    position: relative;
-    width: 50px;
-    height: auto;
-    border: 1px solid #07477d;
+  position: relative;
+  width: 50px;
+  height: auto;
+  border: 1px solid #07477d;
   font-size:15px;
-    border-radius: .3rem;
-    color: #07477d;
+  border-radius: .3rem;
+  color: #07477d;
 }
 .percentile-text::placeholder {
   color: #07477d;
@@ -3945,19 +3945,19 @@ ul.precision label.blue {
 }
 
 .ratio:nth-of-type(1) {
-border-right:2px solid #127abf !important;
-border-top-left-radius: .6rem;
-border-bottom-left-radius: .6rem;
+  border-right:2px solid #127abf !important;
+  border-top-left-radius: .6rem;
+  border-bottom-left-radius: .6rem;
 }
 
 .ratio:nth-of-type(2) {
-border-right:2px solid #127abf !important;
+  border-right:2px solid #127abf !important;
 }
 
 .ratio:nth-of-type(4) {
-border-left:1px solid #127abf !important;
-border-top-right-radius: .6rem;
-border-bottom-right-radius: .6rem;
+  border-left:1px solid #127abf !important;
+  border-top-right-radius: .6rem;
+  border-bottom-right-radius: .6rem;
 }
 
 .ratioActive {
@@ -3968,10 +3968,10 @@ border-bottom-right-radius: .6rem;
 }
 
 .tooltip-inner {
-   width:auto;
-    min-width: 560px !important;
-    text-align: left;
-    padding:1em
+  width:auto;
+  min-width: 560px !important;
+  text-align: left;
+  padding:1em
 }
 
 .statistical-estimates .btn-group {
@@ -3981,9 +3981,9 @@ border-bottom-right-radius: .6rem;
 
 /* selected btn css */
 .statistical-estimates .btn-group-toggle .btn:not(:disabled):not(.disabled).active, .btn-group-toggle .btn:not(:disabled):not(.disabled):active, .show>.btn.dropdown-toggle {
-      color: #fff;
-      background-color: #127abf;
-      border-color: #127abf;
+  color: #fff;
+  background-color: #127abf;
+  border-color: #127abf;
 }
 
 /* non selected btn css */
@@ -3996,27 +3996,27 @@ border-bottom-right-radius: .6rem;
 }
 
 .stats li.results {
-    padding: 0.2rem .8rem;
-    margin: 0rem .2rem 1rem .2rem;
-    color: #07477d;
-    border-radius: 2rem;
-    background:  #deedf8;
-    cursor: pointer;
-    max-width: none;
-    display: flex;
-    align-items: center;
-    font-size: 13px;
-    font-weight: 500;
-    margin-bottom: 0em;
+  padding: 0.2rem .8rem;
+  margin: 0rem .2rem 1rem .2rem;
+  color: #07477d;
+  border-radius: 2rem;
+  background:  #deedf8;
+  cursor: pointer;
+  max-width: none;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 0em;
 }
 .outputs {
   display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    margin-left: 0em;
-    padding-left: 0em;
-    flex-wrap: wrap;
-    margin-bottom: 0em;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-left: 0em;
+  padding-left: 0em;
+  flex-wrap: wrap;
+  margin-bottom: 0em;
 }
 
 .editOutputs {
@@ -4024,12 +4024,12 @@ border-bottom-right-radius: .6rem;
 }
 
 #addTtest .modal-header  {
-    border-bottom: 4px solid #c7482e !important;
-    margin-left: 1em;
-margin-right: 1em;
-padding-left: 0em;
-padding-top: 1em;
-padding-bottom: 0em;
+  border-bottom: 4px solid #c7482e !important;
+  margin-left: 1em;
+  margin-right: 1em;
+  padding-left: 0em;
+  padding-top: 1em;
+  padding-bottom: 0em;
 }
 
 #addTtest .modal-header  h5 {
@@ -4037,13 +4037,13 @@ padding-bottom: 0em;
 }
 
 #addTtest .modal-header .close {
-    padding: .5rem 0rem .5rem .5rem!important;
+  padding: .5rem 0rem .5rem .5rem!important;
 
-    color: #c7482e !important;
-    opacity: 1 !important;
+  color: #c7482e !important;
+  opacity: 1 !important;
 }
 #addTtest .modal-dialog {
-min-width: 67%;
+  min-width: 67%;
 
 }
 
@@ -4053,24 +4053,24 @@ min-width: 67%;
 }
 
 .tTestSearch {
-    width: 100%;
-    padding: .2em 0em .2em 2em;
-    font-size: 15px;
-    position: relative;
-    border-radius: 1rem;
-    border: 1px solid black;
-    min-width:320px;
-      /* margin-left:1em; */
+  width: 100%;
+  padding: .2em 0em .2em 2em;
+  font-size: 15px;
+  position: relative;
+  border-radius: 1rem;
+  border: 1px solid black;
+  min-width:320px;
+  /* margin-left:1em; */
 }
 
 #addTtest .fal.fa-search.searchBar {
-    position: absolute;
+  position: absolute;
 
-    top: .4em;
-    z-index: 3;
-    color: #07477d;
-    font-weight: 500;
-    left: .6em;
+  top: .4em;
+  z-index: 3;
+  color: #07477d;
+  font-weight: 500;
+  left: .6em;
 }
 
 
@@ -4078,19 +4078,26 @@ min-width: 67%;
   position: relative;
   display: block;
   min-height:0px;
+  padding-left: 3.5rem;
+  margin-bottom: 2em;
 }
 #addTtest td {
-    vertical-align: middle;
-    font-size:13px;
+  vertical-align: middle;
+  font-size:13px;
+  padding: 0px;
+}
+
+#addTtest td:first-of-type {
+  padding-left:1em;
 }
 
 #addTtest th {
-font-weight:300;
-font-size:13px;
-    max-width: 20px;
+  font-weight:300;
+  font-size:13px;
+  max-width: 20px;
 }
 .scrollThis {
-height: 500px;
+  height: 500px;
   overflow-y: scroll;
 
 }
@@ -4100,33 +4107,41 @@ height: 500px;
 }
 
 #addTtest .custom-control-label::before {
-    position: absolute;
-    top: .1rem;
-    left: -1.5rem;
-    display: block;
-    width: 1rem;
-    height: 1rem;
-    pointer-events: none;
-    content: "";
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-color: white;
-    border: 1px solid #07477d;
+  position: absolute;
+  top: .1rem;
+  left: -1.5rem;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  pointer-events: none;
+  content: "";
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: white;
+  border: 1px solid #07477d;
 }
 
 #addTtest .custom-control-label::after {
-    position: absolute;
-    top: 0.05rem;
-    left: -1.4rem;
-    display: block;
-    width: .9rem;
-    height: .9rem;
-    content: "";
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 50% 50%;
+  position: absolute;
+  top: 0.05rem;
+  left: -1.4rem;
+  display: block;
+  width: .9rem;
+  height: .9rem;
+  content: "";
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+#addTtest .custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f00c" !important;
+  background-image: none !important;
+  color: white;
+  font-weight: 900;
 }
 
 
