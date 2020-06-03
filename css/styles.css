@@ -1537,7 +1537,7 @@ padding-right:5px;
 
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
   font-family: "Font Awesome 5 Pro";
-  content: "\f00c";
+  content: "\f00c" !important;
   background-image: none !important;
   color: white;
   font-weight: 900;
@@ -4097,6 +4097,36 @@ height: 500px;
 
 .black {
   color:black
+}
+
+#addTtest .custom-control-label::before {
+    position: absolute;
+    top: .1rem;
+    left: -1.5rem;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    pointer-events: none;
+    content: "";
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: white;
+    border: 1px solid #07477d;
+}
+
+#addTtest .custom-control-label::after {
+    position: absolute;
+    top: 0.05rem;
+    left: -1.4rem;
+    display: block;
+    width: .9rem;
+    height: .9rem;
+    content: "";
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
 }
 
 
