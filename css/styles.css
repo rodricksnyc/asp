@@ -4047,6 +4047,19 @@ min-width: 60%;
 
 }
 
+#addTtest .modal-body {
+  padding-left:0em;
+}
+
+.tTestSearch {
+    width: 100%;
+    padding: .2em 0em .2em 2em;
+    font-size: 15px;
+    position: relative;
+    border-radius: 1rem;
+    border: 1px solid black;
+}
+
 
 /* footer classes */
 
