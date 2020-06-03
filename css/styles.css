@@ -4015,6 +4015,10 @@ border-bottom-right-radius: .6rem;
     flex-wrap: wrap;
 }
 
+.editOutputs {
+  display:none
+}
+
 
 /* footer classes */
 

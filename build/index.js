@@ -1517,24 +1517,42 @@ $(document).ready(function () {
     // if ($('#analysisTopic .levels').length > 0) {
     $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + +$('.stats').height() + 250); // }
   });
-  $('[data-type="stats"] .whiteBubble').on('click', function () {
-    if ($('.stats li').length >= 0) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + $('.stats').height() + 350);
+  $('[data-type="stats"] .whiteBubble').on('click', function () {// if ($('.stats li').length > 0 ) {
+    //
+    //     $('.editOutputs').show()
+    //   //
+    //   // $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() +   $('.stats').height() )
+    // }
+    //
+    // else {
+    //       $('.editOutputs').hide()
+    // }
+  });
+  $('.stats').on('click', function () {
+    if ($('.stats li').length == 0) {
+      $('.editOutputs').hide();
     }
   });
-  $(".statistical-estimates :checkbox").change(function () {
-    if ($('.stats li').length > 0) {
-      $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + $('.stats').height() + 260);
-    } // if ($('.stats li').length == 0 ) {
+  $("input[name='stat-analysis']").click(function () {
+    if ($("input[name='stat-analysis']:checked").length == 0) {
+      $('.editOutputs').hide();
+    } // if ($('.stats li').length > 0 ) {
+    //
+    //
+    //
+
+
+    $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + $('.stats').height() + 280); // }
+    // if ($('.stats li').length == 0 ) {
     //
     //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() )
     // }
     //
 
-
     console.log(this.value);
 
     if ($(this).prop("checked") == true) {
+      $('.editOutputs').show();
       $('.stats .row .outputs').append("<li class='results selected' data-stat=\"" + this.value + "\">" + this.value + "<div class='removeTag'><i class='fal fa-times ml-1'></i></div></li>");
     } else {
       $(".stats li[data-stat=" + this.value + "]").remove();
@@ -1544,7 +1562,7 @@ $(document).ready(function () {
     $(".stats [data-stat]").on('click', function () {
       // $("input[name=stat-analysis]").prop('checked', false);
       var statName = $(this).attr("data-stat");
-      $(".statistical-estimates :checkbox[value=" + $(this).attr("data-stat") + "]").prop("checked", false);
+      $("input[name='stat-analysis'][value=" + $(this).attr("data-stat") + "]").prop("checked", false);
       $(this).remove();
     });
   });
