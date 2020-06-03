@@ -359,9 +359,9 @@ background-color: #FFD6CD;
 
 
 .dropdown-menu .small-dropdown-menu {
-    top: auto;
+    top: 0%;
     left: 100%;
-    transform: translateY(-2rem);
+    /* transform: translateY(-2rem); */
 }
 
 .small-dropdown-menu {
