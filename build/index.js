@@ -874,6 +874,10 @@ $(document).ready(function () {
             alert("You must select 2 or more");
           }
 
+          if ($('.merged').length > 1) {
+            $('.merged').css('margin-top', '2em');
+          }
+
           $(separate).click(function () {
             var item = $(this).closest('.merged').find('input:checkbox:checked').parent().parent();
             var items = $(this).closest('.merged').find('input').parent().parent(); // var input = $(this).closest('.merged').find('input:checkbox:checked')
@@ -891,6 +895,10 @@ $(document).ready(function () {
 
             if ($(listItem).children().length == 0) {
               $(this).closest('.merged').remove();
+            }
+
+            if ($('.merged').length == 1) {
+              $('.merged').css('margin-top', '0em');
             }
           });
         });
@@ -1496,7 +1504,15 @@ $(document).ready(function () {
     }
   });
   $('.addCategories').on('click', '.bottom', function () {
-    $(this).closest('li').insertAfter($('.addCategories .categories li').last());
+    if (!$('.addCategories .bottom').closest('li').parent().hasClass('mergedUL')) {
+      alert('sfiub');
+      $(this).closest('li').insertAfter($('.addCategories .categories li').last());
+    } //
+    // else {
+    //   alert('wefiug')
+    //   $(this).closest('li').insertAfter($('.mergedUL li').last());
+    // }
+
   });
   $('.addCategories').on('keyup', '.bottom', function (e) {
     var code = e.keyCode ? e.keyCode : e.which;
@@ -1513,6 +1529,26 @@ $(document).ready(function () {
 
     if (code == 13) {
       $(this).closest('li').insertBefore($('.addCategories .categories li').first());
+    }
+  });
+  $('.addCategories').on('click', '.merged .bottom', function () {
+    $(this).closest('li').insertAfter($('.addCategories .categories .mergedUL li').last());
+  });
+  $('.addCategories').on('keyup', '.bottom', function (e) {
+    var code = e.keyCode ? e.keyCode : e.which;
+
+    if (code == 13) {
+      $(this).closest('li').insertAfter($('.addCategories .categories .mergedUL li').last());
+    }
+  });
+  $('.addCategories').on('click', '.top', function () {
+    $(this).closest('li').insertBefore($('.addCategories .categories .mergedUL li').first());
+  });
+  $('.addCategories').on('keyup', '.top', function (e) {
+    var code = e.keyCode ? e.keyCode : e.which;
+
+    if (code == 13) {
+      $(this).closest('li').insertBefore($('.addCategories .categories .mergedUL li').first());
     }
   }); //statistical Outputs
   // $('[data-type="stats"]').on('click', function() {
