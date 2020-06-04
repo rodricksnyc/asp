@@ -894,8 +894,7 @@ $(document).ready(function () {
             $('.addCategories input[type="checkbox"]').prop('checked', false);
 
             if ($(listItem).children().length == 1) {
-              $('.addCategories .categories').append(items);
-              $(separate).css('top', '24%');
+              $('.addCategories .categories').append(items); // $(separate).css('top', '24%')
             }
 
             if ($(listItem).children().length == 0) {
@@ -1062,12 +1061,16 @@ $(document).ready(function () {
 
     if ($(this).prop("checked") == true) {
       $('.addAsRow').on('click', function () {
-        $('.numberCounter').html($('#rowTopic .levels').length); // pageModule.getnumberFunc()
+        $('.numberCounter').html($('#rowTopic .levels').length);
+        $(this).closest('.topicLevels').find('.levels').removeClass('activeCustomControl');
+        $(this).closest('.topicLevels').find('.collapse').collapse('hide');
+        $(this).closest('.topicLevels').find('.accordion-toggle i').fadeIn();
+        $(this).closest('.topicLevels').find('.orangeHover').removeClass('showIt2');
+        $(this).closest('.topicLevels').find('.endOptions').removeClass('showIt'); // pageModule.getnumberFunc()
 
         $('.activeLevel').removeClass('activeLevel').appendTo('#rowTopic');
 
-        if ($('.allLevels input').is(':checked')) {// pageModule.getnumberFunc()
-        }
+        if ($('.levels input').is(':checked')) {}
 
         $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140);
 

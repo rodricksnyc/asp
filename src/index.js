@@ -1272,7 +1272,6 @@ $(document).ready(function () {
 
         $(addCustomControl).removeClass('hidden')
 
-
         var emptyModal = function (){
 
           var items = $('.merged').find('input').parent().parent()
@@ -1385,7 +1384,6 @@ $(document).ready(function () {
 
           $(separate).click(function(){
 
-
             var item = $(this).closest('.merged').find('input:checkbox:checked').parent().parent()
 
             var items = $(this).closest('.merged').find('input').parent().parent()
@@ -1407,7 +1405,7 @@ $(document).ready(function () {
 
               $('.addCategories .categories').append(items)
 
-              $(separate).css('top', '24%')
+              // $(separate).css('top', '24%')
 
 
             }
@@ -1428,7 +1426,6 @@ $(document).ready(function () {
 
 
           })
-
 
         })
 
@@ -1661,12 +1658,23 @@ $(document).ready(function () {
       $('.addAsRow').on('click', function() {
         $('.numberCounter').html($('#rowTopic .levels').length)
 
+        $(this).closest('.topicLevels').find('.levels').removeClass('activeCustomControl')
+        $(this).closest('.topicLevels').find('.collapse').collapse('hide')
+        $(this).closest('.topicLevels').find('.accordion-toggle i').fadeIn()
+
+        $(this).closest('.topicLevels').find('.orangeHover').removeClass('showIt2')
+        $(this).closest('.topicLevels').find('.endOptions').removeClass('showIt')
+
+
         // pageModule.getnumberFunc()
 
         $('.activeLevel').removeClass('activeLevel').appendTo('#rowTopic')
 
-        if ($('.allLevels input').is(':checked')) {
-          // pageModule.getnumberFunc()
+        if ($('.levels input').is(':checked')) {
+
+
+
+
 
 
         }
