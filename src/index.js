@@ -1313,7 +1313,7 @@ $(document).ready(function () {
           // console.log('save')
           // console.log($(bubbles).length)
 
-          $(horizontal).append(categoryLi)
+          $(horizontal).empty().append(categoryLi)
           // $(horizontal).append(Opt45)
           $(group).children().appendTo(horizontal)
 
@@ -1381,7 +1381,7 @@ $(document).ready(function () {
 
             $('.addCategories .categories').append(item)
             $(addCustomControl).removeClass('bottomZero')
-            $(input).removeAttr('checked');
+            $(inputs).removeAttr('checked');
 
             if ($(listItem).children().length == 1) {
 

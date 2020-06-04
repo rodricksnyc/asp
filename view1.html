@@ -3171,12 +3171,14 @@
 
 							<div class="col-xl-4 col-lg-6 col-md-4 col-sm-6 col-xs-12">
 								<div class="whiteBubble">
+
+						
 									<fieldset>
 										<legend class="blue text-left">Cell Estimates&nbsp;
 											<i class="fas fa-info-circle orange" data-toggle="tooltip" data-container="body" data-placement="right" data-html="true" title="<p class='smallest'>Basic Estimates</p><p class='smallest'>Frequency. The weighted count of the number of times a particular response (or responses) was given to a survey question (i.e., the sum of the weights for persons for whom that response was given). A frequency can be provided for a cell, row, column, layer, or marginal of a table.</p><p class='smallest'>Cell percentage. The weighted number of persons counted in a particular cell of a table divided by the weighted number of persons counted in the entire table (i.e., the sum of weights for persons in the cell divided by the sum of weights for all persons in the table).</p><p class='smallest'>Row percentage. The weighted number of persons counted in a particular cell of a table divided by the weighted number of persons counted in that cell’s row ( i.e., the sum of weights for persons in the cell divided by the sum of weights for all persons in that row).</p><p class='smallest'>Column percentage. The weighted number of persons counted in a particular cell of a table relative to the weighted number of person counted in that cell’s column (i.e., the sum of weights for persons in the cell divided by the sum of weights for all persons in that column).</p><p class='smallest'>Statistics of Another Variable</p><p class='smallest'>Mean. A weighted average, i.e., the sum of a set of weighted values divided by the sum of the weights.</p><p class='smallest'>Median. The value found at the exact middle of the set of all values in ranked order.</p><p class='smallest'>Total. The sum of a set of weighted values.</p><p class='smallest'>P-th Percentile. The value of a variable such that a percentage p of the weighted distribution’s observed (or theoretical) outcomes are less than or equal to that value. Similarly, the q quantile is the value of a variable such that a proportion q of the weighted distribution’s observed (or theoretical) outcomes are less than or equal to that value. Thus, the q quantile is the 100q-th percentile. Example: The median is the 0.5 quantile and the 50th percentile of a distribution.</p><p class='smallest'></p><p class='smallest'>Ratio. The weighted value of one variable divided by the weighted value of another variable.</p>"></i>
 										</legend>
 										<div class="wrapper">
-											<input id="BasicEstimates" name="BasicEstimates" type="radio" value="no-issues" checked>
+											<input id="BasicEstimates" name="BasicEstimates" type="radio" value="no-issues">
 											<label for="BasicEstimates" class="blue">Basic Estimates</label>
 										</div>
 
@@ -3184,11 +3186,11 @@
 										<ul class="statistical-estimates">
 
 											<li class="statistical-estimates custom-control custom-checkbox">
-												<input type="checkbox" name="cell-estimates" data-cell="Frequency" value="Frequency" class="custom-control-input" id="Frequency" checked>
+												<input type="checkbox" name="cell-estimates" data-cell="Frequency" value="Frequency" class="custom-control-input" id="Frequency">
 												<label class="custom-control-label" for="Frequency">Frequency</label>
 											</li>
 											<li class="statistical-estimates custom-control custom-checkbox">
-												<input type="checkbox" name="cell-estimates" data-cell="Cell Percentage" value="Cell Percentage" class="custom-control-input" id="CellPercentage" checked>
+												<input type="checkbox" name="cell-estimates" data-cell="Cell Percentage" value="Cell Percentage" class="custom-control-input" id="CellPercentage">
 												<label class="custom-control-label" for="CellPercentage">Cell Percentage</label>
 											</li>
 											<li class="statistical-estimates custom-control custom-checkbox">
@@ -3204,7 +3206,7 @@
 										</ul>
 
 										<div class="wrapper">
-											<input id="statAnalysis" name="stat-analysis-title" type="radio" value="no-issues" checked>
+											<input id="statAnalysis" name="stat-analysis-title" type="radio" value="no-issues">
 											<label for="statAnalysis" class="blue">Statistics of Another Variable(s)</label>
 										</div>
 										<ul class="statistical-estimates">
@@ -3226,16 +3228,11 @@
 											<li class="statistical-estimates custom-control custom-checkbox">
 												<input type="checkbox" id="percentile" name="stat-analysis" value="Percentile" class="custom-control-input" data-stat="">
 												<label class="custom-control-label" for="percentile">Percentile</label>
-												<input type="text" class="percentile-text" name="stat-analyis" value="" placeholder="1-99%" />
-											</li>
-
-											<li class="statistical-estimates custom-control custom-checkbox">
-												<input type="checkbox" id="ratio" name="stat-analysis" value="Ratio" class="custom-control-input">
-												<label class="custom-control-label" for="ratio">Ratio</label>
+												<input type="text" class="percentile-text" name="stat-analyis" value="" placeholder="1-99%"><i class="fal fa-plus addPercentage" role="button" tabindex="0"></i>
 												<div class="col-lg-9 col-md-12 col-sm-12">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary active">
-															<input type="radio" name="options" id="fivePercent" autocomplete="off" checked>5%
+														<label class="btn btn-secondary">
+															<input type="radio" name="options" id="fivePercent" autocomplete="off">5%
 														</label>
 														<label class="btn btn-secondary">
 															<input type="radio" name="options" id="tenPercent" autocomplete="off">10%
@@ -3248,16 +3245,13 @@
 														</label>
 													</div>
 
-													<!-- <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
-													<div class="btn-group ratioGroup" role="group" aria-label="First group">
-													<button type="button" class="ratio ratioActive btn">5%</button>
-													<button type="button" class="ratio btn">10%</button>
-													<button type="button" class="ratio btn">50%</button>
-													<button type="button" class="ratio btn">90%</button>
-												</div>
-
-											</div> -->
 										</div>
+											</li>
+
+											<li class="statistical-estimates custom-control custom-checkbox">
+												<input type="checkbox" id="ratio" name="stat-analysis" value="Ratio" class="custom-control-input">
+												<label class="custom-control-label" for="ratio">Ratio</label>
+
 									</li>
 
 								</ul>
@@ -3271,7 +3265,7 @@
 								<legend class="blue">Missing Values&nbsp;<i class="fas fa-info-circle orange" data-toggle="tooltip" data-container="body" data-placement="right" data-html="true" title="<p class='smallest'>Missing Values. Indicate whether to include missing values in your query results.</p>"></i></legend>
 								<ul class="missing">
 									<li class="wrapper">
-										<input id="yes" name="missing" type="radio" value="no-issues" checked>
+										<input id="yes" name="missing" type="radio" value="no-issues">
 										<label for="yes" class="blue">Yes</label>
 									</li>
 									<li class="wrapper">
@@ -3289,7 +3283,7 @@
 									<li class="statistical-estimates custom-control custom-checkbox">
 										<input type="checkbox" name="precision" value="Confidence Interval" class="custom-control-input" id="Confidence">
 										<label class="custom-control-label" for="Confidence">Confidence Interval</label>
-										<ul class="precision custom-control-inline">
+										<!-- <ul class="precision custom-control-inline">
 
 											<li class="approach wrapper">
 												<input id="standard" name="approach" type="radio" value="Standard">
@@ -3299,7 +3293,7 @@
 												<input id="wilson" name="approach" type="radio" value="Wilson">
 												<label for="wilson" class="blue">Wilson</label>
 											</li>
-										</ul>
+										</ul> -->
 										<ul class="precision custom-control-inline">
 											<li class="wrapper">
 												<input id="90%" name="confidence" type="radio" value="90%">
@@ -3337,9 +3331,13 @@
 									<input type="checkbox" name="chi" value="Chi-Square" class="custom-control-input" id="Chi-Square">
 									<label class="custom-control-label" for="Chi-Square">Chi-Square (RS3)</label>
 								</li>
+								<li class="statistical-estimates custom-control custom-checkbox">
+									<input type="button" data-toggle="modal" data-target="#addTtest" id="tTest" type="checkbox" class="addTest custom-control-input" id="Chi-Square">
+									<label class="custom-control-label" for="tTest">Add a t-test</label>
+								</li>
 								<br>
 							</ul>
-							<div type="button" data-toggle="modal" data-target="#addTtest" class="orangeBubble d-flex justify-content-center align-items-center addTest"><i class="far fa-plus"></i>&nbsp;Add a t-test</div>
+							<!-- <div type="button" data-toggle="modal" data-target="#addTtest" class="orangeBubble d-flex justify-content-center align-items-center addTest"><i class="far fa-plus"></i>&nbsp;Add a t-test</div> -->
 						</div>
 					</div>
 

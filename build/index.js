@@ -839,7 +839,7 @@ $(document).ready(function () {
           // console.log('save')
           // console.log($(bubbles).length)
 
-          $(horizontal).append(categoryLi); // $(horizontal).append(Opt45)
+          $(horizontal).empty().append(categoryLi); // $(horizontal).append(Opt45)
 
           $(group).children().appendTo(horizontal);
           $(add).empty();
@@ -879,7 +879,7 @@ $(document).ready(function () {
             var listItem = $(this).closest('.merged').find('.mergedUL');
             $('.addCategories .categories').append(item);
             $(addCustomControl).removeClass('bottomZero');
-            $(input).removeAttr('checked');
+            $(inputs).removeAttr('checked');
 
             if ($(listItem).children().length == 1) {
               $('.addCategories .categories').append(items);
