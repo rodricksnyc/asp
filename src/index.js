@@ -1206,6 +1206,7 @@ $(document).ready(function () {
       var layerLevel = pageModule.config.classes.layerLevel
       var analysisLevel = pageModule.config.classes.analysisLevel
       var addCategoriesUL = pageModule.config.classes.addCategoriesUL
+      var groupCheckbox = pageModule.config.classes.groupCheckbox
 
 
       var horizontal = "";
@@ -1222,17 +1223,17 @@ $(document).ready(function () {
 
 
 
-        var Opt44 = "";
-        $(bubbleDivs).each(function() {
-          Opt44 = Opt44 + this.outerHTML;
-
-        });
+        // var Opt44 = "";
+        // $(bubbleDivs).each(function() {
+        //   Opt44 = Opt44 + this.outerHTML;
+        //
+        // });
         $(horizontal).empty()
 
         var original = $(categoryLi).clone();
 
         $(add).append(categoryLi)
-        $('.groupedCategories').append(Opt44)
+        // $('.groupedCategories').append(Opt44)
         //
         // $(groupedCategories).empty()
         //
@@ -1351,7 +1352,7 @@ $(document).ready(function () {
 
           if ($(y).length > 1) {
 
-            $(groupedCategories).append(`<div class="merged"><ul class="mergedUL">${Opt1}</ul><button class="separate" tabindex="0" role="button"><p>Separate</p><div class="across4"><i class="fal fa-arrow-left"></i>&nbsp;|&nbsp;<i class="fal fa-arrow-right"></i></div></button></div>`)
+            $(addCategoriesUL).append(`<div class="merged"><ul class="mergedUL">${Opt1}</ul><button class="separate" tabindex="0" role="button"><p>Separate</p><div class="across4"><i class="fal fa-arrow-left"></i>&nbsp;|&nbsp;<i class="fal fa-arrow-right"></i></div></button></div>`)
 
             $(y).remove()
 
@@ -1371,17 +1372,24 @@ $(document).ready(function () {
 
 
           $(separate).click(function(){
+
+
+
             var item = $(this).closest('.merged').find('input:checkbox:checked').parent().parent()
 
             var items = $(this).closest('.merged').find('input').parent().parent()
 
-            var input = $(this).closest('.merged').find('input:checkbox:checked')
+            // var input = $(this).closest('.merged').find('input:checkbox:checked')
+
+
 
             var listItem = $(this).closest('.merged').find('.mergedUL')
 
             $('.addCategories .categories').append(item)
             $(addCustomControl).removeClass('bottomZero')
-            $(inputs).removeAttr('checked');
+            // $('inputs').removeAttr('checked');
+
+              $('input[type="checkbox"]').prop('checked' , false);
 
             if ($(listItem).children().length == 1) {
 
