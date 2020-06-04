@@ -882,6 +882,7 @@ $(document).ready(function () {
           }
 
           $(separate).click(function () {
+            alert("eiugbieb");
             var item = $(this).closest('.merged').find('input:checkbox:checked').parent().parent();
             var items = $(this).closest('.merged').find('input').parent().parent(); // var input = $(this).closest('.merged').find('input:checkbox:checked')
 
@@ -908,50 +909,7 @@ $(document).ready(function () {
             }
           });
         });
-      }); //
-      // $(":checkbox").change('.addCategories' , function(){
-      //
-      //   if($(this).prop("checked")==true){
-      //
-      // var thing =  $(this).closest('li').addClass('activeCategory')
-      //
-      //
-      //   //
-      //   //
-      //   // var Opt1 = "";
-      //   //   $(thing).each(function() {
-      //   //     Opt1 = Opt1 + this.outerHTML;
-      //   //
-      //   //   });
-      //
-      //
-      //   $(button).click(function() {
-      //
-      //     console.log(thing)
-      //     // console.log(Opt1)
-      //
-      //   $(groupedCategories).append(`<div class="merged"><ul class="mergedUL"></ul><button class="separate" tabindex="0" role="button"><p>Separate</p><div class="across4"><i class="fal fa-arrow-left"></i>&nbsp;|&nbsp;<i class="fal fa-arrow-right"></i></div></button></div>`)
-      //
-      //
-      //       $('.activeCategory').removeClass('activeCategory')
-      //
-      //       $(mergedCategories).addClass('bottomZero')
-      //       $(mergedCheck).removeAttr('checked');
-      //
-      //
-      //     })
-      //
-      //   }
-      //
-      //   else {
-      //
-      //     $(this).closest('li').removeClass('activeCategory')
-      //
-      //   }
-      //
-      //
-      //   })
-
+      });
       $('#rowTopic').on('click', '.removeLevel', function () {
         $(horizontal).empty().append(original);
         var el = $(this).closest('.levels').find('input[data-level]').val();
@@ -1532,13 +1490,7 @@ $(document).ready(function () {
     }
   });
   $('.addCategories').on('click', '.top', function () {
-    //
-    // if (!$('.addCategories .bottom').closest('li').parent().hasClass('mergedUL')) {
-    //   alert("sdvjhyids")
-    $(this).closest('li').insertBefore($('.addCategories .categories li').first()); // }
-    //
-    // if ( $('.merged').length > 0)  {
-    // }
+    $(this).closest('li').insertBefore($('.addCategories .categories li').first());
   });
   $('.addCategories').on('keyup', '.top', function (e) {
     var code = e.keyCode ? e.keyCode : e.which;
