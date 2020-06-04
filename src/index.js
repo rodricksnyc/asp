@@ -1286,6 +1286,7 @@ $(document).ready(function () {
           $('.addCategories .categories').append(items)
           $('.merged').remove()
 
+         $('.addCategories input[type="checkbox"]').prop('checked' , false);
 
         }
 
@@ -1298,6 +1299,8 @@ $(document).ready(function () {
         );
 
         var saveModal = function (e){
+
+          $('.addCategories input[type="checkbox"]').prop('checked' , false);
           //
           // var bubbles =  $(this).closest('.modal-content').find('.merged')
 
@@ -1381,7 +1384,7 @@ $(document).ready(function () {
 
 
           $(separate).click(function(){
-            alert("eiugbieb")
+
 
             var item = $(this).closest('.merged').find('input:checkbox:checked').parent().parent()
 
@@ -1397,7 +1400,7 @@ $(document).ready(function () {
             $(addCustomControl).removeClass('bottomZero')
             // $('inputs').removeAttr('checked');
 
-            $('input[type="checkbox"]').prop('checked' , false);
+            $('.addCategories input[type="checkbox"]').prop('checked' , false);
 
             if ($(listItem).children().length == 1) {
 

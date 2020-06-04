@@ -823,13 +823,15 @@ $(document).ready(function () {
           $(words).html('Select to group');
           $('.addCategories .categories').append(items);
           $('.merged').remove();
+          $('.addCategories input[type="checkbox"]').prop('checked', false);
         };
 
         $(closeModal).keypress(emptyModal).click(emptyModal);
 
         var saveModal = function saveModal(e) {
-          //
+          $('.addCategories input[type="checkbox"]').prop('checked', false); //
           // var bubbles =  $(this).closest('.modal-content').find('.merged')
+
           var group = $(this).closest('.modal-content').find('.groupedCategories'); //
           // var Opt45 = "";
           // $(bubbles).each(function() {
@@ -882,7 +884,6 @@ $(document).ready(function () {
           }
 
           $(separate).click(function () {
-            alert("eiugbieb");
             var item = $(this).closest('.merged').find('input:checkbox:checked').parent().parent();
             var items = $(this).closest('.merged').find('input').parent().parent(); // var input = $(this).closest('.merged').find('input:checkbox:checked')
 
@@ -890,7 +891,7 @@ $(document).ready(function () {
             $('.addCategories .categories').append(item);
             $(addCustomControl).removeClass('bottomZero'); // $('inputs').removeAttr('checked');
 
-            $('input[type="checkbox"]').prop('checked', false);
+            $('.addCategories input[type="checkbox"]').prop('checked', false);
 
             if ($(listItem).children().length == 1) {
               $('.addCategories .categories').append(items);
