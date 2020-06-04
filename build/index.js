@@ -875,7 +875,10 @@ $(document).ready(function () {
           }
 
           if ($('.merged').length > 1) {
-            $('.merged').css('margin-top', '2em');
+            $('.merged').css({
+              'margin-top': '1em',
+              'margin-bottom': '1em'
+            });
           }
 
           $(separate).click(function () {
@@ -898,7 +901,10 @@ $(document).ready(function () {
             }
 
             if ($('.merged').length == 1) {
-              $('.merged').css('margin-top', '0em');
+              $('.merged').css({
+                'margin-top': '0em',
+                'margin-bottom': '0em'
+              });
             }
           });
         });
@@ -1505,24 +1511,34 @@ $(document).ready(function () {
   });
   $('.addCategories').on('click', '.bottom', function () {
     if (!$('.addCategories .bottom').closest('li').parent().hasClass('mergedUL')) {
-      alert('sfiub');
       $(this).closest('li').insertAfter($('.addCategories .categories li').last());
-    } //
-    // else {
-    //   alert('wefiug')
-    //   $(this).closest('li').insertAfter($('.mergedUL li').last());
-    // }
+    }
 
+    if ($('.merged').length > 0) {
+      $(this).closest('li').insertBefore($('.merged').first());
+    }
   });
   $('.addCategories').on('keyup', '.bottom', function (e) {
     var code = e.keyCode ? e.keyCode : e.which;
 
     if (code == 13) {
-      $(this).closest('li').insertAfter($('.addCategories .categories li').last());
+      if (!$('.addCategories .bottom').closest('li').parent().hasClass('mergedUL')) {
+        $(this).closest('li').insertAfter($('.addCategories .categories li').last());
+      }
+
+      if ($('.merged').length > 0) {
+        $(this).closest('li').insertBefore($('.merged').first());
+      }
     }
   });
   $('.addCategories').on('click', '.top', function () {
-    $(this).closest('li').insertBefore($('.addCategories .categories li').first());
+    //
+    // if (!$('.addCategories .bottom').closest('li').parent().hasClass('mergedUL')) {
+    //   alert("sdvjhyids")
+    $(this).closest('li').insertBefore($('.addCategories .categories li').first()); // }
+    //
+    // if ( $('.merged').length > 0)  {
+    // }
   });
   $('.addCategories').on('keyup', '.top', function (e) {
     var code = e.keyCode ? e.keyCode : e.which;
@@ -1534,17 +1550,17 @@ $(document).ready(function () {
   $('.addCategories').on('click', '.merged .bottom', function () {
     $(this).closest('li').insertAfter($('.addCategories .categories .mergedUL li').last());
   });
-  $('.addCategories').on('keyup', '.bottom', function (e) {
+  $('.addCategories').on('keyup', '.merged .bottom', function (e) {
     var code = e.keyCode ? e.keyCode : e.which;
 
     if (code == 13) {
       $(this).closest('li').insertAfter($('.addCategories .categories .mergedUL li').last());
     }
   });
-  $('.addCategories').on('click', '.top', function () {
+  $('.addCategories').on('click', '.merged .top', function () {
     $(this).closest('li').insertBefore($('.addCategories .categories .mergedUL li').first());
   });
-  $('.addCategories').on('keyup', '.top', function (e) {
+  $('.addCategories').on('keyup', '.merged .top', function (e) {
     var code = e.keyCode ? e.keyCode : e.which;
 
     if (code == 13) {
