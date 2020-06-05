@@ -1460,20 +1460,20 @@ $(document).ready(function () {
 
       $('#rowTopic').on('click', '.removeLevel' , function() {
 
-       //  var items = $('.merged').find('input').parent().parent()
-       //
-       //  $('.addCategories .categories').append(items)
-       //  $('.merged').remove()
-       //
-       // $('.addCategories input[type="checkbox"]').prop('checked' , false);
-       //
-       //  var el = $(this).closest('.levels').find('input[data-level]').val()
-       //
-       //  var putBack = $(this).closest('.levels')
-       //
-       //  $('.listArea .topicLevels').append(putBack)
-       //
-       //  $('.addRow').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
+        var items = $('.merged').find('input').parent().parent()
+
+        $('.addCategories .categories').append(items)
+        $('.merged').remove()
+
+       $('.addCategories input[type="checkbox"]').prop('checked' , false);
+
+        var el = $(this).closest('.levels').find('input[data-level]').val()
+
+        var putBack = $(this).closest('.levels')
+
+        $('.listArea .topicLevels').append(putBack)
+
+        $('.addRow').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
 
         if ($(rowLevel).length < 3 ) {
           $('#rowTopic').animate({
