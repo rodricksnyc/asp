@@ -1211,6 +1211,7 @@ $(document).ready(function () {
 
       var horizontal = "";
       var original = "";
+      var original_form = "";
       $(modal).on('click', function() {
 
         $(showModal).modal('show');
@@ -1221,6 +1222,7 @@ $(document).ready(function () {
 
         var bubbleDivs =  $(this).closest('.levels').find('.merged')
 
+  var original_form = $(this).closest('.levels').find('.categories').clone(true).get(0);
 
 
         // var Opt44 = "";
@@ -1246,7 +1248,9 @@ $(document).ready(function () {
 
         $(reorderOptions).removeClass('hidden')
 
-        $(modalInputs).change(function(){
+        $('.addCategories').click('input:checkbox', function(){
+
+
 
           // if($(this).prop("checked")==true){
           //
@@ -1276,7 +1280,6 @@ $(document).ready(function () {
 
           var items = $('.merged').find('input').parent().parent()
 
-          console.log(original)
           $(horizontal).empty().append(original)
           $(add).empty()
           $(button).removeClass('brightBlue')
@@ -1298,6 +1301,7 @@ $(document).ready(function () {
         );
 
         var saveModal = function (e){
+
 
           $('.addCategories input[type="checkbox"]').prop('checked' , false);
           //
@@ -1390,8 +1394,6 @@ $(document).ready(function () {
 
             // var input = $(this).closest('.merged').find('input:checkbox:checked')
 
-
-
             var listItem = $(this).closest('.merged').find('.mergedUL')
 
             $('.addCategories .categories').append(item)
@@ -1430,23 +1432,48 @@ $(document).ready(function () {
         })
 
 
+        $('#rowTopic').on('click', '.removeLevel' , function() {
+
+          $(horizontal).empty().append(original_form)
+
+        })
+
+        $('#columnTopic').on('click', '.removeLevel' , function() {
+
+          $(horizontal).empty().append(original)
+
+        })
+        $('#layerTopic').on('click', '.removeLevel' , function() {
+
+          $(horizontal).empty().append(original)
+
+        })
+
+        $('#analysisTopic').on('click', '.removeLevel' , function() {
+
+          $(horizontal).empty().append(original)
+
+        })
 
       })
 
 
-
-
       $('#rowTopic').on('click', '.removeLevel' , function() {
 
-        $(horizontal).empty().append(original)
-
-        var el = $(this).closest('.levels').find('input[data-level]').val()
-
-        var putBack = $(this).closest('.levels')
-
-        $('.listArea .topicLevels').append(putBack)
-
-        $('.addRow').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
+       //  var items = $('.merged').find('input').parent().parent()
+       //
+       //  $('.addCategories .categories').append(items)
+       //  $('.merged').remove()
+       //
+       // $('.addCategories input[type="checkbox"]').prop('checked' , false);
+       //
+       //  var el = $(this).closest('.levels').find('input[data-level]').val()
+       //
+       //  var putBack = $(this).closest('.levels')
+       //
+       //  $('.listArea .topicLevels').append(putBack)
+       //
+       //  $('.addRow').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
 
         if ($(rowLevel).length < 3 ) {
           $('#rowTopic').animate({
@@ -1654,7 +1681,6 @@ $(document).ready(function () {
 
     if($(this).prop("checked")==true){
 
-
       $('.addAsRow').on('click', function() {
         $('.numberCounter').html($('#rowTopic .levels').length)
 
@@ -1666,16 +1692,9 @@ $(document).ready(function () {
         $(this).closest('.topicLevels').find('.endOptions').removeClass('showIt')
 
 
-        // pageModule.getnumberFunc()
-
         $('.activeLevel').removeClass('activeLevel').appendTo('#rowTopic')
 
         if ($('.levels input').is(':checked')) {
-
-
-
-
-
 
         }
 
@@ -1686,11 +1705,9 @@ $(document).ready(function () {
 
           $('.whiteBar').fadeIn()
 
-
         }
 
         $("#rowTopic .levels:nth-child(4)").nextAll( ".levels" ).addClass('noWidth')
-
 
         $('.categoriesModal').unbind("click").on('click', function() {
           $('#reorderCategories').modal('show');
