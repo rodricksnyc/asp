@@ -768,14 +768,12 @@ $(document).ready(function () {
       var groupCheckbox = pageModule.config.classes.groupCheckbox;
       var horizontal = "";
       var original = "";
-      var original_form = "";
       $(modal).on('click', function () {
         $(showModal).modal('show');
         var categoryLi = $(this).closest('.levels').find('.categories');
         var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
         var card = $(this).closest('.levels').find('.card');
-        var bubbleDivs = $(this).closest('.levels').find('.merged');
-        var original_form = $(this).closest('.levels').find('.categories').clone(true).get(0); // var Opt44 = "";
+        var bubbleDivs = $(this).closest('.levels').find('.merged'); // var Opt44 = "";
         // $(bubbleDivs).each(function() {
         //   Opt44 = Opt44 + this.outerHTML;
         //
@@ -909,18 +907,6 @@ $(document).ready(function () {
               });
             }
           });
-        });
-        $('#rowTopic').on('click', '.removeLevel', function () {
-          $(horizontal).empty().append(original_form);
-        });
-        $('#columnTopic').on('click', '.removeLevel', function () {
-          $(horizontal).empty().append(original);
-        });
-        $('#layerTopic').on('click', '.removeLevel', function () {
-          $(horizontal).empty().append(original);
-        });
-        $('#analysisTopic').on('click', '.removeLevel', function () {
-          $(horizontal).empty().append(original);
         });
       });
       $('#rowTopic').on('click', '.removeLevel', function () {
@@ -1185,6 +1171,12 @@ $(document).ready(function () {
   });
 
   var addRow = function addRow() {
+    var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
+    var original_form = $(this).closest('.levels').find('.categories').clone();
+    $('#rowTopic').on('click', '.removeLevel', function () {
+      console.log(original_form);
+      $(horizontal).empty().append(original_form);
+    });
     var obj = $(this).closest('.levels').find('input[data-level]').val();
     var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
     var variableObj = $(this).closest('.levels').find(".variableName li[data-variable]").html();
@@ -1252,6 +1244,12 @@ $(document).ready(function () {
   }); //clicking on add as column
 
   var addColumnTopic = function addColumnTopic() {
+    var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
+    var original_form = $(this).closest('.levels').find('.categories').clone();
+    $('#columnTopic').on('click', '.removeLevel', function () {
+      console.log(original_form);
+      $(horizontal).empty().append(original_form);
+    });
     var obj = $(this).closest('.levels').find('input[data-level]').val();
     var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
     var variableObj = $(this).closest('.levels').find(".variableName li[data-variable]").html();
@@ -1308,6 +1306,12 @@ $(document).ready(function () {
   }); //clicking on add as layer
 
   var addLayerTopic = function addLayerTopic() {
+    var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
+    var original_form = $(this).closest('.levels').find('.categories').clone();
+    $('#layerTopic').on('click', '.removeLevel', function () {
+      console.log(original_form);
+      $(horizontal).empty().append(original_form);
+    });
     var obj = $(this).closest('.levels').find('input[data-level]').val();
     var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
     var variableObj = $(this).closest('.levels').find(".variableName li[data-variable]").html();
@@ -1363,6 +1367,12 @@ $(document).ready(function () {
   }); //clicking on add analyis
 
   var addAnalysisTopic = function addAnalysisTopic() {
+    var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
+    var original_form = $(this).closest('.levels').find('.categories').clone();
+    $('#analysisTopic').on('click', '.removeLevel', function () {
+      console.log(original_form);
+      $(horizontal).empty().append(original_form);
+    });
     var obj = $(this).closest('.levels').find('input[data-level]').val();
     var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
     var variableObj = $(this).closest('.levels').find(".variableName li[data-variable]").html();
