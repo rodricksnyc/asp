@@ -1223,8 +1223,6 @@ $(document).ready(function () {
         var bubbleDivs =  $(this).closest('.levels').find('.merged')
 
 
-
-
         // var Opt44 = "";
         // $(bubbleDivs).each(function() {
         //   Opt44 = Opt44 + this.outerHTML;
@@ -1307,7 +1305,7 @@ $(document).ready(function () {
           //
           // var bubbles =  $(this).closest('.modal-content').find('.merged')
 
-          var group =  $(this).closest('.modal-content').find('.groupedCategories')
+          // var group =  $(this).closest('.modal-content').find('.groupedCategories')
           //
           // var Opt45 = "";
           // $(bubbles).each(function() {
@@ -1322,7 +1320,7 @@ $(document).ready(function () {
 
           $(horizontal).empty().append(categoryLi)
           // $(horizontal).append(Opt45)
-          $(group).children().appendTo(horizontal)
+          // $(group).children().appendTo(horizontal)
 
 
           $(add).empty()
@@ -1358,7 +1356,7 @@ $(document).ready(function () {
 
           if ($(y).length > 1) {
 
-            $(addCategoriesUL).append(`<div class="merged"><ul class="mergedUL">${Opt1}</ul><button class="separate" tabindex="0" role="button"><p>Separate</p><div class="across4"><i class="fal fa-arrow-left"></i>&nbsp;|&nbsp;<i class="fal fa-arrow-right"></i></div></button></div>`)
+            $(addCategoriesUL).append(`<div class="merged"><ul class="mergedUL">${Opt1}</ul><button class="separate" tabindex="0" role="button"><div class="across4"><i class="fal fa-arrow-left"></i>&nbsp;|&nbsp;<i class="fal fa-arrow-right"></i></div></button></div>`)
 
             $(y).remove()
 
@@ -1432,7 +1430,9 @@ $(document).ready(function () {
         })
 
 
+
       })
+
 
 
       $('#rowTopic').on('click', '.removeLevel' , function() {
@@ -1845,6 +1845,7 @@ $(document).ready(function () {
 
 
   var addRow = function (){
+
     var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
 
     var original_form = $(this).closest('.levels').find('.categories').clone()
@@ -1900,6 +1901,7 @@ $(document).ready(function () {
     $('.numberCounter').html(function(i, val) { return val*1 + 1 });
 
 
+
   }
   $('.addRow').keypress(
     addRow
@@ -1909,6 +1911,55 @@ $(document).ready(function () {
   );
 
 
+  // $('#rowTopic').on('click', '.removeLevel' , function() {
+  //
+  //
+  //   var items = $('.merged').find('input').parent().parent()
+  //
+  //   $('.addCategories .categories').append(items)
+  //   $('.merged').remove()
+  //
+  //  $('.addCategories input[type="checkbox"]').prop('checked' , false);
+  //
+  //   var el = $(this).closest('.levels').find('input[data-level]').val()
+  //
+  //   var putBack = $(this).closest('.levels')
+  //
+  //   $('.listArea .topicLevels').append(putBack)
+  //
+  //   $('.addRow').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
+  //
+  //   if ($('#rowTopic .levels').length < 3 ) {
+  //     $('#rowTopic').animate({
+  //       minHeight: "none",
+  //       maxHeight:"85px",
+  //       height:"auto"
+  //
+  //     },400);
+  //
+  //   }
+  //
+  //   if ($('#rowTopic .levels').length >3 ) {
+  //
+  //     $('.whiteBar').fadeOut('slow')
+  //
+  //   }
+  //
+  //   if($('#rowTopic .levels').length == 0) {
+  //     $('.plusRow').hide();
+  //   }
+  //
+  //   $('.numberCounter').html(function(i, val) { return val*1 - 1 });
+  //
+  //   $(".allLevels input").prop('checked', false).change();
+  //   var el = $(this).closest('.levels').find('input[data-level]').val()
+  //
+  //   if ($('#rowTopic .levels').length <= 2 ) {
+  //     $('.plusRow').removeClass('green')
+  //
+  //   }
+  //
+  // })
 
 
   $('#rowTopic').on('keyup', '.removeLevel' , function (e) {
@@ -1960,7 +2011,6 @@ $(document).ready(function () {
 
 
   })
-
 
 
   //clicking on add as column
