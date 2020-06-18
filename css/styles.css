@@ -4223,7 +4223,8 @@ ul.precision label.blue {
 }
 
 .w80.documents {
-  padding: 1rem 1rem 3rem 1rem;
+  padding: 1rem 1rem 6rem 1rem;
+  position: relative;
 }
 
 .documents .whiteBubble .small {
@@ -4253,6 +4254,23 @@ border-radius: 6px;
 font-weight:600
 }
 
+.documents .current i {
+
+color: #c7482e;
+
+font-weight:600
+}
+
+
+.documents .orangeBubble {
+  position: absolute;
+  bottom:0em;
+border-radius: 0rem;
+  min-width:25em;
+  left: calc(50% - 12.5em);
+  border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
 
 /* footer classes */
 
