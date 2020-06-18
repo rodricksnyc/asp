@@ -688,8 +688,8 @@ margin-left:-2em;
 }
 
 .merged li {
-    list-style-type: none;
-    max-height: 3em;
+  list-style-type: none;
+  max-height: 3em;
 }
 
 /* .merged .reorderOptions {
@@ -4197,16 +4197,16 @@ ul.precision label.blue {
 }
 
 .documents .fal.fa-search.searchBar {
-    position: absolute;
-    left: .6em;
-    top: .5em;
-    z-index: 3;
-    color: #07477d;
-    font-weight: 500;
+  position: absolute;
+  left: .6em;
+  top: .5em;
+  z-index: 3;
+  color: #07477d;
+  font-weight: 500;
 }
 
 .documents  .viewOptions {
-      min-width: 120px;
+  min-width: 120px;
 }
 
 .documents .evenSmaller.black {
@@ -4215,7 +4215,7 @@ ul.precision label.blue {
 }
 
 .documents  .sortOptions {
-      min-width: 150px;
+  min-width: 150px;
 }
 
 .documents hr {
@@ -4229,11 +4229,11 @@ ul.precision label.blue {
 }
 
 .documents .whiteBubble .small {
-    font-size: 15px !important;
-    font-weight: 300 !important;
-    margin:0em
+  font-size: 15px !important;
+  font-weight: 300 !important;
+  margin:0em
 
-  }
+}
 .documents .whiteBubble .report i {
   margin: 3px 5px 3px 0px;
 }
@@ -4249,28 +4249,28 @@ ul.precision label.blue {
 
 .documents .current {
   background-color: #faede9;
-color: #c7482e;
-padding: 5px 10px;
-border-radius: 6px;
-font-weight:600
+  color: #c7482e;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-weight:600
 }
 
 .documents .current i {
 
-color: #c7482e;
+  color: #c7482e;
 
-font-weight:600
+  font-weight:600
 }
 
 
 .documents .orangeBubble {
   position: absolute;
   bottom:0em;
-border-radius: 0rem;
-  min-width:25em;
-  left: calc(50% - 12.5em);
+  border-radius: 0rem;
+  min-width:26em;
+  left: calc(50% - 13em);
   border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
+  border-top-right-radius: 1rem;
 }
 
 
@@ -4284,6 +4284,11 @@ border-radius: 0rem;
   margin:1em 0em;
   position: relative;
 }
+.cube p.smaller {
+  font-size: 14px;
+  margin-bottom: 0em !important;
+  text-align: center;
+}
 
 .documents .clipboard i {
   font-size:3em;
@@ -4292,13 +4297,13 @@ border-radius: 0rem;
 
 .documents .clipboard i.abso {
   position: absolute;
-      font-size: 1.3em;
-      margin: 0em !important;
-      background: white;
-      right: -6px;
-      bottom: 3px;
-      padding: 0em;
-      border-radius: 50%;
+  font-size: 1.3em;
+  margin: 0em !important;
+  background: white;
+  right: -6px;
+  bottom: 3px;
+  padding: 0em;
+  border-radius: 50%;
 }
 
 .documents .cube p.small.blue {
