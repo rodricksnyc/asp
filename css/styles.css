@@ -4196,6 +4196,62 @@ ul.precision label.blue {
   margin-left:5px;
 }
 
+.documents .fal.fa-search.searchBar {
+    position: absolute;
+    left: .6em;
+    top: .5em;
+    z-index: 3;
+    color: #07477d;
+    font-weight: 500;
+}
+
+.documents  .viewOptions {
+      min-width: 120px;
+}
+
+.documents .evenSmaller.black {
+  margin-right:1em;
+  font-size:14px;
+}
+
+.documents  .sortOptions {
+      min-width: 150px;
+}
+
+.documents hr {
+  margin-top:0rem
+}
+
+.w80.documents {
+  padding: 1rem 1rem 3rem 1rem;
+}
+
+.documents .whiteBubble .small {
+    font-size: 15px !important;
+    font-weight: 300 !important;
+    margin:0em
+
+  }
+.documents .whiteBubble .report i {
+  margin: 3px 5px 3px 0px;
+}
+
+.report {
+  border-bottom: 1px dotted lightgray;
+  padding: .6em 0em;
+}
+
+.documents .whiteBubble {
+  min-height:0em;
+}
+
+.documents .current {
+  background-color: #faede9;
+color: #c7482e;
+padding: 5px 10px;
+border-radius: 6px;
+}
+
 
 /* footer classes */
 
