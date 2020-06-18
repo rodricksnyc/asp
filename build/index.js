@@ -47,8 +47,22 @@ $(document).ready(function () {
     $('.option[data-type="topics"]').removeClass('hidden').show();
     $('.option[data-type="data"]').addClass('hidden').show();
     $('.option[data-type="stats"]').addClass('hidden').show();
-  } //hover for dropdown items in main navbar
+  }
 
+  $('.views[data-type="horizontal"]').removeClass('hidden').show();
+  $('.views[data-type="blocks"]').addClass('hidden').show().css('display', 'flex');
+  $('.viewType').click(function (evt) {
+    evt.preventDefault();
+    evt.stopPropagation();
+    var viewType = $(this),
+        allViewItems = $('.viewType'),
+        currentClass = 'current';
+    allViewItems.removeClass(currentClass);
+    viewType.addClass(currentClass);
+    var type = $(this).data('type');
+    $('.views').addClass('hidden');
+    $('.views[data-type="' + type + '"]').removeClass('hidden');
+  }); //hover for dropdown items in main navbar
 
   var $dropdown = $(".navbar-nav .nav-item");
   var $dropdownToggle = $(".dropdown-toggle");
