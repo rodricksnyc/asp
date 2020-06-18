@@ -4223,6 +4223,7 @@ ul.precision label.blue {
 }
 
 .w80.documents {
+  max-width:90%;
   padding: 1rem 1rem 6rem 1rem;
   position: relative;
 }
@@ -4273,7 +4274,36 @@ border-radius: 0rem;
 }
 
 
+.cube {
+  background: white;
+  padding:.7em;
+  /* min-height:8em;
+  min-width:9em; */
+  border-radius: .2rem;
+  box-shadow: 0 0 8px 1px #9FAFBD;
+  margin:1em 0em;
+  position: relative;
+}
 
+.documents .clipboard i {
+  font-size:3em;
+  margin:.1em 0em .2em 0em;
+}
+
+.documents .clipboard i.abso {
+  position: absolute;
+      font-size: 1.3em;
+      margin: 0em !important;
+      background: white;
+      right: -6px;
+      bottom: 3px;
+      padding: 0em;
+      border-radius: 50%;
+}
+
+.documents .cube p.small.blue {
+  font-size:16px;
+}
 
 .reports {
   margin-top:2em;
