@@ -1227,14 +1227,21 @@ margin:0em .3em 0em 0em;
   font-weight: 600 !important;
 }
 
-/* .grayLayer {
-background: rgb(115,115,115);
-background: linear-gradient(90deg, rgba(115,115,115,0.6615021008403361) 0%, rgba(115,115,115,0.6615021008403361) 100%);
-position: absolute;
-width: 100%;
-height: auto;
-bottom: 0%;
-} */
+.whiteLayer {
+  background: rgb(255,255,255);
+  opacity:.76;
+  /* background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5480567226890756) 0%, rgba(255,255,255,1) 100%); */
+  /* background: rgb(115,115,115);
+  background: linear-gradient(90deg, rgba(115,115,115,0.6615021008403361) 0%, rgba(115,115,115,0.6615021008403361) 100%); */
+  position: absolute;
+  width: 100%;
+  height: auto;
+  bottom: 0;
+  top:0;
+  left:0;
+  border-radius: 1rem;
+  z-index:9999
+}
 
 .appendOptions {
   background: white;
@@ -4100,7 +4107,7 @@ ul.precision label.blue {
 .tTestSearch {
 
   width: 100%;
-  padding: .2em 7em .2em 2em;
+  padding: .2em 2em .2em 2em;
   font-size: 15px;
   position: relative;
   border-radius: 1rem;
@@ -4527,6 +4534,14 @@ ul.precision label.blue {
 
 .mb2 {
   margin-bottom:2em;
+}
+
+.reports label{
+  width:100%;
+}
+
+.documents label{
+  width:100%;
 }
 
 .reportBubbles .orangeBubble {

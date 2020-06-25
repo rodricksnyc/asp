@@ -1044,7 +1044,7 @@
 					</div>
 					<div class="row">
 						<div class="col-lg-6 col-md-6">
-						<p class="text-center mostSmall orange"><i class="far fa-window-restore orange"></i>&nbsp;Build your table frame (when to use categorical and when to use continuous)</p>
+							<p class="text-center mostSmall orange"><i class="far fa-window-restore orange"></i>&nbsp;Build your table frame (when to use categorical and when to use continuous)</p>
 						</div>
 					</div>
 					<div class="row rel">
@@ -3243,127 +3243,127 @@
 														</label>
 													</div>
 
-										</div>
+												</div>
 											</li>
 
 											<li class="statistical-estimates custom-control custom-checkbox">
 												<input type="checkbox" id="ratio" name="stat-analysis" value="Ratio" class="custom-control-input">
 												<label class="custom-control-label" for="ratio">Ratio</label>
 
-									</li>
+											</li>
 
-								</ul>
-							</fieldset>
-						</div>
-					</div>
+										</ul>
+									</fieldset>
+								</div>
+							</div>
 
-					<div class="col-xl-4 col-lg-6 col-md-4 col-sm-6 col-xs-12">
-						<div class="whiteBubble text-left">
-							<fieldset>
-								<legend class="blue">Missing Values&nbsp;<i class="fas fa-info-circle orange" data-toggle="tooltip" data-container="body" data-placement="right" data-html="true" title="<p class='smallest'>Missing Values. Indicate whether to include missing values in your query results.</p>"></i></legend>
-								<ul class="missing">
-									<li class="wrapper">
-										<input id="yes" name="missing" type="radio" value="no-issues">
-										<label for="yes" class="blue">Yes</label>
-									</li>
-									<li class="wrapper">
-										<input id="no" name="missing" type="radio" value="no-issues">
-										<label for="no" class="blue">No</label>
-									</li>
-								</ul>
+							<div class="col-xl-4 col-lg-6 col-md-4 col-sm-6 col-xs-12">
+								<div class="whiteBubble text-left">
+									<fieldset>
+										<legend class="blue">Missing Values&nbsp;<i class="fas fa-info-circle orange" data-toggle="tooltip" data-container="body" data-placement="right" data-html="true" title="<p class='smallest'>Missing Values. Indicate whether to include missing values in your query results.</p>"></i></legend>
+										<ul class="missing">
+											<li class="wrapper">
+												<input id="yes" name="missing" type="radio" value="no-issues">
+												<label for="yes" class="blue">Yes</label>
+											</li>
+											<li class="wrapper">
+												<input id="no" name="missing" type="radio" value="no-issues">
+												<label for="no" class="blue">No</label>
+											</li>
+										</ul>
 
-								<legend class="blue text-left">Precision Measures&nbsp;<i class="fas fa-info-circle orange" data-toggle="tooltip" data-container="body" data-placement="right" data-html="true" title="<p class='smallest'>Confidence Interval. The confidence interval is a range of values (displayed as a lower and upper bound) that, with a specified level of confidence, contains an unknown true population value of the parameter of interest. The confidence level determines the percentage of the time, on average, that the true value of the parameter will be contained in the interval. The higher the confidence level, the wider the interval. For confidence intervals relating to cell, row or column percentages, the Wilson Interval is used. For all others, the standard interval (Wald) is used.</p><p class='smallest'>Standard Error. The standard error is a measure of the error in an estimate due to random variation inherent in the sample. It is an estimate of the extent to which a statistic calculated from a sample differs from the corresponding unknown population value. The smaller the standard error, the better the sample statistic is as an estimate of the population characteristic. When the associated estimate is a percentage, the standard error is expressed as a percentage.</p><p class='smallest'>Relative Standard Error (RSE). The relative standard error (also known as the coefficient of variation) is a measure of the error in an estimate relative to the estimate itself. It is computed as the estimate’s standard error divided by the estimate, expressed as a percentage. A lower relative standard error indicates a more precise measurement.</p>"></i>
-								</legend>
+										<legend class="blue text-left">Precision Measures&nbsp;<i class="fas fa-info-circle orange" data-toggle="tooltip" data-container="body" data-placement="right" data-html="true" title="<p class='smallest'>Confidence Interval. The confidence interval is a range of values (displayed as a lower and upper bound) that, with a specified level of confidence, contains an unknown true population value of the parameter of interest. The confidence level determines the percentage of the time, on average, that the true value of the parameter will be contained in the interval. The higher the confidence level, the wider the interval. For confidence intervals relating to cell, row or column percentages, the Wilson Interval is used. For all others, the standard interval (Wald) is used.</p><p class='smallest'>Standard Error. The standard error is a measure of the error in an estimate due to random variation inherent in the sample. It is an estimate of the extent to which a statistic calculated from a sample differs from the corresponding unknown population value. The smaller the standard error, the better the sample statistic is as an estimate of the population characteristic. When the associated estimate is a percentage, the standard error is expressed as a percentage.</p><p class='smallest'>Relative Standard Error (RSE). The relative standard error (also known as the coefficient of variation) is a measure of the error in an estimate relative to the estimate itself. It is computed as the estimate’s standard error divided by the estimate, expressed as a percentage. A lower relative standard error indicates a more precise measurement.</p>"></i>
+										</legend>
 
-								<p class="smallest">(check all that apply)</p>
-								<ul class="statistical-estimates">
+										<p class="smallest">(check all that apply)</p>
+										<ul class="statistical-estimates">
 
-									<li class="statistical-estimates custom-control custom-checkbox">
-										<input type="checkbox" name="precision" value="Confidence Interval" class="custom-control-input" id="Confidence">
-										<label class="custom-control-label" for="Confidence">Confidence Interval</label>
-										<!-- <ul class="precision custom-control-inline">
+											<li class="statistical-estimates custom-control custom-checkbox">
+												<input type="checkbox" name="precision" value="Confidence Interval" class="custom-control-input" id="Confidence">
+												<label class="custom-control-label" for="Confidence">Confidence Interval</label>
+												<!-- <ul class="precision custom-control-inline">
 
-											<li class="approach wrapper">
+												<li class="approach wrapper">
 												<input id="standard" name="approach" type="radio" value="Standard">
 												<label for="standard" class="blue">Standard</label>
 											</li>
 											<li class="wrapper">
-												<input id="wilson" name="approach" type="radio" value="Wilson">
-												<label for="wilson" class="blue">Wilson</label>
-											</li>
-										</ul> -->
-										<ul class="precision custom-control-inline">
-											<li class="wrapper">
-												<input id="90%" name="confidence" type="radio" value="90%">
-												<label for="90%" class="blue">90%</label>
-											</li>
-											<li class="wrapper">
-												<input id="95%" name="confidence" type="radio" value="95%">
-												<label for="95%" class="blue">95%</label>
-											</li>
-											<li class="wrapper">
-												<input id="99%" name="confidence" type="radio" value="99%">
-												<label for="99%" class="blue">99%</label>
-											</li>
-										</ul>
-									</li>
-									<li class="statistical-estimates custom-control custom-checkbox">
-										<input type="checkbox" name="precision" value="Standard Error" class="custom-control-input" id="StandardError">
-										<label class="custom-control-label" for="StandardError">Standard Error</label>
-									</li>
-									<li class="statistical-estimates custom-control custom-checkbox">
-										<input type="checkbox" name="precision" value="Relative Standard Error" class="custom-control-input" id="RelativeStandardError">
-										<label class="custom-control-label" for="RelativeStandardError">Relative Standard Error (RSE)</label>
-									</li>
-								</ul>
-							</fieldset>
-						</div>
-					</div>
-					<div class="col-xl-4 col-lg-6 col-md-4 col-sm-6 col-xs-12">
-						<div class="whiteBubble text-left">
-							<legend class="blue">Statistical Tests&nbsp;<i class="fas fa-info-circle orange" data-toggle="tooltip" data-container="body" data-placement="right" data-html="true" title="<p class='smallest'>Chi-Square. Chi-square tests are used to determine if a distribution of observed frequencies differs significantly from what would be expected by chance. In a two-way table, for example, the chi-square test tests whether the row and column variables are independent. The larger the chi-square statistic, the more likely it is that the row and column variables are related to one another. The RS2 approach computes the Rao-Scott statistic using a design effect adjustment to the Pearson chi-square, and the RS3 approach computes the Rao-Scott statistic using the Satterthwaite adjustment.</p><p class='smallest'>t-test. t-tests are used to determine whether the difference between two estimates is what would be expected by chance. The larger the absolute value of the t-statistic, the more likely it is that the difference is significant. t-tests are available in 1-way or 2-way tables to test the difference between two means, cell percentages, row percentages and column percentages. To specify a t-test, only one specific type of estimate (mean, row percentage, etc.) can be specified at a time</p>"></i></legend>
-							<p class="smallest">(check all that apply)</p>
-							<ul class="statistical-estimates borderBottomBlue">
-
-								<li class="statistical-estimates custom-control custom-checkbox">
-									<input type="checkbox" name="chi" value="Chi-Square" class="custom-control-input" id="Chi-Square">
-									<label class="custom-control-label" for="Chi-Square">Chi-Square (RS3)</label>
+											<input id="wilson" name="approach" type="radio" value="Wilson">
+											<label for="wilson" class="blue">Wilson</label>
+										</li>
+									</ul> -->
+									<ul class="precision custom-control-inline">
+										<li class="wrapper">
+											<input id="90%" name="confidence" type="radio" value="90%">
+											<label for="90%" class="blue">90%</label>
+										</li>
+										<li class="wrapper">
+											<input id="95%" name="confidence" type="radio" value="95%">
+											<label for="95%" class="blue">95%</label>
+										</li>
+										<li class="wrapper">
+											<input id="99%" name="confidence" type="radio" value="99%">
+											<label for="99%" class="blue">99%</label>
+										</li>
+									</ul>
 								</li>
 								<li class="statistical-estimates custom-control custom-checkbox">
-									<input type="button" data-toggle="modal" data-target="#addTtest" id="tTest" type="checkbox" class="addTest custom-control-input" id="Chi-Square">
-									<label class="custom-control-label" for="tTest">Add a t-test</label>
+									<input type="checkbox" name="precision" value="Standard Error" class="custom-control-input" id="StandardError">
+									<label class="custom-control-label" for="StandardError">Standard Error</label>
 								</li>
-								<br>
+								<li class="statistical-estimates custom-control custom-checkbox">
+									<input type="checkbox" name="precision" value="Relative Standard Error" class="custom-control-input" id="RelativeStandardError">
+									<label class="custom-control-label" for="RelativeStandardError">Relative Standard Error (RSE)</label>
+								</li>
 							</ul>
-							<!-- <div type="button" data-toggle="modal" data-target="#addTtest" class="orangeBubble d-flex justify-content-center align-items-center addTest"><i class="far fa-plus"></i>&nbsp;Add a t-test</div> -->
-						</div>
+						</fieldset>
 					</div>
+				</div>
+				<div class="col-xl-4 col-lg-6 col-md-4 col-sm-6 col-xs-12">
+					<div class="whiteBubble text-left">
+						<legend class="blue">Statistical Tests&nbsp;<i class="fas fa-info-circle orange" data-toggle="tooltip" data-container="body" data-placement="right" data-html="true" title="<p class='smallest'>Chi-Square. Chi-square tests are used to determine if a distribution of observed frequencies differs significantly from what would be expected by chance. In a two-way table, for example, the chi-square test tests whether the row and column variables are independent. The larger the chi-square statistic, the more likely it is that the row and column variables are related to one another. The RS2 approach computes the Rao-Scott statistic using a design effect adjustment to the Pearson chi-square, and the RS3 approach computes the Rao-Scott statistic using the Satterthwaite adjustment.</p><p class='smallest'>t-test. t-tests are used to determine whether the difference between two estimates is what would be expected by chance. The larger the absolute value of the t-statistic, the more likely it is that the difference is significant. t-tests are available in 1-way or 2-way tables to test the difference between two means, cell percentages, row percentages and column percentages. To specify a t-test, only one specific type of estimate (mean, row percentage, etc.) can be specified at a time</p>"></i></legend>
+						<p class="smallest">(check all that apply)</p>
+						<ul class="statistical-estimates borderBottomBlue">
 
+							<li class="statistical-estimates custom-control custom-checkbox">
+								<input type="checkbox" name="chi" value="Chi-Square" class="custom-control-input" id="Chi-Square">
+								<label class="custom-control-label" for="Chi-Square">Chi-Square (RS3)</label>
+							</li>
+							<li class="statistical-estimates custom-control custom-checkbox">
+								<input type="button" data-toggle="modal" data-target="#addTtest" id="tTest" type="checkbox" class="addTest custom-control-input" id="Chi-Square">
+								<label class="custom-control-label" for="tTest">Add a t-test</label>
+							</li>
+							<br>
+						</ul>
+						<!-- <div type="button" data-toggle="modal" data-target="#addTtest" class="orangeBubble d-flex justify-content-center align-items-center addTest"><i class="far fa-plus"></i>&nbsp;Add a t-test</div> -->
+					</div>
 				</div>
 
 			</div>
 
+		</div>
 
 
-			<div class="option" data-type="data">
 
-				<p>SUBSET DATA</p>
+		<div class="option" data-type="data">
 
-			</div>
+			<p>SUBSET DATA</p>
 
-			<div class="option" data-type="marks">
+		</div>
 
-				<p>BENCHMARKS</p>
+		<div class="option" data-type="marks">
 
-			</div>
-
-
+			<p>BENCHMARKS</p>
 
 		</div>
 
 
 
 	</div>
+
+
+
+</div>
 
 </div>
 
@@ -3818,7 +3818,7 @@
 		<div><p class="orange smallest"><i class="fal fa-undo" tabindex="0" role="button"></i>&nbsp;Clear</p></div>
 	</div>
 	<div class="appendOptions">
-		<div class="grayLayer"></div>
+
 
 		<div class="lightBlueBack">
 
@@ -3833,7 +3833,9 @@
 
 		<div class="topics">
 
+
 			<div class="container">
+				<div class="whiteLayer"></div>
 				<div class="row">
 					<p><i class="far fa-bars"></i>&nbsp;Row Topic&nbsp;<i class="fal fa-info-circle"></i> <span class="evenSmaller">no limit</span></p>
 					<div id="rowTopic" data-draggable="target">
@@ -3864,9 +3866,11 @@
 		</div>
 
 
-		<!-- <div class="grayLayer"> -->
+		<!-- <div class="whiteLayer"> -->
 		<div class="analysis-topic">
+
 			<div class="container">
+					<div class="whiteLayer"></div>
 				<div class="row" id="analysisTopic" data-draggable="target2">
 					<p><i class="fal fa-chart-bar"></i>&nbsp;Analysis Topic&nbsp;<i class="fal fa-info-circle"></i> <span class="evenSmaller">limit 1</span></p>
 				</div>
@@ -3874,9 +3878,11 @@
 		</div>
 		<!-- </div> -->
 
-		<!-- <div class="grayLayer"> -->
+		<!-- <div class="whiteLayer"> -->
 		<div class="stats">
+
 			<div class="container">
+				<div class="whiteLayer"></div>
 				<div class="row">
 					<p>Statistical Output&nbsp;&nbsp;<i class="fas fa-pencil-alt orange editOutputs"></i></p>
 
@@ -3889,9 +3895,11 @@
 
 		<p class="text-center mostSmall">OPTIONAL FILTERS</p>
 
-		<!-- <div class="grayLayer"> -->
+		<!-- <div class="whiteLayer"> -->
 		<div class="data">
+
 			<div class="container">
+							<div class="whiteLayer"></div>
 				<div class="row">
 					<p>Subset Data</p>
 
@@ -3900,9 +3908,11 @@
 		</div>
 		<!-- </div> -->
 
-		<!-- <div class="grayLayer"> -->
+		<!-- <div class="whiteLayer"> -->
 		<div class="benchmarks">
+
 			<div class="container">
+							<div class="whiteLayer"></div>
 				<div class="row">
 					<p>Benchmarks</p>
 				</div>
