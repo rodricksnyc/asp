@@ -53,6 +53,11 @@ body{
   padding-right:35px;
 }
 
+.initial .modal-backdrop {
+
+    background-color: #b5b5b5;
+}
+
 /* #myModal {
 z-index: 99999999999;
 } */
