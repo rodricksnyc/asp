@@ -748,7 +748,7 @@ $(document).ready(function () {
         addCustomControl: '.addCategories li .custom-control',
         modalList: '.addCategories li',
         modal: '.categoriesModal'
-      }, _defineProperty(_classes, "reorderOptions", '.reorderOptions'), _defineProperty(_classes, "add", '.addCategories'), _defineProperty(_classes, "closeModal", '.closeCategoryModal'), _defineProperty(_classes, "save", '.save'), _defineProperty(_classes, "expand", '.orangeCircle'), _defineProperty(_classes, "plusRow", '.plusRow'), _defineProperty(_classes, "mergedCheckbox", '.merged .custom-checkbox'), _defineProperty(_classes, "mergedCheck", ".merged input:checkbox"), _defineProperty(_classes, "activeLi", 'li .reorderActive'), _defineProperty(_classes, "separate", '.separate'), _defineProperty(_classes, "merged", '.merged'), _defineProperty(_classes, "groupedCategories", '.groupedCategories'), _defineProperty(_classes, "rowLevel", '#rowTopic .levels'), _defineProperty(_classes, "columnLevel", '#columnTopic .levels'), _defineProperty(_classes, "layerLevel", '#layerTopic .levels'), _defineProperty(_classes, "analysisLevel", '#analysisTopic .levels'), _defineProperty(_classes, "addCategoriesUL", '.addCategories .categories'), _classes)
+      }, _defineProperty(_classes, "reorderOptions", '.reorderOptions'), _defineProperty(_classes, "add", '.addCategories'), _defineProperty(_classes, "closeModal", '.closeCategoryModal'), _defineProperty(_classes, "save", '.save'), _defineProperty(_classes, "expand", '.appendActions .orangeCircle'), _defineProperty(_classes, "plusRow", '.plusRow'), _defineProperty(_classes, "mergedCheckbox", '.merged .custom-checkbox'), _defineProperty(_classes, "mergedCheck", ".merged input:checkbox"), _defineProperty(_classes, "activeLi", 'li .reorderActive'), _defineProperty(_classes, "separate", '.separate'), _defineProperty(_classes, "merged", '.merged'), _defineProperty(_classes, "groupedCategories", '.groupedCategories'), _defineProperty(_classes, "rowLevel", '#rowTopic .levels'), _defineProperty(_classes, "columnLevel", '#columnTopic .levels'), _defineProperty(_classes, "layerLevel", '#layerTopic .levels'), _defineProperty(_classes, "analysisLevel", '#analysisTopic .levels'), _defineProperty(_classes, "addCategoriesUL", '.addCategories .categories'), _classes)
     },
     modalFunc: function modalFunc() {
       var modal = pageModule.config.classes.modal;
@@ -1668,6 +1668,19 @@ $(document).ready(function () {
       $("input[name='stat-analysis'][value=" + $(this).attr("data-stat") + "]").prop("checked", false);
       $(this).remove();
     });
+  }); //reports
+
+  $('.cube').on('mouseenter', function () {
+    if ($('.orangeCircle', this).length > 0) {
+      $(this).find('.reportX').html("Report Group");
+    }
+
+    if ($('.orangeCircle', this).length == 0) {
+      $(this).find('.reportX').html("Report X");
+    }
+  });
+  $('.cube').on('mouseleave', function () {
+    $(this).find('.reportX').html("Report X");
   });
 
   var changeOverlayHeight = function changeOverlayHeight() {

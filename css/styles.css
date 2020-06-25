@@ -4223,7 +4223,7 @@ ul.precision label.blue {
 }
 
 .w80.documents {
-  max-width:90%;
+  max-width:96%;
   padding: 1rem 1rem 6rem 1rem;
   position: relative;
 }
@@ -4311,6 +4311,73 @@ ul.precision label.blue {
   font-size:16px;
 }
 
+.documents .orangeCircle {
+  position: absolute;
+  height: 21px;
+  width: 21px;
+  border-radius: 50%;
+  background: #c7482e;
+  margin-left: .2em;
+  display: none;
+  bottom: -61px;
+}
+
+.documents .orangeCircle .far.fa-expand-alt {
+  position: absolute;
+  color: white;
+  font-size: 13px;
+  padding: 3px 5px;
+}
+
+.cube:hover  .orangeCircle {
+  display: block;
+
+}
+.cube:hover {
+  background-color: #faede9;
+}
+
+.cube:hover  i.abso {
+  background: #faede9 !important;
+}
+
+.cube:hover p {
+  color: #c7482e;
+  font-weight:500;
+}
+
+.cube:hover i {
+  color: #c7482e;
+}
+
+.documents .hiddenModal {
+  position: absolute;
+  background-color: #faede9;
+  z-index:9;
+  width: max-content;
+  height: auto;
+  padding:1em;
+  top:0;
+  left:100%;
+}
+
+.documents .hiddenModal:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-right: 20px solid #faede9;
+  border-bottom: 15px solid transparent;
+  left: -19px;
+  top: calc(50% - 15px);
+
+}
+
+.hiddenModal .cube {
+  min-width:9em;
+}
+
 .reports {
   margin-top:2em;
 }
@@ -4318,7 +4385,73 @@ ul.precision label.blue {
 .reports .whiteBubble.first {
   margin-top:0em;
   border-radius: 0rem;
+  padding:0em;
 }
+
+.reports .active {
+  border-bottom: none;
+}
+
+.reports .nav-item {
+  width:50%;
+}
+
+.reports .nav-item.active {
+  width:50%;
+  background-color: #07477d;
+  color: white !important;
+}
+.reports .nav-item.active .nav-link {
+  color: white !important;
+}
+
+.reports .nav-tabs .nav-link.active {
+  background-color: #07477d;
+  color: white !important;
+  border-color:transparent !important;
+  width: 100%;
+  text-align: center;
+  border-radius: 0px;
+}
+
+.reports .nav-link.active {
+  border-color:transparent !important
+}
+
+.reports .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+  border-color:transparent !important
+}
+
+
+.reports .nav-link {
+  background: #deedf8;
+  color:#07477d;
+  width: 100%;
+  text-align: center;
+  border-radius: 0px;
+}
+
+.reports .nav-item:hover .nav-link {
+  color: #07477d !important;
+}
+
+.reports .nav-item:hover .nav-link.active {
+  color: white !important;
+}
+
+.reports .fal.fa-search.searchBar {
+    position: absolute;
+    left: .6em;
+    top: .5em;
+    z-index: 3;
+    color: #07477d;
+    font-weight: 500;
+}
+
+.reports .tab-content {
+  padding:1em;
+}
+
 
 /* footer classes */
 

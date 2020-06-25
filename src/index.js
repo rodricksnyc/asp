@@ -1179,7 +1179,7 @@ $(document).ready(function () {
         add: '.addCategories',
         closeModal : '.closeCategoryModal',
         save: '.save',
-        expand: '.orangeCircle',
+        expand: '.appendActions .orangeCircle',
         plusRow: '.plusRow',
         mergedCheckbox: '.merged .custom-checkbox',
         mergedCheck : ".merged input:checkbox",
@@ -2672,8 +2672,21 @@ $(document).ready(function () {
   });
 
 
+//reports
 
+$('.cube').on('mouseenter', function() {
+  if ($('.orangeCircle', this).length > 0) {
 
+  $(this).find('.reportX').html("Report Group")
+}
+if ($('.orangeCircle', this).length == 0) {
+  $(this).find('.reportX').html("Report X")
+}
+})
+
+$('.cube').on('mouseleave', function() {
+  $(this).find('.reportX').html("Report X")
+})
 
 
 
