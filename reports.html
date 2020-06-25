@@ -796,29 +796,27 @@
 							<p class="blue strong">Year</p>
 							<div class="btn-group btn-group-toggle" data-toggle="buttons">
 								<label class="btn btn-secondary">
-									<input type="radio" name="options" id="html" autocomplete="off">HTML
+									<input type="radio" name="options" id="2013" autocomplete="off">2013
 								</label>
 								<label class="btn btn-secondary">
-									<input type="radio" name="options" id="pdf" autocomplete="off">PDF
+									<input type="radio" name="options" id="2014" autocomplete="off">2014
 								</label>
 								<label class="btn btn-secondary">
-									<input type="radio" name="options" id="excel" autocomplete="off">Excel
+									<input type="radio" name="options" id="all" autocomplete="off">All
 								</label>
-								<label class="btn btn-secondary">
-									<input type="radio" name="options" id="rtf" autocomplete="off">RTF
-								</label>
+
 							</div>
-								<p class="blue strong">State or Territory</p>
-								<div class="rel mb2">
-									<fieldset>
-										<legend class="hidden"></legend>
-										<label>
-											<i class="fal fa-search searchBar"></i>
-											<input type="text" placeholder="Search or select" class="tTestSearch largerSearch searchTxt-default">
-										</label>
-									</fieldset>
-								</div>
-									<h5 class="strong black text-center">Demographic Variable(s)</h5>
+							<p class="blue strong">State or Territory</p>
+							<div class="rel mb2">
+								<fieldset>
+									<legend class="hidden"></legend>
+									<label>
+										<i class="fal fa-search searchBar"></i>
+										<input type="text" placeholder="Search or select" class="tTestSearch largerSearch searchTxt-default">
+									</label>
+								</fieldset>
+							</div>
+							<h5 class="strong black text-center">Demographic Variable(s)</h5>
 
 						</div>
 						<div class="whiteBubble">
@@ -883,44 +881,116 @@
 					<div class="col-lg-6 col-md-12 col-sm-12">
 						<h5 class="strong black text-center">Survey Variables</h5>
 						<div class="whiteBubble">
+							<div class="d-flex justify-content-end">
+								<p class="orange smallest">
+									<i class="fal fa-undo orange" tabindex="0" role="button"></i>&nbsp;Clear</p>
 
+								</div>
+
+								<br>
+
+								<ul>
+
+									<li class="custom-control custom-checkbox">
+										<input type="checkbox" name="survey" value="Include All" class="custom-control-input" id="includeAll">
+										<label class="custom-control-label" for="includeAll">Include All</label>
+									</li>
+									<li class="custom-control custom-checkbox">
+										<input type="checkbox" name="survey" value="cancer" class="custom-control-input" id="cancer">
+										<label class="custom-control-label" for="cancer">Age diagnosed with cancer (2014 only)</label>
+									</li>
+									<li class="custom-control custom-checkbox">
+										<input type="checkbox" name="survey" value="sleep" class="custom-control-input" id="sleep">
+										<label class="custom-control-label" for="sleep">Amount of sleep in 24 hours</label>
+									</li>
+
+									<li class="custom-control custom-checkbox">
+										<input type="checkbox" name="survey" value="COPD" class="custom-control-input" id="COPD">
+										<label class="custom-control-label" for="COPD">COPD</label>
+									</li>
+
+									<li class="custom-control custom-checkbox">
+										<input type="checkbox" name="survey" value="Exercise past 30 days" class="custom-control-input" id="exercise">
+										<label class="custom-control-label" for="exercise">Exercise past 30 days</label>
+									</li>
+									<li class="custom-control custom-checkbox">
+										<input type="checkbox" name="survey" value="Had heart attack" class="custom-control-input" id="heart-attack">
+										<label class="custom-control-label" for="heart-attack">Had heart attack</label>
+									</li>
+									<li class="custom-control custom-checkbox">
+										<input type="checkbox" name="survey" value="How long since last smoked" class="custom-control-input" id="smoking">
+										<label class="custom-control-label" for="smoking">How long since last smoked</label>
+									</li>
+									<li class="custom-control custom-checkbox">
+										<input type="checkbox" name="survey" value="Skin cancer" class="custom-control-input" id="skinCancer">
+										<label class="custom-control-label" for="skinCancer">Skin cancer</label>
+									</li>
+									<li class="custom-control custom-checkbox">
+										<input type="checkbox" name="survey" value="What type of cancer (2014 only)" class="custom-control-input" id="cancer-type">
+										<label class="custom-control-label" for="cancer-type">What type of cancer (2014 only)</label>
+									</li>
+									<li class="custom-control custom-checkbox">
+										<input type="checkbox" name="survey" value="Number of times doctor in past 12 months" class="custom-control-input" id="doctor-visit">
+										<label class="custom-control-label" for="doctor-type">Number of times doctor in past 12 months</label>
+									</li>
+									<li class="custom-control custom-checkbox">
+										<input type="checkbox" name="survey" value="Injured in fall (2014 only)" class="custom-control-input" id="injured">
+										<label class="custom-control-label" for="injured">Injured in fall (2014 only)</label>
+									</li>
+									<li class="custom-control custom-checkbox">
+										<input type="checkbox" name="survey" value="Primary source health coverage (2014 only)" class="custom-control-input" id="coverage">
+										<label class="custom-control-label" for="coverage">Primary source health coverage (2014 only)</label>
+									</li>
+
+								</ul>
+
+							</div>
 						</div>
 					</div>
-				</div>
 
+				</div>
 			</div>
+
+			<div class="row rel">
+				<div class="col-xl-11 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="d-flex justify-content-end reportBubbles">
+						<a href="#"><div class="orangeBubble">View Default Report</div></a>
+						<a href="#"><div class="orangeBubble">Report View Modified Report</div></a>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="backdropShadow"></div>
 		</div>
 
-		<div class="backdropShadow"></div>
-	</div>
+		<footer>
+			<div class="footer-wrapper">
 
-	<footer>
-		<div class="footer-wrapper">
-
-			<a href="https://www.westat.com" target="_blank" title="Visit website">
-				<img src="images/footer_westat_logo.svg" alt="Westat Home page" title="Westat" class="img-wes-logo"></a> <p class="p-wes-title t-white">An Employee-Owned Research Corporation<sup class="t-white">®</sup></p></div>
-			</footer>
+				<a href="https://www.westat.com" target="_blank" title="Visit website">
+					<img src="images/footer_westat_logo.svg" alt="Westat Home page" title="Westat" class="img-wes-logo"></a> <p class="p-wes-title t-white">An Employee-Owned Research Corporation<sup class="t-white">®</sup></p></div>
+				</footer>
 
 
-			<script
-			src="https://code.jquery.com/jquery-3.4.1.min.js"
-			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-			crossorigin="anonymous"></script>
+				<script
+				src="https://code.jquery.com/jquery-3.4.1.min.js"
+				integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+				crossorigin="anonymous"></script>
 
-			<script
-			src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
-			integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
-			crossorigin="anonymous"></script>
+				<script
+				src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+				integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+				crossorigin="anonymous"></script>
 
-			<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
-			<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-			<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-			<script src="js/bootstrap.js"></script> -->
+				<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+				<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+				<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+				<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+				<script src="js/bootstrap.js"></script> -->
 
 
 
-			<script type="text/javascript" src="build/index.js"></script>
+				<script type="text/javascript" src="build/index.js"></script>
 
-		</body>
-		</html>
+			</body>
+			</html>

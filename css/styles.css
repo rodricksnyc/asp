@@ -1228,12 +1228,12 @@ margin:0em .3em 0em 0em;
 }
 
 /* .grayLayer {
-  background: rgb(115,115,115);
-  background: linear-gradient(90deg, rgba(115,115,115,0.6615021008403361) 0%, rgba(115,115,115,0.6615021008403361) 100%);
-  position: absolute;
-  width: 100%;
-  height: auto;
-  bottom: 0%;
+background: rgb(115,115,115);
+background: linear-gradient(90deg, rgba(115,115,115,0.6615021008403361) 0%, rgba(115,115,115,0.6615021008403361) 100%);
+position: absolute;
+width: 100%;
+height: auto;
+bottom: 0%;
 } */
 
 .appendOptions {
@@ -4099,13 +4099,13 @@ ul.precision label.blue {
 
 .tTestSearch {
 
-      width: 100%;
-      padding: .2em 7em .2em 2em;
-      font-size: 15px;
-      position: relative;
-      border-radius: 1rem;
-      border: 1px solid black;
-      min-width: 250px;
+  width: 100%;
+  padding: .2em 7em .2em 2em;
+  font-size: 15px;
+  position: relative;
+  border-radius: 1rem;
+  border: 1px solid black;
+  min-width: 250px;
 }
 
 #addTtest .fal.fa-search.searchBar {
@@ -4380,10 +4380,27 @@ ul.precision label.blue {
   margin-top:2em;
 }
 
+.reports .whiteBubble {
+  min-height:0em;
+}
+
+.reports .whiteBubble .orange.smallest  {
+  font-weight:600;
+  color:#c7482e
+}
+.reports .whiteBubble .orange.smallest i {
+  font-weight:600;
+}
+
 .reports .whiteBubble.first {
   margin-top:0em;
   border-radius: 0rem;
   padding:0em;
+}
+
+.reports .whiteBubble.first ul {
+  margin-left: 0em;
+  padding-left: 0em;
 }
 
 .reports .active {
@@ -4438,12 +4455,12 @@ ul.precision label.blue {
 }
 
 .reports .fal.fa-search.searchBar {
-    position: absolute;
-    left: .6em;
-    top: .5em;
-    z-index: 3;
-    color: #07477d;
-    font-weight: 500;
+  position: absolute;
+  left: .6em;
+  top: .5em;
+  z-index: 3;
+  color: #07477d;
+  font-weight: 500;
 }
 
 .reports .tab-content {
@@ -4460,9 +4477,9 @@ ul.precision label.blue {
 }
 
 .reportList p.smaller {
-    font-size: 14px;
-    margin-bottom: 0em !important;
-    width:90%
+  font-size: 14px;
+  margin-bottom: 0em !important;
+  width:90%
 }
 
 .reportList:last-child {
@@ -4470,24 +4487,24 @@ ul.precision label.blue {
 }
 
 .reports .btn-group-toggle .btn {
-    color: black;
-    background-color: #deedf8;
-    border-color: #07477d;
-    padding: .3em 1em .1em 1em;
-    text-decoration: none;
-    width: 25%;
+  color: black;
+  background-color: #deedf8;
+  border-color: #07477d;
+  padding: .3em 1em .1em 1em;
+  text-decoration: none;
+  width: 25%;
 }
 
 .reports .btn-group {
-    background: #deedf8;
-    border-radius: 1rem;
-    width: 100%;
+  background: none;
+  border-radius: 1rem;
+  width: 100%;
 }
 
 .reports .btn-group-toggle .btn:not(:disabled):not(.disabled).active, .statistical-estimates .btn-group-toggle .btn:not(:disabled):not(.disabled):active, .statistical-estimates .show>.btn.dropdown-toggle {
-    color: #fff;
-    background-color: #127abf;
-    border-color: #127abf;
+  color: #fff;
+  background-color: #127abf;
+  border-color: #127abf;
 }
 
 .reports .p1 {
@@ -4510,6 +4527,16 @@ ul.precision label.blue {
 
 .mb2 {
   margin-bottom:2em;
+}
+
+.reportBubbles .orangeBubble {
+  background: #c7482e;
+  color: white;
+  font-size: 14px;
+  padding: .25rem .8rem;
+  border-radius: 1rem;
+  max-width: none;
+  margin: 1em 0em 1em .5em;
 }
 
 @media (max-width:1300px) {
