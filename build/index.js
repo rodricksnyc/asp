@@ -808,13 +808,21 @@ $(document).ready(function () {
         $(addCustomControl).removeClass('hidden');
 
         var emptyModal = function emptyModal() {
-          var items = $('.merged').find('input').parent().parent();
-          $(horizontal).empty().append(original);
-          $(add).empty();
-          $(button).removeClass('brightBlue');
-          $(words).html('Select to group');
-          $('.addCategories .categories').append(items);
-          $('.merged').remove();
+          if ($(categoryLi, this).hasClass('newClass')) {
+            console.log('yes');
+            $('.addCategories input[type="checkbox"]').prop('checked', false);
+            $(horizontal).empty().append(categoryLi);
+            $(add).empty();
+          } else {
+            console.log('no');
+            var items = $('.merged').find('input').parent().parent();
+            $(horizontal).empty().append(original);
+            $(add).empty();
+            $(button).removeClass('brightBlue');
+            $(words).html('Select to group');
+            $('.addCategories .categories').append(items);
+            $('.merged').remove();
+          }
         };
 
         $(closeModal).keypress(emptyModal).click(emptyModal);
@@ -822,6 +830,7 @@ $(document).ready(function () {
         var saveModal = function saveModal(e) {
           $('.addCategories input[type="checkbox"]').prop('checked', false);
           $(horizontal).empty().append(categoryLi);
+          $(categoryLi, this).addClass('newClass');
           $(add).empty();
           $(showModal).modal('hide');
           $(button).removeClass('brightBlue');

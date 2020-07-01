@@ -1272,7 +1272,22 @@ $(document).ready(function () {
 
         $(addCustomControl).removeClass('hidden')
 
+
         var emptyModal = function (){
+
+          if ($(categoryLi, this).hasClass('newClass')) {
+            console.log('yes')
+
+            $('.addCategories input[type="checkbox"]').prop('checked' , false);
+
+            $(horizontal).empty().append(categoryLi)
+
+            $(add).empty()
+          }
+
+          else {
+
+            console.log('no')
 
             var items = $('.merged').find('input').parent().parent()
 
@@ -1283,6 +1298,8 @@ $(document).ready(function () {
 
             $('.addCategories .categories').append(items)
             $('.merged').remove()
+
+          }
 
 
         }
@@ -1296,10 +1313,10 @@ $(document).ready(function () {
 
         var saveModal = function (e){
 
-
           $('.addCategories input[type="checkbox"]').prop('checked' , false);
 
           $(horizontal).empty().append(categoryLi)
+          $(categoryLi, this).addClass('newClass')
 
           $(add).empty()
 
