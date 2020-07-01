@@ -341,7 +341,7 @@ $(document).ready(function () {
 
     });
 
-    console.log("sguerbigbr")
+
 
     $('#slideOutRight').css('z-index', '1')
     $('.projects').attr('tabindex', '1')
@@ -1251,43 +1251,16 @@ $(document).ready(function () {
 
         var bubbleDivs =  $(this).closest('.levels').find('.merged')
 
-
-        // var Opt44 = "";
-        // $(bubbleDivs).each(function() {
-        //   Opt44 = Opt44 + this.outerHTML;
-        //
-        // });
         $(horizontal).empty()
 
         var original = $(categoryLi).clone();
 
         $(add).append(categoryLi)
-        // $('.groupedCategories').append(Opt44)
-        //
-        // $(groupedCategories).empty()
-        //
-        //
-        // // if ($(bubbleDivs).length > 0) {
-        //   $('.groupedCategories').append(Opt44)
-        // // }
-
-
 
         $(reorderOptions).removeClass('hidden')
 
         $('.addCategories').click('input:checkbox', function(){
 
-
-
-          // if($(this).prop("checked")==true){
-          //
-          //   $(this).closest('li').find('.custom-checkbox').addClass('reorderActive')
-          // }
-          //
-          // else{
-          //   $(this).closest('li').find('.custom-checkbox').removeClass('reorderActive')
-          //
-          // };
 
           let groupNumber =  $(checkedInputs).length;
           let groupCounter = `Combine ${groupNumber}`;
@@ -1305,17 +1278,35 @@ $(document).ready(function () {
 
         var emptyModal = function (){
 
-          var items = $('.merged').find('input').parent().parent()
+        if (isBtnClicked == false) {
+            console.log("no")
+            var items = $('.merged').find('input').parent().parent()
 
-          $(horizontal).empty().append(original)
-          $(add).empty()
-          $(button).removeClass('brightBlue')
-          $(words).html('Select to group')
+            $(horizontal).empty().append(original)
+            $(add).empty()
+            $(button).removeClass('brightBlue')
+            $(words).html('Select to group')
 
-          $('.addCategories .categories').append(items)
-          $('.merged').remove()
+            $('.addCategories .categories').append(items)
+            $('.merged').remove()
 
-          $('.addCategories input[type="checkbox"]').prop('checked' , false);
+            $('.addCategories input[type="checkbox"]').prop('checked' , false);
+          }
+
+        if (isBtnClicked == true) {
+                console.log("yes")
+
+            // $('.addCategories input[type="checkbox"]').prop('checked' , false);
+            //
+            //
+            // $(horizontal).empty().append(categoryLi)
+            //
+            // $(add).empty()
+
+
+          }
+
+
 
         }
 
@@ -1327,30 +1318,17 @@ $(document).ready(function () {
           emptyModal
         );
 
+
+        var isBtnClicked = false;
+
         var saveModal = function (e){
 
+          isBtnClicked = true;
 
           $('.addCategories input[type="checkbox"]').prop('checked' , false);
-          //
-          // var bubbles =  $(this).closest('.modal-content').find('.merged')
 
-          // var group =  $(this).closest('.modal-content').find('.groupedCategories')
-          //
-          // var Opt45 = "";
-          // $(bubbles).each(function() {
-          //   Opt45 = Opt45 + this.outerHTML;
-          //
-          // });
-          //
-          // console.log(Opt45)
-
-          // console.log('save')
-          // console.log($(bubbles).length)
 
           $(horizontal).empty().append(categoryLi)
-          // $(horizontal).append(Opt45)
-          // $(group).children().appendTo(horizontal)
-
 
           $(add).empty()
 
@@ -1358,7 +1336,6 @@ $(document).ready(function () {
           $(button).removeClass('brightBlue')
           $(words).html('Select to group')
 
-          // $(emptyModal).off()
 
         }
         $(save).keypress(
@@ -2662,24 +2639,7 @@ $(document).ready(function () {
 
       $('.editOutputs').hide()
 
-      // $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height())
     }
-
-
-    // if ($('.stats li').length > 0 ) {
-    //
-    //
-    //
-    // $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() +   $('.stats').height() + 280)
-    // }
-
-    // if ($('.stats li').length == 0 ) {
-    //
-    //   $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() )
-    // }
-    //
-
-
 
     console.log(this.value)
     if($(this).prop("checked")==true){

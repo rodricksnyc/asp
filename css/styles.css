@@ -666,6 +666,14 @@ margin-left:-2em;
   background-color: #deedf8 !important;
 }
 
+.mergedUL .reorderOptions .fal {
+  display: none !important;
+}
+
+.mergedUL .reorderOptions .straight {
+  display: none !important;
+}
+
 
 .mergedUL .addCategories .custom-checkbox {
   padding-left: 2.5em;
@@ -1245,7 +1253,7 @@ margin:0em .3em 0em 0em;
   top:0;
   left:0;
   border-radius: 1rem;
-  z-index:9999
+  z-index:9
 }
 
 .appendOptions {
@@ -3208,7 +3216,7 @@ display: block;
 }
 
 .topicLevels .levels .custom-control-label::before {
-  display:none;
+  /* display:none; */
 }
 
 
@@ -3785,6 +3793,7 @@ categories reorder modal */
   font-weight: 500;
   margin:0em .4em;
   height: 20px;
+  display:none;
 }
 
 .reorderOptions .fal {
