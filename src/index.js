@@ -1237,18 +1237,15 @@ $(document).ready(function () {
       var addCategoriesUL = pageModule.config.classes.addCategoriesUL
       var groupCheckbox = pageModule.config.classes.groupCheckbox
 
-
       var horizontal = "";
       var original = "";
 
       $(modal).on('click', function() {
-
         $(showModal).modal('show');
         var categoryLi =  $(this).closest('.levels').find('.categories')
         var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
 
         var card =  $(this).closest('.levels').find('.card')
-
         var bubbleDivs =  $(this).closest('.levels').find('.merged')
 
         $(horizontal).empty()
@@ -1260,7 +1257,6 @@ $(document).ready(function () {
         $(reorderOptions).removeClass('hidden')
 
         $('.addCategories').click('input:checkbox', function(){
-
 
           let groupNumber =  $(checkedInputs).length;
           let groupCounter = `Combine ${groupNumber}`;
@@ -1278,8 +1274,6 @@ $(document).ready(function () {
 
         var emptyModal = function (){
 
-        if (isBtnClicked == false) {
-            console.log("no")
             var items = $('.merged').find('input').parent().parent()
 
             $(horizontal).empty().append(original)
@@ -1290,26 +1284,8 @@ $(document).ready(function () {
             $('.addCategories .categories').append(items)
             $('.merged').remove()
 
-            $('.addCategories input[type="checkbox"]').prop('checked' , false);
-          }
-
-        if (isBtnClicked == true) {
-                console.log("yes")
-
-            // $('.addCategories input[type="checkbox"]').prop('checked' , false);
-            //
-            //
-            // $(horizontal).empty().append(categoryLi)
-            //
-            // $(add).empty()
-
-
-          }
-
-
 
         }
-
 
         $(closeModal).keypress(
           emptyModal
@@ -1318,15 +1294,10 @@ $(document).ready(function () {
           emptyModal
         );
 
-
-        var isBtnClicked = false;
-
         var saveModal = function (e){
 
-          isBtnClicked = true;
 
           $('.addCategories input[type="checkbox"]').prop('checked' , false);
-
 
           $(horizontal).empty().append(categoryLi)
 

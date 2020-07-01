@@ -808,33 +808,18 @@ $(document).ready(function () {
         $(addCustomControl).removeClass('hidden');
 
         var emptyModal = function emptyModal() {
-          if (isBtnClicked == false) {
-            console.log("no");
-            var items = $('.merged').find('input').parent().parent();
-            $(horizontal).empty().append(original);
-            $(add).empty();
-            $(button).removeClass('brightBlue');
-            $(words).html('Select to group');
-            $('.addCategories .categories').append(items);
-            $('.merged').remove();
-            $('.addCategories input[type="checkbox"]').prop('checked', false);
-          }
-
-          if (isBtnClicked == true) {
-            console.log("yes"); // $('.addCategories input[type="checkbox"]').prop('checked' , false);
-            //
-            //
-            // $(horizontal).empty().append(categoryLi)
-            //
-            // $(add).empty()
-          }
+          var items = $('.merged').find('input').parent().parent();
+          $(horizontal).empty().append(original);
+          $(add).empty();
+          $(button).removeClass('brightBlue');
+          $(words).html('Select to group');
+          $('.addCategories .categories').append(items);
+          $('.merged').remove();
         };
 
         $(closeModal).keypress(emptyModal).click(emptyModal);
-        var isBtnClicked = false;
 
         var saveModal = function saveModal(e) {
-          isBtnClicked = true;
           $('.addCategories input[type="checkbox"]').prop('checked', false);
           $(horizontal).empty().append(categoryLi);
           $(add).empty();
