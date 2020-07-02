@@ -813,7 +813,9 @@ $(document).ready(function () {
             $('.addCategories input[type="checkbox"]').prop('checked', false);
             $(horizontal).empty().append(categoryLi);
             $(add).empty();
-          } else {
+          }
+
+          if (!$(categoryLi, this).hasClass('newClass')) {
             console.log('no');
             var items = $('.merged').find('input').parent().parent();
             $(horizontal).empty().append(original);
@@ -828,7 +830,10 @@ $(document).ready(function () {
         $(closeModal).keypress(emptyModal).click(emptyModal);
 
         var saveModal = function saveModal(e) {
-          $('.addCategories input[type="checkbox"]').prop('checked', false);
+          $('.addCategories input[type="checkbox"]').prop('checked', false); // var these =  $(this).closest('.modal-content').find('.categories')
+          //
+          // console.log(these)
+
           $(horizontal).empty().append(categoryLi);
           $(categoryLi, this).addClass('newClass');
           $(add).empty();

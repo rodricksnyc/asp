@@ -1285,7 +1285,7 @@ $(document).ready(function () {
             $(add).empty()
           }
 
-          else {
+          if (!$(categoryLi, this).hasClass('newClass')) {
 
             console.log('no')
 
@@ -1314,6 +1314,10 @@ $(document).ready(function () {
         var saveModal = function (e){
 
           $('.addCategories input[type="checkbox"]').prop('checked' , false);
+
+          // var these =  $(this).closest('.modal-content').find('.categories')
+          //
+          // console.log(these)
 
           $(horizontal).empty().append(categoryLi)
           $(categoryLi, this).addClass('newClass')
