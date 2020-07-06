@@ -1633,6 +1633,12 @@ $(document).ready(function () {
   $('.addCategories').on('click', '.moveDown', function () {
     var after = $(this).closest('li').next();
     $(this).closest('li').insertAfter(after);
+
+    if ($('.addCategories .moveDown').closest('li').parent().parent().hasClass('merged')) {
+      var blueThing = $(this).closest('.merged');
+      var afterItem = $(blueThing).next();
+      $(blueThing).insertAfter(afterItem);
+    }
   });
   $('.addCategories').on('keyup', '.moveDown', function (e) {
     var code = e.keyCode ? e.keyCode : e.which;
@@ -1645,6 +1651,12 @@ $(document).ready(function () {
   $('.addCategories').on('click', '.moveUp', function () {
     var before = $(this).closest('li').prev();
     $(this).closest('li').insertBefore(before);
+
+    if ($('.addCategories .moveUp').closest('li').parent().parent().hasClass('merged')) {
+      var blueThing = $(this).closest('.merged');
+      var beforeItem = $(blueThing).prev();
+      $(blueThing).insertBefore(beforeItem);
+    }
   });
   $('.addCategories').on('keyup', '.moveUp', function (e) {
     var code = e.keyCode ? e.keyCode : e.which;
