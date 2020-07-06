@@ -1702,16 +1702,6 @@ $(document).ready(function () {
       $(this).closest('.merged').insertBefore($('.merged').first());
     }
   });
-  $('.addCategories').on('click', '.top', function () {
-    if (!$('.addCategories .top').closest('li').parent().hasClass('mergedUL')) {
-      $(this).closest('li').insertBefore($('.addCategories .categories li').first());
-    }
-
-    if ($('.addCategories .top').closest('li').parent().hasClass('mergedUL')) {
-      $(this).closest('.merged').insertBefore($('.addCategories .categories li').first());
-      $(this).closest('.merged').insertBefore($('.merged').first());
-    }
-  });
   $('.addCategories').on('keyup', '.top', function (e) {
     var code = e.keyCode ? e.keyCode : e.which;
 
