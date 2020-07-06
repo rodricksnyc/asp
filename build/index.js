@@ -1694,6 +1694,7 @@ $(document).ready(function () {
       $(this).closest('li').insertAfter($('.merged').last());
       $(this).closest('.merged').insertAfter($('.merged').last());
     } else {
+      $(this).closest('li').insertAfter($('.addCategories .categories li').last());
       $(this).closest('.merged').insertAfter($('.addCategories .categories li').last());
     }
   });
@@ -1726,6 +1727,14 @@ $(document).ready(function () {
     if ($('.addCategories .top').closest('li').parent().hasClass('mergedUL')) {
       $(this).closest('.merged').insertBefore($('.addCategories .categories li').first());
       $(this).closest('.merged').insertBefore($('.merged').first());
+    }
+
+    var firstElement = $('.categories').children().first();
+
+    if (firstElement.is(".merged")) {
+      $(this).closest('li').insertBefore($('.merged').first());
+    } else {
+      $(this).closest('li').insertBefore($('.addCategories .categories li').first());
     }
   });
   $('.addCategories').on('keyup', '.top', function (e) {
