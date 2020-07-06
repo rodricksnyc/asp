@@ -793,13 +793,15 @@ $(document).ready(function () {
         addCustomControl: '.addCategories li .custom-control',
         modalList: '.addCategories li',
         modal: '.categoriesModal'
-      }, _defineProperty(_classes, "reorderOptions", '.reorderOptions'), _defineProperty(_classes, "add", '.addCategories'), _defineProperty(_classes, "closeModal", '.closeCategoryModal'), _defineProperty(_classes, "save", '.save'), _defineProperty(_classes, "expand", '.appendActions .orangeCircle'), _defineProperty(_classes, "plusRow", '.plusRow'), _defineProperty(_classes, "mergedCheckbox", '.merged .custom-checkbox'), _defineProperty(_classes, "mergedCheck", ".merged input:checkbox"), _defineProperty(_classes, "activeLi", 'li .reorderActive'), _defineProperty(_classes, "separate", '.separate'), _defineProperty(_classes, "merged", '.merged'), _defineProperty(_classes, "groupedCategories", '.groupedCategories'), _defineProperty(_classes, "rowLevel", '#rowTopic .levels'), _defineProperty(_classes, "columnLevel", '#columnTopic .levels'), _defineProperty(_classes, "layerLevel", '#layerTopic .levels'), _defineProperty(_classes, "analysisLevel", '#analysisTopic .levels'), _defineProperty(_classes, "addCategoriesUL", '.addCategories .categories'), _classes)
+      }, _defineProperty(_classes, "reorderOptions", '.reorderOptions'), _defineProperty(_classes, "add", '.addCategories'), _defineProperty(_classes, "closeModal", '.closeCategoryModal'), _defineProperty(_classes, "save", '.save'), _defineProperty(_classes, "expand", '.appendActions .orangeCircle'), _defineProperty(_classes, "plusRow", '.plusRow'), _defineProperty(_classes, "mergedCheckbox", '.merged .custom-checkbox'), _defineProperty(_classes, "mergedCheck", ".merged input:checkbox"), _defineProperty(_classes, "activeLi", 'li .reorderActive'), _defineProperty(_classes, "separate", '.separate'), _defineProperty(_classes, "merged", '.merged'), _defineProperty(_classes, "topicLevelsChildren", '.topicLevels .levels'), _defineProperty(_classes, "groupedCategories", '.groupedCategories'), _defineProperty(_classes, "rowLevel", '#rowTopic .levels'), _defineProperty(_classes, "columnLevel", '#columnTopic .levels'), _defineProperty(_classes, "layerLevel", '#layerTopic .levels'), _defineProperty(_classes, "analysisLevel", '#analysisTopic .levels'), _defineProperty(_classes, "addCategoriesUL", '.addCategories .categories'), _classes)
     },
     focusFunc: function focusFunc() {
-      $('.topicLevels .levels').children().on('keyup', function (e) {
+      var topics = pageModule.config.classes.topicLevelsChildren;
+      $(topics).on('keyup', function (e) {
         var code = e.keyCode ? e.keyCode : e.which;
 
         if (code == 9) {
+          console.log("here");
           $(this).closest('.levels').css('background-color', '#faede9');
           $(this).closest('.levels').find('.endOptions').css('display', 'block');
           $(this).closest('.levels').find('.orangeHover').css('display', 'block');
@@ -820,6 +822,16 @@ $(document).ready(function () {
             $('.levels').css('background-color', 'transparent');
             $('.levels').find('.accordion-toggle i').css('visibility', 'hidden');
           });
+        }
+      });
+      $('#rowTopic, #columnTopic, #layerTopic, #analysisTopic').on('keyup', '.levels', function (e) {
+        var code = e.keyCode ? e.keyCode : e.which;
+
+        if (code == 9) {
+          $('.levels').find('.orangeHover').css('display', 'none');
+          $('.endOptions').css('display', 'none');
+          $('.levels').css('background-color', 'transparent');
+          $('.levels').find('.accordion-toggle i').css('visibility', 'hidden');
         }
       });
     },

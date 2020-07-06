@@ -1248,6 +1248,7 @@ $(document).ready(function () {
         activeLi: 'li .reorderActive',
         separate: '.separate',
         merged : '.merged',
+        topicLevelsChildren: '.topicLevels .levels',
         groupedCategories :'.groupedCategories',
         rowLevel: '#rowTopic .levels',
         columnLevel : '#columnTopic .levels',
@@ -1260,10 +1261,13 @@ $(document).ready(function () {
 
 
     focusFunc: function() {
-      $('.topicLevels .levels').children().on('keyup', function (e) {
+      var topics = pageModule.config.classes.topicLevelsChildren
 
+      $(topics).on('keyup', function (e) {
         var code = (e.keyCode ? e.keyCode : e.which);
         if (code ==9 ) {
+
+          console.log("here")
 
           $(this).closest('.levels').css('background-color', '#faede9');
           $(this).closest('.levels').find('.endOptions').css('display', 'block')
@@ -1272,8 +1276,6 @@ $(document).ready(function () {
           $(this).closest('.levels').find('.accordion-toggle i').css('visibility', 'visible')
 
         }
-
-
 
         if ($('#columnTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 ) {
 
@@ -1296,10 +1298,20 @@ $(document).ready(function () {
           });
         }
 
-
-
-
       })
+
+      $('#rowTopic, #columnTopic, #layerTopic, #analysisTopic').on('keyup', '.levels', function (e) {
+        var code = (e.keyCode ? e.keyCode : e.which);
+        if (code ==9 ) {
+
+          $('.levels').find('.orangeHover').css('display', 'none')
+          $('.endOptions').css('display', 'none')
+          $('.levels').css('background-color', 'transparent');
+          $('.levels').find('.accordion-toggle i').css('visibility', 'hidden')
+
+        }
+      })
+
 
     },
 
