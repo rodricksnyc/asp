@@ -1350,7 +1350,9 @@ $(document).ready(function () {
       var horizontal = "";
       var original = "";
 
-      $(modal).on('click', function() {
+      var openModal = function() {
+
+      // $(modal).on('click', function() {
         $(showModal).modal('show');
         var categoryLi =  $(this).closest('.levels').find('.categories')
         var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
@@ -1539,7 +1541,17 @@ $(document).ready(function () {
 
 
 
-      })
+      // })
+
+
+    }
+
+    $(modal).keypress(
+    openModal
+
+    ).click(
+      openModal
+    );
 
 
 

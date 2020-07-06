@@ -867,7 +867,9 @@ $(document).ready(function () {
       var groupCheckbox = pageModule.config.classes.groupCheckbox;
       var horizontal = "";
       var original = "";
-      $(modal).on('click', function () {
+
+      var openModal = function openModal() {
+        // $(modal).on('click', function() {
         $(showModal).modal('show');
         var categoryLi = $(this).closest('.levels').find('.categories');
         var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
@@ -982,8 +984,10 @@ $(document).ready(function () {
               });
             }
           });
-        });
-      });
+        }); // })
+      };
+
+      $(modal).keypress(openModal).click(openModal);
       $('#rowTopic').on('click', '.removeLevel', function () {
         var items = $('.merged').find('input').parent().parent();
         $('.addCategories .categories').append(items);
