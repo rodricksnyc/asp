@@ -866,10 +866,9 @@ $(document).ready(function () {
       var addCategoriesUL = pageModule.config.classes.addCategoriesUL;
       var groupCheckbox = pageModule.config.classes.groupCheckbox;
       var horizontal = "";
-      var original = "";
+      var original = ""; // var openModal = function() {
 
-      var openModal = function openModal() {
-        // $(modal).on('click', function() {
+      $(modal).on('click', function () {
         $(showModal).modal('show');
         var categoryLi = $(this).closest('.levels').find('.categories');
         var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
@@ -940,7 +939,7 @@ $(document).ready(function () {
           });
 
           if ($(y).length > 1) {
-            $(addCategoriesUL).append("<div class=\"merged\"><ul class=\"mergedUL\">" + Opt1 + "</ul><button class=\"separate\" tabindex=\"0\" role=\"button\"><div class=\"across4\"><i class=\"fal fa-arrow-left\"></i>&nbsp;|&nbsp;<i class=\"fal fa-arrow-right\"></i></div></button><div class=\"reorderButton\"><i class=\"fal fa-angle-up moveUp\" tabindex=\"0\" role=\"button\"></i><i class=\"fal fa-angle-down moveDown\" tabindex=\"0\" role=\"button\"></i><div class=\"straight\"><i class=\"fal fa-angle-double-up top\" tabindex=\"0\" role=\"button\"></i><p>top</p></div><div class=\"straight\"><i class=\"fal fa-angle-double-down bottom\" tabindex=\"0\" role=\"button\"></i><p>last</p></div></div></div>");
+            $(addCategoriesUL).append("<div class=\"merged\"><ul class=\"mergedUL\">" + Opt1 + "</ul><button class=\"separate\" tabindex=\"0\" role=\"button\"><div class=\"across4\"><i class=\"fal fa-arrow-left\"></i>&nbsp;|&nbsp;<i class=\"fal fa-arrow-right\"></i></div></button><div class=\"reorderButton\"><i class=\"fal fa-angle-up moveUp\" tabindex=\"0\" role=\"button\"></i><i class=\"fal fa-angle-down moveDown\" tabindex=\"0\" role=\"button\"></i><i class=\"fal fa-angle-double-up top\" tabindex=\"0\" role=\"button\"></i><i class=\"fal fa-angle-double-down bottom\" tabindex=\"0\" role=\"button\"></i></div></div>");
             $(y).remove();
             $(mergedCategories).addClass('bottomZero');
             $(mergedCheck).removeAttr('checked');
@@ -984,10 +983,16 @@ $(document).ready(function () {
               });
             }
           });
-        }); // })
-      };
+        });
+      }); // }
+      //
+      // $(modal).keypress(
+      // openModal
+      //
+      // ).click(
+      //   openModal
+      // );
 
-      $(modal).keypress(openModal).click(openModal);
       $('#rowTopic').on('click', '.removeLevel', function () {
         var items = $('.merged').find('input').parent().parent();
         $('.addCategories .categories').append(items);
@@ -1654,8 +1659,16 @@ $(document).ready(function () {
       $(this).closest('li').insertAfter($('.addCategories .categories li').last());
     }
 
-    if ($('.merged').length > 0) {
-      $(this).closest('li').insertBefore($('.merged').first());
+    var lastElement = $('.categories').children().last(); // if ($('.addCategories .bottom').closest('li').parent().hasClass('mergedUL')) {
+    //
+    //       $(this).closest('.merged').insertAfter($('.addCategories .categories li').last());
+    //
+    //     }
+
+    if (lastElement.is(".merged")) {
+      $(this).closest('.merged').insertAfter($('.merged').last());
+    } else {
+      $(this).closest('.merged').insertAfter($('.addCategories .categories li').last());
     }
   });
   $('.addCategories').on('keyup', '.bottom', function (e) {
@@ -1666,41 +1679,87 @@ $(document).ready(function () {
         $(this).closest('li').insertAfter($('.addCategories .categories li').last());
       }
 
-      if ($('.merged').length > 0) {
-        $(this).closest('li').insertBefore($('.merged').first());
+      var lastElement = $('.categories').children().last(); // if ($('.addCategories .bottom').closest('li').parent().hasClass('mergedUL')) {
+      //
+      //       $(this).closest('.merged').insertAfter($('.addCategories .categories li').last());
+      //
+      //     }
+
+      if (lastElement.is(".merged")) {
+        $(this).closest('.merged').insertAfter($('.merged').last());
+      } else {
+        $(this).closest('.merged').insertAfter($('.addCategories .categories li').last());
       }
     }
   });
   $('.addCategories').on('click', '.top', function () {
-    $(this).closest('li').insertBefore($('.addCategories .categories li').first());
+    if (!$('.addCategories .top').closest('li').parent().hasClass('mergedUL')) {
+      $(this).closest('li').insertBefore($('.addCategories .categories li').first());
+    }
+
+    if ($('.addCategories .top').closest('li').parent().hasClass('mergedUL')) {
+      $(this).closest('.merged').insertBefore($('.addCategories .categories li').first());
+      $(this).closest('.merged').insertBefore($('.merged').first());
+    }
+  });
+  $('.addCategories').on('click', '.top', function () {
+    if (!$('.addCategories .top').closest('li').parent().hasClass('mergedUL')) {
+      $(this).closest('li').insertBefore($('.addCategories .categories li').first());
+    }
+
+    if ($('.addCategories .top').closest('li').parent().hasClass('mergedUL')) {
+      $(this).closest('.merged').insertBefore($('.addCategories .categories li').first());
+      $(this).closest('.merged').insertBefore($('.merged').first());
+    }
   });
   $('.addCategories').on('keyup', '.top', function (e) {
     var code = e.keyCode ? e.keyCode : e.which;
 
     if (code == 13) {
-      $(this).closest('li').insertBefore($('.addCategories .categories li').first());
-    }
-  });
-  $('.addCategories').on('click', '.merged .bottom', function () {
-    $(this).closest('li').insertAfter($('.addCategories .categories .mergedUL li').last());
-  });
-  $('.addCategories').on('keyup', '.merged .bottom', function (e) {
-    var code = e.keyCode ? e.keyCode : e.which;
+      if (!$('.addCategories .top').closest('li').parent().hasClass('mergedUL')) {
+        $(this).closest('li').insertBefore($('.addCategories .categories li').first());
+      }
 
-    if (code == 13) {
-      $(this).closest('li').insertAfter($('.addCategories .categories .mergedUL li').last());
+      if ($('.addCategories .top').closest('li').parent().hasClass('mergedUL')) {
+        $(this).closest('.merged').insertBefore($('.addCategories .categories li').first());
+        $(this).closest('.merged').insertBefore($('.merged').first());
+      }
     }
-  });
-  $('.addCategories').on('click', '.merged .top', function () {
-    $(this).closest('li').insertBefore($('.addCategories .categories .mergedUL li').first());
-  });
-  $('.addCategories').on('keyup', '.merged .top', function (e) {
-    var code = e.keyCode ? e.keyCode : e.which;
-
-    if (code == 13) {
-      $(this).closest('li').insertBefore($('.addCategories .categories .mergedUL li').first());
-    }
-  }); //statistical Outputs
+  }); //
+  //   $('.addCategories').on('click','.merged .bottom',function(){
+  //
+  //     $(this).closest('li').insertAfter($('.addCategories .categories .mergedUL li').last());
+  //
+  //   })
+  //
+  //   $('.addCategories').on('keyup', '.merged .bottom', function(e) {
+  //     var code = (e.keyCode ? e.keyCode : e.which);
+  //     if (code == 13) {
+  //       $(this).closest('li').insertAfter($('.addCategories .categories .mergedUL li').last());
+  //     }
+  //   })
+  //
+  //   $('.addCategories').on('click','.merged .top',function(){
+  //
+  //     $(this).closest('li').insertBefore($('.addCategories .categories .mergedUL li').first());
+  //   })
+  //
+  //   $('.addCategories').on('keyup','.merged .top', function(e) {
+  //     var code = (e.keyCode ? e.keyCode : e.which);
+  //     if (code == 13) {
+  //       $(this).closest('li').insertBefore($('.addCategories .categories .mergedUL li').first());
+  //     }
+  //
+  //
+  //
+  //     if ( $('.merged').length > 0)  {
+  // console.log("sgkub")
+  //       $(this).closest('.merged').insertBefore($('.addCategories .categories li').first());
+  //
+  //     }
+  //   })
+  //
+  //statistical Outputs
   // $('[data-type="stats"]').on('click', function() {
   //
   //   // if ($('#analysisTopic .levels').length > 0) {

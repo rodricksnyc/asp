@@ -708,20 +708,20 @@ margin-left:-2em;
 
 .reorderButton {
   position: absolute;
-  right: 20%;
+  right: 15%;
   top: 35%;
   display: inline-flex;
-  background-color: #127abf;
+  /* background-color: #127abf; */
   padding:.4em;
   border-radius:1rem;
 }
 
-.reorderButton:hover {
+/* .reorderButton:hover {
   background:  #07477d
-}
+} */
 
 .reorderButton  .fal {
-  color: white !important;
+  color: #07477d !important;
   font-size: 19px;
   font-weight: 500;
   margin: 0em .4em;
@@ -734,11 +734,6 @@ margin-left:-2em;
   align-items: center;
 }
 
-.reorderButton .straight p {
-  font-size: 9px !important;
-  color: white !important;
-  margin-bottom:0em !important;
-}
 
 /* .merged .reorderOptions {
 display:none;
@@ -3768,10 +3763,11 @@ categories reorder modal */
 }
 
 #reorderCategories .modal-body {
-  padding-top:0em !important;
+  padding-top:1em !important;
   overflow-y: auto;
   max-height: 300px;
   height:auto;
+  /* overflow: visible; */
 }
 
 #reorderCategories .modal-dialog {
