@@ -55,7 +55,7 @@ body{
 
 .initial .modal-backdrop {
 
-    background-color: #b5b5b5;
+  background-color: #b5b5b5;
 }
 
 /* #myModal {
@@ -703,6 +703,41 @@ margin-left:-2em;
 .merged li {
   list-style-type: none;
   max-height: 3em;
+}
+
+
+.reorderButton {
+  position: absolute;
+  right: 20%;
+  top: 35%;
+  display: inline-flex;
+  background-color: #127abf;
+  padding:.4em;
+  border-radius:1rem;
+}
+
+.reorderButton:hover {
+  background:  #07477d
+}
+
+.reorderButton  .fal {
+  color: white !important;
+  font-size: 19px;
+  font-weight: 500;
+  margin: 0em .4em;
+  height: 20px;
+}
+
+.reorderButton .straight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reorderButton .straight p {
+  font-size: 9px !important;
+  color: white !important;
+  margin-bottom:0em !important;
 }
 
 /* .merged .reorderOptions {
@@ -1553,11 +1588,13 @@ padding-right:5px;
 }
 
 .custom-checkbox .custom-control-input:checked:focus ~ .custom-control-label::before {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 255, 0, 0.25)
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 255, 0, 0.35)
 }
 .custom-checkbox .custom-control-input:focus ~ .custom-control-label::before {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 0, 0, 0.25)
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 0, 0, 0.35)
 }
+
+
 .custom-checkbox .custom-control-input:active ~ .custom-control-label::before {
   background-color: #C8FFC8;
 }
