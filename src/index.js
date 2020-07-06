@@ -2693,17 +2693,17 @@ $(document).ready(function () {
 
     }
 
+    // if ($('.addCategories .bottom').closest('li').parent().hasClass('mergedUL') && lastElement.is( ".merged")) {
+    //
+    // $(this).closest('li').insertAfter($('.merged').last());
+    //
+    // }
+
     var lastElement = $('.categories').children().last();
-
-    // if ($('.addCategories .bottom').closest('li').parent().hasClass('mergedUL')) {
-    //
-    //       $(this).closest('.merged').insertAfter($('.addCategories .categories li').last());
-    //
-    //     }
-
 
 
     if ( lastElement.is( ".merged" ) ) {
+      $(this).closest('li').insertAfter($('.merged').last());
       $(this).closest('.merged').insertAfter($('.merged').last());
     }
     else {
@@ -2734,6 +2734,7 @@ $(document).ready(function () {
 
 
       if ( lastElement.is( ".merged" ) ) {
+
         $(this).closest('.merged').insertAfter($('.merged').last());
       }
       else {
