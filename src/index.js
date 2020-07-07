@@ -222,19 +222,18 @@ $(document).ready(function () {
         $(".panel-body .accordions .panel .panel-header").removeClass('darkerBlue');
       },400)
 
-      console.log("blahhhhh")
     }
     else {
       $(".panel-body .accordions .panel .panel-header").addClass('darkerBlue');
       $(".panel-body .accordions .panel .panel-header").removeClass('lighterBlue');
-      console.log("2blahhhhh")
+
     }
 
   });
 
   $('#accordion .panel .panel-header').click(function() {
     if ($(".panel-body .accordions .panel .panel-header").hasClass('darkerBlue') && $('.nested').hasClass('show')) {
-      console.log("3blahhhhh")
+
       $(".panel-body .accordions .panel .panel-header").removeClass('lighterBlue');
       $(".panel-body .accordions .panel .panel-header").removeClass('darkerBlue')
       setTimeout(function() {
@@ -1349,10 +1348,16 @@ $(document).ready(function () {
 
       var horizontal = "";
       var original = "";
+      // var ifSaved = [{
+      //   'category' : '1',
+      //   'saved': false
+      // }];
 
-      // var openModal = function() {
+      var ifSaved = false;
 
-      $(modal).on('click', function() {
+      var openModal = function() {
+
+      // $(modal).on('click', function() {
         $(showModal).modal('show');
         var categoryLi =  $(this).closest('.levels').find('.categories')
         var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
@@ -1387,19 +1392,13 @@ $(document).ready(function () {
 
         var emptyModal = function (){
 
-          if ($(categoryLi, this).hasClass('newClass')) {
-            console.log('yes')
 
-            $('.addCategories input[type="checkbox"]').prop('checked' , false);
 
-            $(horizontal).empty().append(categoryLi)
+          // if (ifSaved == false ) {
 
-            $(add).empty()
-          }
+          if ((!$(categoryLi, this).hasClass('newClass')) )  {
 
-          if (!$(categoryLi, this).hasClass('newClass')) {
-
-            console.log('no')
+             console.log('no')
 
             var items = $('.merged').find('input').parent().parent()
 
@@ -1409,9 +1408,21 @@ $(document).ready(function () {
             $(words).html('Select to group')
 
             $('.addCategories .categories').append(items)
-            $('.merged').remove()
+            // $('.merged').remove()
 
           }
+
+
+            // if (ifSaved == true ) {
+          else {
+            $('.addCategories input[type="checkbox"]').prop('checked' , false);
+
+            $(horizontal).empty().append(categoryLi)
+
+            $(add).empty()
+          }
+
+          // }
 
 
         }
@@ -1431,6 +1442,8 @@ $(document).ready(function () {
           //
           // console.log(these)
 
+
+
           $(horizontal).empty().append(categoryLi)
           $(categoryLi, this).addClass('newClass')
 
@@ -1439,6 +1452,10 @@ $(document).ready(function () {
           $(showModal).modal('hide');
           $(button).removeClass('brightBlue')
           $(words).html('Select to group')
+
+          // if (ifSaved == false)  {
+          //   ifSaved = true;
+          // }
 
 
         }
@@ -1541,17 +1558,17 @@ $(document).ready(function () {
 
 
 
-      })
+      // })
 
 
-      // }
-      //
-      // $(modal).keypress(
-      // openModal
-      //
-      // ).click(
-      //   openModal
-      // );
+      }
+
+      $(modal).keypress(
+      openModal
+
+      ).click(
+        openModal
+      );
 
 
 
@@ -1692,13 +1709,6 @@ $(document).ready(function () {
 
     },
 
-    getnumberFunc: function() {
-      var number = pageModule.config.classes.numberCounter
-      let showNumber =  $(number).html(function(i, activeLevel ) { return activeLevel*1 + 1 });
-      return showNumber;
-
-    },
-
     showExpandFunc: function() {
       var expand = pageModule.config.classes.expand
       var plus = pageModule.config.classes.plusRow
@@ -1768,7 +1778,7 @@ $(document).ready(function () {
   // pageModule.buttonFunc()
   // pageModule.modalKeypressFunc()
   pageModule.globalRemoveFunc()
-  pageModule.getnumberFunc()
+
   pageModule.showExpandFunc()
   pageModule.focusFunc()
 
@@ -2020,13 +2030,21 @@ $(document).ready(function () {
 
 
     if ($('#rowTopic .levels').length > 3) {
-      console.log("more than")
+
 
       $('.whiteBar').fadeIn()
 
     }
 
-    $('.numberCounter').html(function(i, val) { return val*1 + 1 });
+
+    $('.numberCounter').html(function(i, val) {
+          console.log(val)
+          return val*1 + 1
+          console.log(val)
+    });
+
+
+
 
     if ($('#rowTopic .levels').length > 0 || $('#columnTopic .levels').length > 0 || $('#layerTopic .levels').length > 0) {
 
@@ -2762,16 +2780,16 @@ $(document).ready(function () {
     }
 
 
-    var firstElement = $('.categories').children().first();
-
-    if ( firstElement.is( ".merged" ) ) {
-      $(this).closest('li').insertBefore($('.merged').first());
-
-    }
-    else {
-      $(this).closest('li').insertBefore($('.addCategories .categories li').first());
-
-    }
+    // var firstElement = $('.categories').children().first();
+    //
+    // if ( firstElement.is( ".merged" ) ) {
+    //   $(this).closest('li').insertBefore($('.merged').first());
+    //
+    // }
+    // else {
+    //   $(this).closest('li').insertBefore($('.addCategories .categories li').first());
+    //
+    // }
 
 
 

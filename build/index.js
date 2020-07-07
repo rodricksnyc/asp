@@ -149,16 +149,13 @@ $(document).ready(function () {
         $(".panel-body .accordions .panel .panel-header").addClass('lighterBlue');
         $(".panel-body .accordions .panel .panel-header").removeClass('darkerBlue');
       }, 400);
-      console.log("blahhhhh");
     } else {
       $(".panel-body .accordions .panel .panel-header").addClass('darkerBlue');
       $(".panel-body .accordions .panel .panel-header").removeClass('lighterBlue');
-      console.log("2blahhhhh");
     }
   });
   $('#accordion .panel .panel-header').click(function () {
     if ($(".panel-body .accordions .panel .panel-header").hasClass('darkerBlue') && $('.nested').hasClass('show')) {
-      console.log("3blahhhhh");
       $(".panel-body .accordions .panel .panel-header").removeClass('lighterBlue');
       $(".panel-body .accordions .panel .panel-header").removeClass('darkerBlue');
       setTimeout(function () {
@@ -866,9 +863,15 @@ $(document).ready(function () {
       var addCategoriesUL = pageModule.config.classes.addCategoriesUL;
       var groupCheckbox = pageModule.config.classes.groupCheckbox;
       var horizontal = "";
-      var original = ""; // var openModal = function() {
+      var original = ""; // var ifSaved = [{
+      //   'category' : '1',
+      //   'saved': false
+      // }];
 
-      $(modal).on('click', function () {
+      var ifSaved = false;
+
+      var openModal = function openModal() {
+        // $(modal).on('click', function() {
         $(showModal).modal('show');
         var categoryLi = $(this).closest('.levels').find('.categories');
         var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
@@ -893,13 +896,7 @@ $(document).ready(function () {
         $(addCustomControl).removeClass('hidden');
 
         var emptyModal = function emptyModal() {
-          if ($(categoryLi, this).hasClass('newClass')) {
-            console.log('yes');
-            $('.addCategories input[type="checkbox"]').prop('checked', false);
-            $(horizontal).empty().append(categoryLi);
-            $(add).empty();
-          }
-
+          // if (ifSaved == false ) {
           if (!$(categoryLi, this).hasClass('newClass')) {
             console.log('no');
             var items = $('.merged').find('input').parent().parent();
@@ -907,9 +904,14 @@ $(document).ready(function () {
             $(add).empty();
             $(button).removeClass('brightBlue');
             $(words).html('Select to group');
-            $('.addCategories .categories').append(items);
-            $('.merged').remove();
-          }
+            $('.addCategories .categories').append(items); // $('.merged').remove()
+          } // if (ifSaved == true ) {
+          else {
+              $('.addCategories input[type="checkbox"]').prop('checked', false);
+              $(horizontal).empty().append(categoryLi);
+              $(add).empty();
+            } // }
+
         };
 
         $(closeModal).keypress(emptyModal).click(emptyModal);
@@ -924,7 +926,9 @@ $(document).ready(function () {
           $(add).empty();
           $(showModal).modal('hide');
           $(button).removeClass('brightBlue');
-          $(words).html('Select to group');
+          $(words).html('Select to group'); // if (ifSaved == false)  {
+          //   ifSaved = true;
+          // }
         };
 
         $(save).keypress(saveModal).click(saveModal);
@@ -983,16 +987,10 @@ $(document).ready(function () {
               });
             }
           });
-        });
-      }); // }
-      //
-      // $(modal).keypress(
-      // openModal
-      //
-      // ).click(
-      //   openModal
-      // );
+        }); // })
+      };
 
+      $(modal).keypress(openModal).click(openModal);
       $('#rowTopic').on('click', '.removeLevel', function () {
         var items = $('.merged').find('input').parent().parent();
         $('.addCategories .categories').append(items);
@@ -1086,13 +1084,6 @@ $(document).ready(function () {
         $('.addAnalysis').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false);
       });
     },
-    getnumberFunc: function getnumberFunc() {
-      var number = pageModule.config.classes.numberCounter;
-      var showNumber = $(number).html(function (i, activeLevel) {
-        return activeLevel * 1 + 1;
-      });
-      return showNumber;
-    },
     showExpandFunc: function showExpandFunc() {
       var expand = pageModule.config.classes.expand;
       var plus = pageModule.config.classes.plusRow;
@@ -1140,7 +1131,6 @@ $(document).ready(function () {
   // pageModule.modalKeypressFunc()
 
   pageModule.globalRemoveFunc();
-  pageModule.getnumberFunc();
   pageModule.showExpandFunc();
   pageModule.focusFunc();
   $(".listArea .levels :checkbox").change(function () {
@@ -1286,12 +1276,13 @@ $(document).ready(function () {
     $("#rowTopic .levels:nth-child(4)").nextAll(".levels").addClass('noWidth');
 
     if ($('#rowTopic .levels').length > 3) {
-      console.log("more than");
       $('.whiteBar').fadeIn();
     }
 
     $('.numberCounter').html(function (i, val) {
+      console.log(val);
       return val * 1 + 1;
+      console.log(val);
     });
 
     if ($('#rowTopic .levels').length > 0 || $('#columnTopic .levels').length > 0 || $('#layerTopic .levels').length > 0) {
@@ -1727,15 +1718,17 @@ $(document).ready(function () {
     if ($('.addCategories .top').closest('li').parent().hasClass('mergedUL')) {
       $(this).closest('.merged').insertBefore($('.addCategories .categories li').first());
       $(this).closest('.merged').insertBefore($('.merged').first());
-    }
+    } // var firstElement = $('.categories').children().first();
+    //
+    // if ( firstElement.is( ".merged" ) ) {
+    //   $(this).closest('li').insertBefore($('.merged').first());
+    //
+    // }
+    // else {
+    //   $(this).closest('li').insertBefore($('.addCategories .categories li').first());
+    //
+    // }
 
-    var firstElement = $('.categories').children().first();
-
-    if (firstElement.is(".merged")) {
-      $(this).closest('li').insertBefore($('.merged').first());
-    } else {
-      $(this).closest('li').insertBefore($('.addCategories .categories li').first());
-    }
   });
   $('.addCategories').on('keyup', '.top', function (e) {
     var code = e.keyCode ? e.keyCode : e.which;
