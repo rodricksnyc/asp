@@ -792,13 +792,13 @@ $(document).ready(function () {
         modal: '.categoriesModal'
       }, _defineProperty(_classes, "reorderOptions", '.reorderOptions'), _defineProperty(_classes, "add", '.addCategories'), _defineProperty(_classes, "closeModal", '.closeCategoryModal'), _defineProperty(_classes, "save", '.save'), _defineProperty(_classes, "expand", '.appendActions .orangeCircle'), _defineProperty(_classes, "plusRow", '.plusRow'), _defineProperty(_classes, "mergedCheckbox", '.merged .custom-checkbox'), _defineProperty(_classes, "mergedCheck", ".merged input:checkbox"), _defineProperty(_classes, "activeLi", 'li .reorderActive'), _defineProperty(_classes, "separate", '.separate'), _defineProperty(_classes, "merged", '.merged'), _defineProperty(_classes, "topicLevelsChildren", '.topicLevels .levels'), _defineProperty(_classes, "groupedCategories", '.groupedCategories'), _defineProperty(_classes, "rowLevel", '#rowTopic .levels'), _defineProperty(_classes, "columnLevel", '#columnTopic .levels'), _defineProperty(_classes, "layerLevel", '#layerTopic .levels'), _defineProperty(_classes, "analysisLevel", '#analysisTopic .levels'), _defineProperty(_classes, "addCategoriesUL", '.addCategories .categories'), _classes)
     },
+    //508 tabbing through levels
     focusFunc: function focusFunc() {
       var topics = pageModule.config.classes.topicLevelsChildren;
       $(topics).on('keyup', function (e) {
         var code = e.keyCode ? e.keyCode : e.which;
 
         if (code == 9) {
-          console.log("here");
           $(this).closest('.levels').css('background-color', '#faede9');
           $(this).closest('.levels').find('.endOptions').css('display', 'block');
           $(this).closest('.levels').find('.orangeHover').css('display', 'block');
@@ -861,14 +861,40 @@ $(document).ready(function () {
       var layerLevel = pageModule.config.classes.layerLevel;
       var analysisLevel = pageModule.config.classes.analysisLevel;
       var addCategoriesUL = pageModule.config.classes.addCategoriesUL;
-      var groupCheckbox = pageModule.config.classes.groupCheckbox;
+      var groupCheckbox = pageModule.config.classes.groupCheckbox; //click on separate the second time, after they have been saved
+
+      $(document).on('click', '.addCategories .separate', function () {
+        var item = $(this).closest('.merged').find('input:checkbox:checked').parent().parent();
+        var items = $(this).closest('.merged').find('input').parent().parent();
+        var listItem = $(this).closest('.merged').find('.mergedUL');
+        $('.addCategories .categories').append(item);
+        $('.addCategories li .custom-control').removeClass('bottomZero'); // $('inputs').removeAttr('checked');
+
+        $('.addCategories input[type="checkbox"]').prop('checked', false);
+
+        if ($(listItem).children().length == 1) {
+          $('.addCategories .categories').append(items);
+        }
+
+        if ($(listItem).children().length == 0) {
+          $(this).closest('.merged').remove();
+        }
+
+        if ($('.merged').length == 1) {
+          $('.merged').css({
+            'margin-top': '0em',
+            'margin-bottom': '0em'
+          });
+        }
+      }); //opening modal, saving new order
+
       var horizontal = "";
       var original = ""; // var ifSaved = [{
       //   'category' : '1',
       //   'saved': false
       // }];
-
-      var ifSaved = false;
+      //
+      // var ifSaved = false;
 
       var openModal = function openModal() {
         // $(modal).on('click', function() {
@@ -881,11 +907,11 @@ $(document).ready(function () {
         var original = $(categoryLi).clone();
         $(add).append(categoryLi);
         $(reorderOptions).removeClass('hidden');
-        $('.addCategories').click('input:checkbox', function () {
+        $('.addCategories').click('input:checkbox', function (event) {
           var groupNumber = $(checkedInputs).length;
           var groupCounter = "Combine " + groupNumber;
 
-          if ($(checkedInputs).length >= 2) {
+          if ($(checkedInputs).length >= 2 && !$(checkedInputs).parent().parent().parent().hasClass('mergedUL')) {
             $(button).addClass('brightBlue');
             $(words).html(groupCounter);
           } else {
@@ -914,13 +940,13 @@ $(document).ready(function () {
 
         };
 
-        $(closeModal).keypress(emptyModal).click(emptyModal);
+        $(closeModal).keypress(emptyModal).click(emptyModal); // $('#rowTopic').on('click', '.removeLevel' , function() {
+        //       $(horizontal).empty().append(original)
+        //
+        // })
 
         var saveModal = function saveModal(e) {
-          $('.addCategories input[type="checkbox"]').prop('checked', false); // var these =  $(this).closest('.modal-content').find('.categories')
-          //
-          // console.log(these)
-
+          $('.addCategories input[type="checkbox"]').prop('checked', false);
           $(horizontal).empty().append(categoryLi);
           $(categoryLi, this).addClass('newClass');
           $(add).empty();
@@ -963,6 +989,7 @@ $(document).ready(function () {
           }
 
           $(separate).click(function () {
+            console.log("separate");
             var item = $(this).closest('.merged').find('input:checkbox:checked').parent().parent();
             var items = $(this).closest('.merged').find('input').parent().parent(); // var input = $(this).closest('.merged').find('input:checkbox:checked')
 
@@ -987,15 +1014,17 @@ $(document).ready(function () {
               });
             }
           });
-        }); // })
+        });
       };
 
       $(modal).keypress(openModal).click(openModal);
       $('#rowTopic').on('click', '.removeLevel', function () {
-        var items = $('.merged').find('input').parent().parent();
-        $('.addCategories .categories').append(items);
-        $('.merged').remove();
-        $('.addCategories input[type="checkbox"]').prop('checked', false);
+        // var items = $('.merged').find('input').parent().parent()
+        //
+        // $('.addCategories .categories').append(items)
+        //
+        //
+        // $('.addCategories input[type="checkbox"]').prop('checked' , false);
         var el = $(this).closest('.levels').find('input[data-level]').val();
         var putBack = $(this).closest('.levels');
         $('.listArea .topicLevels').append(putBack);

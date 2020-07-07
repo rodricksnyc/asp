@@ -1183,8 +1183,6 @@ $(document).ready(function () {
   //close list areas
 
   var closeListArea = function (){
-
-
     $(this).find('i').toggleClass('fa-plus fa-minus')
 
     if($(this).find('i').hasClass('fa-plus')) {
@@ -1258,22 +1256,17 @@ $(document).ready(function () {
       }
     },
 
-
+    //508 tabbing through levels
     focusFunc: function() {
       var topics = pageModule.config.classes.topicLevelsChildren
-
       $(topics).on('keyup', function (e) {
         var code = (e.keyCode ? e.keyCode : e.which);
         if (code ==9 ) {
 
-          console.log("here")
-
           $(this).closest('.levels').css('background-color', '#faede9');
           $(this).closest('.levels').find('.endOptions').css('display', 'block')
           $(this).closest('.levels').find('.orangeHover').css('display', 'block')
-
           $(this).closest('.levels').find('.accordion-toggle i').css('visibility', 'visible')
-
         }
 
         if ($('#columnTopic .levels').length > 0 && $('#layerTopic .levels').length > 0 ) {
@@ -1284,7 +1277,6 @@ $(document).ready(function () {
             $('.levels').css('background-color', 'transparent');
             $('.levels').find('.accordion-toggle i').css('visibility', 'hidden')
           });
-
 
         }
 
@@ -1346,18 +1338,56 @@ $(document).ready(function () {
       var addCategoriesUL = pageModule.config.classes.addCategoriesUL
       var groupCheckbox = pageModule.config.classes.groupCheckbox
 
+      //click on separate the second time, after they have been saved
+      $(document).on('click', '.addCategories .separate', function() {
+
+        var item = $(this).closest('.merged').find('input:checkbox:checked').parent().parent()
+
+        var items = $(this).closest('.merged').find('input').parent().parent()
+
+        var listItem = $(this).closest('.merged').find('.mergedUL')
+
+        $('.addCategories .categories').append(item)
+        $('.addCategories li .custom-control').removeClass('bottomZero')
+        // $('inputs').removeAttr('checked');
+
+        $('.addCategories input[type="checkbox"]').prop('checked' , false);
+
+        if ($(listItem).children().length == 1) {
+
+          $('.addCategories .categories').append(items)
+
+        }
+
+        if ($(listItem).children().length == 0) {
+
+          $(this).closest('.merged').remove()
+
+        }
+
+        if ($('.merged').length == 1) {
+          $('.merged').css({
+            'margin-top': '0em',
+            'margin-bottom': '0em',
+
+          })
+        }
+
+      })
+
+
+      //opening modal, saving new order
+
       var horizontal = "";
       var original = "";
       // var ifSaved = [{
       //   'category' : '1',
       //   'saved': false
       // }];
-
-      var ifSaved = false;
-
+      //
+      // var ifSaved = false;
       var openModal = function() {
-
-      // $(modal).on('click', function() {
+        // $(modal).on('click', function() {
         $(showModal).modal('show');
         var categoryLi =  $(this).closest('.levels').find('.categories')
         var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
@@ -1373,14 +1403,21 @@ $(document).ready(function () {
 
         $(reorderOptions).removeClass('hidden')
 
-        $('.addCategories').click('input:checkbox', function(){
+        $('.addCategories').click('input:checkbox', function(event){
 
           let groupNumber =  $(checkedInputs).length;
           let groupCounter = `Combine ${groupNumber}`;
-          if($(checkedInputs).length >= 2) {
+
+
+
+          if($(checkedInputs).length >= 2 && !$(checkedInputs).parent().parent().parent().hasClass('mergedUL') ) {
             $(button).addClass('brightBlue')
             $(words).html(groupCounter)
           }
+
+
+
+
           else {
             $(button).removeClass('brightBlue')
             $(words).html('Select to group')
@@ -1388,17 +1425,11 @@ $(document).ready(function () {
         })
 
         $(addCustomControl).removeClass('hidden')
-
-
         var emptyModal = function (){
-
-
-
           // if (ifSaved == false ) {
-
           if ((!$(categoryLi, this).hasClass('newClass')) )  {
 
-             console.log('no')
+            console.log('no')
 
             var items = $('.merged').find('input').parent().parent()
 
@@ -1412,8 +1443,7 @@ $(document).ready(function () {
 
           }
 
-
-            // if (ifSaved == true ) {
+          // if (ifSaved == true ) {
           else {
             $('.addCategories input[type="checkbox"]').prop('checked' , false);
 
@@ -1434,15 +1464,16 @@ $(document).ready(function () {
           emptyModal
         );
 
+
+
+        // $('#rowTopic').on('click', '.removeLevel' , function() {
+        //       $(horizontal).empty().append(original)
+        //
+        // })
+
         var saveModal = function (e){
 
           $('.addCategories input[type="checkbox"]').prop('checked' , false);
-
-          // var these =  $(this).closest('.modal-content').find('.categories')
-          //
-          // console.log(these)
-
-
 
           $(horizontal).empty().append(categoryLi)
           $(categoryLi, this).addClass('newClass')
@@ -1456,7 +1487,6 @@ $(document).ready(function () {
           // if (ifSaved == false)  {
           //   ifSaved = true;
           // }
-
 
         }
         $(save).keypress(
@@ -1513,6 +1543,8 @@ $(document).ready(function () {
 
           $(separate).click(function(){
 
+            console.log("separate")
+
             var item = $(this).closest('.merged').find('input:checkbox:checked').parent().parent()
 
             var items = $(this).closest('.merged').find('input').parent().parent()
@@ -1551,20 +1583,18 @@ $(document).ready(function () {
               })
             }
 
-
           })
+
+
 
         })
 
 
 
-      // })
-
-
       }
 
       $(modal).keypress(
-      openModal
+        openModal
 
       ).click(
         openModal
@@ -1574,12 +1604,12 @@ $(document).ready(function () {
 
       $('#rowTopic').on('click', '.removeLevel' , function() {
 
-        var items = $('.merged').find('input').parent().parent()
-
-        $('.addCategories .categories').append(items)
-        $('.merged').remove()
-
-        $('.addCategories input[type="checkbox"]').prop('checked' , false);
+        // var items = $('.merged').find('input').parent().parent()
+        //
+        // $('.addCategories .categories').append(items)
+        //
+        //
+        // $('.addCategories input[type="checkbox"]').prop('checked' , false);
 
         var el = $(this).closest('.levels').find('input[data-level]').val()
 
@@ -2038,9 +2068,9 @@ $(document).ready(function () {
 
 
     $('.numberCounter').html(function(i, val) {
-          console.log(val)
-          return val*1 + 1
-          console.log(val)
+      console.log(val)
+      return val*1 + 1
+      console.log(val)
     });
 
 
@@ -2638,9 +2668,9 @@ $(document).ready(function () {
     if ($('.addCategories .moveDown').closest('li').parent().parent().hasClass('merged')) {
       var blueThing = $(this).closest('.merged')
 
-    var afterItem =  $(blueThing).next()
+      var afterItem =  $(blueThing).next()
 
-    $(blueThing).insertAfter(afterItem)
+      $(blueThing).insertAfter(afterItem)
 
     }
 
@@ -2656,9 +2686,9 @@ $(document).ready(function () {
       if ($('.addCategories .moveDown').closest('li').parent().parent().hasClass('merged')) {
         var blueThing = $(this).closest('.merged')
 
-      var afterItem =  $(blueThing).next()
+        var afterItem =  $(blueThing).next()
 
-      $(blueThing).insertAfter(afterItem)
+        $(blueThing).insertAfter(afterItem)
 
       }
 
@@ -2671,11 +2701,11 @@ $(document).ready(function () {
     $(this).closest('li').insertBefore(before)
 
     if ($('.addCategories .moveUp').closest('li').parent().parent().hasClass('merged')) {
-    var blueThing = $(this).closest('.merged')
+      var blueThing = $(this).closest('.merged')
 
-    var beforeItem =  $(blueThing).prev()
+      var beforeItem =  $(blueThing).prev()
 
-    $(blueThing).insertBefore(beforeItem)
+      $(blueThing).insertBefore(beforeItem)
 
     }
 
@@ -2693,11 +2723,11 @@ $(document).ready(function () {
       $(this).closest('li').insertBefore(before)
 
       if ($('.addCategories .moveUp').closest('li').parent().parent().hasClass('merged')) {
-      var blueThing = $(this).closest('.merged')
+        var blueThing = $(this).closest('.merged')
 
-      var beforeItem =  $(blueThing).prev()
+        var beforeItem =  $(blueThing).prev()
 
-      $(blueThing).insertBefore(beforeItem)
+        $(blueThing).insertBefore(beforeItem)
 
       }
 
@@ -2797,23 +2827,23 @@ $(document).ready(function () {
 
 
 
-    $('.addCategories').on('keyup','.top', function(e) {
-      var code = (e.keyCode ? e.keyCode : e.which);
-      if (code == 13) {
-        if (!$('.addCategories .top').closest('li').parent().hasClass('mergedUL')) {
+  $('.addCategories').on('keyup','.top', function(e) {
+    var code = (e.keyCode ? e.keyCode : e.which);
+    if (code == 13) {
+      if (!$('.addCategories .top').closest('li').parent().hasClass('mergedUL')) {
 
-          $(this).closest('li').insertBefore($('.addCategories .categories li').first());
+        $(this).closest('li').insertBefore($('.addCategories .categories li').first());
 
-        }
-
-        if ($('.addCategories .top').closest('li').parent().hasClass('mergedUL')) {
-
-          $(this).closest('.merged').insertBefore($('.addCategories .categories li').first());
-          $(this).closest('.merged').insertBefore($('.merged').first());
-
-        }
       }
-    })
+
+      if ($('.addCategories .top').closest('li').parent().hasClass('mergedUL')) {
+
+        $(this).closest('.merged').insertBefore($('.addCategories .categories li').first());
+        $(this).closest('.merged').insertBefore($('.merged').first());
+
+      }
+    }
+  })
 
   //
   //   $('.addCategories').on('click','.merged .bottom',function(){
