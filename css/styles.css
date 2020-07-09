@@ -3753,6 +3753,10 @@ categories reorder modal */
   justify-content: center !important
 
 }
+
+#reorderCategories .modal-footer p.orange {
+  margin-bottom:0em !important
+}
 #reorderCategories .modal-header .close {
   padding: .5rem !important;
   margin: -3rem -1rem -1rem auto !important;
