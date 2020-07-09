@@ -133,8 +133,11 @@ $(document).ready(function () {
       var openModal = function openModal() {
         // $(modal).on('click', function() {
         $(showModal).modal('show');
-        var categoryLi = $(this).closest('.levels').find('.categories');
-        var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)'); // var card =  $(this).closest('.levels').find('.card')
+        var categoryLi = $(this).closest('.levels').find('.horizontal:eq(1) .categories');
+        var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
+        var horizontalClone = $(this).closest('.levels').find('.horizontal:eq(2)').hide();
+        var card = $(this).closest('.levels').find('.card');
+        console.log(horizontal); // var card =  $(this).closest('.levels').find('.card')
         // var bubbleDivs =  $(this).closest('.levels').find('.merged')
 
         $(horizontal).empty();
@@ -185,10 +188,14 @@ $(document).ready(function () {
         var saveModal = function saveModal(e) {
           $('.addCategories input[type="checkbox"]').prop('checked', false); // $(document).find('#rowTopic .levels  .horizontal:eq(1)').empty().append(categoryLi)
 
-          $(horizontal).empty().append(categoryLi);
           $(categoryLi).addClass('newClass');
-          $(add).empty();
-          console.log(categoryLi);
+
+          if ($(categoryLi).hasClass('newClass')) {
+            console.log("yes it does");
+            $(horizontal).empty().append(categoryLi);
+            $(add).empty();
+          }
+
           $(showModal).modal('hide');
           $(button).removeClass('brightBlue');
           $(words).html('Select to group'); // if (ifSaved == false)  {
@@ -196,7 +203,21 @@ $(document).ready(function () {
           // }
         };
 
-        $(save).keypress(saveModal).click(saveModal); //
+        $(save).keypress(saveModal).click(saveModal);
+        $('#rowTopic .removeLevel').on('click', function () {
+          $(this).closest('.levels').find('input[type="checkbox"]').prop('checked', false);
+
+          if ($(categoryLi).hasClass('newClass')) {
+            $(categoryLi).removeClass('newClass');
+            console.log(horizontalClone);
+            $(horizontal).remove();
+            $(horizontalClone).show();
+            $(card).append(horizontalClone); // $(horizontalClone).remove()
+
+            var putBack = $(this).closest('.levels');
+            $('.listArea .topicLevels').append(putBack);
+          }
+        }); //
         // $('.topicLevels input[type="checkbox"]').prop('checked' , false);
         //       var categoryLi =  $(this).closest('.levels').find('.categories')
         //       var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
@@ -375,19 +396,23 @@ $(document).ready(function () {
 
   pageModule.globalRemoveFunc();
   pageModule.showExpandFunc();
-  pageModule.focusFunc();
-  $('#rowTopic .removeLevel').on('click', function () {
-    var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)'); // $(categoryLi).removeClass('newClass')
-
-    $(horizontal).empty().append(globalUL);
-  });
-  var globalUL = "";
+  pageModule.focusFunc(); // var globalUL = "globalUL";
 
   var addRow = function addRow() {
     var obj = $(this).closest('.levels').find('input[data-level]').val();
     var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
     var variableObj = $(this).closest('.levels').find(".variableName li[data-variable]").html();
-    var globalUL = $(this).closest('.levels').find('.categories').clone(); // $(this).closest('.levels').find('.horizontal:eq(1)').data("test",  { first: 16, last: "pizza!" })
+    var globalUL = $(this).closest('.levels').find('.categories li'); // $(this).closest('.levels').find('.horizontal:eq(1)').data("test",  { first: 16, last: "pizza!" })
+
+    var horizontalClone = $(this).closest('.levels').find('.horizontal:eq(1)').clone(); // horizontalClone.attr('id','cloned');
+
+    $(this).closest('.levels').find('.horizontal:eq(1)').after(horizontalClone); // $(globalUL).each(function() {
+    //  myOriginalList = myOriginalList + this.outerHTML;
+    //
+    // });
+    //
+    //
+    // localStorage.setItem("myOriginalList", (myOriginalList))
     // console.log(variableObj)
     //
     // $(globalUL).each(function() {
@@ -426,8 +451,16 @@ $(document).ready(function () {
   $('.addRow').keypress(addRow).click(addRow);
   $(document).on('click', '#rowTopic .removeLevel', function () {
     var el = $(this).closest('.levels').find('input[data-level]').val();
-    var putBack = $(this).closest('.levels');
-    $('.listArea .topicLevels').append(putBack);
+    var categoryLi = $(this).closest('.levels').find('.categories');
+    var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
+    $(this).closest('.levels').find('input[type="checkbox"]').prop('checked', false);
+
+    if (!$(categoryLi).hasClass('newClass')) {
+      console.log("nope");
+      var putBack = $(this).closest('.levels');
+      $('.listArea .topicLevels').append(putBack);
+    }
+
     $('.addRow').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false);
 
     if ($('#rowTopic .levels').length < 3) {

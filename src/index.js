@@ -174,8 +174,13 @@ $(document).ready(function () {
       var openModal = function() {
         // $(modal).on('click', function() {
         $(showModal).modal('show');
-        var categoryLi =  $(this).closest('.levels').find('.categories')
+        var categoryLi =  $(this).closest('.levels').find('.horizontal:eq(1) .categories')
         var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
+        var horizontalClone =  $(this).closest('.levels').find('.horizontal:eq(2)').hide()
+
+        var card =  $(this).closest('.levels').find('.card')
+
+        console.log(horizontal)
 
         // var card =  $(this).closest('.levels').find('.card')
         // var bubbleDivs =  $(this).closest('.levels').find('.merged')
@@ -263,12 +268,15 @@ $(document).ready(function () {
 
           // $(document).find('#rowTopic .levels  .horizontal:eq(1)').empty().append(categoryLi)
 
-          $(horizontal).empty().append(categoryLi)
+
           $(categoryLi).addClass('newClass')
 
-          $(add).empty()
+            if (($(categoryLi).hasClass('newClass')) )  {
+              console.log("yes it does")
+            $(horizontal).empty().append(categoryLi)
+            $(add).empty()
 
-          console.log(categoryLi)
+        }
 
           $(showModal).modal('hide');
           $(button).removeClass('brightBlue')
@@ -287,6 +295,37 @@ $(document).ready(function () {
         ).click(
           saveModal
         );
+
+
+
+
+
+          $('#rowTopic .removeLevel').on('click', function() {
+
+
+
+            $(this).closest('.levels').find('input[type="checkbox"]').prop('checked' , false);
+
+          if (($(categoryLi).hasClass('newClass')) )  {
+
+            $(categoryLi).removeClass('newClass')
+
+            console.log(horizontalClone)
+            $(horizontal).remove();
+            $(horizontalClone).show()
+            $(card).append(horizontalClone)
+            // $(horizontalClone).remove()
+
+            var putBack = $(this).closest('.levels')
+
+            $('.listArea .topicLevels').append(putBack)
+
+          }
+
+
+          })
+
+
 
 
     //
@@ -572,18 +611,12 @@ $(document).ready(function () {
 
 
 
-  $('#rowTopic .removeLevel').on('click', function() {
 
 
-var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)')
-
-    // $(categoryLi).removeClass('newClass')
-    $(horizontal).empty().append(globalUL)
-
-  })
 
 
-  var globalUL = "";
+
+  // var globalUL = "globalUL";
 
   var addRow = function (){
 
@@ -592,9 +625,21 @@ var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)')
     var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
     var variableObj = $(this).closest('.levels').find(".variableName li[data-variable]").html()
 
-    var globalUL = $(this).closest('.levels').find('.categories').clone()
+    var globalUL = $(this).closest('.levels').find('.categories li')
 
     // $(this).closest('.levels').find('.horizontal:eq(1)').data("test",  { first: 16, last: "pizza!" })
+
+    var horizontalClone = $(this).closest('.levels').find('.horizontal:eq(1)').clone();
+    // horizontalClone.attr('id','cloned');
+    $(this).closest('.levels').find('.horizontal:eq(1)').after(horizontalClone);
+
+    // $(globalUL).each(function() {
+    //  myOriginalList = myOriginalList + this.outerHTML;
+    //
+    // });
+    //
+    //
+    // localStorage.setItem("myOriginalList", (myOriginalList))
 
 
 
@@ -664,12 +709,19 @@ var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)')
   $(document).on('click', '#rowTopic .removeLevel', function() {
 
   var el = $(this).closest('.levels').find('input[data-level]').val()
+  var categoryLi =  $(this).closest('.levels').find('.categories')
+  var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
 
-  var putBack = $(this).closest('.levels')
+  $(this).closest('.levels').find('input[type="checkbox"]').prop('checked' , false);
 
-  $('.listArea .topicLevels').append(putBack)
+  if ((!$(categoryLi).hasClass('newClass')) )  {
+    console.log("nope")
 
+    var putBack = $(this).closest('.levels')
 
+    $('.listArea .topicLevels').append(putBack)
+
+  }
 
 
   $('.addRow').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
