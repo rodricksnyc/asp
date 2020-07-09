@@ -122,130 +122,80 @@ $(document).ready(function () {
       var analysisLevel = pageModule.config.classes.analysisLevel
       var addCategoriesUL = pageModule.config.classes.addCategoriesUL
       var groupCheckbox = pageModule.config.classes.groupCheckbox
-
       //click on separate the second time, after they have been saved
       $(document).on('click', '.addCategories .separate', function() {
-
         var item = $(this).closest('.merged').find('input:checkbox:checked').parent().parent()
-
         var items = $(this).closest('.merged').find('input').parent().parent()
-
         var listItem = $(this).closest('.merged').find('.mergedUL')
-
         $('.addCategories .categories').append(item)
         $('.addCategories li .custom-control').removeClass('bottomZero')
-        // $('inputs').removeAttr('checked');
-
         $('.addCategories input[type="checkbox"]').prop('checked' , false);
-
         if ($(listItem).children().length == 1) {
-
           $('.addCategories .categories').append(items)
-
         }
-
         if ($(listItem).children().length == 0) {
-
           $(this).closest('.merged').remove()
-
         }
-
         if ($('.merged').length == 1) {
           $('.merged').css({
             'margin-top': '0em',
             'margin-bottom': '0em',
-
           })
         }
-
       })
-
-
       //opening modal, saving new order
-
       var horizontal = "";
       var original = "";
-      // // var ifSaved = [{
-      // //   'category' : '1',
-      // //   'saved': false
-      // // }];
-      // //
+
       // var ifSaved = false;
       var openModal = function() {
-        // $(modal).on('click', function() {
         $(showModal).modal('show');
         var categoryLi =  $(this).closest('.levels').find('.horizontal:eq(1) .categories')
         var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
         var horizontalClone =  $(this).closest('.levels').find('.horizontal:eq(2)').hide()
-
-
         var card =  $(this).closest('.levels').find('.card')
-
-
         $(horizontal).empty()
-
         var original = $(categoryLi).clone();
-
         $(add).append(categoryLi)
-
         $(reorderOptions).removeClass('hidden')
-
         $('.addCategories').click('input:checkbox', function(event){
-
           let groupNumber =  $(checkedInputs).length;
           let groupCounter = `Combine ${groupNumber}`;
-
           if($(checkedInputs).length >= 2 && !$(checkedInputs).parent().parent().parent().hasClass('mergedUL') ) {
             $(button).addClass('brightBlue')
             $(words).html(groupCounter)
           }
-
           else {
             $(button).removeClass('brightBlue')
             $(words).html('Select to group')
           }
         })
-
         $(addCustomControl).removeClass('hidden')
-
-
         var emptyModal = function (){
-
           // if (ifSaved == false ) {
           if ((!$(categoryLi).hasClass('newClass')) )  {
             $('.topicLevels input[type="checkbox"]').prop('checked' , false);
-
             console.log("CLOSE")
             var items = $('.merged').find('input').parent().parent()
-
             $(horizontal).empty().append(original)
             $(add).empty()
             $(button).removeClass('brightBlue')
             $(words).html('Select to group')
-
             // $('.addCategories .categories').append(items)
             // $('.merged').remove()
             $(this).closest('.levels').removeClass('activeCustomControl')
 
           }
-
           // if (ifSaved == true ) {
           else {
-
             console.log("SAVE")
             $('.addCategories input[type="checkbox"]').prop('checked' , false);
             $('.topicLevels input[type="checkbox"]').prop('checked' , false);
-
             $(horizontal).empty().append(categoryLi)
-
             $(add).empty()
-
             $(this).closest('.levels').removeClass('activeCustomControl')
-
           }
-
           // }
-
         }
 
         $(closeModal).keypress(
@@ -255,28 +205,20 @@ $(document).ready(function () {
           emptyModal
         );
         var saveModal = function (e){
-
           $('.addCategories input[type="checkbox"]').prop('checked' , false);
-
           // $(document).find('#rowTopic .levels  .horizontal:eq(1)').empty().append(categoryLi)
-
           $(categoryLi).addClass('newClass')
-
           if (($(categoryLi).hasClass('newClass')) )  {
             console.log("yes it does")
             $(horizontal).empty().append(categoryLi)
             $(add).empty()
-
           }
-
           $(showModal).modal('hide');
           $(button).removeClass('brightBlue')
           $(words).html('Select to group')
-
           // if (ifSaved == false)  {
           //   ifSaved = true;
           // }
-
         }
         $(save).keypress(
           saveModal
@@ -286,16 +228,11 @@ $(document).ready(function () {
         );
 
         $('#rowTopic .removeLevel').on('click', function() {
-
           $(this).closest('.levels').find('input[type="checkbox"]').prop('checked' , false);
-
           if (($(categoryLi).hasClass('newClass')) )  {
-
-            console.log("it has new class")
 
             $(categoryLi).removeClass('newClass')
 
-            console.log(horizontalClone)
             $(horizontal).remove();
             $(horizontalClone).show()
             $(card).append(horizontalClone)
@@ -318,7 +255,6 @@ $(document).ready(function () {
 
             $(categoryLi).removeClass('newClass')
 
-            console.log(horizontalClone)
             $(horizontal).remove();
             $(horizontalClone).show()
             $(card).append(horizontalClone)
@@ -333,7 +269,6 @@ $(document).ready(function () {
           $('#columnTopic p .evenSmaller').css('color', '#07477d')
           $('#columnTopic p .evenSmaller').html('limit 1')
           $('#columnTopic .fal.fa-info-circle').css('color', '#07477d')
-
           if ($(columnLevel).length == 0 ) {
             $('.addColumn').on("click", addColumnTopic)
 
@@ -350,12 +285,9 @@ $(document).ready(function () {
         })
 
         $('#layerTopic .removeLevel').on('click', function() {
-
           $(this).closest('.levels').find('input[type="checkbox"]').prop('checked' , false);
-
           if (($(categoryLi).hasClass('newClass')) )  {
-
-            $(categoryLi).removeClass('newClass')
+          $(categoryLi).removeClass('newClass')
 
             console.log('')
             $(horizontal).remove();
@@ -375,28 +307,21 @@ $(document).ready(function () {
 
           if ($(layerLevel).length == 0 ) {
             $('.addLayer').on("click", addLayerTopic)
-
           }
 
           $('.levels').find('.addLayer').show()
-
           if ($(columnLevel).length > 0 ) {
-
             $('.levels').find('.addColumn').hide()
-
           }
 
         })
 
         $('#analysisTopic .removeLevel').on('click', function() {
-
           $(this).closest('.levels').find('input[type="checkbox"]').prop('checked' , false);
-
           if (($(categoryLi).hasClass('newClass')) )  {
 
             $(categoryLi).removeClass('newClass')
 
-            console.log(horizontalClone)
             $(horizontal).remove();
             $(horizontalClone).show()
             $(card).append(horizontalClone)
@@ -415,7 +340,6 @@ $(document).ready(function () {
           if ($(analysisLevel).length == 0 ) {
             $('.addAnalysis').on("click", addAnalysisTopic)
           }
-
           $('.listArea2 .topicLevels .custom-control').removeClass("noShow")
 
 
@@ -423,7 +347,6 @@ $(document).ready(function () {
 
 
         $(button).click(function() {
-
           var active  = $(this).closest('.modal-content').find('.reorderActive').parent()
           var x = $(this).closest('.modal-content').find('.addCategories input:checkbox:checked')
           var y = $(x).parent().parent()
@@ -434,7 +357,6 @@ $(document).ready(function () {
             Opt1 = Opt1 + this.outerHTML;
 
           });
-
 
           if ($(y).length > 1) {
 
@@ -469,11 +391,8 @@ $(document).ready(function () {
           $(separate).click(function(){
 
             var item = $(this).closest('.merged').find('input:checkbox:checked').parent().parent()
-
             var items = $(this).closest('.merged').find('input').parent().parent()
-
             // var input = $(this).closest('.merged').find('input:checkbox:checked')
-
             var listItem = $(this).closest('.merged').find('.mergedUL')
 
             $('.addCategories .categories').append(item)
@@ -481,10 +400,7 @@ $(document).ready(function () {
             // $('inputs').removeAttr('checked');
 
             $('.addCategories input[type="checkbox"]').prop('checked' , false);
-
             if ($(listItem).children().length == 1) {
-
-
               $('.addCategories .categories').append(items)
 
               // $(separate).css('top', '24%')
@@ -492,7 +408,6 @@ $(document).ready(function () {
             }
 
             if ($(listItem).children().length == 0) {
-
               $(this).closest('.merged').remove()
 
             }
@@ -517,8 +432,6 @@ $(document).ready(function () {
         openModal
       );
 
-
-
     },
 
     showExpandFunc: function() {
@@ -528,8 +441,6 @@ $(document).ready(function () {
       var columnLevel = pageModule.config.classes.columnLevel
       var layerLevel = pageModule.config.classes.layerLevel
       var analysisLevel = pageModule.config.classes.analysisLevel
-
-
       var showExpand = function() {
         if ($(rowLevel).length > 0 || $(columnLevel).length > 0 || $(layerLevel).length > 0 || $(analysisLevel).length > 0) {
           $(expand).show()
@@ -567,15 +478,9 @@ $(document).ready(function () {
 
     },
 
-    // modalKeypressFunc: function() {
-    //
-    // },
-
 
     init: function() {
-
       let self = this;
-
       console.log('this is started');
 
 
@@ -768,22 +673,14 @@ $(document).ready(function () {
   //clicking on add analyis
 
   var addAnalysisTopic = function() {
-
     var obj = $(this).closest('.levels').find('input[data-level]').val()
-
     var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
-
     var variableObj = $(this).closest('.levels').find(".variableName li[data-variable]").html()
-
     var categoryLi =  $(this).closest('.levels').find('.categories')
     var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
-
     $(categoryLi).removeClass('newClass')
     var horizontalClone = $(this).closest('.levels').find('.horizontal:eq(1)').clone();
-
     $(this).closest('.levels').find('.horizontal:eq(1)').after(horizontalClone);
-
-
     // var categoryObj = $(this).closest('.levels').find('.categories li')
     //
     //
@@ -795,15 +692,11 @@ $(document).ready(function () {
     // });
 
     $(this).closest('.levels').removeClass('activeCustomControl')
-
     $(this).closest('.levels').find('.collapse').collapse('hide')
     $(this).closest('.levels').find('.accordion-toggle i').fadeIn()
-
     $(this).closest('.levels').find('.orangeHover').removeClass('showIt2')
     $(this).closest('.levels').find('.endOptions').removeClass('showIt')
-
     var item = $(this).closest('.levels')
-
     if($(this).closest('.levels').find('input[data-level]').prop("checked")==true) {
       $('#analysisTopic').append(item)
     }
@@ -831,7 +724,7 @@ $(document).ready(function () {
 
 
 
-  $(document).on('click', '.removeLevel', function() {
+  $(document).on('click', '#rowTopic .removeLevel', function() {
 
     var el = $(this).closest('.levels').find('input[data-level]').val()
     var categoryLi =  $(this).closest('.levels').find('.categories')
@@ -839,9 +732,7 @@ $(document).ready(function () {
 
     $(this).closest('.levels').find('input[type="checkbox"]').prop('checked' , false);
     var horizontalClone =  $(this).closest('.levels').find('.horizontal:eq(2)')
-    // if ((!$(categoryLi).hasClass('newClass')) )  {
-    //
-    //   console.log("it doesnt have newclass")
+
     $(horizontalClone).remove();
     var putBack = $(this).closest('.levels')
 
@@ -849,16 +740,7 @@ $(document).ready(function () {
 
     $('.listArea .topicLevels').append(putBack)
 
-    // }
-    //
-    // else {
-    //   $(horizontalClone).remove();
-    //       console.log("it has newclass")
-    // }
-
-
     $('.addRow').closest('.levels').find(`input[data-level='${el}']`).prop("checked", false);
-
     if ($('#rowTopic .levels').length < 3 ) {
       $('#rowTopic').animate({
         minHeight: "none",
@@ -870,11 +752,8 @@ $(document).ready(function () {
     }
 
     if ($('#rowTopic .levels').length >3 ) {
-
       $('.whiteBar').fadeOut('slow')
-
     }
-
     if($('#rowTopic .levels').length == 0) {
       $('.plusRow').hide();
     }
@@ -893,7 +772,6 @@ $(document).ready(function () {
 
 
   $(document).on('click', '#columnTopic .removeLevel', function() {
-
     var el = $(this).closest('.levels').find('input[data-level]').val()
     var categoryLi =  $(this).closest('.levels').find('.categories')
     var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
@@ -916,14 +794,11 @@ $(document).ready(function () {
 
     if ($('#columnTopic .levels').length == 0 ) {
       $('.addColumn').on("click", addColumnTopic)
-
     }
 
     $('.levels').find('.addColumn').show()
-
     if ($('#layerTopic .levels').length > 0 ) {
-
-      $('.levels').find('.addLayer').hide()
+    $('.levels').find('.addLayer').hide()
 
     }
 
@@ -971,9 +846,6 @@ $(document).ready(function () {
   })
 
   $(document).on('click', '#analysisTopic .removeLevel', function() {
-
-    console.log("bitch")
-
     var el = $(this).closest('.levels').find('input[data-level]').val()
     var categoryLi =  $(this).closest('.levels').find('.categories')
     var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
@@ -1004,9 +876,6 @@ $(document).ready(function () {
 
   })
 
-
-
-
   $('.addLayer, .addRow, .addColumn, .addAnalysis').keypress(function() {
     $('.levels').find('.orangeHover').css('display', 'none')
     $('.endOptions').css('display', 'none')
@@ -1015,7 +884,6 @@ $(document).ready(function () {
 
   })
 
-
   $(".listArea .levels :checkbox").change(function(){
 
     $(this).closest('.topicLevels .levels').addClass('activeLevel')
@@ -1023,6 +891,22 @@ $(document).ready(function () {
     if($(this).prop("checked")==true){
 
       $('.addAsRow').on('click', function() {
+
+        var obj = $(this).closest('.levels').find('input[data-level]').val()
+
+        var x = $(this).closest('.levels').find('input[data-level]').prop("checked", true);
+        var variableObj = $(this).closest('.levels').find(".variableName li[data-variable]").html()
+
+        var categoryLi =  $(this).closest('.levels').find('.categories')
+        var horizontal =  $(this).closest('.levels').find('.horizontal:eq(1)')
+
+        $(categoryLi).removeClass('newClass')
+        var horizontalClone = $(this).closest('.levels').find('.horizontal:eq(1)').clone();
+
+        $(this).closest('.levels').find('.horizontal:eq(1)').after(horizontalClone);
+
+
+
         $('.numberCounter').html($('#rowTopic .levels').length)
 
         $(this).closest('.topicLevels').find('.levels').removeClass('activeCustomControl')
@@ -1032,89 +916,83 @@ $(document).ready(function () {
         $(this).closest('.topicLevels').find('.orangeHover').removeClass('showIt2')
         $(this).closest('.topicLevels').find('.endOptions').removeClass('showIt')
 
-
         $('.activeLevel').removeClass('activeLevel').appendTo('#rowTopic')
 
         if ($('.levels input').is(':checked')) {
 
         }
 
-        $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
+        // $('.grayLayer').css('top', $('.lightBlueBack').height() + $('#rowTopic').height() + $('#columnTopic').height() + $('#layerTopic').height() + $('#analysisTopic').height() + 140 )
 
 
         if ($('#rowTopic .levels').length > 3) {
-
           $('.whiteBar').fadeIn()
-
         }
 
-        $('.levels').find('.orangeHover').css('display', 'none')
-        $('.endOptions').css('display', 'none')
-        $('.levels').css('background-color', 'transparent');
-        $('.levels').find('.accordion-toggle i').css('visibility', 'hidden')
+        // $('.levels').find('.orangeHover').css('display', 'none')
+        // $('.endOptions').css('display', 'none')
+        // $('.levels').css('background-color', 'transparent');
+        // $('.levels').find('.accordion-toggle i').css('visibility', 'hidden')
 
         $("#rowTopic .levels:nth-child(4)").nextAll( ".levels" ).addClass('noWidth')
 
-        $('.categoriesModal').unbind("click").on('click', function() {
-          $('#reorderCategories').modal('show');
+        // $('.categoriesModal').unbind("click").on('click', function() {
+        //   $('#reorderCategories').modal('show');
+        //
+        //   var categoryLi =  $(this).closest('.levels').find('.categories')
+        //
+        //   var Opt02 = "";
+        //   $(categoryLi).each(function() {
+        //     Opt02 = Opt02 + this.outerHTML;
+        //
+        //   });
+        //
+        //   $('.addCategories').append(Opt02).parent()
+        //
+        //   $('.addCategories li .custom-control').removeClass('hidden')
+        //
+        //   $('.closeCategoryModal').click(function() {
+        //     $('.addCategories').empty()
+        //   })
+        //
+        //
+        // })
 
-          var categoryLi =  $(this).closest('.levels').find('.categories')
+        // $('.categoriesModal').unbind("keyup").on('keyup', function(e) {
+        //
+        //   var code = (e.keyCode ? e.keyCode : e.which);
+        //   if (code == 13) {
+        //     $('#reorderCategories').modal('show');
+        //
+        //     var categoryLi =  $(this).closest('.levels').find('.categories')
+        //
+        //     console.log(categoryLi)
+        //
+        //     var Opt02 = "";
+        //     $(categoryLi).each(function() {
+        //       Opt02 = Opt02 + this.outerHTML;
+        //
+        //
+        //     });
+        //
+        //     $('.addCategories').append(Opt02).parent()
+        //
+        //     $('.addCategories li .custom-control').removeClass('hidden')
+        //
+        //   }
+        //
+        // })
 
-          var Opt02 = "";
-          $(categoryLi).each(function() {
-            Opt02 = Opt02 + this.outerHTML;
-
-          });
-
-          $('.addCategories').append(Opt02).parent()
-
-          $('.addCategories li .custom-control').removeClass('hidden')
-
-          $('.closeCategoryModal').click(function() {
-            $('.addCategories').empty()
-          })
-
-
-        })
-
-        $('.categoriesModal').unbind("keyup").on('keyup', function(e) {
-
-          var code = (e.keyCode ? e.keyCode : e.which);
-          if (code == 13) {
-            $('#reorderCategories').modal('show');
-
-            var categoryLi =  $(this).closest('.levels').find('.categories')
-
-            console.log(categoryLi)
-
-            var Opt02 = "";
-            $(categoryLi).each(function() {
-              Opt02 = Opt02 + this.outerHTML;
-
-
-            });
-
-            $('.addCategories').append(Opt02).parent()
-
-            $('.addCategories li .custom-control').removeClass('hidden')
-
-          }
-
-        })
-
-        var emptyModal = function (){
-          $('.addCategories').empty()
-        }
-        $('.closeCategoryModal').keypress(
-          emptyModal
-
-        ).click(
-          emptyModal
-        );
-
-
+        // var emptyModal = function (){
+        //   $('.addCategories').empty()
+        // }
+        // $('.closeCategoryModal').keypress(
+        //   emptyModal
+        //
+        // ).click(
+        //   emptyModal
+        // );
       })
-
 
     }
 
@@ -1123,13 +1001,10 @@ $(document).ready(function () {
 
     };
 
-
     if($(".topicLevels .levels :checkbox:checked").length >= 1)   {
       $('.plusRow').show()
 
     }
-
-
 
     else {
       $('.plusRow').hide();
