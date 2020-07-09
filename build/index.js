@@ -225,9 +225,9 @@ $(document).ready(function () {
             $(horizontal).remove();
             $(horizontalClone).show();
             $(card).append(horizontalClone); // $(horizontalClone).remove()
-
-            var putBack = $(this).closest('.levels');
-            $('.listArea .topicLevels').append(putBack);
+            // var putBack = $(this).closest('.levels')
+            //
+            // $('.listArea .topicLevels').append(putBack)
           }
 
           $('#columnTopic p .evenSmaller').css('color', '#07477d');
@@ -248,14 +248,14 @@ $(document).ready(function () {
           $(this).closest('.levels').find('input[type="checkbox"]').prop('checked', false);
 
           if ($(categoryLi).hasClass('newClass')) {
-            // $(categoryLi).removeClass('newClass')
-            console.log('it does havre it');
+            $(categoryLi).removeClass('newClass');
+            console.log('');
             $(horizontal).remove();
             $(horizontalClone).show();
             $(card).append(horizontalClone); // $(horizontalClone).remove()
-
-            var putBack = $(this).closest('.levels');
-            $('.listArea .topicLevels').append(putBack);
+            // var putBack = $(this).closest('.levels')
+            //
+            // $('.listArea .topicLevels').append(putBack)
           }
 
           $('#layerTopic p .evenSmaller').css('color', '#07477d');
@@ -660,7 +660,8 @@ $(document).ready(function () {
 
     $('.addLayer').closest('.levels').find("input[data-level='" + el + "']").prop("checked", false);
   });
-  $(document).on('click', '#analyisTopic .removeLevel', function () {
+  $(document).on('click', '#analysisTopic .removeLevel', function () {
+    console.log("bitch");
     var el = $(this).closest('.levels').find('input[data-level]').val();
     var categoryLi = $(this).closest('.levels').find('.categories');
     var horizontal = $(this).closest('.levels').find('.horizontal:eq(1)');
@@ -672,7 +673,7 @@ $(document).ready(function () {
     $(horizontalClone).remove();
     var putBack = $(this).closest('.levels');
     $(categoryLi).removeClass('newClass');
-    $('.listArea .topicLevels').append(putBack);
+    $('.listArea2 .topicLevels').append(putBack);
     $('#analysisTopic p .evenSmaller').css('color', '#07477d');
     $('#analysisTopic p .evenSmaller').html('limit 1');
     $('#analysisTopic .fal.fa-info-circle').css('color', '#07477d');
